@@ -1,1 +1,316 @@
 \chapter{La reproduction chez les micro-organismes}
+
+\noindent\textit{Bactéries, levures, moisissures : les micro-organismes se reproduisent
+souvent de façon spectaculairement rapide. Ce chapitre étudie leur mode de reproduction
+principal, asexué, et explique pourquoi leur population peut croître de façon
+explosive.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{La reproduction asexuée : la scissiparité}
+
+\begin{definition}[Scissiparité]
+La \textbf{scissiparité} (ou division binaire) est le mode de reproduction principal des
+\textbf{bactéries} : une bactérie grandit puis se divise en \textbf{deux cellules
+filles identiques}, génétiquement identiques à la cellule mère.
+\end{definition}
+
+\begin{propriete}[Une reproduction asexuée]
+La scissiparité ne fait intervenir \textbf{qu'un seul individu} : c'est une
+\textbf{reproduction asexuée}. Les cellules filles produites sont des \textbf{clones} :
+elles possèdent exactement la même information génétique que la cellule d'origine.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\filldraw[onbo!25,draw=onbo,line width=1.2pt] (0,0) ellipse (0.7 and 0.4);
+\draw[->,onbmuted,line width=1.1pt] (1.1,0) -- (2.3,0);
+\node[above,font=\scriptsize,onbmuted] at (1.7,0.2) {division};
+\filldraw[onbgreen!25,draw=onbgreen,line width=1.1pt] (3.1,0.55) ellipse (0.55 and 0.32);
+\filldraw[onbgreen!25,draw=onbgreen,line width=1.1pt] (3.1,-0.55) ellipse (0.55 and 0.32);
+\end{tikzpicture}
+\fig{Figure — La scissiparité : une bactérie se divise en deux cellules filles identiques.}
+\end{illus}
+
+\section{Une croissance exponentielle}
+
+\begin{propriete}[Doublement de la population]
+Dans des conditions favorables (nutriments, température adaptée), \textbf{chaque}
+bactérie se divise régulièrement, doublant la population à chaque division. Après $n$
+divisions, une population initiale de $N_0$ bactéries devient :
+\[
+N=N_0\times2^{\,n}.
+\]
+\end{propriete}
+
+\begin{exemple}
+Une bactérie ($N_0=1$) subit $n=5$ divisions successives : $N=1\times2^5=32$ bactéries.
+\end{exemple}
+
+\begin{propriete}[Temps de génération]
+Le \textbf{temps de génération} est la durée nécessaire à une division. Le temps total
+pour atteindre $n$ divisions vaut : $t_{\text{total}}=n\times t_{\text{génération}}$.
+\end{propriete}
+
+\begin{exemple}
+Avec un temps de génération de $20$ min, obtenir $n=6$ divisions prend
+$t_{\text{total}}=6\times20=120$ min $=2$ h.
+\end{exemple}
+
+\begin{remarque}
+C'est cette croissance \textbf{exponentielle} qui explique pourquoi une infection
+bactérienne peut se développer très rapidement si elle n'est pas traitée à temps, et
+pourquoi une bonne hygiène (lavage des mains, conservation des aliments au froid) limite
+efficacement la prolifération des bactéries.
+\end{remarque}
+
+\section{La reproduction chez les levures}
+
+\begin{definition}[Bourgeonnement]
+Les \textbf{levures} (comme celles utilisées en boulangerie, voir chapitre sur la
+fermentation) se reproduisent le plus souvent par \textbf{bourgeonnement} : un
+\textbf{bourgeon} apparaît à la surface de la cellule mère, grossit, puis se détache
+pour former une nouvelle cellule.
+\end{definition}
+
+\begin{propriete}[Une reproduction sexuée est aussi possible]
+Dans certaines conditions (stress, manque de nutriments), certains micro-organismes
+comme les levures peuvent aussi réaliser une \textbf{reproduction sexuée}, faisant
+intervenir \textbf{deux cellules} qui fusionnent : elle génère, contrairement à la
+reproduction asexuée, de la \textbf{diversité génétique} entre les descendants.
+\end{propriete}
+
+\begin{propriete}[Comparaison]
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Reproduction asexuée} & \textbf{Reproduction sexuée} \\
+\midrule
+Nombre d'individus & un seul & deux \\
+Descendants & identiques (clones) & génétiquement différents \\
+Vitesse & très rapide & plus lente \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{propriete}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Scissiparité.} Reproduction asexuée des bactéries : une cellule donne deux
+clones identiques.\\[4pt]
+\textbf{Croissance exponentielle.} $N=N_0\times2^n$, avec $n$ le nombre de
+divisions.\\[4pt]
+\textbf{Temps de génération.} $t_{\text{total}}=n\times t_{\text{génération}}$.\\[4pt]
+\textbf{Bourgeonnement.} Mode de reproduction asexuée des levures.\\[4pt]
+\textbf{Reproduction sexuée} (parfois possible chez les micro-organismes) : deux
+cellules, descendants génétiquement différents.\\[4pt]
+\textbf{Piège fréquent.} Doubler $n$ fois ne signifie pas multiplier par $2\times n$,
+mais par $2^n$ : la croissance est exponentielle, pas proportionnelle.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer une population après plusieurs divisions}
+Appliquer $N=N_0\times2^n$.
+\begin{exemple}
+$N_0=10$, $n=4$ : $N=10\times2^4=10\times16=160$.
+\end{exemple}
+
+\methode{Calculer un temps total de multiplication}
+Appliquer $t_{\text{total}}=n\times t_{\text{génération}}$.
+\begin{exemple}
+$n=4$ divisions, temps de génération $30$ min : $t_{\text{total}}=4\times30=120$ min.
+\end{exemple}
+
+\methode{Distinguer reproduction asexuée et reproduction sexuée}
+Compter le nombre d'individus impliqués : un seul $\to$ asexuée (clones) ; deux $\to$
+sexuée (diversité génétique).
+\begin{exemple}
+La scissiparité, n'impliquant qu'une seule bactérie, est une reproduction asexuée.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Scissiparité}
+\exo{}\diff{1} Qu'est-ce que la scissiparité ?
+
+\exo{}\diff{2} Pourquoi les cellules filles issues de la scissiparité sont-elles des
+clones ?
+
+\rubrique{Croissance exponentielle}
+\exo{}\diff{2} Une bactérie ($N_0=1$) subit $n=4$ divisions. Calculer la population
+finale.
+
+\exo{}\diff{2} Une population de $N_0=10$ bactéries subit $n=3$ divisions. Calculer la
+population finale.
+
+\exo{}\diff{2} Le temps de génération est de $20$ min. Calculer le temps nécessaire
+pour $n=3$ divisions.
+
+\rubrique{Levures et reproduction sexuée}
+\exo{}\diff{1} Comment se reproduisent le plus souvent les levures ?
+
+\exo{}\diff{2} Quelle différence essentielle existe-t-il entre reproduction asexuée et
+reproduction sexuée ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Scissiparité et croissance}
+\exo{}\diff{2} Une population de $N_0=1$ bactérie subit $n=8$ divisions. Calculer la
+population finale.
+
+\exo{}\diff{3} Une population de bactéries passe de $N_0=1$ à $N=64$. Calculer le
+nombre de divisions $n$ subies.
+
+\exo{}\diff{3} Le temps de génération est de $25$ min. Calculer le nombre de divisions
+possibles en $2$ h ($120$ min), puis la population atteinte à partir d'une bactérie.
+
+\exo{}\diff{2} Pourquoi une bonne conservation des aliments au froid limite-t-elle la
+prolifération bactérienne ?
+
+\rubrique{Diversité des modes de reproduction}
+\exo{}\diff{3} Pourquoi la reproduction asexuée est-elle avantageuse pour coloniser
+rapidement un milieu favorable ?
+
+\exo{}\diff{3} Pourquoi la reproduction sexuée, bien que plus lente, peut-elle être
+avantageuse pour une espèce face à un changement de son environnement ?
+
+\exo{}\diff{2} Le bourgeonnement des levures est-il une reproduction sexuée ou
+asexuée ? Justifier.
+
+\exo{}\diff{3} Expliquer, en une phrase, pourquoi une infection bactérienne non traitée
+peut s'aggraver très rapidement.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[La scissiparité et la croissance bactérienne]
+\begin{enumerate}[label=\arabic*)]
+\item Définis la scissiparité.
+\item Pourquoi les cellules filles obtenues sont-elles génétiquement identiques à la
+cellule mère ?
+\item Une population initiale de $N_0=1$ bactérie subit $n=6$ divisions. Calcule la
+population finale.
+\item Explique pourquoi une bonne hygiène limite le développement d'une infection
+bactérienne.
+\end{enumerate}
+
+\sujetbac[Temps de génération et calculs]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la formule reliant la population $N$, la population initiale $N_0$ et le
+nombre de divisions $n$.
+\item Une bactérie a un temps de génération de $30$ min. Calcule le temps nécessaire
+pour $4$ divisions.
+\item Calcule la population obtenue après ces $4$ divisions, à partir d'une seule
+bactérie.
+\item Pourquoi dit-on que cette croissance est « exponentielle » plutôt que
+« proportionnelle » ?
+\end{enumerate}
+
+\sujetbac[Modes de reproduction des micro-organismes]
+\begin{enumerate}[label=\arabic*)]
+\item Comment se reproduisent le plus souvent les levures ?
+\item Dans quelles circonstances les levures peuvent-elles avoir recours à une
+reproduction sexuée ?
+\item Complète le tableau comparatif : nombre d'individus impliqués, type de
+descendants, pour la reproduction asexuée et la reproduction sexuée.
+\item Quel est l'avantage principal de la reproduction sexuée par rapport à la
+reproduction asexuée ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+La division d'une bactérie en deux cellules filles identiques.
+
+\corrige{de l'exercice 2}
+Car elles proviennent d'une seule cellule mère, sans mélange de matériel génétique avec
+un autre individu.
+
+\corrige{de l'exercice 3}
+$N=1\times2^4=16$.
+
+\corrige{de l'exercice 4}
+$N=10\times2^3=80$.
+
+\corrige{de l'exercice 5}
+$t=3\times20=60$ min.
+
+\corrige{de l'exercice 6}
+Par bourgeonnement.
+
+\corrige{de l'exercice 7}
+La reproduction asexuée n'implique qu'un seul individu et produit des clones ; la
+reproduction sexuée implique deux individus et produit des descendants génétiquement
+différents.
+
+\corrige{de l'exercice 8}
+$N=1\times2^8=256$.
+
+\corrige{de l'exercice 9}
+$64=2^n\Rightarrow n=6$ (car $2^6=64$).
+
+\corrige{de l'exercice 10}
+$n=120\div25=4{,}8$, soit $4$ divisions complètes possibles ; $N=1\times2^4=16$
+bactéries.
+
+\corrige{de l'exercice 11}
+Car le froid ralentit fortement le métabolisme et donc la division des bactéries,
+augmentant leur temps de génération.
+
+\corrige{de l'exercice 12}
+Car elle est très rapide et ne nécessite qu'un seul individu : une seule cellule peut
+suffire à occuper rapidement un milieu favorable.
+
+\corrige{de l'exercice 13}
+Car elle génère de la diversité génétique entre les descendants, ce qui augmente les
+chances qu'au moins certains individus soient adaptés à un environnement modifié.
+
+\corrige{de l'exercice 14}
+Une reproduction asexuée, car elle n'implique qu'un seul individu (la cellule mère).
+
+\corrige{de l'exercice 15}
+Car la population bactérienne croît de façon exponentielle : elle double à chaque
+division, ce qui produit très rapidement un grand nombre de bactéries.
+
+\corrige{du sujet 1}
+1) La division d'une bactérie en deux cellules filles identiques.\\
+2) Car elles proviennent d'une seule cellule mère, sans apport génétique d'un autre
+individu.\\
+3) $N=1\times2^6=64$.\\
+4) Car elle réduit le nombre initial de bactéries présentes, ralentissant d'autant la
+croissance exponentielle de la population.
+
+\corrige{du sujet 2}
+1) $N=N_0\times2^n$.\\
+2) $t=4\times30=120$ min.\\
+3) $N=1\times2^4=16$.\\
+4) Car la population est multipliée par $2$ à chaque division (multiplication
+répétée), et non augmentée d'une quantité fixe à chaque étape (ce qui serait
+proportionnel).
+
+\corrige{du sujet 3}
+1) Par bourgeonnement.\\
+2) En cas de stress ou de manque de nutriments.\\
+3) Asexuée : un individu, descendants identiques (clones). Sexuée : deux individus,
+descendants génétiquement différents.\\
+4) Elle génère de la diversité génétique, utile pour l'adaptation de l'espèce face aux
+changements de l'environnement.
+
+\end{multicols}
+\exercicesBanner
