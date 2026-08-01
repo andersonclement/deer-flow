@@ -1,1 +1,464 @@
 \chapter{Racines carrées}
+
+\noindent\textit{Quel nombre positif, multiplié par lui-même, donne $2$ ? La réponse,
+$\sqrt2$, n'est pas un nombre décimal : c'est une \textbf{racine carrée}. Dans ce chapitre,
+tu apprendras à simplifier une racine carrée, à effectuer des calculs avec des racines, à
+rendre rationnel un dénominateur, et à résoudre des équations du type $x^{2}=a$.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Définition et premières propriétés}
+
+\begin{definition}[Racine carrée]
+Pour $a\ge0$, la \textbf{racine carrée} de $a$, notée $\sqrt a$, est le nombre
+\textbf{positif} dont le carré vaut $a$ :
+\[
+\sqrt a\ge0 \quad\text{et}\quad \left(\sqrt a\right)^{2}=a.
+\]
+\end{definition}
+
+\begin{remarque}
+La racine carrée d'un nombre \textbf{négatif} n'existe pas. On a $\sqrt0=0$ et, pour $a>0$,
+$\sqrt a>0$. Beaucoup de racines carrées ne sont \textbf{pas} des nombres rationnels (par
+exemple $\sqrt2$, $\sqrt3$, $\sqrt5$, \ldots) : leur écriture décimale ne s'arrête jamais et
+ne se répète jamais.
+\end{remarque}
+
+\begin{exemple}
+$\sqrt{49}=7$ car $7^{2}=49$ ;\quad $\sqrt{0{,}25}=0{,}5$ car $0{,}5^{2}=0{,}25$ ;\quad
+$\sqrt2\approx1{,}414$ (valeur arrondie, car $\sqrt2$ n'est pas décimal).
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=1pt] (0,0) rectangle (2.4,2.4);
+\draw[onbblue,line width=1.1pt] (0,0) -- (2.4,2.4);
+\node[onbblue,anchor=south west] at (1,1.15) {\small $\sqrt2$};
+\node[below] at (1.2,-0.15) {\small côté $1$};
+\node[left,rotate=90] at (-0.15,1.2) {\small côté $1$};
+\end{tikzpicture}
+\fig{Figure — Dans un carré de côté $1$, la diagonale mesure exactement $\sqrt2$ (on le
+justifiera avec le théorème de Pythagore).}
+\end{illus}
+
+\section{Propriétés opératoires}
+
+\begin{propriete}[Racine carrée d'un produit, d'un quotient]
+Pour $a\ge0$ et $b\ge0$ : $\sqrt{a\times b}=\sqrt a\times\sqrt b$. Pour $a\ge0$ et $b>0$ :
+$\sqrt{\dfrac ab}=\dfrac{\sqrt a}{\sqrt b}$.
+\end{propriete}
+
+\begin{exemple}
+$\sqrt{4\times9}=\sqrt{36}=6$, et $\sqrt4\times\sqrt9=2\times3=6$ : les deux calculs
+coïncident bien. \quad $\sqrt{\dfrac{25}9}=\dfrac{\sqrt{25}}{\sqrt9}=\dfrac53$.
+\end{exemple}
+
+\begin{remarque}
+\textbf{Attention} : en général, $\sqrt{a+b}\ne\sqrt a+\sqrt b$. Par exemple
+$\sqrt{9+16}=\sqrt{25}=5$, alors que $\sqrt9+\sqrt{16}=3+4=7\ne5$. La racine carrée d'une
+somme n'est \textbf{pas} la somme des racines carrées.
+\end{remarque}
+
+\section{Simplifier une racine carrée}
+
+\begin{propriete}[Simplification]
+Pour simplifier $\sqrt n$, on cherche le \textbf{plus grand carré parfait} qui divise $n$
+(c'est-à-dire le plus grand nombre de la forme $k^{2}$ divisant $n$), on écrit
+$n=k^{2}\times m$, puis $\sqrt n=\sqrt{k^{2}\times m}=k\sqrt m$.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=2.6cm,minimum height=0.7cm] (a1) {$72=36\times2$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=3.4cm,minimum height=0.7cm,right=12mm of a1] (a2) {$\sqrt{72}=\sqrt{36}\times\sqrt2$};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=2cm,minimum height=0.7cm,right=12mm of a2] (a3) {$6\sqrt2$};
+\draw[->,onbmuted,line width=1pt] (a1) -- (a2);
+\draw[->,onbmuted,line width=1pt] (a2) -- (a3);
+\end{tikzpicture}
+\fig{Figure — Simplifier $\sqrt{72}$ : on factorise $72$ par le plus grand carré parfait
+possible ($36$), puis on sépare la racine.}
+\end{illus}
+
+\begin{exemple}
+$\sqrt{75}=\sqrt{25\times3}=5\sqrt3$ ;\quad $\sqrt{45}=\sqrt{9\times5}=3\sqrt5$.
+\end{exemple}
+
+\begin{aretenir}
+Une racine carrée simplifiée est \textbf{réduite} lorsque le nombre sous le radical ne
+contient plus aucun facteur carré parfait (autre que $1$). Pour ne pas oublier de facteur,
+on peut décomposer $n$ en produit de facteurs premiers.
+\end{aretenir}
+
+\section{Comparer et encadrer des racines carrées}
+
+\begin{propriete}[Croissance de la racine carrée]
+Pour $a,b\ge0$ : $a<b \iff \sqrt a<\sqrt b$. Comparer deux racines carrées revient donc à
+comparer les nombres sous le radical.
+\end{propriete}
+
+\begin{exemple}
+Comparer $\sqrt{50}$ et $7$ : comme $7=\sqrt{49}$ et $50>49$, on a $\sqrt{50}>\sqrt{49}=7$.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\draw[onbline,line width=1pt] (-0.3,0) -- (8.3,0);
+\foreach \x/\lbl in {0/1,2/2,4/3,6/4,8/5}
+  \draw[onbmuted] (\x,0.08) -- (\x,-0.08) node[below] {\small $\lbl$};
+\filldraw[onbo] (2.83,0) circle (2.2pt) node[above] {\small $\sqrt2$};
+\filldraw[onbgreen] (3.46,0) circle (2.2pt) node[above] {\small $\sqrt3$};
+\filldraw[onbblue] (4.47,0) circle (2.2pt) node[above] {\small $\sqrt5$};
+\filldraw[onbink] (5.29,0) circle (2.2pt) node[above] {\small $\sqrt7$};
+\end{tikzpicture}
+\fig{Figure — Placement approché de $\sqrt2,\sqrt3,\sqrt5,\sqrt7$ sur la droite graduée :
+chacune est encadrée par deux entiers consécutifs.}
+\end{illus}
+
+\section{Rendre rationnel un dénominateur}
+
+\begin{propriete}[Dénominateur rationnel]
+Pour supprimer une racine carrée au dénominateur, on multiplie le numérateur et le
+dénominateur par cette racine carrée : pour $b>0$,
+\[
+\frac{a}{\sqrt b}=\frac{a\times\sqrt b}{\sqrt b\times\sqrt b}=\frac{a\sqrt b}{b}.
+\]
+\end{propriete}
+
+\begin{exemple}
+$\dfrac1{\sqrt3}=\dfrac{\sqrt3}{3}$ ;\quad $\dfrac2{\sqrt5}=\dfrac{2\sqrt5}5$.
+\end{exemple}
+
+\section{Résoudre l'équation \texorpdfstring{$x^{2}=a$}{x²=a}}
+
+\begin{propriete}[Solutions de $x^{2}=a$]
+Soit $a$ un nombre donné.
+\begin{itemize}
+\item Si $a>0$, l'équation $x^{2}=a$ a \textbf{deux} solutions : $x=\sqrt a$ et
+$x=-\sqrt a$.
+\item Si $a=0$, l'équation $x^{2}=0$ a une \textbf{unique} solution : $x=0$.
+\item Si $a<0$, l'équation $x^{2}=a$ n'a \textbf{aucune} solution (un carré n'est jamais
+négatif).
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\draw[onbline,line width=1pt] (-0.3,0) -- (6.3,0);
+\foreach \x/\lbl in {0/-3,1.5/-1{,}5,3/0,4.5/1{,}5,6/3}
+  \draw[onbmuted] (\x,0.08) -- (\x,-0.08) node[below] {\small $\lbl$};
+\filldraw[onbo] (1.55,0) circle (2.2pt) node[above] {\small $-\sqrt a$};
+\filldraw[onbo] (4.45,0) circle (2.2pt) node[above] {\small $\sqrt a$};
+\filldraw[onbmuted] (3,0) circle (1.4pt);
+\end{tikzpicture}
+\fig{Figure — Les deux solutions de $x^{2}=a$ (pour $a>0$) sont symétriques par rapport à
+$0$.}
+\end{illus}
+
+\begin{exemple}
+$x^{2}=49$ a pour solutions $x=7$ et $x=-7$ ;\quad $x^{2}=5$ a pour solutions $x=\sqrt5$ et
+$x=-\sqrt5$ ;\quad $x^{2}=-4$ n'a aucune solution.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Définition.} $\sqrt a$ existe pour $a\ge0$ ; $\sqrt a\ge0$ et $(\sqrt a)^{2}=a$.\\[4pt]
+\textbf{Produit/quotient.} $\sqrt{ab}=\sqrt a\sqrt b$ ($a,b\ge0$) ;\
+$\sqrt{a/b}=\sqrt a/\sqrt b$ ($a\ge0,b>0$). Mais $\sqrt{a+b}\ne\sqrt a+\sqrt b$ en
+général !\\[4pt]
+\textbf{Simplifier.} $n=k^{2}\times m\Rightarrow\sqrt n=k\sqrt m$ (factoriser par le plus
+grand carré parfait).\\[4pt]
+\textbf{Comparer.} $a<b\iff\sqrt a<\sqrt b$ (pour $a,b\ge0$).\\[4pt]
+\textbf{Dénominateur rationnel.} $\dfrac a{\sqrt b}=\dfrac{a\sqrt b}b$.\\[4pt]
+\textbf{Équation $x^{2}=a$.} Deux solutions $\pm\sqrt a$ si $a>0$ ; une solution $0$ si
+$a=0$ ; aucune solution si $a<0$.\\[4pt]
+\textbf{Piège fréquent.} Ne jamais écrire $\sqrt{a+b}=\sqrt a+\sqrt b$, ni confondre
+$\sqrt{a^{2}}$ (qui vaut $|a|$) avec $a$.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Simplifier une racine carrée}
+Chercher le plus grand carré parfait ($4,9,16,25,36,\ldots$) qui divise le nombre sous le
+radical, puis séparer la racine.
+\begin{exemple}
+$\sqrt{200}=\sqrt{100\times2}=10\sqrt2$.
+\end{exemple}
+
+\methode{Additionner ou soustraire des racines carrées}
+Simplifier chaque racine, puis regrouper celles qui ont le \textbf{même} nombre sous le
+radical, comme pour des termes en $x$.
+\begin{exemple}
+$\sqrt{12}+\sqrt{27}=2\sqrt3+3\sqrt3=5\sqrt3$.
+\end{exemple}
+
+\methode{Multiplier ou diviser des racines carrées}
+Utiliser $\sqrt a\times\sqrt b=\sqrt{ab}$ et $\sqrt a\div\sqrt b=\sqrt{a/b}$, puis simplifier
+le résultat.
+\begin{exemple}
+$\sqrt8\times\sqrt{18}=\sqrt{144}=12$.
+\end{exemple}
+
+\methode{Rendre rationnel un dénominateur}
+Multiplier numérateur et dénominateur par la racine carrée présente au dénominateur.
+\begin{exemple}
+$\dfrac3{2\sqrt5}=\dfrac{3\times\sqrt5}{2\sqrt5\times\sqrt5}=\dfrac{3\sqrt5}{10}$.
+\end{exemple}
+
+\methode{Comparer deux nombres contenant des racines carrées}
+Élever les deux nombres au carré (s'ils sont positifs), puis comparer les résultats.
+\begin{exemple}
+Comparer $3\sqrt2$ et $4$ : $(3\sqrt2)^{2}=9\times2=18$ et $4^{2}=16$. Comme $18>16$,
+$3\sqrt2>4$.
+\end{exemple}
+
+\methode{Résoudre une équation du type $x^{2}=a$}
+Regarder le signe de $a$ : si $a>0$, les solutions sont $\pm\sqrt a$ (simplifiée si
+possible) ; si $a=0$, l'unique solution est $0$ ; si $a<0$, il n'y a pas de solution.
+\begin{exemple}
+$x^{2}=20$ : $x=\sqrt{20}=2\sqrt5$ ou $x=-2\sqrt5$.
+\end{exemple}
+
+\methode{Résoudre un problème géométrique avec des racines carrées}
+Traduire l'énoncé par une égalité faisant intervenir un carré (aire, égalité de Pythagore\ldots),
+puis résoudre en utilisant une racine carrée.
+\begin{exemple}
+Un carré a une aire de $32\text{ cm}^{2}$. Son côté $c$ vérifie $c^{2}=32$, donc
+$c=\sqrt{32}=4\sqrt2\approx5{,}7$ cm (le côté est positif, on ne garde que la solution
+positive).
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Simplifier des racines carrées}
+\exo{}\diff{1} Simplifier : $\sqrt{72}$,\ $\sqrt{98}$,\ $\sqrt{200}$.
+
+\exo{}\diff{1} Simplifier : $\sqrt{75}$,\ $\sqrt{45}$.
+
+\exo{}\diff{2} Simplifier : $\sqrt{48}$,\ $\sqrt{63}$.
+
+\exo{}\diff{2} Simplifier : $\sqrt{80}$,\ $\sqrt{175}$.
+
+\rubrique{Opérations sur les racines carrées}
+\exo{}\diff{1} Calculer $\sqrt8\times\sqrt{18}$.
+
+\exo{}\diff{2} Calculer $\sqrt{12}+\sqrt{27}$.
+
+\exo{}\diff{2} Calculer $\sqrt{50}-\sqrt{18}$.
+
+\exo{}\diff{1} Calculer $\sqrt{20}\times\sqrt5$.
+
+\rubrique{Rendre rationnel un dénominateur, comparer}
+\exo{}\diff{1} Rendre rationnel le dénominateur de $\dfrac1{\sqrt3}$ et de $\dfrac1{\sqrt5}$.
+
+\exo{}\diff{2} Rendre rationnel le dénominateur de $\dfrac2{\sqrt3}$ et de
+$\dfrac3{2\sqrt5}$.
+
+\exo{}\diff{2} Comparer $\sqrt{50}$ et $7$.
+
+\exo{}\diff{2} Comparer $3\sqrt2$ et $4$.
+
+\rubrique{Équation $x^2=a$ et problèmes}
+\exo{}\diff{1} Résoudre : $x^{2}=49$ ;\ $x^{2}=5$ ;\ $x^{2}=-4$ ;\ $x^{2}=0$.
+
+\exo{}\diff{1} Résoudre : $x^{2}=81$ ;\ $x^{2}=20$.
+
+\exo{}\diff{2} Un terrain carré a une aire de $50\text{ m}^2$. Calculer la longueur exacte
+du côté (sous forme simplifiée), puis une valeur arrondie au dixième de mètre.
+
+\exo{}\diff{2} Un carré a une aire de $72\text{ cm}^2$. Donner la longueur exacte du côté
+sous la forme $a\sqrt b$, puis une valeur arrondie au millimètre (en cm).
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Simplifier}
+\exo{}\diff{1} Simplifier : $\sqrt{54}$,\ $\sqrt{90}$.
+
+\exo{}\diff{1} Simplifier : $\sqrt{32}$,\ $\sqrt{20}$.
+
+\exo{}\diff{2} Simplifier : $\sqrt{28}$,\ $\sqrt{44}$.
+
+\exo{}\diff{2} Simplifier $\sqrt{500}$.
+
+\exo{}\diff{2} Simplifier $\sqrt{162}$.
+
+\rubrique{Opérations}
+\exo{}\diff{1} Calculer $\sqrt3\times\sqrt{12}$.
+
+\exo{}\diff{1} Calculer $\sqrt2\times\sqrt8$.
+
+\exo{}\diff{2} Calculer $\sqrt{45}-\sqrt5$.
+
+\exo{}\diff{2} Calculer $\sqrt8+\sqrt2$.
+
+\exo{}\diff{2} Calculer $\sqrt{99}\div\sqrt{11}$.
+
+\rubrique{Rationaliser, comparer, encadrer}
+\exo{}\diff{2} Rendre rationnel le dénominateur de $\dfrac5{\sqrt2}$.
+
+\exo{}\diff{2} Comparer $\sqrt{75}$ et $8{,}5$.
+
+\exo{}\diff{3} Comparer $\sqrt2+\sqrt3$ et $\sqrt5$.
+
+\exo{}\diff{2} Encadrer $\sqrt{30}$ entre deux entiers consécutifs.
+
+\rubrique{Équations $x^2=a$}
+\exo{}\diff{1} Résoudre $x^{2}=64$.
+
+\exo{}\diff{2} Résoudre $x^{2}=7$.
+
+\exo{}\diff{1} Résoudre $x^{2}=-9$.
+
+\exo{}\diff{1} Résoudre $x^{2}=100$.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un jardin carré, à Bafang, a une aire de $98\text{ m}^2$. Calculer la
+longueur exacte de son côté, sous forme simplifiée.
+
+\exo{}\diff{2} Une salle de classe carrée a une aire de $121\text{ m}^2$. Calculer son côté.
+
+\exo{}\diff{2} Un mouchoir carré a un côté de $\sqrt{18}$ cm. Donner une valeur arrondie au
+dixième de cm.
+
+\exo{}\diff{2} La diagonale d'un carré de côté $c$ mesure $c\sqrt2$. Calculer la diagonale
+exacte d'un carré de côté $5$ cm, puis une valeur arrondie au mm.
+
+\exo{}\diff{3} Un bassin carré a un périmètre de $4\sqrt{50}$ m. Calculer l'aire exacte de
+ce bassin.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[racines carrées et jardin carré — Bafang]
+\begin{enumerate}[label=\arabic*)]
+\item Simplifier $\sqrt{180}$.
+\item Calculer et simplifier $A=\sqrt{20}+\sqrt{45}$.
+\item Rendre rationnel le dénominateur de $\dfrac4{\sqrt5}$.
+\item Un jardin carré, à Bafang, a une aire de $128\text{ m}^2$.
+\begin{enumerate}[label=\alph*)]
+\item Donner la longueur exacte du côté sous la forme $a\sqrt b$.
+\item En donner une valeur arrondie au dixième de mètre.
+\item Calculer le périmètre exact du jardin (sous la forme $a\sqrt b$), puis une valeur
+arrondie au dixième de mètre.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[racines carrées et table carrée]
+\begin{enumerate}[label=\arabic*)]
+\item Simplifier $\sqrt{288}$.
+\item Calculer $B=\sqrt3\times\sqrt{27}$.
+\item Résoudre l'équation $x^{2}=45$.
+\item Une table carrée a un côté de $90$ cm. On admet que la diagonale d'un carré de côté
+$c$ mesure $c\sqrt2$.
+\begin{enumerate}[label=\alph*)]
+\item Calculer la longueur exacte de la diagonale de cette table.
+\item En donner une valeur arrondie au centimètre.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[racines carrées et bassin carré — Maroua]
+\begin{enumerate}[label=\arabic*)]
+\item Simplifier $\sqrt{147}$.
+\item Calculer $C=\sqrt2\times\sqrt{50}$.
+\item Comparer $\sqrt{90}$ et $9{,}5$.
+\item Un bassin carré, à Maroua, a une aire de $162\text{ m}^2$.
+\begin{enumerate}[label=\alph*)]
+\item Donner la longueur exacte du côté sous la forme $a\sqrt b$, puis une valeur arrondie
+au dixième de mètre.
+\item Calculer le périmètre du bassin, arrondi au mètre près.
+\item Le mètre linéaire de grillage coûte $2\,500$ FCFA. Calculer le coût total de la
+clôture (en utilisant le périmètre arrondi précédent).
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\sqrt{72}=\sqrt{36\times2}=6\sqrt2$ ;\ $\sqrt{98}=\sqrt{49\times2}=7\sqrt2$ ;\
+$\sqrt{200}=\sqrt{100\times2}=10\sqrt2$.
+
+\corrige{de l'exercice 2}
+$\sqrt{75}=\sqrt{25\times3}=5\sqrt3$ ;\ $\sqrt{45}=\sqrt{9\times5}=3\sqrt5$.
+
+\corrige{de l'exercice 3}
+$\sqrt{48}=\sqrt{16\times3}=4\sqrt3$ ;\ $\sqrt{63}=\sqrt{9\times7}=3\sqrt7$.
+
+\corrige{de l'exercice 4}
+$\sqrt{80}=\sqrt{16\times5}=4\sqrt5$ ;\ $\sqrt{175}=\sqrt{25\times7}=5\sqrt7$.
+
+\corrige{de l'exercice 5}
+$\sqrt8\times\sqrt{18}=\sqrt{144}=12$.
+
+\corrige{de l'exercice 6}
+$\sqrt{12}+\sqrt{27}=2\sqrt3+3\sqrt3=5\sqrt3$.
+
+\corrige{de l'exercice 7}
+$\sqrt{50}-\sqrt{18}=5\sqrt2-3\sqrt2=2\sqrt2$.
+
+\corrige{de l'exercice 8}
+$\sqrt{20}\times\sqrt5=\sqrt{100}=10$.
+
+\corrige{de l'exercice 9}
+$\dfrac1{\sqrt3}=\dfrac{\sqrt3}3$ ;\ $\dfrac1{\sqrt5}=\dfrac{\sqrt5}5$.
+
+\corrige{de l'exercice 10}
+$\dfrac2{\sqrt3}=\dfrac{2\sqrt3}3$ ;\ $\dfrac3{2\sqrt5}=\dfrac{3\sqrt5}{10}$.
+
+\corrige{de l'exercice 11}
+$7=\sqrt{49}$ et $50>49$, donc $\sqrt{50}>7$.
+
+\corrige{de l'exercice 12}
+$(3\sqrt2)^{2}=18$ et $4^{2}=16$. Comme $18>16$, $3\sqrt2>4$.
+
+\corrige{de l'exercice 13}
+$x^{2}=49\Rightarrow x=7$ ou $x=-7$ ;\ $x^{2}=5\Rightarrow x=\sqrt5$ ou $x=-\sqrt5$ ;\
+$x^{2}=-4$ : aucune solution ;\ $x^{2}=0\Rightarrow x=0$.
+
+\corrige{de l'exercice 14}
+$x^{2}=81\Rightarrow x=9$ ou $x=-9$ ;\ $x^{2}=20\Rightarrow x=\sqrt{20}=2\sqrt5$ ou
+$x=-2\sqrt5$.
+
+\corrige{de l'exercice 15}
+Côté $=\sqrt{50}=5\sqrt2$ m $\approx7{,}1$ m (valeur arrondie au dixième).
+
+\corrige{de l'exercice 16}
+Côté $=\sqrt{72}=6\sqrt2$ cm $\approx8{,}5$ cm (arrondi au mm près).
+
+\corrige{du sujet 1}
+1) $\sqrt{180}=\sqrt{36\times5}=6\sqrt5$.\\
+2) $A=\sqrt{20}+\sqrt{45}=2\sqrt5+3\sqrt5=5\sqrt5$.\\
+3) $\dfrac4{\sqrt5}=\dfrac{4\sqrt5}5$.\\
+4a) Côté $=\sqrt{128}=\sqrt{64\times2}=8\sqrt2$ m.\\
+4b) $8\sqrt2\approx11{,}3$ m.\\
+4c) Périmètre $=4\times8\sqrt2=32\sqrt2$ m $\approx45{,}3$ m.
+
+\corrige{du sujet 2}
+1) $\sqrt{288}=\sqrt{144\times2}=12\sqrt2$.\\
+2) $B=\sqrt3\times\sqrt{27}=\sqrt{81}=9$.\\
+3) $x^{2}=45\Rightarrow x=\sqrt{45}=3\sqrt5$ ou $x=-3\sqrt5$.\\
+4a) Diagonale $=90\sqrt2$ cm.\\
+4b) $90\sqrt2\approx127{,}3$, soit environ $127$ cm.
+
+\corrige{du sujet 3}
+1) $\sqrt{147}=\sqrt{49\times3}=7\sqrt3$.\\
+2) $C=\sqrt2\times\sqrt{50}=\sqrt{100}=10$.\\
+3) $9{,}5^{2}=90{,}25>90$, donc $\sqrt{90}<9{,}5$.\\
+4a) Côté $=\sqrt{162}=\sqrt{81\times2}=9\sqrt2$ m $\approx12{,}7$ m.\\
+4b) Périmètre $=4\times9\sqrt2=36\sqrt2\approx50{,}9$ m, soit environ $51$ m.\\
+4c) Coût $\approx51\times2\,500=127\,500$ FCFA.
+
+\end{multicols}
+\exercicesBanner
