@@ -1,1 +1,590 @@
 \chapter{Statistiques}
+
+\noindent\textit{Sondages, résultats scolaires, enquêtes de quartier : la statistique
+permet d'organiser des données, de les résumer par quelques nombres (moyenne, médiane) et
+de les représenter par des graphiques. Ce chapitre reprend le vocabulaire de base et les
+outils indispensables pour traiter une série statistique.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Vocabulaire statistique}
+
+\begin{definition}[Vocabulaire de base]
+La \textbf{population} est l'ensemble sur lequel porte une étude ; un \textbf{individu} en
+est un élément. Le \textbf{caractère} étudié peut être : \textbf{qualitatif} (valeurs non
+numériques, ex. un moyen de transport), \textbf{quantitatif discret} (valeurs numériques
+isolées, ex. un nombre d'enfants) ou \textbf{quantitatif continu} (valeurs regroupées en
+classes, ex. une taille). L'\textbf{effectif} d'une valeur (ou modalité) est le nombre
+d'individus qui la possèdent ; l'\textbf{effectif total} $N$ est le nombre total
+d'individus. La \textbf{fréquence} d'une valeur est le quotient de son effectif par
+l'effectif total (souvent exprimée en \%).
+\end{definition}
+
+\begin{exemple}
+On interroge $200$ élèves d'un établissement de Yaoundé sur leur moyen de transport
+habituel.
+\begin{center}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Moyen de transport & Bus & Vélo & Marche & Voiture \\
+\midrule
+Effectif & 80 & 50 & 40 & 30 \\
+Fréquence & $40\,\%$ & $25\,\%$ & $20\,\%$ & $15\,\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Ici, le caractère « moyen de transport » est \textbf{qualitatif} ; l'effectif total est
+$N=200$.
+\end{exemple}
+
+\begin{remarque}
+La somme des effectifs vaut toujours l'effectif total $N$ ; la somme des fréquences vaut
+toujours $1$ (ou $100\,\%$).
+\end{remarque}
+
+\section{Effectifs et fréquences cumulés}
+
+\begin{definition}[Effectifs et fréquences cumulés croissants]
+Pour un caractère quantitatif, l'\textbf{effectif cumulé croissant} (ECC) d'une valeur est
+la somme des effectifs de cette valeur et de toutes les valeurs \textbf{inférieures}. La
+\textbf{fréquence cumulée croissante} (FCC) se calcule de la même façon avec les
+fréquences.
+\end{definition}
+
+\begin{exemple}
+Une enquête est menée auprès de $25$ familles d'un quartier de Douala sur leur nombre
+d'enfants.
+\begin{center}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Nombre d'enfants & 0 & 1 & 2 & 3 & 4 \\
+\midrule
+Effectif & 3 & 7 & 8 & 5 & 2 \\
+Fréquence & $12\,\%$ & $28\,\%$ & $32\,\%$ & $20\,\%$ & $8\,\%$ \\
+ECC & 3 & 10 & 18 & 23 & 25 \\
+FCC & $12\,\%$ & $40\,\%$ & $72\,\%$ & $92\,\%$ & $100\,\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,bar width=13pt,width=8cm,height=5.6cm,
+  xlabel={\small Nombre d'enfants},ylabel={\small Effectif},
+  xtick=data,ymin=0,ymax=9.5,axis lines=left,
+  enlarge x limits=0.15,
+  nodes near coords,nodes near coords style={font=\scriptsize},
+  tick label style={font=\scriptsize}]
+\addplot[fill=onbo,draw=onbo] coordinates {(0,3) (1,7) (2,8) (3,5) (4,2)};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — Diagramme en bâtons : nombre d'enfants dans les 25 familles interrogées.}
+\end{illus}
+
+\begin{remarque}
+Le dernier effectif cumulé croissant est toujours égal à l'effectif total $N$ ; la dernière
+fréquence cumulée croissante vaut toujours $100\,\%$.
+\end{remarque}
+
+\section{Regroupement en classes}
+
+\begin{definition}[Classes]
+Lorsqu'un caractère quantitatif continu prend beaucoup de valeurs différentes, on les
+regroupe en \textbf{classes} de la forme $[a\,;b[$. Le \textbf{centre de la classe},
+$\frac{a+b}{2}$, sert de valeur représentative pour les calculs.
+\end{definition}
+
+\begin{exemple}
+Tailles (en cm) de $40$ élèves d'un collège, regroupées en classes d'amplitude $10$ :
+\begin{center}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Classe (cm) & $[140\,;150[$ & $[150\,;160[$ & $[160\,;170[$ & $[170\,;180[$ \\
+\midrule
+Effectif & 6 & 14 & 15 & 5 \\
+Fréquence & $15\,\%$ & $35\,\%$ & $37{,}5\,\%$ & $12{,}5\,\%$ \\
+ECC & 6 & 20 & 35 & 40 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[scale=1]
+\draw[onbmuted,->] (-0.3,0) -- (4.5,0);
+\draw[onbmuted,->] (0,-0.2) -- (0,3.4);
+\node[right,font=\scriptsize] at (4.5,0) {Taille (cm)};
+\draw[fill=onbo!55,draw=onbo,line width=0.8pt] (0,0) rectangle (1,1.2);
+\draw[fill=onbo!55,draw=onbo,line width=0.8pt] (1,0) rectangle (2,2.8);
+\draw[fill=onbo!55,draw=onbo,line width=0.8pt] (2,0) rectangle (3,3.0);
+\draw[fill=onbo!55,draw=onbo,line width=0.8pt] (3,0) rectangle (4,1.0);
+\foreach \x/\lbl in {0/140,1/150,2/160,3/170,4/180}
+  \node[below,font=\scriptsize] at (\x,0) {\lbl};
+\node[above,font=\scriptsize] at (0.5,1.2) {6};
+\node[above,font=\scriptsize] at (1.5,2.8) {14};
+\node[above,font=\scriptsize] at (2.5,3.0) {15};
+\node[above,font=\scriptsize] at (3.5,1.0) {5};
+\end{tikzpicture}
+\fig{Figure — Histogramme : tailles de 40 élèves, regroupées en classes de 10 cm.}
+\end{illus}
+
+\begin{remarque}
+Quand toutes les classes ont la \textbf{même amplitude}, la hauteur de chaque rectangle de
+l'histogramme est proportionnelle à l'effectif de la classe.
+\end{remarque}
+
+\section{Représentations graphiques}
+
+\begin{propriete}[Choisir une représentation]
+On utilise généralement : un \textbf{diagramme en bâtons} pour un caractère quantitatif
+discret ; un \textbf{diagramme circulaire} (ou semi-circulaire) pour un caractère
+qualitatif, en calculant l'angle de chaque secteur par $\text{angle}=\text{fréquence}\times360^{\circ}$ ;
+un \textbf{histogramme} pour un caractère quantitatif continu regroupé en classes.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[fill=onbo,draw=white,line width=1pt] (0,0) -- (90:1.8) arc (90:-54:1.8) -- cycle;
+\draw[fill=onbgreen,draw=white,line width=1pt] (0,0) -- (-54:1.8) arc (-54:-144:1.8) -- cycle;
+\draw[fill=onbblue,draw=white,line width=1pt] (0,0) -- (-144:1.8) arc (-144:-216:1.8) -- cycle;
+\draw[fill=onbink,draw=white,line width=1pt] (0,0) -- (-216:1.8) arc (-216:-270:1.8) -- cycle;
+\node[white,font=\scriptsize\bfseries] at (18:1.15) {40\%};
+\node[white,font=\scriptsize\bfseries] at (-99:1.15) {25\%};
+\node[white,font=\scriptsize\bfseries] at (-180:1.15) {20\%};
+\node[white,font=\scriptsize\bfseries] at (-243:1.15) {15\%};
+\foreach \x/\c/\t in {-2.7/onbo/Bus,-1.1/onbgreen/Vélo,0.5/onbblue/Marche,2.1/onbink/Voiture} {
+  \draw[fill=\c,draw=none] (\x,-2.35) rectangle ++(0.22,0.22);
+  \node[right,font=\scriptsize] at (\x+0.28,-2.24) {\t};
+}
+\end{tikzpicture}
+\fig{Figure — Diagramme circulaire : moyen de transport des 200 élèves interrogés.}
+\end{illus}
+
+\begin{exemple}
+Pour la catégorie « Bus » (fréquence $40\,\%$) : angle $=0{,}40\times360^{\circ}=144^{\circ}$.
+Pour « Voiture » (fréquence $15\,\%$) : angle $=0{,}15\times360^{\circ}=54^{\circ}$.
+\end{exemple}
+
+\begin{remarque}
+Dans un diagramme circulaire, la somme des angles de tous les secteurs vaut toujours
+$360^{\circ}$ (comme la somme des fréquences vaut toujours $100\,\%$).
+\end{remarque}
+
+\section{Moyenne}
+
+\begin{definition}[Moyenne d'une série statistique]
+La \textbf{moyenne} d'une série de valeurs $x_1,x_2,\ldots,x_p$ d'effectifs
+$n_1,n_2,\ldots,n_p$ et d'effectif total $N=n_1+n_2+\cdots+n_p$ est :
+\[
+\bar{x}=\frac{n_1x_1+n_2x_2+\cdots+n_px_p}{N}
+\]
+\end{definition}
+
+\begin{exemple}
+Reprenons le nombre d'enfants des $25$ familles (section précédente) :
+\[
+\bar{x}=\frac{3\times0+7\times1+8\times2+5\times3+2\times4}{25}=\frac{0+7+16+15+8}{25}=\frac{46}{25}=1{,}84.
+\]
+\end{exemple}
+
+\begin{propriete}[Moyenne pondérée par des coefficients]
+Lorsque chaque valeur $x_i$ est affectée d'un \textbf{coefficient} $c_i$ (et non d'un
+effectif), la moyenne pondérée est $\bar{x}=\dfrac{c_1x_1+c_2x_2+\cdots+c_px_p}{c_1+c_2+\cdots+c_p}$.
+\end{propriete}
+
+\begin{exemple}
+Notes obtenues à trois devoirs, avec leurs coefficients : Devoir 1 : $12$ (coeff. $2$) ;
+Devoir 2 : $15$ (coeff. $1$) ; Devoir 3 : $9$ (coeff. $3$).
+\[
+\bar{x}=\frac{12\times2+15\times1+9\times3}{2+1+3}=\frac{24+15+27}{6}=\frac{66}{6}=11.
+\]
+\end{exemple}
+
+\begin{remarque}
+Une moyenne pondérée par des effectifs et une moyenne pondérée par des coefficients se
+calculent exactement de la même façon : on somme les produits (valeur $\times$ poids), et on
+divise par la somme des poids.
+\end{remarque}
+
+\section{Médiane et étendue}
+
+\begin{definition}[Médiane et étendue]
+La \textbf{médiane} d'une série ordonnée est une valeur qui partage la série en deux
+groupes de même effectif : au moins la moitié des valeurs lui sont inférieures ou égales,
+et au moins la moitié lui sont supérieures ou égales. L'\textbf{étendue} est la différence
+entre la plus grande et la plus petite valeur de la série.
+\end{definition}
+
+\begin{propriete}[Calculer une médiane]
+On \textbf{ordonne} d'abord la série. Si l'effectif total $N$ est \textbf{impair}, la
+médiane est la valeur à la position $\dfrac{N+1}{2}$. Si $N$ est \textbf{pair}, la médiane
+est la \textbf{moyenne} des deux valeurs aux positions $\dfrac{N}{2}$ et $\dfrac{N}{2}+1$.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=1pt] (0,0) -- (8,0);
+\foreach \i/\v in {0/158,1/163,2/165,3/168,4/169,5/170,6/171,7/172,8/175} {
+  \draw[onbline,line width=0.8pt] (\i,0.1)--(\i,-0.1);
+  \node[below,font=\scriptsize] at (\i,-0.35) {\v};
+}
+\filldraw[onbo] (4,0) circle(4pt);
+\node[above,onbo,font=\small\bfseries] at (4,0.35) {médiane};
+\draw[onbmuted,<->] (0,-0.9) -- (3.85,-0.9);
+\node[onbmuted,font=\scriptsize,below] at (2,-0.9) {4 valeurs};
+\draw[onbmuted,<->] (4.15,-0.9) -- (8,-0.9);
+\node[onbmuted,font=\scriptsize,below] at (6,-0.9) {4 valeurs};
+\end{tikzpicture}
+\fig{Figure — Série ordonnée de 9 tailles : la médiane (169) sépare deux groupes de 4 valeurs.}
+\end{illus}
+
+\begin{exemple}
+Tailles (en cm) de $9$ joueurs, déjà ordonnées : $158$, $163$, $165$, $168$, $169$, $170$,
+$171$, $172$, $175$.
+$N=9$ est impair, la médiane est à la position $\frac{9+1}{2}=5$ : médiane $=169$ cm.
+Étendue $=175-158=17$ cm.
+\end{exemple}
+
+\begin{remarque}
+La médiane est \textbf{peu sensible} aux valeurs extrêmes, contrairement à la moyenne : elle
+est souvent préférée pour résumer une série contenant des valeurs très éloignées des
+autres.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Vocabulaire.} Population, individu, caractère (qualitatif / quantitatif discret ou
+continu), effectif, effectif total $N$, fréquence $=$ effectif $\div\, N$.\\[4pt]
+\textbf{Cumulés.} ECC/FCC d'une valeur $=$ somme des effectifs/fréquences de cette valeur et
+des valeurs inférieures ; dernier ECC $=N$, dernière FCC $=100\,\%$.\\[4pt]
+\textbf{Représentations.} Bâtons (discret), circulaire (qualitatif, angle $=$ fréquence
+$\times360^{\circ}$), histogramme (classes, amplitudes égales $\Rightarrow$ hauteur
+$\propto$ effectif).\\[4pt]
+\textbf{Moyenne.} $\bar{x}=\dfrac{\sum(\text{valeur}\times\text{poids})}{\sum\text{poids}}$
+(poids $=$ effectifs ou coefficients).\\[4pt]
+\textbf{Médiane.} Série ordonnée ; $N$ impair $\Rightarrow$ position $\frac{N+1}{2}$ ; $N$
+pair $\Rightarrow$ moyenne des valeurs aux positions $\frac N2$ et $\frac N2+1$.\\[4pt]
+\textbf{Piège fréquent.} Ne pas oublier d'\textbf{ordonner} la série avant de chercher la
+médiane : la position dans le tableau brut n'a aucun rapport avec la médiane.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Construire un tableau d'effectifs et de fréquences à partir d'une liste brute}
+Recenser toutes les valeurs différentes, compter combien de fois chacune apparaît
+(effectif), puis diviser chaque effectif par l'effectif total pour obtenir la fréquence.
+\begin{exemple}
+Notes : $12$, $15$, $12$, $9$, $15$, $15$, $12$, $9$, $18$, $12$. Tableau : $9\to2$
+($20\,\%$), $12\to4$ ($40\,\%$),
+$15\to3$ ($30\,\%$), $18\to1$ ($10\,\%$) ; effectif total $=10$.
+\end{exemple}
+
+\methode{Calculer les effectifs et fréquences cumulés croissants}
+Additionner progressivement les effectifs (ou les fréquences) de la plus petite valeur à
+la plus grande.
+\begin{exemple}
+Pointures de $20$ personnes : $38\to2$, $39\to5$, $40\to7$, $41\to4$, $42\to2$. ECC :
+$2$, $7$, $14$, $18$, $20$. FCC : $10\,\%$, $35\,\%$, $70\,\%$, $90\,\%$, $100\,\%$.
+\end{exemple}
+
+\methode{Calculer une moyenne pondérée par des effectifs}
+Multiplier chaque valeur par son effectif, additionner ces produits, puis diviser par
+l'effectif total.
+\begin{exemple}
+Valeurs $0$, $1$, $2$, $3$, $4$ d'effectifs $3$, $7$, $8$, $5$, $2$ (total $25$) :
+$\bar{x}=\frac{0+7+16+15+8}{25}=\frac{46}{25}=1{,}84$.
+\end{exemple}
+
+\methode{Calculer une moyenne pondérée par des coefficients}
+Multiplier chaque valeur par son coefficient, additionner ces produits, puis diviser par la
+somme des coefficients (et non par le nombre de valeurs).
+\begin{exemple}
+Notes $13$ (coeff. $2$), $10$ (coeff. $1$), $16$ (coeff. $1$) :
+$\bar{x}=\frac{13\times2+10\times1+16\times1}{2+1+1}=\frac{52}{4}=13$.
+\end{exemple}
+
+\methode{Déterminer une médiane}
+Ordonner la série. Si l'effectif total est impair, prendre la valeur centrale. S'il est
+pair, faire la moyenne des deux valeurs centrales.
+\begin{exemple}
+Série ordonnée de $8$ valeurs : $26$, $27$, $28$, $29$, $30$, $30$, $31$, $32$. Médiane
+$=\frac{29+30}{2}=29{,}5$.
+\end{exemple}
+
+\methode{Calculer l'étendue d'une série}
+Repérer la plus grande et la plus petite valeur de la série, puis calculer leur différence.
+\begin{exemple}
+Série $9$, $12$, $12$, $15$, $15$, $15$, $18$ : étendue $=18-9=9$.
+\end{exemple}
+
+\methode{Construire ou lire un diagramme circulaire}
+Pour chaque catégorie, calculer l'angle du secteur par $\text{angle}=\text{fréquence}\times360^{\circ}$ ;
+vérifier que la somme des angles vaut $360^{\circ}$.
+\begin{exemple}
+Fréquence $30\,\%$ : angle $=0{,}30\times360^{\circ}=108^{\circ}$. Fréquence $10\,\%$ :
+angle $=0{,}10\times360^{\circ}=36^{\circ}$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Tableaux d'effectifs et de fréquences}
+\exo{}\diff{1} Pointures relevées chez $12$ personnes : $39$, $40$, $38$, $40$, $41$, $39$,
+$40$, $38$, $40$, $39$, $41$, $40$. Construire le tableau des effectifs et des fréquences.
+
+\exo{}\diff{1} Sport pratiqué par $50$ élèves : Football $20$, Basket $12$, Athlétisme $10$,
+Natation $8$. Calculer les fréquences.
+
+\exo{}\diff{2} Pointures de $20$ personnes : $38\to2$, $39\to5$, $40\to7$, $41\to4$,
+$42\to2$. Calculer les effectifs et fréquences cumulés croissants.
+
+\exo{}\diff{2} Nombre de livres lus pendant les vacances par $40$ élèves : $0\to4$,
+$1\to9$, $2\to11$, $3\to8$, $4\to5$, $5\to3$. Calculer les effectifs et fréquences
+cumulés croissants.
+
+\rubrique{Moyennes}
+\exo{}\diff{1} Nombre d'enfants de $25$ familles : $0\to3$, $1\to7$, $2\to8$, $3\to5$,
+$4\to2$. Calculer la moyenne.
+
+\exo{}\diff{2} Notes : $12$ (coeff. $2$), $15$ (coeff. $1$), $9$ (coeff. $3$). Calculer la
+moyenne pondérée.
+
+\exo{}\diff{2} Notes : $14$ (coeff. $3$), $8$ (coeff. $1$), $11$ (coeff. $2$). Calculer la
+moyenne pondérée.
+
+\exo{}\diff{2} Une entreprise camerounaise compte $5$ employés payés $150\,000$ FCFA, $3$
+payés $200\,000$ FCFA et $2$ payés $300\,000$ FCFA. Calculer le salaire moyen.
+
+\rubrique{Médiane et étendue}
+\exo{}\diff{1} Tailles (en cm) de $9$ joueurs, déjà ordonnées :
+$158$, $163$, $165$, $168$, $169$, $170$, $171$, $172$, $175$. Donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Pointures de $20$ personnes (exercice 3) : donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Nombre de livres lus par $40$ élèves (exercice 4) : donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Nombre d'enfants de $25$ familles (exercice 5) : donner la médiane et
+l'étendue.
+
+\rubrique{Représentations graphiques}
+\exo{}\diff{1} Nombre de buts marqués lors de $20$ matchs : $0\to4$, $1\to6$, $2\to5$,
+$3\to3$, $4\to2$. Calculer les fréquences (en vue d'un diagramme en bâtons).
+
+\exo{}\diff{2} Mentions obtenues par $40$ élèves : Passable $10$, Assez bien $14$, Bien
+$10$, Très bien $6$. Calculer les fréquences et les angles du diagramme circulaire.
+
+\exo{}\diff{2} Poids (en kg) de $25$ nouveau-nés, par classes : $[2\,;2{,}5[\to3$,
+$[2{,}5\,;3[\to9$, $[3\,;3{,}5[\to10$, $[3{,}5\,;4[\to3$. Calculer les fréquences (en vue
+d'un histogramme).
+
+\exo{}\diff{2} Nombre d'heures de sport par semaine, pour $50$ élèves : $0\to5$, $1\to10$,
+$2\to15$, $3\to12$, $4\to6$, $5\to2$. Donner l'effectif total, le mode et l'étendue.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Tableaux d'effectifs et de fréquences}
+\exo{}\diff{1} Temps de trajet (en min) de $10$ employés : $15$, $20$, $15$, $25$, $20$,
+$15$, $30$, $20$, $25$, $20$. Construire le tableau des effectifs et des fréquences.
+
+\exo{}\diff{1} Sport pratiqué par $80$ élèves : Football $32$, Basket $20$, Handball $16$,
+Autre $12$. Calculer les fréquences.
+
+\exo{}\diff{2} Notes sur $10$ de $24$ élèves : $5\to2$, $6\to3$, $7\to6$, $8\to7$, $9\to4$,
+$10\to2$. Calculer les effectifs et fréquences cumulés croissants.
+
+\exo{}\diff{2} Nombre d'absences de $30$ élèves : $0\to12$, $1\to10$, $2\to5$, $3\to3$.
+Calculer les effectifs et fréquences cumulés croissants.
+
+\exo{}\diff{2} Animal préféré de $45$ élèves : Chat $18$, Chien $15$, Oiseau $7$, Poisson
+$5$. Calculer les fréquences (arrondies au dixième).
+
+\rubrique{Moyennes}
+\exo{}\diff{2} Notes sur $10$ de $24$ élèves (exercice 3) : calculer la moyenne (arrondie
+au centième).
+
+\exo{}\diff{2} Notes : $16$ (coeff. $1$), $10$ (coeff. $3$), $13$ (coeff. $2$). Calculer la
+moyenne pondérée.
+
+\exo{}\diff{3} Une entreprise compte $8$ ouvriers payés $75\,000$ FCFA, $4$ techniciens
+payés $125\,000$ FCFA et $3$ ingénieurs payés $250\,000$ FCFA. Calculer le salaire moyen
+(arrondi au FCFA près).
+
+\exo{}\diff{2} Nombre d'absences de $30$ élèves (exercice 4) : calculer la moyenne
+(arrondie au centième).
+
+\exo{}\diff{3} Tailles de $40$ élèves regroupées en classes de centres $145$, $155$, $165$,
+$175$ et d'effectifs $6$, $14$, $15$, $5$. Calculer la moyenne (en utilisant les centres de
+classes).
+
+\rubrique{Médiane et étendue}
+\exo{}\diff{2} Âges (en années) de $11$ personnes, ordonnés :
+$11$, $12$, $12$, $13$, $13$, $14$, $14$, $15$, $15$, $16$, $17$. Donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Températures (en $^{\circ}$C) sur $10$ jours, ordonnées :
+$19$, $20$, $21$, $22$, $23$, $24$, $25$, $26$, $27$, $28$. Donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Nombre d'absences de $30$ élèves (exercice 4) : donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Notes sur $10$ de $24$ élèves (exercice 3) : donner la médiane et
+l'étendue.
+
+\exo{}\diff{2} Nombre de buts marqués lors de $36$ matchs : $0\to6$, $1\to9$, $2\to10$,
+$3\to7$, $4\to4$. Donner la médiane et l'étendue.
+
+\rubrique{Représentations graphiques}
+\exo{}\diff{1} Nombre de buts marqués lors de $36$ matchs (exercice précédent) : calculer
+les fréquences.
+
+\exo{}\diff{2} Sport préféré de $50$ personnes : Natation $15$, Football $20$, Tennis
+$10$, Volley $5$. Calculer les fréquences et les angles du diagramme circulaire.
+
+\exo{}\diff{2} Poids (en kg) de $60$ poissons pêchés, par classes : $[10\,;15[\to9$,
+$[15\,;20[\to21$, $[20\,;25[\to18$, $[25\,;30[\to12$. Calculer les fréquences.
+
+\exo{}\diff{2} Nombre de SMS envoyés par jour par $50$ élèves : $0\to4$, $1\to8$,
+$2\to14$, $3\to12$, $4\to8$, $5\to4$. Donner le mode et l'étendue.
+
+\exo{}\diff{3} Un sondage auprès de $300$ personnes sur leur fruit préféré donne : Mangue
+$35\,\%$, Banane $25\,\%$, Ananas $20\,\%$, Orange $20\,\%$. Calculer l'effectif
+correspondant à chaque fruit.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Transport, notes et médiane]
+\begin{enumerate}[label=\arabic*)]
+\item Moyen de transport de $150$ personnes : Bus $60$, Taxi $45$, Moto $30$, Pied $15$.
+Calculer les fréquences, puis les angles du diagramme circulaire correspondant.
+\item Notes : $13$ (coeff. $2$), $10$ (coeff. $1$), $16$ (coeff. $1$). Calculer la moyenne
+pondérée.
+\item Âges (en années) de $7$ membres d'un club, ordonnés : $13$, $14$, $14$, $15$, $15$,
+$16$, $17$. Donner la médiane et l'étendue.
+\end{enumerate}
+
+\sujetbac[Notes, absences et pointures]
+\begin{enumerate}[label=\arabic*)]
+\item Notes obtenues par $10$ élèves : $8$, $12$, $8$, $15$, $12$, $10$, $8$, $15$, $10$,
+$12$. Construire le tableau des effectifs et des fréquences.
+\item Nombre d'absences de $30$ élèves : $0\to12$, $1\to10$, $2\to5$, $3\to3$. Calculer
+les effectifs et fréquences cumulés croissants.
+\item Nombre d'enfants de $25$ familles : $0\to3$, $1\to7$, $2\to8$, $3\to5$, $4\to2$.
+Calculer la moyenne.
+\item Pointures de $20$ personnes : $38\to2$, $39\to5$, $40\to7$, $41\to4$, $42\to2$.
+Donner la médiane.
+\end{enumerate}
+
+\sujetbac[Problème concret : salaires et poids de naissance]
+\begin{enumerate}[label=\arabic*)]
+\item Une entreprise compte $5$ employés payés $150\,000$ FCFA, $3$ payés $200\,000$ FCFA
+et $2$ payés $300\,000$ FCFA. Calculer le salaire moyen.
+\item Poids (en kg) de $25$ nouveau-nés, par classes : $[2\,;2{,}5[\to3$,
+$[2{,}5\,;3[\to9$, $[3\,;3{,}5[\to10$, $[3{,}5\,;4[\to3$. Calculer les fréquences.
+\item Températures (en $^{\circ}$C) sur $8$ jours, ordonnées : $26$, $27$, $28$, $29$,
+$30$, $30$, $31$, $32$. Donner la médiane et l'étendue.
+\item Mentions obtenues par $40$ élèves : Passable $10$, Assez bien $14$, Bien $10$, Très
+bien $6$. Calculer les angles du diagramme circulaire.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$38\to2$ ($16{,}7\,\%$), $39\to3$ ($25\,\%$), $40\to5$ ($41{,}7\,\%$), $41\to2$
+($16{,}7\,\%$) ; total $12$.
+
+\corrige{de l'exercice 2}
+Fréquences : Football $40\,\%$, Basket $24\,\%$, Athlétisme $20\,\%$, Natation $16\,\%$.
+
+\corrige{de l'exercice 3}
+ECC : $2$, $7$, $14$, $18$, $20$. FCC : $10\,\%$, $35\,\%$, $70\,\%$, $90\,\%$, $100\,\%$.
+
+\corrige{de l'exercice 4}
+ECC : $4$, $13$, $24$, $32$, $37$, $40$. FCC : $10\,\%$, $32{,}5\,\%$, $60\,\%$, $80\,\%$,
+$92{,}5\,\%$, $100\,\%$.
+
+\corrige{de l'exercice 5}
+$\bar{x}=\dfrac{0+7+16+15+8}{25}=\dfrac{46}{25}=1{,}84$.
+
+\corrige{de l'exercice 6}
+$\bar{x}=\dfrac{12\times2+15\times1+9\times3}{6}=\dfrac{66}{6}=11$.
+
+\corrige{de l'exercice 7}
+$\bar{x}=\dfrac{14\times3+8\times1+11\times2}{6}=\dfrac{72}{6}=12$.
+
+\corrige{de l'exercice 8}
+$\bar{x}=\dfrac{5\times150\,000+3\times200\,000+2\times300\,000}{10}$\\
+$=\dfrac{1\,950\,000}{10}=195\,000$ FCFA.
+
+\corrige{de l'exercice 9}
+Médiane $=169$ cm (position $5$ sur $9$). Étendue $=175-158=17$ cm.
+
+\corrige{de l'exercice 10}
+$N=20$ pair : médiane $=\dfrac{40+40}{2}=40$ (positions $10$ et $11$, toutes deux dans la
+valeur $40$). Étendue $=42-38=4$.
+
+\corrige{de l'exercice 11}
+$N=40$ pair : les positions $20$ et $21$ correspondent toutes deux à la valeur $2$.
+Médiane $=2$. Étendue $=5-0=5$.
+
+\corrige{de l'exercice 12}
+$N=25$ impair : position $13$, qui correspond à la valeur $2$ (ECC : $3$, $10$, $18$).
+Médiane
+$=2$. Étendue $=4-0=4$.
+
+\corrige{de l'exercice 13}
+Fréquences : $0\to20\,\%$, $1\to30\,\%$, $2\to25\,\%$, $3\to15\,\%$, $4\to10\,\%$.
+
+\corrige{de l'exercice 14}
+Fréquences : $25\,\%$, $35\,\%$, $25\,\%$, $15\,\%$. Angles : $90^{\circ}$, $126^{\circ}$,
+$90^{\circ}$, $54^{\circ}$.
+
+\corrige{de l'exercice 15}
+Fréquences : $12\,\%$, $36\,\%$, $40\,\%$, $12\,\%$.
+
+\corrige{de l'exercice 16}
+Effectif total $=50$. Mode $=2$ heures (effectif $15$). Étendue $=5-0=5$.
+
+\corrige{du sujet 1}
+1) Fréquences : $40\,\%$, $30\,\%$, $20\,\%$, $10\,\%$. Angles : $144^{\circ}$, $108^{\circ}$,
+$72^{\circ}$, $36^{\circ}$.\\
+2) $\bar{x}=\dfrac{13\times2+10\times1+16\times1}{4}=\dfrac{52}{4}=13$.\\
+3) $N=7$ impair, position $4$ : médiane $=15$. Étendue $=17-13=4$.
+
+\corrige{du sujet 2}
+1) $8\to3$ ($30\,\%$), $10\to2$ ($20\,\%$), $12\to3$ ($30\,\%$), $15\to2$ ($20\,\%$) ;
+total $10$.\\
+2) ECC : $12$, $22$, $27$, $30$. FCC : $40\,\%$, $73{,}3\,\%$, $90\,\%$, $100\,\%$.\\
+3) $\bar{x}=\dfrac{46}{25}=1{,}84$.\\
+4) Médiane $=40$ (positions $10$ et $11$).
+
+\corrige{du sujet 3}
+1) $\bar{x}=\dfrac{1\,950\,000}{10}=195\,000$ FCFA.\\
+2) Fréquences : $12\,\%$, $36\,\%$, $40\,\%$, $12\,\%$.\\
+3) $N=8$ pair : médiane $=\dfrac{29+30}{2}=29{,}5$. Étendue $=32-26=6$.\\
+4) Angles : $90^{\circ}$, $126^{\circ}$, $90^{\circ}$, $54^{\circ}$.
+
+\end{multicols}
+\exercicesBanner
