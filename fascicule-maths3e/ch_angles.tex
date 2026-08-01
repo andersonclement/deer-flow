@@ -1,1 +1,443 @@
 \chapter{Angle inscrit, angle au centre}
+
+\noindent\textit{Dans un cercle, deux types d'angles permettent de « voir » un même arc :
+l'angle au centre, dont le sommet est le centre du cercle, et l'angle inscrit, dont le
+sommet est un point du cercle. Une relation simple les relie, avec une conséquence
+remarquable : tout triangle inscrit dans un cercle avec un côté sur un diamètre est
+rectangle.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Angle inscrit, angle au centre}
+
+\begin{definition}[Angle au centre, angle inscrit]
+Soit un cercle de centre $O$ passant par $A$ et $B$. L'\textbf{angle au centre} $\widehat{AOB}$
+a pour sommet le centre $O$. Pour un point $C$ du cercle (différent de $A$ et $B$),
+l'\textbf{angle inscrit} $\widehat{ACB}$ a pour sommet $C$, sur le cercle. Les deux angles
+\textbf{interceptent} le même arc $AB$ (celui qui ne contient pas $C$).
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[onbline,line width=0.8pt] (0,0) circle (3);
+\coordinate (O) at (0,0);
+\coordinate (A) at (-1.93,2.30);
+\coordinate (B) at (1.93,2.30);
+\coordinate (C) at (0,-3);
+\draw[onbo,line width=1.2pt] (O) -- (A) (O) -- (B);
+\draw[onbblue,line width=1.2pt] (C) -- (A) (C) -- (B);
+\fill (O) circle(1.6pt) node[below] {$O$};
+\fill (A) circle(1.6pt) node[above] {$A$};
+\fill (B) circle(1.6pt) node[above] {$B$};
+\fill (C) circle(1.6pt) node[below] {$C$};
+\pic[draw=onbo,angle radius=0.6cm,"\small $80^{\circ}$"] {angle=B--O--A};
+\pic[draw=onbblue,angle radius=0.7cm,"\small $40^{\circ}$"] {angle=B--C--A};
+\end{tikzpicture}
+\fig{Figure — Angle au centre $\widehat{AOB}=80^{\circ}$, angle inscrit
+$\widehat{ACB}=40^{\circ}$.}
+\end{illus}
+
+\section{Propriété : angle au centre et angle inscrit}
+
+\begin{propriete}[Angle au centre = 2 $\times$ angle inscrit]
+Si $\widehat{AOB}$ est l'angle au centre et $\widehat{ACB}$ l'angle inscrit interceptant le
+même arc $AB$, alors
+\[
+\widehat{AOB}=2\times\widehat{ACB}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=4.4cm,minimum height=0.7cm] (c1) {angle inscrit $\widehat{ACB}$};
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=4.4cm,minimum height=0.7cm,below=8mm of c1] (c2) {angle au centre $\widehat{AOB}=2\times\widehat{ACB}$};
+\draw[->,onbmuted,line width=1pt] (c1) -- (c2);
+\end{tikzpicture}
+\fig{Figure — L'angle au centre vaut le double de l'angle inscrit qui intercepte le même
+arc.}
+\end{illus}
+
+\begin{exemple}
+Si $\widehat{ACB}=35^{\circ}$, alors $\widehat{AOB}=2\times35^{\circ}=70^{\circ}$.
+Inversement, si $\widehat{AOB}=94^{\circ}$, alors $\widehat{ACB}=\dfrac{94^{\circ}}2=47^{\circ}$.
+\end{exemple}
+
+\section{Angles inscrits interceptant le même arc}
+
+\begin{propriete}[Égalité des angles inscrits]
+Deux angles inscrits qui interceptent le \textbf{même arc} (sommets du même côté de cet
+arc) sont \textbf{égaux}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[onbline,line width=0.8pt] (0,0) circle (3);
+\coordinate (A) at (-1.93,2.30);
+\coordinate (B) at (1.93,2.30);
+\coordinate (C1) at (-1.03,-2.82);
+\coordinate (C2) at (2.30,-1.93);
+\draw[onbo,line width=1.1pt] (C1) -- (A) (C1) -- (B);
+\draw[onbblue,line width=1.1pt] (C2) -- (A) (C2) -- (B);
+\fill (A) circle(1.6pt) node[above] {$A$};
+\fill (B) circle(1.6pt) node[above] {$B$};
+\fill (C1) circle(1.6pt) node[below left] {$C_1$};
+\fill (C2) circle(1.6pt) node[below right] {$C_2$};
+\pic[draw=onbo,angle radius=0.6cm,"\small $40^{\circ}$"] {angle=B--C1--A};
+\pic[draw=onbblue,angle radius=0.6cm,"\small $40^{\circ}$"] {angle=B--C2--A};
+\end{tikzpicture}
+\fig{Figure — $\widehat{AC_1B}$ et $\widehat{AC_2B}$ interceptent le même arc : ils sont
+égaux.}
+\end{illus}
+
+\begin{exemple}
+$\widehat{AC_1B}=47^{\circ}$ et $C_2$ intercepte le même arc $AB$ que $C_1$ : alors
+$\widehat{AC_2B}=47^{\circ}$ également.
+\end{exemple}
+
+\section{Triangle rectangle inscrit dans un cercle}
+
+\begin{propriete}[Cas du diamètre]
+Si $[AB]$ est un \textbf{diamètre} d'un cercle et $C$ un point de ce cercle (distinct de
+$A$ et $B$), alors le triangle $ABC$ est \textbf{rectangle en $C$}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[onbline,line width=0.8pt] (0,0) circle (3);
+\coordinate (A) at (-3,0);
+\coordinate (B) at (3,0);
+\coordinate (C) at (1.5,2.598);
+\draw[onbline,line width=0.8pt] (A) -- (B);
+\draw[onbo,line width=1.2pt] (A) -- (C) -- (B);
+\fill (A) circle(1.6pt) node[left] {$A$};
+\fill (B) circle(1.6pt) node[right] {$B$};
+\fill (C) circle(1.6pt) node[above] {$C$};
+\fill (0,0) circle(1.6pt) node[below] {$O$};
+\pic[draw=onbblue,angle radius=0.5cm,"\small $90^{\circ}$"] {angle=A--C--B};
+\end{tikzpicture}
+\fig{Figure — $AB$ diamètre : le triangle $ABC$ est rectangle en $C$, quel que soit $C$ sur
+le cercle.}
+\end{illus}
+
+\begin{remarque}[Justification]
+$\widehat{AOB}=180^{\circ}$ (angle plat, $O$ est le milieu de $[AB]$), donc l'angle inscrit
+$\widehat{ACB}=\dfrac{180^{\circ}}2=90^{\circ}$ : c'est un cas particulier de la propriété
+précédente.
+\end{remarque}
+
+\begin{propriete}[Réciproque]
+Si un triangle $ABC$ est rectangle en $C$, alors $C$ appartient au cercle de diamètre
+$[AB]$ (le centre de ce cercle est le milieu de $[AB]$).
+\end{propriete}
+
+\begin{exemple}
+$AB$ est un diamètre de $15$ cm, $C$ un point du cercle avec $AC=9$ cm. Le triangle $ABC$
+est rectangle en $C$, donc (Pythagore) $BC^{2}=AB^{2}-AC^{2}=225-81=144$, soit $BC=12$ cm.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Angle au centre / inscrit.} Même arc intercepté : $\widehat{AOB}=2\times\widehat{ACB}$.\\[4pt]
+\textbf{Même arc, plusieurs sommets.} Les angles inscrits interceptant le même arc sont
+égaux.\\[4pt]
+\textbf{Diamètre.} $[AB]$ diamètre, $C$ sur le cercle $\Rightarrow ABC$ rectangle en $C$
+(et réciproquement).\\[4pt]
+\textbf{Triangle $OAB$.} Isocèle en $O$ (car $OA=OB=$ rayon) : ses deux angles à la base
+sont égaux.\\[4pt]
+\textbf{Piège fréquent.} Vérifier que les angles interceptent bien le \textbf{même} arc
+avant d'appliquer l'égalité ; ne pas confondre angle au centre et angle inscrit dans la
+relation « double ».
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer un angle au centre connaissant l'angle inscrit}
+Multiplier l'angle inscrit par $2$.
+\begin{exemple}
+$\widehat{ACB}=52^{\circ}$ : $\widehat{AOB}=2\times52^{\circ}=104^{\circ}$.
+\end{exemple}
+
+\methode{Calculer un angle inscrit connaissant l'angle au centre}
+Diviser l'angle au centre par $2$.
+\begin{exemple}
+$\widehat{AOB}=136^{\circ}$ : $\widehat{ACB}=\dfrac{136^{\circ}}2=68^{\circ}$.
+\end{exemple}
+
+\methode{Utiliser l'égalité des angles inscrits interceptant le même arc}
+Vérifier que les deux angles inscrits ont pour côtés les mêmes points $A$, $B$ et
+interceptent le même arc, puis conclure qu'ils sont égaux.
+\begin{exemple}
+$\widehat{ACB}=63^{\circ}$, $D$ sur le même arc que $C$ : $\widehat{ADB}=63^{\circ}$.
+\end{exemple}
+
+\methode{Reconnaître un triangle rectangle inscrit dans un cercle}
+Vérifier qu'un des côtés du triangle est un \textbf{diamètre} du cercle circonscrit : le
+sommet opposé donne alors l'angle droit.
+\begin{exemple}
+$AB$ diamètre, $C$ sur le cercle : le triangle $ABC$ est rectangle en $C$, sans calcul
+supplémentaire.
+\end{exemple}
+
+\methode{Utiliser la réciproque}
+Si un triangle est rectangle, son cercle circonscrit a pour diamètre l'hypoténuse (le
+centre est le milieu de l'hypoténuse).
+\begin{exemple}
+Triangle $ABC$ rectangle en $C$, $AB=10$ cm : le rayon du cercle circonscrit est
+$\dfrac{10}2=5$ cm.
+\end{exemple}
+
+\methode{Résoudre un problème combinant plusieurs propriétés}
+Identifier d'abord le diamètre (angle droit), puis utiliser Pythagore ou les angles au
+centre/inscrits selon la question posée.
+\begin{exemple}
+$BC$ diamètre $=26$ cm, $AB=10$ cm : le triangle est rectangle en $A$, donc
+$AC=\sqrt{26^{2}-10^{2}}=\sqrt{576}=24$ cm.
+\end{exemple}
+
+\methode{Calculer les angles du triangle isocèle $OAB$}
+Utiliser $OA=OB=$ rayon (triangle isocèle en $O$) : les deux angles à la base valent
+$\dfrac{180^{\circ}-\widehat{AOB}}2$.
+\begin{exemple}
+$\widehat{AOB}=100^{\circ}$ : les angles en $A$ et $B$ du triangle $OAB$ valent chacun
+$\dfrac{180^{\circ}-100^{\circ}}2=40^{\circ}$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Angle au centre et angle inscrit}
+\exo{}\diff{1} L'angle inscrit $\widehat{ACB}=35^{\circ}$. Calculer l'angle au centre
+$\widehat{AOB}$.
+
+\exo{}\diff{1} L'angle au centre $\widehat{AOB}=94^{\circ}$. Calculer l'angle inscrit
+$\widehat{ACB}$.
+
+\exo{}\diff{2} L'angle inscrit $\widehat{ACB}=52^{\circ}$. Calculer l'angle au centre
+$\widehat{AOB}$, puis un autre angle inscrit $\widehat{ADB}$ interceptant le même arc.
+
+\exo{}\diff{2} L'angle au centre $\widehat{AOB}=136^{\circ}$. Calculer l'angle inscrit
+$\widehat{ACB}$.
+
+\rubrique{Angles inscrits interceptant le même arc}
+\exo{}\diff{1} $\widehat{ACB}=47^{\circ}$, $D$ intercepte le même arc $AB$ que $C$.
+Calculer $\widehat{ADB}$.
+
+\exo{}\diff{2} $C$, $D$, $E$ sont trois points du même arc, avec $\widehat{ACB}=63^{\circ}$.
+Calculer $\widehat{ADB}$ et $\widehat{AEB}$.
+
+\exo{}\diff{2} $\widehat{ACB}=38^{\circ}$. Calculer l'angle au centre $\widehat{AOB}$, puis
+un autre angle inscrit $\widehat{ADB}$ interceptant le même arc.
+
+\exo{}\diff{2} Sachant que l'angle au centre vaut le double de l'angle inscrit, et que deux
+angles inscrits interceptant le même arc valent chacun $29^{\circ}$, calculer l'angle au
+centre correspondant.
+
+\rubrique{Triangle rectangle inscrit (diamètre)}
+\exo{}\diff{1} $AB$ est un diamètre d'un cercle, $C$ un point du cercle. Que peut-on dire
+de l'angle $\widehat{ACB}$ ? Justifier.
+
+\exo{}\diff{2} Un triangle $ABC$ rectangle en $C$ a pour hypoténuse $AB=10$ cm. Quel est le
+rayon de son cercle circonscrit ?
+
+\exo{}\diff{2} $AB$ est un diamètre de $13$ cm, $C$ un point du cercle avec $AC=5$ cm.
+Calculer $BC$.
+
+\exo{}\diff{2} $BC$ est un diamètre de $17$ cm, $A$ un point du cercle avec $AB=8$ cm.
+Calculer $AC$.
+
+\rubrique{Problèmes combinés}
+\exo{}\diff{2} Un triangle $ABC$ rectangle en $A$ est inscrit dans un cercle de diamètre
+$BC=26$ cm, avec $AB=10$ cm. Calculer $AC$ et le rayon du cercle.
+
+\exo{}\diff{2} Dans un cercle de centre $O$, l'angle au centre $\widehat{AOB}=110^{\circ}$.
+Calculer l'angle inscrit $\widehat{ACB}$, puis les deux autres angles du triangle isocèle
+$OAB$.
+
+\exo{}\diff{2} Une fenêtre semi-circulaire a pour diamètre $AB=2$ m. Un point $C$ sur l'arc
+forme un triangle $ABC$. Quelle est la mesure de l'angle $\widehat{ACB}$ ?
+
+\exo{}\diff{2} Dans un cercle de centre $O$, l'angle inscrit $\widehat{ACB}=41^{\circ}$ et
+$D$ intercepte le même arc $AB$ que $C$. Calculer $\widehat{ADB}$ et l'angle au centre
+$\widehat{AOB}$.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Angle au centre et angle inscrit}
+\exo{}\diff{1} $\widehat{ACB}=28^{\circ}$. Calculer $\widehat{AOB}$.
+
+\exo{}\diff{1} $\widehat{AOB}=150^{\circ}$. Calculer $\widehat{ACB}$.
+
+\exo{}\diff{2} $\widehat{ACB}=61^{\circ}$. Calculer $\widehat{AOB}$.
+
+\exo{}\diff{2} $\widehat{AOB}=88^{\circ}$. Calculer $\widehat{ACB}$.
+
+\rubrique{Angles interceptant le même arc}
+\exo{}\diff{2} $\widehat{ACB}=55^{\circ}$, $D$ intercepte le même arc. Calculer
+$\widehat{ADB}$.
+
+\exo{}\diff{2} $\widehat{ACB}=72^{\circ}$, $E$ intercepte le même arc. Calculer
+$\widehat{AEB}$.
+
+\exo{}\diff{2} L'angle au centre $\widehat{AOB}=100^{\circ}$. Calculer les deux angles
+inscrits égaux $\widehat{ACB}$ et $\widehat{ADB}$ interceptant le même arc.
+
+\exo{}\diff{2} Deux angles inscrits interceptant le même arc valent chacun $39^{\circ}$.
+Justifier qu'ils sont égaux et calculer l'angle au centre correspondant.
+
+\rubrique{Triangle rectangle inscrit}
+\exo{}\diff{2} $AB$ diamètre $=15$ cm, $C$ sur le cercle avec $AC=9$ cm. Calculer $BC$.
+
+\exo{}\diff{2} $AB$ diamètre $=25$ cm, $C$ sur le cercle avec $AC=7$ cm. Calculer $BC$.
+
+\exo{}\diff{2} $AB$ diamètre $=20$ cm, $C$ sur le cercle avec $AC=12$ cm. Calculer $BC$.
+
+\exo{}\diff{2} Un triangle rectangle a pour hypoténuse $13$ cm. Quel est le rayon de son
+cercle circonscrit ? Si un côté de l'angle droit mesure $5$ cm, calculer l'autre.
+
+\rubrique{Triangle isocèle $OAB$}
+\exo{}\diff{2} $\widehat{AOB}=120^{\circ}$. Calculer les deux autres angles du triangle
+isocèle $OAB$.
+
+\exo{}\diff{2} $\widehat{AOB}=70^{\circ}$. Calculer les deux autres angles du triangle
+isocèle $OAB$.
+
+\exo{}\diff{2} $\widehat{AOB}=88^{\circ}$. Calculer les deux autres angles du triangle
+isocèle $OAB$.
+
+\exo{}\diff{2} $\widehat{AOB}=46^{\circ}$. Calculer les deux autres angles du triangle
+isocèle $OAB$.
+
+\rubrique{Problèmes}
+\exo{}\diff{2} Un triangle $ABC$ rectangle en $B$ est inscrit dans un cercle de diamètre
+$AC=41$ cm, avec $AB=9$ cm. Calculer $BC$.
+
+\exo{}\diff{2} Une place circulaire de rayon $6{,}5$ m a un diamètre $AB$. Un lampadaire
+est installé en un point $C$ du cercle avec $AC=5$ m. Calculer $BC$.
+
+\exo{}\diff{2} Dans un cercle de centre $O$, l'angle inscrit $\widehat{ACB}=44^{\circ}$.
+Calculer l'angle au centre $\widehat{AOB}$, puis les deux angles à la base du triangle
+isocèle $OAB$.
+
+\exo{}\diff{3} Un pont en arc de cercle a pour diamètre (à la base) $AB=30$ m. Le sommet
+$C$ de l'arc vérifie $AC=18$ m. Calculer $BC$.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[angle au centre/inscrit et triangle rectangle inscrit]
+\begin{enumerate}[label=\arabic*)]
+\item Dans un cercle de centre $O$, l'angle inscrit $\widehat{ACB}=42^{\circ}$. Calculer
+l'angle au centre $\widehat{AOB}$.
+\item $D$ est un autre point du cercle tel que $\widehat{ADB}$ intercepte le même arc $AB$
+que $\widehat{ACB}$. Calculer $\widehat{ADB}$.
+\item $AB$ est un diamètre du cercle, $C$ un point du cercle avec $AC=9$ cm et $AB=15$ cm.
+Justifier que le triangle $ABC$ est rectangle en $C$, puis calculer $BC$.
+\end{enumerate}
+
+\sujetbac[triangle isocèle et cercle circonscrit]
+\begin{enumerate}[label=\arabic*)]
+\item Dans un cercle de centre $O$ et de rayon $6{,}5$ cm, l'angle au centre
+$\widehat{AOB}=100^{\circ}$. Calculer l'angle inscrit $\widehat{ACB}$ ($C$ sur le grand
+arc).
+\item Le triangle $OAB$ est isocèle en $O$. Calculer ses deux autres angles.
+\item $BC$ est un diamètre du cercle, mesurant $13$ cm. Un point $A$ du cercle vérifie
+$AB=5$ cm. Calculer $AC$.
+\end{enumerate}
+
+\sujetbac[angles et fenêtre semi-circulaire]
+\begin{enumerate}[label=\arabic*)]
+\item Dans un cercle, deux angles inscrits $\widehat{ACB}$ et $\widehat{ADB}$ interceptent
+le même arc $AB$, avec $\widehat{ACB}=58^{\circ}$. Calculer $\widehat{ADB}$ et l'angle au
+centre $\widehat{AOB}$.
+\item Une fenêtre semi-circulaire a pour diamètre $AB=2{,}6$ m. Un point $C$ sur l'arc
+forme un triangle $ABC$ avec $AC=1$ m. Justifier que le triangle est rectangle en $C$, puis
+calculer $BC$.
+\item Le triangle $OAB$ est isocèle en $O$, avec $\widehat{AOB}=116^{\circ}$. Calculer les
+deux autres angles.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\widehat{AOB}=2\times35^{\circ}=70^{\circ}$.
+
+\corrige{de l'exercice 2}
+$\widehat{ACB}=\dfrac{94^{\circ}}2=47^{\circ}$.
+
+\corrige{de l'exercice 3}
+$\widehat{AOB}=2\times52^{\circ}=104^{\circ}$ ; $\widehat{ADB}=52^{\circ}$ (même arc).
+
+\corrige{de l'exercice 4}
+$\widehat{ACB}=\dfrac{136^{\circ}}2=68^{\circ}$.
+
+\corrige{de l'exercice 5}
+$\widehat{ADB}=47^{\circ}$ (même arc intercepté).
+
+\corrige{de l'exercice 6}
+$\widehat{ADB}=\widehat{AEB}=63^{\circ}$.
+
+\corrige{de l'exercice 7}
+$\widehat{AOB}=2\times38^{\circ}=76^{\circ}$ ; $\widehat{ADB}=38^{\circ}$.
+
+\corrige{de l'exercice 8}
+$\widehat{AOB}=2\times29^{\circ}=58^{\circ}$.
+
+\corrige{de l'exercice 9}
+$\widehat{ACB}=90^{\circ}$ : un côté du triangle est un diamètre, donc le triangle est
+rectangle au sommet opposé.
+
+\corrige{de l'exercice 10}
+Rayon $=\dfrac{10}2=5$ cm.
+
+\corrige{de l'exercice 11}
+Triangle rectangle en $C$ : $BC^{2}=13^{2}-5^{2}=144$, donc $BC=12$ cm.
+
+\corrige{de l'exercice 12}
+Triangle rectangle en $A$ : $AC^{2}=17^{2}-8^{2}=225$, donc $AC=15$ cm.
+
+\corrige{de l'exercice 13}
+Triangle rectangle en $A$ : $AC^{2}=26^{2}-10^{2}=576$, donc $AC=24$ cm. Rayon
+$=\dfrac{26}2=13$ cm.
+
+\corrige{de l'exercice 14}
+$\widehat{ACB}=\dfrac{110^{\circ}}2=55^{\circ}$. Triangle $OAB$ isocèle en $O$ : angles à
+la base $=\dfrac{180^{\circ}-110^{\circ}}2=35^{\circ}$ chacun.
+
+\corrige{de l'exercice 15}
+$\widehat{ACB}=90^{\circ}$ (angle inscrit interceptant un diamètre).
+
+\corrige{de l'exercice 16}
+$\widehat{ADB}=41^{\circ}$ (même arc) ; $\widehat{AOB}=2\times41^{\circ}=82^{\circ}$.
+
+\corrige{du sujet 1}
+1) $\widehat{AOB}=2\times42^{\circ}=84^{\circ}$.\\
+2) $\widehat{ADB}=42^{\circ}$ (même arc).\\
+3) $[AB]$ diamètre $\Rightarrow$ rectangle en $C$ ; $BC^{2}=15^{2}-9^{2}=144$, donc
+$BC=12$ cm.
+
+\corrige{du sujet 2}
+1) $\widehat{ACB}=\dfrac{100^{\circ}}2=50^{\circ}$.\\
+2) Angles à la base $=\dfrac{180^{\circ}-100^{\circ}}2=40^{\circ}$ chacun.\\
+3) Rectangle en $A$ ($BC$ diamètre) : $AC^{2}=13^{2}-5^{2}=144$, donc $AC=12$ cm.
+
+\corrige{du sujet 3}
+1) $\widehat{ADB}=58^{\circ}$ ; $\widehat{AOB}=2\times58^{\circ}=116^{\circ}$.\\
+2) $[AB]$ diamètre $\Rightarrow$ rectangle en $C$ ;
+$BC^{2}=2{,}6^{2}-1^{2}=5{,}76$, donc $BC=2{,}4$ m.\\
+3) Angles à la base $=\dfrac{180^{\circ}-116^{\circ}}2=32^{\circ}$ chacun.
+
+\end{multicols}
+\exercicesBanner
