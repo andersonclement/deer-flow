@@ -1,1 +1,329 @@
 \chapter{Production et transport de l'énergie électrique}
+
+\noindent\textit{L'électricité que nous utilisons chaque jour est produite dans des
+centrales, transportée sur de longues distances à très haute tension, puis abaissée pour
+être livrée en toute sécurité jusque dans nos maisons. Ce chapitre explique comment et
+pourquoi.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Produire de l'électricité : l'alternateur}
+
+\begin{definition}[Alternateur]
+Un \textbf{alternateur} est une machine qui transforme de l'\textbf{énergie mécanique}
+(rotation) en \textbf{énergie électrique}. Un aimant (ou un électroaimant) tourne à
+proximité d'une bobine : ce mouvement fait apparaître une tension aux bornes de la bobine,
+c'est le phénomène d'\textbf{induction électromagnétique}.
+\end{definition}
+
+\begin{propriete}[Centrales électriques]
+Selon la source d'énergie mécanique qui entraîne l'alternateur, on distingue plusieurs
+types de centrales : \textbf{hydraulique} (chute d'eau, barrage), \textbf{thermique}
+(combustion de charbon, gaz ou fioul faisant tourner une turbine à vapeur), \textbf{solaire}
+(panneaux photovoltaïques, sans alternateur) ou \textbf{éolienne} (vent faisant tourner des
+pales reliées à un alternateur).
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=1.3pt,fill=onbsoft] (0,0) rectangle (1.6,1.6);
+\node at (0.8,0.8) {\small turbine};
+\draw[->,onbmuted,line width=1.2pt] (1.6,0.8) -- (2.6,0.8);
+\draw[onbo,line width=1.5pt,fill=onbo!15] (2.6,0.3) rectangle (4.4,1.3);
+\node at (3.5,0.8) {\small alternateur};
+\draw[->,onbgreen,line width=1.2pt] (4.4,0.8) -- (5.6,0.8);
+\node[above] at (5,1.1) {\small courant};
+\node[below] at (0.8,-0.3) {\small énergie mécanique};
+\end{tikzpicture}
+\fig{Figure — De l'énergie mécanique à l'énergie électrique : turbine puis alternateur.}
+\end{illus}
+
+\section{Pourquoi transporter à haute tension ?}
+
+\begin{propriete}[Pertes en ligne]
+Une ligne électrique de résistance $R$ traversée par un courant $I$ dissipe une puissance
+sous forme de chaleur :
+\[
+P_{\text{pertes}}=R\times I^2.
+\]
+Pour transporter une puissance $P$ donnée sous une tension $U$, l'intensité vaut
+$I=\dfrac PU$. \textbf{Plus $U$ est grande, plus $I$ est petite}, donc plus les pertes
+$R\times I^2$ sont faibles.
+\end{propriete}
+
+\begin{exemple}
+Une ligne de résistance $R=5\ \Omega$ transporte une puissance $P=50\,000$ W. Sous
+$U=1\,000$ V : $I=\dfrac{50\,000}{1\,000}=50$ A et $P_{\text{pertes}}=5\times50^2=12\,500$
+W (25\,\% de la puissance transportée est perdue !).
+\end{exemple}
+
+\begin{remarque}
+C'est pour cette raison que l'électricité est transportée sur de longues distances sous
+des tensions très élevées (parfois plusieurs centaines de milliers de volts), bien
+supérieures à la tension d'utilisation domestique.
+\end{remarque}
+
+\section{Le transformateur}
+
+\begin{definition}[Transformateur]
+Un \textbf{transformateur} est un appareil qui modifie une tension alternative sans
+changer sa fréquence. Il comporte deux bobines (primaire, $n_1$ spires ; secondaire, $n_2$
+spires) enroulées sur un même noyau de fer. Le rapport des tensions est égal au rapport
+des nombres de spires :
+\[
+\frac{U_2}{U_1}=\frac{n_2}{n_1}.
+\]
+Un transformateur est \textbf{élévateur} si $n_2>n_1$ (il augmente la tension) et
+\textbf{abaisseur} si $n_2<n_1$ (il diminue la tension).
+\end{definition}
+
+\begin{propriete}[Conservation de la puissance (transformateur idéal)]
+En négligeant les pertes, la puissance électrique se conserve entre le primaire et le
+secondaire :
+\[
+U_1\times I_1=U_2\times I_2.
+\]
+\end{propriete}
+
+\begin{exemple}
+Un transformateur élévateur a $n_1=100$ spires et $n_2=2\,000$ spires. Il reçoit
+$U_1=220$ V : $U_2=220\times\dfrac{2\,000}{100}=4\,400$ V. Si $I_1=50$ A, alors
+$I_2=\dfrac{U_1\times I_1}{U_2}=\dfrac{220\times50}{4\,400}=2{,}5$ A.
+\end{exemple}
+
+\section{De la centrale à la maison}
+
+\begin{synthese}
+La chaîne de l'énergie électrique suit quatre étapes : \textbf{production} (alternateur en
+centrale, tension de quelques milliers de volts) $\rightarrow$ \textbf{élévation} (transformateur
+élévateur, très haute tension, pour limiter les pertes en ligne) $\rightarrow$
+\textbf{transport} (lignes à haute tension sur de longues distances) $\rightarrow$
+\textbf{abaissement} (transformateurs abaisseurs successifs, jusqu'à la tension
+domestique, $220$ V au Cameroun).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Alternateur.} Transforme l'énergie mécanique en énergie électrique par
+induction.\\[4pt]
+\textbf{Pertes en ligne.} $P_{\text{pertes}}=R\times I^2$ : on transporte à haute tension
+pour réduire $I$ et donc les pertes.\\[4pt]
+\textbf{Transformateur.} $\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$ ; conservation de puissance
+(idéale) $U_1I_1=U_2I_2$.\\[4pt]
+\textbf{Chaîne complète.} Production $\to$ élévation $\to$ transport $\to$ abaissement
+$\to$ distribution domestique.\\[4pt]
+\textbf{Piège fréquent.} Une tension élevée au transport ne veut pas dire une intensité
+élevée : c'est l'inverse, on élève $U$ pour \textbf{diminuer} $I$.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer les pertes en ligne}
+Calculer $I=\dfrac PU$, puis appliquer $P_{\text{pertes}}=R\times I^2$.
+\begin{exemple}
+$R=2\ \Omega$, $P=20\,000$ W, $U=2\,000$ V : $I=10$ A, $P_{\text{pertes}}=2\times100=200$
+W.
+\end{exemple}
+
+\methode{Calculer la tension au secondaire d'un transformateur}
+Appliquer $U_2=U_1\times\dfrac{n_2}{n_1}$.
+\begin{exemple}
+$n_1=500$, $n_2=100$, $U_1=15\,000$ V : $U_2=15\,000\times\dfrac{100}{500}=3\,000$ V.
+\end{exemple}
+
+\methode{Reconnaître un transformateur élévateur ou abaisseur}
+Comparer $n_1$ et $n_2$ (ou $U_1$ et $U_2$) : si $n_2>n_1$, élévateur ; si $n_2<n_1$,
+abaisseur.
+\begin{exemple}
+$n_1=2\,000$, $n_2=100$ : $n_2<n_1$, c'est un transformateur abaisseur.
+\end{exemple}
+
+\methode{Utiliser la conservation de puissance d'un transformateur idéal}
+Appliquer $U_1I_1=U_2I_2$ pour calculer l'intensité manquante.
+\begin{exemple}
+$U_1=220$ V, $I_1=10$ A, $U_2=4\,400$ V : $I_2=\dfrac{220\times10}{4\,400}=0{,}5$ A.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Production}
+\exo{}\diff{1} Quel type d'énergie un alternateur transforme-t-il en énergie électrique ?
+
+\exo{}\diff{2} Citer deux types de centrales électriques et la source d'énergie mécanique
+associée.
+
+\exo{}\diff{2} Un panneau photovoltaïque contient-il un alternateur ? Expliquer.
+
+\rubrique{Pertes en ligne}
+\exo{}\diff{2} Une ligne de résistance $R=4\ \Omega$ transporte $P=40\,000$ W sous
+$U=2\,000$ V. Calculer $I$, puis $P_{\text{pertes}}$.
+
+\exo{}\diff{2} Une ligne de résistance $R=8\ \Omega$ transporte $P=80\,000$ W sous
+$U=4\,000$ V. Calculer $I$, puis $P_{\text{pertes}}$.
+
+\exo{}\diff{3} Pourquoi augmenter la tension de transport réduit-il les pertes en ligne ?
+
+\rubrique{Transformateur}
+\exo{}\diff{2} Un transformateur a $n_1=50$ spires et $n_2=1\,500$ spires. Il reçoit
+$U_1=110$ V. Calculer $U_2$. S'agit-il d'un élévateur ou d'un abaisseur ?
+
+\exo{}\diff{2} Un transformateur a $n_1=300$ spires et $n_2=900$ spires. Il reçoit
+$U_1=80$ V. Calculer $U_2$.
+
+\exo{}\diff{3} Un transformateur idéal a $U_1=220$ V, $I_1=20$ A, $U_2=4\,400$ V. Calculer
+$I_2$.
+
+\rubrique{Chaîne de l'énergie}
+\exo{}\diff{2} Citer, dans l'ordre, les quatre étapes de la chaîne de l'énergie électrique.
+
+\exo{}\diff{3} À quel endroit de la chaîne utilise-t-on un transformateur élévateur ? Un
+transformateur abaisseur ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Production}
+\exo{}\diff{1} Qu'est-ce que l'induction électromagnétique ?
+
+\exo{}\diff{2} Expliquer, en une phrase, le principe d'une centrale hydraulique.
+
+\exo{}\diff{2} Quel est l'inconvénient principal d'une centrale thermique par rapport à
+une centrale hydraulique ou éolienne ?
+
+\rubrique{Pertes en ligne}
+\exo{}\diff{2} Une ligne de résistance $R=5\ \Omega$ transporte $P=50\,000$ W sous
+$U=1\,000$ V. Calculer $I$, puis $P_{\text{pertes}}$.
+
+\exo{}\diff{3} Reprendre l'exercice précédent avec $U=5\,000$ V (même puissance
+transportée). Comparer les pertes obtenues.
+
+\exo{}\diff{3} Une ligne transporte $P=100\,000$ W avec des pertes de $1\,000$ W sous
+$U=10\,000$ V. Calculer l'intensité $I$, puis la résistance $R$ de la ligne.
+
+\rubrique{Transformateur}
+\exo{}\diff{2} Un transformateur a $n_1=100$ spires et $n_2=2\,000$ spires. Il reçoit
+$U_1=220$ V. Calculer $U_2$.
+
+\exo{}\diff{2} Un transformateur abaisseur a $n_1=4\,000$ spires et $n_2=200$ spires. Il
+reçoit $U_1=20\,000$ V. Calculer $U_2$.
+
+\exo{}\diff{3} Un transformateur idéal a $U_1=6\,000$ V, $U_2=300$ V, $I_2=40$ A. Calculer
+$I_1$.
+
+\exo{}\diff{3} Un transformateur a pour rapport $\dfrac{n_2}{n_1}=20$. Calculer $U_2$ si
+$U_1=230$ V.
+
+\rubrique{Chaîne de l'énergie}
+\exo{}\diff{2} Pourquoi la tension livrée dans les maisons ($220$ V) est-elle beaucoup
+plus faible que la tension de transport ?
+
+\exo{}\diff{3} Expliquer pourquoi le réseau électrique comporte plusieurs transformateurs
+abaisseurs successifs plutôt qu'un seul.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Pertes en ligne]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la relation entre la puissance dissipée par effet Joule dans une ligne, sa
+résistance $R$ et l'intensité $I$ qui la traverse.
+\item Une ligne de résistance $R=2\ \Omega$ transporte une puissance $P=20\,000$ W sous
+une tension $U=2\,000$ V. Calcule l'intensité $I$ dans la ligne.
+\item Calcule la puissance perdue par effet Joule dans cette ligne.
+\item Explique pourquoi on utilise des tensions très élevées pour le transport de
+l'électricité.
+\end{enumerate}
+
+\sujetbac[Transformateur]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la relation entre $U_1$, $U_2$, $n_1$ et $n_2$ pour un transformateur.
+\item Un transformateur a $n_1=200$ spires et $n_2=4\,000$ spires ; il reçoit
+$U_1=220$ V. Calcule $U_2$.
+\item Ce transformateur est-il élévateur ou abaisseur ? Justifie.
+\item En supposant le transformateur idéal, calcule $I_2$ sachant que $I_1=40$ A.
+\end{enumerate}
+
+\sujetbac[De la centrale à la maison]
+\begin{enumerate}[label=\arabic*)]
+\item Cite les quatre grandes étapes du transport de l'énergie électrique, de la centrale
+jusqu'à la maison.
+\item Quel type de transformateur utilise-t-on juste après la centrale ? Pourquoi ?
+\item Quel type de transformateur utilise-t-on juste avant la distribution domestique ?
+Pourquoi ?
+\item Que transforme un alternateur ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+L'énergie mécanique.
+
+\corrige{de l'exercice 2}
+Centrale hydraulique : chute d'eau. Centrale thermique : combustion (charbon, gaz, fioul)
+faisant tourner une turbine à vapeur.
+
+\corrige{de l'exercice 3}
+Non, un panneau photovoltaïque transforme directement la lumière en électricité, sans
+pièce en rotation.
+
+\corrige{de l'exercice 4}
+$I=\dfrac{40\,000}{2\,000}=20$ A ; $P_{\text{pertes}}=4\times20^2=1\,600$ W.
+
+\corrige{de l'exercice 5}
+$I=\dfrac{80\,000}{4\,000}=20$ A ; $P_{\text{pertes}}=8\times20^2=3\,200$ W.
+
+\corrige{de l'exercice 6}
+Car pour une puissance donnée, augmenter $U$ diminue $I=P/U$ ; or les pertes
+$R\times I^2$ diminuent avec le carré de $I$.
+
+\corrige{de l'exercice 7}
+$U_2=110\times\dfrac{1\,500}{50}=3\,300$ V. Élévateur, car $n_2>n_1$.
+
+\corrige{de l'exercice 8}
+$U_2=80\times\dfrac{900}{300}=240$ V.
+
+\corrige{de l'exercice 9}
+$I_2=\dfrac{220\times20}{4\,400}=1$ A.
+
+\corrige{de l'exercice 10}
+Production, élévation, transport, abaissement (puis distribution).
+
+\corrige{de l'exercice 11}
+Élévateur juste après la centrale (pour limiter les pertes) ; abaisseur juste avant la
+distribution (pour livrer une tension utilisable en toute sécurité).
+
+\corrige{du sujet 1}
+1) $P_{\text{pertes}}=R\times I^2$.\\
+2) $I=\dfrac{20\,000}{2\,000}=10$ A.\\
+3) $P_{\text{pertes}}=2\times10^2=200$ W.\\
+4) Une tension élevée réduit l'intensité transportée pour une même puissance, donc réduit
+les pertes par effet Joule proportionnelles à $I^2$.
+
+\corrige{du sujet 2}
+1) $\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$.\\
+2) $U_2=220\times\dfrac{4\,000}{200}=4\,400$ V.\\
+3) Élévateur, car $n_2>n_1$ (et $U_2>U_1$).\\
+4) $I_2=\dfrac{220\times40}{4\,400}=2$ A.
+
+\corrige{du sujet 3}
+1) Production, élévation, transport, abaissement/distribution.\\
+2) Un transformateur élévateur, pour réduire l'intensité transportée et donc les pertes
+en ligne.\\
+3) Un transformateur abaisseur, pour livrer une tension utilisable et sûre ($220$ V).\\
+4) L'énergie mécanique en énergie électrique.
+
+\end{multicols}
+\exercicesBanner
