@@ -1,1 +1,421 @@
 \chapter{Classification périodique des éléments}
+
+\noindent\textit{Plus d'une centaine d'éléments chimiques différents existent dans la
+nature. Pour s'y retrouver, les scientifiques les ont rangés dans un grand tableau — la
+classification périodique — qui permet de prévoir leurs propriétés d'un simple coup d'œil.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Élément chimique et numéro atomique}
+
+\begin{definition}[Élément chimique]
+Un \textbf{élément chimique} regroupe tous les atomes (ou ions dérivés de ces atomes) qui
+possèdent le même nombre de protons dans leur noyau. Ce nombre de protons est appelé
+\textbf{numéro atomique}, noté $Z$.
+\end{definition}
+
+\begin{propriete}[Numéro atomique et électrons]
+Pour un atome \textbf{neutre}, le numéro atomique $Z$ est aussi égal au nombre d'électrons
+(neutralité électrique, chapitre précédent). Chaque élément possède un numéro atomique
+\textbf{unique}, qui le distingue de tous les autres.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.72,every node/.style={font=\scriptsize}]
+\foreach \x/\s/\z in {0/H/1,1/He/2,2/Li/3,3/Be/4,4/B/5,5/C/6,6/N/7,7/O/8,8/F/9,9/Ne/10}{
+  \draw[onbo,line width=1pt,fill=onbsoft] (\x*1.05,0) rectangle ++(0.9,0.9);
+  \node at (\x*1.05+0.45,0.55) {\s};
+  \node[onbmuted] at (\x*1.05+0.45,0.2) {\z};
+}
+\draw[->,onbmuted,line width=1pt] (0,-0.5) -- (9.9,-0.5);
+\node[onbmuted,below] at (4.9,-0.7) {\small numéro atomique $Z$ croissant};
+\end{tikzpicture}
+\fig{Figure — Les dix premiers éléments, rangés par numéro atomique croissant.}
+\end{illus}
+
+\begin{exemple}
+Le sodium a pour numéro atomique $Z=11$ : un atome de sodium possède $11$ protons et, s'il
+est neutre, $11$ électrons.
+\end{exemple}
+
+\section{La classification périodique}
+
+\begin{propriete}[Règle de la classification périodique]
+Les éléments chimiques sont rangés dans un tableau appelé \textbf{classification
+périodique}, par numéro atomique \textbf{croissant}, de gauche à droite puis de haut en
+bas. Les éléments sont organisés en \textbf{lignes} (appelées périodes) et en
+\textbf{colonnes} (appelées familles ou groupes).
+\end{propriete}
+
+\begin{propriete}[Éléments d'une même colonne]
+Les éléments d'une même \textbf{colonne} appartiennent à la même \textbf{famille
+chimique} : ils ont des propriétés chimiques \textbf{semblables}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.62,every node/.style={font=\scriptsize}]
+% ligne 1
+\draw[onbgreen,line width=1pt,fill=onbgreen!15] (0,1.8) rectangle ++(0.9,0.9);
+\node at (0.45,2.35) {H};
+\node[onbmuted] at (0.45,2.0) {1};
+\draw[onbblue,line width=1pt,fill=onbblue!15] (8.5,1.8) rectangle ++(0.9,0.9);
+\node at (8.95,2.35) {He};
+\node[onbmuted] at (8.95,2.0) {2};
+% ligne 2
+\draw[onbgreen,line width=1pt,fill=onbgreen!15] (0,0.8) rectangle ++(0.9,0.9);
+\node at (0.45,1.35) {Li};
+\node[onbmuted] at (0.45,1.0) {3};
+\foreach \x/\s/\z/\i in {1/Be/4/1,2/B/5/2,3/C/6/3,4/N/7/4,5/O/8/5}{
+  \draw[onbline,line width=0.8pt,fill=white] (\x*1.05,0.8) rectangle ++(0.9,0.9);
+  \node at (\x*1.05+0.45,1.35) {\s};
+  \node[onbmuted] at (\x*1.05+0.45,1.0) {\z};
+}
+\draw[onbo,line width=1pt,fill=onbo!15] (6.3,0.8) rectangle ++(0.9,0.9);
+\node at (6.75,1.35) {F};
+\node[onbmuted] at (6.75,1.0) {9};
+\draw[onbblue,line width=1pt,fill=onbblue!15] (8.5,0.8) rectangle ++(0.9,0.9);
+\node at (8.95,1.35) {Ne};
+\node[onbmuted] at (8.95,1.0) {10};
+% ligne 3
+\draw[onbgreen,line width=1pt,fill=onbgreen!15] (0,-0.2) rectangle ++(0.9,0.9);
+\node at (0.45,0.35) {Na};
+\node[onbmuted] at (0.45,0.0) {11};
+\foreach \x/\s/\z/\i in {1/Mg/12/1,2/Al/13/2,3/Si/14/3,4/P/15/4,5/S/16/5}{
+  \draw[onbline,line width=0.8pt,fill=white] (\x*1.05,-0.2) rectangle ++(0.9,0.9);
+  \node at (\x*1.05+0.45,0.35) {\s};
+  \node[onbmuted] at (\x*1.05+0.45,0.0) {\z};
+}
+\draw[onbo,line width=1pt,fill=onbo!15] (6.3,-0.2) rectangle ++(0.9,0.9);
+\node at (6.75,0.35) {Cl};
+\node[onbmuted] at (6.75,0.0) {17};
+\draw[onbblue,line width=1pt,fill=onbblue!15] (8.5,-0.2) rectangle ++(0.9,0.9);
+\node at (8.95,0.35) {Ar};
+\node[onbmuted] at (8.95,0.0) {18};
+% legend
+\node[onbgreen,left] at (-0.3,-0.9) {\scriptsize\textbullet\ alcalins};
+\node[onbo] at (3.4,-0.9) {\scriptsize\textbullet\ halogènes};
+\node[onbblue,right] at (6.3,-0.9) {\scriptsize\textbullet\ gaz nobles};
+\end{tikzpicture}
+\fig{Figure — Extrait du tableau périodique (3 premières périodes) : trois familles
+chimiques mises en évidence.}
+\end{illus}
+
+\begin{exemple}
+Le fluor $\mathrm{F}$ ($Z=9$) et le chlore $\mathrm{Cl}$ ($Z=17$) sont dans la même colonne
+: ils appartiennent tous deux à la famille des \textbf{halogènes} et ont des propriétés
+chimiques semblables (ce sont des non-métaux très réactifs).
+\end{exemple}
+
+\begin{remarque}
+Les \textbf{gaz nobles} (hélium, néon, argon...) forment la famille la plus à droite du
+tableau : ce sont des gaz très peu réactifs, presque inertes chimiquement.
+\end{remarque}
+
+\section{Utiliser la classification périodique}
+
+\begin{propriete}[Utilité pratique]
+Connaître la position d'un élément dans la classification permet de \textbf{prévoir} ses
+propriétés chimiques sans avoir à les mesurer, simplement en les comparant à celles des
+autres éléments de sa colonne (même famille).
+\end{propriete}
+
+\begin{exemple}
+Le sodium $\mathrm{Na}$ ($Z=11$) et le potassium $\mathrm{K}$ ($Z=19$) sont tous deux dans
+la colonne des \textbf{alcalins} : comme le sodium, le potassium est un métal mou, très
+réactif, qui réagit vivement avec l'eau.
+\end{exemple}
+
+\begin{remarque}
+Le numéro atomique augmente toujours de $1$ en $1$ en parcourant une période de gauche à
+droite : entre deux éléments \textbf{voisins} d'une même ligne, il n'y a jamais d'élément
+manquant.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Élément chimique.} Ensemble des atomes ayant le même numéro atomique $Z$ (nombre de
+protons).\\[4pt]
+\textbf{Numéro atomique.} Pour un atome neutre : $Z=$ nombre de protons $=$ nombre
+d'électrons.\\[4pt]
+\textbf{Classification périodique.} Éléments rangés par $Z$ croissant, en lignes
+(périodes) et colonnes (familles).\\[4pt]
+\textbf{Famille chimique.} Éléments d'une même colonne $\Rightarrow$ propriétés chimiques
+semblables (ex. alcalins, halogènes, gaz nobles).\\[4pt]
+\textbf{Piège fréquent.} Deux éléments d'une même \textbf{ligne} n'ont pas forcément de
+propriétés semblables ; c'est la \textbf{colonne} qui détermine la famille chimique.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Déterminer le nombre d'électrons d'un atome neutre à partir de son numéro
+atomique}
+Pour un atome neutre, le nombre d'électrons est toujours égal au numéro atomique $Z$
+(nombre de protons).
+\begin{exemple}
+Le calcium a pour numéro atomique $Z=20$ : un atome de calcium neutre possède $20$
+électrons.
+\end{exemple}
+
+\methode{Comparer deux éléments à l'aide de leur numéro atomique}
+Le numéro atomique le plus petit correspond à l'élément situé le plus à gauche et/ou le
+plus haut dans la classification.
+\begin{exemple}
+Le carbone ($Z=6$) est situé avant l'oxygène ($Z=8$) dans la classification.
+\end{exemple}
+
+\methode{Identifier la famille chimique d'un élément}
+Repérer la colonne de l'élément dans la classification : tous les éléments de cette
+colonne forment la même famille chimique.
+\begin{exemple}
+Le chlore ($Z=17$) est dans la colonne des halogènes, comme le fluor ($Z=9$).
+\end{exemple}
+
+\methode{Prévoir une propriété par comparaison au sein d'une famille}
+Si deux éléments sont dans la même colonne, ils partagent des propriétés chimiques
+similaires : on peut prévoir le comportement de l'un en connaissant celui de l'autre.
+\begin{exemple}
+Le sodium réagit vivement avec l'eau ; le potassium, autre alcalin, réagit lui aussi
+vivement (et même plus violemment) avec l'eau.
+\end{exemple}
+
+\methode{Reconnaître un gaz noble}
+Les gaz nobles occupent la dernière colonne (la plus à droite) de la classification et se
+caractérisent par une très faible réactivité chimique.
+\begin{exemple}
+L'hélium ($Z=2$), le néon ($Z=10$) et l'argon ($Z=18$) sont des gaz nobles : ils
+n'entrent quasiment dans aucune réaction chimique.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Numéro atomique}
+\exo{}\diff{1} Le sodium a pour numéro atomique $Z=11$. Combien de protons et combien
+d'électrons possède un atome de sodium neutre ?
+
+\exo{}\diff{1} Le fer a pour numéro atomique $Z=26$. Combien d'électrons possède un atome
+de fer neutre ?
+
+\exo{}\diff{2} Qu'est-ce qu'un élément chimique ?
+
+\exo{}\diff{2} Deux atomes ont respectivement $8$ et $9$ protons dans leur noyau.
+Appartiennent-ils au même élément chimique ? Justifier.
+
+\rubrique{Structure de la classification}
+\exo{}\diff{1} Comment les éléments sont-ils rangés dans la classification périodique ?
+
+\exo{}\diff{2} Le carbone a pour numéro atomique $6$ et l'azote $7$. Lequel des deux est
+placé avant l'autre dans la classification ?
+
+\exo{}\diff{2} Que représente une colonne de la classification périodique ?
+
+\exo{}\diff{1} Que représente une ligne (période) de la classification périodique ?
+
+\rubrique{Familles chimiques}
+\exo{}\diff{1} Citer une famille chimique de la classification périodique.
+
+\exo{}\diff{2} Le fluor et le chlore sont dans la même colonne. Que peut-on en déduire sur
+leurs propriétés chimiques ?
+
+\exo{}\diff{2} Pourquoi les gaz nobles sont-ils peu utilisés dans les réactions
+chimiques ?
+
+\exo{}\diff{2} L'hélium et le néon appartiennent-ils à la même famille chimique ?
+Justifier.
+
+\rubrique{Utilisation du tableau}
+\exo{}\diff{2} Le sodium réagit vivement avec l'eau. Que peut-on prévoir pour le
+potassium, qui appartient à la même famille ?
+
+\exo{}\diff{2} Un élément a pour numéro atomique $Z=17$. À quelle famille appartient-il ?
+
+\exo{}\diff{3} Deux éléments appartiennent à la même ligne de la classification. Ont-ils
+nécessairement des propriétés chimiques semblables ? Justifier.
+
+\exo{}\diff{2} Expliquer en une phrase l'intérêt pratique de la classification
+périodique.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Numéro atomique}
+\exo{}\diff{1} Le magnésium a pour numéro atomique $Z=12$. Combien de protons et
+combien d'électrons possède un atome de magnésium neutre ?
+
+\exo{}\diff{1} L'aluminium a pour numéro atomique $Z=13$. Combien d'électrons possède un
+atome d'aluminium neutre ?
+
+\exo{}\diff{2} Un atome possède $16$ électrons et est électriquement neutre. Quel est son
+numéro atomique ?
+
+\exo{}\diff{2} Le potassium a pour numéro atomique $19$ et le calcium $20$. Lequel des
+deux atomes possède le plus d'électrons ?
+
+\exo{}\diff{3} Deux atomes appartiennent au même élément chimique. Que peut-on affirmer
+sur leur nombre de protons ?
+
+\rubrique{Structure de la classification}
+\exo{}\diff{1} La classification périodique range-t-elle les éléments par numéro
+atomique croissant ou décroissant ?
+
+\exo{}\diff{2} Le silicium a pour numéro atomique $14$ et le phosphore $15$. Lequel des
+deux se trouve le plus à gauche dans sa ligne ?
+
+\exo{}\diff{2} Comment appelle-t-on une colonne de la classification périodique ?
+
+\exo{}\diff{1} Comment appelle-t-on une ligne de la classification périodique ?
+
+\exo{}\diff{2} Vrai ou Faux : « Entre deux éléments voisins d'une même ligne, il peut
+manquer un élément intermédiaire. »
+
+\rubrique{Familles chimiques}
+\exo{}\diff{1} Citer deux éléments de la famille des halogènes.
+
+\exo{}\diff{2} Citer deux éléments de la famille des gaz nobles.
+
+\exo{}\diff{2} Le lithium et le sodium sont dans la même colonne. À quelle famille
+appartiennent-ils ?
+
+\exo{}\diff{2} Pourquoi dit-on que les alcalins sont des métaux très réactifs ?
+
+\exo{}\diff{3} Le brome appartient à la même famille que le chlore. Sachant que le chlore
+est un non-métal réactif, que peut-on prévoir pour le brome ?
+
+\rubrique{Utilisation du tableau}
+\exo{}\diff{2} Un élément a pour numéro atomique $Z=10$. À quelle famille appartient-il
+? Que peut-on en déduire sur sa réactivité ?
+
+\exo{}\diff{2} Le potassium réagit très vivement avec l'eau. Que peut-on prévoir pour le
+lithium, autre alcalin ?
+
+\exo{}\diff{2} Expliquer pourquoi il est utile de connaître la famille chimique d'un
+élément avant de l'utiliser dans une expérience.
+
+\exo{}\diff{3} Un élève affirme : « Le carbone et l'azote, voisins dans le tableau, ont
+forcément les mêmes propriétés chimiques. » Cette affirmation est-elle correcte ?
+Justifier.
+
+\exo{}\diff{2} Citer un élément de la famille des alcalins et un élément de la famille
+des halogènes.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Numéro atomique et familles chimiques]
+\begin{enumerate}[label=\arabic*)]
+\item Définis : élément chimique.
+\item Le zinc a pour numéro atomique $Z=30$. Combien d'électrons possède un atome de zinc
+neutre ?
+\item Cite un élément de la famille des gaz nobles.
+\item Le fluor et le chlore sont-ils dans la même famille chimique ? Justifier.
+\end{enumerate}
+
+\sujetbac[Lecture de la classification périodique]
+\begin{enumerate}[label=\arabic*)]
+\item Comment les éléments sont-ils rangés dans la classification périodique ?
+\item Que représente une colonne de la classification ?
+\item Le sodium ($Z=11$) et le potassium ($Z=19$) sont dans la même colonne. Que peut-on
+prévoir sur leurs propriétés chimiques ?
+\item Réponds par Vrai ou Faux : « Les gaz nobles sont très réactifs chimiquement. »
+\end{enumerate}
+
+\sujetbac[Utiliser la classification pour prévoir des propriétés]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce que le numéro atomique d'un élément ?
+\item Un atome possède $17$ électrons et est neutre. Quel est son numéro atomique ? À
+quelle famille appartient-il ?
+\item Le chlore réagit facilement avec les métaux. Que peut-on prévoir pour le brome,
+autre halogène ?
+\item Cite l'intérêt pratique de la classification périodique pour un chimiste.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$11$ protons et $11$ électrons.
+
+\corrige{de l'exercice 2}
+$26$ électrons.
+
+\corrige{de l'exercice 3}
+Un élément chimique regroupe tous les atomes ayant le même numéro atomique (même nombre
+de protons).
+
+\corrige{de l'exercice 4}
+Non : ils ont un nombre de protons différent ($8$ et $9$), donc ils appartiennent à des
+éléments chimiques différents.
+
+\corrige{de l'exercice 5}
+Par numéro atomique croissant, en lignes (périodes) et colonnes (familles).
+
+\corrige{de l'exercice 6}
+Le carbone ($Z=6$) est placé avant l'azote ($Z=7$).
+
+\corrige{de l'exercice 7}
+Une colonne représente une famille chimique : des éléments aux propriétés chimiques
+semblables.
+
+\corrige{de l'exercice 8}
+Une ligne (période) regroupe des éléments consécutifs par numéro atomique croissant.
+
+\corrige{de l'exercice 9}
+Par exemple : la famille des halogènes (ou des alcalins, ou des gaz nobles).
+
+\corrige{de l'exercice 10}
+Ils ont des propriétés chimiques semblables : ce sont tous deux des non-métaux réactifs
+(halogènes).
+
+\corrige{de l'exercice 11}
+Parce qu'ils sont chimiquement très peu réactifs (presque inertes).
+
+\corrige{de l'exercice 12}
+Oui : ils sont dans la même colonne (famille des gaz nobles).
+
+\corrige{de l'exercice 13}
+Le potassium devrait lui aussi réagir vivement avec l'eau (même famille que le sodium).
+
+\corrige{de l'exercice 14}
+Il appartient à la famille des halogènes.
+
+\corrige{de l'exercice 15}
+Non : ce sont des éléments voisins d'une même ligne, mais chaque colonne correspond à une
+famille différente ; leurs propriétés ne sont pas nécessairement semblables.
+
+\corrige{de l'exercice 16}
+Elle permet de prévoir les propriétés chimiques d'un élément par comparaison avec les
+autres éléments de sa famille.
+
+\corrige{du sujet 1}
+1) Un élément chimique regroupe tous les atomes ayant le même numéro atomique.\\
+2) $30$ électrons.\\
+3) Par exemple l'hélium, le néon ou l'argon.\\
+4) Oui : ils sont dans la même colonne (famille des halogènes).
+
+\corrige{du sujet 2}
+1) Par numéro atomique croissant, en lignes et colonnes.\\
+2) Une famille chimique : des éléments aux propriétés semblables.\\
+3) Des propriétés chimiques semblables (tous deux alcalins, métaux réactifs).\\
+4) Faux : les gaz nobles sont très peu réactifs.
+
+\corrige{du sujet 3}
+1) C'est le nombre de protons de son noyau (égal au nombre d'électrons pour un atome
+neutre).\\
+2) Numéro atomique $17$ ; famille des halogènes.\\
+3) Le brome devrait lui aussi réagir facilement avec les métaux (même famille que le
+chlore).\\
+4) Elle permet de prévoir les propriétés d'un élément sans avoir à toutes les mesurer.
+
+\end{multicols}
+\exercicesBanner
