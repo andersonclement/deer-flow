@@ -1,1 +1,592 @@
 \chapter{Solides usuels : sections planes et volumes}
+
+\noindent\textit{Réservoirs, silos, tentes, ballons : de nombreux objets qui nous entourent
+ont la forme d'un cylindre, d'une pyramide, d'un cône ou d'une sphère. Ce chapitre reprend
+les formules d'aire et de volume de ces solides usuels, et étudie ce qui se passe lorsqu'on
+coupe une pyramide ou un cône par un plan parallèle à sa base.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Rappels : prisme droit et cylindre de révolution}
+
+\begin{definition}[Prisme droit]
+Un \textbf{prisme droit} est un solide formé de deux bases superposables et parallèles,
+reliées par des faces latérales rectangulaires perpendiculaires aux bases.
+\end{definition}
+
+\begin{propriete}[Volume et aire latérale d'un prisme droit]
+\[
+V=\mathcal{A}_{\text{base}}\times h \qquad\qquad \mathcal{A}_{\text{lat}}=P_{\text{base}}\times h
+\]
+où $h$ est la hauteur du prisme et $P_{\text{base}}$ le périmètre de la base.
+\end{propriete}
+
+\begin{definition}[Cylindre de révolution]
+Un \textbf{cylindre de révolution} de rayon $r$ et de hauteur $h$ est engendré par un
+rectangle qui tourne autour d'un de ses côtés. C'est un cas particulier de prisme dont la
+base est un disque.
+\end{definition}
+
+\begin{propriete}[Cylindre de révolution]
+\[
+\mathcal{A}_{\text{lat}}=2\pi r h \qquad\qquad V=\pi r^{2}h
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=0.8pt] (1.6,0) arc (0:-180:1.6 and 0.5);
+\draw[onbline,dashed,line width=0.6pt] (1.6,0) arc (0:180:1.6 and 0.5);
+\draw[onbline,line width=1pt] (-1.6,0) -- (-1.6,3);
+\draw[onbline,line width=1pt] (1.6,0) -- (1.6,3);
+\draw[onbo,line width=1.2pt,fill=onbsoft] (0,3) ellipse (1.6 and 0.5);
+\draw[onbo,line width=1pt] (0,3) -- (1.6,3);
+\node[onbo,above] at (0.8,3) {\small $r$};
+\draw[onbmuted,line width=0.6pt] (2.1,0)--(2.3,0)--(2.3,3)--(2.1,3);
+\node[onbmuted,right] at (2.3,1.5) {\small $h$};
+\end{tikzpicture}
+\fig{Figure — Cylindre de révolution : rayon $r$, hauteur $h$.}
+\end{illus}
+
+\begin{exemple}
+Cylindre de rayon $r=5$ cm et de hauteur $h=9$ cm : $\mathcal{A}_{\text{lat}}=2\pi\times5\times9=90\pi$ cm$^{2}$
+et $V=\pi\times5^{2}\times9=225\pi$ cm$^{3}$.
+\end{exemple}
+
+\begin{remarque}
+On rappelle les conversions de volume utiles : $1\ \text{dm}^{3}=1$ L et
+$1\ \text{m}^{3}=1\,000$ L. Pour convertir un volume en litres, on l'exprime d'abord en
+dm$^{3}$.
+\end{remarque}
+
+\section{Pyramide}
+
+\begin{definition}[Pyramide]
+Une \textbf{pyramide} est un solide formé d'une base polygonale et de faces latérales
+triangulaires qui se rejoignent en un même point, le \textbf{sommet}. La \textbf{hauteur}
+est la distance du sommet au plan de la base. Une pyramide est \textbf{régulière} si sa base
+est un polygone régulier et si le sommet se projette au centre de la base ; l'\textbf{apothème}
+est alors la hauteur d'une face latérale (distance du sommet au milieu d'un côté de la base).
+\end{definition}
+
+\begin{propriete}[Volume d'une pyramide]
+Pour toute pyramide, de base d'aire $\mathcal{A}_{\text{base}}$ et de hauteur $h$ :
+\[
+V=\frac{1}{3}\times\mathcal{A}_{\text{base}}\times h
+\]
+\end{propriete}
+
+\begin{propriete}[Aire latérale d'une pyramide régulière]
+Si la pyramide est \textbf{régulière}, d'apothème $a$ et de base de périmètre $P_{\text{base}}$ :
+\[
+\mathcal{A}_{\text{lat}}=\frac{1}{2}\times P_{\text{base}}\times a
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\coordinate (O) at (0,0);
+\coordinate (F) at (0,-1.0);
+\coordinate (K) at (0,1.0);
+\coordinate (R) at (1.9,-0.35);
+\coordinate (L) at (-1.9,0.35);
+\coordinate (S) at (0,3.0);
+\coordinate (M) at ($(F)!0.5!(R)$);
+\draw[onbline,dashed,line width=0.7pt] (R) -- (K) -- (L);
+\draw[onbline,line width=1pt] (F) -- (R);
+\draw[onbline,line width=1pt] (L) -- (F);
+\draw[onbline,dashed,line width=0.7pt] (S) -- (K);
+\draw[onbo,line width=1.2pt] (S) -- (F);
+\draw[onbo,line width=1.2pt] (S) -- (R);
+\draw[onbo,line width=1.2pt] (S) -- (L);
+\draw[onbmuted,dashed,line width=0.7pt] (S) -- (O);
+\node[onbmuted,left] at (0,1.7) {\small $h$};
+\draw[onbmuted,dashed,line width=0.7pt] (S) -- (M);
+\node[onbmuted,right] at ($(S)!0.55!(M)$) {\small $a$};
+\node[below right] at (0.9,-0.8) {\small $c$};
+\end{tikzpicture}
+\fig{Figure — Pyramide régulière à base carrée : côté $c$, hauteur $h$, apothème $a$.}
+\end{illus}
+
+\begin{exemple}
+Pyramide régulière à base carrée de côté $c=6$ cm et de hauteur $h=4$ cm. L'apothème $a$ est
+l'hypoténuse d'un triangle rectangle de côtés $h=4$ et $c/2=3$ (Pythagore) :
+$a=\sqrt{4^{2}+3^{2}}=\sqrt{25}=5$ cm.
+Aire latérale : $\mathcal{A}_{\text{lat}}=\frac{1}{2}\times(4\times6)\times5=60$ cm$^{2}$.
+Volume : $V=\frac{1}{3}\times6^{2}\times4=\frac{1}{3}\times144=48$ cm$^{3}$.
+\end{exemple}
+
+\begin{remarque}
+La formule du volume $V=\frac13\mathcal{A}_{\text{base}}h$ vaut pour \textbf{toute} pyramide
+(base quelconque, régulière ou non). En revanche, la formule de l'aire latérale avec
+l'apothème ne s'applique qu'aux pyramides \textbf{régulières}.
+\end{remarque}
+
+\section{Cône de révolution}
+
+\begin{definition}[Cône de révolution]
+Un \textbf{cône de révolution} de rayon $r$ et de hauteur $h$ est engendré par un triangle
+rectangle qui tourne autour d'un de ses côtés de l'angle droit. Le segment reliant le sommet
+à un point du cercle de base s'appelle la \textbf{génératrice}, notée $l$.
+\end{definition}
+
+\begin{propriete}[Génératrice d'un cône]
+Le rayon, la hauteur et la génératrice forment un triangle rectangle en le centre de la
+base : d'après le théorème de Pythagore,
+\[
+l^{2}=r^{2}+h^{2}
+\]
+\end{propriete}
+
+\begin{propriete}[Aires et volume d'un cône]
+\[
+\mathcal{A}_{\text{lat}}=\pi r l \qquad\quad \mathcal{A}_{\text{tot}}=\pi r^{2}+\pi rl=\pi r(r+l) \qquad\quad V=\frac{1}{3}\pi r^{2}h
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\coordinate (O) at (0,0);
+\coordinate (R) at (1.7,0);
+\coordinate (Lp) at (-1.7,0);
+\coordinate (S) at (0,3.2);
+\draw[onbline,line width=0.8pt] (1.7,0) arc (0:-180:1.7 and 0.5);
+\draw[onbline,dashed,line width=0.6pt] (1.7,0) arc (0:180:1.7 and 0.5);
+\draw[onbo,line width=1.2pt] (S) -- (R);
+\draw[onbo,line width=1.2pt] (S) -- (Lp);
+\draw[onbmuted,dashed,line width=0.7pt] (S) -- (O);
+\draw[onbmuted,line width=0.6pt] (0,0.18)--(0.18,0.18)--(0.18,0);
+\draw[onbline,line width=0.9pt] (O) -- (R);
+\node[below] at (0.85,0) {\small $r$};
+\node[onbmuted,left] at (0,1.6) {\small $h$};
+\node[onbo,above right] at (0.85,1.6) {\small $l$};
+\end{tikzpicture}
+\fig{Figure — Cône de révolution : le triangle $OSR$ est rectangle en $O$, $l^{2}=r^{2}+h^{2}$.}
+\end{illus}
+
+\begin{exemple}
+Cône de rayon $r=9$ cm et de hauteur $h=12$ cm.
+Génératrice : $l=\sqrt{9^{2}+12^{2}}=\sqrt{81+144}=\sqrt{225}=15$ cm.
+Aire latérale : $\mathcal{A}_{\text{lat}}=\pi\times9\times15=135\pi$ cm$^{2}$.
+Aire totale : $\mathcal{A}_{\text{tot}}=\pi\times9\times(9+15)=216\pi$ cm$^{2}$.
+Volume : $V=\frac{1}{3}\pi\times9^{2}\times12=324\pi$ cm$^{3}$.
+\end{exemple}
+
+\begin{remarque}
+Comme pour la pyramide, le volume d'un cône vaut le \textbf{tiers} du produit de l'aire de
+la base par la hauteur : $V=\frac13\mathcal{A}_{\text{base}}h$ avec $\mathcal{A}_{\text{base}}=\pi r^{2}$.
+\end{remarque}
+
+\section{Sphère et boule}
+
+\begin{definition}[Sphère et boule]
+La \textbf{sphère} de centre $O$ et de rayon $r$ est l'ensemble des points de l'espace
+situés à la distance $r$ de $O$ : c'est une \textbf{surface}. La \textbf{boule} de centre
+$O$ et de rayon $r$ est le solide plein délimité par cette sphère.
+\end{definition}
+
+\begin{propriete}[Aire et volume de la sphère et de la boule]
+\[
+\mathcal{A}_{\text{sphère}}=4\pi r^{2} \qquad\qquad V_{\text{boule}}=\frac{4}{3}\pi r^{3}
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\coordinate (O) at (0,0);
+\draw[onbline,line width=1pt] (O) circle (1.6);
+\draw[onbmuted,line width=0.6pt] (1.6,0) arc (0:-180:1.6 and 0.45);
+\draw[onbmuted,dashed,line width=0.6pt] (1.6,0) arc (0:180:1.6 and 0.45);
+\draw[onbo,line width=1.1pt] (O) -- (1.6,0);
+\filldraw[onbo] (O) circle(1.2pt);
+\node[onbo,below] at (0.8,0) {\small $r$};
+\node[above left] at (O) {\small $O$};
+\end{tikzpicture}
+\fig{Figure — Sphère de centre $O$ et de rayon $r$.}
+\end{illus}
+
+\begin{exemple}
+Sphère de rayon $r=6$ cm : $\mathcal{A}=4\pi\times6^{2}=144\pi$ cm$^{2}$ et
+$V=\frac{4}{3}\pi\times6^{3}=\frac{4}{3}\pi\times216=288\pi$ cm$^{3}$.
+\end{exemple}
+
+\begin{remarque}
+Pour une boule, on utilise parfois $\pi\approx3{,}14$ pour donner une valeur approchée du
+volume, par exemple pour estimer une contenance en litres.
+\end{remarque}
+
+\section{Section par un plan parallèle à la base}
+
+\begin{propriete}[Section d'une pyramide ou d'un cône]
+Lorsqu'on coupe une pyramide (ou un cône) par un plan parallèle à sa base, à une distance du
+sommet égale à un coefficient $k$ de la hauteur totale ($0<k<1$), le petit solide obtenu au
+sommet est une \textbf{réduction} du solide entier, de coefficient $k$ :
+\[
+\text{longueurs}\times k \qquad\qquad \text{aires}\times k^{2} \qquad\qquad \text{volumes}\times k^{3}
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.68]
+\coordinate (S) at (0,4.2);
+\coordinate (Ob) at (0,0);
+\coordinate (Oc) at (0,1.4);
+\draw[onbline,line width=0.8pt] (2.0,0) arc (0:-180:2.0 and 0.55);
+\draw[onbline,dashed,line width=0.6pt] (2.0,0) arc (0:180:2.0 and 0.55);
+\draw[onbline,line width=0.9pt] (Ob) -- (2.0,0);
+\draw[onbline,line width=1.1pt] (S) -- (2.0,0);
+\draw[onbline,line width=1.1pt] (S) -- (-2.0,0);
+\draw[onbo,line width=1pt,fill=onbsoft] (1.333,1.4) arc (0:360:1.333 and 0.37);
+\draw[onbo,line width=0.7pt] (Oc) -- (1.333,1.4);
+\node[onbo,above] at (0.67,1.5) {\small $r$};
+\node[below] at (1.0,0) {\small $R$};
+\draw[onbmuted,line width=0.6pt] (-2.15,0)--(-2.35,0)--(-2.35,4.2)--(-2.15,4.2);
+\node[onbmuted,left] at (-2.35,2.1) {\small $H$};
+\draw[onbmuted,line width=0.6pt] (2.15,1.4)--(2.35,1.4)--(2.35,4.2)--(2.15,4.2);
+\node[onbmuted,right] at (2.35,2.8) {\small $h'$};
+\end{tikzpicture}
+\fig{Figure — Section d'un cône par un plan parallèle à la base : $k=h'/H$, rayon réduit $r=kR$.}
+\end{illus}
+
+\begin{exemple}
+Pyramide régulière de hauteur totale $H=12$ cm et de base carrée de côté $9$ cm. On la coupe
+par un plan parallèle à la base, à $h'=8$ cm du sommet : $k=\dfrac{8}{12}=\dfrac{2}{3}$.
+Côté réduit : $9\times\dfrac23=6$ cm. Aire réduite : $6^{2}=36$ cm$^{2}$.
+Volume total : $V=\frac13\times9^{2}\times12=324$ cm$^{3}$.
+Volume du petit solide réduit : $V\times\left(\dfrac23\right)^{3}=324\times\dfrac{8}{27}=96$ cm$^{3}$.
+\end{exemple}
+
+\begin{remarque}
+Le coefficient $k$ se calcule toujours en comparant la \textbf{hauteur du petit solide}
+(sommet au plan de coupe) à la \textbf{hauteur totale} du solide entier, jamais la distance
+du plan de coupe à la base.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Prisme droit / cylindre.} $V=\mathcal{A}_{\text{base}}\times h$ ;
+$\mathcal{A}_{\text{lat}}=P_{\text{base}}\times h$ (cylindre : $\mathcal{A}_{\text{lat}}=2\pi rh$,
+$V=\pi r^{2}h$).\\[4pt]
+\textbf{Pyramide.} $V=\frac13\mathcal{A}_{\text{base}}\times h$ (toute pyramide) ;
+si régulière, $\mathcal{A}_{\text{lat}}=\frac12P_{\text{base}}\times a$ ($a$ = apothème).\\[4pt]
+\textbf{Cône de révolution.} $l^{2}=r^{2}+h^{2}$ ; $\mathcal{A}_{\text{lat}}=\pi rl$ ;
+$\mathcal{A}_{\text{tot}}=\pi r(r+l)$ ; $V=\frac13\pi r^{2}h$.\\[4pt]
+\textbf{Sphère / boule.} $\mathcal{A}=4\pi r^{2}$ ; $V=\frac43\pi r^{3}$.\\[4pt]
+\textbf{Section parallèle à la base (coefficient $k$).} Longueurs $\times k$, aires
+$\times k^{2}$, volumes $\times k^{3}$.\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre l'aire \textbf{latérale} (faces courbes ou
+triangulaires seulement) et l'aire \textbf{totale} (avec la ou les bases).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer l'aire latérale et le volume d'un cylindre}
+Utiliser $\mathcal{A}_{\text{lat}}=2\pi rh$ et $V=\pi r^{2}h$ directement à partir du rayon
+et de la hauteur.
+\begin{exemple}
+$r=3$ cm, $h=7$ cm : $\mathcal{A}_{\text{lat}}=2\pi\times3\times7=42\pi$ cm$^{2}$,
+$V=\pi\times3^{2}\times7=63\pi$ cm$^{3}$.
+\end{exemple}
+
+\methode{Calculer le volume d'une pyramide}
+Calculer l'aire de la base, puis appliquer $V=\frac13\mathcal{A}_{\text{base}}\times h$.
+\begin{exemple}
+Pyramide à base carrée de côté $10$ cm, hauteur $12$ cm :
+$V=\frac13\times10^{2}\times12=\frac13\times1\,200=400$ cm$^{3}$.
+\end{exemple}
+
+\methode{Calculer l'aire latérale d'une pyramide régulière}
+Calculer l'apothème avec Pythagore (hauteur et demi-côté de la base), puis appliquer
+$\mathcal{A}_{\text{lat}}=\frac12P_{\text{base}}\times a$.
+\begin{exemple}
+Base carrée de côté $10$ cm, hauteur $12$ cm : $a=\sqrt{12^{2}+5^{2}}=\sqrt{169}=13$ cm ;
+$\mathcal{A}_{\text{lat}}=\frac12\times40\times13=260$ cm$^{2}$.
+\end{exemple}
+
+\methode{Calculer la génératrice et les aires d'un cône}
+Calculer $l$ avec $l^{2}=r^{2}+h^{2}$, puis appliquer $\mathcal{A}_{\text{lat}}=\pi rl$ et
+$\mathcal{A}_{\text{tot}}=\pi r(r+l)$.
+\begin{exemple}
+$r=8$ cm, $h=6$ cm : $l=\sqrt{64+36}=\sqrt{100}=10$ cm ; $\mathcal{A}_{\text{lat}}=80\pi$ cm$^{2}$,
+$\mathcal{A}_{\text{tot}}=\pi\times8\times18=144\pi$ cm$^{2}$.
+\end{exemple}
+
+\methode{Calculer l'aire et le volume d'une sphère ou d'une boule}
+Appliquer directement $\mathcal{A}=4\pi r^{2}$ pour la surface et $V=\frac43\pi r^{3}$ pour
+le volume plein.
+\begin{exemple}
+$r=9$ cm : $\mathcal{A}=4\pi\times81=324\pi$ cm$^{2}$, $V=\frac43\pi\times729=972\pi$ cm$^{3}$.
+\end{exemple}
+
+\methode{Étudier une section parallèle à la base}
+Calculer $k$ = (hauteur du petit solide) $\div$ (hauteur totale), puis multiplier les
+longueurs par $k$, les aires par $k^{2}$ et les volumes par $k^{3}$.
+\begin{exemple}
+Cône de hauteur totale $18$ cm, rayon $6$ cm, coupé à $12$ cm du sommet : $k=\frac{12}{18}=\frac23$.
+Rayon réduit $=6\times\frac23=4$ cm. Volume total $V=\frac13\pi\times36\times18=216\pi$ cm$^{3}$ ;
+volume réduit $=216\pi\times\left(\frac23\right)^{3}=216\pi\times\frac{8}{27}=64\pi$ cm$^{3}$.
+\end{exemple}
+
+\methode{Résoudre un problème concret (réservoir, emballage)}
+Identifier la forme du solide, relever les dimensions utiles dans l'énoncé, appliquer la
+formule adaptée, puis convertir le résultat dans l'unité demandée (L, m$^{3}$...).
+\begin{exemple}
+Réservoir cylindrique de rayon $1{,}5$ m et de hauteur $4$ m :
+$V=\pi\times1{,}5^{2}\times4\approx28{,}27$ m$^{3}$, soit environ $28\,274$ L.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Cylindre et pyramide}
+\exo{}\diff{1} Cylindre de rayon $4$ cm et de hauteur $10$ cm. Calculer $\mathcal{A}_{\text{lat}}$
+et $V$.
+
+\exo{}\diff{1} Cylindre de rayon $3$ cm et de hauteur $7$ cm. Calculer $\mathcal{A}_{\text{lat}}$
+et $V$.
+
+\exo{}\diff{2} Pyramide régulière à base carrée de côté $8$ cm et de hauteur $3$ cm.
+Calculer l'apothème, l'aire latérale et le volume.
+
+\exo{}\diff{2} Pyramide régulière à base carrée de côté $10$ cm et de hauteur $12$ cm.
+Calculer l'apothème, l'aire latérale et le volume.
+
+\rubrique{Cône de révolution}
+\exo{}\diff{1} Cône de rayon $3$ cm et de hauteur $4$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{2} Cône de rayon $5$ cm et de hauteur $12$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{2} Cône de rayon $8$ cm et de hauteur $6$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{3} Cône de rayon $7$ cm et de hauteur $24$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\rubrique{Sphère et boule}
+\exo{}\diff{1} Sphère de rayon $6$ cm. Calculer son aire et le volume de la boule associée.
+
+\exo{}\diff{2} Sphère de rayon $9$ cm. Calculer son aire et le volume de la boule associée.
+
+\exo{}\diff{2} Sphère de rayon $12$ cm. Calculer son aire et le volume de la boule associée.
+
+\exo{}\diff{2} Sphère de rayon $10$ cm. Calculer son aire, puis le volume de la boule
+associée sous forme exacte $\dfrac{\ldots}{3}\pi$.
+
+\rubrique{Sections et problèmes concrets}
+\exo{}\diff{3} Pyramide régulière à base carrée de côté $9$ cm et de hauteur totale $12$ cm.
+On la coupe par un plan parallèle à la base, à $8$ cm du sommet. Calculer le côté et l'aire
+de la section, puis le volume du petit solide obtenu.
+
+\exo{}\diff{3} Cône de hauteur totale $18$ cm et de rayon de base $6$ cm. On le coupe par un
+plan parallèle à la base, à $12$ cm du sommet. Calculer le rayon de la section, le volume du
+cône entier et le volume du petit cône obtenu.
+
+\exo{}\diff{2} Un réservoir cylindrique a un rayon de $1{,}5$ m et une hauteur de $4$ m.
+Calculer son volume en m$^{3}$ (arrondi au centième), puis en litres.
+
+\exo{}\diff{2} Un ballon sphérique a un rayon de $11$ cm. Calculer le volume d'air qu'il
+contient, arrondi au centième de cm$^{3}$ (on prendra $\pi\approx3{,}14$).
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Cylindre et pyramide}
+\exo{}\diff{1} Cylindre de rayon $5$ cm et de hauteur $8$ cm. Calculer $\mathcal{A}_{\text{lat}}$
+et $V$.
+
+\exo{}\diff{2} Cylindre de rayon $6$ cm et de hauteur $15$ cm. Calculer $\mathcal{A}_{\text{lat}}$
+et $V$.
+
+\exo{}\diff{2} Pyramide régulière à base carrée de côté $12$ cm et de hauteur $8$ cm.
+Calculer l'apothème, l'aire latérale et le volume.
+
+\exo{}\diff{2} Pyramide régulière à base carrée de côté $16$ cm et de hauteur $15$ cm.
+Calculer l'apothème, l'aire latérale et le volume.
+
+\exo{}\diff{1} Pyramide de base rectangulaire $6$ cm $\times5$ cm et de hauteur $9$ cm.
+Calculer son volume (formule générale, sans apothème).
+
+\rubrique{Cône de révolution}
+\exo{}\diff{2} Cône de rayon $12$ cm et de hauteur $16$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{2} Cône de rayon $15$ cm et de hauteur $8$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{2} Cône de rayon $20$ cm et de hauteur $15$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{2} Cône de rayon $10$ cm et de hauteur $24$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\exo{}\diff{3} Cône de rayon $9$ cm et de hauteur $40$ cm. Calculer la génératrice, l'aire
+latérale, l'aire totale et le volume.
+
+\rubrique{Sphère et boule}
+\exo{}\diff{1} Sphère de rayon $18$ cm. Calculer son aire et le volume de la boule associée.
+
+\exo{}\diff{2} Sphère de rayon $21$ cm. Calculer son aire et le volume de la boule associée.
+
+\exo{}\diff{2} Sphère de rayon $5$ cm. Calculer son aire, puis le volume de la boule sous
+forme exacte $\dfrac{\ldots}{3}\pi$.
+
+\exo{}\diff{2} Sphère de rayon $7$ cm. Calculer son aire, puis le volume de la boule sous
+forme exacte $\dfrac{\ldots}{3}\pi$.
+
+\exo{}\diff{2} Sphère de rayon $20$ cm. Calculer son aire, puis le volume de la boule sous
+forme exacte $\dfrac{\ldots}{3}\pi$.
+
+\rubrique{Sections et problèmes concrets}
+\exo{}\diff{3} Pyramide régulière à base carrée de côté $12$ cm et de hauteur totale $9$ cm.
+On la coupe par un plan parallèle à la base, à $3$ cm du sommet. Calculer le côté et l'aire
+de la section, le volume total, puis le volume du petit solide obtenu.
+
+\exo{}\diff{3} Cône de hauteur totale $21$ cm et de rayon de base $9$ cm. On le coupe par un
+plan parallèle à la base, à $14$ cm du sommet. Calculer le rayon de la section, le volume du
+cône entier et le volume du petit cône obtenu.
+
+\exo{}\diff{2} Une citerne cylindrique a un rayon de $2$ m et une hauteur de $5$ m. Calculer
+son volume en m$^{3}$ (valeur exacte avec $\pi$), puis en litres arrondis à l'unité.
+
+\exo{}\diff{2} Un silo a la forme d'un cône de rayon $3$ m et de hauteur $6$ m. Calculer son
+volume en m$^{3}$, arrondi au centième.
+
+\exo{}\diff{2} Le toit d'un pavillon a la forme d'une pyramide régulière à base carrée de
+côté $8$ m et de hauteur $3$ m. Calculer le volume de l'espace sous ce toit.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Cylindre, pyramide et réservoir]
+\begin{enumerate}[label=\arabic*)]
+\item Cylindre de rayon $4$ cm et de hauteur $9$ cm. Calculer $\mathcal{A}_{\text{lat}}$ et $V$.
+\item Pyramide régulière à base carrée de côté $16$ cm et de hauteur $6$ cm. Calculer
+l'apothème, l'aire latérale et le volume.
+\item Un réservoir cylindrique a un rayon de $1$ m et une hauteur de $2{,}5$ m. Calculer son
+volume en m$^{3}$ (valeur exacte avec $\pi$), puis en litres arrondis à l'unité.
+\item Cône de hauteur totale $15$ cm et de rayon de base $5$ cm. On le coupe par un plan
+parallèle à la base, à $9$ cm du sommet. Calculer le rayon de la section, puis le volume du
+petit cône obtenu (sous forme exacte avec $\pi$).
+\end{enumerate}
+
+\sujetbac[Cône, sphère et section de pyramide]
+\begin{enumerate}[label=\arabic*)]
+\item Cône de rayon $6$ cm et de hauteur $8$ cm. Calculer la génératrice, l'aire latérale et
+le volume.
+\item Sphère de rayon $15$ cm. Calculer son aire et le volume de la boule associée.
+\item Boule de rayon $9$ cm. Calculer son volume, valeur exacte puis arrondie au centième de
+cm$^{3}$ (on prendra $\pi\approx3{,}14$).
+\item Pyramide régulière à base carrée de côté $15$ cm et de hauteur totale $20$ cm. On la
+coupe par un plan parallèle à la base, à $8$ cm du sommet. Calculer le côté de la section,
+le volume total, puis le volume du petit solide obtenu.
+\end{enumerate}
+
+\sujetbac[Problème concret : citerne, silo et toiture]
+\begin{enumerate}[label=\arabic*)]
+\item Une citerne cylindrique a un rayon de $2$ m et une hauteur de $6$ m. Calculer son
+volume, valeur exacte avec $\pi$ puis arrondie au centième de m$^{3}$.
+\item Un silo a la forme d'un cône de rayon $2$ m et de hauteur $1{,}5$ m. Calculer son
+volume, valeur exacte avec $\pi$ puis arrondie au centième de m$^{3}$.
+\item Le toit d'un hangar a la forme d'une pyramide régulière à base carrée de côté $10$ m
+et de hauteur $3{,}75$ m. Calculer le volume de l'espace sous ce toit.
+\item Un château d'eau sphérique a un rayon de $2{,}5$ m. Calculer l'aire de sa surface
+(arrondie au centième de m$^{2}$) et le volume d'eau qu'il peut contenir (arrondi au
+centième de m$^{3}$), en prenant $\pi\approx3{,}14$.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\mathcal{A}_{\text{lat}}=2\pi\times4\times10=80\pi$ cm$^{2}$ ; $V=\pi\times4^{2}\times10=160\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 2}
+$\mathcal{A}_{\text{lat}}=2\pi\times3\times7=42\pi$ cm$^{2}$ ; $V=\pi\times3^{2}\times7=63\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 3}
+$a=\sqrt{3^{2}+4^{2}}=5$ cm ; $\mathcal{A}_{\text{lat}}=\frac12\times32\times5=80$ cm$^{2}$ ;
+$V=\frac13\times64\times3=64$ cm$^{3}$.
+
+\corrige{de l'exercice 4}
+$a=\sqrt{12^{2}+5^{2}}=13$ cm ; $\mathcal{A}_{\text{lat}}=\frac12\times40\times13=260$ cm$^{2}$ ;
+$V=\frac13\times100\times12=400$ cm$^{3}$.
+
+\corrige{de l'exercice 5}
+$l=\sqrt{3^{2}+4^{2}}=5$ cm ; $\mathcal{A}_{\text{lat}}=15\pi$ cm$^{2}$ ; $\mathcal{A}_{\text{tot}}=\pi\times3\times8=24\pi$ cm$^{2}$ ;
+$V=\frac13\pi\times9\times4=12\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 6}
+$l=\sqrt{5^{2}+12^{2}}=13$ cm ; $\mathcal{A}_{\text{lat}}=65\pi$ cm$^{2}$ ; $\mathcal{A}_{\text{tot}}=\pi\times5\times18=90\pi$ cm$^{2}$ ;
+$V=\frac13\pi\times25\times12=100\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 7}
+$l=\sqrt{8^{2}+6^{2}}=10$ cm ; $\mathcal{A}_{\text{lat}}=80\pi$ cm$^{2}$ ; $\mathcal{A}_{\text{tot}}=\pi\times8\times18=144\pi$ cm$^{2}$ ;
+$V=\frac13\pi\times64\times6=128\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 8}
+$l=\sqrt{7^{2}+24^{2}}=25$ cm ; $\mathcal{A}_{\text{lat}}=175\pi$ cm$^{2}$ ; $\mathcal{A}_{\text{tot}}=\pi\times7\times32=224\pi$ cm$^{2}$ ;
+$V=\frac13\pi\times49\times24=392\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 9}
+$\mathcal{A}=4\pi\times6^{2}=144\pi$ cm$^{2}$ ; $V=\frac43\pi\times6^{3}=288\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 10}
+$\mathcal{A}=4\pi\times9^{2}=324\pi$ cm$^{2}$ ; $V=\frac43\pi\times9^{3}=972\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 11}
+$\mathcal{A}=4\pi\times12^{2}=576\pi$ cm$^{2}$ ; $V=\frac43\pi\times12^{3}=2\,304\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 12}
+$\mathcal{A}=4\pi\times10^{2}=400\pi$ cm$^{2}$ ; $V=\frac43\pi\times10^{3}=\frac{4\,000}{3}\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 13}
+$k=\frac{8}{12}=\frac23$ ; côté réduit $=9\times\frac23=6$ cm, aire $=36$ cm$^{2}$ ;
+$V_{\text{total}}=\frac13\times81\times12=324$ cm$^{3}$ ;
+$V_{\text{réduit}}=324\times\left(\frac23\right)^{3}=324\times\frac{8}{27}=96$ cm$^{3}$.
+
+\corrige{de l'exercice 14}
+$k=\frac{12}{18}=\frac23$ ; rayon réduit $=6\times\frac23=4$ cm ;
+$V_{\text{total}}=\frac13\pi\times36\times18=216\pi$ cm$^{3}$ ;
+$V_{\text{réduit}}=216\pi\times\frac{8}{27}=64\pi$ cm$^{3}$.
+
+\corrige{de l'exercice 15}
+$V=\pi\times1{,}5^{2}\times4=9\pi\approx28{,}27$ m$^{3}$, soit environ $28\,274$ L.
+
+\corrige{de l'exercice 16}
+$V=\frac43\pi\times11^{3}=\frac43\pi\times1\,331\approx5\,575{,}28$ cm$^{3}$.
+
+\corrige{du sujet 1}
+1) $\mathcal{A}_{\text{lat}}=2\pi\times4\times9=72\pi$ cm$^{2}$ ; $V=\pi\times16\times9=144\pi$ cm$^{3}$.\\
+2) $a=\sqrt{6^{2}+8^{2}}=10$ cm ; $\mathcal{A}_{\text{lat}}=\frac12\times64\times10=320$ cm$^{2}$ ;
+$V=\frac13\times256\times6=512$ cm$^{3}$.\\
+3) $V=\pi\times1^{2}\times2{,}5=2{,}5\pi\approx7{,}85$ m$^{3}$, soit environ $7\,854$ L.\\
+4) $k=\frac{9}{15}=\frac35$ ; rayon réduit $=5\times\frac35=3$ cm ; $V_{\text{réduit}}=\frac13\pi\times25\times15\times\left(\frac35\right)^{3}=125\pi\times\frac{27}{125}=27\pi$ cm$^{3}$.
+
+\corrige{du sujet 2}
+1) $l=\sqrt{6^{2}+8^{2}}=10$ cm ; $\mathcal{A}_{\text{lat}}=60\pi$ cm$^{2}$ ; $V=\frac13\pi\times36\times8=96\pi$ cm$^{3}$.\\
+2) $\mathcal{A}=4\pi\times15^{2}=900\pi$ cm$^{2}$ ; $V=\frac43\pi\times15^{3}=4\,500\pi$ cm$^{3}$.\\
+3) $V=\frac43\pi\times9^{3}=972\pi\approx3\,053{,}63$ cm$^{3}$.\\
+4) $k=\frac{8}{20}=\frac25$ ; côté réduit $=15\times\frac25=6$ cm ; $V_{\text{total}}=\frac13\times225\times20=1\,500$ cm$^{3}$ ;
+$V_{\text{réduit}}=1\,500\times\left(\frac25\right)^{3}=1\,500\times\frac{8}{125}=96$ cm$^{3}$.
+
+\corrige{du sujet 3}
+1) $V=\pi\times2^{2}\times6=24\pi\approx75{,}40$ m$^{3}$.\\
+2) $V=\frac13\pi\times2^{2}\times1{,}5=2\pi\approx6{,}28$ m$^{3}$.\\
+3) $V=\frac13\times10^{2}\times3{,}75=125$ m$^{3}$.\\
+4) $\mathcal{A}=4\pi\times2{,}5^{2}=25\pi\approx78{,}54$ m$^{2}$ ; $V=\frac43\pi\times2{,}5^{3}\approx65{,}45$ m$^{3}$.
+
+\end{multicols}
+\exercicesBanner

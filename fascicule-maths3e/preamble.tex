@@ -1,4 +1,4 @@
-% OnBuch — Fascicule de Mathématiques Terminale C (compilé avec tectonic/XeLaTeX)
+% OnBuch — Fascicule de Mathématiques 3ème/BEPC (compilé avec tectonic/XeLaTeX)
 \documentclass[11pt,a4paper,openany]{book}
 
 \usepackage{fontspec}
@@ -54,7 +54,7 @@
 \fancyhead[RE]{}
 \fancyhead[LO]{}
 \fancyhead[RO]{\small\textsf{\color{onbmuted}\leftmark\quad·\quad\thepage}}
-\fancyfoot[C]{\small\textsf{\color{onbmuted}Mathématiques · Terminale Scientifique · Baccalauréat}}
+\fancyfoot[C]{\small\textsf{\color{onbmuted}Mathématiques · 3ème · BEPC}}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
 % ── QR de chapitre (§6 — Fascicules connectés, repérage direct) ──
@@ -275,10 +275,10 @@
   title={\sffamily\bfseries\large #1},coltitle=white,colbacktitle=onbo,
   fonttitle=\sffamily\bfseries}
 
-% Sujet « type Baccalauréat » (mise en avant)
+% Sujet « type BEPC » (mise en avant)
 \newcounter{sujet}[chapter]
 \newcommand{\sujetbac}[1][]{\par\medskip\noindent
-  {\color{onbo}\sffamily\bfseries\large Sujet \refstepcounter{sujet}\thesujet\ — type Baccalauréat}%
+  {\color{onbo}\sffamily\bfseries\large Sujet \refstepcounter{sujet}\thesujet\ — type BEPC}%
   \ifstrempty{#1}{}{\;{\sffamily\itshape\color{onbmuted}(#1)}}%
   \par\vspace{-4pt}\noindent{\color{onbo}\rule{\linewidth}{1.2pt}}\par\smallskip}
 
