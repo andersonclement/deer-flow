@@ -1,0 +1,295 @@
+% OnBuch — Fascicule de Physique-Chimie-Technologie 3ème/BEPC (compilé avec tectonic/XeLaTeX)
+\documentclass[11pt,a4paper,openany]{book}
+
+\usepackage{fontspec}
+\usepackage[french]{babel}
+\usepackage[a4paper,margin=2.2cm,top=2.6cm,bottom=2.4cm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array,booktabs}
+\usepackage{multicol}
+\usepackage{pgffor}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing,angles,quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{siunitx}
+\sisetup{locale=FR, per-mode=symbol}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{bookmarksnumbered}
+\usepackage{pdfpages}
+\setcounter{tocdepth}{1}   % sommaire : chapitres + sections uniquement
+
+% ── Palette OnBuch ──────────────────────────────────────────────
+\definecolor{onbo}{HTML}{F2620E}
+\definecolor{onbo2}{HTML}{FF8A2B}
+\definecolor{onbgreen}{HTML}{1E9E63}
+\definecolor{onbink}{HTML}{241B12}
+\definecolor{onbpaper}{HTML}{FFFBF7}
+\definecolor{onbsoft}{HTML}{FFF1E3}
+\definecolor{onbline}{HTML}{E8DDD3}
+\definecolor{onbmuted}{HTML}{8A7B6D}
+\definecolor{onbblue}{HTML}{2D6CDF}
+\definecolor{onbpink}{HTML}{E0567C}
+
+\setlist[enumerate]{leftmargin=1.7em,itemsep=3pt,topsep=3pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=2pt,topsep=2pt}
+
+% ── Police « mignonne » (Baloo 2, arrondie) — badge QR de chapitre uniquement.
+% Fichiers statiques dans fonts/ (licence OFL, embarquable). N'affecte PAS le
+% corps du texte (\sffamily/\rmfamily du gabarit) : seule \qrfont l'utilise.
+\newfontfamily\qrfont{Baloo2-Bold.ttf}[Path=fonts/]
+\newfontfamily\qrfontmed{Baloo2-Medium.ttf}[Path=fonts/]
+
+% ── En-têtes / pieds ────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LE]{\small\textsf{\color{onbmuted}\thepage\quad·\quad OnBuch}}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyhead[RO]{\small\textsf{\color{onbmuted}\leftmark\quad·\quad\thepage}}
+\fancyfoot[C]{\small\textsf{\color{onbmuted}Physique-Chimie-Technologie · 3ème · BEPC}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% ── QR de chapitre (§6 — Fascicules connectés, repérage direct) ──
+% Code déterministe {shortCode}-C{ordre:02d}, identique à celui produit par
+% tools/fascicule_md2json.py / uploadé dans fascicule_chapters (§6.1) — DOIT
+% rester en phase avec tools/generate_chapter_qrs.py qui prégénère les PNG
+% dans qr-chapters/. \IfFileExists rend l'insertion silencieuse pour les
+% \chapter{} hors périmètre (méga-fiche, annales, annexes…) qui n'ont pas de
+% code chapitre côté app.
+\newcommand{\fascShortCode}{PCT-3E}
+\newcommand{\chapterCode}{\fascShortCode-C\ifnum\thechapter<10 0\fi\thechapter}
+
+% \appendix bascule \thechapter sur des lettres (A, B…) et remet le compteur
+% à zéro — \chapterCode (numérique) n'a alors plus de sens et casserait la
+% compilation (\ifnum sur une lettre). Ce drapeau coupe net l'insertion du QR
+% dès l'annexe, sans toucher aux chapitres réels (1–23) ni aux sections
+% hors périmètre déjà couvertes par \IfFileExists (méga-fiche, sujets…).
+\newif\iffascqr
+\fascqrtrue
+\let\oldappendix\appendix
+\renewcommand{\appendix}{\oldappendix\fascqrfalse}
+
+% ── Titres de chapitre (gros numéro orange) ─────────────────────
+\titleformat{\chapter}[display]
+  {\sffamily}
+  {\hfill\fontsize{72}{72}\selectfont\bfseries\color{onbo}\thechapter}
+  {6pt}
+  {\Huge\bfseries\color{onbink}\filright}
+  [\vspace{4pt}{\color{onbo}\titlerule[2.5pt]}]
+\titlespacing*{\chapter}{0pt}{10pt}{22pt}
+
+% ── Bannière « Ce chapitre est connecté ! » ──────────────────────
+% \connecteBanner : à placer à la main juste après l'intro du chapitre (pas
+% automatique dans le titleformat, car sa position dans le texte varie —
+% remplace l'ancien petit badge « Scanne-moi » du coin ET \videoChapitre,
+% désormais fondu dans la rangée d'icônes ci-dessous). N'affiche RIEN si ce
+% \chapter{} est hors périmètre app (méga-fiche, sujets, annales, annexes…),
+% même logique de garde que l'ancien badge : \IfFileExists sur le QR déjà
+% prégénéré par tools/generate_chapter_qrs.py.
+\newcommand{\connecteBanner}{%
+  \iffascqr\IfFileExists{qr-chapters/\chapterCode.png}{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}
+  \noindent
+  \begin{tikzpicture}[remember picture]
+    \def\W{\linewidth}
+    \def\H{6.3cm}
+    \draw[rounded corners=10pt, fill=onbsoft, draw=onbline, line width=0.8pt]
+      (0,0) rectangle (\W,-\H);
+    \draw[onbline, line width=0.8pt] (13.15cm,-0.55cm) -- (13.15cm,-5.75cm);
+
+    \node[circle, fill=onbo, minimum size=3.3cm] (hero) at (2.15cm,-3.1cm) {};
+    \node at (hero) {\includegraphics[width=2.05cm]{icons/icon_hero_openbook_white.png}};
+
+    \node[anchor=north west, text width=9.5cm, align=left] at (4.15cm,-1.1cm)
+      {\sffamily\bfseries\fontsize{18}{20}\selectfont\color{onbink}Ce chapitre est \color{onbo}connecté\,!};
+    \node[anchor=north west, text width=9.5cm, align=left] at (4.15cm,-2.0cm)
+      {\sffamily\fontsize{10.5}{13}\selectfont\color{onbmuted}Débloque tout le contenu interactif dans l'app \textbf{\color{onbink}OnBuch}};
+
+    \foreach \i/\img/\lbl/\col in {
+      0/icon_video/Vidéo/onbblue,
+      1/icon_exercices/Exercices/onbgreen,
+      2/icon_quiz/Quiz/onbpink,
+      3/icon_progression/Progression/onbo2,
+      4/icon_buchi/{Buchi IA}/onbo}{
+      \pgfmathsetmacro{\x}{4.15+1.77*\i+0.885}
+      \node[circle, fill=\col!16, minimum size=1.15cm] (ic\i) at (\x cm,-3.7cm) {};
+      \node at (ic\i) {\includegraphics[width=0.68cm]{icons/\img.png}};
+      \node[anchor=north, text width=1.65cm, align=center] at (\x cm,-4.42cm)
+        {\sffamily\bfseries\fontsize{9.5}{11}\selectfont\color{onbink}\lbl};
+    }
+
+    \node[fill=onbo, rounded corners=9pt, minimum width=2.5cm, minimum height=0.6cm]
+      (scan) at (14.85cm,-1.05cm) {\sffamily\bfseries\fontsize{8.7}{8.7}\selectfont\color{white}SCANNE MOI};
+    \node[draw=onbo, line width=1pt, rounded corners=4pt, fill=white, minimum width=2.5cm, minimum height=2.5cm]
+      (qrbox) at (14.85cm,-2.8cm) {};
+    \node at (qrbox) {\includegraphics[width=2.25cm]{qr-chapters/\chapterCode.png}};
+    \node[anchor=north, text width=3cm, align=center] at (14.85cm,-4.3cm)
+      {\sffamily\fontsize{7.3}{8.5}\selectfont\color{onbmuted}OU ENTRE LE CODE};
+    \node[draw=onbo, dashed, line width=0.9pt, rounded corners=4pt, fill=white,
+          minimum width=2.7cm, minimum height=0.55cm] (codebox) at (14.85cm,-5.0cm)
+      {\sffamily\bfseries\fontsize{8.7}{8.7}\selectfont\color{onbo}\chapterCode};
+    \node[anchor=north, text width=3cm, align=center] at (14.85cm,-5.55cm)
+      {\sffamily\fontsize{7.3}{8.5}\selectfont\color{onbmuted}dans l'app OnBuch};
+  \end{tikzpicture}
+  \endgroup
+  \par\vspace{4pt}
+  }{}\fi
+}
+
+% ── Bannière « Encore plus d'exercices sur OnBuch » ──────────────
+% \exercicesBanner : à placer à la main juste après les corrigés d'un
+% chapitre (fin de \end{multicols}). Même garde que \connecteBanner (hors
+% périmètre app si pas de QR généré pour ce chapitre).
+\newcommand{\exercicesBanner}{%
+  \iffascqr\IfFileExists{qr-chapters/\chapterCode.png}{%
+  \begingroup
+  \noindent
+  \begin{tikzpicture}[remember picture]
+    \def\W{\linewidth}
+    \def\H{2.05cm}
+    \draw[rounded corners=8pt, fill=onbgreen!8, draw=onbgreen!45, line width=0.8pt]
+      (0,0) rectangle (\W,-\H);
+    \node[circle, fill=onbgreen!18, minimum size=1.3cm] (ic) at (1.05cm,-1.025cm) {};
+    \node at (ic) {\includegraphics[width=0.78cm]{icons/icon_exercices.png}};
+    \node[anchor=west, text width=13.6cm, align=left] at (2.05cm,-0.68cm)
+      {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\color{onbink}Encore plus d'exercices \& corrigés sur \color{onbgreen}OnBuch};
+    \node[anchor=west, text width=13.6cm, align=left] at (2.05cm,-1.38cm)
+      {\sffamily\fontsize{9.5}{11.5}\selectfont\color{onbmuted}Retrouve tous les exercices de ce chapitre, corrigés pas à pas, dans l'app.};
+  \end{tikzpicture}
+  \endgroup
+  \par\vspace{4pt}
+  }{}\fi
+}
+
+\titleformat{\section}
+  {\sffamily\Large\bfseries\color{onbink}}{\color{onbo}\thesection}{0.6em}{}
+  [{\color{onbline}\titlerule[1pt]}]
+\titleformat{\subsection}
+  {\sffamily\large\bfseries\color{onbo}}{\thesubsection}{0.6em}{}
+
+% ── Ancres en marge (§7 — lien papier ↔ numérique, point par point) ──────
+% Code déterministe {chapterCode}-A{n}, n compté dans l'ordre de rencontre
+% au sein du chapitre (§7.2) — DOIT rester en phase avec la même logique de
+% comptage dans tools/fascicule_tex2md.py. Le pictogramme imprimé est un
+% badge coloré + le code COURT (An, pas le préfixe de chapitre — le lecteur
+% est déjà dans ce chapitre) ; pas d'émoji (absent de la fonte lmroman, cf.
+% §6.5). Le code complet ({chapterCode}-A{n}) reste la clé de résolution
+% côté app (§7.4), tapé/scanné depuis l'écran du chapitre ouvert.
+%
+% \marginparwidth par défaut (calculé pour une marge ~1in) déborde de la
+% page avec la marge réduite de ce gabarit (2.2cm, cf. geometry ci-dessus) —
+% on le réduit explicitement à une valeur qui tient dans cette marge, sans
+% toucher \textwidth (aucun reflow du corps du texte).
+\setlength{\marginparwidth}{1.4cm}
+\setlength{\marginparsep}{2mm}
+% \marginpar plante (« Float(s) lost ») dès qu'il est utilisé À L'INTÉRIEUR
+% d'une boîte tcolorbox (definition/theoreme/remarque/exemple…) — cas courant
+% pour une ancre, l'aside pertinent est souvent DANS l'encadré. `marginnote`
+% est le remplacement standard, conçu pour rester utilisable dans les
+% flottants/boîtes.
+\usepackage{marginnote}
+\newcounter{ancre}[chapter]
+% Émet directement \color{...} (pas une chaîne à ré-expandre dans l'argument
+% de \color, qu'\ifstrequal ne traverse pas proprement).
+\newcommand{\ancreColorCmd}[1]{%
+  \ifstrequal{#1}{astuce}{\color{onbo}}{%
+  \ifstrequal{#1}{buchi}{\color{onbgreen}}{%
+  \ifstrequal{#1}{exercice_supp}{\color{onbo2}}{\color{onbblue}}}}%
+}
+\newcommand{\ancre}[2]{%
+  \refstepcounter{ancre}%
+  \marginnote{\raggedright
+    {\ancreColorCmd{#1}\sffamily\bfseries\footnotesize A\theancre}\\[2pt]
+    {\tiny\sffamily\color{onbmuted} #2}}%
+}
+% \ancreAstuce{label}{contenu} / \ancreBuchi{label}{prompt} : le 2e argument
+% (texte de l'astuce / question pré-remplie pour Buchi) n'est pas typeset en
+% marge (juste le label l'est, comme \ancre) — il n'est capturé que par
+% fascicule_tex2md.py pour alimenter fascicule_anchors (contentMd/buchiPrompt).
+\newcommand{\ancreAstuce}[2]{\ancre{astuce}{#1}}
+\newcommand{\ancreBuchi}[2]{\ancre{buchi}{#1}}
+
+% ── Compteurs d'exercices par chapitre ──────────────────────────
+\newcounter{exo}[chapter]
+\newcommand{\exo}[1]{\par\medskip\noindent{\color{onbo}\sffamily\bfseries\large Exercice \refstepcounter{exo}\theexo}\;{\sffamily\bfseries #1}\par\nopagebreak\smallskip}
+\newcommand{\methode}[1]{\par\medskip\noindent{\color{onbblue}\sffamily\bfseries Méthode\;:\;}{\sffamily\bfseries\color{onbink}#1}\par\smallskip}
+
+% Rubrique d'exercices (catégorie thématique)
+\newcommand{\rubrique}[1]{\par\medskip\noindent
+  {\color{onbo}\sffamily\bfseries\large$\blacktriangleright$\;#1}%
+  \par\vspace{-4pt}\noindent{\color{onbline}\rule{\linewidth}{0.8pt}}\par\smallskip}
+
+% Niveau de difficulté (étoiles) : \diff{1..3}
+\newcommand{\diff}[1]{\hfill{\color{onbo2}\small%
+  \ifcase#1\or\faStarSolid\or\faStarSolid\faStarSolid\or\faStarSolid\faStarSolid\faStarSolid\fi}}
+% étoile simple (sans fontawesome) pour robustesse
+\renewcommand{\diff}[1]{{\color{onbo2}\small\ifcase#1\or$\star$\or$\star\star$\or$\star\star\star$\fi}}
+
+% Légende de figure centrée
+\newcommand{\fig}[1]{\par\vspace{2pt}\centerline{\footnotesize\itshape\color{onbmuted}#1}\par\smallskip}
+% Encadré "figure/illustration"
+\newtcolorbox{illus}{colback=white,colframe=onbline,boxrule=0.8pt,arc=4pt,
+  left=8pt,right=8pt,top=8pt,bottom=6pt,halign=center,breakable}
+
+% ── Boîtes pédagogiques ─────────────────────────────────────────
+\newtcolorbox{definition}[1][]{colback=onbpaper,colframe=onbo,boxrule=0pt,
+  leftrule=3pt,arc=3pt,left=12pt,right=12pt,top=8pt,bottom=8pt,breakable,
+  title={\sffamily\bfseries Définition},coltitle=onbo,colbacktitle=onbpaper,
+  fonttitle=\sffamily\bfseries,attach title to upper={\quad#1\par\smallskip}}
+
+\newtcolorbox{theoreme}[1][]{colback=white,colframe=onbgreen,boxrule=0pt,
+  leftrule=3pt,arc=3pt,left=12pt,right=12pt,top=8pt,bottom=8pt,breakable,
+  title={\sffamily\bfseries Théorème},coltitle=onbgreen,colbacktitle=white,
+  fonttitle=\sffamily\bfseries,attach title to upper={\;\;\textmd{\itshape#1}\par\smallskip}}
+
+\newtcolorbox{propriete}[1][]{colback=white,colframe=onbgreen!75,boxrule=0pt,
+  leftrule=3pt,arc=3pt,left=12pt,right=12pt,top=8pt,bottom=8pt,breakable,
+  title={\sffamily\bfseries Propriété},coltitle=onbgreen!85!black,colbacktitle=white,
+  fonttitle=\sffamily\bfseries,attach title to upper={\;\;\textmd{\itshape#1}\par\smallskip}}
+
+\newtcolorbox{remarque}{colback=onbsoft,colframe=onbsoft,boxrule=0pt,arc=3pt,
+  left=12pt,right=12pt,top=6pt,bottom=6pt,breakable,
+  before upper={\textbf{\color{onbo}Remarque.}\ }}
+
+\newtcolorbox{exemple}{colback=white,colframe=onbline,boxrule=0.8pt,arc=3pt,
+  left=12pt,right=12pt,top=6pt,bottom=6pt,breakable,
+  before upper={\textbf{\color{onbink}\sffamily Exemple.}\ }}
+
+\newtcolorbox{aretenir}{enhanced,colback=onbsoft,colframe=onbo,boxrule=1pt,arc=6pt,
+  left=12pt,right=12pt,top=8pt,bottom=8pt,breakable,
+  title={\sffamily\bfseries À retenir},coltitle=white,colbacktitle=onbo,fonttitle=\sffamily\bfseries}
+
+% ── Synthèse de fin de chapitre (« L'essentiel — fiche de révision ») ──
+\newtcolorbox{synthese}[1][L'essentiel du chapitre]{enhanced,breakable,
+  colback=onbsoft,colframe=onbo,boxrule=1.2pt,arc=6pt,
+  left=14pt,right=14pt,top=10pt,bottom=10pt,
+  title={\sffamily\bfseries\large #1},coltitle=white,colbacktitle=onbo,
+  fonttitle=\sffamily\bfseries}
+
+% Sujet « type BEPC » (mise en avant)
+\newcounter{sujet}[chapter]
+\newcommand{\sujetbac}[1][]{\par\medskip\noindent
+  {\color{onbo}\sffamily\bfseries\large Sujet \refstepcounter{sujet}\thesujet\ — type BEPC}%
+  \ifstrempty{#1}{}{\;{\sffamily\itshape\color{onbmuted}(#1)}}%
+  \par\vspace{-4pt}\noindent{\color{onbo}\rule{\linewidth}{1.2pt}}\par\smallskip}
+
+% Correction (titre vert, sécable)
+\newcommand{\corrige}[1]{\par\smallskip\noindent{\color{onbgreen}\sffamily\bfseries\small$\blacktriangleright$ Corrigé #1}\par\nopagebreak\smallskip}
+
+% Raccourcis maths
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\dd}{\,\mathrm{d}}
+\DeclareMathOperator{\Card}{Card}
