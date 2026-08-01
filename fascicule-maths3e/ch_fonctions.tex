@@ -1,1 +1,457 @@
 \chapter{Fonctions linéaires et fonctions affines}
+
+\noindent\textit{Une \textbf{fonction} associe, à chaque nombre, un unique autre nombre. Les
+fonctions \textbf{linéaires} et \textbf{affines} sont les plus simples : leur représentation
+graphique est une \textbf{droite}. Elles permettent de modéliser de nombreuses situations
+concrètes — tarifs, trajets, conversions — et de les comparer efficacement.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Notion de fonction}
+
+\begin{definition}[Fonction, image, antécédent]
+Une \textbf{fonction} $f$ associe à chaque nombre $x$ un unique nombre, noté $f(x)$ et
+appelé \textbf{image} de $x$ par $f$. Si $f(x)=y$, on dit que $x$ est un \textbf{antécédent}
+de $y$ par $f$.
+\end{definition}
+
+\begin{exemple}
+Pour $f(x)=3x-2$ : l'image de $5$ est $f(5)=3\times5-2=13$. Pour trouver l'antécédent de
+$13$, on résout $3x-2=13$, soit $x=5$ (cohérent).
+\end{exemple}
+
+\section{Fonction linéaire}
+
+\begin{definition}[Fonction linéaire]
+Une \textbf{fonction linéaire} est une fonction de la forme $f(x)=ax$, où $a$ est un nombre
+fixé. Sa représentation graphique est une \textbf{droite passant par l'origine} du repère.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=6cm,axis lines=middle,xlabel={\small $x$},ylabel={\small $y$},
+  xmin=-3,xmax=3,ymin=-4,ymax=4,xtick={-2,-1,1,2},ytick={-3,-2,-1,1,2,3}]
+\addplot[onbo,line width=1.2pt,domain=-2:2]{2*x};
+\addplot[onbblue,line width=1.2pt,domain=-3:3]{-1*x};
+\node[onbo,anchor=west] at (axis cs:1.5,3.3) {\small $f(x)=2x$};
+\node[onbblue,anchor=east] at (axis cs:2.7,-2.7) {\small $g(x)=-x$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — Deux fonctions linéaires : leurs représentations sont des droites passant par
+l'origine $O$.}
+\end{illus}
+
+\begin{propriete}[Proportionnalité]
+Une fonction linéaire $x\mapsto ax$ traduit une situation de \textbf{proportionnalité} : $a$
+est le coefficient de proportionnalité (chapitre précédent).
+\end{propriete}
+
+\begin{exemple}
+$f(x)=4x$ : $f(5)=20$, $f(-3)=-12$. Si $f(6)=18$, alors $a=\dfrac{18}6=3$, donc
+$f(x)=3x$.
+\end{exemple}
+
+\section{Fonction affine}
+
+\begin{definition}[Fonction affine]
+Une \textbf{fonction affine} est une fonction de la forme $f(x)=ax+b$, où $a$ et $b$ sont
+des nombres fixés. Sa représentation graphique est une \textbf{droite} : $a$ est le
+\textbf{coefficient directeur} (la pente), $b$ est l'\textbf{ordonnée à l'origine} (image de
+$0$).
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=6cm,axis lines=middle,xlabel={\small $x$},ylabel={\small $y$},
+  xmin=-2,xmax=3,ymin=-1,ymax=8,xtick={-1,1,2},ytick={1,2,3,5,7}]
+\addplot[onbo,line width=1.2pt,domain=-1.5:2.5]{2*x+3};
+\draw[onbmuted,dashed] (axis cs:0,3) -- (axis cs:1,3) -- (axis cs:1,5);
+\node[onbmuted,anchor=north] at (axis cs:0.5,3) {\small $1$};
+\node[onbmuted,anchor=west] at (axis cs:1,4) {\small $2$};
+\filldraw[onbink] (axis cs:0,3) circle (2pt);
+\node[onbink,anchor=east] at (axis cs:-0.1,3) {\small $b=3$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — $f(x)=2x+3$ : la droite coupe l'axe des ordonnées en $b=3$, de pente
+$a=2$.}
+\end{illus}
+
+\begin{remarque}
+Une fonction linéaire est une fonction affine particulière, avec $b=0$. Une fonction
+constante $f(x)=b$ est aussi une fonction affine particulière, avec $a=0$ (droite
+horizontale).
+\end{remarque}
+
+\section{Déterminer une fonction affine}
+
+\begin{propriete}[Par un point et le coefficient directeur]
+Si l'on connaît $a$ et un point $(x_0\,;y_0)$ de la droite, alors
+$b=y_0-a\times x_0$.
+\end{propriete}
+
+\begin{propriete}[Par deux points]
+Si la droite passe par $A(x_1\,;y_1)$ et $B(x_2\,;y_2)$ (avec $x_1\ne x_2$), alors
+\[
+a=\frac{y_2-y_1}{x_2-x_1}, \qquad b=y_1-a\times x_1.
+\]
+\end{propriete}
+
+\begin{exemple}
+Droite passant par $A(1\,;7)$ et $B(4\,;16)$ : $a=\dfrac{16-7}{4-1}=\dfrac93=3$, puis
+$b=7-3\times1=4$. La fonction est $f(x)=3x+4$.
+\end{exemple}
+
+\section{Lecture graphique, comparaison de tarifs}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=8.4cm,height=6cm,axis lines=middle,xlabel={\small $x$},ylabel={\small $y$},
+  xmin=-1,xmax=4.5,ymin=-1,ymax=10,xtick={2,3},ytick={1,5,7}]
+\addplot[onbo,line width=1.2pt,domain=-0.5:4.2]{2*x+1};
+\draw[onbmuted,dashed] (axis cs:2,0) -- (axis cs:2,5) -- (axis cs:-1,5);
+\draw[onbgreen,dashed] (axis cs:3,0) -- (axis cs:3,7) -- (axis cs:-1,7);
+\filldraw[onbink] (axis cs:2,5) circle (2pt);
+\filldraw[onbgreen] (axis cs:3,7) circle (2pt);
+\node[onbink,anchor=south west] at (axis cs:2.1,5.1) {\small image de $2$};
+\node[onbgreen,anchor=south west] at (axis cs:3.1,7.1) {\small antécédent de $7$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — Lecture graphique sur $f(x)=2x+1$ : image de $2$ (en noir) et antécédent de
+$7$ (en vert).}
+\end{illus}
+
+\begin{exemple}
+Un taxi facture $500$ FCFA de prise en charge plus $200$ FCFA par km : $p(x)=500+200x$. Un
+covoiturage facture $300$ FCFA par km : $c(x)=300x$. Les deux tarifs sont égaux quand
+$500+200x=300x$, soit $x=5$ km.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Fonction.} $f(x)$ = image de $x$ ; si $f(x)=y$, $x$ est un antécédent de $y$.\\[4pt]
+\textbf{Linéaire.} $f(x)=ax$, droite passant par l'origine (proportionnalité).\\[4pt]
+\textbf{Affine.} $f(x)=ax+b$, droite de coefficient directeur $a$ et d'ordonnée à l'origine
+$b=f(0)$.\\[4pt]
+\textbf{Déterminer $a,b$.} Par un point $+a$ : $b=y_0-ax_0$. Par deux points :
+$a=\dfrac{y_2-y_1}{x_2-x_1}$, puis $b=y_1-ax_1$.\\[4pt]
+\textbf{Lecture graphique.} Image de $x_0$ : lire verticalement puis horizontalement.
+Antécédent de $y_0$ : lire horizontalement puis verticalement.\\[4pt]
+\textbf{Comparer deux tarifs.} Résoudre l'équation d'égalité des deux expressions affines.\\[4pt]
+\textbf{Piège fréquent.} Confondre image et antécédent ; oublier que $b$ est l'image de
+$0$, pas le coefficient directeur.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer l'image d'un nombre par une fonction}
+Remplacer $x$ par la valeur donnée dans l'expression de $f(x)$, puis calculer.
+\begin{exemple}
+$f(x)=-2x+7$ : $f(3)=-2\times3+7=1$.
+\end{exemple}
+
+\methode{Déterminer un antécédent}
+Résoudre l'équation $f(x)=k$, où $k$ est la valeur dont on cherche l'antécédent.
+\begin{exemple}
+$f(x)=3x-2$, antécédent de $13$ : $3x-2=13\iff x=5$.
+\end{exemple}
+
+\methode{Reconnaître une fonction linéaire ou affine, identifier $a$ et $b$}
+Écrire l'expression sous la forme $ax+b$ : le nombre qui multiplie $x$ est $a$, le terme
+constant est $b$ (linéaire si $b=0$).
+\begin{exemple}
+$h(x)=5-3x=-3x+5$ : fonction affine avec $a=-3$ et $b=5$.
+\end{exemple}
+
+\methode{Tracer la représentation graphique d'une fonction affine}
+Calculer les images de deux valeurs de $x$ (souvent $0$ et une autre valeur simple), placer
+les deux points, puis tracer la droite qui les joint.
+\begin{exemple}
+$f(x)=2x+3$ : $f(0)=3$ et $f(1)=5$. On trace la droite passant par $(0\,;3)$ et
+$(1\,;5)$.
+\end{exemple}
+
+\methode{Déterminer une fonction affine par deux points}
+Calculer $a=\dfrac{y_2-y_1}{x_2-x_1}$, puis $b=y_1-a\,x_1$.
+\begin{exemple}
+Points $(2\,;9)$ et $(5\,;18)$ : $a=\dfrac{18-9}{5-2}=3$, puis $b=9-3\times2=3$. Fonction :
+$f(x)=3x+3$.
+\end{exemple}
+
+\methode{Déterminer une fonction affine par un point et le coefficient directeur}
+Utiliser $b=y_0-a\,x_0$ avec le point $(x_0\,;y_0)$ donné.
+\begin{exemple}
+$a=4$ et la droite passe par $(2\,;11)$ : $b=11-4\times2=3$. Fonction : $f(x)=4x+3$.
+\end{exemple}
+
+\methode{Comparer deux tarifs modélisés par des fonctions affines}
+Écrire les deux expressions, résoudre l'équation d'égalité pour trouver le seuil, puis
+comparer de part et d'autre de ce seuil.
+\begin{exemple}
+$A(x)=1\,000+200x$ et $B(x)=400x$ : égalité pour $1\,000=200x\iff x=5$. Pour $x<5$, $B$ est
+moins cher ; pour $x>5$, $A$ est moins cher.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Images et antécédents}
+\exo{}\diff{1} Soit $f(x)=3x-2$. Calculer $f(5)$, $f(-2)$ et $f(0)$.
+
+\exo{}\diff{2} Soit $f(x)=3x-2$. Déterminer l'antécédent de $13$, puis celui de $-11$.
+
+\exo{}\diff{1} Soit $g(x)=-2x+7$. Calculer $g(3)$ et $g(-4)$.
+
+\exo{}\diff{2} Soit $g(x)=-2x+7$. Déterminer l'antécédent de $-3$.
+
+\rubrique{Fonction linéaire}
+\exo{}\diff{1} Soit $f(x)=4x$. Calculer $f(5)$ et $f(-3)$.
+
+\exo{}\diff{2} On sait que $f$ est linéaire et que $f(6)=18$. Déterminer l'expression de
+$f(x)$, puis calculer $f(10)$.
+
+\exo{}\diff{2} Tracer la représentation graphique de $f(x)=-2x$ en indiquant les
+coordonnées de deux points.
+
+\exo{}\diff{1} Une masse de $4$ kg de riz coûte $3\,200$ FCFA. Exprimer le prix $p(x)$ en
+fonction de la masse $x$ (en kg), puis calculer $p(7)$.
+
+\rubrique{Fonction affine : identifier et déterminer}
+\exo{}\diff{2} Parmi $f(x)=3x+5$, $g(x)=2x^{2}$, $h(x)=-4x$ et $k(x)=7$, lesquelles sont des
+fonctions affines ? Lesquelles sont linéaires ?
+
+\exo{}\diff{2} Déterminer l'expression de la fonction affine $f$ telle que $f(0)=5$ et de
+coefficient directeur $3$.
+
+\exo{}\diff{2} Déterminer l'expression de la fonction affine $f$ telle que $f(1)=7$ et
+$f(4)=16$.
+
+\exo{}\diff{2} Déterminer l'expression de la fonction affine $f$ telle que $f(-2)=1$ et
+$f(3)=11$.
+
+\rubrique{Lecture graphique et problèmes (tarifs)}
+\exo{}\diff{2} À l'aide de la figure du cours sur $f(x)=2x+1$, lire l'image de $2$ et
+l'antécédent de $7$. Vérifier ces lectures par le calcul.
+
+\exo{}\diff{2} Un taxi facture $300$ FCFA de prise en charge, plus $150$ FCFA par km.
+Exprimer le prix $p(x)$ en fonction de la distance $x$ (en km), puis calculer $p(12)$.
+
+\exo{}\diff{2} Deux opérateurs téléphoniques proposent : opérateur $A$ : $1\,000+200x$
+FCFA ; opérateur $B$ : $400x$ FCFA, où $x$ est le nombre de communications. Pour quel
+nombre de communications les deux tarifs sont-ils égaux ?
+
+\exo{}\diff{2} Avec les tarifs de l'exercice précédent, quel opérateur est le plus
+avantageux pour $3$ communications ? pour $8$ communications ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Images et antécédents}
+\exo{}\diff{1} Soit $f(x)=-3x+4$. Calculer $f(2)$, $f(-1)$ et $f(0)$.
+
+\exo{}\diff{2} Soit $f(x)=-3x+4$. Déterminer l'antécédent de $10$.
+
+\exo{}\diff{1} Soit $g(x)=5x-6$. Calculer $g(4)$.
+
+\exo{}\diff{2} Soit $g(x)=5x-6$. Déterminer l'antécédent de $-16$.
+
+\exo{}\diff{2} Soit $h(x)=\dfrac12x-3$. Calculer $h(6)$ et $h(-4)$.
+
+\rubrique{Fonction linéaire}
+\exo{}\diff{2} On sait que $f$ est linéaire et que $f(4)=-12$. Déterminer l'expression de
+$f(x)$, puis calculer $f(7)$.
+
+\exo{}\diff{2} Soit $f(x)=-5x$. Calculer $f(-2)$ et déterminer l'antécédent de $30$.
+
+\exo{}\diff{1} Un litre d'essence coûte $700$ FCFA. Exprimer le prix $p(x)$ de $x$ litres,
+puis calculer $p(35)$.
+
+\exo{}\diff{2} Tracer la représentation graphique de $f(x)=\dfrac32x$ en indiquant deux
+points.
+
+\rubrique{Déterminer une fonction affine}
+\exo{}\diff{2} Déterminer la fonction affine $f$ telle que $f(2)=9$ et $f(5)=18$.
+
+\exo{}\diff{2} Déterminer la fonction affine $f$ telle que $f(0)=-3$ et $f(4)=5$.
+
+\exo{}\diff{2} Déterminer la fonction affine $f$ telle que $f(-3)=10$ et $f(2)=0$.
+
+\exo{}\diff{2} Déterminer la fonction affine $f$ telle que $f(2)=11$ et de coefficient
+directeur $4$.
+
+\exo{}\diff{2} Déterminer la fonction affine $f$ telle que $f(-1)=-2$ et de coefficient
+directeur $5$.
+
+\rubrique{Lecture graphique}
+\exo{}\diff{2} Soit $f(x)=2x+3$ et $g(x)=-x+12$. Déterminer, par le calcul, les
+coordonnées du point où les deux droites se coupent.
+
+\exo{}\diff{2} Soit $f(x)=3x-2$ et $g(x)=x+6$. Déterminer les coordonnées du point
+d'intersection des deux droites.
+
+\exo{}\diff{2} Soit $f(x)=2x+3$. Pour quelle valeur de $x$ a-t-on $f(x)=0$ ? Que représente
+graphiquement ce point ?
+
+\rubrique{Problèmes (tarifs, trajets)}
+\exo{}\diff{2} Une agence loue une voiture pour $15\,000$ FCFA de forfait, plus $3\,000$
+FCFA par jour. Exprimer le prix $\ell(x)$ pour $x$ jours, puis calculer $\ell(4)$.
+
+\exo{}\diff{2} Un bus parcourt $250$ km en moyenne toutes les $6$ heures à vitesse
+constante. Exprimer la distance $d(x)$ en fonction du temps $x$ (en h), puis calculer $d(6)$.
+
+\exo{}\diff{2} Deux forfaits Internet sont proposés : forfait $A$ : $2\,000+50x$ FCFA ;
+forfait $B$ : $100x$ FCFA, où $x$ est le nombre de gigaoctets. Pour quelle valeur de $x$
+les deux forfaits coûtent-ils le même prix ?
+
+\exo{}\diff{2} Avec les forfaits de l'exercice précédent, quel forfait est le plus
+avantageux pour $10$ Go ? pour $50$ Go ?
+
+\exo{}\diff{2} Une entreprise de livraison facture $500$ FCFA de frais fixes, plus $200$
+FCFA par kilogramme transporté. Exprimer le prix $c(x)$ pour $x$ kg, puis calculer $c(5)$.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[fonctions affines et transport — Douala]
+\begin{enumerate}[label=\arabic*)]
+\item Soit $f(x)=2x+3$.
+\begin{enumerate}[label=\alph*)]
+\item Calculer $f(4)$ et $f(-1)$.
+\item Déterminer l'antécédent de $15$ par $f$.
+\end{enumerate}
+\item Déterminer l'expression de la fonction affine $g$ telle que $g(2)=9$ et $g(5)=18$.
+\item Une compagnie de transport à Douala facture un trajet ainsi : $500$ FCFA de prise en
+charge, plus $200$ FCFA par kilomètre parcouru.
+\begin{enumerate}[label=\alph*)]
+\item Exprimer le prix $p(x)$ payé pour $x$ kilomètres.
+\item Calculer $p(15)$.
+\item Un client a payé $3\,300$ FCFA. Quelle distance a-t-il parcourue ?
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[fonctions affines et forfaits téléphoniques]
+\begin{enumerate}[label=\arabic*)]
+\item Soit $f(x)=-4x+9$.
+\begin{enumerate}[label=\alph*)]
+\item Calculer $f(3)$.
+\item Déterminer l'antécédent de $-7$ par $f$.
+\end{enumerate}
+\item Déterminer l'expression de la fonction affine $h$ telle que $h(-3)=10$ et $h(2)=0$.
+\item Deux opérateurs proposent : forfait $A$ : $1\,500$ FCFA plus $50$ FCFA par
+communication ; forfait $B$ : $100$ FCFA par communication (sans abonnement).
+\begin{enumerate}[label=\alph*)]
+\item Exprimer le coût $a(x)$ et $b(x)$ en fonction du nombre $x$ de communications.
+\item Pour quel nombre de communications les deux forfaits coûtent-ils le même prix ?
+\item Quel forfait choisir pour $20$ communications ? pour $60$ communications ?
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[fonctions affines et location de vélos — Kribi]
+\begin{enumerate}[label=\arabic*)]
+\item Soit $f(x)=3x-5$.
+\begin{enumerate}[label=\alph*)]
+\item Calculer $f(0)$ et $f(2)$.
+\item Déterminer l'antécédent de $7$ par $f$.
+\end{enumerate}
+\item Déterminer l'expression de la fonction $k$ dont la représentation graphique passe
+par les points $A(1\,;4)$ et $B(3\,;12)$. Que remarque-t-on sur $k$ ?
+\item Un loueur de vélos à Kribi facture $1\,000$ FCFA de caution fixe, plus $750$ FCFA
+par heure de location.
+\begin{enumerate}[label=\alph*)]
+\item Exprimer le prix $c(x)$ pour $x$ heures de location.
+\item Calculer le prix pour $3$ heures.
+\item Un client a payé $4\,750$ FCFA. Combien d'heures a-t-il loué le vélo ?
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$f(5)=13$ ; $f(-2)=-8$ ; $f(0)=-2$.
+
+\corrige{de l'exercice 2}
+$3x-2=13\iff x=5$ ; $3x-2=-11\iff x=-3$.
+
+\corrige{de l'exercice 3}
+$g(3)=1$ ; $g(-4)=15$.
+
+\corrige{de l'exercice 4}
+$-2x+7=-3\iff x=5$.
+
+\corrige{de l'exercice 5}
+$f(5)=20$ ; $f(-3)=-12$.
+
+\corrige{de l'exercice 6}
+$a=\dfrac{18}6=3$, donc $f(x)=3x$ et $f(10)=30$.
+
+\corrige{de l'exercice 7}
+$f(0)=0$ et $f(1)=-2$ : la droite passe par $(0\,;0)$ et $(1\,;-2)$.
+
+\corrige{de l'exercice 8}
+$p(x)=\dfrac{3\,200}4x=800x$ ; $p(7)=5\,600$ FCFA.
+
+\corrige{de l'exercice 9}
+$f$ et $h$ sont affines ($h$ est aussi linéaire, avec $a=-4$, $b=0$) ; $k$ est affine (avec
+$a=0$) ; $g$ n'est \textbf{pas} affine (le terme $x^{2}$ n'est pas de la forme $ax+b$).
+
+\corrige{de l'exercice 10}
+$f(x)=3x+5$.
+
+\corrige{de l'exercice 11}
+$a=\dfrac{16-7}{4-1}=3$, $b=7-3\times1=4$. $f(x)=3x+4$.
+
+\corrige{de l'exercice 12}
+$a=\dfrac{11-1}{3-(-2)}=2$, $b=1-2\times(-2)=5$. $f(x)=2x+5$.
+
+\corrige{de l'exercice 13}
+Image de $2$ : $f(2)=5$. Antécédent de $7$ : $2x+1=7\iff x=3$.
+
+\corrige{de l'exercice 14}
+$p(x)=300+150x$ ; $p(12)=2\,100$ FCFA.
+
+\corrige{de l'exercice 15}
+$1\,000+200x=400x\iff1\,000=200x\iff x=5$ communications.
+
+\corrige{de l'exercice 16}
+Pour $3$ communications : $A(3)=1\,600$, $B(3)=1\,200$, $B$ est plus avantageux. Pour $8$
+communications : $A(8)=2\,600$, $B(8)=3\,200$, $A$ est plus avantageux.
+
+\corrige{du sujet 1}
+1a) $f(4)=11$ ; $f(-1)=1$.\\
+1b) $2x+3=15\iff x=6$.\\
+2) $a=\dfrac{18-9}{5-2}=3$, $b=9-3\times2=3$. $g(x)=3x+3$.\\
+3a) $p(x)=500+200x$.\\
+3b) $p(15)=3\,500$ FCFA.\\
+3c) $500+200x=3\,300\iff x=14$ km.
+
+\corrige{du sujet 2}
+1a) $f(3)=-3$.\\
+1b) $-4x+9=-7\iff x=4$.\\
+2) $a=\dfrac{0-10}{2-(-3)}=-2$, $b=10-(-2)\times(-3)=4$. $h(x)=-2x+4$.\\
+3a) $a(x)=1\,500+50x$ ; $b(x)=100x$.\\
+3b) $1\,500+50x=100x\iff x=30$ communications.\\
+3c) Pour $20$ : $a(20)=2\,500$, $b(20)=2\,000$, $B$ est plus avantageux. Pour $60$ :
+$a(60)=4\,500$, $b(60)=6\,000$, $A$ est plus avantageux.
+
+\corrige{du sujet 3}
+1a) $f(0)=-5$ ; $f(2)=1$.\\
+1b) $3x-5=7\iff x=4$.\\
+2) $a=\dfrac{12-4}{3-1}=4$, $b=4-4\times1=0$. $k(x)=4x$ : comme $b=0$, $k$ est en fait une
+fonction \textbf{linéaire}.\\
+3a) $c(x)=1\,000+750x$.\\
+3b) $c(3)=3\,250$ FCFA.\\
+3c) $1\,000+750x=4\,750\iff x=5$ heures.
+
+\end{multicols}
+\exercicesBanner
