@@ -1,1 +1,500 @@
 \chapter{Puissances}
+
+\noindent\textit{Les puissances permettent d'écrire simplement des produits répétés, mais
+aussi des nombres extrêmement grands (distances astronomiques) ou extrêmement petits (tailles
+microscopiques). Après avoir revu les règles de calcul sur les puissances, tu apprendras à
+utiliser la \textbf{notation scientifique} et à estimer un \textbf{ordre de grandeur} — des
+outils indispensables en sciences.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Puissances d'exposant entier positif}
+
+\begin{definition}[Puissance d'exposant positif]
+Pour $a$ un nombre et $n$ un entier naturel non nul, $a^n$ (lire « $a$ exposant $n$ » ou
+« $a$ puissance $n$ ») est le produit de $n$ facteurs égaux à $a$ :
+\[
+a^{n}=\underbrace{a\times a\times\cdots\times a}_{n\text{ facteurs}}.
+\]
+On convient de plus que $a^{1}=a$ et, pour $a\ne0$, $a^{0}=1$.
+\end{definition}
+
+\begin{exemple}
+$2^{5}=2\times2\times2\times2\times2=32$ ;\quad $(-3)^{4}=81$ ;\quad $(-2)^{5}=-32$ ;\quad
+$7^{0}=1$.
+\end{exemple}
+
+\begin{remarque}
+Le signe d'une puissance d'un nombre négatif dépend de la \textbf{parité} de l'exposant :
+si $n$ est \textbf{pair}, $(-a)^{n}>0$ ; si $n$ est \textbf{impair}, $(-a)^{n}<0$ (pour
+$a>0$).
+\end{remarque}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (0,0) rectangle (0.5,0.5);
+\node[below] at (0.25,-0.15) {\small $1^{2}=1$};
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (1.2,0) rectangle (2.2,1);
+\node[below] at (1.7,-0.15) {\small $2^{2}=4$};
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (3,0) rectangle (4.5,1.5);
+\node[below] at (3.75,-0.15) {\small $3^{2}=9$};
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (5.2,0) rectangle (7.2,2);
+\node[below] at (6.2,-0.15) {\small $4^{2}=16$};
+\end{tikzpicture}
+\fig{Figure — L'aire d'un carré de côté $n$ vaut $n^2$ : elle croît très vite avec $n$.}
+\end{illus}
+
+\section{Puissances d'exposant négatif et nul}
+
+\begin{definition}[Puissance d'exposant négatif]
+Pour $a\ne0$ et $n$ un entier naturel non nul, on pose
+\[
+a^{-n}=\frac{1}{a^{n}}.
+\]
+\end{definition}
+
+\begin{exemple}
+$2^{-3}=\dfrac1{2^{3}}=\dfrac18$ ;\quad $5^{-2}=\dfrac1{25}$ ;\quad
+$(-3)^{-2}=\dfrac1{(-3)^{2}}=\dfrac19$ ;\quad $10^{-4}=\dfrac1{10\,000}$.
+\end{exemple}
+
+\begin{remarque}
+$0$ n'a pas d'exposant négatif ($\dfrac1{0^{n}}$ n'existe pas) : $0^{-n}$ n'est jamais défini.
+En revanche $0^{n}=0$ pour tout entier $n\ge1$, et $a^{0}=1$ pour tout $a\ne0$ (y compris si
+$a$ est négatif).
+\end{remarque}
+
+\section{Règles de calcul sur les puissances}
+
+\begin{propriete}[Produit et quotient de puissances de même base]
+Pour $a\ne0$ et $m,n$ entiers relatifs :
+\[
+a^{m}\times a^{n}=a^{m+n}, \qquad \frac{a^{m}}{a^{n}}=a^{m-n}.
+\]
+\end{propriete}
+
+\begin{propriete}[Puissance d'une puissance, d'un produit, d'un quotient]
+Pour $a,b\ne0$ et $m,n$ entiers relatifs :
+\[
+\left(a^{m}\right)^{n}=a^{m\times n}, \qquad (a\times b)^{n}=a^{n}\times b^{n}, \qquad
+\left(\frac ab\right)^{n}=\frac{a^{n}}{b^{n}}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=2.5cm,minimum height=0.7cm] (a1) {$a^m\times a^n$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=2.2cm,minimum height=0.7cm,right=14mm of a1] (a2) {$a^{m+n}$};
+\draw[->,onbmuted,line width=1pt] (a1) -- (a2);
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=2.5cm,minimum height=0.7cm,below=8mm of a1] (b1) {$a^m\div a^n$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=2.2cm,minimum height=0.7cm,right=14mm of b1] (b2) {$a^{m-n}$};
+\draw[->,onbmuted,line width=1pt] (b1) -- (b2);
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=2.5cm,minimum height=0.7cm,below=8mm of b1] (c1) {$(a^m)^n$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=2.2cm,minimum height=0.7cm,right=14mm of c1] (c2) {$a^{m\times n}$};
+\draw[->,onbmuted,line width=1pt] (c1) -- (c2);
+\end{tikzpicture}
+\fig{Figure — Les trois règles de base : on additionne, on soustrait ou on multiplie les
+exposants selon l'opération.}
+\end{illus}
+
+\begin{exemple}
+$3^{2}\times3^{4}=3^{6}=729$ ;\quad $5^{7}\div5^{3}=5^{4}=625$ ;\quad
+$\left(2^{3}\right)^{4}=2^{12}=4\,096$.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.4]
+\draw[onbline,line width=0.4pt] (0,0) grid (6,6);
+\draw[onbo,line width=1.4pt] (0,0) rectangle (6,6);
+\draw[onbo,line width=1.4pt] (3,0) -- (3,6);
+\draw[onbo,line width=1.4pt] (0,3) -- (6,3);
+\end{tikzpicture}
+\fig{Figure — $(2\times3)^{2}=6^{2}=36$ petites cases, regroupées en $2^{2}=4$ blocs de
+$3^{2}=9$ cases : on retrouve $2^{2}\times3^{2}=4\times9=36$.}
+\end{illus}
+
+\begin{aretenir}
+On \textbf{n'applique} ces règles que si les puissances ont la \textbf{même base} (pour la
+somme/différence des exposants) : $2^{3}\times5^{2}$ ne se simplifie \textbf{pas} en une seule
+puissance. Ne jamais confondre $a^{m}\times a^{n}=a^{m+n}$ (on \textbf{additionne}) avec
+$\left(a^{m}\right)^{n}=a^{m\times n}$ (on \textbf{multiplie}).
+\end{aretenir}
+
+\section{Puissances de 10, notation scientifique}
+
+\begin{propriete}[Puissances de 10]
+Pour tout entier naturel $n$, $10^{n}$ s'écrit $1$ suivi de $n$ zéros, et
+$10^{-n}=\dfrac1{10^{n}}$ s'écrit avec $n$ zéros après la virgule (dont le dernier est le
+chiffre $1$). Multiplier par $10^{n}$ revient à déplacer la virgule de $n$ rangs vers la
+droite ; par $10^{-n}$, de $n$ rangs vers la gauche.
+\end{propriete}
+
+\begin{definition}[Notation scientifique]
+La \textbf{notation scientifique} d'un nombre décimal non nul est son écriture sous la forme
+\[
+a\times10^{n}, \qquad 1\le|a|<10,\ n\in\Z.
+\]
+\end{definition}
+
+\begin{exemple}
+$1\,250\,000=1{,}25\times10^{6}$ ;\quad $45\,600\,000\,000=4{,}56\times10^{10}$ ;\quad
+$0{,}000034=3{,}4\times10^{-5}$ ;\quad $0{,}0000000078=7{,}8\times10^{-9}$.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\draw[onbline,line width=1pt] (0,0) -- (11,0);
+\foreach \x/\e in {0/-7,2.75/-3,5.5/0,8.25/7,11/11}
+  \draw[onbmuted] (\x,0.08) -- (\x,-0.08) node[below] {\small $10^{\e}$};
+\filldraw[onbgreen] (0,0) circle(2pt) node[above,yshift=1pt,text width=1.7cm,align=center] {\tiny virus};
+\filldraw[onbo] (2.75,0) circle(2pt) node[above,yshift=1pt,text width=1.9cm,align=center] {\tiny grain de sable};
+\filldraw[onbblue] (5.5,0) circle(2pt) node[above,yshift=1pt,text width=1.9cm,align=center] {\tiny être humain};
+\filldraw[onbo2] (8.25,0) circle(2pt) node[above,yshift=1pt,text width=2.1cm,align=center] {\tiny population du Cameroun};
+\filldraw[onbink] (11,0) circle(2pt) node[above,yshift=1pt,text width=1.9cm,align=center] {\tiny distance Terre-Soleil};
+\end{tikzpicture}
+\fig{Figure — Échelle des ordres de grandeur, de l'infiniment petit à l'infiniment grand
+(tailles en m, effectifs en nombre d'individus).}
+\end{illus}
+
+\section{Ordre de grandeur}
+
+\begin{definition}[Ordre de grandeur]
+L'\textbf{ordre de grandeur} d'un nombre est la puissance de $10$ la plus proche de ce
+nombre. On l'obtient en général à partir de la notation scientifique $a\times10^{n}$ : si
+$a<5$, l'ordre de grandeur est $10^{n}$ ; si $a\ge5$, c'est $10^{n+1}$.
+\end{definition}
+
+\begin{exemple}
+$2\,937{,}6=2{,}9376\times10^{3}$ : comme $2{,}9376<5$, l'ordre de grandeur est $10^{3}$.
+$3{,}7\times10^{5}\times2{,}9\times10^{-8}=10{,}73\times10^{-3}=1{,}073\times10^{-2}$ : ordre
+de grandeur $10^{-2}$.
+\end{exemple}
+
+\begin{aretenir}
+L'ordre de grandeur sert à \textbf{vérifier rapidement} la vraisemblance d'un résultat de
+calcul, sans calculatrice, en estimant chaque facteur par la puissance de $10$ la plus proche.
+\end{aretenir}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Puissance positive.} $a^{n}=a\times\cdots\times a$ ($n$ facteurs) ; $a^{0}=1$ (pour
+$a\ne0$).\\[4pt]
+\textbf{Puissance négative.} $a^{-n}=\dfrac1{a^{n}}$ (pour $a\ne0$).\\[4pt]
+\textbf{Règles (même base).} $a^{m}\times a^{n}=a^{m+n}$ ;\
+$\dfrac{a^{m}}{a^{n}}=a^{m-n}$ ;\ $(a^{m})^{n}=a^{mn}$.\\[4pt]
+\textbf{Puissance d'un produit/quotient.} $(ab)^{n}=a^{n}b^{n}$ ;\
+$\left(\dfrac ab\right)^{n}=\dfrac{a^{n}}{b^{n}}$.\\[4pt]
+\textbf{Notation scientifique.} $a\times10^{n}$ avec $1\le|a|<10$. Multiplier par $10^{n}$
+déplace la virgule de $n$ rangs (droite si $n>0$, gauche si $n<0$).\\[4pt]
+\textbf{Ordre de grandeur.} La puissance de $10$ la plus proche du nombre (arrondir le
+coefficient $a$ de la notation scientifique).\\[4pt]
+\textbf{Piège fréquent.} $a^{m}\times a^{n}=a^{m+n}$ (on additionne) $\ne$
+$(a^{m})^{n}=a^{m\times n}$ (on multiplie). Les règles de base ne s'appliquent qu'entre
+puissances de \textbf{même base}.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Appliquer les règles de calcul sur des puissances de même base}
+Repérer si l'opération est un produit, un quotient ou une puissance de puissance, puis
+additionner, soustraire ou multiplier les exposants en conséquence.
+\begin{exemple}
+$\dfrac{2^{3}\times2^{6}}{2^{4}}=\dfrac{2^{9}}{2^{4}}=2^{5}=32$.
+\end{exemple}
+
+\methode{Calculer une puissance d'exposant négatif}
+Écrire $a^{-n}=\dfrac1{a^{n}}$, calculer $a^{n}$, puis prendre l'inverse.
+\begin{exemple}
+$4^{-3}=\dfrac1{4^{3}}=\dfrac1{64}$.
+\end{exemple}
+
+\methode{Écrire un nombre en notation scientifique}
+Déplacer la virgule pour obtenir un nombre $a$ tel que $1\le|a|<10$ ; le nombre de rangs
+déplacés (positif si on l'a déplacée vers la gauche, négatif vers la droite) donne
+l'exposant $n$.
+\begin{exemple}
+$523\,000=5{,}23\times10^{5}$ (virgule déplacée de 5 rangs vers la gauche) ;
+$0{,}0091=9{,}1\times10^{-3}$ (virgule déplacée de 3 rangs vers la droite).
+\end{exemple}
+
+\methode{Passer de la notation scientifique à l'écriture décimale}
+Déplacer la virgule de $|n|$ rangs : vers la droite si $n>0$, vers la gauche si $n<0$ (en
+complétant par des zéros si nécessaire).
+\begin{exemple}
+$7{,}4\times10^{4}=74\,000$ ;\quad $6{,}05\times10^{-3}=0{,}00605$.
+\end{exemple}
+
+\methode{Calculer un produit ou un quotient en notation scientifique}
+Regrouper les coefficients entre eux et les puissances de $10$ entre elles, puis remettre le
+résultat sous forme scientifique si nécessaire.
+\begin{exemple}
+$(3\times10^{4})\times(2\times10^{-7})=6\times10^{-3}$ ;\quad
+$(8\times10^{6})\div(4\times10^{9})=2\times10^{-3}$.
+\end{exemple}
+
+\methode{Encadrer / estimer un ordre de grandeur}
+Remplacer chaque nombre par sa notation scientifique arrondie, puis calculer avec ces valeurs
+approchées.
+\begin{exemple}
+$598\times0{,}0021\approx6\times10^{2}\times2\times10^{-3}=12\times10^{-1}=1{,}2$ : ordre de
+grandeur $1$ (valeur exacte : $1{,}2558$).
+\end{exemple}
+
+\methode{Simplifier une expression combinant plusieurs puissances de même base}
+Réécrire chaque facteur avec la même base, puis appliquer les règles dans l'ordre (produits
+et quotients d'abord, puissance de puissance ensuite si besoin).
+\begin{exemple}
+$\dfrac{5^{3}\times5^{-6}}{5^{-4}}=5^{3-6-(-4)}=5^{1}=5$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Calculer avec les règles de puissances}
+\exo{}\diff{1} Écrire sous forme d'une seule puissance puis calculer : $3^{2}\times3^{4}$ ;\
+$(-2)^{3}\times(-2)^{5}$ ;\ $5^{7}\div5^{3}$ ;\ $\left(2^{3}\right)^{4}$.
+
+\exo{}\diff{1} Calculer : $7^{0}$ ;\ $(-5)^{1}$ ;\ $(-1)^{7}$ ;\ $(-1)^{10}$.
+
+\exo{}\diff{2} Calculer : $2^{-3}$ ;\ $5^{-2}$ ;\ $(-3)^{-2}$ ;\ $10^{-4}$.
+
+\exo{}\diff{2} Calculer : $3^{4}\times3^{-2}$ ;\ $2^{-3}\times2^{5}$ ;\ $\left(5^{2}\right)^{-1}$ ;\ $\left(2^{-1}\right)^{3}$.
+
+\rubrique{Notation scientifique}
+\exo{}\diff{1} Écrire en notation scientifique : $1\,250\,000$ ;\ $45\,600\,000\,000$.
+
+\exo{}\diff{1} Écrire en notation scientifique : $0{,}000034$ ;\ $0{,}0000000078$.
+
+\exo{}\diff{2} Donner l'écriture décimale de $6{,}02\times10^{4}$ et de $3{,}1\times10^{-3}$.
+
+\exo{}\diff{2} Calculer, en donnant le résultat en notation scientifique :
+$(2{,}4\times10^{5})\times(3\times10^{-2})$ et $(6\times10^{8})\div(1{,}5\times10^{3})$.
+
+\rubrique{Ordre de grandeur}
+\exo{}\diff{2} Donner un ordre de grandeur de $3{,}7\times10^{5}\times2{,}9\times10^{-8}$.
+
+\exo{}\diff{2} Donner un ordre de grandeur de $612\times4{,}8$, sans calculatrice, puis
+vérifier avec une calculatrice.
+
+\exo{}\diff{2} Encadrer $2^{10}$ entre deux puissances de $10$ consécutives ; en déduire un
+ordre de grandeur de $2^{10}$.
+
+\exo{}\diff{3} Un fichier informatique pèse $2^{20}$ octets. Sachant que $2^{10}\approx10^{3}$,
+donner une valeur approchée de $2^{20}$ en notation scientifique, puis calculer sa valeur
+exacte.
+
+\rubrique{Problèmes concrets (astronomie, biologie)}
+\exo{}\diff{2} La distance moyenne Terre-Soleil est $149\,600\,000$ km. Écrire cette distance
+en notation scientifique, en km puis en m.
+
+\exo{}\diff{2} Un globule rouge mesure environ $0{,}000007$ m de diamètre. Écrire cette taille
+en notation scientifique, puis calculer le nombre de globules rouges qu'il faudrait aligner
+pour obtenir $1$ cm.
+
+\exo{}\diff{2} Le Cameroun compte environ $2{,}7\times10^{7}$ habitants, et la population
+mondiale environ $8\times10^{9}$ habitants. Donner un ordre de grandeur de la fraction que
+représente la population camerounaise dans la population mondiale.
+
+\exo{}\diff{1} La masse de la Terre est environ $5{,}97\times10^{24}$ kg. Exprimer cette masse
+en tonnes ($1$ tonne $=10^{3}$ kg), en notation scientifique.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Calculs avec les règles}
+\exo{}\diff{1} Calculer, sous forme d'une seule puissance puis d'un nombre : $3^{3}\times3^{5}$.
+
+\exo{}\diff{2} Calculer : $(-4)^{2}\times(-4)^{3}$.
+
+\exo{}\diff{1} Calculer : $2^{8}\div2^{5}$.
+
+\exo{}\diff{2} Calculer : $\left(5^{2}\right)^{3}$.
+
+\exo{}\diff{2} Calculer : $\dfrac{7^{5}\times7^{2}}{7^{4}}$.
+
+\rubrique{Puissances d'exposant négatif}
+\exo{}\diff{1} Calculer : $4^{-2}$ ;\ $3^{-3}$.
+
+\exo{}\diff{2} Calculer : $(-2)^{-3}$ ;\ $10^{-5}$.
+
+\exo{}\diff{2} Calculer : $2^{-2}\times2^{6}$.
+
+\exo{}\diff{2} Calculer : $\left(3^{-1}\right)^{2}$ et $\left(7^{3}\right)^{-1}$.
+
+\rubrique{Notation scientifique}
+\exo{}\diff{1} Écrire en notation scientifique : $860\,000$ ;\ $7\,100\,000\,000$.
+
+\exo{}\diff{2} Écrire en notation scientifique : $0{,}0000523$ ;\ $0{,}00000000042$.
+
+\exo{}\diff{1} Donner l'écriture décimale de $4{,}5\times10^{5}$ et de $2{,}3\times10^{-4}$.
+
+\exo{}\diff{2} Donner l'écriture décimale de $9{,}02\times10^{6}$ et de $5\times10^{-7}$.
+
+\exo{}\diff{2} Calculer, en notation scientifique : $(3\times10^{4})\times(2\times10^{3})$ et
+$(8\times10^{6})\div(4\times10^{2})$.
+
+\rubrique{Ordre de grandeur}
+\exo{}\diff{2} Donner un ordre de grandeur de $5\times10^{-3}\times6\times10^{5}$.
+
+\exo{}\diff{2} Donner un ordre de grandeur de $9\times10^{-2}\div3\times10^{-5}$.
+
+\exo{}\diff{2} Donner un ordre de grandeur de $4\,987\times0{,}0031$.
+
+\exo{}\diff{3} Encadrer $3^{7}$ entre deux puissances de $10$ consécutives.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} La distance Terre-Lune est environ $384\,000$ km. Écrire cette distance en
+notation scientifique, en km puis en m.
+
+\exo{}\diff{2} Un cheveu humain a un diamètre d'environ $0{,}00007$ m. L'écrire en notation
+scientifique et donner un ordre de grandeur en $\mu$m ($1\,\mu\text{m}=10^{-6}$ m).
+
+\exo{}\diff{2} Une bactérie mesure environ $2\times10^{-6}$ m. Combien de bactéries alignées
+faudrait-il pour atteindre $1$ mm ?
+
+\exo{}\diff{2} La superficie du Cameroun est d'environ $475\,000\text{ km}^{2}$ et celle de
+l'Afrique d'environ $30\,000\,000\text{ km}^{2}$. Donner un ordre de grandeur de la fraction
+que représente le Cameroun sur le continent africain.
+
+\exo{}\diff{3} Un ordinateur effectue environ $3\times10^{9}$ opérations par seconde. Combien
+d'opérations effectue-t-il en une heure ? Donner le résultat en notation scientifique.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[puissances et lumière du Soleil]
+\begin{enumerate}[label=\arabic*)]
+\item Calculer, et donner le résultat sous forme d'une puissance de $2$ :
+$D=\dfrac{2^{3}\times2^{-5}}{2^{-4}}$. En déduire sa valeur numérique.
+\item Écrire en notation scientifique la distance moyenne Terre-Soleil,
+$149\,600\,000$ km.
+\item Sachant que la lumière parcourt environ $3\times10^{5}$ km chaque seconde, calculer le
+temps (en secondes, arrondi au dixième) mis par la lumière du Soleil pour atteindre la Terre.
+Convertir ce temps en minutes et secondes (arrondir les secondes à l'unité).
+\item Calculer $E=\left(4\times10^{3}\right)^{2}$ et donner le résultat en notation
+scientifique.
+\end{enumerate}
+
+\sujetbac[puissances de 2 et stockage numérique — cybercafé de Yaoundé]
+Un cybercafé de Yaoundé équipe ses ordinateurs de disques durs de capacité $2^{30}$ octets.
+\begin{enumerate}[label=\arabic*)]
+\item Sachant que $2^{10}=1\,024$, calculer les valeurs exactes de $2^{20}$ et de $2^{30}$.
+\item Chaque photo enregistrée pèse $2^{22}$ octets. Exprimer, sous forme d'une puissance de
+$2$, le nombre maximal de photos que peut contenir un disque dur de $2^{30}$ octets ; en
+déduire sa valeur exacte.
+\item Écrire $2^{30}$ en notation scientifique (arrondir le coefficient au centième).
+\item Donner un ordre de grandeur, en octets, de la capacité de ce disque dur.
+\end{enumerate}
+
+\sujetbac[puissances de 10 et population du Cameroun]
+\begin{enumerate}[label=\arabic*)]
+\item Calculer, sous forme d'une seule puissance de $10$ :
+$F=\dfrac{10^{7}\times10^{-2}}{10^{-3}}$.
+\item Le Cameroun compte environ $2{,}7\times10^{7}$ habitants et la population mondiale
+environ $8\times10^{9}$ habitants.
+\begin{enumerate}[label=\alph*)]
+\item Calculer, en notation scientifique (coefficient arrondi au dixième), la fraction que
+représente la population du Cameroun dans la population mondiale.
+\item En déduire le pourcentage, arrondi au dixième, que représente la population
+camerounaise dans la population mondiale.
+\end{enumerate}
+\item Le Cameroun a une superficie d'environ $475\,000\text{ km}^{2}$. Écrire cette
+superficie en notation scientifique.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$3^{2}\times3^{4}=3^{6}=729$ ;\ $(-2)^{3}\times(-2)^{5}=(-2)^{8}=256$ ;\
+$5^{7}\div5^{3}=5^{4}=625$ ;\ $\left(2^{3}\right)^{4}=2^{12}=4\,096$.
+
+\corrige{de l'exercice 2}
+$7^{0}=1$ ;\ $(-5)^{1}=-5$ ;\ $(-1)^{7}=-1$ ;\ $(-1)^{10}=1$.
+
+\corrige{de l'exercice 3}
+$2^{-3}=\dfrac18$ ;\ $5^{-2}=\dfrac1{25}$ ;\ $(-3)^{-2}=\dfrac19$ ;\ $10^{-4}=\dfrac1{10\,000}$.
+
+\corrige{de l'exercice 4}
+$3^{4}\times3^{-2}=3^{2}=9$ ;\ $2^{-3}\times2^{5}=2^{2}=4$ ;\
+$\left(5^{2}\right)^{-1}=5^{-2}=\dfrac1{25}$ ;\ $\left(2^{-1}\right)^{3}=2^{-3}=\dfrac18$.
+
+\corrige{de l'exercice 5}
+$1\,250\,000=1{,}25\times10^{6}$ ;\ $45\,600\,000\,000=4{,}56\times10^{10}$.
+
+\corrige{de l'exercice 6}
+$0{,}000034=3{,}4\times10^{-5}$ ;\ $0{,}0000000078=7{,}8\times10^{-9}$.
+
+\corrige{de l'exercice 7}
+$6{,}02\times10^{4}=60\,200$ ;\ $3{,}1\times10^{-3}=0{,}0031$.
+
+\corrige{de l'exercice 8}
+$(2{,}4\times10^{5})\times(3\times10^{-2})=7{,}2\times10^{3}$ ;\
+$(6\times10^{8})\div(1{,}5\times10^{3})=4\times10^{5}$.
+
+\corrige{de l'exercice 9}
+$3{,}7\times2{,}9=10{,}73$, donc $3{,}7\times10^{5}\times2{,}9\times10^{-8}=10{,}73\times10^{-3}=1{,}073\times10^{-2}$ :
+ordre de grandeur $10^{-2}$.
+
+\corrige{de l'exercice 10}
+Estimation : $600\times5=3\,000=3\times10^{3}$, ordre de grandeur $10^{3}$. Valeur exacte :
+$612\times4{,}8=2\,937{,}6$, bien de l'ordre de $10^{3}$.
+
+\corrige{de l'exercice 11}
+$2^{10}=1\,024$, donc $1\,000<2^{10}<10\,000$, soit $10^{3}<2^{10}<10^{4}$. Comme $1\,024$
+est proche de $1\,000$, l'ordre de grandeur de $2^{10}$ est $10^{3}$.
+
+\corrige{de l'exercice 12}
+$2^{20}=\left(2^{10}\right)^{2}\approx\left(10^{3}\right)^{2}=10^{6}$. Valeur exacte :
+$2^{20}=1\,048\,576$, très proche de $10^{6}$ (ordre de grandeur $10^{6}$).
+
+\corrige{de l'exercice 13}
+$149\,600\,000\text{ km}=1{,}496\times10^{8}$ km. Comme $1$ km $=10^{3}$ m, cette distance
+vaut $1{,}496\times10^{8}\times10^{3}=1{,}496\times10^{11}$ m.
+
+\corrige{de l'exercice 14}
+$0{,}000007\text{ m}=7\times10^{-6}$ m. Nombre de globules pour $1$ cm $=10^{-2}$ m :
+$\dfrac{10^{-2}}{7\times10^{-6}}\approx1\,429$ globules rouges.
+
+\corrige{de l'exercice 15}
+$\dfrac{2{,}7\times10^{7}}{8\times10^{9}}=0{,}3375\times10^{-2}=3{,}375\times10^{-3}$ :
+ordre de grandeur $10^{-3}$ (la population du Cameroun représente environ un millième de la
+population mondiale).
+
+\corrige{de l'exercice 16}
+$5{,}97\times10^{24}\text{ kg}=5{,}97\times10^{24}\div10^{3}\text{ t}=5{,}97\times10^{21}$
+tonnes.
+
+\corrige{du sujet 1}
+1) $D=2^{3-5-(-4)}=2^{3-5+4}=2^{2}=4$.\\
+2) $149\,600\,000=1{,}496\times10^{8}$ km.\\
+3) $t=\dfrac{1{,}496\times10^{8}}{3\times10^{5}}\approx498{,}7$ s. En minutes :
+$498{,}7\div60\approx8{,}31$ min, soit environ $8$ min $19$ s.\\
+4) $E=\left(4\times10^{3}\right)^{2}=16\times10^{6}=1{,}6\times10^{7}$.
+
+\corrige{du sujet 2}
+1) $2^{20}=\left(2^{10}\right)^{2}=1\,024^{2}=1\,048\,576$ ;\
+$2^{30}=2^{20}\times2^{10}=1\,048\,576\times1\,024=1\,073\,741\,824$.\\
+2) Nombre de photos $=2^{30}\div2^{22}=2^{8}=256$.\\
+3) $2^{30}=1\,073\,741\,824\approx1{,}07\times10^{9}$.\\
+4) Ordre de grandeur : $10^{9}$ octets.
+
+\corrige{du sujet 3}
+1) $F=10^{7-2-(-3)}=10^{7-2+3}=10^{8}$.\\
+2a) $\dfrac{2{,}7\times10^{7}}{8\times10^{9}}=0{,}3375\times10^{-2}=3{,}375\times10^{-3}\approx3{,}4\times10^{-3}$.\\
+2b) En pourcentage : $3{,}375\times10^{-3}\times100=0{,}3375\,\%\approx0{,}3\,\%$.\\
+3) $475\,000\text{ km}^{2}=4{,}75\times10^{5}\text{ km}^{2}$.
+
+\end{multicols}
+\exercicesBanner
