@@ -1,1 +1,392 @@
 \chapter{Réactions chimiques et loi de Lavoisier}
+
+\noindent\textit{Quand du fer rouille, quand du bois brûle, quand du lait tourne : la
+matière se transforme. Ce chapitre explique comment écrire et équilibrer ces
+transformations, et pourquoi la masse totale ne change jamais.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Réaction chimique : réactifs et produits}
+
+\begin{definition}[Réaction chimique]
+Une \textbf{réaction chimique} est une transformation au cours de laquelle des
+\textbf{réactifs} (les corps de départ) se transforment en \textbf{produits} (les corps
+obtenus). On la représente par une \textbf{équation-bilan} :
+\[
+\text{réactifs}\longrightarrow\text{produits}.
+\]
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=4pt,minimum width=3cm,minimum height=1.2cm] (r) {Réactifs};
+\node[draw=onbgreen,fill=onbgreen!10,rounded corners=4pt,minimum width=3cm,minimum height=1.2cm,right=3.4cm of r] (p) {Produits};
+\draw[->,onbmuted,line width=1.2pt] (r) -- node[above]{réaction chimique} (p);
+\end{tikzpicture}
+\fig{Figure — Une réaction chimique transforme des réactifs en produits.}
+\end{illus}
+
+\begin{exemple}
+Le fer et le soufre réagissent pour donner le sulfure de fer :
+$\mathrm{Fe}+\mathrm{S}\longrightarrow\mathrm{FeS}$. Réactifs : fer et soufre. Produit :
+sulfure de fer.
+\end{exemple}
+
+\section{Loi de Lavoisier : conservation de la masse}
+
+\begin{propriete}[Loi de Lavoisier]
+Au cours d'une réaction chimique, la masse totale des réactifs consommés est
+\textbf{égale} à la masse totale des produits formés. Les atomes ne disparaissent pas et
+ne se créent pas : ils se \textbf{réorganisent}. On résume souvent cette loi par : « Rien
+ne se perd, rien ne se crée, tout se transforme. »
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=1]
+\draw[onbmuted,line width=2pt] (2,0) -- (2,0.3);
+\draw[onbmuted,line width=1.5pt] (0,1.6) -- (4,1.6);
+\draw[onbmuted,line width=1pt] (2,0.3) -- (2,1.6);
+\draw[onbmuted,line width=1pt] (0,1.6) -- (0,0.9);
+\draw[onbmuted,line width=1pt] (4,1.6) -- (4,0.9);
+\draw[onbo,line width=1.2pt,fill=onbsoft] (-0.7,0.5) -- (0.7,0.5) -- (0.5,0.9) -- (-0.5,0.9) -- cycle;
+\draw[onbgreen,line width=1.2pt,fill=onbgreen!10] (3.3,0.5) -- (4.7,0.5) -- (4.5,0.9) -- (3.5,0.9) -- cycle;
+\node[below] at (0,0.35) {\small réactifs};
+\node[below] at (4,0.35) {\small produits};
+\node[above] at (2,1.9) {\small même masse totale};
+\end{tikzpicture}
+\fig{Figure — La masse totale des réactifs égale la masse totale des produits.}
+\end{illus}
+
+\begin{exemple}
+$7$ g de fer réagissent avec $4$ g de soufre : $\mathrm{Fe}+\mathrm{S}\to\mathrm{FeS}$. La
+masse de sulfure de fer obtenue est $7+4=11$ g.
+\end{exemple}
+
+\begin{remarque}
+La loi de Lavoisier permet de calculer la masse d'un réactif ou d'un produit sans le
+peser, à condition de connaître les masses des deux autres corps impliqués dans la
+réaction.
+\end{remarque}
+
+\section{Équation-bilan et équilibrage}
+
+\begin{propriete}[Équilibrer une équation-bilan]
+Une équation-bilan est \textbf{équilibrée} lorsque l'on trouve le \textbf{même nombre}
+d'atomes de chaque élément de part et d'autre de la flèche. Pour l'équilibrer, on ajoute
+des \textbf{nombres} (appelés coefficients stœchiométriques) devant les formules, sans
+jamais modifier les formules elles-mêmes.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={font=\small},align=center]
+\node[draw=onbo,rounded corners=3pt,fill=onbsoft,minimum width=3.6cm,minimum height=1.5cm] (L)
+{$2\mathrm{H_2}+\mathrm{O_2}$\\[3pt]\footnotesize $4$ atomes H, $2$ atomes O};
+\node[right=1.1cm of L,font=\Large] {$\longrightarrow$};
+\node[draw=onbgreen,rounded corners=3pt,fill=onbgreen!10,minimum width=3.6cm,minimum height=1.5cm,right=4.2cm of L] (R)
+{$2\mathrm{H_2O}$\\[3pt]\footnotesize $4$ atomes H, $2$ atomes O};
+\end{tikzpicture}
+\fig{Figure — L'équation $2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$ est équilibrée :
+autant d'atomes H et O de chaque côté.}
+\end{illus}
+
+\begin{exemple}
+Équilibrer $\mathrm{H_2}+\mathrm{Cl_2}\to\mathrm{HCl}$ : à droite, $1$ atome H et $1$
+atome Cl seulement, contre $2$ et $2$ à gauche. On place un $2$ devant $\mathrm{HCl}$ :
+$\mathrm{H_2}+\mathrm{Cl_2}\to2\mathrm{HCl}$. Il y a maintenant $2$ atomes H et $2$ atomes
+Cl de chaque côté : l'équation est équilibrée.
+\end{exemple}
+
+\begin{remarque}
+On ne modifie \textbf{jamais} les indices à l'intérieur d'une formule brute (par exemple
+transformer $\mathrm{H_2O}$ en $\mathrm{H_2O_2}$) : cela changerait la nature du corps.
+Seuls les coefficients \textbf{devant} les formules peuvent être modifiés.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Réaction chimique.} Réactifs $\to$ Produits, décrite par une équation-bilan.\\[4pt]
+\textbf{Loi de Lavoisier.} Masse totale des réactifs $=$ masse totale des produits (rien
+ne se perd, rien ne se crée).\\[4pt]
+\textbf{Équation équilibrée.} Même nombre d'atomes de chaque élément de part et d'autre de
+la flèche.\\[4pt]
+\textbf{Coefficients.} On équilibre en ajoutant des nombres \textbf{devant} les formules,
+jamais en modifiant les indices \textbf{dans} les formules.\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre le coefficient devant une formule (ex. le « $2$ »
+de $2\mathrm{H_2O}$, qui multiplie toute la molécule) avec un indice à l'intérieur d'une
+formule.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Identifier réactifs et produits dans un énoncé}
+Repérer, dans le texte, les corps présents \textbf{avant} la réaction (réactifs) et les
+corps obtenus \textbf{après} (produits), puis les placer de part et d'autre de la flèche.
+\begin{exemple}
+« Le carbone brûle dans le dioxygène pour donner du dioxyde de carbone » : réactifs
+$\mathrm{C}$ et $\mathrm{O_2}$, produit $\mathrm{CO_2}$.
+\end{exemple}
+
+\methode{Appliquer la loi de Lavoisier pour calculer une masse manquante}
+Écrire l'égalité (masse des réactifs) $=$ (masse des produits), puis isoler la masse
+inconnue.
+\begin{exemple}
+$3$ g de carbone réagissent avec du dioxygène pour donner $11$ g de dioxyde de carbone :
+masse de dioxygène consommée $=11-3=8$ g.
+\end{exemple}
+
+\methode{Vérifier qu'une équation-bilan est équilibrée}
+Compter, pour chaque élément, le nombre total d'atomes à gauche puis à droite de la
+flèche (en tenant compte des coefficients et des indices) : ils doivent être égaux.
+\begin{exemple}
+$\mathrm{Fe}+\mathrm{S}\to\mathrm{FeS}$ : $1$ atome Fe et $1$ atome S de chaque côté :
+équation déjà équilibrée.
+\end{exemple}
+
+\methode{Équilibrer une équation-bilan simple}
+Ajuster les coefficients devant les formules, un élément à la fois, jusqu'à obtenir le
+même nombre d'atomes de chaque élément des deux côtés.
+\begin{exemple}
+$\mathrm{N_2}+\mathrm{H_2}\to\mathrm{NH_3}$ : équilibrer l'azote et l'hydrogène donne
+$\mathrm{N_2}+3\mathrm{H_2}\to2\mathrm{NH_3}$ ($2$ atomes N et $6$ atomes H de chaque
+côté).
+\end{exemple}
+
+\methode{Résoudre un problème concret avec la loi de Lavoisier}
+Identifier la réaction en jeu, repérer les masses connues et la masse recherchée, puis
+appliquer la conservation de la masse.
+\begin{exemple}
+$14$ g de fer réagissent entièrement avec $8$ g de soufre : la masse de sulfure de fer
+obtenue est $14+8=22$ g.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Réactifs et produits}
+\exo{}\diff{1} Dans la réaction $\mathrm{Fe}+\mathrm{S}\to\mathrm{FeS}$, indiquer les
+réactifs et le produit.
+
+\exo{}\diff{1} « Le méthane brûle dans le dioxygène pour donner du dioxyde de carbone et
+de l'eau. » Identifier les réactifs et les produits de cette réaction.
+
+\exo{}\diff{2} Qu'appelle-t-on une équation-bilan ?
+
+\exo{}\diff{2} Qu'est-ce qu'une réaction chimique ?
+
+\rubrique{Loi de Lavoisier}
+\exo{}\diff{1} Énoncer la loi de Lavoisier.
+
+\exo{}\diff{2} $7$ g de fer réagissent avec $4$ g de soufre. Calculer la masse de sulfure
+de fer obtenue.
+
+\exo{}\diff{2} $3$ g de carbone réagissent complètement avec $8$ g de dioxygène. Calculer
+la masse de dioxyde de carbone obtenue.
+
+\exo{}\diff{2} La combustion complète de $12$ g de carbone consomme $32$ g de dioxygène et
+produit du dioxyde de carbone. Calculer la masse de dioxyde de carbone formée.
+
+\rubrique{Équilibrage d'équations}
+\exo{}\diff{1} L'équation $\mathrm{Fe}+\mathrm{S}\to\mathrm{FeS}$ est-elle équilibrée ?
+Justifier en comptant les atomes.
+
+\exo{}\diff{2} Équilibrer l'équation $\mathrm{H_2}+\mathrm{Cl_2}\to\mathrm{HCl}$.
+
+\exo{}\diff{2} Équilibrer l'équation $\mathrm{Mg}+\mathrm{O_2}\to\mathrm{MgO}$.
+
+\exo{}\diff{3} Équilibrer l'équation $\mathrm{N_2}+\mathrm{H_2}\to\mathrm{NH_3}$.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} $14$ g de fer réagissent avec $8$ g de soufre. Calculer la masse de sulfure
+de fer obtenue.
+
+\exo{}\diff{2} $6$ g de carbone réagissent complètement avec $16$ g de dioxygène. Calculer
+la masse de dioxyde de carbone formée.
+
+\exo{}\diff{3} La combustion de $16$ g de méthane $\mathrm{CH_4}$ consomme $64$ g de
+dioxygène et produit $44$ g de dioxyde de carbone et de l'eau. Calculer la masse d'eau
+formée.
+
+\exo{}\diff{3} On fait réagir $28$ g de fer avec $16$ g de soufre. Calculer la masse de
+sulfure de fer obtenue.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Réactifs et produits}
+\exo{}\diff{1} « Le fer rouille au contact du dioxygène de l'air pour donner de l'oxyde de
+fer. » Identifier les réactifs et le produit.
+
+\exo{}\diff{1} Dans l'équation $2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$, identifier
+les réactifs et le produit.
+
+\exo{}\diff{2} Pourquoi écrit-on une flèche, et non un signe « égal », dans une
+équation-bilan ?
+
+\exo{}\diff{2} Donner un exemple de réaction chimique observée dans la vie quotidienne.
+
+\exo{}\diff{2} Qu'est-ce qui différencie un réactif d'un produit ?
+
+\rubrique{Loi de Lavoisier}
+\exo{}\diff{2} $22{,}4$ g de fer réagissent avec du dioxygène pour donner $32$ g d'oxyde
+de fer $\mathrm{Fe_2O_3}$. Calculer la masse de dioxygène consommée.
+
+\exo{}\diff{2} $6$ g de dihydrogène réagissent avec $48$ g de dioxygène pour donner de
+l'eau. Calculer la masse d'eau obtenue.
+
+\exo{}\diff{2} La combustion complète de $1{,}2$ g de carbone consomme $3{,}2$ g de
+dioxygène. Calculer la masse de dioxyde de carbone formée.
+
+\exo{}\diff{3} $8$ g de méthane brûlent avec $32$ g de dioxygène et donnent $22$ g de
+dioxyde de carbone. Calculer la masse d'eau formée.
+
+\exo{}\diff{2} Pourquoi la masse totale ne change-t-elle jamais au cours d'une réaction
+chimique ?
+
+\rubrique{Équilibrage d'équations}
+\exo{}\diff{1} L'équation $\mathrm{C}+\mathrm{O_2}\to\mathrm{CO_2}$ est-elle équilibrée ?
+Justifier.
+
+\exo{}\diff{2} Équilibrer l'équation $\mathrm{Na}+\mathrm{Cl_2}\to\mathrm{NaCl}$.
+
+\exo{}\diff{2} Équilibrer l'équation $\mathrm{Al}+\mathrm{O_2}\to\mathrm{Al_2O_3}$.
+
+\exo{}\diff{3} Équilibrer l'équation $\mathrm{Fe}+\mathrm{O_2}\to\mathrm{Fe_2O_3}$.
+
+\exo{}\diff{2} Vrai ou Faux : « On peut équilibrer une équation-bilan en modifiant les
+indices à l'intérieur des formules. »
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} $11{,}2$ g de fer réagissent avec du dioxygène pour donner de l'oxyde de
+fer $\mathrm{Fe_2O_3}$, en consommant $4{,}8$ g de dioxygène. Calculer la masse d'oxyde de
+fer obtenue.
+
+\exo{}\diff{2} $28$ g de fer réagissent avec $16$ g de soufre. Calculer la masse de
+sulfure de fer obtenue.
+
+\exo{}\diff{3} La combustion de $4$ g de méthane consomme $16$ g de dioxygène et produit
+$11$ g de dioxyde de carbone. Calculer la masse d'eau formée.
+
+\exo{}\diff{2} $0{,}6$ g de carbone brûlent complètement avec $1{,}6$ g de dioxygène.
+Calculer la masse de dioxyde de carbone obtenue.
+
+\exo{}\diff{3} Un élève affirme avoir obtenu $25$ g de produit à partir de $10$ g et $12$
+g de deux réactifs, sans perte de matière. Ce résultat est-il compatible avec la loi de
+Lavoisier ? Justifier.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Loi de Lavoisier]
+\begin{enumerate}[label=\arabic*)]
+\item Énonce la loi de Lavoisier.
+\item Dans la réaction $\mathrm{Fe}+\mathrm{S}\to\mathrm{FeS}$, identifie les réactifs et
+le produit.
+\item $14$ g de fer réagissent avec $8$ g de soufre. Calcule la masse de sulfure de fer
+obtenue.
+\item L'équation $\mathrm{Fe}+\mathrm{S}\to\mathrm{FeS}$ est-elle équilibrée ? Justifie.
+\end{enumerate}
+
+\sujetbac[Équilibrage d'équations-bilans]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce qu'une équation-bilan équilibrée ?
+\item Équilibre l'équation $\mathrm{H_2}+\mathrm{Cl_2}\to\mathrm{HCl}$.
+\item Équilibre l'équation $\mathrm{Mg}+\mathrm{O_2}\to\mathrm{MgO}$.
+\item Réponds par Vrai ou Faux : « On peut modifier les indices à l'intérieur d'une formule
+pour équilibrer une équation. »
+\end{enumerate}
+
+\sujetbac[Problème concret : la combustion du carbone]
+\begin{enumerate}[label=\arabic*)]
+\item Écris l'équation-bilan de la combustion du carbone dans le dioxygène (produit :
+dioxyde de carbone).
+\item Cette équation est-elle équilibrée ? Justifie.
+\item $6$ g de carbone réagissent complètement avec $16$ g de dioxygène. Calcule la masse
+de dioxyde de carbone obtenue.
+\item Quelle loi as-tu utilisée pour répondre à la question précédente ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Réactifs : fer et soufre. Produit : sulfure de fer.
+
+\corrige{de l'exercice 2}
+Réactifs : méthane et dioxygène. Produits : dioxyde de carbone et eau.
+
+\corrige{de l'exercice 3}
+C'est la représentation symbolique d'une réaction chimique : réactifs $\to$ produits.
+
+\corrige{de l'exercice 4}
+Une réaction chimique est une transformation au cours de laquelle des réactifs se
+transforment en produits.
+
+\corrige{de l'exercice 5}
+Au cours d'une réaction chimique, la masse totale des réactifs consommés est égale à la
+masse totale des produits formés.
+
+\corrige{de l'exercice 6}
+$m(\mathrm{FeS})=7+4=11$ g.
+
+\corrige{de l'exercice 7}
+$m(\mathrm{CO_2})=3+8=11$ g.
+
+\corrige{de l'exercice 8}
+$m(\mathrm{CO_2})=12+32=44$ g.
+
+\corrige{de l'exercice 9}
+Oui : $1$ atome Fe et $1$ atome S de chaque côté de la flèche.
+
+\corrige{de l'exercice 10}
+$\mathrm{H_2}+\mathrm{Cl_2}\to2\mathrm{HCl}$.
+
+\corrige{de l'exercice 11}
+$2\mathrm{Mg}+\mathrm{O_2}\to2\mathrm{MgO}$.
+
+\corrige{de l'exercice 12}
+$\mathrm{N_2}+3\mathrm{H_2}\to2\mathrm{NH_3}$.
+
+\corrige{de l'exercice 13}
+$m(\mathrm{FeS})=14+8=22$ g.
+
+\corrige{de l'exercice 14}
+$m(\mathrm{CO_2})=6+16=22$ g.
+
+\corrige{de l'exercice 15}
+$m(\text{eau})=(16+64)-44=36$ g.
+
+\corrige{de l'exercice 16}
+$m(\mathrm{FeS})=28+16=44$ g.
+
+\corrige{du sujet 1}
+1) La masse totale des réactifs est égale à la masse totale des produits.\\
+2) Réactifs : fer, soufre. Produit : sulfure de fer.\\
+3) $14+8=22$ g.\\
+4) Oui : $1$ atome Fe et $1$ atome S de chaque côté.
+
+\corrige{du sujet 2}
+1) Une équation où l'on trouve le même nombre d'atomes de chaque élément de part et
+d'autre de la flèche.\\
+2) $\mathrm{H_2}+\mathrm{Cl_2}\to2\mathrm{HCl}$.\\
+3) $2\mathrm{Mg}+\mathrm{O_2}\to2\mathrm{MgO}$.\\
+4) Faux : on ne modifie jamais les indices à l'intérieur d'une formule.
+
+\corrige{du sujet 3}
+1) $\mathrm{C}+\mathrm{O_2}\to\mathrm{CO_2}$.\\
+2) Oui : $1$ atome C et $2$ atomes O de chaque côté.\\
+3) $6+16=22$ g.\\
+4) La loi de Lavoisier (conservation de la masse).
+
+\end{multicols}
+\exercicesBanner
