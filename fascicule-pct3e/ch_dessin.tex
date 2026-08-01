@@ -1,1 +1,342 @@
 \chapter{Dessin technique}
+
+\noindent\textit{Avant de fabriquer un objet, il faut le représenter avec précision, de
+façon à ce que n'importe quel technicien, dans n'importe quel pays, puisse le comprendre
+sans ambiguïté. C'est le rôle du dessin technique, véritable langage universel de
+l'ingénierie.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Rôle et types de traits}
+
+\begin{definition}[Dessin technique]
+Le \textbf{dessin technique} représente un objet selon des règles normalisées et
+partagées internationalement, afin de permettre sa fabrication, son montage ou sa
+réparation sans ambiguïté.
+\end{definition}
+
+\begin{propriete}[Types de traits normalisés]
+Chaque trait a une signification précise :
+\begin{itemize}
+\item \textbf{trait continu fort} : contours et arêtes vus de l'objet ;
+\item \textbf{trait continu fin} : lignes de cote, hachures, lignes d'attache ;
+\item \textbf{trait interrompu (tirets)} : contours et arêtes cachés ;
+\item \textbf{trait mixte fin} (tiret-point) : axes de symétrie.
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[onbline,line width=1.6pt] (0,3) -- (3,3);
+\node[right] at (3.2,3) {\small trait continu fort (contour vu)};
+\draw[onbmuted,line width=0.6pt] (0,2.2) -- (3,2.2);
+\node[right] at (3.2,2.2) {\small trait continu fin (cote)};
+\draw[onbmuted,line width=1pt,dash pattern=on 4pt off 3pt] (0,1.4) -- (3,1.4);
+\node[right] at (3.2,1.4) {\small trait interrompu (contour caché)};
+\draw[onbo2,line width=0.8pt,dash pattern=on 6pt off 2pt on 1pt off 2pt] (0,0.6) -- (3,0.6);
+\node[right] at (3.2,0.6) {\small trait mixte fin (axe de symétrie)};
+\end{tikzpicture}
+\fig{Figure — Les quatre principaux types de traits utilisés en dessin technique.}
+\end{illus}
+
+\section{L'échelle}
+
+\begin{definition}[Échelle]
+L'\textbf{échelle} d'un dessin est le rapport entre une dimension mesurée sur le dessin
+et la dimension réelle correspondante :
+\[
+\text{échelle}=\frac{\text{dimension sur le dessin}}{\text{dimension réelle}}.
+\]
+Une échelle \textbf{$1{:}1$} correspond à la grandeur réelle. Une échelle de la forme
+\textbf{$1{:}n$} (avec $n>1$) est une \textbf{réduction} ; une échelle de la forme
+\textbf{$n{:}1$} est un \textbf{agrandissement}.
+\end{definition}
+
+\begin{exemple}
+Un mur de $3$ m de long est dessiné à l'échelle $1{:}50$ : longueur sur le dessin
+$=3\,\text{m}\times\dfrac1{50}=0{,}06$ m $=6$ cm.
+\end{exemple}
+
+\begin{exemple}
+Une pièce mécanique de $5$ mm est dessinée à l'échelle $2{:}1$ (agrandissement) :
+longueur sur le dessin $=5\times2=10$ mm.
+\end{exemple}
+
+\section{La cotation}
+
+\begin{definition}[Cotation]
+\textbf{Coter} un dessin, c'est y indiquer les dimensions réelles de l'objet, à l'aide de
+\textbf{lignes de cote} (trait continu fin, terminées par des flèches) et de
+\textbf{lignes d'attache} (trait continu fin, perpendiculaires au contour). Les cotes
+indiquées sont \textbf{toujours les dimensions réelles} de l'objet, quelle que soit
+l'échelle du dessin.
+\end{definition}
+
+\begin{remarque}
+C'est un piège classique : sur un dessin à l'échelle $1{:}20$, une cote « $240$ » indique
+bien $240$ cm dans la réalité, même si le trait mesuré sur la feuille ne fait que $12$
+cm.
+\end{remarque}
+
+\section{Les projections orthogonales}
+
+\begin{definition}[Vues normalisées]
+Une pièce est représentée par plusieurs \textbf{vues}, chacune obtenue en projetant
+l'objet perpendiculairement sur un plan : la \textbf{vue de face}, la \textbf{vue de
+dessus} (placée sous la vue de face) et la \textbf{vue de gauche} ou \textbf{de droite}
+(placée à côté). Ensemble, elles permettent de reconstituer entièrement la forme de
+l'objet en trois dimensions.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.75]
+\draw[onbline,line width=1.3pt] (0,3) rectangle (3,5);
+\draw[onbmuted,line width=1pt,dash pattern=on 4pt off 3pt] (1.5,3) -- (1.5,5);
+\node[above] at (1.5,5.2) {\small vue de face};
+\draw[onbline,line width=1.3pt] (0,0) rectangle (3,2);
+\draw[onbmuted,line width=1pt,dash pattern=on 4pt off 3pt] (0,1) -- (3,1);
+\node[below] at (1.5,-0.2) {\small vue de dessus};
+\draw[onbline,line width=1.3pt] (4,3) rectangle (6,5);
+\node[above] at (5,5.2) {\small vue de gauche};
+\draw[onbmuted,line width=0.6pt] (0,2.7) -- (0,2.4) -- (3,2.4) -- (3,2.7);
+\end{tikzpicture}
+\fig{Figure — Disposition normalisée des trois vues : face, dessus, gauche.}
+\end{illus}
+
+\section{La perspective cavalière}
+
+\begin{definition}[Perspective cavalière]
+La \textbf{perspective cavalière} représente un objet en volume, sur un seul dessin : les
+\textbf{faces de face} sont dessinées en \textbf{vraie grandeur}, tandis que les
+\textbf{fuyantes} (profondeur) sont tracées selon un \textbf{angle de fuite} (souvent
+$45°$) et un \textbf{coefficient de réduction} (souvent $0{,}5$).
+\end{definition}
+
+\begin{exemple}
+Un cube d'arête $4$ cm dessiné en perspective cavalière (coefficient $0{,}5$, angle
+$45°$) : la face avant mesure $4$ cm $\times$ $4$ cm en vraie grandeur, et les fuyantes
+mesurent $4\times0{,}5=2$ cm sur le dessin.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Traits.} Continu fort = contour vu ; continu fin = cote ; interrompu = contour
+caché ; mixte fin = axe de symétrie.\\[4pt]
+\textbf{Échelle.} $\text{échelle}=\dfrac{\text{dessin}}{\text{réel}}$ ; $1{:}n$ =
+réduction, $n{:}1$ = agrandissement.\\[4pt]
+\textbf{Cotation.} Les cotes indiquées sont toujours les dimensions \textbf{réelles},
+quelle que soit l'échelle.\\[4pt]
+\textbf{Vues.} Face, dessus (sous la face), gauche/droite (à côté).\\[4pt]
+\textbf{Perspective cavalière.} Face en vraie grandeur ; fuyantes à $45°$, coefficient
+souvent $0{,}5$.\\[4pt]
+\textbf{Piège fréquent.} Confondre la dimension mesurée sur le dessin (dépend de
+l'échelle) et la cote indiquée (toujours la dimension réelle).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer une longueur sur le dessin à partir de l'échelle}
+Appliquer $\text{dessin}=\text{échelle}\times\text{réel}$.
+\begin{exemple}
+Échelle $1{:}100$, longueur réelle $8$ m : dessin $=8\times\dfrac1{100}=0{,}08$ m $=8$
+cm.
+\end{exemple}
+
+\methode{Calculer une longueur réelle à partir du dessin}
+Appliquer $\text{réel}=\dfrac{\text{dessin}}{\text{échelle}}$.
+\begin{exemple}
+Échelle $1{:}20$, longueur mesurée sur le dessin $=12$ cm : réel
+$=12\div\dfrac1{20}=12\times20=240$ cm.
+\end{exemple}
+
+\methode{Identifier un type de trait}
+Observer son aspect (continu, interrompu, mixte) et son épaisseur (fort ou fin) pour
+retrouver sa signification.
+\begin{exemple}
+Une ligne en tirets réguliers représente un contour caché.
+\end{exemple}
+
+\methode{Reconnaître la disposition des trois vues normalisées}
+La vue de dessus se place \textbf{sous} la vue de face ; la vue de gauche se place
+\textbf{à côté} de la vue de face.
+\begin{exemple}
+Pour vérifier une largeur, comparer la vue de face et la vue de dessus, qui partagent la
+même largeur.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Traits et normes}
+\exo{}\diff{1} À quoi sert le dessin technique ?
+
+\exo{}\diff{1} Que représente un trait continu fort ?
+
+\exo{}\diff{2} Que représente un trait interrompu (en tirets) ?
+
+\exo{}\diff{2} Que représente un trait mixte fin ?
+
+\rubrique{Échelle}
+\exo{}\diff{2} Une pièce de $300$ cm est dessinée à l'échelle $1{:}50$. Calculer sa
+longueur sur le dessin.
+
+\exo{}\diff{2} Une pièce de $800$ cm est dessinée à l'échelle $1{:}100$. Calculer sa
+longueur sur le dessin.
+
+\exo{}\diff{2} Une petite pièce de $5$ mm est dessinée à l'échelle $2{:}1$. Calculer sa
+longueur sur le dessin.
+
+\exo{}\diff{3} Sur un dessin à l'échelle $1{:}20$, une longueur mesure $12$ cm. Calculer
+la longueur réelle correspondante.
+
+\rubrique{Vues et perspective}
+\exo{}\diff{1} Où se place la vue de dessus par rapport à la vue de face ?
+
+\exo{}\diff{2} Qu'est-ce que la perspective cavalière ?
+
+\exo{}\diff{2} En perspective cavalière, comment sont représentées les faces de face ?
+
+\exo{}\diff{2} Un cube d'arête $6$ cm est dessiné en perspective cavalière avec un
+coefficient de réduction $0{,}5$. Calculer la longueur des fuyantes sur le dessin.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Traits et normes}
+\exo{}\diff{2} Pourquoi le dessin technique doit-il suivre des règles normalisées
+partagées internationalement ?
+
+\exo{}\diff{2} Un trait continu fin peut représenter deux éléments différents du dessin :
+lesquels ?
+
+\rubrique{Échelle}
+\exo{}\diff{2} Une pièce de $240$ cm est dessinée à l'échelle $1{:}20$. Calculer sa
+longueur sur le dessin.
+
+\exo{}\diff{3} Une pièce mesure $9$ cm sur un dessin à l'échelle $1{:}100$. Calculer sa
+longueur réelle, en cm puis en m.
+
+\exo{}\diff{3} Une pièce réelle de $2$ m est représentée par un trait de $4$ cm sur le
+dessin. Calculer l'échelle utilisée (sous la forme $1{:}n$).
+
+\exo{}\diff{2} Un plan de maison est réalisé à l'échelle $1{:}100$. Une pièce mesure
+$5$ cm de longueur sur le plan. Calculer sa longueur réelle.
+
+\rubrique{Vues et perspective}
+\exo{}\diff{2} Citer les trois vues normalisées habituellement représentées sur un dessin
+technique.
+
+\exo{}\diff{3} Pourquoi utilise-t-on plusieurs vues plutôt qu'une seule pour représenter
+un objet ?
+
+\exo{}\diff{2} Un parallélépipède de profondeur $8$ cm est dessiné en perspective
+cavalière avec un coefficient $0{,}5$. Calculer la longueur des fuyantes.
+
+\exo{}\diff{3} Quel est l'avantage de la perspective cavalière par rapport aux vues de
+face, dessus et côté séparées ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Échelle et cotation]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la définition de l'échelle d'un dessin.
+\item Une pièce mesure $4$ m de long dans la réalité. Elle est dessinée à l'échelle
+$1{:}50$. Calcule sa longueur sur le dessin.
+\item Sur ce même dessin, une cote indique « $150$ ». S'agit-il de la longueur réelle ou
+de la longueur mesurée sur le dessin ?
+\item Explique pourquoi les cotes indiquées sur un dessin sont toujours les dimensions
+réelles.
+\end{enumerate}
+
+\sujetbac[Vues et traits]
+\begin{enumerate}[label=\arabic*)]
+\item Cite les trois vues normalisées d'un dessin technique.
+\item Où se place la vue de dessus par rapport à la vue de face ?
+\item Que représente un trait interrompu sur un dessin technique ?
+\item Que représente un trait mixte fin ?
+\end{enumerate}
+
+\sujetbac[Perspective cavalière]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce que la perspective cavalière ?
+\item Comment sont représentées les faces de face dans cette perspective ?
+\item Un cube d'arête $10$ cm est dessiné en perspective cavalière avec un coefficient
+$0{,}5$. Calcule la longueur des fuyantes sur le dessin.
+\item Quel angle de fuite est le plus couramment utilisé en perspective cavalière ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+À représenter un objet avec précision, selon des règles normalisées, pour permettre sa
+fabrication ou sa réparation sans ambiguïté.
+
+\corrige{de l'exercice 2}
+Les contours et arêtes vus de l'objet.
+
+\corrige{de l'exercice 3}
+Les contours et arêtes cachés de l'objet.
+
+\corrige{de l'exercice 4}
+Les axes de symétrie.
+
+\corrige{de l'exercice 5}
+$300\times\dfrac1{50}=6$ cm.
+
+\corrige{de l'exercice 6}
+$800\times\dfrac1{100}=8$ cm.
+
+\corrige{de l'exercice 7}
+$5\times2=10$ mm.
+
+\corrige{de l'exercice 8}
+$12\times20=240$ cm.
+
+\corrige{de l'exercice 9}
+Sous la vue de face.
+
+\corrige{de l'exercice 10}
+Une représentation de l'objet en volume sur un seul dessin, avec les faces de face en
+vraie grandeur et des fuyantes obliques.
+
+\corrige{de l'exercice 11}
+En vraie grandeur (sans déformation).
+
+\corrige{de l'exercice 12}
+$6\times0{,}5=3$ cm.
+
+\corrige{du sujet 1}
+1) Le rapport entre une dimension sur le dessin et la dimension réelle correspondante.\\
+2) $4\times\dfrac1{50}=0{,}08$ m $=8$ cm.\\
+3) La longueur réelle : $150$ cm.\\
+4) Car les cotes servent à fabriquer ou vérifier l'objet réel : elles doivent donc
+toujours donner ses dimensions véritables, quelle que soit la taille du dessin sur la
+feuille.
+
+\corrige{du sujet 2}
+1) Vue de face, vue de dessus, vue de gauche (ou de droite).\\
+2) Sous la vue de face.\\
+3) Un contour ou une arête cachée de l'objet.\\
+4) Un axe de symétrie.
+
+\corrige{du sujet 3}
+1) Une représentation en volume d'un objet sur un seul dessin.\\
+2) En vraie grandeur.\\
+3) $10\times0{,}5=5$ cm.\\
+4) $45°$.
+
+\end{multicols}
+\exercicesBanner
