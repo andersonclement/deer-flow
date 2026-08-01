@@ -1,1 +1,419 @@
 \chapter{Théorème de Pythagore}
+
+\noindent\textit{Le théorème de Pythagore relie les longueurs des côtés d'un triangle
+rectangle. C'est l'un des résultats les plus utilisés de la géométrie : il permet de
+calculer une longueur inaccessible, de vérifier qu'un angle est droit, et de calculer une
+distance entre deux points dans un repère.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Théorème de Pythagore}
+
+\begin{definition}[Vocabulaire]
+Dans un triangle rectangle, le côté le plus long, opposé à l'angle droit, s'appelle
+l'\textbf{hypoténuse}. Les deux autres côtés sont les \textbf{côtés de l'angle droit}.
+\end{definition}
+
+\begin{propriete}[Théorème de Pythagore]
+Si un triangle $ABC$ est rectangle en $A$, alors
+\[
+BC^{2}=AB^{2}+AC^{2}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.55]
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) -- (4,0) -- (4,-4) -- (0,-4) -- cycle;
+\node at (2,-2) {\small $16$};
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) -- (0,3) -- (-3,3) -- (-3,0) -- cycle;
+\node at (-1.5,1.5) {\small $9$};
+\draw[fill=onbo!15,draw=onbo,line width=0.8pt] (4,0) -- (0,3) -- (3,7) -- (7,4) -- cycle;
+\node at (3.5,3.5) {\small $25$};
+\draw[onbo,line width=1.3pt] (0,0) -- (4,0) -- (0,3) -- cycle;
+\draw[onbmuted,line width=0.8pt] (0.4,0)--(0.4,0.4)--(0,0.4);
+\node[below] at (2,0) {\small $4$};
+\node[left] at (0,1.5) {\small $3$};
+\node[onbo,above right] at (2,1.5) {\small $5$};
+\end{tikzpicture}
+\fig{Figure — $4^{2}+3^{2}=5^{2}$ : aires des carrés construits sur les trois côtés.}
+\end{illus}
+
+\begin{exemple}
+Triangle $ABC$ rectangle en $A$, $AB=3$, $AC=4$ : $BC^{2}=3^{2}+4^{2}=9+16=25$, donc
+$BC=\sqrt{25}=5$.
+\end{exemple}
+
+\begin{remarque}
+Si le résultat n'est pas un carré parfait, on laisse la réponse sous forme de racine carrée
+(éventuellement simplifiée), ou on donne une valeur arrondie.
+\end{remarque}
+
+\section{Calculer une longueur avec Pythagore}
+
+\begin{propriete}[Calculer un côté de l'angle droit]
+Si $BC^{2}=AB^{2}+AC^{2}$, alors $AC^{2}=BC^{2}-AB^{2}$ (et de même pour $AB$) : on
+\textbf{soustrait} le carré du côté connu de l'angle droit au carré de l'hypoténuse.
+\end{propriete}
+
+\begin{exemple}
+Triangle rectangle en $A$, $BC=13$, $AB=5$ : $AC^{2}=13^{2}-5^{2}=169-25=144$, donc
+$AC=\sqrt{144}=12$.
+\end{exemple}
+
+\section{Réciproque du théorème de Pythagore}
+
+\begin{propriete}[Réciproque de Pythagore]
+Dans un triangle $ABC$, si $BC^{2}=AB^{2}+AC^{2}$ (le carré du plus long côté égale la
+somme des carrés des deux autres), alors le triangle est \textbf{rectangle en $A$}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=5cm,minimum height=0.8cm] (p) {$c^{2}$ comparé à $a^{2}+b^{2}$};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=2.6cm,minimum height=0.7cm,below=10mm of p,xshift=-2.7cm] (yes) {égaux : rectangle};
+\node[draw=onbline,fill=white,rounded corners=3pt,minimum width=2.9cm,minimum height=0.7cm,below=10mm of p,xshift=2.7cm] (no) {différents : pas rectangle};
+\draw[->,onbmuted,line width=1pt] (p) -- (yes);
+\draw[->,onbmuted,line width=1pt] (p) -- (no);
+\end{tikzpicture}
+\fig{Figure — La réciproque : comparer $c^{2}$ à $a^{2}+b^{2}$.}
+\end{illus}
+
+\begin{exemple}
+Triangle de côtés $5$, $12$, $13$ : le plus grand est $13$. $13^{2}=169$ et
+$5^{2}+12^{2}=25+144=169$. Égaux, donc le triangle est rectangle.
+\end{exemple}
+
+\begin{remarque}
+\textbf{Contraposée} : si le carré du plus grand côté est \textbf{différent} de la somme des
+carrés des deux autres, le triangle n'est \textbf{pas} rectangle. Exemple : côtés $7$, $9$,
+$11$ : $11^{2}=121$ et $7^{2}+9^{2}=130$. Différents : pas rectangle.
+\end{remarque}
+
+\section{Distance entre deux points dans un repère}
+
+\begin{propriete}[Distance dans un repère]
+Dans un repère orthonormé, la distance entre $A(x_A\,;y_A)$ et $B(x_B\,;y_B)$ est
+\[
+AB=\sqrt{(x_B-x_A)^{2}+(y_B-y_A)^{2}}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=7.5cm,height=6cm,axis lines=middle,xlabel={\small $x$},ylabel={\small $y$},
+  xmin=-1,xmax=6,ymin=-1,ymax=7,xtick={1,4},ytick={2,6}]
+\draw[onbmuted,dashed] (axis cs:1,2) -- (axis cs:4,2) -- (axis cs:4,6);
+\draw[onbo,line width=1.3pt] (axis cs:1,2) -- (axis cs:4,6);
+\filldraw[onbink] (axis cs:1,2) circle(2pt) node[below left] {\small $A(1\,;2)$};
+\filldraw[onbink] (axis cs:4,6) circle(2pt) node[above right] {\small $B(4\,;6)$};
+\node[below] at (axis cs:2.5,2) {\small $3$};
+\node[right] at (axis cs:4,4) {\small $4$};
+\node[onbo,above left] at (axis cs:2.5,4) {\small $5$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — Distance $AB=\sqrt{3^{2}+4^{2}}=5$ : on forme un triangle rectangle avec les
+écarts de coordonnées.}
+\end{illus}
+
+\begin{exemple}
+$A(1\,;2)$, $B(4\,;6)$ : $AB=\sqrt{(4-1)^{2}+(6-2)^{2}}=\sqrt{9+16}=\sqrt{25}=5$.
+\end{exemple}
+
+\section{Problèmes concrets}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.7]
+\draw[onbline,line width=2.5pt] (0,0) -- (0,4.5);
+\draw[onbline,line width=2.5pt] (-0.3,0) -- (3.5,0);
+\draw[onbo,line width=1.5pt] (3,0) -- (0,4);
+\draw[onbmuted,line width=0.8pt] (0,0.35)--(0.35,0.35)--(0.35,0);
+\node[below] at (1.5,0) {\small $3$ m};
+\node[left] at (0,2) {\small $4$ m};
+\node[onbo,above right] at (1.5,2) {\small $5$ m};
+\end{tikzpicture}
+\fig{Figure — Échelle de $5$ m appuyée contre un mur : pied à $3$ m, sommet à $4$ m de
+hauteur.}
+\end{illus}
+
+\begin{exemple}
+Une échelle de $5$ m est appuyée contre un mur, son pied étant à $3$ m du mur. Hauteur
+atteinte $h$ : $h^{2}=5^{2}-3^{2}=25-9=16$, donc $h=4$ m.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Théorème.} Triangle rectangle en $A$ $\Rightarrow BC^{2}=AB^{2}+AC^{2}$
+(hypoténuse $BC$).\\[4pt]
+\textbf{Calculer l'hypoténuse.} Additionner les carrés des deux côtés de l'angle droit,
+puis prendre la racine carrée.\\[4pt]
+\textbf{Calculer un côté de l'angle droit.} Soustraire le carré du côté connu au carré de
+l'hypoténuse.\\[4pt]
+\textbf{Réciproque.} $BC^{2}=AB^{2}+AC^{2}\Rightarrow$ triangle rectangle en $A$ (comparer
+le carré du plus grand côté à la somme des carrés des deux autres).\\[4pt]
+\textbf{Distance dans un repère.} $AB=\sqrt{(x_B-x_A)^{2}+(y_B-y_A)^{2}}$.\\[4pt]
+\textbf{Piège fréquent.} Le théorème direct ne s'applique que si le triangle est
+\textbf{déjà} rectangle ; pour le prouver, utiliser la réciproque, pas le théorème direct.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer l'hypoténuse connaissant les deux côtés de l'angle droit}
+Additionner les carrés des deux côtés connus, puis prendre la racine carrée du résultat.
+\begin{exemple}
+$AB=6$, $AC=8$ : $BC^{2}=36+64=100$, donc $BC=10$.
+\end{exemple}
+
+\methode{Calculer un côté de l'angle droit connaissant l'hypoténuse et l'autre côté}
+Soustraire le carré du côté connu au carré de l'hypoténuse, puis prendre la racine carrée.
+\begin{exemple}
+$BC=17$, $AB=8$ : $AC^{2}=17^{2}-8^{2}=289-64=225$, donc $AC=15$.
+\end{exemple}
+
+\methode{Simplifier un résultat sous forme de racine carrée}
+Si le résultat n'est pas un carré parfait, simplifier la racine carrée (chapitre 3) plutôt
+que de donner une valeur arrondie, sauf si l'énoncé le demande.
+\begin{exemple}
+$AB=5$, $AC=7$ : $BC^{2}=25+49=74$ (non carré parfait) ; $BC=\sqrt{74}\approx8{,}6$.
+\end{exemple}
+
+\methode{Utiliser la réciproque pour démontrer qu'un triangle est rectangle}
+Calculer le carré du plus grand côté et la somme des carrés des deux autres : s'ils sont
+égaux, conclure que le triangle est rectangle (préciser en quel sommet).
+\begin{exemple}
+Côtés $9$, $12$, $15$ : $15^{2}=225$ et $9^{2}+12^{2}=81+144=225$. Égaux : le triangle est
+rectangle.
+\end{exemple}
+
+\methode{Utiliser la contraposée pour démontrer qu'un triangle n'est pas rectangle}
+Calculer les deux mêmes quantités : si elles sont différentes, conclure que le triangle
+n'est pas rectangle.
+\begin{exemple}
+Côtés $8$, $9$, $13$ : $13^{2}=169$ et $8^{2}+9^{2}=64+81=145$. Différents : le triangle
+n'est pas rectangle.
+\end{exemple}
+
+\methode{Calculer une distance entre deux points dans un repère}
+Calculer les écarts de coordonnées $x_B-x_A$ et $y_B-y_A$, les élever au carré, additionner,
+puis prendre la racine carrée.
+\begin{exemple}
+$A(-1\,;1)$, $B(2\,;5)$ : $AB=\sqrt{(2-(-1))^{2}+(5-1)^{2}}=\sqrt{9+16}=\sqrt{25}=5$.
+\end{exemple}
+
+\methode{Résoudre un problème concret avec le théorème de Pythagore}
+Identifier le triangle rectangle caché dans la situation, nommer ses sommets, puis
+appliquer le théorème ou sa réciproque.
+\begin{exemple}
+Un rectangle de $6$ cm sur $8$ cm : sa diagonale $d$ vérifie $d^{2}=6^{2}+8^{2}=100$, donc
+$d=10$ cm.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Calculer une hypoténuse}
+\exo{}\diff{1} Triangle $ABC$ rectangle en $A$, $AB=3$ cm, $AC=4$ cm. Calculer $BC$.
+
+\exo{}\diff{1} $AB=6$ cm, $AC=8$ cm. Calculer $BC$.
+
+\exo{}\diff{2} $AB=5$ cm, $AC=7$ cm. Calculer $BC$ (valeur exacte, puis arrondie au
+dixième).
+
+\exo{}\diff{2} $AB=9$ cm, $AC=12$ cm. Calculer $BC$.
+
+\rubrique{Calculer un côté de l'angle droit}
+\exo{}\diff{2} Triangle $ABC$ rectangle en $A$, $BC=13$ cm, $AB=5$ cm. Calculer $AC$.
+
+\exo{}\diff{2} $BC=17$ cm, $AB=8$ cm. Calculer $AC$.
+
+\exo{}\diff{2} $BC=25$ cm, $AB=7$ cm. Calculer $AC$.
+
+\exo{}\diff{2} $BC=29$ cm, $AB=20$ cm. Calculer $AC$.
+
+\rubrique{Réciproque : le triangle est-il rectangle ?}
+\exo{}\diff{2} Un triangle a pour côtés $5$ cm, $12$ cm, $13$ cm. Est-il rectangle ?
+
+\exo{}\diff{2} Un triangle a pour côtés $7$ cm, $9$ cm, $11$ cm. Est-il rectangle ?
+
+\exo{}\diff{2} Un triangle a pour côtés $9$ cm, $12$ cm, $15$ cm. Est-il rectangle ?
+
+\exo{}\diff{2} Un triangle a pour côtés $8$ cm, $15$ cm, $17$ cm. Est-il rectangle ?
+
+\rubrique{Distance dans un repère et problèmes}
+\exo{}\diff{1} Calculer la distance $AB$ avec $A(1\,;2)$ et $B(4\,;6)$.
+
+\exo{}\diff{2} Calculer la distance $AB$ avec $A(-2\,;3)$ et $B(2\,;0)$.
+
+\exo{}\diff{2} Une échelle de $5$ m est appuyée contre un mur, son pied étant à $3$ m du
+mur. Calculer la hauteur atteinte par l'échelle.
+
+\exo{}\diff{2} Un rectangle a pour dimensions $6$ cm et $8$ cm. Calculer la longueur de sa
+diagonale.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Calculer une hypoténuse}
+\exo{}\diff{2} $AB=8$ cm, $AC=15$ cm. Calculer $BC$.
+
+\exo{}\diff{2} $AB=9$ cm, $AC=40$ cm. Calculer $BC$.
+
+\exo{}\diff{2} $AB=20$ cm, $AC=21$ cm. Calculer $BC$.
+
+\exo{}\diff{3} $AB=5$ cm, $AC=5$ cm. Calculer $BC$ (valeur exacte).
+
+\exo{}\diff{3} $AB=6$ cm, $AC=7$ cm. Calculer $BC$ (valeur exacte, puis arrondie au
+dixième).
+
+\rubrique{Calculer un côté de l'angle droit}
+\exo{}\diff{2} $BC=41$ cm, $AB=9$ cm. Calculer $AC$.
+
+\exo{}\diff{2} $BC=15$ cm, $AB=9$ cm. Calculer $AC$.
+
+\exo{}\diff{2} $BC=26$ cm, $AB=10$ cm. Calculer $AC$.
+
+\exo{}\diff{2} $BC=37$ cm, $AB=12$ cm. Calculer $AC$.
+
+\rubrique{Réciproque}
+\exo{}\diff{2} Un triangle a pour côtés $6$ cm, $8$ cm, $10$ cm. Est-il rectangle ?
+
+\exo{}\diff{2} Un triangle a pour côtés $10$ cm, $24$ cm, $26$ cm. Est-il rectangle ?
+
+\exo{}\diff{2} Un triangle a pour côtés $9$ cm, $10$ cm, $14$ cm. Est-il rectangle ?
+
+\exo{}\diff{2} Un triangle a pour côtés $12$ cm, $35$ cm, $37$ cm. Est-il rectangle ?
+
+\rubrique{Distance dans un repère}
+\exo{}\diff{2} Calculer la distance $AB$ avec $A(0\,;0)$ et $B(6\,;8)$.
+
+\exo{}\diff{2} Calculer la distance $AB$ avec $A(2\,;-1)$ et $B(-3\,;11)$.
+
+\exo{}\diff{2} Calculer la distance $AB$ avec $A(-4\,;-3)$ et $B(0\,;0)$.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Une échelle de $13$ m est appuyée contre un mur, son pied étant à $5$ m du
+mur. Calculer la hauteur atteinte.
+
+\exo{}\diff{2} Un terrain rectangulaire a pour dimensions $9$ m et $12$ m. Calculer la
+longueur de sa diagonale.
+
+\exo{}\diff{2} Le toit d'une maison monte de $4$ m de hauteur sur une base horizontale de
+$3$ m jusqu'au faîte. Calculer la longueur du versant du toit.
+
+\exo{}\diff{3} Un bateau part d'un port et navigue $24$ km vers le nord, puis $10$ km vers
+l'est. Calculer sa distance au port de départ.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Pythagore, réciproque et terrain]
+\begin{enumerate}[label=\arabic*)]
+\item Triangle $ABC$ rectangle en $A$, $AB=9$ cm, $AC=12$ cm. Calculer $BC$.
+\item Un triangle a pour côtés $10$ cm, $24$ cm, $26$ cm. Est-il rectangle ? Justifier.
+\item Dans un repère orthonormé, calculer la distance $AB$ avec $A(2\,;1)$ et
+$B(7\,;13)$.
+\item Un terrain rectangulaire a pour dimensions $15$ m et $20$ m. Calculer la longueur de
+sa diagonale.
+\end{enumerate}
+
+\sujetbac[Pythagore, réciproque et échelle]
+\begin{enumerate}[label=\arabic*)]
+\item Triangle $ABC$ rectangle en $A$, $AB=7$ cm, $AC=24$ cm. Calculer $BC$.
+\item Un triangle a pour côtés $9$ cm, $12$ cm, $16$ cm. Est-il rectangle ? Justifier.
+\item Dans un repère orthonormé, calculer la distance $AB$ avec $A(-3\,;4)$ et
+$B(5\,;-2)$.
+\item Une échelle de $13$ m est appuyée contre un mur, son pied étant à $5$ m du mur.
+Calculer la hauteur atteinte par l'échelle.
+\end{enumerate}
+
+\sujetbac[Pythagore, réciproque et toiture]
+\begin{enumerate}[label=\arabic*)]
+\item Triangle $ABC$ rectangle en $A$, $BC=41$ cm, $AB=9$ cm. Calculer $AC$.
+\item Un triangle a pour côtés $11$ cm, $60$ cm, $61$ cm. Est-il rectangle ? Justifier.
+\item Dans un repère orthonormé, calculer la distance $AB$ avec $A(0\,;0)$ et
+$B(-8\,;15)$.
+\item Le versant d'un toit monte de $4$ m de hauteur sur une base horizontale de $3$ m.
+Calculer la longueur de ce versant.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$BC^{2}=3^{2}+4^{2}=25$, donc $BC=5$ cm.
+
+\corrige{de l'exercice 2}
+$BC^{2}=6^{2}+8^{2}=100$, donc $BC=10$ cm.
+
+\corrige{de l'exercice 3}
+$BC^{2}=5^{2}+7^{2}=74$, donc $BC=\sqrt{74}\approx8{,}6$ cm.
+
+\corrige{de l'exercice 4}
+$BC^{2}=9^{2}+12^{2}=225$, donc $BC=15$ cm.
+
+\corrige{de l'exercice 5}
+$AC^{2}=13^{2}-5^{2}=144$, donc $AC=12$ cm.
+
+\corrige{de l'exercice 6}
+$AC^{2}=17^{2}-8^{2}=225$, donc $AC=15$ cm.
+
+\corrige{de l'exercice 7}
+$AC^{2}=25^{2}-7^{2}=576$, donc $AC=24$ cm.
+
+\corrige{de l'exercice 8}
+$AC^{2}=29^{2}-20^{2}=441$, donc $AC=21$ cm.
+
+\corrige{de l'exercice 9}
+$13^{2}=169$ et $5^{2}+12^{2}=169$. Égaux : le triangle est rectangle.
+
+\corrige{de l'exercice 10}
+$11^{2}=121$ et $7^{2}+9^{2}=130$. Différents : le triangle n'est pas rectangle.
+
+\corrige{de l'exercice 11}
+$15^{2}=225$ et $9^{2}+12^{2}=225$. Égaux : le triangle est rectangle.
+
+\corrige{de l'exercice 12}
+$17^{2}=289$ et $8^{2}+15^{2}=289$. Égaux : le triangle est rectangle.
+
+\corrige{de l'exercice 13}
+$AB=\sqrt{(4-1)^{2}+(6-2)^{2}}=\sqrt{9+16}=5$.
+
+\corrige{de l'exercice 14}
+$AB=\sqrt{(2-(-2))^{2}+(0-3)^{2}}=\sqrt{16+9}=5$.
+
+\corrige{de l'exercice 15}
+$h^{2}=5^{2}-3^{2}=16$, donc $h=4$ m.
+
+\corrige{de l'exercice 16}
+$d^{2}=6^{2}+8^{2}=100$, donc $d=10$ cm.
+
+\corrige{du sujet 1}
+1) $BC^{2}=9^{2}+12^{2}=225$, donc $BC=15$ cm.\\
+2) $26^{2}=676$ et $10^{2}+24^{2}=676$. Égaux : le triangle est rectangle.\\
+3) $AB=\sqrt{(7-2)^{2}+(13-1)^{2}}=\sqrt{25+144}=\sqrt{169}=13$.\\
+4) $d^{2}=15^{2}+20^{2}=625$, donc $d=25$ m.
+
+\corrige{du sujet 2}
+1) $BC^{2}=7^{2}+24^{2}=625$, donc $BC=25$ cm.\\
+2) $16^{2}=256$ et $9^{2}+12^{2}=225$. Différents : le triangle n'est pas rectangle.\\
+3) $AB=\sqrt{(5-(-3))^{2}+(-2-4)^{2}}=\sqrt{64+36}=\sqrt{100}=10$.\\
+4) $h^{2}=13^{2}-5^{2}=144$, donc $h=12$ m.
+
+\corrige{du sujet 3}
+1) $AC^{2}=41^{2}-9^{2}=1\,600$, donc $AC=40$ cm.\\
+2) $61^{2}=3\,721$ et $11^{2}+60^{2}=3\,721$. Égaux : le triangle est rectangle.\\
+3) $AB=\sqrt{(-8-0)^{2}+(15-0)^{2}}=\sqrt{64+225}=\sqrt{289}=17$.\\
+4) Longueur du versant $=\sqrt{3^{2}+4^{2}}=\sqrt{25}=5$ m.
+
+\end{multicols}
+\exercicesBanner
