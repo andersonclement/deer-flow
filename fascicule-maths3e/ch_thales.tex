@@ -1,1 +1,459 @@
 \chapter{Théorème de Thalès}
+
+\noindent\textit{Le théorème de Thalès relie les longueurs dans une configuration de droites
+parallèles. Il permet de calculer une longueur inaccessible (hauteur d'un arbre, largeur
+d'une rivière), de démontrer qu'un parallélisme existe, et de comprendre l'effet d'un
+agrandissement ou d'une réduction sur les périmètres et les aires.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Configuration de Thalès}
+
+\begin{definition}[Configuration de Thalès]
+Dans un triangle $ABC$, on place un point $D$ sur $[AB]$ et un point $E$ sur $[AC]$. On dit
+que $D$ et $E$ forment une \textbf{configuration de Thalès} avec $B$ et $C$ lorsque
+$(DE)\parallel(BC)$ : on obtient deux triangles « emboîtés » $ADE$ et $ABC$.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\coordinate (A) at (0,0);
+\coordinate (B) at (7,0);
+\coordinate (C) at (2,5);
+\coordinate (D) at (4.67,0);
+\coordinate (E) at (1.33,3.33);
+\draw[onbo,line width=1.1pt] (A) -- (B) -- (C) -- cycle;
+\draw[onbblue,line width=1.3pt] (D) -- (E);
+\fill (A) circle(1.6pt) (B) circle(1.6pt) (C) circle(1.6pt) (D) circle(1.6pt) (E) circle(1.6pt);
+\node[below left] at (A) {$A$};
+\node[below right] at (B) {$B$};
+\node[above] at (C) {$C$};
+\node[below] at (D) {$D$};
+\node[above left] at (E) {$E$};
+\node[below] at ($(A)!0.5!(D)$) {\small $4$};
+\node[below] at ($(D)!0.5!(B)$) {\small $2$};
+\node[left] at ($(A)!0.5!(E)$) {\small $6$};
+\node[right] at ($(E)!0.5!(C)$) {\small $3$};
+\node[onbblue,above] at ($(D)!0.5!(E)$) {\small $5$};
+\node[onbo,below right] at ($(B)!0.5!(C)$) {\small $7{,}5$};
+\end{tikzpicture}
+\fig{Figure — Configuration de Thalès : $(DE)\parallel(BC)$ dans le triangle $ABC$.}
+\end{illus}
+
+\section{Théorème de Thalès}
+
+\begin{propriete}[Théorème de Thalès]
+Si $D\in[AB]$, $E\in[AC]$ et $(DE)\parallel(BC)$, alors
+\[
+\frac{AD}{AB}=\frac{AE}{AC}=\frac{DE}{BC}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=3.6cm,minimum height=0.7cm] (a1) {$(DE)\parallel(BC)$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=5.4cm,minimum height=0.9cm,below=8mm of a1] (a2) {$\dfrac{AD}{AB}=\dfrac{AE}{AC}=\dfrac{DE}{BC}$};
+\draw[->,onbmuted,line width=1pt] (a1) -- (a2);
+\end{tikzpicture}
+\fig{Figure — Le théorème de Thalès : trois rapports égaux dans le triangle emboîté.}
+\end{illus}
+
+\begin{exemple}
+Avec $AD=4$, $AB=6$, $AC=9$, $BC=7{,}5$ : le rapport est $\dfrac{AD}{AB}=\dfrac46=\dfrac23$,
+donc $AE=\dfrac23\times9=6$ et $DE=\dfrac23\times7{,}5=5$.
+\end{exemple}
+
+\section{Réciproque du théorème de Thalès}
+
+\begin{propriete}[Réciproque de Thalès]
+Si $D\in[AB]$, $E\in[AC]$ (avec $D,E$ du même côté de $A$) et si
+$\dfrac{AD}{AB}=\dfrac{AE}{AC}$ (soit $AD\times AC=AB\times AE$), alors $(DE)\parallel(BC)$.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\coordinate (A) at (0,0);
+\coordinate (B) at (7,0);
+\coordinate (C) at (2,5);
+\coordinate (D) at (2.8,0);
+\coordinate (E) at (0.75,1.875);
+\draw[onbo,line width=1.1pt] (A) -- (B) -- (C) -- cycle;
+\draw[onbblue,dashed,line width=1.3pt] (D) -- (E);
+\fill (A) circle(1.6pt) (B) circle(1.6pt) (C) circle(1.6pt) (D) circle(1.6pt) (E) circle(1.6pt);
+\node[below left] at (A) {$A$};
+\node[below right] at (B) {$B$};
+\node[above] at (C) {$C$};
+\node[below] at (D) {$D$};
+\node[left] at (E) {$E$};
+\node[below] at ($(A)!0.5!(D)$) {\small $2$};
+\node[left] at ($(A)!0.5!(E)$) {\small $3$};
+\end{tikzpicture}
+\fig{Figure — $AD=2$, $AB=5$, $AE=3$, $AC=8$ : $(DE)$ et $(BC)$ ne sont pas parallèles.}
+\end{illus}
+
+\begin{exemple}
+$AD=3$, $AB=5$, $AE=6$, $AC=10$ : $AD\times AC=3\times10=30$ et $AB\times AE=5\times6=30$.
+Les produits sont égaux, donc $(DE)\parallel(BC)$.
+\end{exemple}
+
+\begin{remarque}
+Comparer les \textbf{produits en croix} $AD\times AC$ et $AB\times AE$ évite les décimales.
+Si les produits sont \textbf{différents}, les droites ne sont \textbf{pas} parallèles (c'est
+la contraposée de la réciproque).
+\end{remarque}
+
+\section{Configuration « papillon »}
+
+\begin{propriete}[Droites sécantes]
+Si deux droites $(AC)$ et $(BD)$ se coupent en $O$ (avec $A,O,C$ et $B,O,D$ alignés dans cet
+ordre croisé) et si $(AB)\parallel(CD)$, alors
+\[
+\frac{OA}{OC}=\frac{OB}{OD}=\frac{AB}{CD}.
+\]
+\end{propriete}
+
+\begin{exemple}
+$OA=4$, $OB=6$, $OC=10$, $(AB)\parallel(CD)$ : $\dfrac{OA}{OC}=\dfrac{OB}{OD}$, donc
+$OD=\dfrac{OB\times OC}{OA}=\dfrac{6\times10}4=15$.
+\end{exemple}
+
+\section{Agrandissement, réduction : effet sur périmètres et aires}
+
+\begin{propriete}[Coefficient d'agrandissement/réduction]
+Lorsqu'une figure est agrandie ou réduite avec un coefficient $k$ ($k>1$ : agrandissement ;
+$0<k<1$ : réduction), toutes les longueurs sont multipliées par $k$, le \textbf{périmètre}
+est multiplié par $k$, et l'\textbf{aire} est multipliée par $k^{2}$.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=1pt] (0,0) rectangle (3,2);
+\node at (1.5,1) {\small $k=1$};
+\draw[fill=onbsoft,draw=onbblue,line width=1pt] (5,0) rectangle (9.5,3);
+\node at (7.25,1.5) {\small $k=1{,}5$};
+\node[below] at (1.5,-0.3) {\small périmètre $10$, aire $6$};
+\node[below] at (7.25,-0.3) {\small périmètre $15$, aire $13{,}5$};
+\end{tikzpicture}
+\fig{Figure — Un agrandissement $k=1{,}5$ multiplie le périmètre par $1{,}5$ et l'aire par
+$1{,}5^{2}=2{,}25$.}
+\end{illus}
+
+\begin{exemple}
+Un rectangle de périmètre $10$ et d'aire $6$ est agrandi avec $k=1{,}5$ : nouveau périmètre
+$=10\times1{,}5=15$, nouvelle aire $=6\times1{,}5^{2}=6\times2{,}25=13{,}5$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Configuration.} $D\in[AB]$, $E\in[AC]$, $(DE)\parallel(BC)$ : triangle $ADE$
+emboîté dans $ABC$.\\[4pt]
+\textbf{Théorème de Thalès.} $(DE)\parallel(BC)\Rightarrow\dfrac{AD}{AB}=\dfrac{AE}{AC}=\dfrac{DE}{BC}$.\\[4pt]
+\textbf{Réciproque.} $AD\times AC=AB\times AE\Rightarrow(DE)\parallel(BC)$ (produits en
+croix égaux).\\[4pt]
+\textbf{Papillon.} Droites sécantes en $O$, $(AB)\parallel(CD)$ :
+$\dfrac{OA}{OC}=\dfrac{OB}{OD}=\dfrac{AB}{CD}$.\\[4pt]
+\textbf{Agrandissement/réduction.} Coefficient $k$ : longueurs $\times k$, périmètre
+$\times k$, aire $\times k^{2}$.\\[4pt]
+\textbf{Piège fréquent.} N'utiliser le théorème que si le parallélisme est \textbf{donné}
+ou déjà \textbf{prouvé} ; pour prouver un parallélisme, c'est la réciproque qu'il faut
+utiliser (comparer les produits en croix, pas les rapports décimaux).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Identifier une configuration de Thalès et écrire les rapports égaux}
+Repérer le sommet commun $A$, les points $D,E$ alignés avec $B,C$, vérifier que
+$(DE)\parallel(BC)$ est donné, puis écrire $\dfrac{AD}{AB}=\dfrac{AE}{AC}=\dfrac{DE}{BC}$.
+\begin{exemple}
+Triangle $ABC$, $D\in[AB]$, $E\in[AC]$, $(DE)\parallel(BC)$ : on écrit directement
+$\dfrac{AD}{AB}=\dfrac{AE}{AC}=\dfrac{DE}{BC}$.
+\end{exemple}
+
+\methode{Calculer une longueur inconnue avec le théorème de Thalès}
+Calculer le rapport connu, puis l'appliquer à la longueur cherchée.
+\begin{exemple}
+$AD=6$, $AB=9$, $AC=15$ : rapport $\dfrac69=\dfrac23$, donc $AE=\dfrac23\times15=10$.
+\end{exemple}
+
+\methode{Utiliser la réciproque pour prouver un parallélisme}
+Calculer les produits en croix $AD\times AC$ et $AB\times AE$ : s'ils sont égaux, les droites
+sont parallèles.
+\begin{exemple}
+$AD=4$, $AB=6$, $AE=6$, $AC=9$ : $4\times9=36$ et $6\times6=36$. Égaux, donc
+$(DE)\parallel(BC)$.
+\end{exemple}
+
+\methode{Utiliser la réciproque pour prouver que deux droites ne sont pas parallèles}
+Calculer les mêmes produits en croix : s'ils sont différents, les droites ne sont pas
+parallèles.
+\begin{exemple}
+$AD=5$, $AB=8$, $AE=6$, $AC=10$ : $5\times10=50$ et $8\times6=48$. Différents, donc $(DE)$
+et $(BC)$ ne sont pas parallèles.
+\end{exemple}
+
+\methode{Résoudre un problème de configuration « papillon »}
+Repérer le point d'intersection $O$, identifier les deux triangles opposés par le sommet,
+puis écrire $\dfrac{OA}{OC}=\dfrac{OB}{OD}$.
+\begin{exemple}
+$OA=5$, $OC=15$, $OB=8$ : $OD=\dfrac{OB\times OC}{OA}=\dfrac{8\times15}5=24$.
+\end{exemple}
+
+\methode{Calculer l'effet d'un agrandissement/réduction sur un périmètre}
+Multiplier le périmètre initial par le coefficient $k$.
+\begin{exemple}
+Périmètre $18$, coefficient $k=\dfrac23$ : nouveau périmètre $=18\times\dfrac23=12$.
+\end{exemple}
+
+\methode{Calculer l'effet d'un agrandissement/réduction sur une aire}
+Multiplier l'aire initiale par $k^{2}$.
+\begin{exemple}
+Aire $36$, coefficient $k=\dfrac23$ : nouvelle aire $=36\times\left(\dfrac23\right)^{2}=36\times\dfrac49=16$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Identifier et calculer avec le théorème de Thalès}
+\exo{}\diff{1} Triangle $ABC$, $D\in[AB]$, $E\in[AC]$, $(DE)\parallel(BC)$. $AD=6$,
+$AB=9$, $AC=15$, $BC=12$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} Mêmes conditions. $AD=3$, $AB=4$, $AC=12$, $BC=16$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} Mêmes conditions. $AD=1$, $AB=3$, $AC=9$, $BC=12$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} Mêmes conditions. $AD=4$, $AB=5$, $AC=10$, $BC=15$. Calculer $AE$ et $DE$.
+
+\rubrique{Réciproque : prouver un parallélisme}
+\exo{}\diff{2} $D\in[AB]$, $E\in[AC]$ avec $AD=3$, $AB=5$, $AE=6$, $AC=10$. Les droites
+$(DE)$ et $(BC)$ sont-elles parallèles ?
+
+\exo{}\diff{2} $AD=4$, $AB=6$, $AE=6$, $AC=9$. Les droites $(DE)$ et $(BC)$ sont-elles
+parallèles ?
+
+\exo{}\diff{2} $AD=2$, $AB=5$, $AE=3$, $AC=8$. Les droites $(DE)$ et $(BC)$ sont-elles
+parallèles ?
+
+\exo{}\diff{2} $AD=5$, $AB=8$, $AE=6$, $AC=10$. Les droites $(DE)$ et $(BC)$ sont-elles
+parallèles ?
+
+\rubrique{Papillon et agrandissement/réduction}
+\exo{}\diff{2} Les droites $(AC)$ et $(BD)$ se coupent en $O$, avec $(AB)\parallel(CD)$.
+$OA=4$, $OB=6$, $OC=10$. Calculer $OD$.
+
+\exo{}\diff{1} Un rectangle de côtés $4$ cm et $6$ cm est agrandi avec le coefficient
+$k=1{,}5$. Calculer le nouveau périmètre et la nouvelle aire.
+
+\exo{}\diff{2} Un triangle a un périmètre de $18$ cm et une aire de $36\text{ cm}^2$. Il
+est réduit avec le coefficient $k=\dfrac23$. Calculer le nouveau périmètre et la nouvelle
+aire.
+
+\exo{}\diff{1} Un terrain de périmètre $80$ m est agrandi avec le coefficient $k=1{,}25$.
+Calculer le nouveau périmètre.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Pour mesurer la hauteur d'un arbre, un élève plante un bâton vertical de
+$1{,}2$ m dont l'ombre mesure $1{,}8$ m. Au même moment, l'ombre de l'arbre mesure $10{,}5$
+m. Calculer la hauteur de l'arbre.
+
+\exo{}\diff{2} Pour estimer la largeur $BC$ d'une rivière, un géomètre relève, dans une
+configuration de Thalès, $AD=6$ m, $AB=15$ m, $AC=20$ m et $DE=8$ m, avec $(DE)\parallel(BC)$.
+Calculer $BC$ et $AE$.
+
+\exo{}\diff{2} Sur le plan d'une maison, une pièce a une aire de $12\text{ cm}^2$. Le plan
+est à l'échelle $1/100$ (coefficient d'agrandissement réel $100$). Calculer l'aire réelle de
+la pièce, en $\text{m}^2$.
+
+\exo{}\diff{2} Deux allées d'un jardin se croisent en un point $O$, avec $(AB)\parallel(CD)$.
+$OA=5$, $OB=8$, $OD=24$. Calculer $OC$.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Calculs de longueurs}
+\exo{}\diff{2} $AD=2$, $AB=3$, $AC=15$, $BC=9$, $(DE)\parallel(BC)$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} $AD=3$, $AB=5$, $AC=20$, $BC=15$, $(DE)\parallel(BC)$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} $AD=2$, $AB=7$, $AC=21$, $BC=14$, $(DE)\parallel(BC)$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} $AD=5$, $AB=7$, $AC=14$, $BC=21$, $(DE)\parallel(BC)$. Calculer $AE$ et $DE$.
+
+\exo{}\diff{2} $AD=1$, $AB=4$, $AC=16$, $BC=20$, $(DE)\parallel(BC)$. Calculer $AE$ et $DE$.
+
+\rubrique{Réciproque : parallèle ou non}
+\exo{}\diff{2} $AD=4$, $AB=7$, $AE=8$, $AC=14$. $(DE)$ et $(BC)$ sont-elles parallèles ?
+
+\exo{}\diff{2} $AD=3$, $AB=8$, $AE=5$, $AC=12$. $(DE)$ et $(BC)$ sont-elles parallèles ?
+
+\exo{}\diff{2} $AD=6$, $AB=10$, $AE=9$, $AC=15$. $(DE)$ et $(BC)$ sont-elles parallèles ?
+
+\exo{}\diff{2} $AD=2$, $AB=9$, $AE=5$, $AC=20$. $(DE)$ et $(BC)$ sont-elles parallèles ?
+
+\rubrique{Papillon}
+\exo{}\diff{2} $(AC)$ et $(BD)$ se coupent en $O$, $(AB)\parallel(CD)$. $OA=3$, $OB=11$,
+$OC=9$. Calculer $OD$.
+
+\exo{}\diff{2} $(AC)$ et $(BD)$ se coupent en $O$, $(AB)\parallel(CD)$. $OA=6$, $OB=9$,
+$OC=8$. Calculer $OD$.
+
+\rubrique{Agrandissement, réduction}
+\exo{}\diff{1} Une figure de périmètre $16$ cm et d'aire $20\text{ cm}^2$ est agrandie
+avec le coefficient $k=2$. Calculer le nouveau périmètre et la nouvelle aire.
+
+\exo{}\diff{2} Une figure de périmètre $24$ cm et d'aire $32\text{ cm}^2$ est réduite avec
+le coefficient $k=0{,}5$. Calculer le nouveau périmètre et la nouvelle aire.
+
+\exo{}\diff{2} Une figure de périmètre $21$ cm et d'aire $27\text{ cm}^2$ est agrandie avec
+le coefficient $k=\dfrac43$. Calculer le nouveau périmètre et la nouvelle aire.
+
+\exo{}\diff{2} Une figure de périmètre $28$ cm et d'aire $40\text{ cm}^2$ est agrandie avec
+le coefficient $k=\dfrac54$. Calculer le nouveau périmètre et la nouvelle aire.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un bâton de $1{,}5$ m planté verticalement projette une ombre de $2$ m. Au
+même moment, l'ombre d'un poteau électrique mesure $8$ m. Calculer la hauteur du poteau.
+
+\exo{}\diff{2} Pour estimer la largeur d'une rivière, un géomètre relève $AD=8$ m, $AB=20$
+m, $AC=25$ m et $DE=10$ m, dans une configuration de Thalès avec $(DE)\parallel(BC)$.
+Calculer la largeur $BC$ de la rivière.
+
+\exo{}\diff{2} Sur un plan à l'échelle $1/50$, un jardin carré a une aire de $100\text{ cm}^2$.
+Calculer l'aire réelle du jardin, en $\text{m}^2$ (coefficient d'agrandissement réel $50$).
+
+\exo{}\diff{2} Un jardin carré de $25\text{ m}^2$ est représenté sur un plan à l'échelle
+$1/50$. Calculer l'aire du jardin sur le plan, en $\text{cm}^2$.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Thalès, réciproque et agrandissement d'un terrain]
+\begin{enumerate}[label=\arabic*)]
+\item Triangle $ABC$, $D\in[AB]$, $E\in[AC]$, $(DE)\parallel(BC)$. $AD=8$, $AB=12$,
+$AC=18$, $BC=15$. Calculer $AE$ et $DE$.
+\item Dans un triangle $MNP$, $R\in[MN]$, $S\in[MP]$, avec $MR=5$, $MN=8$, $MS=9$, $MP=15$.
+Les droites $(RS)$ et $(NP)$ sont-elles parallèles ? Justifier par un calcul de produits en
+croix.
+\item Un terrain a un périmètre de $40$ m et une aire de $75\text{ m}^2$. On l'agrandit
+avec un coefficient $k=1{,}2$.
+\begin{enumerate}[label=\alph*)]
+\item Calculer le nouveau périmètre.
+\item Calculer la nouvelle aire.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[Thalès et mesures de terrain — Ebolowa]
+\begin{enumerate}[label=\arabic*)]
+\item Triangle $ABC$, $D\in[AB]$, $E\in[AC]$, $(DE)\parallel(BC)$. $AD=5$, $AB=7$,
+$AC=14$, $BC=21$. Calculer $AE$ et $DE$.
+\item $AD=6$, $AB=9$, $AE=10$, $AC=15$. Les droites $(DE)$ et $(BC)$ sont-elles
+parallèles ? Justifier.
+\item Pour mesurer la hauteur d'un arbre à Ebolowa, un élève plante un bâton vertical de
+$1{,}2$ m dont l'ombre mesure $1{,}8$ m. Au même moment, l'ombre de l'arbre mesure $10{,}5$
+m. Calculer la hauteur de l'arbre.
+\item Pour estimer la largeur d'une rivière, un géomètre relève, dans une configuration de
+Thalès, $AD=6$ m, $AB=15$ m, $AC=20$ m et $DE=8$ m, avec $(DE)\parallel(BC)$. Calculer $BC$
+(largeur de la rivière) et $AE$.
+\end{enumerate}
+
+\sujetbac[papillon, réciproque et plan de maison]
+\begin{enumerate}[label=\arabic*)]
+\item Les droites $(AC)$ et $(BD)$ se coupent en $O$, avec $(AB)\parallel(CD)$. $OA=5$,
+$OC=15$, $OB=8$. Calculer $OD$.
+\item $AD=4$, $AB=9$, $AE=6$, $AC=13$. Les droites $(DE)$ et $(BC)$ sont-elles
+parallèles ? Justifier.
+\item Sur le plan d'une maison, une pièce a une aire de $12\text{ cm}^2$. Le plan est à
+l'échelle $1/100$ (coefficient d'agrandissement réel $100$). Calculer l'aire réelle de la
+pièce, en $\text{m}^2$.
+\item Un jardin carré de $25\text{ m}^2$ est représenté sur un plan à l'échelle $1/50$.
+Calculer l'aire du jardin sur le plan, en $\text{cm}^2$.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Rapport $=\dfrac69=\dfrac23$. $AE=\dfrac23\times15=10$ ; $DE=\dfrac23\times12=8$.
+
+\corrige{de l'exercice 2}
+Rapport $=\dfrac34$. $AE=\dfrac34\times12=9$ ; $DE=\dfrac34\times16=12$.
+
+\corrige{de l'exercice 3}
+Rapport $=\dfrac13$. $AE=\dfrac13\times9=3$ ; $DE=\dfrac13\times12=4$.
+
+\corrige{de l'exercice 4}
+Rapport $=\dfrac45$. $AE=\dfrac45\times10=8$ ; $DE=\dfrac45\times15=12$.
+
+\corrige{de l'exercice 5}
+$AD\times AC=3\times10=30$ ; $AB\times AE=5\times6=30$. Égaux : $(DE)\parallel(BC)$.
+
+\corrige{de l'exercice 6}
+$AD\times AC=4\times9=36$ ; $AB\times AE=6\times6=36$. Égaux : $(DE)\parallel(BC)$.
+
+\corrige{de l'exercice 7}
+$AD\times AC=2\times8=16$ ; $AB\times AE=5\times3=15$. Différents : $(DE)$ et $(BC)$ ne sont
+pas parallèles.
+
+\corrige{de l'exercice 8}
+$AD\times AC=5\times10=50$ ; $AB\times AE=8\times6=48$. Différents : $(DE)$ et $(BC)$ ne
+sont pas parallèles.
+
+\corrige{de l'exercice 9}
+$\dfrac{OA}{OC}=\dfrac{OB}{OD}$, donc $OD=\dfrac{OB\times OC}{OA}=\dfrac{6\times10}4=15$.
+
+\corrige{de l'exercice 10}
+Nouveau périmètre $=(4+6)\times2\times1{,}5=30$ cm. Aire initiale $=4\times6=24\text{ cm}^2$,
+nouvelle aire $=24\times1{,}5^{2}=54\text{ cm}^2$.
+
+\corrige{de l'exercice 11}
+Nouveau périmètre $=18\times\dfrac23=12$ cm. Nouvelle aire $=36\times\left(\dfrac23\right)^{2}=36\times\dfrac49=16\text{ cm}^2$.
+
+\corrige{de l'exercice 12}
+Nouveau périmètre $=80\times1{,}25=100$ m.
+
+\corrige{de l'exercice 13}
+$\dfrac{h}{10{,}5}=\dfrac{1{,}2}{1{,}8}$, donc $h=10{,}5\times\dfrac{1{,}2}{1{,}8}=7$ m.
+
+\corrige{de l'exercice 14}
+Rapport $=\dfrac{AD}{AB}=\dfrac6{15}=\dfrac25$. $BC=DE\div\dfrac25=8\times\dfrac52=20$ m ;
+$AE=\dfrac25\times20=8$ m.
+
+\corrige{de l'exercice 15}
+Aire réelle $=12\times100^{2}=120\,000\text{ cm}^2=12\text{ m}^2$.
+
+\corrige{de l'exercice 16}
+$\dfrac{OA}{OC}=\dfrac{OB}{OD}$, donc $OC=\dfrac{OA\times OD}{OB}=\dfrac{5\times24}8=15$.
+
+\corrige{du sujet 1}
+1) Rapport $=\dfrac8{12}=\dfrac23$. $AE=\dfrac23\times18=12$ ; $DE=\dfrac23\times15=10$.\\
+2) $MR\times MP=5\times15=75$ ; $MN\times MS=8\times9=72$. Différents : $(RS)$ et $(NP)$
+ne sont pas parallèles.\\
+3a) Nouveau périmètre $=40\times1{,}2=48$ m.\\
+3b) Nouvelle aire $=75\times1{,}2^{2}=75\times1{,}44=108\text{ m}^2$.
+
+\corrige{du sujet 2}
+1) Rapport $=\dfrac57$. $AE=\dfrac57\times14=10$ ; $DE=\dfrac57\times21=15$.\\
+2) $AD\times AC=6\times15=90$ ; $AB\times AE=9\times10=90$. Égaux : $(DE)\parallel(BC)$.\\
+3) $h=10{,}5\times\dfrac{1{,}2}{1{,}8}=7$ m.\\
+4) Rapport $=\dfrac6{15}=\dfrac25$. $BC=8\times\dfrac52=20$ m ; $AE=\dfrac25\times20=8$ m.
+
+\corrige{du sujet 3}
+1) $OD=\dfrac{OB\times OC}{OA}=\dfrac{8\times15}5=24$.\\
+2) $AD\times AC=4\times13=52$ ; $AB\times AE=9\times6=54$. Différents : $(DE)$ et $(BC)$ ne
+sont pas parallèles.\\
+3) Aire réelle $=12\times100^{2}=120\,000\text{ cm}^2=12\text{ m}^2$.\\
+4) $25\text{ m}^2=250\,000\text{ cm}^2$. Aire sur le plan
+$=250\,000\times\left(\dfrac1{50}\right)^{2}=100\text{ cm}^2$.
+
+\end{multicols}
+\exercicesBanner
