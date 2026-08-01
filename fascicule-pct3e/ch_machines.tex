@@ -1,1 +1,405 @@
 \chapter{Machines simples}
+
+\noindent\textit{Soulever une lourde charge à mains nues est souvent impossible. Grâce à
+quelques dispositifs mécaniques simples — plan incliné, poulies, treuil — on peut réduire
+l'effort nécessaire pour déplacer ou soulever un objet.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Qu'est-ce qu'une machine simple ?}
+
+\begin{definition}[Machine simple]
+Une \textbf{machine simple} est un dispositif mécanique élémentaire qui permet de
+\textbf{modifier l'intensité ou la direction} d'une force, afin de faciliter un travail
+(soulever, déplacer, tirer une charge). Le \textbf{poids} $P$ d'un objet de masse $m$ vaut
+$P=m\times g$, avec $g\approx10$ N/kg.
+\end{definition}
+
+\section{Le plan incliné}
+
+\begin{propriete}[Plan incliné]
+Un \textbf{plan incliné} permet de faire monter une charge de poids $P$ à une hauteur $h$
+en exerçant une force $F$ le long d'un plan de longueur $L$ (plus grande que $h$), avec
+(sans frottement) :
+\[
+F\times L=P\times h \qquad\text{soit}\qquad F=\frac{P\times h}{L}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=1.2pt,fill=onbsoft] (0,0) -- (5,0) -- (5,2.5) -- cycle;
+\draw[->,onbo,line width=1.3pt] (1,0.5) -- (2,2.6);
+\node[onbo,above] at (1.7,1.9) {\small $F$};
+\draw[<->,onbmuted,line width=0.8pt] (5.3,0) -- (5.3,2.5);
+\node[onbmuted,right] at (5.35,1.25) {\small $h$};
+\draw[<->,onbmuted,line width=0.8pt] (0,-0.4) -- (5,-0.4);
+\node[onbmuted,below] at (2.5,-0.5) {\small $L$};
+\end{tikzpicture}
+\fig{Figure — Plan incliné de longueur $L$ et de hauteur $h$ : $F=\dfrac{P\times h}{L}$.}
+\end{illus}
+
+\begin{exemple}
+Une charge de poids $P=500$ N doit monter à une hauteur $h=2$ m sur un plan incliné de
+longueur $L=10$ m : $F=\dfrac{500\times2}{10}=100$ N.
+\end{exemple}
+
+\begin{remarque}
+Plus le plan incliné est \textbf{long} (pour une même hauteur $h$), plus la force
+nécessaire est \textbf{faible} : on « paye » cette réduction de force par une distance
+parcourue plus grande.
+\end{remarque}
+
+\section{Les poulies}
+
+\begin{definition}[Poulie]
+Une \textbf{poulie} est une roue rainurée sur laquelle passe une corde ou un câble. Une
+\textbf{poulie fixe} est attachée à un support fixe : elle change la \textbf{direction} de
+la force sans changer son intensité ($F=P$). Une \textbf{poulie mobile}, attachée
+directement à la charge, \textbf{divise par deux} la force nécessaire ($F=\dfrac P2$).
+\end{definition}
+
+\begin{propriete}[Palan]
+Un \textbf{palan} associe plusieurs poulies fixes et mobiles. Si la charge est soutenue
+par $n$ brins de corde, la force nécessaire est :
+\[
+F=\frac Pn.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.8]
+\draw[onbmuted,line width=1.5pt] (0,3) -- (2,3);
+\filldraw[onbo!20,draw=onbo,line width=1.2pt] (0.6,2.6) circle(0.3);
+\draw[onbmuted,line width=1pt] (0.6,2.3) -- (0.6,1.2);
+\draw[onbline,line width=1.2pt,fill=onbsoft] (0.2,0.6) rectangle (1,1.2);
+\node[below] at (0.6,0.5) {\small charge $P$};
+\draw[->,onbo,line width=1.2pt] (0.9,2.9) -- (0.9,4.0);
+\node[onbo,right] at (0.95,3.6) {\small $F=P$};
+\node[below] at (0.6,-0.3) {\small poulie fixe};
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.2pt] (4.5,1.8) circle(0.3);
+\draw[onbmuted,line width=1pt] (4.5,1.5) -- (4.5,0.9);
+\draw[onbline,line width=1.2pt,fill=onbsoft] (4.1,0.3) rectangle (4.9,0.9);
+\node[below] at (4.5,0.2) {\small charge $P$};
+\draw[onbmuted,line width=1pt] (3.8,3.6) -- (4.2,2.1) -- (4.8,2.1) -- (5.2,3.6);
+\draw[->,onbgreen,line width=1.2pt] (5.2,3.6) -- (5.2,4.3);
+\node[onbgreen,right] at (5.25,4.0) {\small $F=\frac P2$};
+\node[below] at (4.5,-0.3) {\small poulie mobile};
+\end{tikzpicture}
+\fig{Figure — Poulie fixe ($F=P$) et poulie mobile ($F=P/2$).}
+\end{illus}
+
+\begin{exemple}
+Une charge de poids $P=800$ N est soulevée par un palan à $4$ brins porteurs :
+$F=\dfrac{800}4=200$ N.
+\end{exemple}
+
+\section{Le treuil}
+
+\begin{propriete}[Treuil]
+Un \textbf{treuil} est un cylindre de rayon $r$ (le tambour, sur lequel s'enroule la
+corde), actionné par une manivelle de longueur $R$. À l'équilibre (sans frottement) :
+\[
+F\times R=P\times r \qquad\text{soit}\qquad F=\frac{P\times r}{R}.
+\]
+\end{propriete}
+
+\begin{exemple}
+Un treuil de tambour $r=0{,}1$ m, actionné par une manivelle $R=0{,}5$ m, soulève une
+charge de poids $P=600$ N : $F=\dfrac{600\times0{,}1}{0{,}5}=120$ N.
+\end{exemple}
+
+\begin{remarque}
+Plus la manivelle $R$ est longue par rapport au rayon $r$ du tambour, plus la force à
+exercer est faible : c'est le même principe que le plan incliné (échanger force contre
+distance).
+\end{remarque}
+
+\section{Avantages et inconvénients des machines simples}
+
+\begin{propriete}[Bilan]
+Les machines simples \textbf{réduisent l'effort} nécessaire, mais ne suppriment jamais le
+travail à fournir : diminuer la force impose toujours d'augmenter la distance parcourue
+(ou le nombre de tours). Elles ont aussi des \textbf{limites} : frottements, poids propre
+du dispositif, encombrement.
+\end{propriete}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Machine simple.} Modifie l'intensité ou la direction d'une force. $P=m\times g$.\\[4pt]
+\textbf{Plan incliné.} $F=\dfrac{P\times h}{L}$.\\[4pt]
+\textbf{Poulie fixe.} $F=P$ (change seulement la direction). \textbf{Poulie mobile.}
+$F=\dfrac P2$.\\[4pt]
+\textbf{Palan à $n$ brins.} $F=\dfrac Pn$.\\[4pt]
+\textbf{Treuil.} $F=\dfrac{P\times r}{R}$ ($r$ = rayon du tambour, $R$ = longueur de la
+manivelle).\\[4pt]
+\textbf{Piège fréquent.} Réduire la force ne réduit jamais le travail total : on gagne en
+force ce qu'on perd en distance parcourue.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer le poids d'un objet}
+Appliquer $P=m\times g$, avec $m$ en kg, $g\approx10$ N/kg et $P$ en N.
+\begin{exemple}
+$m=50$ kg : $P=50\times10=500$ N.
+\end{exemple}
+
+\methode{Calculer la force sur un plan incliné}
+Appliquer $F=\dfrac{P\times h}{L}$, avec $h$ et $L$ dans la même unité.
+\begin{exemple}
+$P=300$ N, $h=1{,}5$ m, $L=5$ m : $F=\dfrac{300\times1{,}5}5=90$ N.
+\end{exemple}
+
+\methode{Calculer la force avec une poulie ou un palan}
+Poulie fixe : $F=P$. Poulie mobile : $F=\dfrac P2$. Palan à $n$ brins : $F=\dfrac Pn$.
+\begin{exemple}
+Palan à $3$ brins, $P=900$ N : $F=\dfrac{900}3=300$ N.
+\end{exemple}
+
+\methode{Calculer la force avec un treuil}
+Appliquer $F=\dfrac{P\times r}{R}$, avec $r$ et $R$ dans la même unité.
+\begin{exemple}
+$P=400$ N, $r=0{,}2$ m, $R=0{,}8$ m : $F=\dfrac{400\times0{,}2}{0{,}8}=100$ N.
+\end{exemple}
+
+\methode{Comparer l'intérêt de deux machines simples pour une même tâche}
+Calculer la force nécessaire avec chaque dispositif : la machine la plus avantageuse est
+celle qui demande la force la plus faible.
+\begin{exemple}
+Pour $P=400$ N, un plan incliné donne $F=100$ N et une poulie mobile donne $F=200$ N : le
+plan incliné est ici plus avantageux.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Poids et généralités}
+\exo{}\diff{1} Calculer le poids d'un objet de masse $50$ kg ($g\approx10$ N/kg).
+
+\exo{}\diff{1} Calculer le poids d'un objet de masse $20$ kg.
+
+\exo{}\diff{2} Qu'est-ce qu'une machine simple ?
+
+\exo{}\diff{2} Une machine simple permet-elle de supprimer le travail à fournir ?
+Expliquer.
+
+\rubrique{Plan incliné}
+\exo{}\diff{1} Une charge de poids $200$ N doit monter à une hauteur de $1$ m sur un plan
+incliné de longueur $4$ m. Calculer la force nécessaire.
+
+\exo{}\diff{2} Une charge de poids $400$ N doit monter à une hauteur de $2$ m sur un plan
+incliné de longueur $8$ m. Calculer la force nécessaire.
+
+\exo{}\diff{2} Une charge de poids $150$ N doit monter à une hauteur de $1$ m sur un plan
+incliné de longueur $3$ m. Calculer la force nécessaire.
+
+\exo{}\diff{3} Pourquoi un plan incliné plus long facilite-t-il la montée d'une charge ?
+
+\rubrique{Poulies et palans}
+\exo{}\diff{1} Quelle force faut-il exercer pour soulever, à l'aide d'une poulie fixe,
+une charge de poids $350$ N ?
+
+\exo{}\diff{2} Quelle force faut-il exercer pour soulever, à l'aide d'une poulie mobile,
+une charge de poids $600$ N ?
+
+\exo{}\diff{2} Un palan à $4$ brins porteurs soulève une charge de poids $800$ N.
+Calculer la force nécessaire.
+
+\exo{}\diff{2} Quelle différence y a-t-il entre une poulie fixe et une poulie mobile ?
+
+\rubrique{Treuil et bilan}
+\exo{}\diff{2} Un treuil de tambour $r=0{,}1$ m, actionné par une manivelle $R=0{,}5$ m,
+soulève une charge de poids $600$ N. Calculer la force nécessaire.
+
+\exo{}\diff{2} Un treuil de tambour $r=0{,}15$ m, actionné par une manivelle $R=0{,}6$ m,
+soulève une charge de poids $300$ N. Calculer la force nécessaire.
+
+\exo{}\diff{3} Citer un avantage et un inconvénient des machines simples.
+
+\exo{}\diff{3} Pour soulever une charge de $500$ N, un treuil demande une force de $125$
+N. Une poulie mobile serait-elle plus avantageuse ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Poids et généralités}
+\exo{}\diff{1} Calculer le poids d'un objet de masse $30$ kg.
+
+\exo{}\diff{1} Calculer le poids d'un objet de masse $80$ kg.
+
+\exo{}\diff{2} Citer trois exemples de machines simples.
+
+\exo{}\diff{2} Qu'est-ce qui différencie une machine simple d'une machine complexe (comme
+un moteur) ?
+
+\exo{}\diff{2} Pourquoi utilise-t-on des machines simples dans la vie quotidienne ?
+
+\rubrique{Plan incliné}
+\exo{}\diff{2} Une charge de poids $250$ N doit monter à une hauteur de $1$ m sur un plan
+incliné de longueur $5$ m. Calculer la force nécessaire.
+
+\exo{}\diff{2} Une charge de poids $600$ N doit monter à une hauteur de $3$ m sur un plan
+incliné de longueur $12$ m. Calculer la force nécessaire.
+
+\exo{}\diff{3} Une force de $80$ N permet de faire monter une charge de poids $400$ N sur
+un plan incliné de longueur $5$ m. Calculer la hauteur atteinte.
+
+\exo{}\diff{2} Une charge de poids $360$ N doit monter à une hauteur de $2$ m sur un plan
+incliné de longueur $9$ m. Calculer la force nécessaire (arrondir au dixième).
+
+\exo{}\diff{3} Sur un chantier, on utilise un plan incliné de $6$ m pour hisser une charge
+de $450$ N à $1{,}5$ m de hauteur. Calculer la force nécessaire.
+
+\rubrique{Poulies et palans}
+\exo{}\diff{1} Quelle force faut-il exercer pour soulever, avec une poulie fixe, une
+charge de $500$ N ?
+
+\exo{}\diff{2} Quelle force faut-il exercer pour soulever, avec une poulie mobile, une
+charge de $1\,000$ N ?
+
+\exo{}\diff{2} Un palan à $5$ brins porteurs soulève une charge de $1\,000$ N. Calculer
+la force nécessaire.
+
+\exo{}\diff{2} Un palan à $2$ brins porteurs demande une force de $300$ N. Calculer le
+poids de la charge soulevée.
+
+\exo{}\diff{3} Un palan à $4$ brins demande une force de $150$ N. Calculer le poids de la
+charge, puis la masse correspondante.
+
+\rubrique{Treuil et bilan}
+\exo{}\diff{2} Un treuil de tambour $r=0{,}2$ m, actionné par une manivelle $R=1$ m,
+soulève une charge de poids $500$ N. Calculer la force nécessaire.
+
+\exo{}\diff{2} Un treuil de tambour $r=0{,}1$ m demande une force de $80$ N pour une
+charge de $400$ N. Calculer la longueur $R$ de la manivelle.
+
+\exo{}\diff{3} Un puits de $8$ m de profondeur est équipé d'un treuil. Pourquoi ce
+dispositif facilite-t-il le remontage d'un seau d'eau ?
+
+\exo{}\diff{3} Comparer, pour une même charge de $600$ N, la force nécessaire avec une
+poulie mobile et avec un palan à $3$ brins. Lequel est le plus avantageux ?
+
+\exo{}\diff{2} Citer un exemple concret d'utilisation du treuil dans la vie courante.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Plan incliné et poulies]
+\begin{enumerate}[label=\arabic*)]
+\item Cite une machine simple.
+\item Une charge de poids $500$ N doit monter à une hauteur de $2$ m sur un plan incliné
+de longueur $10$ m. Calcule la force nécessaire.
+\item Quelle force faut-il exercer pour soulever, avec une poulie mobile, cette même
+charge de $500$ N ?
+\item Lequel des deux dispositifs précédents demande la force la plus faible ?
+\end{enumerate}
+
+\sujetbac[Palan et treuil]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce qu'un palan ?
+\item Un palan à $4$ brins porteurs soulève une charge de $800$ N. Calcule la force
+nécessaire.
+\item Un treuil de tambour $r=0{,}1$ m et de manivelle $R=0{,}5$ m soulève la même charge.
+Calcule la force nécessaire.
+\item Cite un avantage et un inconvénient des machines simples.
+\end{enumerate}
+
+\sujetbac[Problème concret : puits et poutre]
+\begin{enumerate}[label=\arabic*)]
+\item Calcule le poids d'un seau d'eau de masse $20$ kg.
+\item Ce seau est remonté par un treuil de tambour $r=0{,}1$ m et de manivelle $R=0{,}4$
+m. Calcule la force nécessaire.
+\item Le même seau est hissé sur un plan incliné de longueur $8$ m jusqu'à une hauteur de
+$2$ m. Calcule la force nécessaire.
+\item Quel dispositif demande le moins d'effort ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$P=50\times10=500$ N.
+
+\corrige{de l'exercice 2}
+$P=20\times10=200$ N.
+
+\corrige{de l'exercice 3}
+Un dispositif mécanique simple qui modifie l'intensité ou la direction d'une force.
+
+\corrige{de l'exercice 4}
+Non : elle réduit la force mais augmente la distance parcourue ou le nombre de tours ; le
+travail total n'est pas supprimé.
+
+\corrige{de l'exercice 5}
+$F=\dfrac{200\times1}4=50$ N.
+
+\corrige{de l'exercice 6}
+$F=\dfrac{400\times2}8=100$ N.
+
+\corrige{de l'exercice 7}
+$F=\dfrac{150\times1}3=50$ N.
+
+\corrige{de l'exercice 8}
+Car pour une même hauteur, un plan plus long réduit la force nécessaire (au prix d'une
+plus grande distance parcourue).
+
+\corrige{de l'exercice 9}
+$F=P=350$ N.
+
+\corrige{de l'exercice 10}
+$F=\dfrac{600}2=300$ N.
+
+\corrige{de l'exercice 11}
+$F=\dfrac{800}4=200$ N.
+
+\corrige{de l'exercice 12}
+La poulie fixe change seulement la direction de la force ($F=P$) ; la poulie mobile
+divise l'intensité de la force par deux ($F=P/2$).
+
+\corrige{de l'exercice 13}
+$F=\dfrac{600\times0{,}1}{0{,}5}=120$ N.
+
+\corrige{de l'exercice 14}
+$F=\dfrac{300\times0{,}15}{0{,}6}=75$ N.
+
+\corrige{de l'exercice 15}
+Avantage : réduction de l'effort nécessaire. Inconvénient : frottements, distance
+parcourue plus grande.
+
+\corrige{de l'exercice 16}
+Oui : la poulie mobile demanderait $F=\dfrac{500}2=250$ N, ce qui est plus que les $125$
+N du treuil ; le treuil est donc déjà plus avantageux ici.
+
+\corrige{du sujet 1}
+1) Par exemple le plan incliné, la poulie ou le treuil.\\
+2) $F=\dfrac{500\times2}{10}=100$ N.\\
+3) $F=\dfrac{500}2=250$ N.\\
+4) Le plan incliné, qui demande une force plus faible ($100$ N contre $250$ N).
+
+\corrige{du sujet 2}
+1) Un dispositif associant plusieurs poulies fixes et mobiles.\\
+2) $F=\dfrac{800}4=200$ N.\\
+3) $F=\dfrac{800\times0{,}1}{0{,}5}=160$ N.\\
+4) Avantage : réduction de l'effort. Inconvénient : frottements, encombrement du
+dispositif.
+
+\corrige{du sujet 3}
+1) $P=20\times10=200$ N.\\
+2) $F=\dfrac{200\times0{,}1}{0{,}4}=50$ N.\\
+3) $F=\dfrac{200\times2}8=50$ N.\\
+4) Les deux dispositifs demandent ici le même effort ($50$ N).
+
+\end{multicols}
+\exercicesBanner
