@@ -1,1 +1,496 @@
 \chapter{Arithmétique : PGCD, PPCM, nombres premiers}
+
+\noindent\textit{L'arithmétique étudie les nombres entiers : leurs diviseurs, leurs
+multiples, et les nombres premiers qui en sont les « briques élémentaires ». Tu apprendras à
+calculer le \textbf{PGCD} (plus grand commun diviseur) et le \textbf{PPCM} (plus petit commun
+multiple) de deux nombres — des outils indispensables pour simplifier des fractions ou
+résoudre des problèmes de partage et de synchronisation.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Diviseurs, multiples, nombres premiers}
+
+\begin{definition}[Diviseur, multiple]
+$b$ est un \textbf{diviseur} de $a$ (et $a$ est un \textbf{multiple} de $b$) s'il existe un
+entier $k$ tel que $a=b\times k$, c'est-à-dire si la division de $a$ par $b$ a un reste nul.
+\end{definition}
+
+\begin{definition}[Nombre premier]
+Un \textbf{nombre premier} est un entier \textbf{supérieur à 1} qui n'a que \textbf{deux}
+diviseurs positifs : $1$ et lui-même.
+\end{definition}
+
+\begin{exemple}
+Les diviseurs de $84$ sont $1$, $2$, $3$, $4$, $6$, $7$, $12$, $14$, $21$, $28$, $42$,
+$84$. \quad Les nombres $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$, $23$, $29$, $31,\ldots$
+sont premiers ; $2$ est le \textbf{seul} nombre premier pair.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={circle,minimum size=0.8cm,font=\small}]
+\node[fill=onbgreen,text=white] at (0.00,0.00) {2};
+\node[fill=onbgreen,text=white] at (0.95,0.00) {3};
+\node[fill=onbline,text=onbmuted] at (1.90,0.00) {4};
+\node[fill=onbgreen,text=white] at (2.85,0.00) {5};
+\node[fill=onbline,text=onbmuted] at (3.80,0.00) {6};
+\node[fill=onbgreen,text=white] at (4.75,0.00) {7};
+\node[fill=onbline,text=onbmuted] at (0.00,-0.95) {8};
+\node[fill=onbline,text=onbmuted] at (0.95,-0.95) {9};
+\node[fill=onbline,text=onbmuted] at (1.90,-0.95) {10};
+\node[fill=onbgreen,text=white] at (2.85,-0.95) {11};
+\node[fill=onbline,text=onbmuted] at (3.80,-0.95) {12};
+\node[fill=onbgreen,text=white] at (4.75,-0.95) {13};
+\node[fill=onbline,text=onbmuted] at (0.00,-1.90) {14};
+\node[fill=onbline,text=onbmuted] at (0.95,-1.90) {15};
+\node[fill=onbline,text=onbmuted] at (1.90,-1.90) {16};
+\node[fill=onbgreen,text=white] at (2.85,-1.90) {17};
+\node[fill=onbline,text=onbmuted] at (3.80,-1.90) {18};
+\node[fill=onbgreen,text=white] at (4.75,-1.90) {19};
+\node[fill=onbline,text=onbmuted] at (0.00,-2.85) {20};
+\node[fill=onbline,text=onbmuted] at (0.95,-2.85) {21};
+\node[fill=onbline,text=onbmuted] at (1.90,-2.85) {22};
+\node[fill=onbgreen,text=white] at (2.85,-2.85) {23};
+\node[fill=onbline,text=onbmuted] at (3.80,-2.85) {24};
+\node[fill=onbline,text=onbmuted] at (4.75,-2.85) {25};
+\node[fill=onbline,text=onbmuted] at (0.00,-3.80) {26};
+\node[fill=onbline,text=onbmuted] at (0.95,-3.80) {27};
+\node[fill=onbline,text=onbmuted] at (1.90,-3.80) {28};
+\node[fill=onbgreen,text=white] at (2.85,-3.80) {29};
+\node[fill=onbline,text=onbmuted] at (3.80,-3.80) {30};
+\node[fill=onbgreen,text=white] at (4.75,-3.80) {31};
+\end{tikzpicture}
+\fig{Figure — Les nombres premiers de $2$ à $31$ (en vert) parmi les entiers non premiers
+(en gris), obtenus par le crible d'Ératosthène.}
+\end{illus}
+
+\begin{remarque}
+$1$ n'est \textbf{pas} un nombre premier (il n'a qu'un seul diviseur). Pour tester si un
+nombre $n$ est premier, il suffit d'essayer de le diviser par les nombres premiers
+$\le\sqrt n$.
+\end{remarque}
+
+\section{Décomposition en produit de facteurs premiers}
+
+\begin{propriete}[Décomposition en facteurs premiers]
+Tout entier $n>1$ s'écrit, de façon \textbf{unique} (à l'ordre près), comme un produit de
+nombres premiers. On l'obtient en divisant $n$ successivement par les plus petits nombres
+premiers possibles.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={circle,draw,minimum size=0.75cm,font=\small}]
+\node[draw=onbo,fill=onbsoft] (n360) at (0,0) {360};
+\node[draw=onbline,fill=white] (n18) at (-2,-1.2) {18};
+\node[draw=onbline,fill=white] (n20) at (2,-1.2) {20};
+\draw[onbmuted] (n360) -- (n18); \draw[onbmuted] (n360) -- (n20);
+\node[draw=onbgreen,fill=onbgreen!12] (n2a) at (-3,-2.4) {2};
+\node[draw=onbline,fill=white] (n9) at (-1,-2.4) {9};
+\draw[onbmuted] (n18) -- (n2a); \draw[onbmuted] (n18) -- (n9);
+\node[draw=onbline,fill=white] (n4) at (1,-2.4) {4};
+\node[draw=onbgreen,fill=onbgreen!12] (n5) at (3,-2.4) {5};
+\draw[onbmuted] (n20) -- (n4); \draw[onbmuted] (n20) -- (n5);
+\node[draw=onbgreen,fill=onbgreen!12] (n3a) at (-1.6,-3.6) {3};
+\node[draw=onbgreen,fill=onbgreen!12] (n3b) at (-0.4,-3.6) {3};
+\draw[onbmuted] (n9) -- (n3a); \draw[onbmuted] (n9) -- (n3b);
+\node[draw=onbgreen,fill=onbgreen!12] (n2b) at (0.4,-3.6) {2};
+\node[draw=onbgreen,fill=onbgreen!12] (n2c) at (1.6,-3.6) {2};
+\draw[onbmuted] (n4) -- (n2b); \draw[onbmuted] (n4) -- (n2c);
+\end{tikzpicture}
+\fig{Figure — Arbre de décomposition de $360$ : les feuilles vertes (nombres premiers)
+donnent $360=2^{3}\times3^{2}\times5$.}
+\end{illus}
+
+\begin{exemple}
+$84=2\times42=2\times2\times21=2\times2\times3\times7=2^{2}\times3\times7$.
+\end{exemple}
+
+\section{PGCD : plus grand commun diviseur}
+
+\begin{definition}[PGCD]
+Le \textbf{PGCD} de deux entiers non nuls $a$ et $b$ est le plus grand des diviseurs
+\textbf{communs} à $a$ et $b$. On le note $\text{PGCD}(a\,;b)$.
+\end{definition}
+
+\begin{propriete}[Algorithme d'Euclide]
+On effectue des divisions euclidiennes en cascade : $a=b\times q+r$, puis on recommence
+avec $(b\,;r)$, et ainsi de suite jusqu'à obtenir un reste nul. Le \textbf{dernier reste non
+nul} est le PGCD de $a$ et $b$.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=5.4cm,minimum height=0.7cm] (e1) {$126=84\times1+42$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=5.4cm,minimum height=0.7cm,below=6mm of e1] (e2) {$84=42\times2+0$};
+\node[draw=onbgreen,fill=onbgreen!10,rounded corners=3pt,minimum width=5.4cm,minimum height=0.7cm,below=6mm of e2] (e3) {dernier reste non nul : $\text{PGCD}=42$};
+\draw[->,onbmuted,line width=1pt] (e1) -- (e2);
+\draw[->,onbmuted,line width=1pt] (e2) -- (e3);
+\end{tikzpicture}
+\fig{Figure — Algorithme d'Euclide appliqué à $126$ et $84$ : $\text{PGCD}(126\,;84)=42$.}
+\end{illus}
+
+\begin{exemple}
+$\text{PGCD}(315\,;231)$ : $315=231\times1+84$ ; $231=84\times2+63$ ; $84=63\times1+21$ ;
+$63=21\times3+0$. Donc $\text{PGCD}(315\,;231)=21$.
+\end{exemple}
+
+\section{PPCM : plus petit commun multiple}
+
+\begin{definition}[PPCM]
+Le \textbf{PPCM} de deux entiers non nuls $a$ et $b$ est le plus petit des multiples
+\textbf{communs} strictement positifs à $a$ et $b$. On le note $\text{PPCM}(a\,;b)$.
+\end{definition}
+
+\begin{propriete}[Relation PGCD-PPCM]
+Pour tous entiers $a,b>0$ :
+\[
+\text{PGCD}(a\,;b)\times\text{PPCM}(a\,;b)=a\times b.
+\]
+\end{propriete}
+
+\begin{exemple}
+$\text{PGCD}(12\,;18)=6$, donc
+$\text{PPCM}(12\,;18)=\dfrac{12\times18}6=\dfrac{216}6=36$.
+\end{exemple}
+
+\begin{remarque}
+On peut aussi obtenir le PPCM à partir des décompositions en facteurs premiers, en prenant
+chaque facteur premier à la puissance la plus \textbf{élevée} rencontrée.
+\end{remarque}
+
+\section{Fractions irréductibles, nombres premiers entre eux}
+
+\begin{definition}[Nombres premiers entre eux]
+Deux entiers sont \textbf{premiers entre eux} si leur PGCD vaut $1$ (leur seul diviseur
+commun positif est $1$).
+\end{definition}
+
+\begin{propriete}[Fraction irréductible]
+Pour rendre une fraction $\dfrac ab$ irréductible, on divise $a$ et $b$ par
+$\text{PGCD}(a\,;b)$ : les deux nombres obtenus sont alors premiers entre eux.
+\end{propriete}
+
+\begin{exemple}
+$\text{PGCD}(84\,;126)=42$, donc $\dfrac{84}{126}=\dfrac{84\div42}{126\div42}=\dfrac23$
+(fraction irréductible, car $2$ et $3$ sont premiers entre eux).
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Nombre premier.} Exactement deux diviseurs positifs : $1$ et lui-même ($1$ n'est
+pas premier).\\[4pt]
+\textbf{Décomposition.} Tout $n>1$ est un produit \textbf{unique} de nombres
+premiers.\\[4pt]
+\textbf{PGCD (Euclide).} Divisions en cascade $a=bq+r$ ; le \textbf{dernier reste non nul}
+est le PGCD.\\[4pt]
+\textbf{PPCM.} $\text{PGCD}(a\,;b)\times\text{PPCM}(a\,;b)=a\times b$.\\[4pt]
+\textbf{Fraction irréductible.} Diviser numérateur et dénominateur par leur PGCD.\\[4pt]
+\textbf{Premiers entre eux.} $\text{PGCD}=1$.\\[4pt]
+\textbf{Usage.} PGCD $\to$ problèmes de \textbf{partage}/carrelage (le plus grand lot
+identique) ; PPCM $\to$ problèmes de \textbf{synchronisation} (le premier instant commun).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Décomposer un nombre en produit de facteurs premiers}
+Diviser successivement par les plus petits nombres premiers possibles ($2$, puis $3$, puis
+$5$, \ldots) jusqu'à obtenir $1$.
+\begin{exemple}
+$150=2\times75=2\times3\times25=2\times3\times5\times5=2\times3\times5^{2}$.
+\end{exemple}
+
+\methode{Calculer un PGCD par l'algorithme d'Euclide}
+Diviser le plus grand par le plus petit, puis recommencer avec le diviseur et le reste,
+jusqu'à un reste nul.
+\begin{exemple}
+$462=110\times4+22$ ; $110=22\times5+0$. Donc $\text{PGCD}(462\,;110)=22$.
+\end{exemple}
+
+\methode{Calculer un PPCM}
+Utiliser $\text{PPCM}(a\,;b)=\dfrac{a\times b}{\text{PGCD}(a\,;b)}$, après avoir calculé le
+PGCD.
+\begin{exemple}
+$\text{PGCD}(15\,;20)=5$, donc $\text{PPCM}(15\,;20)=\dfrac{15\times20}5=60$.
+\end{exemple}
+
+\methode{Rendre une fraction irréductible}
+Calculer le PGCD du numérateur et du dénominateur, puis diviser les deux par ce PGCD.
+\begin{exemple}
+$\dfrac{252}{180}$ : $\text{PGCD}(252\,;180)=36$, donc
+$\dfrac{252}{180}=\dfrac{252\div36}{180\div36}=\dfrac75$.
+\end{exemple}
+
+\methode{Reconnaître si deux nombres sont premiers entre eux}
+Calculer leur PGCD (par exemple avec Euclide) : s'il vaut $1$, ils sont premiers entre eux.
+\begin{exemple}
+$\text{PGCD}(35\,;54)$ : $54=35\times1+19$ ; $35=19\times1+16$ ; $19=16\times1+3$ ;
+$16=3\times5+1$ ; $3=1\times3+0$. PGCD $=1$ : $35$ et $54$ sont premiers entre eux.
+\end{exemple}
+
+\methode{Résoudre un problème de partage (PGCD)}
+Calculer le PGCD des quantités à répartir : c'est le plus grand nombre de lots identiques
+possible, sans reste.
+\begin{exemple}
+Répartir $84$ billes et $126$ jetons en lots identiques : $\text{PGCD}(84\,;126)=42$
+lots, chacun avec $2$ billes et $3$ jetons.
+\end{exemple}
+
+\methode{Résoudre un problème de synchronisation (PPCM)}
+Calculer le PPCM des durées ou périodes données : c'est le premier instant où les
+événements coïncident à nouveau.
+\begin{exemple}
+Deux bus repassent toutes les $18$ min et toutes les $24$ min : ils repartiront ensemble au
+bout de $\text{PPCM}(18\,;24)=72$ minutes.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Diviseurs, multiples, nombres premiers}
+\exo{}\diff{1} Donner la liste des diviseurs de $84$. $84$ est-il premier ?
+
+\exo{}\diff{1} Parmi $51,57,61,63,67$, lesquels sont des nombres premiers ?
+
+\exo{}\diff{2} Décomposer $84$ en produit de facteurs premiers.
+
+\exo{}\diff{2} Décomposer $360$ en produit de facteurs premiers.
+
+\rubrique{PGCD (algorithme d'Euclide)}
+\exo{}\diff{2} Calculer $\text{PGCD}(84\,;126)$ par l'algorithme d'Euclide.
+
+\exo{}\diff{2} Calculer $\text{PGCD}(252\,;180)$.
+
+\exo{}\diff{2} Calculer $\text{PGCD}(315\,;231)$.
+
+\exo{}\diff{2} Calculer $\text{PGCD}(462\,;110)$.
+
+\rubrique{PPCM et fractions irréductibles}
+\exo{}\diff{1} Calculer $\text{PPCM}(12\,;18)$.
+
+\exo{}\diff{2} Calculer $\text{PPCM}(15\,;20)$.
+
+\exo{}\diff{2} Rendre irréductible la fraction $\dfrac{252}{180}$.
+
+\exo{}\diff{2} Rendre irréductible la fraction $\dfrac{315}{231}$.
+
+\rubrique{Problèmes (partage, synchronisation)}
+\exo{}\diff{2} Un pâtissier dispose de $84$ chocolats et $126$ caramels. Il veut faire des
+sachets identiques (même nombre de chocolats et de caramels), en utilisant tout son stock,
+avec le plus grand nombre de sachets possible. Combien de sachets peut-il faire, et que
+contient chacun ?
+
+\exo{}\diff{2} Une salle rectangulaire mesure $360$ cm sur $225$ cm. On veut la carreler
+avec des carreaux carrés identiques, de la plus grande taille possible, sans découpe.
+Calculer le côté d'un tel carreau, et le nombre de carreaux nécessaires.
+
+\exo{}\diff{2} Deux bus partent ensemble d'une gare. Le premier repasse toutes les $18$
+minutes, le second toutes les $24$ minutes. Au bout de combien de temps repartiront-ils
+ensemble à nouveau ?
+
+\exo{}\diff{2} Deux phares d'une enseigne clignotent ensemble à un instant donné. Le
+premier clignote toutes les $15$ secondes, le second toutes les $20$ secondes. Au bout de
+combien de temps clignoteront-ils de nouveau ensemble ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Diviseurs et nombres premiers}
+\exo{}\diff{1} Donner la liste des diviseurs de $90$.
+
+\exo{}\diff{1} Parmi $89,93,101,111$, lesquels sont des nombres premiers ?
+
+\exo{}\diff{2} Décomposer $132$ en produit de facteurs premiers.
+
+\exo{}\diff{2} Décomposer $143$ en produit de facteurs premiers.
+
+\exo{}\diff{2} Décomposer $150$ en produit de facteurs premiers.
+
+\rubrique{PGCD}
+\exo{}\diff{2} Calculer $\text{PGCD}(72\,;120)$.
+
+\exo{}\diff{2} Calculer $\text{PGCD}(48\,;60)$.
+
+\exo{}\diff{2} Calculer $\text{PGCD}(105\,;135)$.
+
+\exo{}\diff{3} Calculer $\text{PGCD}(210\,;126)$.
+
+\exo{}\diff{3} Calculer $\text{PGCD}(96\,;144)$.
+
+\rubrique{PPCM}
+\exo{}\diff{1} Calculer $\text{PPCM}(8\,;12)$.
+
+\exo{}\diff{2} Calculer $\text{PPCM}(20\,;30)$.
+
+\exo{}\diff{2} Calculer $\text{PPCM}(9\,;15)$.
+
+\exo{}\diff{2} Calculer $\text{PPCM}(14\,;21)$.
+
+\rubrique{Fractions irréductibles, premiers entre eux}
+\exo{}\diff{2} Rendre irréductible $\dfrac{105}{135}$.
+
+\exo{}\diff{2} Rendre irréductible $\dfrac{210}{126}$.
+
+\exo{}\diff{2} Montrer que $35$ et $54$ sont premiers entre eux.
+
+\exo{}\diff{2} Montrer que $28$ et $45$ sont premiers entre eux.
+
+\rubrique{Problèmes}
+\exo{}\diff{2} Une salle rectangulaire mesure $480$ cm sur $360$ cm. Calculer le côté du
+plus grand carreau carré permettant de la carreler sans découpe.
+
+\exo{}\diff{2} Un enseignant dispose de $90$ billes et $135$ stylos. Il veut former le plus
+grand nombre possible de lots identiques, en utilisant tout son stock. Combien de lots peut-
+il former, et que contient chacun ?
+
+\exo{}\diff{2} Deux enseignes lumineuses clignotent ensemble à un instant donné. La
+première clignote toutes les $18$ secondes, la seconde toutes les $30$ secondes. Au bout de
+combien de temps clignoteront-elles de nouveau ensemble ?
+
+\exo{}\diff{2} Un bus passe toutes les $40$ minutes à un arrêt, un taxi collectif toutes les
+$60$ minutes. Ils sont passés ensemble à $7$h. À quelle heure repasseront-ils ensemble pour
+la première fois ?
+
+\exo{}\diff{2} Un enseignant a $96$ crayons et $72$ gommes à répartir en lots identiques
+(même nombre de crayons, même nombre de gommes), le plus grand nombre de lots possible.
+Combien de lots peut-il former ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[décomposition, PGCD et partage de chocolats — Douala]
+\begin{enumerate}[label=\arabic*)]
+\item Décomposer $504$ en produit de facteurs premiers.
+\item Calculer $\text{PGCD}(504\,;378)$ par l'algorithme d'Euclide.
+\item Calculer $\text{PPCM}(24\,;36)$.
+\item Un chocolatier de Douala dispose de $504$ chocolats noirs et $378$ chocolats blancs.
+Il veut former des sachets identiques utilisant tout son stock, avec le plus grand nombre
+de sachets possible.
+\begin{enumerate}[label=\alph*)]
+\item Combien de sachets peut-il former ?
+\item Combien de chocolats noirs et de chocolats blancs contient chaque sachet ?
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[fractions, PPCM et bus de Bafoussam]
+\begin{enumerate}[label=\arabic*)]
+\item Décomposer $273$ en produit de facteurs premiers.
+\item Calculer $\text{PGCD}(273\,;195)$ ; en déduire l'écriture irréductible de la
+fraction $\dfrac{273}{195}$.
+\item Calculer $\text{PPCM}(24\,;40)$.
+\item Deux bus partent ensemble d'une gare de Bafoussam. Le premier repasse toutes les
+$24$ minutes, le second toutes les $40$ minutes.
+\begin{enumerate}[label=\alph*)]
+\item Au bout de combien de temps repartiront-ils ensemble à nouveau ?
+\item Si les bus partent à $6$h$00$, à quelle heure repartiront-ils ensemble pour la
+première fois ?
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[décomposition, PGCD/PPCM et carrelage]
+\begin{enumerate}[label=\arabic*)]
+\item Décomposer $588$ en produit de facteurs premiers.
+\item Calculer $\text{PGCD}(588\,;441)$.
+\item Calculer $\text{PPCM}(21\,;28)$.
+\item Une salle mesure $588$ cm sur $441$ cm. On veut la carreler avec des carreaux carrés
+identiques, de la plus grande taille possible, sans découpe.
+\begin{enumerate}[label=\alph*)]
+\item Quelle est la longueur du côté d'un tel carreau ?
+\item Combien de carreaux seront nécessaires pour carreler toute la salle ?
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Diviseurs de $84$ : $1$, $2$, $3$, $4$, $6$, $7$, $12$, $14$, $21$, $28$, $42$, $84$. Comme
+$84$ a plus de deux diviseurs,
+il n'est \textbf{pas} premier.
+
+\corrige{de l'exercice 2}
+$51=3\times17$ et $63=9\times7$ ne sont pas premiers ; $57=3\times19$ non plus. Seuls
+$61$ et $67$ sont premiers.
+
+\corrige{de l'exercice 3}
+$84=2^{2}\times3\times7$.
+
+\corrige{de l'exercice 4}
+$360=2^{3}\times3^{2}\times5$.
+
+\corrige{de l'exercice 5}
+$126=84\times1+42$ ; $84=42\times2+0$. $\text{PGCD}(84\,;126)=42$.
+
+\corrige{de l'exercice 6}
+$252=180\times1+72$ ; $180=72\times2+36$ ; $72=36\times2+0$.
+$\text{PGCD}(252\,;180)=36$.
+
+\corrige{de l'exercice 7}
+$315=231\times1+84$ ; $231=84\times2+63$ ; $84=63\times1+21$ ; $63=21\times3+0$.
+$\text{PGCD}(315\,;231)=21$.
+
+\corrige{de l'exercice 8}
+$462=110\times4+22$ ; $110=22\times5+0$. $\text{PGCD}(462\,;110)=22$.
+
+\corrige{de l'exercice 9}
+$\text{PGCD}(12\,;18)=6$, donc $\text{PPCM}(12\,;18)=\dfrac{12\times18}6=36$.
+
+\corrige{de l'exercice 10}
+$\text{PGCD}(15\,;20)=5$, donc $\text{PPCM}(15\,;20)=\dfrac{15\times20}5=60$.
+
+\corrige{de l'exercice 11}
+$\text{PGCD}(252\,;180)=36$ (exercice 6), donc
+$\dfrac{252}{180}=\dfrac{252\div36}{180\div36}=\dfrac75$.
+
+\corrige{de l'exercice 12}
+$\text{PGCD}(315\,;231)=21$ (exercice 7), donc
+$\dfrac{315}{231}=\dfrac{315\div21}{231\div21}=\dfrac{15}{11}$.
+
+\corrige{de l'exercice 13}
+$\text{PGCD}(84\,;126)=42$ sachets. Chaque sachet contient $84\div42=2$ chocolats et
+$126\div42=3$ caramels.
+
+\corrige{de l'exercice 14}
+$\text{PGCD}(360\,;225)=45$ cm de côté. Nombre de carreaux :
+$\left(\dfrac{360}{45}\right)\times\left(\dfrac{225}{45}\right)=8\times5=40$ carreaux.
+
+\corrige{de l'exercice 15}
+$\text{PPCM}(18\,;24)=72$ minutes.
+
+\corrige{de l'exercice 16}
+$\text{PPCM}(15\,;20)=60$ secondes, soit $1$ minute.
+
+\corrige{du sujet 1}
+1) $504=2^{3}\times3^{2}\times7$.\\
+2) $504=378\times1+126$ ; $378=126\times3+0$. $\text{PGCD}(504\,;378)=126$.\\
+3) $\text{PGCD}(24\,;36)=12$, donc $\text{PPCM}(24\,;36)=\dfrac{24\times36}{12}=72$.\\
+4a) $126$ sachets.\\
+4b) $504\div126=4$ chocolats noirs et $378\div126=3$ chocolats blancs par sachet.
+
+\corrige{du sujet 2}
+1) $273=3\times7\times13$.\\
+2) $273=195\times1+78$ ; $195=78\times2+39$ ; $78=39\times2+0$.
+$\text{PGCD}(273\,;195)=39$, donc $\dfrac{273}{195}=\dfrac{273\div39}{195\div39}=\dfrac75$.\\
+3) $\text{PGCD}(24\,;40)=8$, donc $\text{PPCM}(24\,;40)=\dfrac{24\times40}8=120$.\\
+4a) $120$ minutes, soit $2$ heures.\\
+4b) $6$h$00+2$h$=8$h$00$.
+
+\corrige{du sujet 3}
+1) $588=2^{2}\times3\times7^{2}$.\\
+2) $588=441\times1+147$ ; $441=147\times3+0$. $\text{PGCD}(588\,;441)=147$.\\
+3) $\text{PGCD}(21\,;28)=7$, donc $\text{PPCM}(21\,;28)=\dfrac{21\times28}7=84$.\\
+4a) Côté du carreau : $147$ cm.\\
+4b) Nombre de carreaux :
+$\left(\dfrac{588}{147}\right)\times\left(\dfrac{441}{147}\right)=4\times3=12$ carreaux.
+
+\end{multicols}
+\exercicesBanner
