@@ -1,1 +1,373 @@
 \chapter{Électrolyse et synthèse de l'eau}
+
+\noindent\textit{L'eau, molécule si familière, est en réalité composée de deux gaz :
+l'hydrogène et l'oxygène. Ce chapitre montre comment décomposer l'eau en ces deux gaz
+(électrolyse), et comment, à l'inverse, les recombiner pour reformer de l'eau (synthèse).}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{L'électrolyse de l'eau}
+
+\begin{definition}[Électrolyse de l'eau]
+L'\textbf{électrolyse de l'eau} est la décomposition de l'eau, sous l'effet d'un courant
+électrique, en dihydrogène et dioxygène. On recueille le \textbf{dihydrogène} $\mathrm{H_2}$
+à la \textbf{cathode} (électrode négative) et le \textbf{dioxygène} $\mathrm{O_2}$ à
+l'\textbf{anode} (électrode positive).
+\end{definition}
+
+\begin{propriete}[Équation-bilan de l'électrolyse]
+\[
+2\mathrm{H_2O}\longrightarrow2\mathrm{H_2}+\mathrm{O_2}.
+\]
+\end{propriete}
+
+\begin{propriete}[Rapport des volumes de gaz]
+Le volume de dihydrogène recueilli est \textbf{le double} du volume de dioxygène recueilli
+:
+\[
+V(\mathrm{H_2})=2\times V(\mathrm{O_2}).
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=1.2pt] (0,0) rectangle (1.7,4);
+\draw[onbo!50,fill=onbo!15] (0,0) rectangle (1.7,3.6);
+\node[below] at (0.85,-0.3) {\small cathode ($-$)};
+\node[above] at (0.85,4.25) {\small $\mathrm{H_2}$};
+\node[onbmuted] at (0.85,1.8) {\small $2V$};
+\draw[onbline,line width=1.2pt] (3.1,0) rectangle (4.8,4);
+\draw[onbo!50,fill=onbo!15] (3.1,0) rectangle (4.8,1.8);
+\node[below] at (3.95,-0.3) {\small anode ($+$)};
+\node[above] at (3.95,4.25) {\small $\mathrm{O_2}$};
+\node[onbmuted] at (3.95,0.9) {\small $V$};
+\end{tikzpicture}
+\fig{Figure — À l'électrolyse de l'eau, le volume de $\mathrm{H_2}$ recueilli est le
+double de celui de $\mathrm{O_2}$.}
+\end{illus}
+
+\begin{exemple}
+On recueille $50$ cm$^{3}$ de dihydrogène à la cathode. Le volume de dioxygène recueilli à
+l'anode est $V(\mathrm{O_2})=\dfrac{50}{2}=25$ cm$^{3}$.
+\end{exemple}
+
+\begin{propriete}[Tests d'identification des gaz]
+Le \textbf{dihydrogène} est identifié par le test à la flamme : approché d'une flamme, il
+provoque une petite détonation (« aboiement »). Le \textbf{dioxygène} est identifié par le
+test à la buchette incandescente : une buchette qui rougeoie sans flamme se
+\textbf{ranime} (se rallume) au contact du dioxygène.
+\end{propriete}
+
+\section{La synthèse de l'eau}
+
+\begin{definition}[Synthèse de l'eau]
+La \textbf{synthèse de l'eau} est la réaction \textbf{inverse} de l'électrolyse : le
+dihydrogène brûle dans le dioxygène pour former de l'eau.
+\end{definition}
+
+\begin{propriete}[Équation-bilan de la synthèse]
+\[
+2\mathrm{H_2}+\mathrm{O_2}\longrightarrow2\mathrm{H_2O}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={font=\small},align=center]
+\node[draw=onbo,rounded corners=3pt,fill=onbsoft,minimum width=3.4cm,minimum height=1.3cm] (L) {$2\mathrm{H_2}+\mathrm{O_2}$\\[2pt]\footnotesize (combustion)};
+\node[right=1cm of L,font=\Large] {$\longrightarrow$};
+\node[draw=onbgreen,rounded corners=3pt,fill=onbgreen!10,minimum width=3.4cm,minimum height=1.3cm,right=4cm of L] (R) {$2\mathrm{H_2O}$\\[2pt]\footnotesize (eau)};
+\end{tikzpicture}
+\fig{Figure — La synthèse de l'eau : combustion du dihydrogène dans le dioxygène.}
+\end{illus}
+
+\begin{exemple}
+Vérification de l'équilibrage : à gauche, $4$ atomes H et $2$ atomes O ; à droite ($2$
+molécules $\mathrm{H_2O}$), $4$ atomes H et $2$ atomes O. L'équation est équilibrée.
+\end{exemple}
+
+\begin{remarque}
+Électrolyse et synthèse de l'eau sont deux réactions \textbf{opposées} : l'électrolyse
+consomme de l'énergie électrique pour décomposer l'eau, tandis que la synthèse
+\textbf{libère} de l'énergie (sous forme de chaleur et de lumière) en la reformant.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Électrolyse de l'eau.} $2\mathrm{H_2O}\to2\mathrm{H_2}+\mathrm{O_2}$ ;
+$\mathrm{H_2}$ à la cathode ($-$), $\mathrm{O_2}$ à l'anode ($+$).\\[4pt]
+\textbf{Rapport des volumes.} $V(\mathrm{H_2})=2\times V(\mathrm{O_2})$.\\[4pt]
+\textbf{Tests d'identification.} $\mathrm{H_2}$ : détonation à la flamme. $\mathrm{O_2}$ :
+ranime une buchette incandescente.\\[4pt]
+\textbf{Synthèse de l'eau.} $2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$ (réaction inverse
+de l'électrolyse).\\[4pt]
+\textbf{Piège fréquent.} Ne pas inverser cathode et anode : c'est à la \textbf{cathode}
+(borne négative) que se dégage le \textbf{plus grand} volume de gaz ($\mathrm{H_2}$).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Écrire l'équation-bilan de l'électrolyse de l'eau}
+Partir de l'eau comme réactif, et du dihydrogène et du dioxygène comme produits, puis
+équilibrer avec les coefficients $2$, $2$ et $1$.
+\begin{exemple}
+$2\mathrm{H_2O}\to2\mathrm{H_2}+\mathrm{O_2}$.
+\end{exemple}
+
+\methode{Calculer le volume de dioxygène connaissant le volume de dihydrogène}
+Diviser par $2$ le volume de dihydrogène recueilli.
+\begin{exemple}
+$V(\mathrm{H_2})=40$ cm$^{3}$ : $V(\mathrm{O_2})=\dfrac{40}2=20$ cm$^{3}$.
+\end{exemple}
+
+\methode{Calculer le volume de dihydrogène connaissant le volume de dioxygène}
+Multiplier par $2$ le volume de dioxygène recueilli.
+\begin{exemple}
+$V(\mathrm{O_2})=15$ cm$^{3}$ : $V(\mathrm{H_2})=2\times15=30$ cm$^{3}$.
+\end{exemple}
+
+\methode{Identifier un gaz recueilli lors de l'électrolyse}
+Utiliser le test caractéristique : détonation à la flamme pour $\mathrm{H_2}$, buchette
+incandescente qui se ranime pour $\mathrm{O_2}$.
+\begin{exemple}
+Un gaz ranime une buchette incandescente : c'est du dioxygène.
+\end{exemple}
+
+\methode{Écrire et vérifier l'équation-bilan de la synthèse de l'eau}
+Partir du dihydrogène et du dioxygène comme réactifs, de l'eau comme produit, équilibrer,
+puis vérifier en comptant les atomes de chaque côté.
+\begin{exemple}
+$2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$ : $4$ atomes H et $2$ atomes O de chaque
+côté.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Électrolyse de l'eau}
+\exo{}\diff{1} Écrire l'équation-bilan de l'électrolyse de l'eau.
+
+\exo{}\diff{1} À quelle électrode recueille-t-on le dihydrogène ? le dioxygène ?
+
+\exo{}\diff{2} Quel est le rapport entre le volume de dihydrogène et le volume de
+dioxygène recueillis à l'électrolyse de l'eau ?
+
+\exo{}\diff{2} Pourquoi dit-on que l'électrolyse est une décomposition ?
+
+\rubrique{Calculs de volumes}
+\exo{}\diff{1} On recueille $40$ cm$^{3}$ de dihydrogène à la cathode. Calculer le volume
+de dioxygène recueilli à l'anode.
+
+\exo{}\diff{2} On recueille $15$ cm$^{3}$ de dioxygène à l'anode. Calculer le volume de
+dihydrogène recueilli à la cathode.
+
+\exo{}\diff{2} On recueille $100$ cm$^{3}$ de dihydrogène à la cathode. Calculer le
+volume de dioxygène recueilli à l'anode.
+
+\exo{}\diff{3} Au cours d'une électrolyse de l'eau, on recueille un gaz sur la cathode de
+volume $25$ cL. Calculer le volume de gaz qu'on recueille sur l'anode.
+
+\rubrique{Tests d'identification}
+\exo{}\diff{1} Quel test permet d'identifier le dihydrogène ?
+
+\exo{}\diff{1} Quel test permet d'identifier le dioxygène ?
+
+\exo{}\diff{2} Un gaz provoque une détonation au contact d'une flamme. De quel gaz
+s'agit-il ?
+
+\exo{}\diff{2} Une buchette incandescente se ranime au contact d'un gaz recueilli à
+l'anode. De quel gaz s'agit-il ? Ce résultat est-il cohérent avec l'électrode où il a été
+recueilli ?
+
+\rubrique{Synthèse de l'eau}
+\exo{}\diff{1} Écrire l'équation-bilan de la synthèse de l'eau.
+
+\exo{}\diff{2} Quelle est la différence entre l'électrolyse et la synthèse de l'eau ?
+
+\exo{}\diff{2} Vérifier que l'équation $2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$ est
+équilibrée, en comptant les atomes de chaque côté.
+
+\exo{}\diff{3} $4$ g de dihydrogène réagissent complètement avec $32$ g de dioxygène pour
+former de l'eau. Calculer la masse d'eau obtenue (loi de Lavoisier).
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Électrolyse de l'eau}
+\exo{}\diff{1} Comment appelle-t-on l'électrode négative ? l'électrode positive ?
+
+\exo{}\diff{2} Pourquoi l'électrolyse de l'eau nécessite-t-elle un courant électrique ?
+
+\exo{}\diff{2} Que devient l'eau au cours de l'électrolyse ?
+
+\exo{}\diff{1} Écrire, sans les coefficients, les deux gaz produits par l'électrolyse de
+l'eau.
+
+\exo{}\diff{2} Pourquoi ajoute-t-on parfois un peu d'acide à l'eau avant de l'électrolyser
+?
+
+\rubrique{Calculs de volumes}
+\exo{}\diff{2} On recueille $60$ cm$^{3}$ de dihydrogène à la cathode. Calculer le volume
+de dioxygène recueilli à l'anode.
+
+\exo{}\diff{2} On recueille $18$ cm$^{3}$ de dioxygène à l'anode. Calculer le volume de
+dihydrogène recueilli à la cathode.
+
+\exo{}\diff{2} On recueille $250$ cm$^{3}$ de dihydrogène à la cathode. Calculer le volume
+de dioxygène recueilli à l'anode.
+
+\exo{}\diff{3} Le volume total de gaz recueilli (dihydrogène $+$ dioxygène) est de $90$
+cm$^{3}$. Sachant que $V(\mathrm{H_2})=2\times V(\mathrm{O_2})$, calculer le volume de
+chaque gaz.
+
+\exo{}\diff{2} On recueille $12$ cL de dioxygène à l'anode. Calculer le volume de
+dihydrogène recueilli à la cathode.
+
+\rubrique{Tests d'identification}
+\exo{}\diff{1} Comment reconnaît-on le dihydrogène lors d'une expérience ?
+
+\exo{}\diff{2} Un gaz est recueilli à la cathode. Quel test permet de vérifier qu'il
+s'agit bien de dihydrogène ?
+
+\exo{}\diff{2} Pourquoi utilise-t-on une buchette \textbf{incandescente} (et non
+enflammée) pour tester le dioxygène ?
+
+\exo{}\diff{2} Deux tubes à essai contiennent chacun un gaz recueilli lors d'une
+électrolyse de l'eau. Le tube A contient un volume double de celui du tube B. Lequel
+contient le dihydrogène ?
+
+\exo{}\diff{3} Décrire une expérience simple permettant de distinguer le dihydrogène du
+dioxygène.
+
+\rubrique{Synthèse de l'eau}
+\exo{}\diff{1} Quels sont les réactifs de la synthèse de l'eau ?
+
+\exo{}\diff{2} Pourquoi la synthèse de l'eau est-elle qualifiée de réaction « inverse » de
+l'électrolyse ?
+
+\exo{}\diff{2} $8$ g de dihydrogène réagissent complètement avec $64$ g de dioxygène.
+Calculer la masse d'eau obtenue.
+
+\exo{}\diff{3} $2$ g de dihydrogène réagissent complètement avec $16$ g de dioxygène.
+Calculer la masse d'eau obtenue.
+
+\exo{}\diff{2} La synthèse de l'eau libère-t-elle ou consomme-t-elle de l'énergie ?
+Comparer avec l'électrolyse.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Électrolyse de l'eau]
+\begin{enumerate}[label=\arabic*)]
+\item Écris l'équation-bilan de l'électrolyse de l'eau.
+\item Au cours d'une électrolyse de l'eau, on recueille un gaz sur la cathode de volume
+$25$ cL.
+\begin{enumerate}[label=\alph*)]
+\item Ce gaz recueilli à la cathode, quel est-il ?
+\item Calcule le volume du gaz qu'on recueille sur l'anode.
+\end{enumerate}
+\item Quel test permet d'identifier le gaz recueilli à l'anode ?
+\end{enumerate}
+
+\sujetbac[Synthèse de l'eau]
+\begin{enumerate}[label=\arabic*)]
+\item Écris l'équation-bilan de la synthèse de l'eau.
+\item Quels sont les réactifs de cette réaction ? Quel est le produit ?
+\item $4$ g de dihydrogène réagissent avec $32$ g de dioxygène. Calcule la masse d'eau
+obtenue.
+\item En quoi cette réaction est-elle l'inverse de l'électrolyse de l'eau ?
+\end{enumerate}
+
+\sujetbac[Identification de gaz]
+\begin{enumerate}[label=\arabic*)]
+\item Cite le test permettant d'identifier le dihydrogène.
+\item Cite le test permettant d'identifier le dioxygène.
+\item Un tube contient $50$ cm$^{3}$ de gaz recueilli à la cathode lors d'une électrolyse.
+Calcule le volume de gaz recueilli à l'anode.
+\item De quel gaz s'agit-il dans chacun des deux tubes ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$2\mathrm{H_2O}\to2\mathrm{H_2}+\mathrm{O_2}$.
+
+\corrige{de l'exercice 2}
+Dihydrogène à la cathode ; dioxygène à l'anode.
+
+\corrige{de l'exercice 3}
+$V(\mathrm{H_2})=2\times V(\mathrm{O_2})$.
+
+\corrige{de l'exercice 4}
+Car l'eau (un seul corps) se transforme en deux corps différents, $\mathrm{H_2}$ et
+$\mathrm{O_2}$.
+
+\corrige{de l'exercice 5}
+$V(\mathrm{O_2})=\dfrac{40}2=20$ cm$^{3}$.
+
+\corrige{de l'exercice 6}
+$V(\mathrm{H_2})=2\times15=30$ cm$^{3}$.
+
+\corrige{de l'exercice 7}
+$V(\mathrm{O_2})=\dfrac{100}2=50$ cm$^{3}$.
+
+\corrige{de l'exercice 8}
+$V(\mathrm{O_2})=\dfrac{25}2=12{,}5$ cL.
+
+\corrige{de l'exercice 9}
+Le test à la flamme (détonation).
+
+\corrige{de l'exercice 10}
+Le test à la buchette incandescente (elle se ranime).
+
+\corrige{de l'exercice 11}
+Du dihydrogène.
+
+\corrige{de l'exercice 12}
+Du dioxygène ; c'est cohérent, car le dioxygène est recueilli à l'anode.
+
+\corrige{de l'exercice 13}
+$2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$.
+
+\corrige{de l'exercice 14}
+L'électrolyse décompose l'eau en $\mathrm{H_2}$ et $\mathrm{O_2}$ ; la synthèse les
+recombine pour reformer de l'eau.
+
+\corrige{de l'exercice 15}
+À gauche : $4$ atomes H, $2$ atomes O. À droite : $4$ atomes H, $2$ atomes O. Équation
+équilibrée.
+
+\corrige{de l'exercice 16}
+$m(\text{eau})=4+32=36$ g.
+
+\corrige{du sujet 1}
+1) $2\mathrm{H_2O}\to2\mathrm{H_2}+\mathrm{O_2}$.\\
+2) a) Dihydrogène $\mathrm{H_2}$. b) $V(\mathrm{O_2})=\dfrac{25}2=12{,}5$ cL.\\
+3) Le test à la buchette incandescente.
+
+\corrige{du sujet 2}
+1) $2\mathrm{H_2}+\mathrm{O_2}\to2\mathrm{H_2O}$.\\
+2) Réactifs : dihydrogène et dioxygène. Produit : eau.\\
+3) $m(\text{eau})=4+32=36$ g.\\
+4) L'électrolyse décompose l'eau en $\mathrm{H_2}$ et $\mathrm{O_2}$ ; la synthèse fait
+l'inverse, en recombinant $\mathrm{H_2}$ et $\mathrm{O_2}$ pour reformer de l'eau.
+
+\corrige{du sujet 3}
+1) Le test à la flamme (détonation).\\
+2) Le test à la buchette incandescente (elle se ranime).\\
+3) $V(\mathrm{O_2})=\dfrac{50}2=25$ cm$^{3}$.\\
+4) Cathode : dihydrogène ($50$ cm$^{3}$). Anode : dioxygène ($25$ cm$^{3}$).
+
+\end{multicols}
+\exercicesBanner
