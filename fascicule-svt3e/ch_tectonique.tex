@@ -1,1 +1,324 @@
 \chapter{La tectonique des plaques}
+
+\noindent\textit{Les continents ne sont pas immobiles : ils dérivent lentement, portés
+par d'immenses plaques rocheuses qui recouvrent la surface du globe. Ce chapitre étudie
+la structure interne de la Terre, ces plaques lithosphériques, et les phénomènes
+géologiques qui se produisent à leurs limites.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{La structure interne du globe}
+
+\begin{propriete}[Trois grandes enveloppes]
+De l'extérieur vers le centre, la Terre est constituée de la \textbf{croûte} (fine
+couche superficielle, continentale ou océanique), du \textbf{manteau} (épaisse couche
+rocheuse, en partie ductile), et du \textbf{noyau} (noyau externe liquide, noyau interne
+solide, riches en fer).
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\filldraw[onbo!70,draw=onbink,line width=1pt] (0,0) circle(2.2);
+\filldraw[onbgreen!45,draw=onbink,line width=1pt] (0,0) circle(1.7);
+\filldraw[onbo2!45,draw=onbink,line width=1pt] (0,0) circle(0.9);
+\filldraw[onbo2!75,draw=onbink,line width=1pt] (0,0) circle(0.4);
+\draw[onbmuted,line width=0.6pt] (2.35,1.7) -- (3.2,2.4);
+\node[right,font=\scriptsize] at (3.2,2.4) {croûte};
+\draw[onbmuted,line width=0.6pt] (1.2,1.2) -- (3.2,1.5);
+\node[right,font=\scriptsize] at (3.2,1.5) {manteau};
+\draw[onbmuted,line width=0.6pt] (0.6,0.6) -- (3.2,0.6);
+\node[right,font=\scriptsize] at (3.2,0.6) {noyau externe};
+\draw[onbmuted,line width=0.6pt] (0.15,-0.15) -- (3.2,-0.4);
+\node[right,font=\scriptsize] at (3.2,-0.4) {noyau interne};
+\end{tikzpicture}
+\fig{Figure — Structure interne de la Terre : croûte, manteau, noyau externe, noyau interne.}
+\end{illus}
+
+\section{Les plaques lithosphériques}
+
+\begin{definition}[Lithosphère et plaques]
+La \textbf{lithosphère} est la couche rigide superficielle de la Terre (croûte $+$
+sommet du manteau), découpée en une dizaine de grandes \textbf{plaques
+lithosphériques}. Ces plaques « flottent » et se déplacent lentement sur
+l'\textbf{asthénosphère}, une couche du manteau plus ductile située en dessous.
+\end{definition}
+
+\begin{propriete}[Une dérive très lente]
+Les plaques se déplacent de quelques \textbf{centimètres par an}, un mouvement
+imperceptible à l'échelle humaine mais considérable à l'échelle des temps géologiques.
+Cette théorie confirme et explique la \textbf{dérive des continents}, proposée dès 1912
+par Alfred Wegener.
+\end{propriete}
+
+\begin{exemple}
+Une plaque se déplaçant à $v=2$ cm/an parcourt, en $t=1\,000\,000$ d'années, une
+distance $d=v\times t=2\,000\,000$ cm $=20$ km.
+\end{exemple}
+
+\section{Les limites de plaques}
+
+\begin{propriete}[Trois types de limites]
+\begin{itemize}
+\item \textbf{Limite divergente} (dorsale océanique) : les plaques s'\textbf{écartent} ;
+du magma remonte et forme de la \textbf{nouvelle croûte océanique}.
+\item \textbf{Limite convergente} : les plaques se \textbf{rapprochent}. Si une plaque
+océanique rencontre une plaque continentale (ou une autre plaque océanique), elle plonge
+sous l'autre : c'est la \textbf{subduction} (fosse océanique, volcans, séismes). Si deux
+plaques continentales se rencontrent, elles se \textbf{soulèvent} : c'est une
+\textbf{collision} (formation d'une chaîne de montagnes, comme l'Himalaya).
+\item \textbf{Limite coulissante} (faille transformante) : les plaques
+\textbf{glissent} latéralement l'une contre l'autre, sans création ni destruction de
+croûte, mais avec de fréquents \textbf{séismes}.
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.75]
+\filldraw[onbo!25,draw=onbo,line width=1pt] (0,0) rectangle (1.4,0.7);
+\filldraw[onbo!25,draw=onbo,line width=1pt] (2.4,0) rectangle (3.8,0.7);
+\draw[<-,onbgreen,line width=1.2pt] (1.5,0.35) -- (0.9,0.35);
+\draw[->,onbgreen,line width=1.2pt] (2.3,0.35) -- (2.9,0.35);
+\node[below,font=\scriptsize] at (1.9,-0.15) {divergente};
+
+\begin{scope}[shift={(6,0)}]
+\filldraw[onbo!25,draw=onbo,line width=1pt] (0,0) rectangle (1.4,0.7);
+\filldraw[onbo2!25,draw=onbo2,line width=1pt] (2,0) rectangle (3.4,0.7);
+\draw[->,onbgreen,line width=1.2pt] (1.5,0.35) -- (1.95,0.15);
+\draw[<-,onbgreen,line width=1.2pt] (1.5,0.55) -- (1.95,0.55);
+\node[below,font=\scriptsize] at (1.7,-0.15) {convergente};
+\end{scope}
+
+\begin{scope}[shift={(12,0)}]
+\filldraw[onbo!25,draw=onbo,line width=1pt] (0,0) rectangle (1.4,0.7);
+\filldraw[onbo!25,draw=onbo,line width=1pt] (1.5,0) rectangle (2.9,0.7);
+\draw[->,onbgreen,line width=1.2pt] (0.7,0.85) -- (1.3,0.85);
+\draw[<-,onbgreen,line width=1.2pt] (1.6,-0.15) -- (2.2,-0.15);
+\node[below,font=\scriptsize] at (1.45,-0.4) {coulissante};
+\end{scope}
+\end{tikzpicture}
+\fig{Figure — Les trois types de limites de plaques et le mouvement relatif des plaques.}
+\end{illus}
+
+\begin{remarque}
+Séismes et volcans ne sont pas répartis au hasard sur le globe : ils se concentrent très
+majoritairement aux \textbf{limites de plaques}, dessinant des zones à risque bien
+identifiées (comme la « ceinture de feu » qui entoure l'océan Pacifique).
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Structure interne.} Croûte, manteau, noyau externe (liquide), noyau interne
+(solide).\\[4pt]
+\textbf{Lithosphère.} Couche rigide découpée en plaques, qui se déplacent sur
+l'asthénosphère.\\[4pt]
+\textbf{Vitesse.} Quelques cm/an ; $d=v\times t$.\\[4pt]
+\textbf{Trois limites.} Divergente (écartement, dorsale) ; convergente (subduction ou
+collision) ; coulissante (glissement, séismes).\\[4pt]
+\textbf{Répartition.} Séismes et volcans se concentrent aux limites de plaques.\\[4pt]
+\textbf{Piège fréquent.} Une limite convergente ne produit pas toujours des volcans : la
+collision continentale (Himalaya) forme des montagnes sans volcanisme notable, contrairement
+à la subduction.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer une distance de déplacement d'une plaque}
+Appliquer $d=v\times t$, en veillant à la cohérence des unités.
+\begin{exemple}
+$v=5$ cm/an, $t=2\,000\,000$ ans : $d=10\,000\,000$ cm $=100$ km.
+\end{exemple}
+
+\methode{Identifier un type de limite de plaques}
+Observer si les plaques s'écartent (divergente), se rapprochent (convergente) ou
+glissent latéralement (coulissante).
+\begin{exemple}
+Une dorsale océanique, où de la croûte se forme en continu, est une limite divergente.
+\end{exemple}
+
+\methode{Relier un phénomène géologique à un type de limite}
+Associer volcans et fosses océaniques à la subduction ; montagnes sans volcans à la
+collision ; séismes fréquents sans volcanisme à une limite coulissante.
+\begin{exemple}
+Une chaîne de montagnes sans activité volcanique évoque une collision continentale.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Structure interne}
+\exo{}\diff{1} Citer, de l'extérieur vers le centre, les trois grandes enveloppes de la
+Terre.
+
+\exo{}\diff{2} Quelle est la différence entre le noyau externe et le noyau interne ?
+
+\rubrique{Plaques lithosphériques}
+\exo{}\diff{2} Qu'est-ce que la lithosphère ?
+
+\exo{}\diff{2} Sur quelle couche les plaques lithosphériques se déplacent-elles ?
+
+\exo{}\diff{2} Une plaque se déplace à $v=3$ cm/an pendant $t=1\,000\,000$ ans.
+Calculer la distance parcourue, en km.
+
+\rubrique{Limites de plaques}
+\exo{}\diff{1} Citer les trois types de limites de plaques.
+
+\exo{}\diff{2} Que se passe-t-il au niveau d'une limite divergente ?
+
+\exo{}\diff{2} Qu'est-ce que la subduction ?
+
+\exo{}\diff{2} Comment se forme une chaîne de montagnes comme l'Himalaya ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Structure interne}
+\exo{}\diff{3} Pourquoi le noyau interne est-il solide alors que le noyau externe,
+soumis à une température plus élevée, est liquide ? (indice : pression)
+
+\rubrique{Plaques lithosphériques}
+\exo{}\diff{2} Une plaque se déplace à $v=4$ cm/an pendant $t=500\,000$ ans. Calculer
+la distance parcourue, en km.
+
+\exo{}\diff{3} Expliquer, en une phrase, pourquoi le mouvement des plaques est
+imperceptible à l'échelle d'une vie humaine.
+
+\rubrique{Limites de plaques}
+\exo{}\diff{3} Pourquoi une limite divergente ne produit-elle pas de subduction ?
+
+\exo{}\diff{3} Pourquoi une limite convergente entre deux plaques continentales ne
+produit-elle généralement pas de volcanisme important, contrairement à la subduction
+d'une plaque océanique ?
+
+\exo{}\diff{2} Une limite coulissante crée-t-elle de la nouvelle croûte océanique ?
+Justifier.
+
+\exo{}\diff{3} Pourquoi les zones proches des limites de plaques sont-elles davantage
+exposées aux séismes et aux éruptions volcaniques ?
+
+\exo{}\diff{2} Citer un exemple de relief formé par la collision de deux plaques
+continentales.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[La structure interne et les plaques]
+\begin{enumerate}[label=\arabic*)]
+\item Cite, de l'extérieur vers le centre, les enveloppes internes de la Terre.
+\item Qu'est-ce que la lithosphère ?
+\item Une plaque se déplace à $v=2$ cm/an. Calcule la distance parcourue en
+$t=2\,000\,000$ ans, en km.
+\item Sur quelle couche les plaques lithosphériques se déplacent-elles ?
+\end{enumerate}
+
+\sujetbac[Les limites de plaques]
+\begin{enumerate}[label=\arabic*)]
+\item Cite les trois types de limites de plaques.
+\item Décris ce qui se passe au niveau d'une dorsale océanique.
+\item Qu'est-ce que la subduction, et quels phénomènes géologiques y sont associés ?
+\item Comment se forme une chaîne de montagnes comme l'Himalaya ?
+\end{enumerate}
+
+\sujetbac[Risques géologiques]
+\begin{enumerate}[label=\arabic*)]
+\item Où se concentrent la majorité des séismes et des volcans sur le globe ?
+\item Quel type de limite de plaques est associé à de fréquents séismes sans
+volcanisme ?
+\item Pourquoi une limite de subduction est-elle particulièrement exposée aux risques
+sismiques et volcaniques ?
+\item Cite un exemple de zone géographique fortement exposée à ces risques (indice :
+« ceinture de feu »).
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Croûte, manteau, noyau.
+
+\corrige{de l'exercice 2}
+Le noyau externe est liquide, le noyau interne est solide.
+
+\corrige{de l'exercice 3}
+La couche rigide superficielle de la Terre, découpée en plaques.
+
+\corrige{de l'exercice 4}
+Sur l'asthénosphère.
+
+\corrige{de l'exercice 5}
+$d=3\times1\,000\,000=3\,000\,000$ cm $=30$ km.
+
+\corrige{de l'exercice 6}
+Divergente, convergente, coulissante.
+
+\corrige{de l'exercice 7}
+Les plaques s'écartent, du magma remonte et forme une nouvelle croûte océanique.
+
+\corrige{de l'exercice 8}
+Le plongement d'une plaque océanique sous une autre plaque, à une limite convergente.
+
+\corrige{de l'exercice 9}
+Par la collision de deux plaques continentales, qui se soulèvent l'une contre l'autre.
+
+\corrige{de l'exercice 10}
+Car la pression très élevée au centre de la Terre maintient le fer à l'état solide,
+malgré une température encore plus élevée qu'au niveau du noyau externe.
+
+\corrige{de l'exercice 11}
+$d=4\times500\,000=2\,000\,000$ cm $=20$ km.
+
+\corrige{de l'exercice 12}
+Car la vitesse de déplacement (quelques cm/an) est trop faible pour être perçue sur la
+durée d'une vie humaine.
+
+\corrige{de l'exercice 13}
+Car les plaques s'y écartent au lieu de se rapprocher : aucune plaque ne plonge sous
+l'autre.
+
+\corrige{de l'exercice 14}
+Car aucune plaque océanique ne plonge sous l'autre : il n'y a pas de fusion de croûte en
+profondeur pour alimenter des volcans, seulement un soulèvement des reliefs.
+
+\corrige{de l'exercice 15}
+Non, car les plaques glissent latéralement sans écartement ni rapprochement : il n'y a
+ni création ni destruction de croûte.
+
+\corrige{de l'exercice 16}
+Car les tensions et les mouvements entre plaques y sont les plus importants, ce qui
+génère fréquemment séismes et, dans le cas de la subduction, volcanisme.
+
+\corrige{de l'exercice 17}
+Par exemple : l'Himalaya.
+
+\corrige{du sujet 1}
+1) Croûte, manteau, noyau (externe puis interne).\\
+2) La couche rigide superficielle de la Terre, découpée en plaques.\\
+3) $d=2\times2\,000\,000=4\,000\,000$ cm $=40$ km.\\
+4) Sur l'asthénosphère.
+
+\corrige{du sujet 2}
+1) Divergente, convergente, coulissante.\\
+2) Les plaques s'écartent, du magma remonte et forme une nouvelle croûte océanique.\\
+3) Le plongement d'une plaque océanique sous une autre ; volcans, fosses océaniques et
+séismes y sont associés.\\
+4) Par collision de deux plaques continentales, qui se soulèvent.
+
+\corrige{du sujet 3}
+1) Aux limites de plaques.\\
+2) La limite coulissante.\\
+3) Car le plongement de la plaque en profondeur génère à la fois des frictions
+(séismes) et de la fusion de roche (volcanisme).\\
+4) Par exemple : la ceinture de feu du Pacifique.
+
+\end{multicols}
+\exercicesBanner
