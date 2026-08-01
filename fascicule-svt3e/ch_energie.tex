@@ -1,1 +1,318 @@
 \chapter{Phénomènes énergétiques : respiration cellulaire et fermentation}
+
+\noindent\textit{Pour fonctionner, se contracter ou simplement rester en vie, les cellules
+ont besoin d'énergie. Cette énergie provient de la dégradation du glucose, selon deux voies
+possibles : la respiration cellulaire, qui utilise le dioxygène, et la fermentation, qui
+s'en passe.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{La respiration cellulaire}
+
+\begin{definition}[Respiration cellulaire]
+La \textbf{respiration cellulaire} est la réaction par laquelle une cellule dégrade
+complètement le \textbf{glucose} en présence de \textbf{dioxygène}, pour libérer de
+l'\textbf{énergie} utilisable :
+\[
+\mathrm{C_6H_{12}O_6 + 6\,O_2 \longrightarrow 6\,CO_2 + 6\,H_2O + \text{énergie}}.
+\]
+\end{definition}
+
+\begin{propriete}[Origine des réactifs]
+Le \textbf{glucose} provient de la digestion des aliments, transporté par le sang depuis
+l'intestin. Le \textbf{dioxygène} provient de l'air, capté au niveau des alvéoles
+pulmonaires (hématose, voir chapitre précédent) et transporté par le sang jusqu'aux
+cellules.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.8]
+\filldraw[onbo!20,draw=onbo,line width=1.1pt] (0,0) rectangle (2.6,0.9);
+\node[font=\small] at (1.3,0.45) {glucose $+$ $\mathrm{O_2}$};
+\draw[->,onbgreen,line width=1.3pt] (2.6,0.45) -- (4.3,0.45);
+\node[above,onbgreen,font=\scriptsize] at (3.45,0.65) {respiration};
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.1pt] (4.8,0) rectangle (8.7,0.9);
+\node[font=\small] at (6.75,0.45) {$\mathrm{CO_2}$ $+$ $\mathrm{H_2O}$ $+$ énergie};
+\end{tikzpicture}
+\fig{Figure — Bilan simplifié de la respiration cellulaire.}
+\end{illus}
+
+\section{La fermentation}
+
+\begin{definition}[Fermentation]
+La \textbf{fermentation} est une dégradation \textbf{incomplète} du glucose, qui ne
+nécessite \textbf{pas de dioxygène}. Elle libère de l'énergie, mais en quantité
+\textbf{beaucoup plus faible} que la respiration, pour une même quantité de glucose
+dégradée.
+\end{definition}
+
+\begin{propriete}[Fermentation lactique — muscle en effort intense]
+Lorsque l'apport de dioxygène devient insuffisant (effort musculaire intense), les
+cellules musculaires basculent vers la fermentation lactique :
+\[
+\mathrm{C_6H_{12}O_6 \longrightarrow 2\,C_3H_6O_3 + \text{énergie}}
+\]
+(le produit formé, $\mathrm{C_3H_6O_3}$, est l'\textbf{acide lactique}).
+\end{propriete}
+
+\begin{remarque}
+L'accumulation d'acide lactique dans le muscle est responsable de la sensation de
+brûlure et de fatigue musculaire ressentie lors d'un effort intense et prolongé.
+\end{remarque}
+
+\begin{propriete}[Fermentation alcoolique — levures]
+Certains micro-organismes, comme les levures, réalisent une fermentation
+\textbf{alcoolique} :
+\[
+\mathrm{C_6H_{12}O_6 \longrightarrow 2\,C_2H_6O + 2\,CO_2 + \text{énergie}}
+\]
+(le produit $\mathrm{C_2H_6O}$ est l'\textbf{éthanol}). Cette réaction est utilisée dans
+la fabrication du pain (le $\mathrm{CO_2}$ fait lever la pâte) et des boissons
+fermentées.
+\end{propriete}
+
+\section{Comparer respiration et fermentation}
+
+\begin{propriete}[Tableau comparatif]
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Respiration} & \textbf{Fermentation} \\
+\midrule
+Dioxygène nécessaire & Oui & Non \\
+Dégradation du glucose & Complète & Incomplète \\
+Énergie libérée & Élevée & Faible \\
+Déchets & $\mathrm{CO_2}$, $\mathrm{H_2O}$ & acide lactique, ou éthanol $+$ $\mathrm{CO_2}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{propriete}
+
+\begin{exemple}
+Un sprinteur qui court à allure maximale ne peut pas apporter assez de dioxygène à ses
+muscles : une partie de l'énergie provient alors de la fermentation lactique, ce qui
+explique les courbatures ressenties le lendemain.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Respiration cellulaire.} $\mathrm{C_6H_{12}O_6+6\,O_2\to6\,CO_2+6\,H_2O+}$
+énergie ; dégradation complète, énergie élevée.\\[4pt]
+\textbf{Fermentation lactique.} $\mathrm{C_6H_{12}O_6\to2\,C_3H_6O_3+}$ énergie (muscle,
+sans $\mathrm{O_2}$).\\[4pt]
+\textbf{Fermentation alcoolique.} $\mathrm{C_6H_{12}O_6\to2\,C_2H_6O+2\,CO_2+}$ énergie
+(levures).\\[4pt]
+\textbf{Comparaison.} La fermentation libère beaucoup moins d'énergie que la respiration,
+pour une même quantité de glucose.\\[4pt]
+\textbf{Piège fréquent.} La fermentation n'est pas « meilleure » ou « plus rapide » : elle
+est simplement la seule option quand le dioxygène manque, avec un rendement énergétique
+bien plus faible.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Écrire et vérifier l'équation de la respiration cellulaire}
+Partir de glucose $+$ dioxygène, produire dioxyde de carbone $+$ eau $+$ énergie, puis
+compter les atomes de chaque côté.
+\begin{exemple}
+$\mathrm{C_6H_{12}O_6+6\,O_2\to6\,CO_2+6\,H_2O}$ : vérifier C $6=6$, H $12=12$, O
+$18=6\times2+6=18$.
+\end{exemple}
+
+\methode{Distinguer respiration et fermentation}
+Se demander si le dioxygène est disponible en quantité suffisante : oui $\to$
+respiration ; non $\to$ fermentation.
+\begin{exemple}
+Une pâte à pain qui lève grâce aux levures, sans air, réalise une fermentation
+alcoolique.
+\end{exemple}
+
+\methode{Interpréter une situation d'effort musculaire}
+Identifier si l'apport en dioxygène est suffisant (respiration) ou dépassé par la demande
+(fermentation lactique, acide lactique, fatigue musculaire).
+\begin{exemple}
+Une crampe après un sprint s'explique par une accumulation d'acide lactique issue de la
+fermentation lactique.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Respiration cellulaire}
+\exo{}\diff{1} Écrire l'équation-bilan simplifiée de la respiration cellulaire.
+
+\exo{}\diff{2} D'où proviennent le glucose et le dioxygène utilisés par les cellules ?
+
+\exo{}\diff{2} Quels sont les produits de la respiration cellulaire ?
+
+\rubrique{Fermentation}
+\exo{}\diff{1} Qu'est-ce que la fermentation ?
+
+\exo{}\diff{2} Quel produit forme la fermentation lactique ?
+
+\exo{}\diff{2} Quels produits forme la fermentation alcoolique ?
+
+\exo{}\diff{2} Dans quelle situation le muscle utilise-t-il la fermentation lactique
+plutôt que la respiration ?
+
+\rubrique{Comparaison}
+\exo{}\diff{2} Laquelle des deux voies, respiration ou fermentation, nécessite du
+dioxygène ?
+
+\exo{}\diff{2} Laquelle des deux voies libère le plus d'énergie pour une même quantité de
+glucose ?
+
+\exo{}\diff{3} Pourquoi ressent-on des courbatures après un effort physique intense et
+inhabituel ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Respiration cellulaire}
+\exo{}\diff{2} Vérifier que l'équation-bilan de la respiration cellulaire, donnée plus
+haut, est bien équilibrée (compter les atomes de C, H et O de chaque côté).
+
+\exo{}\diff{3} Expliquer le lien entre la respiration pulmonaire (chapitre précédent) et
+la respiration cellulaire.
+
+\rubrique{Fermentation}
+\exo{}\diff{2} Vérifier que l'équation de la fermentation lactique
+$\mathrm{C_6H_{12}O_6\to2\,C_3H_6O_3}$ est équilibrée.
+
+\exo{}\diff{2} Vérifier que l'équation de la fermentation alcoolique
+$\mathrm{C_6H_{12}O_6\to2\,C_2H_6O+2\,CO_2}$ est équilibrée.
+
+\exo{}\diff{3} Pourquoi la fabrication du pain utilise-t-elle la fermentation alcoolique
+des levures ?
+
+\rubrique{Comparaison}
+\exo{}\diff{3} Un athlète de fond (longue distance) et un sprinteur (course très courte
+et intense) sollicitent-ils les deux voies énergétiques dans les mêmes proportions ?
+Justifier.
+
+\exo{}\diff{3} Pourquoi la respiration est-elle qualifiée de dégradation « complète » du
+glucose, contrairement à la fermentation ?
+
+\exo{}\diff{2} Citer un point commun entre la respiration cellulaire et la fermentation
+(en dehors du glucose de départ).
+
+\exo{}\diff{3} Expliquer pourquoi un muscle ne peut pas fonctionner indéfiniment par
+fermentation lactique seule.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[La respiration cellulaire]
+\begin{enumerate}[label=\arabic*)]
+\item Écris l'équation-bilan simplifiée de la respiration cellulaire.
+\item D'où proviennent le glucose et le dioxygène nécessaires à cette réaction ?
+\item Quels sont les produits formés ?
+\item Pourquoi cette réaction est-elle indispensable au fonctionnement des cellules ?
+\end{enumerate}
+
+\sujetbac[Fermentation et effort musculaire]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce que la fermentation lactique ?
+\item Dans quelle situation un muscle a-t-il recours à cette voie ?
+\item Quel produit s'accumule dans le muscle, et quelle sensation cela provoque-t-il ?
+\item Compare, en une phrase, l'énergie libérée par la fermentation à celle libérée par
+la respiration.
+\end{enumerate}
+
+\sujetbac[La fermentation alcoolique et ses usages]
+\begin{enumerate}[label=\arabic*)]
+\item Écris l'équation-bilan de la fermentation alcoolique.
+\item Quels organismes réalisent cette réaction ?
+\item Pourquoi cette réaction est-elle utilisée dans la fabrication du pain ?
+\item Cette réaction nécessite-t-elle du dioxygène ? Justifie.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\mathrm{C_6H_{12}O_6+6\,O_2\to6\,CO_2+6\,H_2O+}$ énergie.
+
+\corrige{de l'exercice 2}
+Le glucose provient de la digestion des aliments ; le dioxygène provient de l'air, capté
+au niveau des alvéoles pulmonaires.
+
+\corrige{de l'exercice 3}
+Le dioxyde de carbone, l'eau, et de l'énergie.
+
+\corrige{de l'exercice 4}
+Une dégradation incomplète du glucose, sans dioxygène, libérant peu d'énergie.
+
+\corrige{de l'exercice 5}
+L'acide lactique.
+
+\corrige{de l'exercice 6}
+De l'éthanol et du dioxyde de carbone.
+
+\corrige{de l'exercice 7}
+Lors d'un effort intense, quand l'apport de dioxygène devient insuffisant pour répondre
+aux besoins du muscle.
+
+\corrige{de l'exercice 8}
+La respiration.
+
+\corrige{de l'exercice 9}
+La respiration.
+
+\corrige{de l'exercice 10}
+Car les muscles ont utilisé la fermentation lactique, qui a fait s'accumuler de l'acide
+lactique responsable de la sensation douloureuse.
+
+\corrige{de l'exercice 11}
+Gauche : C $=6$, H $=12$, O $=6+12=18$. Droite : C $=6$, H $=12$, O $=12+6=18$. Équation
+équilibrée.
+
+\corrige{de l'exercice 12}
+Gauche : C $=6$, H $=12$, O $=6$. Droite : C $=2\times3=6$, H $=2\times6=12$, O
+$=2\times3=6$. Équation équilibrée.
+
+\corrige{de l'exercice 13}
+Gauche : C $=6$, H $=12$, O $=6$. Droite : C $=2\times2+2=6$, H $=2\times6=12$, O
+$=2\times1+2\times2=6$. Équation équilibrée.
+
+\corrige{de l'exercice 14}
+Car le dioxyde de carbone produit par les levures forme des bulles qui font lever la
+pâte.
+
+\corrige{du sujet 1}
+1) $\mathrm{C_6H_{12}O_6+6\,O_2\to6\,CO_2+6\,H_2O+}$ énergie.\\
+2) Le glucose vient de la digestion des aliments ; le dioxygène vient de l'air, capté aux
+alvéoles pulmonaires.\\
+3) Le dioxyde de carbone, l'eau et de l'énergie.\\
+4) Car c'est cette énergie qui permet aux cellules de fonctionner (contraction
+musculaire, etc.).
+
+\corrige{du sujet 2}
+1) Une dégradation incomplète du glucose en acide lactique, sans dioxygène.\\
+2) Lorsque l'effort musculaire est trop intense pour que l'apport en dioxygène suffise.\\
+3) L'acide lactique s'accumule, provoquant une sensation de brûlure et de fatigue
+musculaire.\\
+4) La fermentation libère beaucoup moins d'énergie que la respiration, pour une même
+quantité de glucose.
+
+\corrige{du sujet 3}
+1) $\mathrm{C_6H_{12}O_6\to2\,C_2H_6O+2\,CO_2+}$ énergie.\\
+2) Les levures (micro-organismes).\\
+3) Car le dioxyde de carbone produit fait lever la pâte.\\
+4) Non, la fermentation ne nécessite pas de dioxygène : c'est justement ce qui la
+distingue de la respiration.
+
+\end{multicols}
+\exercicesBanner
