@@ -1,1 +1,465 @@
 \chapter{Proportionnalité, pourcentages, échelles}
+
+\noindent\textit{La proportionnalité est partout dans la vie courante : le prix payé au
+marché selon la quantité achetée, une distance sur une carte, une vitesse constante, une
+remise en pourcentage. Ce chapitre rassemble les outils pour reconnaître et exploiter une
+situation de proportionnalité : produit en croix, pourcentages, évolutions successives,
+échelles et vitesse moyenne.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Grandeurs proportionnelles}
+
+\begin{definition}[Grandeurs proportionnelles]
+Deux grandeurs sont \textbf{proportionnelles} si l'on passe des valeurs de l'une aux valeurs
+de l'autre en multipliant toujours par le \textbf{même nombre}, appelé \textbf{coefficient de
+proportionnalité}.
+\end{definition}
+
+\begin{propriete}[Produit en croix]
+Dans un tableau de proportionnalité à deux colonnes de valeurs $a\,;b$ et $c\,;d$, on a
+l'égalité des produits en croix :
+\[
+\frac ab=\frac cd \iff a\times d=b\times c.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[onbline,line width=0.8pt] (0,0) rectangle (6,1.6);
+\draw[onbline,line width=0.8pt] (2,0) -- (2,1.6);
+\draw[onbline,line width=0.8pt] (0,0.8) -- (6,0.8);
+\node at (1,1.2) {\small Masse (kg)};
+\node at (1,0.4) {\small Prix (FCFA)};
+\node at (3,1.2) {\small $5$};
+\node at (3,0.4) {\small $3\,500$};
+\node at (5,1.2) {\small $8$};
+\node at (5,0.4) {\small $x$};
+\draw[onbo,line width=1.1pt] (3,1.2) -- (5,0.4);
+\draw[onbo,line width=1.1pt] (5,1.2) -- (3,0.4);
+\end{tikzpicture}
+\fig{Figure — Produit en croix dans un tableau de proportionnalité :
+$x=\dfrac{8\times3\,500}{5}=5\,600$ FCFA.}
+\end{illus}
+
+\begin{exemple}
+Un sac de $5$ kg de riz coûte $3\,500$ FCFA. Le prix de $8$ kg vérifie
+$\dfrac x8=\dfrac{3\,500}5$, donc $x=\dfrac{8\times3\,500}5=5\,600$ FCFA.
+\end{exemple}
+
+\section{Pourcentages}
+
+\begin{definition}[Pourcentage]
+Prendre $t\,\%$ d'une quantité $Q$, c'est calculer $\dfrac t{100}\times Q$.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) rectangle (10,1);
+\draw[fill=onbo,draw=onbo,line width=0.8pt] (0,0) rectangle (1.8,1);
+\draw[onbmuted,dashed] (1.8,-0.15) -- (1.8,1.3);
+\node[above] at (1.8,1.35) {\small $18\,\%$};
+\node[below] at (5,-0.3) {\small $45\,000$ FCFA $\ (100\,\%)$};
+\end{tikzpicture}
+\fig{Figure — $18\,\%$ de $45\,000$ FCFA représentés par la portion colorée :
+$0{,}18\times45\,000=8\,100$ FCFA.}
+\end{illus}
+
+\begin{exemple}
+$18\,\%$ de $45\,000$ FCFA $=0{,}18\times45\,000=8\,100$ FCFA.
+\end{exemple}
+
+\begin{propriete}[Taux de variation]
+Le \textbf{taux de variation} entre une valeur initiale $V_i$ et une valeur finale $V_f$ est
+\[
+t=\frac{V_f-V_i}{V_i}\times100 \quad(\text{en }\%).
+\]
+Il est \textbf{positif} pour une augmentation, \textbf{négatif} pour une baisse.
+\end{propriete}
+
+\begin{exemple}
+Un article passe de $25\,000$ à $29\,000$ FCFA : $t=\dfrac{29\,000-25\,000}{25\,000}\times100=16\,\%$
+(hausse de $16\,\%$).
+\end{exemple}
+
+\section{Évolutions successives}
+
+\begin{propriete}[Coefficient multiplicateur]
+Augmenter une quantité de $t\,\%$ revient à la multiplier par $1+\dfrac t{100}$ ; la
+diminuer de $t\,\%$ revient à la multiplier par $1-\dfrac t{100}$. Pour \textbf{deux}
+évolutions successives, on \textbf{multiplie} les deux coefficients (on ne les additionne
+\textbf{pas}).
+\end{propriete}
+
+\begin{exemple}
+Un prix de $50\,000$ FCFA subit une hausse de $20\,\%$ puis une baisse de $15\,\%$ :
+$50\,000\times1{,}20\times0{,}85=51\,000$ FCFA. Le coefficient global est
+$1{,}20\times0{,}85=1{,}02$, soit une hausse globale de seulement $2\,\%$ (et non $5\,\%$).
+\end{exemple}
+
+\begin{remarque}
+\textbf{Piège classique} : une hausse de $20\,\%$ suivie d'une baisse de $20\,\%$ ne ramène
+\textbf{pas} au prix initial ! Coefficient global $1{,}20\times0{,}80=0{,}96$ : il reste une
+baisse de $4\,\%$.
+\end{remarque}
+
+\section{Échelles}
+
+\begin{definition}[Échelle]
+L'\textbf{échelle} d'une carte ou d'un plan est le rapport (dans la \textbf{même unité}) entre
+une distance sur le document et la distance réelle correspondante :
+$\text{échelle}=\dfrac{\text{distance sur le document}}{\text{distance réelle}}$.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (0,0.8) rectangle (2,1.3);
+\node[above] at (1,1.45) {\small carte : $4$ cm};
+\draw[fill=onbo2,draw=onbo,line width=0.9pt] (0,0) rectangle (8,0.5);
+\node[below] at (4,-0.2) {\small réalité : $1$ km};
+\end{tikzpicture}
+\fig{Figure — Sur une carte à l'échelle $1/25\,000$, $4$ cm représentent $1$ km dans la
+réalité.}
+\end{illus}
+
+\begin{exemple}
+Échelle $\dfrac1{25\,000}$ : $4$ cm sur la carte correspondent à
+$4\times25\,000=100\,000$ cm $=1$ km dans la réalité.
+\end{exemple}
+
+\section{Vitesse moyenne}
+
+\begin{definition}[Vitesse moyenne]
+La \textbf{vitesse moyenne} est le quotient de la distance parcourue $d$ par la durée $t$
+du trajet : $v=\dfrac dt$. On en déduit $d=v\times t$ et $t=\dfrac dv$.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=5.5cm,axis lines=middle,xlabel={\small temps (h)},ylabel={\small distance (km)},
+  xmin=0,xmax=4,ymin=0,ymax=340,xtick={1,2,3},ytick={80,160,240,320}]
+\addplot[onbo,line width=1.2pt,domain=0:3.5]{80*x};
+\filldraw[onbink] (axis cs:3,240) circle(2pt);
+\node[onbink,anchor=west] at (axis cs:3.1,240) {\small $(3\,;240)$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — À vitesse constante $80$ km/h, la distance parcourue est proportionnelle au
+temps : $d=80t$.}
+\end{illus}
+
+\begin{exemple}
+Une voiture parcourt $240$ km en $3$ h : $v=\dfrac{240}3=80$ km/h.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Proportionnalité.} Coefficient constant ; produit en croix $ad=bc$.\\[4pt]
+\textbf{Pourcentage.} $t\,\%$ de $Q=\dfrac t{100}\times Q$. Taux de variation :
+$\dfrac{V_f-V_i}{V_i}\times100$.\\[4pt]
+\textbf{Évolutions successives.} On \textbf{multiplie} les coefficients multiplicateurs
+$\big(1\pm\frac t{100}\big)$ ; ne jamais additionner les pourcentages.\\[4pt]
+\textbf{Échelle.} $\text{échelle}=\dfrac{\text{distance carte}}{\text{distance réelle}}$
+(même unité).\\[4pt]
+\textbf{Vitesse.} $v=\dfrac dt$ ;\ $d=v\times t$ ;\ $t=\dfrac dv$.\\[4pt]
+\textbf{Piège fréquent.} $+20\,\%$ puis $-20\,\%$ ne redonne \textbf{pas} la valeur de
+départ (coefficient global $1{,}2\times0{,}8=0{,}96\ne1$).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Compléter un tableau de proportionnalité}
+Utiliser le produit en croix (ou calculer le coefficient de proportionnalité), puis
+appliquer.
+\begin{exemple}
+Une recette pour $4$ personnes utilise $320$ g de farine. Pour $7$ personnes :
+$\dfrac{320\times7}4=560$ g.
+\end{exemple}
+
+\methode{Calculer un pourcentage d'une quantité}
+Multiplier la quantité par $\dfrac t{100}$.
+\begin{exemple}
+$35\,\%$ de $8\,000$ FCFA $=0{,}35\times8\,000=2\,800$ FCFA.
+\end{exemple}
+
+\methode{Calculer un taux de variation}
+Calculer $\dfrac{V_f-V_i}{V_i}\times100$ ; le signe indique une hausse ($+$) ou une baisse
+($-$).
+\begin{exemple}
+Une population passe de $40\,000$ à $34\,000$ habitants :
+$\dfrac{34\,000-40\,000}{40\,000}\times100=-15\,\%$ (baisse de $15\,\%$).
+\end{exemple}
+
+\methode{Appliquer une évolution en pourcentage}
+Multiplier par $1+\dfrac t{100}$ (hausse) ou $1-\dfrac t{100}$ (baisse).
+\begin{exemple}
+Un salaire de $120\,000$ FCFA augmente de $8\,\%$ : nouveau salaire
+$=120\,000\times1{,}08=129\,600$ FCFA.
+\end{exemple}
+
+\methode{Enchaîner deux évolutions successives}
+Multiplier les deux coefficients multiplicateurs (jamais additionner les pourcentages).
+\begin{exemple}
+Une hausse de $10\,\%$ puis une baisse de $5\,\%$ : coefficient global
+$1{,}10\times0{,}95=1{,}045$, soit une hausse globale de $4{,}5\,\%$.
+\end{exemple}
+
+\methode{Utiliser une échelle}
+Passer de la distance sur le document à la distance réelle (ou l'inverse) en multipliant ou
+divisant par l'échelle, en veillant aux unités.
+\begin{exemple}
+Distance réelle $15$ km sur une carte à l'échelle $\dfrac1{200\,000}$ : distance sur la
+carte $=\dfrac{15\,\text{km}}{200\,000}=\dfrac{1\,500\,000\text{ cm}}{200\,000}=7{,}5$ cm.
+\end{exemple}
+
+\methode{Calculer une vitesse moyenne, une distance ou une durée}
+Utiliser $v=\dfrac dt$, $d=v\times t$ ou $t=\dfrac dv$ selon la grandeur cherchée, en gardant
+des unités cohérentes.
+\begin{exemple}
+Un cycliste roule à $18$ km/h pendant $2$ h $30$ (soit $2{,}5$ h) :
+$d=18\times2{,}5=45$ km.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Tableaux de proportionnalité}
+\exo{}\diff{1} Un sac de $5$ kg de riz coûte $3\,500$ FCFA. Calculer le prix de $8$ kg.
+
+\exo{}\diff{1} Une recette pour $4$ personnes utilise $320$ g de farine. Quelle quantité
+faut-il pour $7$ personnes ?
+
+\exo{}\diff{2} $12$ stylos coûtent $3\,000$ FCFA. Calculer le prix de $20$ stylos.
+
+\exo{}\diff{2} Une voiture consomme $42$ L d'essence pour $600$ km. Quelle sera sa
+consommation pour $850$ km (arrondir au dixième de litre) ?
+
+\rubrique{Pourcentages}
+\exo{}\diff{1} Calculer $18\,\%$ de $45\,000$ FCFA.
+
+\exo{}\diff{1} Calculer $35\,\%$ de $8\,000$ FCFA.
+
+\exo{}\diff{2} Un article passe de $25\,000$ FCFA à $29\,000$ FCFA. Calculer le taux de
+variation.
+
+\exo{}\diff{2} Une population passe de $40\,000$ à $34\,000$ habitants. Calculer le taux de
+variation.
+
+\rubrique{Évolutions successives}
+\exo{}\diff{2} Un prix de $50\,000$ FCFA subit une hausse de $20\,\%$ puis une baisse de
+$15\,\%$. Calculer le prix final, et le taux d'évolution global.
+
+\exo{}\diff{2} Calculer le coefficient multiplicateur global correspondant à une hausse de
+$20\,\%$ suivie d'une baisse de $15\,\%$.
+
+\exo{}\diff{1} Un salaire de $120\,000$ FCFA augmente de $8\,\%$. Calculer le nouveau
+salaire.
+
+\exo{}\diff{3} Un article soldé à $30\,\%$ coûte maintenant $21\,000$ FCFA. Quel était son
+prix initial ?
+
+\rubrique{Échelles et vitesse}
+\exo{}\diff{1} Sur une carte à l'échelle $\dfrac1{25\,000}$, une distance mesure $4$ cm.
+Calculer la distance réelle, en km.
+
+\exo{}\diff{2} Une distance réelle de $15$ km est représentée par quelle longueur sur une
+carte à l'échelle $\dfrac1{200\,000}$ ?
+
+\exo{}\diff{1} Une voiture parcourt $240$ km en $3$ h. Calculer sa vitesse moyenne.
+
+\exo{}\diff{2} Un cycliste roule à $18$ km/h pendant $2$ h $30$. Quelle distance
+parcourt-il ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Tableaux de proportionnalité}
+\exo{}\diff{1} Un sac de $2$ kg de sucre coûte $250$ FCFA. Calculer le prix de $5$ kg.
+
+\exo{}\diff{2} Une recette pour $6$ personnes utilise $450$ g de sucre. Quelle quantité
+faut-il pour $9$ personnes ?
+
+\exo{}\diff{2} $15$ cahiers coûtent $3\,000$ FCFA. Calculer le prix de $36$ cahiers.
+
+\exo{}\diff{2} Une moto parcourt $270$ km avec $8$ L d'essence. Quelle distance
+parcourt-elle avec $3$ L ?
+
+\rubrique{Pourcentages}
+\exo{}\diff{1} Calculer $12\,\%$ de $60\,000$ FCFA.
+
+\exo{}\diff{1} Calculer $40\,\%$ de $9\,500$ FCFA.
+
+\exo{}\diff{2} Un loyer passe de $18\,000$ à $21\,600$ FCFA. Calculer le taux de variation.
+
+\exo{}\diff{2} Un troupeau passe de $50\,000$ à $42\,000$ têtes de bétail. Calculer le
+taux de variation.
+
+\rubrique{Évolutions successives}
+\exo{}\diff{2} Un salaire de $80\,000$ FCFA augmente de $10\,\%$ une année, puis de
+$5\,\%$ l'année suivante. Calculer le salaire final et le taux d'évolution global.
+
+\exo{}\diff{2} Calculer le coefficient multiplicateur global correspondant à deux baisses
+successives de $10\,\%$.
+
+\exo{}\diff{1} Un prix de $200\,000$ FCFA augmente de $5\,\%$. Calculer le nouveau prix.
+
+\exo{}\diff{3} Après une baisse de $13\,\%$, un article coûte $17\,400$ FCFA. Quel était
+son prix initial ?
+
+\rubrique{Échelles}
+\exo{}\diff{2} Sur un plan à l'échelle $\dfrac1{50\,000}$, une distance mesure $6$ cm.
+Calculer la distance réelle, en km.
+
+\exo{}\diff{2} Une distance réelle de $20$ km est représentée par quelle longueur sur une
+carte à l'échelle $\dfrac1{500\,000}$ ?
+
+\exo{}\diff{2} Sur un plan à l'échelle $\dfrac1{200}$, une pièce mesure $6$ cm. Calculer sa
+longueur réelle en mètres.
+
+\rubrique{Vitesse}
+\exo{}\diff{1} Un bus parcourt $315$ km en $4$ h $30$. Calculer sa vitesse moyenne.
+
+\exo{}\diff{2} Un piéton marche à $4{,}5$ km/h pendant $50$ min. Quelle distance
+parcourt-il (arrondir au centième de km) ?
+
+\exo{}\diff{2} Un camion roule à $60$ km/h. Combien de temps met-il pour parcourir $150$
+km ?
+
+\exo{}\diff{2} Un avion parcourt $2\,100$ km en $3$ h. Calculer sa vitesse moyenne, puis le
+temps nécessaire pour parcourir $3\,500$ km à cette même vitesse.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[proportionnalité et pourcentages au marché — Bafoussam]
+\begin{enumerate}[label=\arabic*)]
+\item Un sac de $25$ kg de maïs coûte $8\,750$ FCFA. Calculer le prix de $40$ kg de maïs
+(en utilisant un produit en croix).
+\item Un commerçant de Bafoussam augmente ses prix de $12\,\%$. Un article coûtait
+$15\,000$ FCFA. Calculer son nouveau prix.
+\item Le prix d'un autre article est passé de $20\,000$ FCFA à $23\,000$ FCFA. Calculer le
+taux de variation.
+\item Après une hausse de $10\,\%$ suivie d'une baisse de $5\,\%$, le prix d'un sac de riz
+est de $41\,800$ FCFA.
+\begin{enumerate}[label=\alph*)]
+\item Calculer le coefficient multiplicateur global de ces deux évolutions.
+\item En déduire le prix initial du sac de riz.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[échelle, vitesse et remise]
+\begin{enumerate}[label=\arabic*)]
+\item Sur une carte à l'échelle $\dfrac1{50\,000}$, la distance entre deux villages mesure
+$20$ cm. Calculer la distance réelle, en km.
+\item Un bus parcourt cette distance en $15$ minutes. Calculer sa vitesse moyenne en km/h.
+\item Un article vendu $8\,000$ FCFA est soldé à $6\,000$ FCFA. Calculer le taux de
+réduction appliqué.
+\item Une population de $24\,000$ habitants augmente de $5\,\%$ par an.
+\begin{enumerate}[label=\alph*)]
+\item Calculer la population après $1$ an.
+\item Calculer la population après $2$ ans (arrondir à l'unité).
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[pourcentages, évolutions et échelle — vie scolaire]
+\begin{enumerate}[label=\arabic*)]
+\item Une classe de $45$ élèves compte $60\,\%$ de filles. Calculer le nombre de filles et
+le nombre de garçons.
+\item Un club sportif compte $250$ membres. Son effectif augmente de $8\,\%$ une année,
+puis de $5\,\%$ l'année suivante.
+\begin{enumerate}[label=\alph*)]
+\item Calculer le coefficient multiplicateur global de ces deux évolutions.
+\item Calculer l'effectif du club après ces deux augmentations (arrondir à l'unité).
+\end{enumerate}
+\item Le prix d'une inscription est passé de $12\,000$ FCFA à $13\,800$ FCFA. Calculer le
+taux d'augmentation.
+\item Sur un plan à l'échelle $\dfrac1{200}$, un couloir mesure $8$ cm. Calculer sa
+longueur réelle, en mètres.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\dfrac{8\times3\,500}5=5\,600$ FCFA.
+
+\corrige{de l'exercice 2}
+$\dfrac{320\times7}4=560$ g.
+
+\corrige{de l'exercice 3}
+$\dfrac{3\,000\times20}{12}=5\,000$ FCFA.
+
+\corrige{de l'exercice 4}
+$\dfrac{42\times850}{600}=59{,}5$ L.
+
+\corrige{de l'exercice 5}
+$0{,}18\times45\,000=8\,100$ FCFA.
+
+\corrige{de l'exercice 6}
+$0{,}35\times8\,000=2\,800$ FCFA.
+
+\corrige{de l'exercice 7}
+$\dfrac{29\,000-25\,000}{25\,000}\times100=16\,\%$.
+
+\corrige{de l'exercice 8}
+$\dfrac{34\,000-40\,000}{40\,000}\times100=-15\,\%$.
+
+\corrige{de l'exercice 9}
+$50\,000\times1{,}20\times0{,}85=51\,000$ FCFA. Taux global :
+$\dfrac{51\,000-50\,000}{50\,000}\times100=2\,\%$.
+
+\corrige{de l'exercice 10}
+$1{,}20\times0{,}85=1{,}02$.
+
+\corrige{de l'exercice 11}
+$120\,000\times1{,}08=129\,600$ FCFA.
+
+\corrige{de l'exercice 12}
+Prix initial $\times0{,}70=21\,000$, donc prix initial $=\dfrac{21\,000}{0{,}70}=30\,000$
+FCFA.
+
+\corrige{de l'exercice 13}
+$4\times25\,000=100\,000$ cm $=1$ km.
+
+\corrige{de l'exercice 14}
+$15$ km $=1\,500\,000$ cm ; $\dfrac{1\,500\,000}{200\,000}=7{,}5$ cm.
+
+\corrige{de l'exercice 15}
+$v=\dfrac{240}3=80$ km/h.
+
+\corrige{de l'exercice 16}
+$d=18\times2{,}5=45$ km.
+
+\corrige{du sujet 1}
+1) $\dfrac{8\,750\times40}{25}=14\,000$ FCFA.\\
+2) $15\,000\times1{,}12=16\,800$ FCFA.\\
+3) $\dfrac{23\,000-20\,000}{20\,000}\times100=15\,\%$.\\
+4a) $1{,}10\times0{,}95=1{,}045$.\\
+4b) Prix initial $=\dfrac{41\,800}{1{,}045}=40\,000$ FCFA.
+
+\corrige{du sujet 2}
+1) $20\times50\,000=1\,000\,000$ cm $=10$ km.\\
+2) $15$ min $=0{,}25$ h ; $v=\dfrac{10}{0{,}25}=40$ km/h.\\
+3) $\dfrac{8\,000-6\,000}{8\,000}\times100=25\,\%$.\\
+4a) $24\,000\times1{,}05=25\,200$ habitants.\\
+4b) $24\,000\times1{,}05^{2}=26\,460$ habitants.
+
+\corrige{du sujet 3}
+1) Filles : $45\times0{,}60=27$ ; garçons : $45-27=18$.\\
+2a) $1{,}08\times1{,}05=1{,}134$.\\
+2b) $250\times1{,}134=283{,}5\approx284$ membres.\\
+3) $\dfrac{13\,800-12\,000}{12\,000}\times100=15\,\%$.\\
+4) $8\times200=1\,600$ cm $=16$ m.
+
+\end{multicols}
+\exercicesBanner
