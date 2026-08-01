@@ -1,1 +1,280 @@
 \chapter{Tension alternative et énergie électrique domestique}
+
+\noindent\textit{La tension livrée par le secteur n'est pas constante : elle varie
+périodiquement au cours du temps. Ce chapitre étudie cette tension alternative, puis
+s'intéresse à l'énergie électrique consommée par les appareils domestiques et à son coût.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{La tension alternative sinusoïdale}
+
+\begin{definition}[Tension alternative]
+Une \textbf{tension alternative} change continuellement de valeur et de sens au cours du
+temps, contrairement à une tension continue (pile). La tension du secteur est
+\textbf{sinusoïdale} : elle se répète identique à elle-même après une durée constante
+appelée \textbf{période} $T$ (en secondes, s).
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[->,onbmuted] (-0.3,0) -- (8.3,0) node[right] {\small $t$};
+\draw[->,onbmuted] (0,-1.6) -- (0,1.6) node[above] {\small $U$};
+\draw[onbo,line width=1.3pt,domain=0:8,samples=100,smooth] plot (\x,{1.2*sin(\x*90)});
+\draw[onbmuted,dashed] (4,-1.5) -- (4,1.5);
+\draw[<->,onbgreen,line width=1pt] (0,-1.75) -- (4,-1.75);
+\node[onbgreen,below] at (2,-1.8) {\small période $T$};
+\end{tikzpicture}
+\fig{Figure — Tension alternative sinusoïdale : elle se répète après chaque période $T$.}
+\end{illus}
+
+\begin{propriete}[Fréquence]
+La \textbf{fréquence} $f$ (en hertz, Hz) est le nombre de périodes par seconde :
+\[
+f=\frac1T.
+\]
+Au Cameroun, comme dans la majorité des pays, le secteur délivre une tension alternative
+de fréquence $f=50$ Hz.
+\end{propriete}
+
+\begin{exemple}
+Pour $f=50$ Hz : $T=\dfrac1{50}=0{,}02$ s $=20$ ms.
+\end{exemple}
+
+\begin{remarque}
+La valeur affichée sur les appareils ($220$ V) n'est pas la tension maximale atteinte à
+chaque instant, mais une valeur moyenne appelée \textbf{valeur efficace} : elle correspond
+à la tension continue qui produirait le même effet (chauffage, éclairage) que la tension
+alternative réelle.
+\end{remarque}
+
+\section{Énergie électrique consommée}
+
+\begin{propriete}[Énergie électrique]
+L'\textbf{énergie électrique} $E$ consommée par un appareil de puissance $P$ pendant une
+durée $t$ vaut :
+\[
+E=P\times t.
+\]
+Si $P$ est en watts (W) et $t$ en heures (h), $E$ s'exprime en \textbf{wattheures} (Wh).
+On utilise plus couramment le \textbf{kilowattheure} (kWh) : $1$ kWh $=1\,000$ Wh, énergie
+consommée par un appareil de $1\,000$ W fonctionnant pendant $1$ h.
+\end{propriete}
+
+\begin{exemple}
+Une ampoule de $P=100$ W fonctionne pendant $t=5$ h : $E=100\times5=500$ Wh $=0{,}5$ kWh.
+\end{exemple}
+
+\section{La facture d'électricité}
+
+\begin{definition}[Compteur et facture]
+Le \textbf{compteur électrique} mesure l'énergie totale consommée, en kWh. La
+\textbf{facture} d'électricité correspond au produit de l'énergie consommée par le prix
+unitaire du kWh (fixé par le fournisseur).
+\end{definition}
+
+\begin{exemple}
+Au tarif de $79$ FCFA/kWh, une consommation de $E=10$ kWh coûte
+$10\times79=790$ FCFA.
+\end{exemple}
+
+\begin{remarque}
+Pour réduire sa facture, on peut réduire la puissance des appareils utilisés, leur temps
+de fonctionnement, ou remplacer les appareils énergivores (ex. : ampoules à incandescence)
+par des appareils plus économes (ex. : ampoules LED).
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Tension alternative.} Change périodiquement ; période $T$ (s), fréquence
+$f=\dfrac1T$ (Hz). Secteur : $50$ Hz, $220$ V (valeur efficace).\\[4pt]
+\textbf{Énergie électrique.} $E=P\times t$ (Wh si $P$ en W et $t$ en h ; $1$ kWh
+$=1\,000$ Wh).\\[4pt]
+\textbf{Facture.} Coût $=$ énergie consommée (kWh) $\times$ prix unitaire du kWh.\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre puissance ($P$, en W, ce que consomme un
+appareil à chaque instant) et énergie ($E=Pt$, en Wh, ce qui est facturé).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer une période ou une fréquence}
+Utiliser $f=\dfrac1T$ ou $T=\dfrac1f$, avec $T$ en secondes et $f$ en hertz.
+\begin{exemple}
+$T=0{,}02$ s : $f=\dfrac1{0{,}02}=50$ Hz.
+\end{exemple}
+
+\methode{Calculer une énergie électrique}
+Appliquer $E=P\times t$, en veillant à convertir les unités si nécessaire (min $\to$ h).
+\begin{exemple}
+$P=1\,500$ W, $t=2$ h : $E=1\,500\times2=3\,000$ Wh $=3$ kWh.
+\end{exemple}
+
+\methode{Calculer le coût d'une consommation électrique}
+Calculer l'énergie $E$ en kWh, puis multiplier par le prix unitaire du kWh.
+\begin{exemple}
+$E=15$ kWh à $79$ FCFA/kWh : coût $=15\times79=1\,185$ FCFA.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Tension alternative}
+\exo{}\diff{1} Qu'est-ce qu'une tension alternative ?
+
+\exo{}\diff{2} La fréquence du secteur est $f=50$ Hz. Calculer la période $T$.
+
+\exo{}\diff{2} Une tension a pour période $T=0{,}04$ s. Calculer sa fréquence.
+
+\exo{}\diff{2} Que représente la valeur efficace d'une tension alternative ?
+
+\rubrique{Énergie électrique}
+\exo{}\diff{1} Un appareil de puissance $P=60$ W fonctionne pendant $t=10$ h. Calculer
+l'énergie consommée en Wh, puis en kWh.
+
+\exo{}\diff{2} Un appareil de puissance $P=2\,000$ W fonctionne pendant $t=0{,}5$ h.
+Calculer l'énergie consommée en kWh.
+
+\exo{}\diff{2} Un appareil de puissance $P=75$ W fonctionne pendant $t=8$ h. Calculer
+l'énergie consommée en kWh.
+
+\rubrique{Facture et bilan}
+\exo{}\diff{2} Au tarif de $79$ FCFA/kWh, calculer le coût d'une consommation de $2$ kWh.
+
+\exo{}\diff{2} Au tarif de $79$ FCFA/kWh, calculer le coût d'une consommation de $3$ kWh.
+
+\exo{}\diff{3} Expliquer, à l'aide de la formule $E=Pt$, pourquoi laisser un appareil
+allumé plus longtemps augmente la facture même si sa puissance ne change pas.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Tension alternative}
+\exo{}\diff{2} Une tension alternative a pour période $T=0{,}025$ s. Calculer sa
+fréquence.
+
+\exo{}\diff{3} Pourquoi dit-on que la tension du secteur est « alternative » et non
+« continue » ?
+
+\exo{}\diff{2} La tension efficace du secteur camerounais est $220$ V. Quelle grandeur
+mesure un voltmètre branché sur une prise domestique ?
+
+\rubrique{Énergie électrique}
+\exo{}\diff{2} Un réfrigérateur de puissance $P=150$ W fonctionne en continu pendant
+$t=24$ h. Calculer l'énergie consommée en kWh.
+
+\exo{}\diff{2} Un fer à repasser de puissance $P=1\,200$ W fonctionne pendant
+$t=45$ min. Calculer l'énergie consommée en kWh (convertir $t$ en heures).
+
+\exo{}\diff{3} Un climatiseur consomme $E=6$ kWh en $t=4$ h de fonctionnement. Calculer
+sa puissance $P$.
+
+\rubrique{Facture et bilan}
+\exo{}\diff{2} Au tarif de $79$ FCFA/kWh, calculer le coût d'une consommation de
+$25$ kWh.
+
+\exo{}\diff{3} Une famille consomme $120$ kWh par mois au tarif de $79$ FCFA/kWh.
+Calculer le montant de la facture mensuelle.
+
+\exo{}\diff{3} Une ampoule à incandescence de $60$ W et une ampoule LED de $9$ W
+éclairent de façon équivalente pendant $5$ h par jour. Calculer l'énergie économisée
+par jour en remplaçant l'ampoule à incandescence par la LED.
+
+\exo{}\diff{3} Proposer deux gestes simples permettant de réduire une facture
+d'électricité, en justifiant à l'aide de la formule $E=Pt$.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Tension du secteur]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce qu'une tension alternative sinusoïdale ?
+\item La tension du secteur a une fréquence $f=50$ Hz. Calcule sa période $T$.
+\item Quelle est la valeur efficace de la tension du secteur au Cameroun ?
+\item Que mesure un voltmètre branché sur une prise domestique ?
+\end{enumerate}
+
+\sujetbac[Consommation et facture]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la relation entre l'énergie électrique $E$, la puissance $P$ et la durée $t$.
+\item Un téléviseur de puissance $P=120$ W fonctionne $t=5$ h par jour. Calcule l'énergie
+consommée par jour, en Wh puis en kWh.
+\item Au tarif de $79$ FCFA/kWh, calcule le coût de cette consommation journalière.
+\item Calcule le coût sur un mois de $30$ jours.
+\end{enumerate}
+
+\sujetbac[Comparer deux appareils]
+\begin{enumerate}[label=\arabic*)]
+\item Un ventilateur de $P=75$ W fonctionne $t=6$ h par jour. Calcule l'énergie consommée
+par jour en kWh.
+\item Un second ventilateur, plus puissant, consomme $E=0{,}9$ kWh pour la même durée.
+Calcule sa puissance.
+\item Lequel des deux ventilateurs est le plus économe en énergie ?
+\item Propose une explication à la différence de consommation entre les deux appareils.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Une tension qui change continuellement de valeur et de sens au cours du temps.
+
+\corrige{de l'exercice 2}
+$T=\dfrac1{50}=0{,}02$ s.
+
+\corrige{de l'exercice 3}
+$f=\dfrac1{0{,}04}=25$ Hz.
+
+\corrige{de l'exercice 4}
+La tension continue équivalente qui produirait le même effet (chauffage, éclairage) que
+la tension alternative réelle.
+
+\corrige{de l'exercice 5}
+$E=60\times10=600$ Wh $=0{,}6$ kWh.
+
+\corrige{de l'exercice 6}
+$E=2\,000\times0{,}5=1\,000$ Wh $=1$ kWh.
+
+\corrige{de l'exercice 7}
+$E=75\times8=600$ Wh $=0{,}6$ kWh.
+
+\corrige{de l'exercice 8}
+Coût $=2\times79=158$ FCFA.
+
+\corrige{de l'exercice 9}
+Coût $=3\times79=237$ FCFA.
+
+\corrige{de l'exercice 10}
+Car $E=Pt$ : à puissance $P$ fixée, $E$ augmente proportionnellement avec la durée $t$
+d'utilisation, donc le coût (proportionnel à $E$) augmente aussi.
+
+\corrige{du sujet 1}
+1) Une tension qui varie périodiquement, en suivant une courbe sinusoïdale.\\
+2) $T=\dfrac1{50}=0{,}02$ s.\\
+3) $220$ V.\\
+4) Sa valeur efficace ($220$ V).
+
+\corrige{du sujet 2}
+1) $E=P\times t$.\\
+2) $E=120\times5=600$ Wh $=0{,}6$ kWh.\\
+3) Coût $=0{,}6\times79=47{,}4$ FCFA.\\
+4) Coût mensuel $=47{,}4\times30=1\,422$ FCFA.
+
+\corrige{du sujet 3}
+1) $E=75\times6=450$ Wh $=0{,}45$ kWh.\\
+2) $P=\dfrac{0{,}9\times1\,000}6=150$ W.\\
+3) Le premier ventilateur ($75$ W, $0{,}45$ kWh/jour), plus économe.\\
+4) Le second ventilateur a une puissance plus élevée (moteur plus puissant, plus de
+brassage d'air), donc consomme davantage d'énergie pour la même durée.
+
+\end{multicols}
+\exercicesBanner
