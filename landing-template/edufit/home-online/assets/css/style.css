@@ -304,3 +304,24 @@ Version: 1.0
     margin-left: 12px;
   }
 }
+/* Generic placeholder avatar (used in place of stock photos for fictional profiles) */
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #e7e9ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+.avatar-placeholder i {
+  color: #9aa0a6;
+  font-size: 26px;
+}
