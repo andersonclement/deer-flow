@@ -1,1 +1,507 @@
 \chapter{Les constituants de la matière}
+
+\noindent\textit{Tout ce qui nous entoure — l'air que nous respirons, l'eau que nous
+buvons, les objets que nous touchons — est constitué de matière. Ce chapitre explore les
+plus petits constituants de la matière : l'atome, la molécule et l'ion.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{L'atome}
+
+\begin{definition}[Atome]
+La matière est constituée de particules extrêmement petites appelées \textbf{atomes}. Un
+atome est formé d'un \textbf{noyau} central, chargé positivement, autour duquel se
+déplacent des \textbf{électrons}, chargés négativement.
+\end{definition}
+
+\begin{propriete}[Neutralité électrique de l'atome]
+Un atome est électriquement \textbf{neutre} : il possède autant d'électrons (charge
+négative) que de charges positives dans son noyau. La taille d'un atome est de l'ordre de
+$10^{-10}$ m, soit un dixième de milliardième de mètre.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=1]
+\draw[onbmuted,dashed,line width=0.7pt] (0,0) circle (1.1);
+\draw[onbmuted,dashed,line width=0.7pt] (0,0) circle (1.9);
+\filldraw[onbo!25,draw=onbo,line width=1.2pt] (0,0) circle (0.4);
+\node[font=\small\bfseries,color=onbink] at (0,0) {C};
+\foreach \a in {90,270} \filldraw[onbgreen] (\a:1.1) circle(0.09);
+\foreach \a in {0,90,180,270} \filldraw[onbblue] (\a:1.9) circle(0.09);
+\node[onbo,below] at (0,-2.35) {\small noyau : 6 protons (+)};
+\node[onbgreen,left] at (-1.5,1.3) {\small 2 électrons};
+\node[onbblue,right] at (2.3,1.3) {\small 4 électrons};
+\end{tikzpicture}
+\fig{Figure — Atome de carbone (modèle simplifié) : 6 protons, 6 électrons sur deux
+couches.}
+\end{illus}
+
+\begin{exemple}
+L'atome de carbone possède $6$ protons dans son noyau. Comme il est électriquement
+neutre, il possède aussi $6$ électrons.
+\end{exemple}
+
+\begin{remarque}
+On ne voit jamais un atome à l'œil nu, ni même au microscope optique : il faut des
+appareils spécialisés (microscope à effet tunnel) pour « observer » des atomes isolés.
+\end{remarque}
+
+\section{Symboles des atomes usuels}
+
+\begin{propriete}[Symbole chimique]
+Chaque atome est représenté par un \textbf{symbole chimique} : une lettre majuscule, parfois
+suivie d'une lettre minuscule pour le distinguer d'un autre atome commençant par la même
+lettre.
+\end{propriete}
+
+\begin{center}
+\small
+\begin{tabular}{llcll}
+\toprule
+Atome & Symbole & \quad & Atome & Symbole \\
+\midrule
+Hydrogène & H & & Sodium & Na \\
+Carbone & C & & Calcium & Ca \\
+Azote & N & & Fer & Fe \\
+Oxygène & O & & Cuivre & Cu \\
+Fluor & F & & Zinc & Zn \\
+Soufre & S & & Aluminium & Al \\
+Chlore & Cl & & Magnésium & Mg \\
+Hélium & He & & Potassium & K \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remarque}
+Attention à la casse : $\mathrm{Co}$ (cobalt) est différent de $\mathrm{CO}$ (une molécule
+de monoxyde de carbone, formée d'un atome de carbone $\mathrm{C}$ et d'un atome d'oxygène
+$\mathrm{O}$) ! La deuxième lettre d'un symbole est toujours en minuscule.
+\end{remarque}
+
+\section{La molécule et la formule brute}
+
+\begin{definition}[Molécule et formule brute]
+Une \textbf{molécule} est un assemblage ordonné d'atomes liés entre eux. La \textbf{formule
+brute} indique, pour chaque atome présent, son symbole suivi en indice du nombre
+d'atomes de ce type dans la molécule (le chiffre $1$ n'est jamais écrit).
+\end{definition}
+
+\begin{propriete}[Corps simple, corps composé]
+Un \textbf{corps simple} est constitué d'un seul type d'atome (exemples : $\mathrm{O_2}$
+dioxygène, $\mathrm{H_2}$ dihydrogène, $\mathrm{N_2}$ diazote, $\mathrm{Cl_2}$ dichlore). Un
+\textbf{corps composé} est constitué de plusieurs types d'atomes différents (exemples :
+$\mathrm{H_2O}$ eau, $\mathrm{CO_2}$ dioxyde de carbone, $\mathrm{CH_4}$ méthane).
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\filldraw[onbblue!30,draw=onbblue,line width=1pt] (-2.6,0.9) circle (0.28);
+\filldraw[onbblue!30,draw=onbblue,line width=1pt] (-1.9,0.9) circle (0.28);
+\draw[onbline,line width=1.5pt] (-2.32,0.9) -- (-2.18,0.9);
+\node[font=\scriptsize] at (-2.6,0.9) {H};
+\node[font=\scriptsize] at (-1.9,0.9) {H};
+\node[below,font=\scriptsize,color=onbmuted] at (-2.25,0.5) {$\mathrm{H_2}$ (corps simple)};
+\filldraw[onbo!30,draw=onbo,line width=1pt] (1.2,1.05) circle (0.32);
+\filldraw[onbblue!30,draw=onbblue,line width=1pt] (0.55,0.55) circle (0.26);
+\filldraw[onbblue!30,draw=onbblue,line width=1pt] (1.85,0.55) circle (0.26);
+\draw[onbline,line width=1.5pt] (0.95,0.85) -- (0.75,0.7);
+\draw[onbline,line width=1.5pt] (1.45,0.85) -- (1.65,0.7);
+\node[font=\scriptsize] at (1.2,1.05) {O};
+\node[font=\scriptsize] at (0.55,0.55) {H};
+\node[font=\scriptsize] at (1.85,0.55) {H};
+\node[below,font=\scriptsize,color=onbmuted] at (1.2,0.1) {$\mathrm{H_2O}$ (corps composé)};
+\end{tikzpicture}
+\fig{Figure — Le dihydrogène $\mathrm{H_2}$ (un seul type d'atome) et l'eau $\mathrm{H_2O}$
+(deux types d'atomes).}
+\end{illus}
+
+\begin{exemple}
+La molécule de méthane a pour formule brute $\mathrm{CH_4}$ : elle contient $1$ atome de
+carbone et $4$ atomes d'hydrogène, soit $5$ atomes au total. C'est un corps composé.
+\end{exemple}
+
+\begin{remarque}
+Dans une formule brute, l'indice se rapporte uniquement à l'atome qui le précède
+immédiatement : dans $\mathrm{CH_4}$, le $4$ ne concerne que l'hydrogène, pas le carbone.
+\end{remarque}
+
+\section{La liaison de covalence}
+
+\begin{definition}[Liaison de covalence]
+Une \textbf{liaison de covalence} est la mise en commun d'électrons entre deux atomes, qui
+les maintient liés l'un à l'autre au sein d'une molécule. C'est cette mise en commun qui
+permet à chaque atome d'atteindre une configuration électronique stable.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=1]
+\filldraw[onbo!25,draw=onbo,line width=1.2pt] (-1.1,0) circle (0.38);
+\node[font=\small\bfseries] at (-1.1,0) {H};
+\filldraw[onbo!25,draw=onbo,line width=1.2pt] (1.1,0) circle (0.38);
+\node[font=\small\bfseries] at (1.1,0) {H};
+\filldraw[onbgreen] (-0.18,0.12) circle(0.07);
+\filldraw[onbgreen] (0.18,0.12) circle(0.07);
+\node[above,onbgreen,font=\scriptsize] at (0,0.35) {doublet liant};
+\draw[onbline,line width=1pt] (-0.72,0) -- (0.72,0);
+\end{tikzpicture}
+\fig{Figure — Liaison de covalence dans $\mathrm{H_2}$ : doublet d'électrons partagé.}
+\end{illus}
+
+\begin{remarque}
+Plus une molécule compte de liaisons de covalence, plus elle est en général stable et
+difficile à casser. C'est en cassant et en formant des liaisons que se produisent les
+réactions chimiques (chapitre suivant).
+\end{remarque}
+
+\section{Les ions}
+
+\begin{definition}[Ion, cation, anion]
+Un \textbf{ion} est un atome (ou un groupe d'atomes) qui a perdu ou gagné un ou plusieurs
+électrons, et qui n'est donc plus électriquement neutre. Un \textbf{cation} est un ion
+chargé \textbf{positivement} (perte d'électrons) ; un \textbf{anion} est un ion chargé
+\textbf{négativement} (gain d'électrons).
+\end{definition}
+
+\begin{propriete}[Charge d'un ion]
+La charge d'un ion correspond au nombre d'électrons perdus (cation, charge $+$) ou gagnés
+(anion, charge $-$) par l'atome de départ.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\filldraw[onbo!25,draw=onbo,line width=1.2pt] (-3,0) circle (0.5);
+\node[font=\bfseries] at (-3,0) {Na};
+\node[below] at (-3,-0.75) {\small atome neutre};
+\draw[->,onbmuted,line width=1.1pt] (-2.2,0) -- (-0.6,0);
+\node[above,font=\scriptsize] at (-1.4,0.15) {perd $1$ électron};
+\filldraw[onbgreen!25,draw=onbgreen,line width=1.2pt] (0.3,0) circle (0.5);
+\node[font=\bfseries] at (0.3,0) {$\mathrm{Na^+}$};
+\node[below] at (0.3,-0.75) {\small cation};
+\draw[->,onbmuted,line width=1.1pt] (1.3,0) -- (2.9,0);
+\node[above,font=\scriptsize] at (2.1,0.15) {puis Cl gagne $1$ électron};
+\filldraw[onbink!12,draw=onbink,line width=1.2pt] (3.7,0) circle (0.5);
+\node[font=\bfseries] at (3.7,0) {$\mathrm{Cl^-}$};
+\node[below] at (3.7,-0.75) {\small anion};
+\end{tikzpicture}
+\fig{Figure — Na perd un électron ($\mathrm{Na^+}$) ; Cl le gagne ($\mathrm{Cl^-}$).}
+\end{illus}
+
+\begin{exemple}
+L'atome de calcium $\mathrm{Ca}$ perd $2$ électrons : il devient le cation
+$\mathrm{Ca^{2+}}$. L'atome d'oxygène $\mathrm{O}$ gagne $2$ électrons : il devient l'anion
+$\mathrm{O^{2-}}$.
+\end{exemple}
+
+\begin{remarque}
+Ne pas confondre le nombre d'électrons perdus/gagnés (qui donne la valeur de la charge) et
+le signe de la charge : perdre des électrons donne toujours une charge \textbf{positive}
+(moins d'électrons négatifs pour équilibrer les charges positives du noyau), gagner des
+électrons donne toujours une charge \textbf{négative}.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Atome.} Noyau positif $+$ électrons négatifs ; électriquement neutre (autant
+d'électrons que de charges positives).\\[4pt]
+\textbf{Symbole.} Une majuscule, éventuellement suivie d'une minuscule (ex. $\mathrm{Ca}$,
+$\mathrm{Cl}$).\\[4pt]
+\textbf{Molécule.} Assemblage d'atomes ; formule brute = symboles $+$ indices. Corps simple
+(un seul type d'atome) / corps composé (plusieurs types).\\[4pt]
+\textbf{Liaison de covalence.} Mise en commun d'électrons entre deux atomes, qui les
+maintient liés.\\[4pt]
+\textbf{Ion.} Cation ($+$, perte d'électrons) ou anion ($-$, gain d'électrons) ; la charge
+$=$ le nombre d'électrons perdus ou gagnés.\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre une molécule diatomique d'un corps simple (ex.
+$\mathrm{O_2}$, deux atomes \textbf{identiques}) avec un corps composé (ex. $\mathrm{CO}$,
+deux atomes \textbf{différents}).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Écrire le symbole d'un atome usuel}
+Retenir la lettre majuscule (et sa minuscule éventuelle) associée à chaque atome courant,
+en s'aidant du tableau des symboles usuels.
+\begin{exemple}
+Fer $\to\mathrm{Fe}$ ; Azote $\to\mathrm{N}$ ; Calcium $\to\mathrm{Ca}$.
+\end{exemple}
+
+\methode{Compter les atomes d'une molécule à partir de sa formule brute}
+Lire chaque symbole suivi de son indice (indice $1$ sous-entendu si absent), puis
+additionner tous les indices pour obtenir le nombre total d'atomes.
+\begin{exemple}
+$\mathrm{C_6H_{12}O_6}$ (glucose) : $6$ atomes de carbone, $12$ d'hydrogène, $6$ d'oxygène,
+soit $6+12+6=24$ atomes au total.
+\end{exemple}
+
+\methode{Distinguer corps simple et corps composé}
+Compter le nombre de \textbf{types} d'atomes différents dans la formule brute : un seul
+type $\to$ corps simple ; plusieurs types $\to$ corps composé.
+\begin{exemple}
+$\mathrm{N_2}$ : un seul type d'atome (azote) $\to$ corps simple. $\mathrm{NH_3}$ : deux
+types d'atomes (azote, hydrogène) $\to$ corps composé.
+\end{exemple}
+
+\methode{Écrire la formule brute d'une molécule connaissant sa composition}
+Écrire le symbole de chaque atome présent, suivi en indice de son nombre d'occurrences
+(sans écrire l'indice $1$).
+\begin{exemple}
+Une molécule contenant $1$ atome de carbone, $2$ atomes d'oxygène : formule brute
+$\mathrm{CO_2}$.
+\end{exemple}
+
+\methode{Déterminer le symbole d'un ion à partir d'un atome et du nombre d'électrons
+échangés}
+Écrire le symbole de l'atome, puis ajouter en exposant le nombre d'électrons
+perdus/gagnés suivi du signe $+$ (perte) ou $-$ (gain) — sans écrire le chiffre $1$.
+\begin{exemple}
+L'atome de magnésium $\mathrm{Mg}$ perd $2$ électrons : ion $\mathrm{Mg^{2+}}$. L'atome de
+fluor $\mathrm{F}$ gagne $1$ électron : ion $\mathrm{F^-}$.
+\end{exemple}
+
+\methode{Reconnaître une liaison de covalence dans une molécule}
+Identifier, dans une représentation de molécule, les paires d'électrons partagées
+(doublets liants) entre deux atomes voisins : chaque doublet correspond à une liaison de
+covalence.
+\begin{exemple}
+Dans $\mathrm{H_2}$, un seul doublet liant relie les deux atomes d'hydrogène : une seule
+liaison de covalence.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{L'atome et ses symboles}
+\exo{}\diff{1} Donner le symbole des atomes suivants : carbone, oxygène, azote,
+hydrogène.
+
+\exo{}\diff{1} Donner le nom des atomes de symboles : $\mathrm{Fe}$, $\mathrm{Na}$,
+$\mathrm{Cl}$, $\mathrm{Ca}$.
+
+\exo{}\diff{2} Qu'est-ce qu'un atome ? Comment est-il constitué ?
+
+\exo{}\diff{2} Pourquoi un atome est-il électriquement neutre ?
+
+\rubrique{Molécules et formules brutes}
+\exo{}\diff{1} La molécule de méthane a pour formule brute $\mathrm{CH_4}$. Donner le
+nombre d'atomes de carbone, le nombre d'atomes d'hydrogène, et le nombre total d'atomes.
+
+\exo{}\diff{2} La molécule de glucose a pour formule brute $\mathrm{C_6H_{12}O_6}$. Donner
+le nombre d'atomes de chaque élément, et le nombre total d'atomes.
+
+\exo{}\diff{2} Parmi les molécules suivantes, indiquer lesquelles sont des corps simples et
+lesquelles sont des corps composés : $\mathrm{O_2}$, $\mathrm{H_2O}$, $\mathrm{N_2}$,
+$\mathrm{CO_2}$, $\mathrm{Cl_2}$, $\mathrm{NH_3}$.
+
+\exo{}\diff{1} Écrire la formule brute du dioxygène, du dihydrogène et du diazote.
+
+\rubrique{Liaison de covalence}
+\exo{}\diff{1} Qu'est-ce qu'une liaison de covalence ?
+
+\exo{}\diff{2} Pourquoi les atomes s'associent-ils entre eux par liaison de covalence ?
+
+\exo{}\diff{2} La molécule de dioxygène $\mathrm{O_2}$ comporte deux atomes d'oxygène
+identiques liés par covalence. Combien de types d'atomes différents compte cette
+molécule ?
+
+\exo{}\diff{2} Réponds par Vrai ou Faux : « Une liaison de covalence correspond à la mise
+en commun d'électrons entre deux atomes. »
+
+\rubrique{Les ions}
+\exo{}\diff{1} Qu'est-ce qu'un cation ? Qu'est-ce qu'un anion ?
+
+\exo{}\diff{2} L'atome de sodium $\mathrm{Na}$ perd un électron. Écrire le symbole de
+l'ion formé.
+
+\exo{}\diff{2} L'atome de chlore $\mathrm{Cl}$ gagne un électron. Écrire le symbole de
+l'ion formé.
+
+\exo{}\diff{3} L'atome de calcium $\mathrm{Ca}$ perd $2$ électrons. Écrire le symbole de
+l'ion formé et préciser le signe de sa charge.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{L'atome et ses symboles}
+\exo{}\diff{1} Donner le symbole des atomes suivants : soufre, fluor, hélium, potassium.
+
+\exo{}\diff{1} Donner le nom des atomes de symboles : $\mathrm{Mg}$, $\mathrm{Cu}$,
+$\mathrm{Zn}$, $\mathrm{Al}$.
+
+\exo{}\diff{1} Vrai ou Faux : « Le symbole $\mathrm{Co}$ désigne la même chose que
+$\mathrm{CO}$. »
+
+\exo{}\diff{2} Un atome possède $11$ protons dans son noyau. Combien d'électrons possède-t-il
+? Justifier.
+
+\exo{}\diff{2} Expliquer pourquoi on ne peut pas observer un atome à l'œil nu.
+
+\rubrique{Molécules et formules brutes}
+\exo{}\diff{1} Une molécule d'ammoniac a pour formule brute $\mathrm{NH_3}$. Donner le
+nombre d'atomes de chaque élément, et le nombre total d'atomes.
+
+\exo{}\diff{2} Une molécule de dioxyde de carbone a pour formule brute $\mathrm{CO_2}$.
+Est-ce un corps simple ou un corps composé ? Justifier.
+
+\exo{}\diff{2} Une molécule contient $2$ atomes d'hydrogène et $1$ atome de soufre. Écrire
+sa formule brute.
+
+\exo{}\diff{2} Une molécule de butane a pour formule brute $\mathrm{C_4H_{10}}$. Donner le
+nombre total d'atomes qu'elle contient.
+
+\exo{}\diff{3} Classer les molécules suivantes en corps simples et corps composés :
+$\mathrm{Br_2}$, $\mathrm{HCl}$, $\mathrm{H_2}$, $\mathrm{C_2H_6}$, $\mathrm{I_2}$.
+
+\rubrique{Liaison de covalence}
+\exo{}\diff{1} Qu'est-ce qui maintient les deux atomes d'une molécule de dichlore
+$\mathrm{Cl_2}$ liés entre eux ?
+
+\exo{}\diff{2} Expliquer, en une phrase, pourquoi les atomes forment des liaisons de
+covalence entre eux.
+
+\exo{}\diff{2} Une molécule d'eau $\mathrm{H_2O}$ comporte deux liaisons de covalence
+(une entre l'oxygène et chaque hydrogène). Combien de doublets liants cela représente-t-il ?
+
+\exo{}\diff{2} Vrai ou Faux : « Dans une liaison de covalence, les électrons appartiennent
+entièrement à un seul des deux atomes. »
+
+\exo{}\diff{3} Pourquoi une molécule avec plusieurs liaisons de covalence est-elle en
+général plus stable qu'une molécule avec une seule liaison ?
+
+\rubrique{Les ions}
+\exo{}\diff{1} L'atome de potassium $\mathrm{K}$ perd un électron. Écrire le symbole de
+l'ion formé.
+
+\exo{}\diff{2} L'atome de fluor $\mathrm{F}$ gagne un électron. Écrire le symbole de l'ion
+formé.
+
+\exo{}\diff{2} L'atome de magnésium $\mathrm{Mg}$ perd $2$ électrons. Écrire le symbole de
+l'ion formé.
+
+\exo{}\diff{2} L'atome d'oxygène $\mathrm{O}$ gagne $2$ électrons. Écrire le symbole de
+l'ion formé.
+
+\exo{}\diff{3} L'atome d'aluminium $\mathrm{Al}$ perd $3$ électrons. Écrire le symbole de
+l'ion formé et préciser sa charge.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Atomes, molécules et ions]
+\begin{enumerate}[label=\arabic*)]
+\item Définis : atome.
+\item Donne le symbole du fer, du sodium et du calcium.
+\item La molécule d'éthanol a pour formule brute $\mathrm{C_2H_6O}$. Donne le nombre total
+d'atomes qu'elle contient.
+\item L'atome de sodium $\mathrm{Na}$ perd un électron. Écris le symbole de l'ion formé.
+\end{enumerate}
+
+\sujetbac[Corps simples, corps composés et covalence]
+\begin{enumerate}[label=\arabic*)]
+\item Réponds par Vrai ou Faux : « Le dioxygène $\mathrm{O_2}$ est un corps composé. »
+\item Qu'est-ce qu'une liaison de covalence ?
+\item Classe en corps simples et corps composés : $\mathrm{N_2}$, $\mathrm{HCl}$,
+$\mathrm{Fe}$, $\mathrm{CH_4}$.
+\item L'atome de chlore $\mathrm{Cl}$ gagne un électron. Écris le symbole de l'ion formé.
+\end{enumerate}
+
+\sujetbac[Constitution de l'atome et des ions]
+\begin{enumerate}[label=\arabic*)]
+\item De quoi est constitué un atome ?
+\item Pourquoi un atome est-il électriquement neutre ?
+\item Définis : cation ; anion.
+\item L'atome de calcium $\mathrm{Ca}$ perd $2$ électrons et l'atome d'oxygène
+$\mathrm{O}$ gagne $2$ électrons. Écris le symbole de chacun des ions formés.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Carbone $\mathrm{C}$ ; oxygène $\mathrm{O}$ ; azote $\mathrm{N}$ ; hydrogène $\mathrm{H}$.
+
+\corrige{de l'exercice 2}
+$\mathrm{Fe}$ : fer ; $\mathrm{Na}$ : sodium ; $\mathrm{Cl}$ : chlore ; $\mathrm{Ca}$ :
+calcium.
+
+\corrige{de l'exercice 3}
+Un atome est la plus petite particule de matière : il est formé d'un noyau (chargé
+positivement) entouré d'électrons (chargés négativement).
+
+\corrige{de l'exercice 4}
+Un atome est neutre car il possède autant d'électrons (charge négative) que de charges
+positives dans son noyau : les charges se compensent.
+
+\corrige{de l'exercice 5}
+$1$ atome de carbone, $4$ atomes d'hydrogène, soit $1+4=5$ atomes au total.
+
+\corrige{de l'exercice 6}
+$6$ atomes de carbone, $12$ d'hydrogène, $6$ d'oxygène, soit $6+12+6=24$ atomes au total.
+
+\corrige{de l'exercice 7}
+Corps simples : $\mathrm{O_2}$, $\mathrm{N_2}$, $\mathrm{Cl_2}$ (un seul type d'atome).
+Corps composés : $\mathrm{H_2O}$, $\mathrm{CO_2}$, $\mathrm{NH_3}$ (plusieurs types
+d'atomes).
+
+\corrige{de l'exercice 8}
+Dioxygène : $\mathrm{O_2}$. Dihydrogène : $\mathrm{H_2}$. Diazote : $\mathrm{N_2}$.
+
+\corrige{de l'exercice 9}
+Une liaison de covalence est la mise en commun d'électrons entre deux atomes, qui les
+maintient liés dans une molécule.
+
+\corrige{de l'exercice 10}
+Les atomes s'associent par liaison de covalence pour atteindre une configuration
+électronique stable.
+
+\corrige{de l'exercice 11}
+Un seul type d'atome (l'oxygène) : deux atomes identiques.
+
+\corrige{de l'exercice 12}
+Vrai.
+
+\corrige{de l'exercice 13}
+Un cation est un ion de charge positive (perte d'électrons). Un anion est un ion de charge
+négative (gain d'électrons).
+
+\corrige{de l'exercice 14}
+$\mathrm{Na^+}$.
+
+\corrige{de l'exercice 15}
+$\mathrm{Cl^-}$.
+
+\corrige{de l'exercice 16}
+$\mathrm{Ca^{2+}}$, charge positive (perte de $2$ électrons).
+
+\corrige{du sujet 1}
+1) Un atome est la plus petite particule de matière, formée d'un noyau positif entouré
+d'électrons négatifs.\\
+2) Fer $\mathrm{Fe}$ ; sodium $\mathrm{Na}$ ; calcium $\mathrm{Ca}$.\\
+3) $2+6+1=9$ atomes au total.\\
+4) $\mathrm{Na^+}$.
+
+\corrige{du sujet 2}
+1) Faux : $\mathrm{O_2}$ ne contient qu'un seul type d'atome, c'est un corps simple.\\
+2) Une liaison de covalence est la mise en commun d'électrons entre deux atomes.\\
+3) Corps simples : $\mathrm{N_2}$, $\mathrm{Fe}$. Corps composés : $\mathrm{HCl}$,
+$\mathrm{CH_4}$.\\
+4) $\mathrm{Cl^-}$.
+
+\corrige{du sujet 3}
+1) Un noyau chargé positivement entouré d'électrons chargés négativement.\\
+2) Car il possède autant d'électrons que de charges positives dans son noyau.\\
+3) Cation : ion de charge positive. Anion : ion de charge négative.\\
+4) $\mathrm{Ca^{2+}}$ et $\mathrm{O^{2-}}$.
+
+\end{multicols}
+\exercicesBanner
