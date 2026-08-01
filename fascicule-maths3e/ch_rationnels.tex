@@ -1,0 +1,551 @@
+\chapter{Nombres rationnels et opérations}
+
+\noindent\textit{Tous les nombres que tu manipules depuis le primaire — entiers, décimaux,
+fractions — appartiennent à un même grand ensemble : les \textbf{nombres rationnels}. Dans ce
+chapitre, tu vas apprendre à écrire une fraction sous sa forme la plus simple, à comparer deux
+rationnels, et à mener sans erreur une suite d'opérations en respectant les \textbf{priorités
+opératoires}. Ces techniques sont la base de tout le calcul en classe de 3\ieme{}.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Entiers, décimaux, rationnels}
+
+\begin{definition}[Nombre rationnel]
+Un \textbf{nombre rationnel} est un nombre qui peut s'écrire sous la forme d'une fraction
+$\dfrac{a}{b}$, où $a$ et $b$ sont des \textbf{entiers relatifs} et $b\ne0$. L'ensemble des
+nombres rationnels se note $\Q$.
+\end{definition}
+
+\begin{remarque}
+Tout entier est rationnel ($5=\dfrac51$), tout nombre décimal est rationnel
+($0{,}75=\dfrac{75}{100}$). On a donc l'inclusion $\N\subset\Z\subset\Q$. Certains nombres,
+comme $\sqrt2$ ou $\pi$, ne sont \textbf{pas} rationnels : on les étudiera plus loin.
+\end{remarque}
+
+\begin{exemple}
+$-\dfrac37$, $4$, $-1{,}25=-\dfrac54$ et $\dfrac{22}{7}$ sont des rationnels. En revanche
+$\sqrt2\approx1{,}414\ldots$ n'est \textbf{pas} un rationnel (ses décimales ne se répètent
+jamais).
+\end{exemple}
+
+\section{Écriture fractionnaire et simplification}
+
+\begin{definition}[Fractions égales]
+Deux fractions $\dfrac ab$ et $\dfrac cd$ (avec $b,d\ne0$) sont \textbf{égales} lorsque
+$a\times d=b\times c$ (produit en croix). On dit aussi qu'elles représentent le même
+rationnel.
+\end{definition}
+
+\begin{propriete}[Simplification d'une fraction]
+On ne change pas la valeur d'une fraction en multipliant \textbf{ou} en divisant son
+numérateur et son dénominateur par un même nombre non nul. Une fraction est
+\textbf{irréductible} lorsque son numérateur et son dénominateur n'ont plus de diviseur
+commun (autre que $1$).
+\end{propriete}
+
+\begin{exemple}
+$\dfrac{45}{75}$ : $45$ et $75$ sont tous deux divisibles par $15$, donc
+$\dfrac{45}{75}=\dfrac{45\div15}{75\div15}=\dfrac35$. La fraction $\dfrac35$ est irréductible.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[scale=1]
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) rectangle (6,1);
+\foreach \i in {1,...,5} \draw[onbline] (\i,0) -- (\i,1);
+\draw[fill=onbo] (0,0) rectangle (4,1);
+\node[below] at (3,-0.15) {\small $\dfrac{4}{6}$ (6 parts, 4 coloriées)};
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (8,0) rectangle (11,1);
+\draw[onbline] (9,0) -- (9,1);
+\draw[fill=onbo] (8,0) rectangle (10,1);
+\node[below] at (9.5,-0.15) {\small $\dfrac{2}{3}$ (3 parts, 2 coloriées)};
+\draw[onbmuted,<->,>=Stealth] (6.3,0.5) -- (7.7,0.5);
+\node[above,onbmuted] at (7,0.7) {\small même aire};
+\end{tikzpicture}
+\fig{Figure — Deux fractions égales : $\dfrac46=\dfrac23$, la même surface coloriée
+partagée différemment.}
+\end{illus}
+
+\begin{aretenir}
+Pour simplifier une fraction, on peut décomposer numérateur et dénominateur en produits de
+petits facteurs communs, ou diviser plusieurs fois de suite par un diviseur commun évident
+(2, 3, 5, ...), jusqu'à ce qu'il n'y en ait plus.
+\end{aretenir}
+
+\section{Comparaison et ordre}
+
+\begin{propriete}[Comparer deux rationnels]
+Pour comparer deux fractions, on les réduit \textbf{au même dénominateur} (positif), puis on
+compare leurs numérateurs. On peut aussi comparer $\dfrac ab$ et $\dfrac cd$ ($b,d>0$) en
+comparant les produits en croix $a\times d$ et $b\times c$.
+\end{propriete}
+
+\begin{exemple}
+Comparer $\dfrac56$ et $\dfrac79$ : dénominateur commun $18$. $\dfrac56=\dfrac{15}{18}$ et
+$\dfrac79=\dfrac{14}{18}$. Comme $15>14$, on a $\dfrac56>\dfrac79$.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\draw[onbline,line width=1pt] (-0.3,0) -- (6.3,0);
+\foreach \x/\lbl in {0/-1,1.5/-\tfrac12,3/0,4.5/\tfrac12,6/1}
+  \draw[onbmuted] (\x,0.08) -- (\x,-0.08) node[below] {\small $\lbl$};
+\filldraw[onbo] (3.75,0) circle (2.2pt) node[above] {\small $\tfrac14$};
+\filldraw[onbgreen] (2.4,0) circle (2.2pt) node[above] {\small $-\tfrac15$};
+\filldraw[onbblue] (5.4,0) circle (2.2pt) node[above] {\small $\tfrac45$};
+\end{tikzpicture}
+\fig{Figure — Droite graduée : $-\tfrac15<\tfrac14<\tfrac45$, l'ordre se lit de gauche à
+droite.}
+\end{illus}
+
+\begin{definition}[Valeur absolue]
+La \textbf{valeur absolue} d'un rationnel $x$, notée $|x|$, est sa distance à $0$ sur la
+droite graduée. On a $|x|=x$ si $x\ge0$ et $|x|=-x$ si $x<0$ ; $|x|$ est toujours positif ou
+nul.
+\end{definition}
+
+\begin{exemple}
+$\left|-\dfrac74\right|=\dfrac74$ et $\left|\dfrac53\right|=\dfrac53$. Comme
+$\dfrac74=1{,}75>\dfrac53\approx1{,}67$, le nombre $-\dfrac74$ est plus \emph{éloigné} de $0$
+que $\dfrac53$.
+\end{exemple}
+
+\begin{remarque}
+Entre deux nombres négatifs, celui qui a la plus \textbf{grande} valeur absolue est le plus
+\textbf{petit} : $-\dfrac74<-\dfrac53$ bien que $\dfrac74>\dfrac53$.
+\end{remarque}
+
+\section{Addition et soustraction de rationnels}
+
+\begin{propriete}[Somme et différence]
+Pour additionner (ou soustraire) deux fractions, on les réduit d'abord au \textbf{même
+dénominateur}, puis on additionne (ou soustrait) les numérateurs en gardant le dénominateur
+commun : $\dfrac ab+\dfrac cb=\dfrac{a+c}b$.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) rectangle (4,1);
+\foreach \i in {1,2,3} \draw[onbline] (\i,0) -- (\i,1);
+\draw[fill=onbo] (0,0) rectangle (1,1);
+\draw[fill=onbo2] (1,0) rectangle (3,1);
+\node[below] at (2,-0.2) {\small $\dfrac14+\dfrac24=\dfrac34$};
+\end{tikzpicture}
+\fig{Figure — Addition de fractions de même dénominateur : les parts coloriées
+s'ajoutent bout à bout.}
+\end{illus}
+
+\begin{exemple}
+$\dfrac23+\dfrac54-\dfrac16$ : dénominateur commun $12$. On obtient
+$\dfrac8{12}+\dfrac{15}{12}-\dfrac2{12}=\dfrac{8+15-2}{12}=\dfrac{21}{12}=\dfrac74$.
+\end{exemple}
+
+\begin{aretenir}
+Ne jamais additionner (ni soustraire) des numérateurs de fractions qui n'ont pas le
+\textbf{même} dénominateur : $\dfrac12+\dfrac13\ne\dfrac25$ ! Il faut toujours passer par un
+dénominateur commun (le produit des dénominateurs convient toujours, le PPCM donne des
+nombres plus petits).
+\end{aretenir}
+
+\section{Multiplication et division de rationnels}
+
+\begin{propriete}[Produit et quotient]
+$\dfrac ab\times\dfrac cd=\dfrac{a\times c}{b\times d}$. Diviser par une fraction non nulle
+revient à multiplier par son \textbf{inverse} :
+$\dfrac ab\div\dfrac cd=\dfrac ab\times\dfrac dc$ (pour $c\ne0$). On simplifie si possible
+\textbf{avant} de multiplier, cela évite de gros calculs.
+\end{propriete}
+
+\begin{exemple}
+$\dfrac34\times\left(-\dfrac89\right)=-\dfrac{3\times8}{4\times9}=-\dfrac{24}{36}=-\dfrac23$
+(en simplifiant par $12$). \quad
+$\left(-\dfrac56\right)\div\dfrac{10}3=-\dfrac56\times\dfrac3{10}=-\dfrac{15}{60}=-\dfrac14$.
+\end{exemple}
+
+\begin{remarque}
+La division par $0$ est \textbf{impossible} : $\dfrac c0$ n'a aucun sens, quelle que soit la
+valeur de $c$. Le signe d'un produit ou d'un quotient suit la règle des signes habituelle :
+$(-)\times(-)=(+)$, $(+)\times(-)=(-)$, etc.
+\end{remarque}
+
+\section{Priorités opératoires}
+
+\begin{aretenir}[Ordre des priorités]
+Dans un calcul sans parenthèses, on effectue \textbf{dans l'ordre} : \textbf{1)} les
+puissances (vues au chapitre suivant), \textbf{2)} les multiplications et divisions, de
+gauche à droite, \textbf{3)} les additions et soustractions, de gauche à droite. S'il y a des
+\textbf{parenthèses}, on calcule d'abord ce qu'elles contiennent, en commençant par les plus
+intérieures.
+\end{aretenir}
+
+\begin{illus}
+\begin{tikzpicture}[node distance=10mm,>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=2.6cm,minimum height=0.8cm] (p1) {1. Parenthèses};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=2.6cm,minimum height=0.8cm,right=of p1] (p2) {2. $\times\;\div$};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=2.6cm,minimum height=0.8cm,right=of p2] (p3) {3. $+\;-$};
+\draw[->,onbmuted,line width=1pt] (p1) -- (p2);
+\draw[->,onbmuted,line width=1pt] (p2) -- (p3);
+\end{tikzpicture}
+\fig{Figure — L'ordre des priorités opératoires : parenthèses, puis multiplication/division,
+puis addition/soustraction.}
+\end{illus}
+
+\begin{exemple}
+$5-2\times\left(\dfrac34-\dfrac12\right)+\dfrac18$ : on calcule d'abord la parenthèse
+$\dfrac34-\dfrac12=\dfrac14$, puis la multiplication $2\times\dfrac14=\dfrac12$, et enfin
+$5-\dfrac12+\dfrac18=\dfrac{40}8-\dfrac48+\dfrac18=\dfrac{37}8$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Rationnels.} $\Q$ = nombres $\dfrac ab$ avec $a,b\in\Z$, $b\ne0$. $\N\subset\Z\subset\Q$.\\[4pt]
+\textbf{Fractions égales.} $\dfrac ab=\dfrac cd\iff a\times d=b\times c$ (produit en croix).\\[4pt]
+\textbf{Simplifier.} Diviser numérateur et dénominateur par un même diviseur commun, jusqu'à
+la forme irréductible.\\[4pt]
+\textbf{Comparer.} Même dénominateur (positif) $\Rightarrow$ comparer les numérateurs.
+Valeur absolue $|x|$ = distance de $x$ à $0$.\\[4pt]
+\textbf{Addition/soustraction.} $\dfrac ab\pm\dfrac cb=\dfrac{a\pm c}b$ (même dénominateur
+obligatoire).\\[4pt]
+\textbf{Multiplication/division.} $\dfrac ab\times\dfrac cd=\dfrac{ac}{bd}$ ;\ diviser =
+multiplier par l'inverse. Division par $0$ interdite.\\[4pt]
+\textbf{Priorités.} Parenthèses $\to$ $\times,\div$ (gauche à droite) $\to$ $+,-$ (gauche à
+droite).\\[4pt]
+\textbf{Piège fréquent.} $\dfrac12+\dfrac13\ne\dfrac25$ : jamais additionner des fractions de
+dénominateurs différents sans les réduire au même dénominateur d'abord.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Simplifier une fraction jusqu'à sa forme irréductible}
+Chercher un diviseur commun évident au numérateur et au dénominateur (2, 3, 5, ...), diviser,
+et recommencer jusqu'à ce qu'il n'y en ait plus.
+\begin{exemple}
+$\dfrac{45}{75}$ : diviser par $5$ donne $\dfrac9{15}$, puis diviser par $3$ donne
+$\dfrac35$, qui est irréductible.
+\end{exemple}
+
+\methode{Comparer deux fractions}
+Réduire les deux fractions au même dénominateur (positif) puis comparer les numérateurs.
+\begin{exemple}
+$-\dfrac56$ et $-\dfrac79$ : dénominateur commun $18$ donne $-\dfrac{15}{18}$ et
+$-\dfrac{14}{18}$. Comme $-15<-14$, $-\dfrac56<-\dfrac79$.
+\end{exemple}
+
+\methode{Additionner ou soustraire des fractions de dénominateurs différents}
+Trouver un dénominateur commun (le produit des dénominateurs, ou leur PPCM), réécrire chaque
+fraction, puis additionner/soustraire les numérateurs.
+\begin{exemple}
+$\dfrac34-\dfrac56$ : dénominateur commun $12$, donne $\dfrac9{12}-\dfrac{10}{12}=-\dfrac1{12}$.
+\end{exemple}
+
+\methode{Multiplier et diviser des fractions}
+Multiplier numérateurs entre eux et dénominateurs entre eux (en simplifiant si possible
+avant) ; pour diviser, multiplier par l'inverse du diviseur.
+\begin{exemple}
+$\dfrac23\times\left(-\dfrac9{10}\right)=-\dfrac{2\times9}{3\times10}=-\dfrac{18}{30}=-\dfrac35$
+(simplifié par $6$). \quad $\dfrac78\div\left(-\dfrac{14}3\right)=\dfrac78\times\left(-\dfrac3{14}\right)=-\dfrac{21}{112}=-\dfrac3{16}$.
+\end{exemple}
+
+\methode{Appliquer correctement les priorités opératoires}
+Repérer d'abord les parenthèses, les calculer entièrement, puis effectuer les multiplications
+et divisions avant les additions et soustractions.
+\begin{exemple}
+$4-3\times\left(\dfrac23-1\right)$ : parenthèse $\dfrac23-1=-\dfrac13$, puis
+$3\times\left(-\dfrac13\right)=-1$, puis $4-(-1)=5$.
+\end{exemple}
+
+\methode{Utiliser la valeur absolue pour comparer des rationnels}
+Calculer les valeurs absolues des deux nombres : si les deux nombres sont négatifs, celui qui
+a la plus grande valeur absolue est le plus petit.
+\begin{exemple}
+$\left|-\dfrac74\right|=\dfrac74=1{,}75$ et $\left|\dfrac53\right|=\dfrac53\approx1{,}67$.
+Comme $1{,}75>1{,}67$, on a $-\dfrac74<\dfrac53$ (évident aussi car le premier est négatif).
+\end{exemple}
+
+\methode{Résoudre un problème concret avec des rationnels}
+Traduire chaque étape de l'énoncé par une opération sur des fractions, en calculant chaque
+quantité intermédiaire avant de passer à la suivante.
+\begin{exemple}
+Kouam a $54\,000$ FCFA. Il donne $\dfrac16$ de cette somme à son frère, puis dépense
+$\dfrac29$ du reste pour des habits. Il donne : $\dfrac16\times54\,000=9\,000$ FCFA (reste
+$45\,000$ FCFA) ; habits : $\dfrac29\times45\,000=10\,000$ FCFA. Il lui reste
+$45\,000-10\,000=35\,000$ FCFA.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Simplifier et comparer des fractions}
+\exo{}\diff{1} Simplifier jusqu'à la forme irréductible : $\dfrac{36}{48}$,\ $\dfrac{56}{84}$,\ $\dfrac{40}{64}$.
+
+\exo{}\diff{1} Simplifier jusqu'à la forme irréductible : $-\dfrac{84}{126}$,\ $-\dfrac{56}{98}$.
+
+\exo{}\diff{2} Comparer $\dfrac56$ et $\dfrac79$ (méthode du dénominateur commun).
+
+\exo{}\diff{2} Ranger dans l'ordre croissant : $-\dfrac34$,\ $-\dfrac23$,\ $-\dfrac58$.
+
+\rubrique{Addition, soustraction, multiplication, division}
+\exo{}\diff{1} Calculer $A=\dfrac23+\dfrac54-\dfrac16$ (résultat sous forme de fraction
+irréductible).
+
+\exo{}\diff{1} Calculer $B=-\dfrac7{10}-\dfrac35+\dfrac{11}{20}$.
+
+\exo{}\diff{2} Calculer $C=\dfrac34\times\left(-\dfrac89\right)$.
+
+\exo{}\diff{2} Calculer $D=\left(-\dfrac56\right)\div\dfrac{10}3$.
+
+\rubrique{Priorités opératoires}
+\exo{}\diff{2} Calculer $E=\dfrac25+\dfrac34\times\left(-\dfrac23\right)$.
+
+\exo{}\diff{2} Calculer $F=\left(\dfrac12-\dfrac23\right)\times\left(\dfrac34+\dfrac16\right)$.
+
+\exo{}\diff{2} Calculer $G=5-2\times\left(\dfrac34-\dfrac12\right)+\dfrac18$.
+
+\exo{}\diff{3} Calculer $H=\left[2-3\times\left(\dfrac12-\dfrac56\right)\right]\div\left(-\dfrac23\right)$.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un champ de $3\,600\text{ m}^2$, situé près de Bafoussam, est partagé entre
+trois héritiers. Le premier reçoit $\dfrac13$ de la superficie totale, le deuxième reçoit
+$\dfrac25$ de ce qui reste, et le troisième reçoit le reste. Calculer la superficie reçue par
+chaque héritier.
+
+\exo{}\diff{2} Mireille dispose de $45\,000$ FCFA. Elle dépense $\dfrac25$ de cette somme en
+nourriture, puis $\dfrac13$ de ce qui reste en transport. Combien d'argent lui reste-t-il ?
+
+\exo{}\diff{2} Un taxi doit parcourir un trajet de $96$ km entre Douala et une ville voisine.
+Le matin, il parcourt $\dfrac38$ du trajet ; l'après-midi, $\dfrac5{12}$ du trajet. Quelle
+distance (en km) lui reste-t-il à parcourir ?
+
+\exo{}\diff{1} Une recette pour $8$ personnes nécessite $\dfrac34$ kg de farine. En gardant
+les proportions, quelle quantité de farine faut-il pour $6$ personnes ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Simplifier et comparer}
+\exo{}\diff{1} Simplifier : $\dfrac{28}{42}$,\ $\dfrac{63}{99}$,\ $\dfrac{48}{60}$.
+
+\exo{}\diff{1} Simplifier : $-\dfrac{72}{108}$,\ $-\dfrac{90}{135}$.
+
+\exo{}\diff{2} Comparer $\dfrac{11}{15}$ et $\dfrac{13}{18}$.
+
+\exo{}\diff{2} Comparer $-\dfrac45$ et $-\dfrac79$.
+
+\exo{}\diff{2} Ranger dans l'ordre décroissant : $\dfrac53$,\ $\dfrac74$,\ $\dfrac32$.
+
+\rubrique{Opérations sur les rationnels}
+\exo{}\diff{1} Calculer $\dfrac37+\dfrac27-\dfrac57$.
+
+\exo{}\diff{1} Calculer $-\dfrac54+\dfrac32$.
+
+\exo{}\diff{2} Calculer $\dfrac59-\dfrac13+\dfrac16$.
+
+\exo{}\diff{2} Calculer $\left(-\dfrac47\right)\times\dfrac{14}5$.
+
+\exo{}\diff{2} Calculer $\dfrac{9}{10}\div\left(-\dfrac35\right)$.
+
+\rubrique{Priorités opératoires}
+\exo{}\diff{2} Calculer $\dfrac13+\dfrac25\times\dfrac52$.
+
+\exo{}\diff{2} Calculer $\left(3-\dfrac54\right)\times\left(2+\dfrac13\right)$.
+
+\exo{}\diff{2} Calculer $7-3\times\left(\dfrac23-\dfrac14\right)$.
+
+\exo{}\diff{3} Calculer $\left[\dfrac54-\left(2-\dfrac73\right)\right]\times\dfrac{-6}5$.
+
+\exo{}\diff{3} Calculer $\dfrac{4-\dfrac23\times3}{1-\dfrac12}$.
+
+\rubrique{Valeur absolue et ordre}
+\exo{}\diff{1} Calculer $\left|-\dfrac97\right|$ et $\left|\dfrac{-11}4\right|$.
+
+\exo{}\diff{2} Sans calculer leur valeur exacte, comparer $-\dfrac{17}5$ et $-\dfrac{16}5$ à
+l'aide de leur valeur absolue.
+
+\exo{}\diff{2} Placer approximativement sur une droite graduée les nombres $-\dfrac32$,
+$\dfrac14$, $-\dfrac25$, $\dfrac95$.
+
+\exo{}\diff{2} Trouver un rationnel compris strictement entre $\dfrac23$ et $\dfrac34$.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un réservoir contient $2\,400$ litres d'eau. On en utilise $\dfrac38$ pour
+arroser un champ à Maroua, puis $\dfrac14$ du reste pour le bétail. Quelle quantité d'eau
+reste-t-il dans le réservoir ?
+
+\exo{}\diff{2} Une classe de 3\ieme{} compte $60$ élèves. Les $\dfrac25$ des élèves pratiquent
+le football, et $\dfrac13$ des élèves restants pratiquent le basket. Combien d'élèves ne
+pratiquent ni l'un ni l'autre de ces deux sports (parmi les élèves considérés) ?
+
+\exo{}\diff{2} Un commerçant de Kribi achète des ananas pour $84\,000$ FCFA. Il revend les
+$\dfrac57$ de sa marchandise avec un bénéfice, puis constate qu'il lui reste encore
+$\dfrac13$ du reste à vendre le lendemain. Quelle fraction de la marchandise totale a-t-il
+vendue le premier jour, et quelle fraction lui reste-t-il après le début du deuxième jour ?
+
+\exo{}\diff{3} Un terrain rectangulaire de $5\,000\text{ m}^2$ à Ebolowa est partagé en trois
+lots : le premier occupe $\dfrac25$ du terrain, le deuxième occupe $\dfrac13$ du reste, et le
+troisième lot correspond à ce qui reste. Calculer la superficie de chaque lot.
+
+\exo{}\diff{2} Un litre de jus de fruit coûte $650$ FCFA. Adèle achète $\dfrac34$ de litre.
+Quel est le prix payé ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[fractions, comparaison et partage — marché du Mfoundi, Yaoundé]
+\begin{enumerate}[label=\arabic*)]
+\item Simplifier la fraction $\dfrac{72}{120}$ jusqu'à sa forme irréductible.
+\item Comparer les rationnels $-\dfrac56$ et $-\dfrac79$.
+\item Calculer et donner le résultat sous forme de fraction irréductible :
+$\left(\dfrac23-\dfrac14\right)\times\left(-\dfrac35\right)+\dfrac12$.
+\item Un commerçant du marché du Mfoundi, à Yaoundé, achète un sac d'arachides de $80$ kg
+pour $32\,000$ FCFA. Il en revend les $\dfrac35$ au détail à $500$ FCFA le kilogramme, et le
+reste à un grossiste à $350$ FCFA le kilogramme.
+\begin{enumerate}[label=\alph*)]
+\item Calculer la masse (en kg) vendue au détail, puis la masse vendue au grossiste.
+\item Calculer la recette totale du commerçant.
+\item Calculer son bénéfice (recette totale moins prix d'achat).
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[fractions et trajet — gare routière de Douala]
+\begin{enumerate}[label=\arabic*)]
+\item Simplifier la fraction $\dfrac{105}{135}$ jusqu'à sa forme irréductible.
+\item Comparer les rationnels $\dfrac{11}{15}$ et $\dfrac{13}{18}$.
+\item Calculer $D=3-\left(\dfrac23+\dfrac16\right)\times\dfrac45$.
+\item Un bus interurbain relie Douala à Bafoussam, sur une distance totale de $300$ km. Il
+parcourt $\dfrac25$ du trajet avant une première pause, puis $\dfrac7{15}$ du trajet avant une
+seconde pause.
+\begin{enumerate}[label=\alph*)]
+\item Calculer, en km, la distance parcourue avant chaque pause.
+\item Quelle fraction du trajet reste-t-il à parcourir après la seconde pause ? Donner la
+distance correspondante en km.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[fractions et économies — Garoua]
+\begin{enumerate}[label=\arabic*)]
+\item Simplifier la fraction $\dfrac{130}{195}$ jusqu'à sa forme irréductible.
+\item Comparer les rationnels $-\dfrac45$ et $-\dfrac79$.
+\item Calculer $E=\left(\dfrac54-\dfrac13\right)\times2-\dfrac38$.
+\item Aïcha, à Garoua, dispose de $60\,000$ FCFA d'économies. Elle place $\dfrac25$ de cette
+somme à la banque, dépense ensuite $\dfrac14$ de ce qui reste pour des fournitures scolaires,
+puis donne le tiers de la nouvelle somme restante à sa petite sœur.
+\begin{enumerate}[label=\alph*)]
+\item Calculer la somme placée à la banque, puis la somme dépensée en fournitures.
+\item Calculer la somme donnée à sa petite sœur.
+\item Combien d'argent reste-t-il finalement à Aïcha ?
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\dfrac{36}{48}=\dfrac{36\div12}{48\div12}=\dfrac34$ ;\quad
+$\dfrac{56}{84}=\dfrac{56\div28}{84\div28}=\dfrac23$ ;\quad
+$\dfrac{40}{64}=\dfrac{40\div8}{64\div8}=\dfrac58$.
+
+\corrige{de l'exercice 2}
+$-\dfrac{84}{126}=-\dfrac{84\div42}{126\div42}=-\dfrac23$ ;\quad
+$-\dfrac{56}{98}=-\dfrac{56\div14}{98\div14}=-\dfrac47$.
+
+\corrige{de l'exercice 3}
+Dénominateur commun $18$ : $\dfrac56=\dfrac{15}{18}$ et $\dfrac79=\dfrac{14}{18}$. Comme
+$15>14$, $\dfrac56>\dfrac79$.
+
+\corrige{de l'exercice 4}
+Dénominateur commun $24$ : $-\dfrac34=-\dfrac{18}{24}$, $-\dfrac23=-\dfrac{16}{24}$,
+$-\dfrac58=-\dfrac{15}{24}$. Ordre croissant (numérateurs négatifs croissants) :
+$-\dfrac34<-\dfrac23<-\dfrac58$.
+
+\corrige{de l'exercice 5}
+Dénominateur commun $12$ : $A=\dfrac8{12}+\dfrac{15}{12}-\dfrac2{12}=\dfrac{21}{12}=\dfrac74$.
+
+\corrige{de l'exercice 6}
+Dénominateur commun $20$ : $B=-\dfrac{14}{20}-\dfrac{12}{20}+\dfrac{11}{20}=-\dfrac{15}{20}=-\dfrac34$.
+
+\corrige{de l'exercice 7}
+$C=\dfrac{3\times(-8)}{4\times9}=-\dfrac{24}{36}=-\dfrac23$.
+
+\corrige{de l'exercice 8}
+$D=-\dfrac56\times\dfrac3{10}=-\dfrac{15}{60}=-\dfrac14$.
+
+\corrige{de l'exercice 9}
+$E=\dfrac25+\dfrac34\times\left(-\dfrac23\right)=\dfrac25-\dfrac12=\dfrac4{10}-\dfrac5{10}=-\dfrac1{10}$.
+
+\corrige{de l'exercice 10}
+$\dfrac12-\dfrac23=-\dfrac16$ ;\ $\dfrac34+\dfrac16=\dfrac{11}{12}$. Donc
+$F=-\dfrac16\times\dfrac{11}{12}=-\dfrac{11}{72}$.
+
+\corrige{de l'exercice 11}
+Parenthèse : $\dfrac34-\dfrac12=\dfrac14$. Puis $2\times\dfrac14=\dfrac12$. Enfin
+$G=5-\dfrac12+\dfrac18=\dfrac{40}8-\dfrac48+\dfrac18=\dfrac{37}8$.
+
+\corrige{de l'exercice 12}
+Parenthèse : $\dfrac12-\dfrac56=-\dfrac13$. Puis $3\times\left(-\dfrac13\right)=-1$, donc
+$2-(-1)=3$. Enfin $H=3\div\left(-\dfrac23\right)=3\times\left(-\dfrac32\right)=-\dfrac92$.
+
+\corrige{de l'exercice 13}
+Premier héritier : $\dfrac13\times3\,600=1\,200\text{ m}^2$ ; il reste
+$3\,600-1\,200=2\,400\text{ m}^2$. Deuxième héritier : $\dfrac25\times2\,400=960\text{ m}^2$.
+Troisième héritier : $2\,400-960=1\,440\text{ m}^2$.
+
+\corrige{de l'exercice 14}
+Nourriture : $\dfrac25\times45\,000=18\,000$ FCFA ; il reste $45\,000-18\,000=27\,000$ FCFA.
+Transport : $\dfrac13\times27\,000=9\,000$ FCFA. Il lui reste $27\,000-9\,000=18\,000$ FCFA.
+
+\corrige{de l'exercice 15}
+Fraction déjà parcourue : $\dfrac38+\dfrac5{12}=\dfrac9{24}+\dfrac{10}{24}=\dfrac{19}{24}$.
+Fraction restante : $1-\dfrac{19}{24}=\dfrac5{24}$. Distance restante :
+$\dfrac5{24}\times96=20$ km.
+
+\corrige{de l'exercice 16}
+Le facteur d'échelle est $\dfrac68=\dfrac34$. Farine nécessaire :
+$\dfrac34\times\dfrac34=\dfrac9{16}$ kg.
+
+\corrige{du sujet 1}
+1) $\dfrac{72}{120}=\dfrac{72\div24}{120\div24}=\dfrac35$.\\
+2) Dénominateur commun $18$ : $-\dfrac56=-\dfrac{15}{18}$, $-\dfrac79=-\dfrac{14}{18}$. Comme
+$-15<-14$, $-\dfrac56<-\dfrac79$.\\
+3) $\dfrac23-\dfrac14=\dfrac8{12}-\dfrac3{12}=\dfrac5{12}$ ; puis
+$\dfrac5{12}\times\left(-\dfrac35\right)=-\dfrac{15}{60}=-\dfrac14$ ; enfin
+$-\dfrac14+\dfrac12=\dfrac14$.\\
+4a) Détail : $\dfrac35\times80=48$ kg ; grossiste : $80-48=32$ kg.\\
+4b) Recette détail : $48\times500=24\,000$ FCFA ; recette grossiste : $32\times350=11\,200$
+FCFA ; recette totale : $24\,000+11\,200=35\,200$ FCFA.\\
+4c) Bénéfice : $35\,200-32\,000=3\,200$ FCFA.
+
+\corrige{du sujet 2}
+1) $\dfrac{105}{135}=\dfrac{105\div15}{135\div15}=\dfrac79$.\\
+2) Dénominateur commun $90$ : $\dfrac{11}{15}=\dfrac{66}{90}$, $\dfrac{13}{18}=\dfrac{65}{90}$.
+Comme $66>65$, $\dfrac{11}{15}>\dfrac{13}{18}$.\\
+3) $\dfrac23+\dfrac16=\dfrac56$ ; puis $\dfrac56\times\dfrac45=\dfrac{20}{30}=\dfrac23$ ; enfin
+$D=3-\dfrac23=\dfrac73$.\\
+4a) Avant la première pause : $\dfrac25\times300=120$ km. Avant la seconde pause :
+$\dfrac7{15}\times300=140$ km.\\
+4b) Fraction déjà parcourue : $\dfrac25+\dfrac7{15}=\dfrac6{15}+\dfrac7{15}=\dfrac{13}{15}$ ;
+fraction restante : $\dfrac2{15}$, soit $\dfrac2{15}\times300=40$ km.
+
+\corrige{du sujet 3}
+1) $\dfrac{130}{195}=\dfrac{130\div65}{195\div65}=\dfrac23$.\\
+2) Dénominateur commun $45$ : $-\dfrac45=-\dfrac{36}{45}$, $-\dfrac79=-\dfrac{35}{45}$. Comme
+$-36<-35$, $-\dfrac45<-\dfrac79$.\\
+3) $\dfrac54-\dfrac13=\dfrac{15}{12}-\dfrac4{12}=\dfrac{11}{12}$ ; puis
+$\dfrac{11}{12}\times2=\dfrac{11}6$ ; enfin $E=\dfrac{11}6-\dfrac38=\dfrac{44}{24}-\dfrac9{24}=\dfrac{35}{24}$.\\
+4a) Banque : $\dfrac25\times60\,000=24\,000$ FCFA ; il reste $60\,000-24\,000=36\,000$ FCFA.
+Fournitures : $\dfrac14\times36\,000=9\,000$ FCFA.\\
+4b) Il reste $36\,000-9\,000=27\,000$ FCFA ; part de la sœur : $\dfrac13\times27\,000=9\,000$
+FCFA.\\
+4c) Somme finale restant à Aïcha : $27\,000-9\,000=18\,000$ FCFA.
+
+\end{multicols}
+\exercicesBanner
