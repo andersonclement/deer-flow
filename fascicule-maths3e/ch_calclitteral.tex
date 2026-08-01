@@ -1,1 +1,499 @@
 \chapter{Calcul littéral}
+
+\noindent\textit{Le calcul littéral consiste à manipuler des expressions contenant des
+lettres, comme $3x+5$ ou $(x+2)^2$. Tu sais déjà \textbf{développer} (transformer un produit
+en somme) depuis la 4\ieme{} ; ce chapitre approfondit cette technique avec les
+\textbf{identités remarquables}, et introduit l'opération inverse : \textbf{factoriser}
+(transformer une somme en produit), indispensable pour résoudre des équations au chapitre
+suivant.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Développer une expression littérale}
+
+\begin{definition}[Développer]
+\textbf{Développer} une expression, c'est transformer un \textbf{produit} en une
+\textbf{somme} (ou une différence) de termes.
+\end{definition}
+
+\begin{propriete}[Distributivité simple]
+Pour tous nombres $k,a,b$ :
+\[
+k(a+b)=ka+kb, \qquad k(a-b)=ka-kb.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=1pt] (0,0) rectangle (6,3);
+\draw[onbo,line width=1pt] (4,0) -- (4,3);
+\node at (2,1.5) {\small $3\times4=12$};
+\node at (5,1.5) {\small $3\times2=6$};
+\node[below] at (2,-0.2) {\small $4$};
+\node[below] at (5,-0.2) {\small $2$};
+\node[left] at (-0.2,1.5) {\small $3$};
+\end{tikzpicture}
+\fig{Figure — L'aire du grand rectangle ($3\times6=18$) est la somme des deux aires
+partielles : $3\times(4+2)=3\times4+3\times2$.}
+\end{illus}
+
+\begin{exemple}
+$5(x+3)=5x+15$ ;\quad $-2(3x-4)=-6x+8$ (attention au signe devant la parenthèse).
+\end{exemple}
+
+\begin{propriete}[Double distributivité]
+Pour tous nombres $a,b,c,d$ :
+\[
+(a+b)(c+d)=ac+ad+bc+bd.
+\]
+Chaque terme de la première parenthèse multiplie chaque terme de la seconde.
+\end{propriete}
+
+\begin{exemple}
+$(x+2)(x+5)=x^{2}+5x+2x+10=x^{2}+7x+10$.
+\end{exemple}
+
+\begin{remarque}
+Le \textbf{signe} de chaque terme fait partie du terme : dans $(x-3)(x+6)$, on multiplie
+$x$ et $-3$ (pas $3$) par chaque terme de $(x+6)$.
+\end{remarque}
+
+\section{Identités remarquables}
+
+\begin{propriete}[Carré d'une somme]
+\[
+(a+b)^{2}=a^{2}+2ab+b^{2}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) rectangle (5.5,5.5);
+\draw[onbo,line width=1.1pt] (4,0) -- (4,5.5);
+\draw[onbo,line width=1.1pt] (0,4) -- (5.5,4);
+\node at (2,2) {\small $a^{2}$};
+\node at (4.75,2) {\small $ab$};
+\node at (2,4.75) {\small $ab$};
+\node at (4.75,4.75) {\small $b^{2}$};
+\node[below] at (2,-0.2) {\small $a$};
+\node[below] at (4.75,-0.2) {\small $b$};
+\node[left] at (-0.2,2) {\small $a$};
+\node[left] at (-0.2,4.75) {\small $b$};
+\end{tikzpicture}
+\fig{Figure — Le carré de côté $(a+b)$ se décompose en quatre régions :
+$(a+b)^{2}=a^{2}+2ab+b^{2}$.}
+\end{illus}
+
+\begin{propriete}[Carré d'une différence]
+\[
+(a-b)^{2}=a^{2}-2ab+b^{2}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0) rectangle (5.5,5.5);
+\draw[onbgreen,line width=1.1pt] (4,0) -- (4,5.5);
+\draw[onbgreen,line width=1.1pt] (0,4) -- (5.5,4);
+\node at (2,2) {\small $(a-b)^{2}$};
+\node at (4.75,2) {\small $(a-b)b$};
+\node at (2,4.75) {\small $(a-b)b$};
+\node at (4.75,4.75) {\small $b^{2}$};
+\node[below] at (2,-0.2) {\small $a-b$};
+\node[below] at (4.75,-0.2) {\small $b$};
+\node[left] at (-0.2,2) {\small $a-b$};
+\node[left] at (-0.2,4.75) {\small $b$};
+\end{tikzpicture}
+\fig{Figure — Le grand carré de côté $a$ se décompose en $(a-b)^{2}$, deux rectangles
+$(a-b)\times b$ et un petit carré $b^{2}$ : on en déduit $(a-b)^{2}=a^{2}-2ab+b^{2}$.}
+\end{illus}
+
+\begin{propriete}[Différence de deux carrés]
+\[
+(a-b)(a+b)=a^{2}-b^{2}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbline,line width=0.8pt] (0,0)--(4,0)--(4,2.5)--(2.5,2.5)--(2.5,4)--(0,4)--cycle;
+\node at (2,1.2) {\small $a^{2}-b^{2}$};
+\node[below] at (2,-0.2) {\small $a$};
+\node[left] at (-0.2,2) {\small $a$};
+\draw[onbmuted,dashed] (2.5,0) -- (2.5,2.5);
+\draw[onbmuted,dashed] (0,2.5) -- (2.5,2.5);
+\node[right] at (2.6,1.2) {\tiny $b$};
+\draw[->,onbmuted,line width=1pt] (4.3,2.6) -- (5.7,2.6);
+\draw[fill=onbsoft,draw=onbo,line width=1pt] (6,0.75) rectangle (9.5,3.25);
+\node at (7.75,2) {\small $(a-b)(a+b)$};
+\node[below] at (7.75,0.55) {\small $a+b$};
+\node[left] at (5.85,2) {\small $a-b$};
+\end{tikzpicture}
+\fig{Figure — Le carré de côté $a$ privé d'un carré de côté $b$ (aire $a^{2}-b^{2}$) se
+réarrange en un rectangle de dimensions $(a-b)\times(a+b)$.}
+\end{illus}
+
+\begin{exemple}
+$(x+3)^{2}=x^{2}+6x+9$ ;\quad $(x-4)^{2}=x^{2}-8x+16$ ;\quad $(x-5)(x+5)=x^{2}-25$.
+\end{exemple}
+
+\begin{aretenir}
+Pour reconnaître quelle identité utiliser : deux termes reliés par un signe $+$ dans un
+carré $\Rightarrow(a+b)^{2}$ ; par un signe $-\Rightarrow(a-b)^{2}$ ; un produit de deux
+parenthèses \textbf{presque identiques} (mêmes termes, signe central opposé)
+$\Rightarrow(a-b)(a+b)=a^{2}-b^{2}$.
+\end{aretenir}
+
+\section{Factoriser une expression littérale}
+
+\begin{definition}[Factoriser]
+\textbf{Factoriser} une expression, c'est transformer une \textbf{somme} (ou une différence)
+de termes en un \textbf{produit} de facteurs — c'est l'opération inverse de développer.
+\end{definition}
+
+\begin{propriete}[Facteur commun]
+Si un même facteur $k$ apparaît dans chaque terme d'une somme, on peut le \textbf{mettre en
+facteur} : $ka+kb=k(a+b)$.
+\end{propriete}
+
+\begin{exemple}
+$3x+12=3x+3\times4=3(x+4)$ ;\quad $5x^{2}-15x=5x\times x-5x\times3=5x(x-3)$.
+\end{exemple}
+
+\begin{remarque}
+Le facteur commun peut être une expression entière, pas seulement un nombre ou une lettre :
+dans $(x+1)(x-2)+3(x+1)$, le facteur commun est $(x+1)$, donc
+$(x+1)(x-2)+3(x+1)=(x+1)\big[(x-2)+3\big]=(x+1)(x+1)=(x+1)^{2}$.
+\end{remarque}
+
+\begin{propriete}[Factoriser avec une identité remarquable]
+Les identités remarquables se lisent aussi « à l'envers » pour factoriser :
+\[
+a^{2}+2ab+b^{2}=(a+b)^{2}, \qquad a^{2}-2ab+b^{2}=(a-b)^{2}, \qquad a^{2}-b^{2}=(a-b)(a+b).
+\]
+\end{propriete}
+
+\begin{exemple}
+$x^{2}-16=x^{2}-4^{2}=(x-4)(x+4)$ ;\quad $x^{2}+10x+25=x^{2}+2\times5x+5^{2}=(x+5)^{2}$.
+\end{exemple}
+
+\begin{aretenir}
+Pour reconnaître une identité remarquable à factoriser, il faut retrouver \textbf{deux
+carrés} ($a^{2}$ et $b^{2}$) et, s'il y a un troisième terme, vérifier qu'il vaut bien
+$2ab$ ou $-2ab$.
+\end{aretenir}
+
+\section{À quoi servent développement et factorisation ?}
+
+\begin{exemple}
+Calculer astucieusement $97\times103$ sans calculatrice : $97\times103=(100-3)(100+3)=100^{2}-3^{2}=10\,000-9=9\,991$.
+\end{exemple}
+
+\begin{aretenir}
+On \textbf{développe} pour simplifier une somme, réduire une expression, ou calculer une
+valeur numérique facilement. On \textbf{factorise} pour transformer une expression en produit
+— ce qui sera essentiel au chapitre suivant pour résoudre des équations produit nul.
+\end{aretenir}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Distributivité.} $k(a+b)=ka+kb$ ;\ $(a+b)(c+d)=ac+ad+bc+bd$.\\[4pt]
+\textbf{Identités remarquables.} $(a+b)^{2}=a^{2}+2ab+b^{2}$ ;\
+$(a-b)^{2}=a^{2}-2ab+b^{2}$ ;\ $(a-b)(a+b)=a^{2}-b^{2}$.\\[4pt]
+\textbf{Factoriser (facteur commun).} $ka+kb=k(a+b)$ — le facteur commun peut être une
+expression entière, comme $(x+1)$.\\[4pt]
+\textbf{Factoriser (identité remarquable).} Repérer deux carrés $a^{2}$, $b^{2}$ et un
+terme central en $2ab$ (ou $-2ab$), ou l'absence de terme central (différence de carrés).\\[4pt]
+\textbf{Usage.} Développer pour simplifier/calculer ; factoriser pour résoudre des équations
+produit nul (chapitre suivant).\\[4pt]
+\textbf{Piège fréquent.} $(a+b)^{2}\ne a^{2}+b^{2}$ (il manque le terme $2ab$) ; ne pas
+oublier le signe devant une parenthèse lors d'un développement.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Développer avec la distributivité simple}
+Multiplier le facteur extérieur par \textbf{chaque} terme de la parenthèse, en respectant les
+signes.
+\begin{exemple}
+$-4(2x-5)=-4\times2x-4\times(-5)=-8x+20$.
+\end{exemple}
+
+\methode{Développer avec la double distributivité}
+Multiplier chaque terme de la première parenthèse par chaque terme de la seconde, puis
+réduire les termes semblables.
+\begin{exemple}
+$(2x+1)(x-4)=2x^{2}-8x+x-4=2x^{2}-7x-4$.
+\end{exemple}
+
+\methode{Développer avec une identité remarquable}
+Repérer la forme ($(a+b)^{2}$, $(a-b)^{2}$ ou $(a-b)(a+b)$), identifier $a$ et $b$, puis
+appliquer directement la formule.
+\begin{exemple}
+$(3x-2)^{2}$ : ici $a=3x$, $b=2$, donc $(3x-2)^{2}=(3x)^{2}-2\times3x\times2+2^{2}=9x^{2}-12x+4$.
+\end{exemple}
+
+\methode{Factoriser par un facteur commun évident}
+Repérer le facteur (nombre, lettre ou expression) présent dans tous les termes, puis
+l'écrire devant la parenthèse contenant ce qui reste.
+\begin{exemple}
+$8x^{2}+12x=4x\times2x+4x\times3=4x(2x+3)$.
+\end{exemple}
+
+\methode{Factoriser un facteur commun "caché" dans une somme de produits}
+Repérer une expression entière identique dans deux termes (parfois écrite dans un ordre
+différent), la mettre en facteur.
+\begin{exemple}
+$(x-3)(2x+1)-5(2x+1)=(2x+1)\big[(x-3)-5\big]=(2x+1)(x-8)$.
+\end{exemple}
+
+\methode{Factoriser avec une identité remarquable}
+Repérer deux carrés parfaits $a^{2}$ et $b^{2}$, et un éventuel terme central en $2ab$ pour
+choisir la bonne identité.
+\begin{exemple}
+$9x^{2}-25=(3x)^{2}-5^{2}=(3x-5)(3x+5)$.
+\end{exemple}
+
+\methode{Utiliser une identité remarquable pour un calcul astucieux}
+Écrire le nombre comme une somme ou une différence bien choisie, puis appliquer une
+identité remarquable pour calculer mentalement.
+\begin{exemple}
+$998^{2}=(1\,000-2)^{2}=1\,000\,000-4\,000+4=996\,004$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Développer}
+\exo{}\diff{1} Développer : $5(x+3)$ ;\ $-2(3x-4)$ ;\ $x(x+7)$.
+
+\exo{}\diff{2} Développer : $(x+2)(x+5)$ ;\ $(x-3)(x+6)$.
+
+\exo{}\diff{2} Développer : $(2x+1)(x-4)$ ;\ $(3x-2)(2x+5)$.
+
+\exo{}\diff{2} Développer et réduire $3(x+2)-2(x-5)$.
+
+\rubrique{Identités remarquables (développer)}
+\exo{}\diff{1} Développer : $(x+3)^{2}$ ;\ $(x-4)^{2}$.
+
+\exo{}\diff{2} Développer : $(2x+1)^{2}$ ;\ $(3x-2)^{2}$.
+
+\exo{}\diff{2} Développer : $(x-5)(x+5)$ ;\ $(2x-3)(2x+3)$.
+
+\exo{}\diff{3} Développer et réduire $(x+2)^{2}-(x-2)^{2}$.
+
+\rubrique{Factoriser (facteur commun)}
+\exo{}\diff{1} Factoriser : $3x+12$ ;\ $5x^{2}-15x$.
+
+\exo{}\diff{2} Factoriser $(x+1)(x-2)+3(x+1)$.
+
+\exo{}\diff{2} Factoriser $4x(x-3)-(x-3)$.
+
+\exo{}\diff{3} Factoriser $x(2x+1)-(2x+1)(x-4)$.
+
+\rubrique{Factoriser avec une identité remarquable, problème}
+\exo{}\diff{1} Factoriser : $x^{2}-16$ ;\ $x^{2}-49$.
+
+\exo{}\diff{2} Factoriser : $x^{2}+10x+25$ ;\ $x^{2}-6x+9$.
+
+\exo{}\diff{2} Factoriser $9x^{2}-25$.
+
+\exo{}\diff{2} Un carré a pour côté $(x+4)$ cm.
+\begin{enumerate}[label=\alph*)]
+\item Développer l'expression $A(x)=(x+4)^{2}$ de son aire.
+\item Calculer l'aire pour $x=6$ cm, de deux façons : en utilisant la forme développée, puis
+directement (côté $\times$ côté).
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Développer}
+\exo{}\diff{1} Développer : $4(x-6)$ ;\ $-3(2x+5)$.
+
+\exo{}\diff{1} Développer $x(3x-2)$.
+
+\exo{}\diff{2} Développer $(x+4)(x-7)$.
+
+\exo{}\diff{2} Développer $(x-9)(x-2)$.
+
+\exo{}\diff{2} Développer et réduire $2(3x-1)+4(x+2)$.
+
+\rubrique{Identités remarquables}
+\exo{}\diff{1} Développer $(x+6)^{2}$ et $(x-7)^{2}$.
+
+\exo{}\diff{2} Développer $(4x+1)^{2}$.
+
+\exo{}\diff{1} Développer $(x-1)(x+1)$.
+
+\exo{}\diff{2} Développer $(5x-1)(5x+1)$.
+
+\exo{}\diff{2} Développer et réduire $(x+1)^{2}+(x-1)^{2}$.
+
+\rubrique{Réduire une expression}
+\exo{}\diff{2} Réduire $2(x+3)-(x-1)$.
+
+\exo{}\diff{2} Réduire $3(x-2)+2(x+4)$.
+
+\exo{}\diff{3} Réduire $(2x-1)(x+3)-x(2x+1)$.
+
+\exo{}\diff{3} Réduire $(x+5)^{2}-(x-5)^{2}$.
+
+\rubrique{Factoriser}
+\exo{}\diff{1} Factoriser $7x+21$.
+
+\exo{}\diff{2} Factoriser $9x^{2}-6x$.
+
+\exo{}\diff{2} Factoriser $(x+3)(x-1)-2(x+3)$.
+
+\exo{}\diff{3} Factoriser $6x(x+2)-(x+2)$.
+
+\exo{}\diff{2} Factoriser $x^{2}-81$.
+
+\rubrique{Identités remarquables (factoriser) et calcul astucieux}
+\exo{}\diff{2} Factoriser $x^{2}+8x+16$.
+
+\exo{}\diff{2} Factoriser $x^{2}-4x+4$.
+
+\exo{}\diff{2} Factoriser $4x^{2}-49$.
+
+\exo{}\diff{2} Calculer astucieusement, sans calculatrice, $998^{2}$ en utilisant une
+identité remarquable.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[calcul littéral et vérification numérique]
+\begin{enumerate}[label=\arabic*)]
+\item Développer et réduire $D=(x+5)^{2}-(x-3)(x+3)$.
+\item Factoriser $E=6x^{2}-9x$.
+\item Factoriser $F=(2x-1)(x+4)-5(2x-1)$.
+\item Un terrain rectangulaire a pour longueur $(x+7)$ m et pour largeur $(x+2)$ m.
+\begin{enumerate}[label=\alph*)]
+\item Développer et réduire l'expression $A(x)$ de son aire.
+\item Calculer l'aire de ce terrain pour $x=13$ m, de deux façons : en utilisant la forme
+développée, puis directement à partir des dimensions.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[identités remarquables et calcul astucieux]
+\begin{enumerate}[label=\arabic*)]
+\item Développer $(3x-4)^{2}$ et $(2x+5)(2x-5)$.
+\item Factoriser $x^{2}-121$ et $x^{2}+14x+49$.
+\item En utilisant une identité remarquable, calculer astucieusement, sans calculatrice,
+$997\times1\,003$.
+\item Un carré a pour aire $(x-6)^{2}$ cm$^{2}$.
+\begin{enumerate}[label=\alph*)]
+\item Développer cette expression.
+\item Sachant que $x=15$, calculer l'aire du carré de deux façons (forme factorisée, puis
+forme développée), et vérifier que les deux résultats coïncident.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[factorisation et jardin carré — Dschang]
+\begin{enumerate}[label=\arabic*)]
+\item Factoriser $G=(x+3)(x-5)+(x+3)(2x+1)$.
+\item Développer et réduire $H=(x-2)^{2}+(x+2)^{2}$.
+\item Factoriser $16x^{2}-1$.
+\item Un jardin carré de côté $x$ mètres, à Dschang, est transformé en un rectangle dont un
+côté est augmenté de $3$ m et l'autre diminué de $3$ m (nouvelles dimensions $(x+3)$ et
+$(x-3)$).
+\begin{enumerate}[label=\alph*)]
+\item Développer l'expression de l'aire $A(x)$ du nouveau rectangle.
+\item Comparer $A(x)$ à l'aire $x^{2}$ du jardin initial ; le nouveau rectangle a-t-il une
+aire plus grande ou plus petite ? Justifier à l'aide du signe du terme constant.
+\item Calculer cette aire pour $x=12$ m.
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$5(x+3)=5x+15$ ;\ $-2(3x-4)=-6x+8$ ;\ $x(x+7)=x^{2}+7x$.
+
+\corrige{de l'exercice 2}
+$(x+2)(x+5)=x^{2}+7x+10$ ;\ $(x-3)(x+6)=x^{2}+3x-18$.
+
+\corrige{de l'exercice 3}
+$(2x+1)(x-4)=2x^{2}-7x-4$ ;\ $(3x-2)(2x+5)=6x^{2}+11x-10$.
+
+\corrige{de l'exercice 4}
+$3(x+2)-2(x-5)=3x+6-2x+10=x+16$.
+
+\corrige{de l'exercice 5}
+$(x+3)^{2}=x^{2}+6x+9$ ;\ $(x-4)^{2}=x^{2}-8x+16$.
+
+\corrige{de l'exercice 6}
+$(2x+1)^{2}=4x^{2}+4x+1$ ;\ $(3x-2)^{2}=9x^{2}-12x+4$.
+
+\corrige{de l'exercice 7}
+$(x-5)(x+5)=x^{2}-25$ ;\ $(2x-3)(2x+3)=4x^{2}-9$.
+
+\corrige{de l'exercice 8}
+$(x+2)^{2}-(x-2)^{2}=(x^{2}+4x+4)-(x^{2}-4x+4)=8x$.
+
+\corrige{de l'exercice 9}
+$3x+12=3(x+4)$ ;\ $5x^{2}-15x=5x(x-3)$.
+
+\corrige{de l'exercice 10}
+$(x+1)(x-2)+3(x+1)=(x+1)\big[(x-2)+3\big]=(x+1)(x+1)=(x+1)^{2}$.
+
+\corrige{de l'exercice 11}
+$4x(x-3)-(x-3)=(x-3)(4x-1)$.
+
+\corrige{de l'exercice 12}
+$x(2x+1)-(2x+1)(x-4)=(2x+1)\big[x-(x-4)\big]=(2x+1)\times4=4(2x+1)$.
+
+\corrige{de l'exercice 13}
+$x^{2}-16=(x-4)(x+4)$ ;\ $x^{2}-49=(x-7)(x+7)$.
+
+\corrige{de l'exercice 14}
+$x^{2}+10x+25=(x+5)^{2}$ ;\ $x^{2}-6x+9=(x-3)^{2}$.
+
+\corrige{de l'exercice 15}
+$9x^{2}-25=(3x-5)(3x+5)$.
+
+\corrige{de l'exercice 16}
+a) $A(x)=(x+4)^{2}=x^{2}+8x+16$.\\
+b) Forme développée : $6^{2}+8\times6+16=36+48+16=100$. Directement : côté
+$=6+4=10$ cm, aire $=10^{2}=100\text{ cm}^{2}$. Les deux méthodes coïncident.
+
+\corrige{du sujet 1}
+1) $D=(x^{2}+10x+25)-(x^{2}-9)=10x+34$.\\
+2) $E=3x(2x-3)$.\\
+3) $F=(2x-1)\big[(x+4)-5\big]=(2x-1)(x-1)$.\\
+4a) $A(x)=(x+7)(x+2)=x^{2}+9x+14$.\\
+4b) Forme développée : $13^{2}+9\times13+14=169+117+14=300$. Directement :
+$(13+7)\times(13+2)=20\times15=300\text{ m}^{2}$.
+
+\corrige{du sujet 2}
+1) $(3x-4)^{2}=9x^{2}-24x+16$ ;\ $(2x+5)(2x-5)=4x^{2}-25$.\\
+2) $x^{2}-121=(x-11)(x+11)$ ;\ $x^{2}+14x+49=(x+7)^{2}$.\\
+3) $997\times1\,003=(1\,000-3)(1\,000+3)=1\,000\,000-9=999\,991$.\\
+4a) $(x-6)^{2}=x^{2}-12x+36$.\\
+4b) Forme factorisée : $(15-6)^{2}=9^{2}=81\text{ cm}^2$. Forme développée :
+$15^{2}-12\times15+36=225-180+36=81\text{ cm}^2$. Les deux résultats coïncident.
+
+\corrige{du sujet 3}
+1) $G=(x+3)\big[(x-5)+(2x+1)\big]=(x+3)(3x-4)$.\\
+2) $H=(x^{2}-4x+4)+(x^{2}+4x+4)=2x^{2}+8$.\\
+3) $16x^{2}-1=(4x-1)(4x+1)$.\\
+4a) $A(x)=(x+3)(x-3)=x^{2}-9$.\\
+4b) $A(x)-x^{2}=-9<0$ : le rectangle a une aire \textbf{plus petite} que le carré initial.\\
+4c) Pour $x=12$ : $A(12)=12^{2}-9=144-9=135\text{ m}^{2}$ (ou directement
+$15\times9=135\text{ m}^{2}$).
+
+\end{multicols}
+\exercicesBanner
