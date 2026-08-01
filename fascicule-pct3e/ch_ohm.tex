@@ -1,1 +1,366 @@
 \chapter{Loi d'Ohm et circuits électriques}
+
+\noindent\textit{Un circuit électrique met en jeu trois grandeurs liées entre elles : la
+tension, l'intensité et la résistance. La loi d'Ohm relie ces trois grandeurs et permet de
+prévoir le comportement d'un circuit, qu'il soit en série ou en dérivation.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Tension, intensité, résistance}
+
+\begin{definition}[Grandeurs électriques]
+La \textbf{tension} $U$ (en volts, V) se mesure aux bornes d'un dipôle, avec un
+\textbf{voltmètre branché en dérivation}. L'\textbf{intensité} $I$ (en ampères, A) mesure
+le débit de charges dans le circuit, avec un \textbf{ampèremètre branché en série}. La
+\textbf{résistance} $R$ (en ohms, $\Omega$) caractérise l'opposition d'un conducteur au
+passage du courant.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=1.3pt] (0,0) -- (4,0) -- (4,2) -- (0,2) -- cycle;
+\draw[onbo,line width=1.5pt,fill=onbsoft] (1.5,1.75) rectangle (2.5,2.25);
+\node[above] at (2,2.3) {\small pile};
+\draw[onbmuted,line width=1.3pt] (0,0) -- (0,-0.8) -- (4,-0.8) -- (4,0);
+\filldraw[white,draw=onbgreen,line width=1.3pt] (2,-0.8) circle(0.35);
+\node[onbgreen] at (2,-0.8) {\small A};
+\node[below] at (2,-1.25) {\small ampèremètre (en série)};
+\filldraw[white,draw=onbo2,line width=1.3pt] (5.3,1) circle(0.35);
+\node[onbo2] at (5.3,1) {\small V};
+\draw[onbo2,line width=0.9pt] (4,1.7) -- (5.3,1.35);
+\draw[onbo2,line width=0.9pt] (4,0.3) -- (5.3,0.65);
+\node[right] at (5.9,1) {\small voltmètre (en dérivation)};
+\end{tikzpicture}
+\fig{Figure — Ampèremètre en série, voltmètre en dérivation aux bornes du dipôle.}
+\end{illus}
+
+\section{La loi d'Ohm}
+
+\begin{propriete}[Loi d'Ohm]
+Aux bornes d'un \textbf{conducteur ohmique} (résistor), la tension $U$ est proportionnelle
+à l'intensité $I$ qui le traverse :
+\[
+U=R\times I,
+\]
+avec $U$ en volts (V), $R$ en ohms ($\Omega$), $I$ en ampères (A).
+\end{propriete}
+
+\begin{exemple}
+Un résistor de résistance $R=12\ \Omega$ est traversé par un courant $I=4$ A :
+$U=12\times4=48$ V.
+\end{exemple}
+
+\begin{remarque}
+La loi d'Ohm se réécrit selon la grandeur cherchée : $I=\dfrac UR$ ou $R=\dfrac UI$.
+\end{remarque}
+
+\section{Le circuit en série}
+
+\begin{propriete}[Circuit série]
+Dans un circuit en \textbf{série} (dipôles bout à bout, une seule boucle) :
+\begin{itemize}
+\item l'intensité est \textbf{la même en tout point} : $I=I_1=I_2=\dots$ ;
+\item la tension totale est la \textbf{somme} des tensions : $U=U_1+U_2+\dots$ ;
+\item les résistances s'\textbf{additionnent} : $R_{\text{tot}}=R_1+R_2+\dots$
+\end{itemize}
+\end{propriete}
+
+\begin{exemple}
+Deux résistors $R_1=5\ \Omega$ et $R_2=10\ \Omega$ en série sont traversés par $I=2$ A :
+$U_1=5\times2=10$ V, $U_2=10\times2=20$ V, $U=10+20=30$ V, et
+$R_{\text{tot}}=5+10=15\ \Omega$ (on vérifie $U=15\times2=30$ V).
+\end{exemple}
+
+\section{Le circuit en dérivation}
+
+\begin{propriete}[Circuit en dérivation]
+Dans un circuit en \textbf{dérivation} (parallèle, plusieurs branches) :
+\begin{itemize}
+\item la tension est \textbf{la même} aux bornes de chaque branche : $U=U_1=U_2=\dots$ ;
+\item l'intensité totale est la \textbf{somme} des intensités de branche :
+$I=I_1+I_2+\dots$ ;
+\item les résistances vérifient $\dfrac1{R_{\text{tot}}}=\dfrac1{R_1}+\dfrac1{R_2}+\dots$
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbline,line width=1.2pt] (0,0) -- (0,3) -- (1,3);
+\draw[onbline,line width=1.2pt] (0,0) -- (1,0);
+\draw[onbo,line width=1.5pt,fill=onbsoft] (-0.5,1.25) rectangle (0.5,1.75);
+\draw[onbline,line width=1.2pt] (1,3) -- (1,2) -- (3,2) -- (3,3) -- (5,3) -- (5,2) -- (3,2);
+\draw[onbline,line width=1.2pt] (1,0) -- (1,1) -- (3,1) -- (3,0) -- (5,0) -- (5,1) -- (3,1);
+\filldraw[onbgreen!25,draw=onbgreen,line width=1.2pt] (2.6,2) rectangle (3.4,3);
+\node at (3,2.5) {\small $R_1$};
+\filldraw[onbo2!25,draw=onbo2,line width=1.2pt] (2.6,0) rectangle (3.4,1);
+\node at (3,0.5) {\small $R_2$};
+\draw[onbline,line width=1.2pt] (5,3) -- (6,3) -- (6,0) -- (5,0);
+\node[above] at (0,3.3) {\small $I$};
+\node[above] at (3,3.3) {\small $I_1$};
+\node[below] at (3,-0.3) {\small $I_2$};
+\end{tikzpicture}
+\fig{Figure — Deux résistors $R_1$ et $R_2$ en dérivation : même tension, intensités additionnées.}
+\end{illus}
+
+\begin{exemple}
+Deux résistors $R_1=10\ \Omega$ et $R_2=15\ \Omega$ en dérivation sont soumis à
+$U=30$ V : $I_1=\dfrac{30}{10}=3$ A, $I_2=\dfrac{30}{15}=2$ A, et $I=3+2=5$ A.
+\end{exemple}
+
+\section{Puissance électrique}
+
+\begin{propriete}[Puissance]
+La \textbf{puissance électrique} $P$ (en watts, W) reçue par un dipôle vaut :
+\[
+P=U\times I.
+\]
+\end{propriete}
+
+\begin{exemple}
+Une lampe fonctionne sous $U=6$ V avec $I=2$ A : $P=6\times2=12$ W.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Loi d'Ohm.} $U=R\times I$ ($U$ en V, $R$ en $\Omega$, $I$ en A).\\[4pt]
+\textbf{Série.} $I$ commun ; $U=U_1+U_2$ ; $R_{\text{tot}}=R_1+R_2$.\\[4pt]
+\textbf{Dérivation.} $U$ commun ; $I=I_1+I_2$ ; $\dfrac1{R_{\text{tot}}}=\dfrac1{R_1}+\dfrac1{R_2}$.\\[4pt]
+\textbf{Puissance.} $P=U\times I$ (en W).\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre les règles du série (intensité commune) et de la
+dérivation (tension commune).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Appliquer la loi d'Ohm}
+Utiliser $U=R\times I$, ou l'une de ses formes équivalentes $I=\dfrac UR$, $R=\dfrac UI$,
+selon la grandeur cherchée.
+\begin{exemple}
+$U=15$ V, $R=5\ \Omega$ : $I=\dfrac{15}5=3$ A.
+\end{exemple}
+
+\methode{Étudier un circuit en série}
+Repérer l'intensité unique $I$, calculer chaque tension $U_i=R_i\times I$, puis
+$U=\sum U_i$ (ou $R_{\text{tot}}=\sum R_i$ directement).
+\begin{exemple}
+$R_1=8\ \Omega$, $R_2=12\ \Omega$, $I=1{,}5$ A : $U_1=12$ V, $U_2=18$ V, $U=30$ V.
+\end{exemple}
+
+\methode{Étudier un circuit en dérivation}
+Repérer la tension commune $U$, calculer chaque intensité $I_i=\dfrac U{R_i}$, puis
+$I=\sum I_i$.
+\begin{exemple}
+$R_1=20\ \Omega$, $R_2=20\ \Omega$, $U=10$ V : $I_1=I_2=0{,}5$ A, $I=1$ A.
+\end{exemple}
+
+\methode{Calculer une puissance électrique}
+Appliquer $P=U\times I$, avec $U$ en V et $I$ en A pour obtenir $P$ en W.
+\begin{exemple}
+$U=220$ V, $I=0{,}1$ A : $P=220\times0{,}1=22$ W.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Loi d'Ohm}
+\exo{}\diff{1} Un résistor $R=10\ \Omega$ est traversé par $I=2$ A. Calculer $U$.
+
+\exo{}\diff{1} Un résistor $R=5\ \Omega$ est traversé par $I=3$ A. Calculer $U$.
+
+\exo{}\diff{2} Un dipôle soumis à $U=12$ V est traversé par $I=4$ A. Calculer $R$.
+
+\exo{}\diff{2} Un dipôle de résistance $R=6\ \Omega$ est soumis à $U=24$ V. Calculer $I$.
+
+\rubrique{Circuit série}
+\exo{}\diff{2} Deux résistors $R_1=5\ \Omega$ et $R_2=10\ \Omega$ en série sont traversés
+par $I=2$ A. Calculer $U_1$, $U_2$ et $U$.
+
+\exo{}\diff{2} Deux résistors $R_1=8\ \Omega$ et $R_2=12\ \Omega$ en série sont traversés
+par $I=1{,}5$ A. Calculer $U_1$, $U_2$ et $U$.
+
+\exo{}\diff{2} Deux résistors en série ont $R_1=6\ \Omega$ et $R_2=14\ \Omega$. Calculer
+$R_{\text{tot}}$, puis $I$ pour $U=40$ V.
+
+\exo{}\diff{3} Pourquoi l'intensité est-elle la même en tout point d'un circuit série ?
+
+\rubrique{Circuit dérivation}
+\exo{}\diff{2} Deux résistors $R_1=10\ \Omega$ et $R_2=15\ \Omega$ en dérivation sont
+soumis à $U=30$ V. Calculer $I_1$, $I_2$ et $I$.
+
+\exo{}\diff{2} Deux résistors $R_1=6\ \Omega$ et $R_2=3\ \Omega$ en dérivation sont soumis
+à $U=12$ V. Calculer $I_1$, $I_2$ et $I$.
+
+\exo{}\diff{3} Pourquoi la tension est-elle la même aux bornes de deux branches en
+dérivation ?
+
+\rubrique{Puissance et bilan}
+\exo{}\diff{1} Une lampe fonctionne sous $U=12$ V avec $I=0{,}5$ A. Calculer sa puissance.
+
+\exo{}\diff{2} Un appareil de puissance $P=100$ W fonctionne sous $U=220$ V. Calculer $I$.
+
+\exo{}\diff{3} Quelle différence essentielle entre un circuit série et un circuit en
+dérivation faut-il retenir pour reconnaître leur schéma ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Loi d'Ohm}
+\exo{}\diff{1} Un résistor $R=9\ \Omega$ est traversé par $I=3$ A. Calculer $U$.
+
+\exo{}\diff{2} Un dipôle soumis à $U=9$ V est traversé par $I=3$ A. Calculer $R$.
+
+\exo{}\diff{2} Un résistor $R=15\ \Omega$ est soumis à $U=75$ V. Calculer $I$.
+
+\exo{}\diff{3} Un résistor est traversé par $I=2$ A sous $U=16$ V. Un second résistor a une
+résistance double du premier. Calculer la tension à ses bornes pour la même intensité.
+
+\rubrique{Circuit série}
+\exo{}\diff{2} Trois résistors $R_1=4\ \Omega$, $R_2=6\ \Omega$, $R_3=10\ \Omega$ en série
+sont traversés par $I=1{,}5$ A. Calculer $U_1$, $U_2$, $U_3$ et $U$.
+
+\exo{}\diff{2} Deux résistors en série, $R_1=20\ \Omega$ et $R_2=30\ \Omega$, sont soumis à
+$U=100$ V. Calculer $I$.
+
+\exo{}\diff{3} Dans un circuit série, $U_1=8$ V et $U_2=17$ V. Calculer $U$. Si $I=1$ A,
+calculer $R_1$ et $R_2$.
+
+\exo{}\diff{2} Deux résistors identiques $R=15\ \Omega$ sont placés en série. Calculer
+$R_{\text{tot}}$.
+
+\rubrique{Circuit dérivation}
+\exo{}\diff{2} Deux résistors identiques $R_1=R_2=20\ \Omega$ en dérivation sont soumis à
+$U=10$ V. Calculer $I_1$, $I_2$ et $I$.
+
+\exo{}\diff{3} Dans un circuit en dérivation, $I_1=2$ A et $I_2=1{,}5$ A. Calculer $I$. Si
+$U=30$ V, calculer $R_1$ et $R_2$.
+
+\exo{}\diff{2} Deux appareils électroménagers sont branchés en dérivation sur le secteur
+domestique. Pourquoi ce montage plutôt qu'un montage en série ?
+
+\rubrique{Puissance et bilan}
+\exo{}\diff{2} Un fer à repasser fonctionne sous $U=220$ V avec $I=4$ A. Calculer sa
+puissance en W, puis en kW.
+
+\exo{}\diff{2} Une résistance de chauffage $R=44\ \Omega$ est traversée par $I=5$ A.
+Calculer $U$, puis $P$.
+
+\exo{}\diff{3} Deux lampes identiques, montées en dérivation sur le secteur, ont chacune
+une puissance de $60$ W sous $220$ V. Calculer l'intensité totale absorbée par les deux
+lampes.
+
+\exo{}\diff{3} Expliquer pourquoi, dans une installation domestique, les appareils sont
+branchés en dérivation et non en série.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Loi d'Ohm et circuit série]
+\begin{enumerate}[label=\arabic*)]
+\item Énonce la loi d'Ohm.
+\item Deux résistors $R_1=5\ \Omega$ et $R_2=10\ \Omega$ sont montés en série et traversés
+par un courant $I=2$ A. Calcule $U_1$, $U_2$ et la tension totale $U$.
+\item Calcule la résistance équivalente $R_{\text{tot}}$ du circuit série.
+\item Vérifie la cohérence de tes résultats par le calcul $U=R_{\text{tot}}\times I$.
+\end{enumerate}
+
+\sujetbac[Circuit en dérivation domestique]
+\begin{enumerate}[label=\arabic*)]
+\item Quelle grandeur est commune aux différentes branches d'un circuit en dérivation ?
+\item Deux appareils, de résistances $R_1=10\ \Omega$ et $R_2=15\ \Omega$, sont branchés en
+dérivation sous une tension $U=30$ V. Calcule l'intensité dans chaque branche.
+\item Calcule l'intensité totale débitée par le générateur.
+\item Pourquoi les installations domestiques utilisent-elles ce type de montage ?
+\end{enumerate}
+
+\sujetbac[Puissance d'un appareil]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la relation entre puissance $P$, tension $U$ et intensité $I$.
+\item Un radiateur électrique fonctionne sous $U=220$ V avec $I=3$ A. Calcule sa puissance.
+\item Sachant que ce radiateur peut être modélisé par un résistor, calcule sa résistance
+$R$.
+\item Ce radiateur fonctionne $2$ h par jour. Sachant que l'énergie consommée vaut
+$E=P\times t$, calcule l'énergie consommée en une journée (exprimer $t$ en heures, $E$ en
+Wh).
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$U=10\times2=20$ V.
+
+\corrige{de l'exercice 2}
+$U=5\times3=15$ V.
+
+\corrige{de l'exercice 3}
+$R=\dfrac{12}4=3\ \Omega$.
+
+\corrige{de l'exercice 4}
+$I=\dfrac{24}6=4$ A.
+
+\corrige{de l'exercice 5}
+$U_1=5\times2=10$ V, $U_2=10\times2=20$ V, $U=10+20=30$ V.
+
+\corrige{de l'exercice 6}
+$U_1=8\times1{,}5=12$ V, $U_2=12\times1{,}5=18$ V, $U=12+18=30$ V.
+
+\corrige{de l'exercice 7}
+$R_{\text{tot}}=6+14=20\ \Omega$ ; $I=\dfrac{40}{20}=2$ A.
+
+\corrige{de l'exercice 8}
+Car le circuit série forme une seule boucle : les charges électriques traversent
+successivement tous les dipôles, sans se diviser.
+
+\corrige{de l'exercice 9}
+$I_1=\dfrac{30}{10}=3$ A, $I_2=\dfrac{30}{15}=2$ A, $I=3+2=5$ A.
+
+\corrige{de l'exercice 10}
+$I_1=\dfrac{12}6=2$ A, $I_2=\dfrac{12}3=4$ A, $I=2+4=6$ A.
+
+\corrige{de l'exercice 11}
+Car chaque branche est reliée directement aux deux mêmes points du circuit, donc soumise à
+la même différence de potentiel.
+
+\corrige{de l'exercice 12}
+$P=12\times0{,}5=6$ W.
+
+\corrige{de l'exercice 13}
+$I=\dfrac{100}{220}\approx0{,}45$ A.
+
+\corrige{de l'exercice 14}
+Série : les dipôles se suivent, $I$ commun. Dérivation : les dipôles sont sur des branches
+distinctes reliées aux mêmes bornes, $U$ commun.
+
+\corrige{du sujet 1}
+1) La tension aux bornes d'un conducteur ohmique est proportionnelle à l'intensité qui le
+traverse : $U=R\times I$.\\
+2) $U_1=5\times2=10$ V, $U_2=10\times2=20$ V, $U=10+20=30$ V.\\
+3) $R_{\text{tot}}=5+10=15\ \Omega$.\\
+4) $U=15\times2=30$ V : cohérent avec la question 2.
+
+\corrige{du sujet 2}
+1) La tension.\\
+2) $I_1=\dfrac{30}{10}=3$ A, $I_2=\dfrac{30}{15}=2$ A.\\
+3) $I=3+2=5$ A.\\
+4) Pour que chaque appareil fonctionne sous la tension nominale du secteur, indépendamment
+des autres, et continue de fonctionner si un autre appareil est débranché.
+
+\corrige{du sujet 3}
+1) $P=U\times I$.\\
+2) $P=220\times3=660$ W.\\
+3) $R=\dfrac UI=\dfrac{220}3\approx73{,}3\ \Omega$.\\
+4) $E=660\times2=1\,320$ Wh$\ =1{,}32$ kWh.
+
+\end{multicols}
+\exercicesBanner
