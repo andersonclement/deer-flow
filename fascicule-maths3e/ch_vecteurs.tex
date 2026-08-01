@@ -1,1 +1,457 @@
 \chapter{Translations et vecteurs}
+
+\noindent\textit{Un vecteur code un \textbf{déplacement} : une direction, un sens et une
+longueur. Il permet de décrire une translation, d'additionner des déplacements, et de
+démontrer des propriétés de figures (parallélogrammes) sans mesurer d'angle. Les
+coordonnées d'un vecteur dans un repère en font aussi un outil de calcul très efficace.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Vecteurs : direction, sens, norme}
+
+\begin{definition}[Vecteur]
+Le \textbf{vecteur} $\vec{AB}$ représente le déplacement qui amène le point $A$ sur le
+point $B$. Il est caractérisé par trois éléments : sa \textbf{direction} (la droite $(AB)$),
+son \textbf{sens} (de $A$ vers $B$) et sa \textbf{norme} (la longueur $AB$, notée
+$\|\vec{AB}\|$).
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\draw[onbo,->,line width=1.4pt] (0,0) -- (3,1.5);
+\node[below] at (0,0) {$A$};
+\node[above] at (3,1.5) {$B$};
+\draw[onbblue,->,line width=1.4pt] (1,-2.5) -- (4,-1);
+\node[below] at (1,-2.5) {$C$};
+\node[above] at (4,-1) {$D$};
+\node[onbo,above] at (1.4,1) {\small $\vec{AB}$};
+\node[onbblue,above] at (2.3,-1.9) {\small $\vec{CD}$};
+\end{tikzpicture}
+\fig{Figure — $\vec{AB}$ et $\vec{CD}$ ont même direction, sens et longueur : même
+vecteur.}
+\end{illus}
+
+\begin{remarque}
+Deux vecteurs $\vec{AB}$ et $\vec{CD}$ sont \textbf{égaux} s'ils ont même direction, même
+sens et même longueur, même si $AB$ et $CD$ ne sont pas au même endroit dans le plan.
+\end{remarque}
+
+\section{Translation}
+
+\begin{definition}[Translation]
+La \textbf{translation de vecteur $\vec u$} associe à tout point $M$ le point $M'$ tel que
+$\vec{MM'}=\vec u$. Le point $M'$ est l'\textbf{image} de $M$ par cette translation.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,0);
+\coordinate (C) at (0.5,1.8);
+\coordinate (Ap) at (3,-1);
+\coordinate (Bp) at (5,-1);
+\coordinate (Cp) at (3.5,0.8);
+\draw[onbo,line width=1.2pt] (A) -- (B) -- (C) -- cycle;
+\draw[onbblue,line width=1.2pt] (Ap) -- (Bp) -- (Cp) -- cycle;
+\draw[onbmuted,->,dashed,line width=0.9pt] (A) -- (Ap);
+\draw[onbmuted,->,dashed,line width=0.9pt] (B) -- (Bp);
+\draw[onbmuted,->,dashed,line width=0.9pt] (C) -- (Cp);
+\node[below left] at (A) {$A$};
+\node[below right] at (B) {$B$};
+\node[above] at (C) {$C$};
+\node[below] at (Ap) {$A'$};
+\node[below right] at (Bp) {$B'$};
+\node[above] at (Cp) {$C'$};
+\node[onbmuted,above] at (1.5,-0.75) {\small $\vec u$};
+\end{tikzpicture}
+\fig{Figure — Translation de $ABC$ par $\vec u$ : $\vec{AA'}=\vec{BB'}=\vec{CC'}=\vec u$.}
+\end{illus}
+
+\begin{propriete}[Propriétés conservées]
+Une translation conserve les longueurs, les angles, le parallélisme et les aires : l'image
+d'une figure par translation est une figure \textbf{superposable} à la figure de départ.
+\end{propriete}
+
+\section{Somme de deux vecteurs, relation de Chasles}
+
+\begin{propriete}[Relation de Chasles]
+Pour tous points $A$, $B$, $C$ :
+\[
+\vec{AB}+\vec{BC}=\vec{AC}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\coordinate (A) at (0,0);
+\coordinate (B) at (3,2);
+\coordinate (C) at (5,6);
+\draw[onbo,->,line width=1.3pt] (A) -- (B);
+\draw[onbblue,->,line width=1.3pt] (B) -- (C);
+\draw[onbgreen,->,dashed,line width=1.3pt] (A) -- (C);
+\node[below] at (A) {$A$};
+\node[right] at (B) {$B$};
+\node[above] at (C) {$C$};
+\node[onbo,below right] at (1.5,1) {\small $\vec{AB}$};
+\node[onbblue,right] at (4,4) {\small $\vec{BC}$};
+\node[onbgreen,left] at (2,3.3) {\small $\vec{AC}$};
+\end{tikzpicture}
+\fig{Figure — Relation de Chasles : $\vec{AB}+\vec{BC}=\vec{AC}$.}
+\end{illus}
+
+\begin{remarque}
+La relation de Chasles se généralise à plusieurs points : par exemple
+$\vec{AB}+\vec{BC}+\vec{CD}=\vec{AD}$. On l'utilise aussi pour simplifier une somme :
+$\vec{AB}+\vec{BA}=\vec{AA}=\vec 0$ (le \textbf{vecteur nul}).
+\end{remarque}
+
+\section{Coordonnées d'un vecteur}
+
+\begin{propriete}[Coordonnées d'un vecteur]
+Dans un repère, si $A(x_A\,;y_A)$ et $B(x_B\,;y_B)$, le vecteur $\vec{AB}$ a pour
+coordonnées
+\[
+\vec{AB}\begin{pmatrix}x_B-x_A\\y_B-y_A\end{pmatrix}, \qquad
+\|\vec{AB}\|=\sqrt{(x_B-x_A)^{2}+(y_B-y_A)^{2}}.
+\]
+Pour additionner deux vecteurs, on additionne leurs coordonnées, terme à terme.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=7.5cm,height=6cm,axis lines=middle,xlabel={\small $x$},ylabel={\small $y$},
+  xmin=-1,xmax=7,ymin=-1,ymax=8,xtick={2,6},ytick={3,7}]
+\draw[onbmuted,dashed] (axis cs:2,3) -- (axis cs:6,3) -- (axis cs:6,7);
+\draw[onbo,->,line width=1.3pt] (axis cs:2,3) -- (axis cs:6,7);
+\node[below] at (axis cs:4,3) {\small $4$};
+\node[right] at (axis cs:6,5) {\small $4$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — Coordonnées d'un vecteur : $\vec{AB}$ a pour coordonnées $(4\,;4)$.}
+\end{illus}
+
+\begin{exemple}
+$A(1\,;2)$, $B(4\,;6)$ : $\vec{AB}\begin{pmatrix}4-1\\6-2\end{pmatrix}=\vec{AB}\begin{pmatrix}3\\4\end{pmatrix}$,
+et $\|\vec{AB}\|=\sqrt{3^{2}+4^{2}}=5$.
+\end{exemple}
+
+\section{Démontrer qu'un quadrilatère est un parallélogramme}
+
+\begin{propriete}[Parallélogramme et vecteurs]
+Un quadrilatère $ABCD$ est un parallélogramme si et seulement si $\vec{AB}=\vec{DC}$
+(côtés $[AB]$ et $[DC]$ parallèles et de même longueur, dans le même sens).
+\end{propriete}
+
+\begin{exemple}
+$A(0\,;0)$, $B(5\,;2)$, $C(8\,;6)$, $D(3\,;4)$ : $\vec{AB}\begin{pmatrix}5\\2\end{pmatrix}$
+et $\vec{DC}\begin{pmatrix}8-3\\6-4\end{pmatrix}=\begin{pmatrix}5\\2\end{pmatrix}$. Les deux
+vecteurs sont égaux, donc $ABCD$ est un parallélogramme.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Vecteur.} $\vec{AB}$ = direction, sens, norme ($\|\vec{AB}\|=AB$).\\[4pt]
+\textbf{Translation.} $\vec{MM'}=\vec u$ pour tout point $M$ ; conserve longueurs, angles,
+aires, parallélisme.\\[4pt]
+\textbf{Chasles.} $\vec{AB}+\vec{BC}=\vec{AC}$ (se généralise à plusieurs points).\\[4pt]
+\textbf{Coordonnées.} $\vec{AB}\begin{pmatrix}x_B-x_A\\y_B-y_A\end{pmatrix}$ ;
+$\|\vec{AB}\|=\sqrt{(x_B-x_A)^{2}+(y_B-y_A)^{2}}$ ; addition coordonnée par coordonnée.\\[4pt]
+\textbf{Parallélogramme.} $ABCD$ parallélogramme $\iff\vec{AB}=\vec{DC}$.\\[4pt]
+\textbf{Piège fréquent.} $\vec{AB}\ne\vec{BA}$ (sens opposé) ; pour un parallélogramme,
+bien respecter l'ordre des sommets dans $\vec{AB}=\vec{DC}$ (pas $\vec{CD}$).
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Reconnaître si deux vecteurs sont égaux}
+Vérifier qu'ils ont même direction (parallèles), même sens et même longueur — ou, en
+coordonnées, les mêmes coordonnées.
+\begin{exemple}
+$\vec{AB}\begin{pmatrix}2\\5\end{pmatrix}$ et $\vec{CD}\begin{pmatrix}2\\5\end{pmatrix}$ :
+mêmes coordonnées, donc $\vec{AB}=\vec{CD}$.
+\end{exemple}
+
+\methode{Construire l'image d'un point par une translation}
+Reporter le vecteur $\vec u$ à partir du point, en respectant sa direction, son sens et sa
+longueur (ou additionner ses coordonnées).
+\begin{exemple}
+$A(2\,;5)$, $\vec u\begin{pmatrix}3\\-4\end{pmatrix}$ : $A'(2+3\,;5-4)=A'(5\,;1)$.
+\end{exemple}
+
+\methode{Calculer les coordonnées d'un vecteur}
+Soustraire les coordonnées de l'origine à celles de l'extrémité.
+\begin{exemple}
+$A(-2\,;1)$, $B(3\,;13)$ : $\vec{AB}\begin{pmatrix}3-(-2)\\13-1\end{pmatrix}=\begin{pmatrix}5\\12\end{pmatrix}$.
+\end{exemple}
+
+\methode{Calculer la norme d'un vecteur}
+Appliquer $\|\vec{AB}\|=\sqrt{(x_B-x_A)^{2}+(y_B-y_A)^{2}}$ (théorème de Pythagore).
+\begin{exemple}
+$\vec{AB}\begin{pmatrix}5\\12\end{pmatrix}$ : $\|\vec{AB}\|=\sqrt{25+144}=\sqrt{169}=13$.
+\end{exemple}
+
+\methode{Additionner deux vecteurs}
+Additionner leurs coordonnées terme à terme, ou utiliser la relation de Chasles si les
+vecteurs sont donnés par des points.
+\begin{exemple}
+$\vec u\begin{pmatrix}3\\-2\end{pmatrix}$, $\vec v\begin{pmatrix}1\\5\end{pmatrix}$ :
+$\vec u+\vec v\begin{pmatrix}4\\3\end{pmatrix}$.
+\end{exemple}
+
+\methode{Utiliser la relation de Chasles pour simplifier une somme}
+Repérer les points qui se répètent consécutivement (fin d'un vecteur = début du suivant) et
+les « annuler ».
+\begin{exemple}
+$\vec{AB}+\vec{BC}+\vec{CA}=\vec{AA}=\vec 0$.
+\end{exemple}
+
+\methode{Démontrer qu'un quadrilatère est un parallélogramme}
+Calculer les coordonnées de $\vec{AB}$ et de $\vec{DC}$ ; si elles sont égales, conclure que
+$ABCD$ est un parallélogramme.
+\begin{exemple}
+$A(1\,;1)$, $B(6\,;2)$, $C(9\,;6)$, $D(4\,;5)$ : $\vec{AB}\begin{pmatrix}5\\1\end{pmatrix}$,
+$\vec{DC}\begin{pmatrix}5\\1\end{pmatrix}$. Égaux : $ABCD$ est un parallélogramme.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Vecteurs et translations}
+\exo{}\diff{1} $\vec{AB}\begin{pmatrix}2\\5\end{pmatrix}$ et
+$\vec{CD}\begin{pmatrix}2\\5\end{pmatrix}$. Que peut-on dire de ces deux vecteurs ?
+
+\exo{}\diff{2} Calculer les coordonnées de l'image $A'$ du point $A(2\,;5)$ par la
+translation de vecteur $\vec u\begin{pmatrix}3\\-4\end{pmatrix}$.
+
+\exo{}\diff{2} Le triangle $ABC$ a pour sommets $A(0\,;0)$, $B(4\,;1)$, $C(2\,;5)$. On le
+translate par le vecteur $\vec u\begin{pmatrix}3\\-2\end{pmatrix}$. Donner les coordonnées
+de $A'$, $B'$, $C'$.
+
+\exo{}\diff{2} Une translation transforme $E$ en $E'(7\,;-1)$. Sachant que le vecteur de la
+translation est $\vec u\begin{pmatrix}-2\\5\end{pmatrix}$, calculer les coordonnées de $E$.
+
+\rubrique{Coordonnées et norme d'un vecteur}
+\exo{}\diff{1} $A(1\,;2)$, $B(4\,;6)$. Calculer les coordonnées de $\vec{AB}$ et sa norme.
+
+\exo{}\diff{2} $A(-2\,;1)$, $B(3\,;13)$. Calculer les coordonnées de $\vec{AB}$ et sa
+norme.
+
+\exo{}\diff{2} $A(0\,;0)$, $B(-6\,;8)$. Calculer les coordonnées de $\vec{AB}$ et sa norme.
+
+\exo{}\diff{2} $A(2\,;-3)$, $B(5\,;1)$. Calculer les coordonnées de $\vec{AB}$ et sa norme.
+
+\rubrique{Somme de vecteurs, relation de Chasles}
+\exo{}\diff{1} Calculer $\vec u+\vec v$ avec $\vec u\begin{pmatrix}3\\-2\end{pmatrix}$ et
+$\vec v\begin{pmatrix}1\\5\end{pmatrix}$.
+
+\exo{}\diff{2} Calculer $\vec u+\vec v$ avec $\vec u\begin{pmatrix}-4\\6\end{pmatrix}$ et
+$\vec v\begin{pmatrix}4\\-2\end{pmatrix}$.
+
+\exo{}\diff{2} Sachant $\vec{AB}\begin{pmatrix}4\\2\end{pmatrix}$ et
+$\vec{BC}\begin{pmatrix}3\\-5\end{pmatrix}$, calculer $\vec{AC}$ (relation de Chasles).
+
+\exo{}\diff{1} Simplifier $\vec{AB}+\vec{BC}+\vec{CA}$.
+
+\rubrique{Démontrer un parallélogramme}
+\exo{}\diff{2} $A(0\,;0)$, $B(5\,;2)$, $C(8\,;6)$, $D(3\,;4)$. Montrer que $ABCD$ est un
+parallélogramme.
+
+\exo{}\diff{2} $A(1\,;1)$, $B(6\,;2)$, $C(8\,;5)$, $D(2\,;4)$. $ABCD$ est-il un
+parallélogramme ? Justifier.
+
+\exo{}\diff{2} $A(1\,;1)$, $B(6\,;2)$, $C(9\,;6)$, $D(4\,;5)$. Montrer que $ABCD$ est un
+parallélogramme.
+
+\exo{}\diff{3} $A(-2\,;0)$, $B(2\,;3)$, $D(-1\,;4)$. Déterminer les coordonnées du point
+$C$ pour que $ABCD$ soit un parallélogramme.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Vecteurs et translations}
+\exo{}\diff{2} Calculer les coordonnées de l'image $A'$ du point $A(-3\,;5)$ par la
+translation de vecteur $\vec u\begin{pmatrix}4\\-2\end{pmatrix}$.
+
+\exo{}\diff{2} Le carré $ABCD$ a pour sommets $A(1\,;1)$, $B(4\,;1)$, $C(4\,;4)$,
+$D(1\,;4)$. On le translate par $\vec u\begin{pmatrix}-2\\3\end{pmatrix}$. Donner les
+coordonnées de l'image de chaque sommet.
+
+\exo{}\diff{2} Une translation transforme $F(3\,;-2)$ en $F'(-1\,;6)$. Donner les
+coordonnées du vecteur de cette translation.
+
+\rubrique{Coordonnées et norme}
+\exo{}\diff{2} $A(3\,;1)$, $B(7\,;4)$. Calculer les coordonnées de $\vec{AB}$ et sa norme.
+
+\exo{}\diff{2} $A(-1\,;-2)$, $B(2\,;3)$. Calculer les coordonnées de $\vec{AB}$ et sa
+norme (valeur exacte).
+
+\exo{}\diff{2} $A(0\,;5)$, $B(6\,;-1)$. Calculer les coordonnées de $\vec{AB}$ et sa norme.
+
+\exo{}\diff{2} $A(-3\,;4)$, $B(1\,;-2)$. Calculer les coordonnées de $\vec{AB}$ et sa
+norme (valeur exacte).
+
+\exo{}\diff{2} $A(2\,;2)$, $B(-2\,;-1)$. Calculer les coordonnées de $\vec{AB}$ et sa
+norme.
+
+\rubrique{Sommes et relation de Chasles}
+\exo{}\diff{2} Calculer $\vec u+\vec v$ avec $\vec u\begin{pmatrix}-3\\4\end{pmatrix}$ et
+$\vec v\begin{pmatrix}5\\-1\end{pmatrix}$.
+
+\exo{}\diff{2} Sachant $\vec{AB}\begin{pmatrix}6\\-3\end{pmatrix}$ et
+$\vec{AC}\begin{pmatrix}2\\5\end{pmatrix}$, calculer $\vec{BC}$ (indication :
+$\vec{BC}=\vec{BA}+\vec{AC}$).
+
+\exo{}\diff{2} Simplifier $\vec{MN}+\vec{NP}+\vec{PQ}$.
+
+\rubrique{Parallélogrammes}
+\exo{}\diff{2} $A(2\,;1)$, $B(6\,;3)$, $C(9\,;8)$, $D(5\,;6)$. Montrer que $ABCD$ est un
+parallélogramme.
+
+\exo{}\diff{2} $A(0\,;2)$, $B(4\,;0)$, $C(6\,;5)$, $D(2\,;6)$. $ABCD$ est-il un
+parallélogramme ? Justifier.
+
+\exo{}\diff{3} $A(1\,;2)$, $B(5\,;3)$, $C(4\,;-1)$. Déterminer les coordonnées du point
+$D$ pour que $ABCD$ soit un parallélogramme.
+
+\rubrique{Problèmes}
+\exo{}\diff{2} Un randonneur part d'un point $A$ et se déplace du vecteur
+$\vec u\begin{pmatrix}80\\60\end{pmatrix}$ (en mètres), puis du vecteur
+$\vec v\begin{pmatrix}-30\\40\end{pmatrix}$. Calculer les coordonnées de sa position finale
+par rapport à $A$, et sa distance totale à $A$ (à vol d'oiseau).
+
+\exo{}\diff{2} Un drone décolle d'un point $O(0\,;0)$ et effectue le déplacement
+$\vec u\begin{pmatrix}150\\0\end{pmatrix}$ puis $\vec v\begin{pmatrix}0\\200\end{pmatrix}$
+(en mètres). Calculer sa distance à $O$ après ces deux déplacements.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[vecteurs, translation et triangle]
+\begin{enumerate}[label=\arabic*)]
+\item $A(1\,;2)$, $B(5\,;6)$. Calculer les coordonnées du vecteur $\vec{AB}$ et sa norme.
+\item Calculer les coordonnées de l'image $A'$ du point $A(2\,;5)$ par la translation de
+vecteur $\vec u\begin{pmatrix}3\\-4\end{pmatrix}$.
+\item Calculer la somme des vecteurs $\vec u\begin{pmatrix}2\\-3\end{pmatrix}$ et
+$\vec v\begin{pmatrix}-5\\7\end{pmatrix}$.
+\item Le triangle $ABC$ a pour sommets $A(0\,;0)$, $B(4\,;1)$, $C(2\,;5)$. On le translate
+par le vecteur $\vec u\begin{pmatrix}3\\-2\end{pmatrix}$. Donner les coordonnées de $A'$,
+$B'$, $C'$.
+\end{enumerate}
+
+\sujetbac[Chasles et parallélogramme]
+\begin{enumerate}[label=\arabic*)]
+\item Sachant $\vec{AB}\begin{pmatrix}4\\3\end{pmatrix}$ et
+$\vec{BC}\begin{pmatrix}1\\-5\end{pmatrix}$, calculer $\vec{AC}$.
+\item $A(0\,;0)$, $B(5\,;2)$, $C(9\,;5)$, $D(4\,;3)$. Montrer que $ABCD$ est un
+parallélogramme.
+\item $A(-1\,;3)$, $B(4\,;15)$. Calculer la norme du vecteur $\vec{AB}$.
+\item Simplifier $\vec{AB}+\vec{BC}+\vec{CD}$.
+\end{enumerate}
+
+\sujetbac[vecteurs et repérage d'un technicien]
+\begin{enumerate}[label=\arabic*)]
+\item $A(2\,;-1)$, $B(6\,;2)$. Calculer les coordonnées de $\vec{AB}$ et sa norme.
+\item Le point $A(3\,;4)$ est translaté par le vecteur $\vec u\begin{pmatrix}-5\\2\end{pmatrix}$
+pour donner $A'$. Calculer les coordonnées de $A'$.
+\item $A(1\,;1)$, $B(4\,;3)$, $C(6\,;7)$, $D(3\,;5)$. $ABCD$ est-il un parallélogramme ?
+Justifier.
+\item Un technicien part d'une antenne repérée par le point $O(0\,;0)$ sur un plan. Il se
+déplace du vecteur $\vec u\begin{pmatrix}120\\90\end{pmatrix}$ (en mètres), puis du vecteur
+$\vec v\begin{pmatrix}-30\\30\end{pmatrix}$.
+\begin{enumerate}[label=\alph*)]
+\item Calculer les coordonnées de sa position finale.
+\item Calculer sa distance à l'antenne $O$ (à vol d'oiseau).
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$\vec{AB}$ et $\vec{CD}$ ont les mêmes coordonnées, donc $\vec{AB}=\vec{CD}$ : ce sont des
+représentants du même vecteur.
+
+\corrige{de l'exercice 2}
+$A'(2+3\,;5-4)=A'(5\,;1)$.
+
+\corrige{de l'exercice 3}
+$A'(3\,;-2)$, $B'(7\,;-1)$, $C'(5\,;3)$.
+
+\corrige{de l'exercice 4}
+$E=E'-\vec u$, soit $E(7-(-2)\,;-1-5)=E(9\,;-6)$.
+
+\corrige{de l'exercice 5}
+$\vec{AB}\begin{pmatrix}3\\4\end{pmatrix}$, $\|\vec{AB}\|=\sqrt{9+16}=5$.
+
+\corrige{de l'exercice 6}
+$\vec{AB}\begin{pmatrix}5\\12\end{pmatrix}$, $\|\vec{AB}\|=\sqrt{25+144}=13$.
+
+\corrige{de l'exercice 7}
+$\vec{AB}\begin{pmatrix}-6\\8\end{pmatrix}$, $\|\vec{AB}\|=\sqrt{36+64}=10$.
+
+\corrige{de l'exercice 8}
+$\vec{AB}\begin{pmatrix}3\\4\end{pmatrix}$, $\|\vec{AB}\|=\sqrt{9+16}=5$.
+
+\corrige{de l'exercice 9}
+$\vec u+\vec v\begin{pmatrix}4\\3\end{pmatrix}$.
+
+\corrige{de l'exercice 10}
+$\vec u+\vec v\begin{pmatrix}0\\4\end{pmatrix}$.
+
+\corrige{de l'exercice 11}
+$\vec{AC}\begin{pmatrix}7\\-3\end{pmatrix}$.
+
+\corrige{de l'exercice 12}
+$\vec{AB}+\vec{BC}+\vec{CA}=\vec{AA}=\vec0$.
+
+\corrige{de l'exercice 13}
+$\vec{AB}\begin{pmatrix}5\\2\end{pmatrix}$, $\vec{DC}\begin{pmatrix}5\\2\end{pmatrix}$.
+Égaux : $ABCD$ est un parallélogramme.
+
+\corrige{de l'exercice 14}
+$\vec{AB}\begin{pmatrix}5\\1\end{pmatrix}$, $\vec{DC}\begin{pmatrix}6\\1\end{pmatrix}$.
+Différents : $ABCD$ n'est \textbf{pas} un parallélogramme.
+
+\corrige{de l'exercice 15}
+$\vec{AB}\begin{pmatrix}5\\1\end{pmatrix}$, $\vec{DC}\begin{pmatrix}5\\1\end{pmatrix}$.
+Égaux : $ABCD$ est un parallélogramme.
+
+\corrige{de l'exercice 16}
+$ABCD$ parallélogramme $\iff\vec{AB}=\vec{DC}$. $\vec{AB}\begin{pmatrix}4\\3\end{pmatrix}$,
+donc $C=D+\vec{AB}=(-1+4\,;4+3)=(3\,;7)$.
+
+\corrige{du sujet 1}
+1) $\vec{AB}\begin{pmatrix}4\\4\end{pmatrix}$, $\|\vec{AB}\|=\sqrt{16+16}=4\sqrt2$.\\
+2) $A'(5\,;1)$.\\
+3) $\vec u+\vec v\begin{pmatrix}-3\\4\end{pmatrix}$.\\
+4) $A'(3\,;-2)$, $B'(7\,;-1)$, $C'(5\,;3)$.
+
+\corrige{du sujet 2}
+1) $\vec{AC}\begin{pmatrix}5\\-2\end{pmatrix}$.\\
+2) $\vec{AB}\begin{pmatrix}5\\2\end{pmatrix}$, $\vec{DC}\begin{pmatrix}5\\2\end{pmatrix}$.
+Égaux : $ABCD$ est un parallélogramme.\\
+3) $\|\vec{AB}\|=\sqrt{5^{2}+12^{2}}=\sqrt{169}=13$.\\
+4) $\vec{AB}+\vec{BC}+\vec{CD}=\vec{AD}$.
+
+\corrige{du sujet 3}
+1) $\vec{AB}\begin{pmatrix}4\\3\end{pmatrix}$, $\|\vec{AB}\|=\sqrt{16+9}=5$.\\
+2) $A'(3-5\,;4+2)=A'(-2\,;6)$.\\
+3) $\vec{AB}\begin{pmatrix}3\\2\end{pmatrix}$, $\vec{DC}\begin{pmatrix}3\\2\end{pmatrix}$.
+Égaux : $ABCD$ est un parallélogramme.\\
+4a) Déplacement total $\begin{pmatrix}120-30\\90+30\end{pmatrix}=\begin{pmatrix}90\\120\end{pmatrix}$,
+donc position finale $(90\,;120)$.\\
+4b) Distance $=\sqrt{90^{2}+120^{2}}=\sqrt{22\,500}=150$ m.
+
+\end{multicols}
+\exercicesBanner
