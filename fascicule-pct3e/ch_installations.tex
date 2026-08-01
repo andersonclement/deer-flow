@@ -1,1 +1,313 @@
 \chapter{Installations électriques domestiques et maintenance}
+
+\noindent\textit{Une installation électrique domestique doit avant tout protéger les
+personnes et les biens. Ce dernier chapitre présente son organisation, les dispositifs de
+sécurité qui la composent, et les bons réflexes de maintenance et de prévention.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Organisation d'une installation domestique}
+
+\begin{definition}[Tableau électrique]
+Le \textbf{tableau électrique} centralise la distribution de l'électricité dans un
+logement. Il regroupe le \textbf{disjoncteur général} (coupe l'ensemble de
+l'installation) et plusieurs \textbf{disjoncteurs divisionnaires}, chacun protégeant un
+circuit particulier (éclairage, prises, plaque de cuisson\dots).
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.78]
+\draw[onbline,line width=1.3pt] (0,0) rectangle (7.8,3.8);
+\node[above] at (3.9,4) {\small tableau électrique};
+\filldraw[onbo!20,draw=onbo,line width=1.2pt] (1.6,2.7) rectangle (6.2,3.35);
+\node at (3.9,3.02) {\small disjoncteur général};
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.1pt] (0.4,1.4) rectangle (2.4,2.05);
+\node[font=\small] at (1.4,1.72) {éclairage};
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.1pt] (2.6,1.4) rectangle (4.2,2.05);
+\node[font=\small] at (3.4,1.72) {prises};
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.1pt] (4.4,1.4) rectangle (7.4,2.05);
+\node[font=\small] at (5.9,1.72) {plaque cuisson};
+\node[below,font=\small] at (3.9,1) {disjoncteurs divisionnaires};
+\draw[onbmuted,line width=1pt] (3.9,0) -- (3.9,0.5);
+\node[below,onbmuted,font=\small] at (3.9,-0.15) {mise à la terre};
+\end{tikzpicture}
+\fig{Figure — Tableau électrique : disjoncteur général et disjoncteurs divisionnaires.}
+\end{illus}
+
+\section{Les dispositifs de protection}
+
+\begin{propriete}[Disjoncteur]
+Un \textbf{disjoncteur} coupe automatiquement le circuit qu'il protège lorsqu'un
+\textbf{courant trop important} le traverse (court-circuit ou surcharge). Contrairement
+au fusible, il peut être \textbf{réarmé} après le défaut, sans être remplacé.
+\end{propriete}
+
+\begin{propriete}[Fusible]
+Un \textbf{fusible} contient un fil métallique qui \textbf{fond} lorsque le courant
+dépasse une valeur limite, coupant ainsi le circuit. Contrairement au disjoncteur, il doit
+être \textbf{remplacé} après chaque déclenchement.
+\end{propriete}
+
+\begin{propriete}[Disjoncteur différentiel et mise à la terre]
+Le \textbf{disjoncteur différentiel} protège les \textbf{personnes} : il compare
+l'intensité qui entre et l'intensité qui sort d'un circuit ; si une différence apparaît
+(fuite de courant, par exemple à travers le corps d'une personne), il coupe
+immédiatement l'alimentation. La \textbf{mise à la terre} relie la carcasse métallique
+des appareils au sol : en cas de défaut, le courant de fuite s'écoule vers la terre plutôt
+que de traverser une personne qui toucherait l'appareil.
+\end{propriete}
+
+\begin{remarque}
+Disjoncteur différentiel et mise à la terre fonctionnent \textbf{ensemble} : la mise à la
+terre offre un chemin de fuite au courant, et le différentiel détecte cette fuite pour
+couper le circuit.
+\end{remarque}
+
+\section{Calibre et puissance admissible}
+
+\begin{definition}[Calibre d'un disjoncteur]
+Le \textbf{calibre} (en ampères, A) d'un disjoncteur divisionnaire indique l'intensité
+maximale qu'il laisse passer avant de couper le circuit. La \textbf{puissance maximale}
+admissible sur ce circuit se calcule par :
+\[
+P_{\max}=U\times I_{\text{calibre}}.
+\]
+\end{definition}
+
+\begin{exemple}
+Un circuit protégé par un disjoncteur de calibre $I=16$ A, sous $U=220$ V :
+$P_{\max}=220\times16=3\,520$ W. Brancher des appareils dont la puissance totale dépasse
+cette valeur déclenche le disjoncteur.
+\end{exemple}
+
+\begin{remarque}
+C'est pour cette raison que les circuits les plus gourmands en puissance (plaque de
+cuisson, chauffe-eau) utilisent des disjoncteurs de calibre plus élevé (souvent $20$ ou
+$32$ A) que les circuits d'éclairage (souvent $10$ A).
+\end{remarque}
+
+\section{Maintenance et prévention des risques}
+
+\begin{propriete}[Bonnes pratiques]
+Une installation électrique se maintient en sécurité en respectant quelques règles
+simples : \textbf{couper le disjoncteur} avant toute intervention sur un circuit, ne
+\textbf{jamais surcharger} une prise multiple, faire \textbf{vérifier périodiquement}
+l'installation, et faire appel à un \textbf{professionnel qualifié} pour toute
+modification importante.
+\end{propriete}
+
+\begin{remarque}
+Un fil dénudé, une prise fissurée ou une odeur de brûlé sont des signes d'alerte qui
+doivent conduire à couper immédiatement le circuit concerné.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Tableau électrique.} Disjoncteur général $+$ disjoncteurs divisionnaires (un par
+circuit).\\[4pt]
+\textbf{Disjoncteur.} Coupe le courant en cas de surintensité ; réarmable.
+\textbf{Fusible.} Fond et doit être remplacé.\\[4pt]
+\textbf{Différentiel $+$ terre.} Protègent les personnes contre les fuites de courant
+(chemin de fuite $+$ détection).\\[4pt]
+\textbf{Puissance admissible.} $P_{\max}=U\times I_{\text{calibre}}$.\\[4pt]
+\textbf{Piège fréquent.} Le disjoncteur protège le circuit (contre les surintensités) ;
+le différentiel protège les personnes (contre les fuites de courant) : ce sont deux rôles
+complémentaires, pas identiques.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer la puissance maximale admissible sur un circuit}
+Appliquer $P_{\max}=U\times I_{\text{calibre}}$.
+\begin{exemple}
+$U=220$ V, $I_{\text{calibre}}=20$ A : $P_{\max}=220\times20=4\,400$ W.
+\end{exemple}
+
+\methode{Vérifier si un ensemble d'appareils peut être branché sans risque}
+Additionner les puissances des appareils, puis comparer à $P_{\max}$ du circuit.
+\begin{exemple}
+Sur un circuit de $P_{\max}=3\,520$ W, brancher un four ($2\,000$ W) et un grille-pain
+($1\,000$ W) donne $3\,000$ W $<3\,520$ W : c'est possible sans déclenchement.
+\end{exemple}
+
+\methode{Distinguer les rôles des différents dispositifs de sécurité}
+Se demander ce qui est protégé : le \textbf{circuit} (disjoncteur, fusible) ou la
+\textbf{personne} (différentiel, mise à la terre).
+\begin{exemple}
+Un court-circuit déclenche le disjoncteur ; un défaut d'isolement dangereux pour une
+personne déclenche le différentiel.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Organisation et protection}
+\exo{}\diff{1} À quoi sert un tableau électrique ?
+
+\exo{}\diff{2} Quelle est la différence entre un disjoncteur et un fusible ?
+
+\exo{}\diff{2} Que fait un disjoncteur différentiel ?
+
+\exo{}\diff{2} À quoi sert la mise à la terre ?
+
+\rubrique{Calibre et puissance}
+\exo{}\diff{2} Un circuit est protégé par un disjoncteur de calibre $I=10$ A sous
+$U=220$ V. Calculer $P_{\max}$.
+
+\exo{}\diff{2} Un circuit est protégé par un disjoncteur de calibre $I=32$ A sous
+$U=220$ V. Calculer $P_{\max}$.
+
+\exo{}\diff{3} Sur un circuit de calibre $16$ A, on branche un appareil de $2\,500$ W.
+Ce branchement est-il possible sans déclenchement ($U=220$ V) ?
+
+\rubrique{Maintenance et sécurité}
+\exo{}\diff{1} Que faut-il faire avant d'intervenir sur un circuit électrique ?
+
+\exo{}\diff{2} Citer un signe qui doit alerter sur un défaut électrique.
+
+\exo{}\diff{2} Pourquoi ne faut-il pas surcharger une prise multiple ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Organisation et protection}
+\exo{}\diff{2} Pourquoi une installation domestique comporte-t-elle plusieurs
+disjoncteurs divisionnaires plutôt qu'un seul disjoncteur général ?
+
+\exo{}\diff{3} Expliquer, en une phrase, comment le différentiel et la mise à la terre
+protègent une personne en cas de défaut d'isolement.
+
+\rubrique{Calibre et puissance}
+\exo{}\diff{2} Un circuit sous $U=220$ V a $P_{\max}=4\,400$ W. Calculer le calibre $I$
+du disjoncteur.
+
+\exo{}\diff{3} On souhaite brancher, sur un même circuit de calibre $20$ A sous $220$ V,
+un four ($1\,800$ W), une bouilloire ($1\,200$ W) et un grille-pain ($900$ W). Calculer la
+puissance totale et vérifier si le disjoncteur va déclencher.
+
+\exo{}\diff{3} Un chauffe-eau de $2\,200$ W doit être installé sur un circuit sous
+$220$ V. Quel calibre minimal de disjoncteur (parmi $10$, $16$, $20$, $32$ A) faut-il
+choisir ?
+
+\rubrique{Maintenance et sécurité}
+\exo{}\diff{2} Pourquoi faut-il faire vérifier périodiquement une installation
+électrique par un professionnel ?
+
+\exo{}\diff{3} Un disjoncteur se déclenche systématiquement dès qu'on allume la plaque de
+cuisson. Que peut-on en conclure sur la puissance appelée par rapport au calibre du
+circuit ?
+
+\exo{}\diff{3} Pourquoi est-il dangereux de remplacer un fusible par un fil de cuivre
+ordinaire (« bricolage » à proscrire absolument) ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Protection d'un circuit domestique]
+\begin{enumerate}[label=\arabic*)]
+\item Quel est le rôle d'un disjoncteur divisionnaire ?
+\item Un circuit est protégé par un disjoncteur de calibre $16$ A sous une tension de
+$220$ V. Calcule la puissance maximale admissible sur ce circuit.
+\item On y branche un appareil de $3\,800$ W. Le disjoncteur va-t-il se déclencher ?
+Justifie.
+\item Quelle est la différence entre un disjoncteur et un fusible ?
+\end{enumerate}
+
+\sujetbac[Sécurité des personnes]
+\begin{enumerate}[label=\arabic*)]
+\item Quel dispositif protège spécifiquement les personnes contre les fuites de
+courant ?
+\item Explique le rôle de la mise à la terre.
+\item Pourquoi le différentiel et la mise à la terre doivent-ils être utilisés
+ensemble ?
+\item Cite un geste de sécurité à respecter avant toute intervention sur une installation
+électrique.
+\end{enumerate}
+
+\sujetbac[Maintenance d'une installation]
+\begin{enumerate}[label=\arabic*)]
+\item Cite deux signes qui doivent alerter sur un défaut électrique dans une
+installation.
+\item Pourquoi ne faut-il pas surcharger une prise multiple ?
+\item Un circuit de calibre $10$ A sous $220$ V alimente une lampe de $60$ W et un
+ventilateur de $75$ W. Calcule la puissance totale utilisée et compare-la à
+$P_{\max}$.
+\item Pourquoi certaines interventions doivent-elles être confiées à un professionnel
+qualifié ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Il centralise et protège la distribution électrique du logement (disjoncteur général et
+disjoncteurs divisionnaires).
+
+\corrige{de l'exercice 2}
+Le disjoncteur peut être réarmé après un défaut ; le fusible fond et doit être
+remplacé.
+
+\corrige{de l'exercice 3}
+Il détecte une différence entre l'intensité entrante et sortante d'un circuit (fuite de
+courant) et coupe immédiatement l'alimentation pour protéger les personnes.
+
+\corrige{de l'exercice 4}
+Elle offre un chemin d'évacuation au courant de fuite, pour éviter qu'il ne traverse une
+personne touchant un appareil défectueux.
+
+\corrige{de l'exercice 5}
+$P_{\max}=220\times10=2\,200$ W.
+
+\corrige{de l'exercice 6}
+$P_{\max}=220\times32=7\,040$ W.
+
+\corrige{de l'exercice 7}
+$P_{\max}=220\times16=3\,520$ W $>2\,500$ W : oui, le branchement est possible.
+
+\corrige{de l'exercice 8}
+Couper le disjoncteur correspondant.
+
+\corrige{de l'exercice 9}
+Par exemple : un fil dénudé, une prise fissurée, une odeur de brûlé.
+
+\corrige{de l'exercice 10}
+Car la puissance totale appelée peut dépasser le calibre du circuit et provoquer une
+surchauffe ou un déclenchement, voire un incendie.
+
+\corrige{du sujet 1}
+1) Protéger un circuit particulier en coupant le courant en cas de surintensité.\\
+2) $P_{\max}=220\times16=3\,520$ W.\\
+3) Oui, car $3\,800$ W $>3\,520$ W : la puissance dépasse la limite admissible, le
+disjoncteur se déclenche.\\
+4) Le disjoncteur est réarmable après un défaut ; le fusible doit être remplacé après
+avoir fondu.
+
+\corrige{du sujet 2}
+1) Le disjoncteur différentiel.\\
+2) Elle offre un chemin d'évacuation au courant de fuite vers le sol, en cas de défaut
+d'isolement.\\
+3) Car la mise à la terre crée le chemin de fuite, et le différentiel détecte cette fuite
+pour couper le circuit : l'un ne suffit pas sans l'autre.\\
+4) Couper le disjoncteur correspondant avant toute intervention.
+
+\corrige{du sujet 3}
+1) Par exemple : un fil dénudé et une odeur de brûlé.\\
+2) Car la puissance totale des appareils branchés peut dépasser le calibre autorisé et
+provoquer une surchauffe.\\
+3) $60+75=135$ W $<P_{\max}=220\times10=2\,200$ W : très inférieure, sans risque.\\
+4) Car une erreur de câblage ou de dimensionnement peut créer un risque d'incendie ou
+d'électrocution ; un professionnel maîtrise les normes de sécurité.
+
+\end{multicols}
+\exercicesBanner
