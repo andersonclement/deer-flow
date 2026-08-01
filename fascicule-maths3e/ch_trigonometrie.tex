@@ -1,1 +1,459 @@
 \chapter{Trigonométrie dans le triangle rectangle}
+
+\noindent\textit{Le théorème de Pythagore relie les longueurs des côtés d'un triangle
+rectangle, mais ne dit rien sur ses angles. La \textbf{trigonométrie} comble ce manque :
+grâce au cosinus, au sinus et à la tangente d'un angle aigu, on peut calculer une longueur
+connaissant un angle, ou un angle connaissant deux longueurs — un outil essentiel pour les
+problèmes de hauteurs et de distances inaccessibles.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Cosinus, sinus, tangente d'un angle aigu}
+
+\begin{definition}[Côtés relatifs à un angle aigu]
+Dans un triangle rectangle, pour un angle aigu donné, le côté \textbf{opposé} est le côté
+qui ne touche pas cet angle, le côté \textbf{adjacent} est l'autre côté de l'angle droit
+(qui touche l'angle étudié), et l'\textbf{hypoténuse} est le côté le plus long.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\coordinate (B) at (0,0);
+\coordinate (C) at (5,0);
+\coordinate (A) at (5,3);
+\draw[onbo,line width=1.2pt] (B) -- (C) -- (A) -- cycle;
+\draw[onbmuted,line width=0.8pt] (4.6,0)--(4.6,0.4)--(5,0.4);
+\node[below left] at (B) {$B$};
+\node[below right] at (C) {$C$};
+\node[above right] at (A) {$A$};
+\node[below] at (2.5,0) {\small adjacent};
+\node[right] at (5,1.5) {\small opposé};
+\node[above left] at (2.3,1.6) {\small hypoténuse};
+\pic[draw=onbblue,angle radius=0.7cm,"\small $\widehat B$"] {angle=C--B--A};
+\end{tikzpicture}
+\fig{Figure — Côtés opposé, adjacent et hypoténuse relatifs à l'angle aigu $\widehat B$.}
+\end{illus}
+
+\begin{propriete}[Cosinus, sinus, tangente]
+Pour un angle aigu $\widehat B$ d'un triangle rectangle :
+\[
+\cos\widehat B=\frac{\text{adjacent}}{\text{hypoténuse}}, \qquad
+\sin\widehat B=\frac{\text{opposé}}{\text{hypoténuse}}, \qquad
+\tan\widehat B=\frac{\text{opposé}}{\text{adjacent}}.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=5.6cm,minimum height=0.7cm] (c1) {$\cos\widehat B=\dfrac{\text{adjacent}}{\text{hypoténuse}}$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=5.6cm,minimum height=0.7cm,below=6mm of c1] (c2) {$\sin\widehat B=\dfrac{\text{opposé}}{\text{hypoténuse}}$};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=5.6cm,minimum height=0.7cm,below=6mm of c2] (c3) {$\tan\widehat B=\dfrac{\text{opposé}}{\text{adjacent}}$};
+\end{tikzpicture}
+\fig{Figure — Les trois rapports trigonométriques associés à un angle aigu.}
+\end{illus}
+
+\begin{remarque}
+Ces rapports ne dépendent que de la \textbf{mesure de l'angle}, pas de la taille du
+triangle : on les trouve avec la touche $\cos$, $\sin$ ou $\tan$ de la calculatrice (en mode
+« degrés »).
+\end{remarque}
+
+\section{Relations entre cosinus, sinus et tangente}
+
+\begin{propriete}[Relations]
+Pour tout angle aigu $\widehat B$ :
+\[
+\cos^{2}\widehat B+\sin^{2}\widehat B=1, \qquad \tan\widehat B=\frac{\sin\widehat B}{\cos\widehat B}.
+\]
+\end{propriete}
+
+\begin{exemple}
+Dans un triangle rectangle avec $\sin\widehat B=0{,}6$ : $\cos^{2}\widehat B=1-0{,}6^{2}=0{,}64$,
+donc $\cos\widehat B=0{,}8$, et $\tan\widehat B=\dfrac{0{,}6}{0{,}8}=0{,}75$.
+\end{exemple}
+
+\section{Calculer une longueur connaissant un angle}
+
+\begin{propriete}[Méthode]
+On identifie le rapport (cos, sin ou tan) qui relie l'angle connu, le côté connu et le
+côté cherché, puis on résout l'équation obtenue.
+\end{propriete}
+
+\begin{exemple}
+Triangle rectangle en $B$, $\widehat A=30^{\circ}$, $AC=10$ cm (hypoténuse). Le côté $AB$
+est adjacent à $\widehat A$ : $\cos30^{\circ}=\dfrac{AB}{10}$, donc
+$AB=10\times\cos30^{\circ}\approx8{,}7$ cm. Le côté $BC$ est opposé :
+$BC=10\times\sin30^{\circ}=5$ cm.
+\end{exemple}
+
+\section{Calculer un angle connaissant deux longueurs}
+
+\begin{propriete}[Fonctions réciproques]
+Connaissant deux côtés, on calcule le rapport correspondant, puis on utilise la touche
+$\cos^{-1}$, $\sin^{-1}$ ou $\tan^{-1}$ de la calculatrice pour obtenir l'angle.
+\end{propriete}
+
+\begin{exemple}
+Triangle rectangle en $B$, $AB=4$ cm, $BC=3$ cm (angle droit en $B$). Pour l'angle
+$\widehat A$ : $\tan\widehat A=\dfrac{BC}{AB}=\dfrac34=0{,}75$, donc
+$\widehat A=\tan^{-1}(0{,}75)\approx37^{\circ}$.
+\end{exemple}
+
+\section{Problèmes concrets}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.7]
+\coordinate (O) at (0,0);
+\coordinate (P) at (6,0);
+\coordinate (T) at (6,4.5);
+\draw[onbline,line width=2pt] (O) -- (P);
+\draw[onbo,line width=1.5pt] (P) -- (T);
+\draw[onbblue,line width=1.3pt] (O) -- (T);
+\draw[onbmuted,line width=0.8pt] (5.6,0)--(5.6,0.4)--(6,0.4);
+\pic[draw=onbmuted,angle radius=0.9cm,"\small $\alpha$"] {angle=P--O--T};
+\node[below] at (3,0) {\small $30$ m};
+\node[right] at (6,2.25) {\small $h$};
+\end{tikzpicture}
+\fig{Figure — Angle d'élévation $\alpha$ : $\tan\alpha=\dfrac{h}{30}$.}
+\end{illus}
+
+\begin{exemple}
+Un observateur situé à $30$ m de la base d'un immeuble mesure un angle d'élévation de
+$35^{\circ}$ vers le sommet. Hauteur $h$ : $\tan35^{\circ}=\dfrac h{30}$, donc
+$h=30\times\tan35^{\circ}\approx21$ m.
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.7]
+\coordinate (A) at (0,0);
+\coordinate (C) at (5,0);
+\coordinate (B) at (5,3.5);
+\draw[onbline,line width=2pt] (A) -- (C);
+\draw[onbo,line width=1.5pt] (C) -- (B);
+\draw[onbblue,line width=1.3pt] (A) -- (B);
+\draw[onbmuted,line width=0.8pt] (4.6,0)--(4.6,0.4)--(5,0.4);
+\pic[draw=onbmuted,angle radius=0.8cm,"\small $\beta$"] {angle=C--A--B};
+\node[below] at (2.5,0) {\small $40$ m};
+\node[right] at (5,1.75) {\small largeur};
+\end{tikzpicture}
+\fig{Figure — Largeur d'une rivière estimée à l'aide d'un angle et d'une distance connue.}
+\end{illus}
+
+\begin{exemple}
+Un géomètre se place en $A$ sur une rive, recule de $40$ m le long de la rive jusqu'en $C$,
+et mesure un angle $\widehat A=55^{\circ}$ vers un point $B$ sur l'autre rive (angle droit
+en $C$). Largeur $BC=40\times\tan55^{\circ}\approx57$ m.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Définitions.} $\cos\widehat B=\dfrac{\text{adj}}{\text{hyp}}$ ;\
+$\sin\widehat B=\dfrac{\text{opp}}{\text{hyp}}$ ;\ $\tan\widehat B=\dfrac{\text{opp}}{\text{adj}}$.\\[4pt]
+\textbf{Relations.} $\cos^{2}\widehat B+\sin^{2}\widehat B=1$ ;\
+$\tan\widehat B=\dfrac{\sin\widehat B}{\cos\widehat B}$.\\[4pt]
+\textbf{Calculer une longueur.} Identifier le bon rapport (cos, sin ou tan), écrire
+l'équation, isoler la longueur cherchée.\\[4pt]
+\textbf{Calculer un angle.} Calculer le rapport, puis utiliser $\cos^{-1}$, $\sin^{-1}$ ou
+$\tan^{-1}$ à la calculatrice.\\[4pt]
+\textbf{Piège fréquent.} Bien identifier l'angle utilisé avant de choisir opposé/adjacent
+(ils changent selon l'angle considéré) ; vérifier que la calculatrice est en mode «
+degrés ».
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Identifier côté opposé, adjacent et hypoténuse selon l'angle considéré}
+Repérer l'angle étudié : le côté qui le touche (autre que l'hypoténuse) est l'adjacent, le
+côté qui ne le touche pas est l'opposé.
+\begin{exemple}
+Triangle rectangle en $B$, pour l'angle $\widehat C$ : le côté adjacent est $BC$, l'opposé
+est $AB$, l'hypoténuse est $AC$.
+\end{exemple}
+
+\methode{Calculer une longueur connaissant un angle et l'hypoténuse}
+Utiliser $\cos$ pour le côté adjacent, $\sin$ pour le côté opposé.
+\begin{exemple}
+Hypoténuse $8$ cm, angle $60^{\circ}$ : adjacent $=8\times\cos60^{\circ}=4$ cm ; opposé
+$=8\times\sin60^{\circ}\approx6{,}9$ cm.
+\end{exemple}
+
+\methode{Calculer une longueur connaissant un angle et un autre côté}
+Utiliser $\tan$ si l'on connaît l'opposé et l'adjacent (ou l'un des deux et qu'on cherche
+l'autre) ; sinon isoler la longueur dans l'équation cos ou sin.
+\begin{exemple}
+Adjacent $=7$ cm, angle $35^{\circ}$ : opposé $=7\times\tan35^{\circ}\approx4{,}9$ cm.
+\end{exemple}
+
+\methode{Calculer un angle connaissant deux longueurs}
+Calculer le rapport (cos, sin ou tan) avec les deux longueurs connues, puis appliquer la
+fonction réciproque à la calculatrice.
+\begin{exemple}
+Opposé $5$, hypoténuse $13$ : $\sin\widehat A=\dfrac5{13}\approx0{,}385$, donc
+$\widehat A=\sin^{-1}(0{,}385)\approx23^{\circ}$.
+\end{exemple}
+
+\methode{Utiliser la relation \texorpdfstring{$\cos^2+\sin^2=1$}{cos2+sin2=1}}
+Si l'on connaît $\cos$ (ou $\sin$), on en déduit l'autre en résolvant l'équation, puis on
+calcule $\tan$ si besoin.
+\begin{exemple}
+$\cos\widehat A=\dfrac{12}{13}$ : $\sin^{2}\widehat A=1-\left(\dfrac{12}{13}\right)^{2}=\dfrac{25}{169}$,
+donc $\sin\widehat A=\dfrac5{13}$.
+\end{exemple}
+
+\methode{Résoudre un problème de hauteur (angle d'élévation)}
+Modéliser la situation par un triangle rectangle, identifier l'angle d'élévation et la
+distance connue, puis utiliser $\tan$.
+\begin{exemple}
+Distance $50$ m, angle d'élévation $28^{\circ}$ : hauteur $=50\times\tan28^{\circ}\approx26{,}6$ m.
+\end{exemple}
+
+\methode{Résoudre un problème de distance inaccessible}
+Modéliser par un triangle rectangle avec l'angle mesuré et la distance accessible connue,
+puis utiliser le rapport adapté.
+\begin{exemple}
+Distance le long de la rive $40$ m, angle $55^{\circ}$ : largeur de la rivière
+$=40\times\tan55^{\circ}\approx57$ m.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Calculer une longueur (angle donné)}
+\exo{}\diff{2} Triangle $ABC$ rectangle en $B$, $\widehat A=30^{\circ}$, $AC=10$ cm.
+Calculer $AB$ et $BC$ (arrondir au dixième).
+
+\exo{}\diff{2} $\widehat A=60^{\circ}$, $AC=8$ cm. Calculer $AB$ et $BC$.
+
+\exo{}\diff{2} $\widehat A=25^{\circ}$, $AC=12$ cm. Calculer $AB$ et $BC$ (arrondir au
+centième).
+
+\exo{}\diff{3} $\widehat A=52^{\circ}$, $AB=6$ cm. Calculer $AC$ et $BC$ (arrondir au
+centième).
+
+\rubrique{Calculer un angle}
+\exo{}\diff{2} Un triangle rectangle a pour côtés $3$ cm, $4$ cm et $5$ cm (hypoténuse).
+Calculer, arrondi au degré, l'angle opposé au côté $3$ cm.
+
+\exo{}\diff{2} Un triangle rectangle a pour côtés $5$ cm, $12$ cm et $13$ cm (hypoténuse).
+Calculer l'angle opposé au côté $5$ cm.
+
+\exo{}\diff{2} Un triangle rectangle a pour côtés $6$ cm, $8$ cm et $10$ cm (hypoténuse).
+Calculer l'angle opposé au côté $6$ cm.
+
+\exo{}\diff{2} Un triangle rectangle a pour côtés $8$ cm, $15$ cm et $17$ cm (hypoténuse).
+Calculer l'angle opposé au côté $8$ cm.
+
+\rubrique{Relations et calculs combinés}
+\exo{}\diff{2} Sachant $\sin\widehat A=0{,}6$, calculer $\cos\widehat A$, puis
+$\tan\widehat A$.
+
+\exo{}\diff{2} Sachant $\sin\widehat A=\dfrac5{13}$ et $\cos\widehat A=\dfrac{12}{13}$,
+calculer $\tan\widehat A$.
+
+\exo{}\diff{1} Donner les valeurs exactes de $\sin45^{\circ}$, $\cos45^{\circ}$ et
+$\tan45^{\circ}$.
+
+\exo{}\diff{1} Donner les valeurs exactes de $\sin60^{\circ}$, $\cos60^{\circ}$ et
+$\tan60^{\circ}$.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un observateur situé à $30$ m de la base d'un arbre mesure un angle
+d'élévation de $35^{\circ}$ vers son sommet. Calculer la hauteur de l'arbre (arrondir au
+mètre).
+
+\exo{}\diff{2} Un géomètre recule de $40$ m le long d'une rive et mesure un angle de
+$55^{\circ}$ vers un point de l'autre rive. Calculer la largeur de la rivière (arrondir au
+mètre).
+
+\exo{}\diff{2} Le versant d'un toit mesure $6$ m de longueur et fait un angle de
+$40^{\circ}$ avec l'horizontale. Calculer la hauteur du toit et la longueur de sa base
+horizontale (arrondir au dixième).
+
+\exo{}\diff{2} Une échelle de $6$ m est appuyée contre un mur et fait un angle de
+$65^{\circ}$ avec le sol. Calculer la hauteur atteinte et la distance du pied de l'échelle
+au mur (arrondir au dixième).
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Calculer une longueur}
+\exo{}\diff{2} Hypoténuse $15$ cm, angle $40^{\circ}$. Calculer les deux côtés de l'angle
+droit (arrondir au centième).
+
+\exo{}\diff{2} Hypoténuse $20$ cm, angle $55^{\circ}$. Calculer les deux côtés de l'angle
+droit.
+
+\exo{}\diff{2} Côté adjacent $7$ cm, angle $35^{\circ}$. Calculer le côté opposé et
+l'hypoténuse.
+
+\exo{}\diff{1} Hypoténuse $12$ cm, angle $45^{\circ}$. Calculer les deux côtés de l'angle
+droit.
+
+\exo{}\diff{2} Côté adjacent $10$ cm, angle $60^{\circ}$. Calculer le côté opposé et
+l'hypoténuse.
+
+\rubrique{Calculer un angle}
+\exo{}\diff{2} Triangle rectangle de côtés $7$ cm, $24$ cm, $25$ cm. Calculer l'angle
+opposé au côté $7$ cm.
+
+\exo{}\diff{2} Triangle rectangle de côtés $9$ cm, $40$ cm, $41$ cm. Calculer l'angle
+opposé au côté $9$ cm.
+
+\exo{}\diff{2} Triangle rectangle de côtés $20$ cm, $21$ cm, $29$ cm. Calculer l'angle
+opposé au côté $20$ cm.
+
+\exo{}\diff{2} Triangle rectangle de côtés $8$ cm, $15$ cm, $17$ cm. Calculer l'angle
+opposé au côté $15$ cm.
+
+\rubrique{Relations trigonométriques}
+\exo{}\diff{2} Sachant $\cos\widehat A=0{,}8$, calculer $\sin\widehat A$, puis
+$\tan\widehat A$.
+
+\exo{}\diff{1} Donner les valeurs exactes de $\sin30^{\circ}$, $\cos30^{\circ}$ et
+$\tan30^{\circ}$.
+
+\exo{}\diff{2} Sachant $\tan\widehat A=1$, quelle est la mesure de $\widehat A$ ? Justifier
+à l'aide des valeurs remarquables.
+
+\exo{}\diff{2} Montrer que, pour $\widehat A=45^{\circ}$, on a bien
+$\cos^{2}\widehat A+\sin^{2}\widehat A=1$.
+
+\rubrique{Angle d'élévation, angle de dépression}
+\exo{}\diff{2} Un observateur situé à $50$ m d'un pylône mesure un angle d'élévation de
+$28^{\circ}$. Calculer la hauteur du pylône (arrondir au dixième).
+
+\exo{}\diff{2} Un observateur situé à $25$ m d'une tour mesure un angle d'élévation de
+$42^{\circ}$. Calculer la hauteur de la tour.
+
+\exo{}\diff{2} Du sommet d'une tour de $45$ m de haut, on observe un bateau avec un angle
+de dépression de $20^{\circ}$. Calculer la distance entre le bateau et le pied de la tour
+(arrondir au mètre).
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un mât est maintenu par un hauban de $25$ m qui fait un angle de
+$68^{\circ}$ avec le sol. Calculer la hauteur du mât et la distance entre le pied du hauban
+et le pied du mât (arrondir au dixième).
+
+\exo{}\diff{2} Le fil d'un cerf-volant mesure $40$ m et fait un angle de $50^{\circ}$ avec
+l'horizontale. Calculer la hauteur atteinte par le cerf-volant (arrondir au dixième).
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[trigonométrie et hauteur d'un immeuble — Yaoundé]
+\begin{enumerate}[label=\arabic*)]
+\item Triangle $ABC$ rectangle en $B$, $\widehat A=40^{\circ}$, $AC=15$ cm (hypoténuse).
+Calculer $AB$ et $BC$ (arrondir au dixième).
+\item Un triangle rectangle a pour côtés $7$ cm, $24$ cm, $25$ cm (hypoténuse). Calculer,
+arrondi au degré, l'angle opposé au côté $7$ cm.
+\item Pour mesurer la hauteur d'un immeuble à Yaoundé, un observateur se place à $50$ m de
+la base et mesure un angle d'élévation de $28^{\circ}$ vers le sommet. Calculer la hauteur
+de l'immeuble (arrondir au mètre).
+\end{enumerate}
+
+\sujetbac[trigonométrie et largeur d'une rivière]
+\begin{enumerate}[label=\arabic*)]
+\item Sachant $\sin\widehat A=\dfrac5{13}$, calculer $\cos\widehat A$ (utiliser
+$\cos^{2}+\sin^{2}=1$), puis $\tan\widehat A$.
+\item Triangle $ABC$ rectangle en $B$, $AB=7$ cm (adjacent à $\widehat A$),
+$\widehat A=35^{\circ}$. Calculer $BC$ et $AC$ (arrondir au dixième).
+\item Pour estimer la largeur d'une rivière, un géomètre se place en $A$ sur une rive,
+vise un point $B$ sur l'autre rive, recule de $40$ m le long de la rive jusqu'en $C$, et
+mesure un angle $\widehat A=55^{\circ}$ (angle droit en $C$). Calculer la largeur de la
+rivière (arrondir au mètre).
+\end{enumerate}
+
+\sujetbac[angles remarquables et toiture]
+\begin{enumerate}[label=\arabic*)]
+\item Donner les valeurs exactes de $\sin60^{\circ}$, $\cos60^{\circ}$ et $\tan60^{\circ}$.
+\item Triangle $ABC$ rectangle en $B$, $AC=20$ cm (hypoténuse), $\widehat A=55^{\circ}$.
+Calculer $AB$ et $BC$ (arrondir au dixième).
+\item Le versant d'un toit mesure $6$ m de longueur et fait un angle de $40^{\circ}$ avec
+l'horizontale. Calculer la hauteur du toit et la longueur de sa base horizontale (arrondir
+au dixième).
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$AB=10\times\cos30^{\circ}\approx8{,}7$ cm ; $BC=10\times\sin30^{\circ}=5$ cm.
+
+\corrige{de l'exercice 2}
+$AB=8\times\cos60^{\circ}=4$ cm ; $BC=8\times\sin60^{\circ}\approx6{,}9$ cm.
+
+\corrige{de l'exercice 3}
+$AB=12\times\cos25^{\circ}\approx10{,}88$ cm ; $BC=12\times\sin25^{\circ}\approx5{,}07$ cm.
+
+\corrige{de l'exercice 4}
+$AC=\dfrac6{\cos52^{\circ}}\approx9{,}75$ cm ; $BC=6\times\tan52^{\circ}\approx7{,}68$ cm.
+
+\corrige{de l'exercice 5}
+$\sin\widehat A=\dfrac35=0{,}6$, donc $\widehat A=\sin^{-1}(0{,}6)\approx37^{\circ}$.
+
+\corrige{de l'exercice 6}
+$\sin\widehat A=\dfrac5{13}\approx0{,}385$, donc $\widehat A\approx23^{\circ}$.
+
+\corrige{de l'exercice 7}
+$\sin\widehat A=\dfrac6{10}=0{,}6$, donc $\widehat A\approx37^{\circ}$.
+
+\corrige{de l'exercice 8}
+$\sin\widehat A=\dfrac8{17}\approx0{,}471$, donc $\widehat A\approx28^{\circ}$.
+
+\corrige{de l'exercice 9}
+$\cos^{2}\widehat A=1-0{,}36=0{,}64$, donc $\cos\widehat A=0{,}8$ ;
+$\tan\widehat A=\dfrac{0{,}6}{0{,}8}=0{,}75$.
+
+\corrige{de l'exercice 10}
+$\tan\widehat A=\dfrac{5/13}{12/13}=\dfrac5{12}$.
+
+\corrige{de l'exercice 11}
+$\sin45^{\circ}=\cos45^{\circ}=\dfrac{\sqrt2}2$ ; $\tan45^{\circ}=1$.
+
+\corrige{de l'exercice 12}
+$\sin60^{\circ}=\dfrac{\sqrt3}2$ ; $\cos60^{\circ}=\dfrac12$ ; $\tan60^{\circ}=\sqrt3$.
+
+\corrige{de l'exercice 13}
+$h=30\times\tan35^{\circ}\approx21$ m.
+
+\corrige{de l'exercice 14}
+Largeur $=40\times\tan55^{\circ}\approx57$ m.
+
+\corrige{de l'exercice 15}
+Hauteur $=6\times\sin40^{\circ}\approx3{,}9$ m ; base $=6\times\cos40^{\circ}\approx4{,}6$ m.
+
+\corrige{de l'exercice 16}
+Hauteur $=6\times\sin65^{\circ}\approx5{,}4$ m ; distance $=6\times\cos65^{\circ}\approx2{,}5$ m.
+
+\corrige{du sujet 1}
+1) $AB=15\times\cos40^{\circ}\approx11{,}5$ cm ; $BC=15\times\sin40^{\circ}\approx9{,}6$
+cm.\\
+2) $\sin\widehat A=\dfrac7{25}=0{,}28$, donc $\widehat A\approx16^{\circ}$.\\
+3) $h=50\times\tan28^{\circ}\approx27$ m.
+
+\corrige{du sujet 2}
+1) $\cos\widehat A=\sqrt{1-\left(\frac5{13}\right)^{2}}=\dfrac{12}{13}$ ;
+$\tan\widehat A=\dfrac5{12}$.\\
+2) $BC=7\times\tan35^{\circ}\approx4{,}9$ cm ; $AC=\dfrac7{\cos35^{\circ}}\approx8{,}5$ cm.\\
+3) Largeur $=40\times\tan55^{\circ}\approx57$ m.
+
+\corrige{du sujet 3}
+1) $\sin60^{\circ}=\dfrac{\sqrt3}2$ ; $\cos60^{\circ}=\dfrac12$ ; $\tan60^{\circ}=\sqrt3$.\\
+2) $AB=20\times\cos55^{\circ}\approx11{,}5$ cm ; $BC=20\times\sin55^{\circ}\approx16{,}4$
+cm.\\
+3) Hauteur $=6\times\sin40^{\circ}\approx3{,}9$ m ; base $=6\times\cos40^{\circ}\approx4{,}6$
+m.
+
+\end{multicols}
+\exercicesBanner
