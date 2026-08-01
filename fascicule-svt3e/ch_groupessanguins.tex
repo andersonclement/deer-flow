@@ -1,1 +1,333 @@
 \chapter{Les groupes sanguins et la transfusion}
+
+\noindent\textit{Tout le monde n'a pas le même sang : il existe plusieurs groupes
+sanguins, définis par la présence ou l'absence de certaines molécules à la surface des
+globules rouges. Connaître son groupe sanguin est indispensable avant toute transfusion,
+sous peine de réaction grave.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Le système ABO}
+
+\begin{definition}[Antigènes et anticorps sanguins]
+La surface des globules rouges peut porter des \textbf{antigènes} A et/ou B. Le plasma
+sanguin contient, en miroir, des \textbf{anticorps} dirigés contre les antigènes
+\textbf{absents} des propres globules rouges de l'individu.
+\end{definition}
+
+\begin{propriete}[Les quatre groupes sanguins]
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Groupe} & \textbf{Antigènes (globules rouges)} & \textbf{Anticorps (plasma)} \\
+\midrule
+A & antigène A & anticorps anti-B \\
+B & antigène B & anticorps anti-A \\
+AB & antigènes A et B & aucun anticorps \\
+O & aucun antigène & anticorps anti-A et anti-B \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{propriete}
+
+\begin{remarque}
+Un individu ne fabrique jamais d'anticorps contre ses propres antigènes : cela
+provoquerait la destruction de ses propres globules rouges.
+\end{remarque}
+
+\section{La règle de compatibilité transfusionnelle}
+
+\begin{propriete}[Le danger de l'agglutination]
+Si l'on transfuse des globules rouges portant un antigène auquel le receveur possède
+l'anticorps correspondant, les globules rouges transfusés s'\textbf{agglutinent}
+(s'agglomèrent) : c'est une réaction dangereuse, pouvant boucher des vaisseaux sanguins.
+\end{propriete}
+
+\begin{propriete}[Règle de compatibilité]
+Une transfusion est possible seulement si le \textbf{receveur ne possède pas
+d'anticorps} contre les \textbf{antigènes du donneur}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\node[font=\small] at (0,0) {};
+\begin{scope}
+\node[font=\small,align=center] (O) at (0,2.4) {\textbf{O}};
+\node[font=\small,align=center] (A) at (-2.6,0) {\textbf{A}};
+\node[font=\small,align=center] (B) at (2.6,0) {\textbf{B}};
+\node[font=\small,align=center] (AB) at (0,-2.4) {\textbf{AB}};
+\draw[->,onbo,line width=1.1pt] (O) -- (A);
+\draw[->,onbo,line width=1.1pt] (O) -- (B);
+\draw[->,onbo,line width=1.1pt] (O) to[bend right=35] (AB);
+\draw[->,onbgreen,line width=1.1pt] (A) -- (AB);
+\draw[->,onbgreen,line width=1.1pt] (B) -- (AB);
+\end{scope}
+\node[below,font=\scriptsize,onbmuted] at (0,-3.1) {les flèches indiquent « peut donner à »};
+\end{tikzpicture}
+\fig{Figure — O est donneur universel, AB est receveur universel.}
+\end{illus}
+
+\begin{propriete}[Cas particuliers]
+Le groupe \textbf{O} ne possède aucun antigène : il peut donner à \textbf{tous} les
+groupes, c'est le \textbf{donneur universel}. Le groupe \textbf{AB} ne possède aucun
+anticorps : il peut recevoir de \textbf{tous} les groupes, c'est le \textbf{receveur
+universel}.
+\end{propriete}
+
+\section{Le facteur rhésus}
+
+\begin{definition}[Facteur rhésus]
+Le \textbf{facteur rhésus} est un antigène supplémentaire (antigène D), indépendant du
+système ABO. Un individu est \textbf{Rh$+$} s'il porte cet antigène, \textbf{Rh$-$}
+s'il ne le porte pas.
+\end{definition}
+
+\begin{propriete}[Règle du rhésus]
+Un individu \textbf{Rh$-$} peut développer des anticorps anti-Rh s'il reçoit du sang
+Rh$+$ : il ne doit donc recevoir que du sang \textbf{Rh$-$}. Un individu \textbf{Rh$+$}
+peut recevoir indifféremment du sang Rh$+$ ou Rh$-$.
+\end{propriete}
+
+\begin{exemple}
+Une personne de groupe O Rh$-$ est \textbf{donneur universel absolu} : son sang peut être
+transfusé à n'importe quel individu, quel que soit son groupe ABO ou son rhésus.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Système ABO.} Groupe A (antigène A, anticorps anti-B) ; B (antigène B, anticorps
+anti-A) ; AB (antigènes A et B, aucun anticorps) ; O (aucun antigène, anticorps anti-A et
+anti-B).\\[4pt]
+\textbf{Règle de compatibilité.} Le receveur ne doit pas posséder d'anticorps contre les
+antigènes du donneur.\\[4pt]
+\textbf{Cas particuliers.} O = donneur universel ; AB = receveur universel.\\[4pt]
+\textbf{Rhésus.} Rh$-$ ne reçoit que du Rh$-$ ; Rh$+$ peut recevoir Rh$+$ ou Rh$-$.\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre antigènes (sur les globules rouges) et
+anticorps (dans le plasma) : ce sont les anticorps du \textbf{receveur} qui déterminent
+la compatibilité, pas ceux du donneur.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Retrouver les anticorps d'un groupe sanguin}
+Identifier les antigènes présents, puis en déduire les anticorps absents (anti- les
+antigènes non présents).
+\begin{exemple}
+Groupe B : antigène B présent $\Rightarrow$ anticorps anti-A présent (car pas d'antigène
+A), pas d'anticorps anti-B.
+\end{exemple}
+
+\methode{Déterminer si une transfusion est possible}
+Vérifier que le receveur ne possède pas d'anticorps contre les antigènes portés par les
+globules rouges du donneur.
+\begin{exemple}
+Un donneur A vers un receveur B est impossible : le receveur B possède des anticorps
+anti-A, qui agglutineraient les globules rouges transfusés.
+\end{exemple}
+
+\methode{Appliquer la règle du rhésus}
+Vérifier la compatibilité ABO, puis vérifier que le receveur Rh$-$ ne reçoit que du sang
+Rh$-$.
+\begin{exemple}
+Un donneur O Rh$+$ ne peut pas donner à un receveur Rh$-$, même si les groupes ABO sont
+compatibles.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Système ABO}
+\exo{}\diff{1} Quels antigènes porte un individu de groupe A ?
+
+\exo{}\diff{1} Quels anticorps possède un individu de groupe O ?
+
+\exo{}\diff{2} Quel groupe sanguin ne possède aucun antigène ?
+
+\exo{}\diff{2} Quel groupe sanguin ne possède aucun anticorps ?
+
+\rubrique{Compatibilité}
+\exo{}\diff{2} Pourquoi une transfusion incompatible est-elle dangereuse ?
+
+\exo{}\diff{2} Pourquoi le groupe O est-il appelé donneur universel ?
+
+\exo{}\diff{2} Pourquoi le groupe AB est-il appelé receveur universel ?
+
+\exo{}\diff{2} Un donneur B peut-il donner à un receveur AB ? Justifier.
+
+\rubrique{Facteur rhésus}
+\exo{}\diff{1} Qu'est-ce que le facteur rhésus ?
+
+\exo{}\diff{2} Un receveur Rh$-$ peut-il recevoir du sang Rh$+$ ? Justifier.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Système ABO}
+\exo{}\diff{2} Un individu possède des anticorps anti-A et anti-B. Quel est son groupe
+sanguin ?
+
+\exo{}\diff{3} Expliquer pourquoi un individu ne fabrique jamais d'anticorps contre ses
+propres antigènes.
+
+\rubrique{Compatibilité}
+\exo{}\diff{3} Un donneur A peut-il donner à un receveur O ? Justifier avec la règle de
+compatibilité.
+
+\exo{}\diff{3} Un donneur AB peut-il donner à un receveur A ? Justifier.
+
+\exo{}\diff{2} Classer les quatre groupes ABO selon le nombre de groupes auxquels ils
+peuvent donner (du plus large au plus restreint).
+
+\exo{}\diff{3} Pourquoi est-il essentiel de connaître le groupe sanguin d'un patient
+avant une transfusion, même en cas d'urgence ?
+
+\rubrique{Facteur rhésus}
+\exo{}\diff{2} Un individu de groupe O Rh$-$ est-il donneur universel absolu ? Justifier.
+
+\exo{}\diff{3} Une femme Rh$-$ peut-elle recevoir du sang Rh$+$ sans risque immédiat lors
+d'une première transfusion ? Que se passe-t-il en cas de nouvelle exposition au Rh$+$ ?
+
+\exo{}\diff{2} Un individu Rh$+$ peut-il donner du sang à un receveur Rh$-$ (en
+supposant les groupes ABO compatibles) ? Justifier.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Le système ABO]
+\begin{enumerate}[label=\arabic*)]
+\item Cite les quatre groupes sanguins du système ABO.
+\item Pour chaque groupe, indique les antigènes présents sur les globules rouges.
+\item Énonce la règle de compatibilité transfusionnelle.
+\item Pourquoi une transfusion incompatible provoque-t-elle une agglutination des
+globules rouges ?
+\end{enumerate}
+
+\sujetbac[Donneur et receveur universels]
+\begin{enumerate}[label=\arabic*)]
+\item Quel groupe sanguin est appelé « donneur universel » ? Pourquoi ?
+\item Quel groupe sanguin est appelé « receveur universel » ? Pourquoi ?
+\item Un donneur de groupe O peut-il donner à un receveur de groupe A ? Justifier.
+\item Un donneur de groupe A peut-il donner à un receveur de groupe O ? Justifier.
+\end{enumerate}
+
+\sujetbac[Le facteur rhésus]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce que le facteur rhésus ?
+\item Quelle règle de compatibilité s'applique à un receveur Rh$-$ ?
+\item Qu'est-ce qu'un individu O Rh$-$, et pourquoi ce groupe est-il particulièrement
+recherché dans les banques de sang ?
+\item Un individu Rh$+$ peut-il donner à un receveur Rh$+$ ? Justifier.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+L'antigène A.
+
+\corrige{de l'exercice 2}
+Les anticorps anti-A et anti-B.
+
+\corrige{de l'exercice 3}
+Le groupe O.
+
+\corrige{de l'exercice 4}
+Le groupe AB.
+
+\corrige{de l'exercice 5}
+Car les anticorps du receveur peuvent agglutiner les globules rouges du donneur portant
+l'antigène correspondant, ce qui est dangereux.
+
+\corrige{de l'exercice 6}
+Car il ne porte aucun antigène : aucun receveur ne peut avoir d'anticorps contre lui.
+
+\corrige{de l'exercice 7}
+Car il ne possède aucun anticorps : il ne réagit à aucun antigène reçu.
+
+\corrige{de l'exercice 8}
+Oui : le receveur AB ne possède aucun anticorps, donc aucune agglutination n'est
+possible.
+
+\corrige{de l'exercice 9}
+Un antigène supplémentaire (antigène D), présent (Rh$+$) ou absent (Rh$-$) à la surface
+des globules rouges.
+
+\corrige{de l'exercice 10}
+Non, il risque de développer des anticorps anti-Rh, dangereux en cas de nouvelle
+exposition au Rh$+$.
+
+\corrige{de l'exercice 11}
+Le groupe O : c'est le seul groupe à posséder à la fois les anticorps anti-A et anti-B.
+
+\corrige{de l'exercice 12}
+Car ses propres antigènes ne sont pas reconnus comme étrangers par son système
+immunitaire : produire des anticorps contre eux détruirait ses propres cellules.
+
+\corrige{de l'exercice 13}
+Oui : le receveur O possède des anticorps anti-A et anti-B, donc ne peut recevoir que du
+groupe O. Un donneur A ne peut donc \textbf{pas} donner à un receveur O.
+
+\corrige{de l'exercice 14}
+Non : le receveur A possède des anticorps anti-B, qui réagiraient contre l'antigène B du
+donneur AB.
+
+\corrige{de l'exercice 15}
+O (à tous), A et B (à leur propre groupe et à AB), AB (uniquement à AB).
+
+\corrige{de l'exercice 16}
+Car une erreur de compatibilité, même en urgence, peut provoquer une agglutination
+dangereuse pour le patient.
+
+\corrige{de l'exercice 17}
+Oui : il ne possède ni antigène A, ni antigène B, ni antigène Rh, donc aucun receveur ne
+peut avoir d'anticorps contre lui.
+
+\corrige{de l'exercice 18}
+Oui, sans réaction immédiate lors d'une première exposition, mais elle développe des
+anticorps anti-Rh ; une exposition ultérieure au Rh$+$ (nouvelle transfusion ou grossesse)
+peut alors provoquer une réaction dangereuse.
+
+\corrige{de l'exercice 19}
+Non : le receveur Rh$-$ ne possède pas l'antigène Rh et risquerait de développer des
+anticorps anti-Rh contre le sang Rh$+$ transfusé.
+
+\corrige{du sujet 1}
+1) A, B, AB, O.\\
+2) A : antigène A. B : antigène B. AB : antigènes A et B. O : aucun antigène.\\
+3) Le receveur ne doit pas posséder d'anticorps contre les antigènes du donneur.\\
+4) Car les anticorps du receveur se fixent sur les antigènes correspondants des globules
+rouges transfusés, les faisant s'agglomérer.
+
+\corrige{du sujet 2}
+1) Le groupe O, car il ne porte aucun antigène : il peut donner à tous les groupes.\\
+2) Le groupe AB, car il ne possède aucun anticorps : il peut recevoir de tous les
+groupes.\\
+3) Oui : le receveur A possède seulement des anticorps anti-B, absents chez le donneur
+O.\\
+4) Non : le receveur O possède des anticorps anti-A, qui réagiraient contre l'antigène A
+du donneur A.
+
+\corrige{du sujet 3}
+1) Un antigène supplémentaire (antigène D) présent (Rh$+$) ou absent (Rh$-$) sur les
+globules rouges.\\
+2) Il ne doit recevoir que du sang Rh$-$.\\
+3) C'est un individu sans antigènes A, B, ni Rh : il est donneur universel absolu,
+précieux pour les transfusions d'urgence sans délai de vérification du groupe du
+receveur.\\
+4) Oui, un donneur Rh$+$ peut donner à un receveur Rh$+$ (sous réserve de compatibilité
+ABO).
+
+\end{multicols}
+\exercicesBanner
