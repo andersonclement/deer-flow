@@ -1,1 +1,402 @@
 \chapter{Les solutions aqueuses}
+
+\noindent\textit{L'eau du robinet, l'eau de mer, le jus de citron : ce sont toutes des
+solutions aqueuses. Ce chapitre étudie comment elles se forment, comment les caractériser
+(conductivité, concentration, pH) et comment y identifier certains ions.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Solution aqueuse}
+
+\begin{definition}[Solution aqueuse]
+Une \textbf{solution aqueuse} est un mélange homogène obtenu en dissolvant une substance,
+le \textbf{soluté}, dans l'eau, le \textbf{solvant}. Lorsque le soluté est un solide
+ionique, il se dissocie en \textbf{ions} qui se dispersent dans l'eau.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[onbline,line width=1pt] (-0.5,0.5) rectangle (0.5,-0.5);
+\node at (0,0) {\small NaCl};
+\node[below] at (0,-0.7) {\scriptsize cristal solide};
+\draw[->,onbmuted,line width=1.2pt] (1,0) -- (2.4,0);
+\node[above] at (1.7,0.15) {\small dissolution};
+\draw[onbblue!20,fill=onbblue!8,line width=0.8pt] (2.8,-1.3) rectangle (7.4,1.3);
+\foreach \x/\y in {3.5/0.7,5.1/0.9,6.7/0.5,4.3/-0.9}
+  \node[onbo,font=\scriptsize] at (\x,\y) {Na$^+$};
+\foreach \x/\y in {4.5/0.8,6.1/0.9,3.6/-0.4,5.6/-0.7,6.9/-0.5}
+  \node[onbgreen,font=\scriptsize] at (\x,\y) {Cl$^-$};
+\node[below] at (5.1,-1.5) {\scriptsize ions dispersés dans l'eau};
+\end{tikzpicture}
+\fig{Figure — Dissolution du chlorure de sodium : les ions $\mathrm{Na^+}$ et
+$\mathrm{Cl^-}$ se dispersent dans l'eau.}
+\end{illus}
+
+\begin{propriete}[Solutions conductrices]
+Une solution contenant des \textbf{ions libres} conduit le courant électrique : c'est une
+solution \textbf{conductrice} (ex. eau salée). Une solution sans ions libres (soluté
+moléculaire, comme le sucre) ne conduit pas le courant : elle est \textbf{non
+conductrice}.
+\end{propriete}
+
+\begin{propriete}[Électroneutralité]
+Une solution ionique est globalement \textbf{neutre} : la somme des charges positives
+(cations) est égale à la somme des charges négatives (anions).
+\end{propriete}
+
+\begin{exemple}
+Dans une solution de chlorure de calcium $\mathrm{CaCl_2}$, chaque ion $\mathrm{Ca^{2+}}$
+(charge $+2$) est équilibré par deux ions $\mathrm{Cl^-}$ (charge $-1$ chacun, soit $-2$ au
+total) : la solution est électriquement neutre.
+\end{exemple}
+
+\section{Concentration molaire}
+
+\begin{definition}[Concentration molaire]
+La \textbf{concentration molaire} $c$ d'une espèce dissoute est le quotient de sa quantité
+de matière $n$ (en mol) par le volume $V$ de solution (en L) :
+\[
+c=\frac nV \qquad(\text{en mol/L}).
+\]
+\end{definition}
+
+\begin{exemple}
+On dissout $11{,}7$ g de chlorure de sodium ($M=58{,}5$ g/mol) dans $0{,}5$ L d'eau.
+$n=\dfrac{11{,}7}{58{,}5}=0{,}2$ mol, donc $c=\dfrac{0{,}2}{0{,}5}=0{,}4$ mol/L.
+\end{exemple}
+
+\begin{remarque}
+Le volume $V$ doit toujours être exprimé en \textbf{litres} dans la formule $c=\dfrac nV$ :
+penser à convertir si le volume est donné en mL ou cL ($1$ L $=1\,000$ mL $=100$ cL).
+\end{remarque}
+
+\section{Le pH et les indicateurs colorés}
+
+\begin{definition}[pH]
+Le \textbf{pH} mesure le caractère acide, neutre ou basique d'une solution aqueuse. Il
+varie généralement entre $0$ et $14$ : une solution \textbf{acide} a un pH $<7$, une
+solution \textbf{neutre} a un pH $=7$, une solution \textbf{basique} a un pH $>7$.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[fill=onbo!55,draw=onbline] (0,0) rectangle (4.9,0.8);
+\draw[fill=onbgreen!45,draw=onbline] (4.9,0) rectangle (5.6,0.8);
+\draw[fill=onbblue!45,draw=onbline] (5.6,0) rectangle (9.8,0.8);
+\foreach \x in {0,2,4,6,7,8,10,12,14}
+  \node[below,font=\scriptsize] at (\x*0.7,-0.1) {\x};
+\node[above,font=\scriptsize] at (2.45,1.0) {\textbf{acide}};
+\node[above,font=\scriptsize] at (5.25,1.0) {\textbf{neutre}};
+\node[above,font=\scriptsize] at (7.7,1.0) {\textbf{basique}};
+\draw[onbink,line width=1pt] (4.9,-0.15) -- (4.9,0.95);
+\end{tikzpicture}
+\fig{Figure — L'échelle de pH : acide (pH$<7$), neutre (pH$=7$), basique (pH$>7$).}
+\end{illus}
+
+\begin{propriete}[Indicateurs colorés]
+Un \textbf{indicateur coloré} change de couleur selon le pH de la solution testée. Le
+\textbf{papier pH} donne une estimation rapide en se colorant, à comparer à une échelle de
+teintes.
+\end{propriete}
+
+\begin{exemple}
+Le bleu de bromothymol (BBT) est jaune en milieu acide, vert en milieu neutre, et bleu en
+milieu basique.
+\end{exemple}
+
+\section{Tests d'identification des ions}
+
+\begin{propriete}[Test de l'ion chlorure]
+En ajoutant quelques gouttes de \textbf{nitrate d'argent} à une solution contenant des
+ions chlorure $\mathrm{Cl^-}$, on observe la formation d'un \textbf{précipité blanc} qui
+noircit à la lumière.
+\end{propriete}
+
+\begin{propriete}[Test de l'ion calcium]
+En ajoutant de l'oxalate d'ammonium à une solution contenant des ions calcium
+$\mathrm{Ca^{2+}}$, on observe la formation d'un \textbf{précipité blanc}.
+\end{propriete}
+
+\begin{remarque}
+Un \textbf{précipité} est un solide qui se forme et se dépose au fond (ou trouble) une
+solution, à la suite d'une réaction chimique entre deux espèces dissoutes.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Solution aqueuse.} Soluté dissous dans le solvant (eau) ; solide ionique
+$\to$ ions dispersés.\\[4pt]
+\textbf{Conductivité.} Ions libres $\Rightarrow$ solution conductrice.\\[4pt]
+\textbf{Électroneutralité.} Charges positives $=$ charges négatives (en valeur
+absolue).\\[4pt]
+\textbf{Concentration molaire.} $c=\dfrac nV$ (mol/L), avec $V$ en \textbf{litres}.\\[4pt]
+\textbf{pH.} Acide $<7$ ; neutre $=7$ ; basique $>7$.\\[4pt]
+\textbf{Tests d'ions.} $\mathrm{Cl^-}$ : précipité blanc (nitrate d'argent).
+$\mathrm{Ca^{2+}}$ : précipité blanc (oxalate d'ammonium).\\[4pt]
+\textbf{Piège fréquent.} Toujours convertir le volume en litres avant de calculer une
+concentration molaire.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Distinguer soluté et solvant dans une solution}
+Le solvant est le liquide en plus grande quantité (l'eau, pour une solution aqueuse) ; le
+soluté est la substance dissoute dedans.
+\begin{exemple}
+Dans l'eau sucrée, l'eau est le solvant, le sucre est le soluté.
+\end{exemple}
+
+\methode{Déterminer si une solution est conductrice}
+Vérifier si la solution contient des ions libres : c'est le cas pour les solides ioniques
+dissous (sels, acides, bases), mais pas pour les solides moléculaires (sucre).
+\begin{exemple}
+L'eau salée conduit le courant (ions $\mathrm{Na^+}$ et $\mathrm{Cl^-}$) ; l'eau sucrée ne
+le conduit pas (le sucre reste sous forme de molécules).
+\end{exemple}
+
+\methode{Calculer une concentration molaire}
+Calculer la quantité de matière $n$ (à partir d'une masse si besoin), exprimer le volume
+$V$ en litres, puis appliquer $c=\dfrac nV$.
+\begin{exemple}
+$n=0{,}5$ mol dans $V=0{,}5$ L : $c=\dfrac{0{,}5}{0{,}5}=1$ mol/L.
+\end{exemple}
+
+\methode{Déterminer la nature d'une solution à partir de son pH}
+Comparer le pH mesuré à $7$ : $\text{pH}<7\to$ acide, $\text{pH}=7\to$ neutre,
+$\text{pH}>7\to$ basique.
+\begin{exemple}
+Une solution de pH $3$ est acide ; une solution de pH $10$ est basique.
+\end{exemple}
+
+\methode{Identifier un ion par un test caractéristique}
+Ajouter le réactif spécifique de l'ion recherché et observer si le résultat attendu (couleur,
+précipité) apparaît.
+\begin{exemple}
+Un précipité blanc apparaît en ajoutant du nitrate d'argent à une solution : elle contient
+des ions $\mathrm{Cl^-}$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Solution aqueuse}
+\exo{}\diff{1} Qu'est-ce qu'un soluté ? Qu'est-ce qu'un solvant ?
+
+\exo{}\diff{1} Dans l'eau salée, quel est le soluté ? quel est le solvant ?
+
+\exo{}\diff{2} Pourquoi une solution de sel dissous conduit-elle le courant électrique ?
+
+\exo{}\diff{2} Qu'est-ce que l'électroneutralité d'une solution ?
+
+\rubrique{Concentration molaire}
+\exo{}\diff{1} On dissout $0{,}5$ mol de sel dans $0{,}5$ L d'eau. Calculer la
+concentration molaire de la solution obtenue.
+
+\exo{}\diff{2} On dissout $2$ mol de sel dans $4$ L d'eau. Calculer la concentration
+molaire de la solution obtenue.
+
+\exo{}\diff{2} On dissout $23{,}4$ g de chlorure de sodium ($M=58{,}5$ g/mol) dans $1$ L
+d'eau. Calculer la concentration molaire de la solution.
+
+\exo{}\diff{3} Quel volume de solution faut-il pour obtenir une concentration de $2$
+mol/L à partir de $1$ mol de soluté ?
+
+\rubrique{pH et indicateurs}
+\exo{}\diff{1} Une solution a un pH de $3$. Est-elle acide, neutre ou basique ?
+
+\exo{}\diff{1} Une solution a un pH de $10$. Est-elle acide, neutre ou basique ?
+
+\exo{}\diff{2} Quel est le pH d'une solution neutre ?
+
+\exo{}\diff{2} Le bleu de bromothymol devient jaune dans une solution testée. Cette
+solution est-elle acide, neutre ou basique ?
+
+\rubrique{Tests d'identification}
+\exo{}\diff{1} Quel réactif permet d'identifier l'ion chlorure ?
+
+\exo{}\diff{2} On ajoute du nitrate d'argent à une solution et un précipité blanc se
+forme. Que peut-on en conclure ?
+
+\exo{}\diff{2} Quel réactif permet d'identifier l'ion calcium ?
+
+\exo{}\diff{2} Qu'est-ce qu'un précipité ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Solution aqueuse}
+\exo{}\diff{1} Dans le jus de citron sucré, citer un soluté et le solvant.
+
+\exo{}\diff{2} L'huile ne se dissout pas dans l'eau. Peut-on parler de solution aqueuse
+huile-eau ? Justifier.
+
+\exo{}\diff{2} Pourquoi l'eau sucrée ne conduit-elle pas le courant électrique ?
+
+\exo{}\diff{2} Une solution contient des ions $\mathrm{Na^+}$ et des ions $\mathrm{Cl^-}$
+en nombre égal. Cette solution est-elle électriquement neutre ? Justifier.
+
+\exo{}\diff{3} Une solution de sulfate de cuivre contient des ions $\mathrm{Cu^{2+}}$.
+Quel type d'ion doit-elle contenir en plus pour être électriquement neutre ?
+
+\rubrique{Concentration molaire}
+\exo{}\diff{2} On dissout $0{,}1$ mol de sel dans $0{,}2$ L d'eau. Calculer la
+concentration molaire de la solution.
+
+\exo{}\diff{2} On dissout $1$ mol de sel dans $2$ L d'eau. Calculer la concentration
+molaire de la solution.
+
+\exo{}\diff{2} On dissout $5{,}85$ g de chlorure de sodium ($M=58{,}5$ g/mol) dans
+$0{,}25$ L d'eau. Calculer la concentration molaire.
+
+\exo{}\diff{3} Une solution a une concentration de $2$ mol/L et un volume de $0{,}5$ L.
+Calculer la quantité de matière de soluté dissous, puis la masse de chlorure de sodium
+correspondante ($M=58{,}5$ g/mol).
+
+\exo{}\diff{2} On dissout $0{,}3$ mol de soluté dans $1{,}5$ L d'eau. Calculer la
+concentration molaire.
+
+\rubrique{pH et indicateurs}
+\exo{}\diff{1} Une solution a un pH de $7$. Est-elle acide, neutre ou basique ?
+
+\exo{}\diff{2} Classer par acidité croissante trois solutions de pH $2$, $9$ et $5$.
+
+\exo{}\diff{2} Le bleu de bromothymol devient bleu dans une solution testée. Cette
+solution est-elle acide, neutre ou basique ?
+
+\exo{}\diff{2} Le jus de citron a un pH voisin de $2$. Est-il acide, neutre ou basique ?
+
+\exo{}\diff{3} Expliquer comment on peut estimer le pH d'une solution à l'aide de papier
+indicateur de pH.
+
+\rubrique{Tests d'identification}
+\exo{}\diff{2} On ajoute de l'oxalate d'ammonium à une solution et un précipité blanc se
+forme. Que peut-on en conclure ?
+
+\exo{}\diff{2} Pourquoi dit-on que le précipité formé avec le nitrate d'argent
+« noircit à la lumière » ? Est-ce une propriété utile pour l'identification ?
+
+\exo{}\diff{2} Une solution ne donne aucun précipité avec le nitrate d'argent. Que
+peut-on en conclure sur la présence d'ions chlorure ?
+
+\exo{}\diff{3} Décrire une expérience permettant de vérifier la présence d'ions chlorure
+dans un échantillon d'eau de mer.
+
+\exo{}\diff{2} Qu'est-ce qui distingue un test d'identification d'ion d'une simple
+observation de couleur ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Concentration molaire]
+\begin{enumerate}[label=\arabic*)]
+\item Définis : concentration molaire.
+\item On dissout $11{,}7$ g de chlorure de sodium ($M=58{,}5$ g/mol) dans $0{,}5$ L d'eau.
+Calcule la quantité de matière de sel dissous.
+\item Calcule la concentration molaire de la solution obtenue.
+\item Cette solution est-elle conductrice ? Justifie.
+\end{enumerate}
+
+\sujetbac[pH et indicateurs colorés]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce que le pH d'une solution ?
+\item Une solution a un pH de $4$. Est-elle acide, neutre ou basique ?
+\item Une autre solution a un pH de $9$. Est-elle acide, neutre ou basique ?
+\item Cite un indicateur coloré permettant de tester le pH d'une solution.
+\end{enumerate}
+
+\sujetbac[Identification d'ions]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce qu'un précipité ?
+\item Quel réactif permet d'identifier l'ion chlorure ? Décris le résultat attendu.
+\item Quel réactif permet d'identifier l'ion calcium ?
+\item Une solution donne un précipité blanc avec le nitrate d'argent. Que peut-on en
+conclure ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Le soluté est la substance dissoute ; le solvant est le liquide dans lequel elle est
+dissoute.
+
+\corrige{de l'exercice 2}
+Soluté : le sel. Solvant : l'eau.
+
+\corrige{de l'exercice 3}
+Car le sel se dissocie en ions $\mathrm{Na^+}$ et $\mathrm{Cl^-}$ libres, qui transportent
+le courant électrique.
+
+\corrige{de l'exercice 4}
+C'est le fait que la somme des charges positives d'une solution ionique soit égale à la
+somme des charges négatives.
+
+\corrige{de l'exercice 5}
+$c=\dfrac{0{,}5}{0{,}5}=1$ mol/L.
+
+\corrige{de l'exercice 6}
+$c=\dfrac24=0{,}5$ mol/L.
+
+\corrige{de l'exercice 7}
+$n=\dfrac{23{,}4}{58{,}5}=0{,}4$ mol ; $c=\dfrac{0{,}4}{1}=0{,}4$ mol/L.
+
+\corrige{de l'exercice 8}
+$V=\dfrac nc=\dfrac12=0{,}5$ L.
+
+\corrige{de l'exercice 9}
+Acide.
+
+\corrige{de l'exercice 10}
+Basique.
+
+\corrige{de l'exercice 11}
+$7$.
+
+\corrige{de l'exercice 12}
+Acide.
+
+\corrige{de l'exercice 13}
+Le nitrate d'argent.
+
+\corrige{de l'exercice 14}
+La solution contient des ions chlorure.
+
+\corrige{de l'exercice 15}
+L'oxalate d'ammonium.
+
+\corrige{de l'exercice 16}
+Un précipité est un solide qui se forme (et se dépose ou trouble la solution) à la suite
+d'une réaction chimique entre deux espèces dissoutes.
+
+\corrige{du sujet 1}
+1) La concentration molaire est le quotient de la quantité de matière de soluté dissous
+par le volume de la solution (en L).\\
+2) $n=\dfrac{11{,}7}{58{,}5}=0{,}2$ mol.\\
+3) $c=\dfrac{0{,}2}{0{,}5}=0{,}4$ mol/L.\\
+4) Oui : le chlorure de sodium dissous libère des ions $\mathrm{Na^+}$ et $\mathrm{Cl^-}$.
+
+\corrige{du sujet 2}
+1) Le pH mesure le caractère acide, neutre ou basique d'une solution.\\
+2) Acide (pH $<7$).\\
+3) Basique (pH $>7$).\\
+4) Par exemple le bleu de bromothymol (ou la phénolphtaléine, ou le papier pH).
+
+\corrige{du sujet 3}
+1) Un solide qui se forme lors d'une réaction entre deux espèces dissoutes.\\
+2) Le nitrate d'argent ; il se forme un précipité blanc qui noircit à la lumière.\\
+3) L'oxalate d'ammonium.\\
+4) La solution contient des ions chlorure.
+
+\end{multicols}
+\exercicesBanner
