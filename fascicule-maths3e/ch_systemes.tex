@@ -1,1 +1,473 @@
 \chapter{Systèmes de deux équations à deux inconnues}
+
+\noindent\textit{Beaucoup de problèmes concrets font intervenir \textbf{deux} inconnues liées
+par \textbf{deux} conditions : l'âge de deux personnes, le prix de deux articles, les masses
+d'un mélange. Un \textbf{système de deux équations à deux inconnues} permet de traduire ces
+deux conditions et de trouver simultanément les deux valeurs cherchées.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Systèmes de deux équations à deux inconnues}
+
+\begin{definition}[Système]
+Un \textbf{système de deux équations à deux inconnues} $x$ et $y$ est la donnée de deux
+équations à vérifier \textbf{simultanément}. Une \textbf{solution} du système est un couple
+$(x\,;y)$ qui vérifie les \textbf{deux} équations à la fois. On le note
+\[
+\left\{\begin{array}{l} ax+by=c\\ a'x+b'y=c' \end{array}\right.
+\]
+\end{definition}
+
+\begin{exemple}
+Le couple $(6\,;4)$ est solution du système $\left\{\begin{array}{l}x+y=10\\x-y=2\end{array}\right.$
+car $6+4=10$ \textbf{et} $6-4=2$.
+\end{exemple}
+
+\section{Résolution par substitution}
+
+\begin{propriete}[Méthode de substitution]
+On \textbf{isole} une inconnue dans une des deux équations, puis on la \textbf{remplace} par
+son expression dans l'\textbf{autre} équation, ce qui donne une équation à une seule
+inconnue.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=6.2cm,minimum height=0.7cm] (s1) {1. Isoler une inconnue dans une équation};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=6.2cm,minimum height=0.7cm,below=6mm of s1] (s2) {2. La substituer dans l'autre équation};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=6.2cm,minimum height=0.7cm,below=6mm of s2] (s3) {3. Résoudre l'équation à une inconnue obtenue};
+\node[draw=onbo2,fill=white,rounded corners=3pt,minimum width=6.2cm,minimum height=0.7cm,below=6mm of s3] (s4) {4. Calculer l'autre inconnue};
+\draw[->,onbmuted,line width=1pt] (s1) -- (s2);
+\draw[->,onbmuted,line width=1pt] (s2) -- (s3);
+\draw[->,onbmuted,line width=1pt] (s3) -- (s4);
+\end{tikzpicture}
+\fig{Figure — Les quatre étapes de la résolution par substitution.}
+\end{illus}
+
+\begin{exemple}
+$\left\{\begin{array}{l}2x+y=7\\x-y=2\end{array}\right.$ : de la 2\ieme{} équation,
+$y=x-2$. On substitue dans la 1\iere{} : $2x+(x-2)=7\iff3x=9\iff x=3$, puis $y=3-2=1$.
+Solution : $(3\,;1)$.
+\end{exemple}
+
+\section{Résolution par combinaison linéaire}
+
+\begin{propriete}[Méthode de combinaison]
+On multiplie une ou les deux équations par des nombres bien choisis pour que les
+coefficients d'une même inconnue soient \textbf{opposés}, puis on \textbf{additionne} les
+deux équations : cette inconnue disparaît.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=6.6cm,minimum height=0.7cm] (t1) {1. Multiplier pour obtenir des coefficients opposés};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=6.6cm,minimum height=0.7cm,below=6mm of t1] (t2) {2. Additionner les deux équations (une inconnue disparaît)};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=6.6cm,minimum height=0.7cm,below=6mm of t2] (t3) {3. Résoudre l'équation à une inconnue obtenue};
+\node[draw=onbo2,fill=white,rounded corners=3pt,minimum width=6.6cm,minimum height=0.7cm,below=6mm of t3] (t4) {4. Substituer pour trouver l'autre inconnue};
+\draw[->,onbmuted,line width=1pt] (t1) -- (t2);
+\draw[->,onbmuted,line width=1pt] (t2) -- (t3);
+\draw[->,onbmuted,line width=1pt] (t3) -- (t4);
+\end{tikzpicture}
+\fig{Figure — Les quatre étapes de la résolution par combinaison linéaire.}
+\end{illus}
+
+\begin{exemple}
+$\left\{\begin{array}{l}3x+2y=16\\x-y=2\end{array}\right.$ : on multiplie la 2\ieme{}
+équation par $2$ : $2x-2y=4$. On additionne à la 1\iere{} : $5x=20\iff x=4$, puis
+$y=4-2=2$. Solution : $(4\,;2)$.
+\end{exemple}
+
+\begin{remarque}
+Les deux méthodes donnent toujours le \textbf{même} résultat : on choisit la substitution
+quand une inconnue a déjà (ou presque) un coefficient $1$, et la combinaison sinon.
+\end{remarque}
+
+\section{Interprétation graphique}
+
+\begin{propriete}[Système et droites]
+Chaque équation $ax+by=c$ (avec $b\ne0$) est l'équation d'une \textbf{droite}. La solution
+du système correspond au \textbf{point d'intersection} des deux droites.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\begin{axis}[width=8.5cm,height=6.5cm,axis lines=middle,xlabel={\small $x$},ylabel={\small $y$},
+  xmin=-1,xmax=11,ymin=-1,ymax=11,xtick={2,4,6,8,10},ytick={2,4,6,8,10}]
+\addplot[onbo,line width=1.2pt,domain=-1:11]{10-x};
+\addplot[onbblue,line width=1.2pt,domain=-1:11]{x-2};
+\filldraw[onbink] (axis cs:6,4) circle (2.2pt);
+\node[onbink,anchor=south west] at (axis cs:6.2,4.2) {\small $(6\,;4)$};
+\node[onbo,anchor=south] at (axis cs:1.5,8.7) {\small $x+y=10$};
+\node[onbblue,anchor=north] at (axis cs:9,7.2) {\small $x-y=2$};
+\end{axis}
+\end{tikzpicture}
+\fig{Figure — Les droites d'équations $x+y=10$ et $x-y=2$ se coupent au point $(6\,;4)$ :
+c'est la solution du système.}
+\end{illus}
+
+\section{Mettre un problème en système}
+
+\begin{propriete}[Méthode]
+Choisir deux inconnues $x$ et $y$ (en précisant ce qu'elles représentent), traduire les
+\textbf{deux} conditions de l'énoncé par deux équations, résoudre le système, puis conclure
+dans le contexte.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (0,1) rectangle (5.2,1.6);
+\node at (2.6,1.3) {\small âge du frère $x=26$};
+\draw[fill=onbo2,draw=onbo,line width=0.9pt] (0,0) rectangle (3.8,0.6);
+\node at (1.9,0.3) {\small âge de la sœur $y=19$};
+\draw[onbmuted,<->,>=Stealth] (3.8,0.8) -- (5.2,0.8);
+\node[above] at (4.5,0.85) {\tiny $x-y=7$};
+\end{tikzpicture}
+\fig{Figure — Modéliser $x+y=45$ et $x-y=7$ par deux bandes : la plus longue dépasse
+l'autre de $7$ unités.}
+\end{illus}
+
+\begin{exemple}
+La somme des âges de deux personnes est $45$ ans et leur différence est $7$ ans :
+$\left\{\begin{array}{l}x+y=45\\x-y=7\end{array}\right.$, d'où (en additionnant) $2x=52$,
+$x=26$, puis $y=19$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Système.} Deux équations à vérifier simultanément ; une solution est un couple
+$(x\,;y)$.\\[4pt]
+\textbf{Substitution.} Isoler une inconnue, la remplacer dans l'autre équation, résoudre,
+puis revenir en arrière.\\[4pt]
+\textbf{Combinaison.} Rendre les coefficients d'une inconnue opposés (multiplier), additionner
+pour l'éliminer, résoudre, puis substituer.\\[4pt]
+\textbf{Graphique.} La solution est le point d'intersection des deux droites représentant
+les équations.\\[4pt]
+\textbf{Mise en système.} Deux inconnues, deux conditions $\to$ deux équations ; conclure
+dans le contexte.\\[4pt]
+\textbf{Vérification.} Toujours vérifier la solution trouvée dans les \textbf{deux}
+équations de départ.\\[4pt]
+\textbf{Piège fréquent.} Oublier de substituer dans l'équation de \textbf{départ} (pas dans
+une équation déjà transformée) ; multiplier une seule équation quand les deux coefficients
+doivent changer.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Résoudre un système par substitution}
+Isoler l'inconnue qui a le coefficient le plus simple (souvent $1$), la substituer dans
+l'autre équation, résoudre, puis calculer l'inconnue isolée.
+\begin{exemple}
+$\left\{\begin{array}{l}y=2x-1\\3x+y=14\end{array}\right.$ : $3x+(2x-1)=14\iff5x=15\iff x=3$,
+puis $y=2\times3-1=5$. Solution : $(3\,;5)$.
+\end{exemple}
+
+\methode{Résoudre un système par combinaison linéaire}
+Multiplier une ou les deux équations pour obtenir des coefficients opposés sur une inconnue,
+additionner, résoudre, puis substituer.
+\begin{exemple}
+$\left\{\begin{array}{l}2x+3y=13\\4x-y=5\end{array}\right.$ : on multiplie la 2\ieme{}
+équation par $3$ : $12x-3y=15$. On additionne à la 1\iere{} : $14x=28\iff x=2$, puis
+$4\times2-y=5\iff y=3$. Solution : $(2\,;3)$.
+\end{exemple}
+
+\methode{Choisir la méthode la plus adaptée}
+Si une inconnue a déjà (ou presque) le coefficient $1$ dans une équation, préférer la
+substitution ; sinon, préférer la combinaison.
+\begin{exemple}
+$\left\{\begin{array}{l}x+2y=8\\3x-y=3\end{array}\right.$ : $x$ a le coefficient $1$ dans
+la 1\iere{} équation, on substitue $x=8-2y$ dans la 2\ieme{}.
+\end{exemple}
+
+\methode{Résoudre un système où les deux équations doivent être multipliées}
+Trouver le plus petit multiple commun des deux coefficients d'une inconnue, multiplier
+chaque équation par le facteur adapté, puis combiner.
+\begin{exemple}
+$\left\{\begin{array}{l}4x+3y=25\\2x-3y=-1\end{array}\right.$ : les coefficients de $y$
+sont déjà opposés ($3$ et $-3$), on additionne directement : $6x=24\iff x=4$, puis
+$3y=25-16=9\iff y=3$.
+\end{exemple}
+
+\methode{Interpréter graphiquement la solution d'un système}
+Tracer les deux droites ; leur point d'intersection a pour coordonnées la solution du
+système.
+\begin{exemple}
+Les droites $y=2x-1$ et $y=-x+5$ se coupent en un point dont l'abscisse vérifie
+$2x-1=-x+5\iff3x=6\iff x=2$, donc $y=3$ : le point d'intersection est $(2\,;3)$.
+\end{exemple}
+
+\methode{Mettre un problème concret en système}
+Choisir clairement $x$ et $y$, traduire chaque condition par une équation, résoudre, puis
+répondre dans le contexte.
+\begin{exemple}
+Un fermier compte $35$ têtes (poules et lapins) et $98$ pattes. En notant $x$ le nombre de
+poules ($2$ pattes) et $y$ le nombre de lapins ($4$ pattes) :
+$\left\{\begin{array}{l}x+y=35\\2x+4y=98\end{array}\right.$, d'où $x=21$ poules et $y=14$
+lapins.
+\end{exemple}
+
+\methode{Vérifier une solution de système}
+Remplacer $x$ et $y$ par les valeurs trouvées dans les \textbf{deux} équations de départ, et
+vérifier qu'elles sont satisfaites toutes les deux.
+\begin{exemple}
+Pour $(4\,;2)$ dans $\left\{\begin{array}{l}3x+2y=16\\x-y=2\end{array}\right.$ :
+$3\times4+2\times2=12+4=16$ \checkmark\ et $4-2=2$ \checkmark.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Résoudre par substitution}
+\exo{}\diff{1} Résoudre $\left\{\begin{array}{l}x+y=10\\x-y=2\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}2x+y=7\\x-y=2\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}y=2x-1\\3x+y=14\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}x=y+3\\2x+3y=21\end{array}\right.$.
+
+\rubrique{Résoudre par combinaison}
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}3x+2y=16\\x-y=2\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}2x+3y=13\\4x-y=5\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}x+2y=8\\3x-y=3\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}4x+3y=25\\2x-3y=-1\end{array}\right.$.
+
+\rubrique{Problèmes : âges et achats}
+\exo{}\diff{2} La somme des âges de deux frères est $45$ ans, et leur différence est
+$7$ ans. Trouver leur âge.
+
+\exo{}\diff{2} Dans une papeterie, $2$ cahiers et $3$ stylos coûtent $1\,350$ FCFA, tandis
+que $5$ cahiers et $1$ stylo coûtent $1\,750$ FCFA. Calculer le prix d'un cahier et d'un
+stylo.
+
+\exo{}\diff{2} Un fermier compte $35$ têtes (poules et lapins) et $98$ pattes (une poule a
+$2$ pattes, un lapin en a $4$). Combien a-t-il de poules et de lapins ?
+
+\exo{}\diff{2} Un rectangle a un périmètre de $54$ cm ; sa longueur dépasse sa largeur de
+$5$ cm. Calculer ses dimensions à l'aide d'un système.
+
+\rubrique{Problèmes : mélanges et graphique}
+\exo{}\diff{2} Un commerçant mélange $30$ kg de riz, obtenus à partir d'un riz à $1\,200$
+FCFA/kg et d'un riz à $1\,800$ FCFA/kg, pour une valeur totale de $43\,800$ FCFA. Calculer
+les masses de chaque riz utilisées.
+
+\exo{}\diff{2} La somme de deux nombres est $58$ et le triple du premier diminué du second
+vaut $30$. Trouver ces deux nombres.
+
+\exo{}\diff{2} Les droites d'équations $y=2x-1$ et $y=-x+5$ se coupent en un point.
+Déterminer les coordonnées de ce point par le calcul.
+
+\exo{}\diff{2} Une salle de cinéma a vendu $150$ billets (adultes à $2\,000$ FCFA, enfants
+à $1\,000$ FCFA) pour une recette totale de $235\,000$ FCFA. Combien de billets de chaque
+catégorie ont été vendus ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Résoudre par substitution}
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}x+y=12\\x-y=4\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}y=3x-5\\2x+y=10\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}x=2y+1\\3x-y=8\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}3x+y=11\\x-y=1\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}x+3y=14\\2x-y=0\end{array}\right.$.
+
+\rubrique{Résoudre par combinaison}
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}2x+y=9\\x+3y=12\end{array}\right.$.
+
+\exo{}\diff{2} Résoudre $\left\{\begin{array}{l}4x-y=10\\2x+y=8\end{array}\right.$.
+
+\exo{}\diff{3} Résoudre $\left\{\begin{array}{l}3x+4y=26\\x-2y=2\end{array}\right.$.
+
+\exo{}\diff{3} Résoudre $\left\{\begin{array}{l}5x-3y=18\\2x+3y=24\end{array}\right.$.
+
+\exo{}\diff{3} Résoudre $\left\{\begin{array}{l}3x+2y=19\\x+2y=13\end{array}\right.$.
+
+\rubrique{Problèmes : âges, achats, agriculture}
+\exo{}\diff{2} La somme des âges de deux cousines est $52$ ans, et leur différence est
+$8$ ans. Trouver leur âge.
+
+\exo{}\diff{2} $4$ stylos et $2$ cahiers coûtent $1\,000$ FCFA ; $2$ stylos et $3$ cahiers
+coûtent $900$ FCFA. Calculer le prix d'un stylo et d'un cahier.
+
+\exo{}\diff{2} Un éleveur compte $50$ têtes (poules et lapins) et $140$ pattes. Combien
+a-t-il de poules et de lapins ?
+
+\exo{}\diff{2} Un jardin rectangulaire a un périmètre de $64$ m ; sa longueur dépasse sa
+largeur de $8$ m. Trouver ses dimensions.
+
+\rubrique{Problèmes : mélanges et interprétation graphique}
+\exo{}\diff{2} Un torréfacteur mélange $20$ kg de café, provenant d'un café à $2\,000$
+FCFA/kg et d'un café à $2\,500$ FCFA/kg, pour une valeur totale de $45\,000$ FCFA. Calculer
+les masses de chaque café utilisées.
+
+\exo{}\diff{2} La somme de deux nombres est $40$, et leur différence est $6$. Trouver ces
+deux nombres.
+
+\exo{}\diff{2} Les droites d'équations $y=3x-4$ et $y=-2x+11$ se coupent en un point.
+Déterminer les coordonnées de ce point par le calcul.
+
+\exo{}\diff{3} Une salle de cinéma a vendu $200$ billets (adultes à $2\,500$ FCFA, enfants à
+$1\,200$ FCFA) pour une recette totale de $396\,000$ FCFA. Combien de billets de chaque
+catégorie ont été vendus ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[systèmes et âges de deux frères]
+\begin{enumerate}[label=\arabic*)]
+\item Résoudre par substitution $\left\{\begin{array}{l}y=2x-3\\3x+y=17\end{array}\right.$.
+\item Résoudre par combinaison $\left\{\begin{array}{l}3x+2y=18\\x-2y=-2\end{array}\right.$.
+\item La somme des âges actuels de deux frères est $40$ ans. Il y a $5$ ans, l'aîné avait le
+double de l'âge du cadet.
+\begin{enumerate}[label=\alph*)]
+\item En notant $x$ l'âge actuel de l'aîné et $y$ celui du cadet, écrire un système
+traduisant ces deux informations.
+\item Résoudre ce système.
+\item Vérifier que la condition « il y a $5$ ans » est bien satisfaite.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[systèmes et jardin rectangulaire]
+\begin{enumerate}[label=\arabic*)]
+\item Résoudre par substitution $\left\{\begin{array}{l}x=y+6\\2x+3y=42\end{array}\right.$.
+\item Résoudre par combinaison $\left\{\begin{array}{l}4x+3y=29\\2x-3y=1\end{array}\right.$.
+\item Un jardin rectangulaire a un périmètre de $46$ m. Sa longueur dépasse sa largeur de
+$7$ m.
+\begin{enumerate}[label=\alph*)]
+\item En notant $L$ la longueur et $l$ la largeur, écrire un système traduisant ces deux
+informations.
+\item Résoudre ce système.
+\item Donner les dimensions du jardin.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[systèmes et mélange de café — Maroua]
+\begin{enumerate}[label=\arabic*)]
+\item Résoudre par substitution $\left\{\begin{array}{l}y=3x+1\\2x+y=21\end{array}\right.$.
+\item Résoudre par combinaison $\left\{\begin{array}{l}5x+2y=28\\3x-2y=4\end{array}\right.$.
+\item Un commerçant de Maroua mélange du café à $2\,200$ FCFA/kg avec du café à $3\,000$
+FCFA/kg pour obtenir $25$ kg d'un mélange dont la valeur totale est $67\,000$ FCFA.
+\begin{enumerate}[label=\alph*)]
+\item En notant $x$ la masse (en kg) de café à $2\,200$ FCFA et $y$ celle de café à
+$3\,000$ FCFA, écrire un système traduisant la situation.
+\item Résoudre ce système.
+\item Donner la masse de chaque type de café utilisée dans le mélange.
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+De la 2\ieme{} équation, $x=y+2$. Dans la 1\iere{} : $(y+2)+y=10\iff y=4$, puis $x=6$.
+Solution : $(6\,;4)$.
+
+\corrige{de l'exercice 2}
+De la 2\ieme{} équation, $x=y+2$. Dans la 1\iere{} : $2(y+2)+y=7\iff3y=3\iff y=1$, puis
+$x=3$. Solution : $(3\,;1)$.
+
+\corrige{de l'exercice 3}
+$3x+(2x-1)=14\iff5x=15\iff x=3$, puis $y=2\times3-1=5$. Solution : $(3\,;5)$.
+
+\corrige{de l'exercice 4}
+$2(y+3)+3y=21\iff5y+6=21\iff y=3$, puis $x=6$. Solution : $(6\,;3)$.
+
+\corrige{de l'exercice 5}
+De la 2\ieme{} équation, $y=x-2$. Dans la 1\iere{} : $3x+2(x-2)=16\iff5x=20\iff x=4$, puis
+$y=2$. Solution : $(4\,;2)$.
+
+\corrige{de l'exercice 6}
+On multiplie la 2\ieme{} équation par $3$ : $12x-3y=15$. On additionne à la 1\iere{} :
+$14x=28\iff x=2$, puis $4\times2-y=5\iff y=3$. Solution : $(2\,;3)$.
+
+\corrige{de l'exercice 7}
+De la 1\iere{} équation, $x=8-2y$. Dans la 2\ieme{} : $3(8-2y)-y=3\iff24-7y=3\iff y=3$,
+puis $x=2$. Solution : $(2\,;3)$.
+
+\corrige{de l'exercice 8}
+Les coefficients de $y$ sont déjà opposés : on additionne, $6x=24\iff x=4$, puis
+$3y=25-16=9\iff y=3$. Solution : $(4\,;3)$.
+
+\corrige{de l'exercice 9}
+$\left\{\begin{array}{l}x+y=45\\x-y=7\end{array}\right.$ : en additionnant, $2x=52\iff x=26$,
+puis $y=19$. Les frères ont $26$ ans et $19$ ans.
+
+\corrige{de l'exercice 10}
+En notant $x$ le prix d'un cahier et $y$ celui d'un stylo :
+$\left\{\begin{array}{l}2x+3y=1\,350\\5x+y=1\,750\end{array}\right.$. De la 2\ieme{} :
+$y=1\,750-5x$. Dans la 1\iere{} : $2x+3(1\,750-5x)=1\,350\iff-13x+5\,250=1\,350\iff x=300$,
+puis $y=250$. Un cahier coûte $300$ FCFA, un stylo $250$ FCFA.
+
+\corrige{de l'exercice 11}
+$\left\{\begin{array}{l}x+y=35\\2x+4y=98\end{array}\right.$, soit $x+2y=49$. En soustrayant
+$x+y=35$ : $y=14$, puis $x=21$. Le fermier a $21$ poules et $14$ lapins.
+
+\corrige{de l'exercice 12}
+En notant $L$ la longueur et $l$ la largeur :
+$\left\{\begin{array}{l}2(L+l)=54\\L-l=5\end{array}\right.$, soit $L+l=27$. En additionnant
+à $L-l=5$ : $2L=32\iff L=16$, puis $l=11$. Dimensions : $16$ cm $\times$ $11$ cm.
+
+\corrige{de l'exercice 13}
+En notant $x$ et $y$ les masses (en kg) des deux riz :
+$\left\{\begin{array}{l}x+y=30\\1\,200x+1\,800y=43\,800\end{array}\right.$. De la 1\iere{} :
+$x=30-y$. Dans la 2\ieme{} : $1\,200(30-y)+1\,800y=43\,800\iff600y=7\,800\iff y=13$, puis
+$x=17$. Masses : $17$ kg à $1\,200$ FCFA/kg et $13$ kg à $1\,800$ FCFA/kg.
+
+\corrige{de l'exercice 14}
+$\left\{\begin{array}{l}x+y=58\\3x-y=30\end{array}\right.$. En additionnant : $4x=88\iff
+x=22$, puis $y=36$. Les deux nombres sont $22$ et $36$.
+
+\corrige{de l'exercice 15}
+$2x-1=-x+5\iff3x=6\iff x=2$, puis $y=2\times2-1=3$. Point d'intersection : $(2\,;3)$.
+
+\corrige{de l'exercice 16}
+En notant $x$ le nombre d'adultes et $y$ le nombre d'enfants :
+$\left\{\begin{array}{l}x+y=150\\2\,000x+1\,000y=235\,000\end{array}\right.$, soit
+$2x+y=235$. En soustrayant $x+y=150$ : $x=85$, puis $y=65$. Il y a eu $85$ billets adultes
+et $65$ billets enfants.
+
+\corrige{du sujet 1}
+1) $3x+(2x-3)=17\iff5x=20\iff x=4$, puis $y=5$. Solution : $(4\,;5)$.\\
+2) On additionne les deux équations : $4x=16\iff x=4$, puis $2y=18-12=6\iff y=3$. Solution :
+$(4\,;3)$.\\
+3a) $\left\{\begin{array}{l}x+y=40\\x-5=2(y-5)\end{array}\right.$, soit $x=2y-5$.\\
+3b) $2y-5+y=40\iff3y=45\iff y=15$, puis $x=25$.\\
+3c) Il y a $5$ ans : aîné $20$ ans, cadet $10$ ans, et $20=2\times10$ : la condition est
+vérifiée.
+
+\corrige{du sujet 2}
+1) $2(y+6)+3y=42\iff5y+12=42\iff y=6$, puis $x=12$. Solution : $(12\,;6)$.\\
+2) On additionne les deux équations : $6x=30\iff x=5$, puis $3y=29-20=9\iff y=3$. Solution :
+$(5\,;3)$.\\
+3a) $\left\{\begin{array}{l}2(L+l)=46\\L-l=7\end{array}\right.$, soit $L+l=23$.\\
+3b) En additionnant à $L-l=7$ : $2L=30\iff L=15$, puis $l=8$.\\
+3c) Dimensions : $15$ m $\times$ $8$ m.
+
+\corrige{du sujet 3}
+1) $2x+(3x+1)=21\iff5x=20\iff x=4$, puis $y=13$. Solution : $(4\,;13)$.\\
+2) On additionne les deux équations : $8x=32\iff x=4$, puis $2y=28-20=8\iff y=4$. Solution :
+$(4\,;4)$.\\
+3a) $\left\{\begin{array}{l}x+y=25\\2\,200x+3\,000y=67\,000\end{array}\right.$.\\
+3b) De la 1\iere{} : $x=25-y$. Dans la 2\ieme{} :
+$2\,200(25-y)+3\,000y=67\,000\iff800y=12\,000\iff y=15$, puis $x=10$.\\
+3c) Masses : $10$ kg de café à $2\,200$ FCFA/kg et $15$ kg de café à $3\,000$ FCFA/kg.
+
+\end{multicols}
+\exercicesBanner
