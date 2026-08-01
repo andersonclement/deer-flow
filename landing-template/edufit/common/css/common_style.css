@@ -46,14 +46,14 @@ Version: 1.0
 
 ----*/
 :root {
-  --primary-color: #6255FA;
+  --primary-color: #FF6A00;
   --secondary-color: #14CF93;
   --heading-color: #212529;
   --primary-black-color: #06193A;
   --white-color: #ffffff;
   --text-color: #737477;
-  --gray-color: #FAFAFF;
-  --border-color: #EFEEFF;
+  --gray-color: #FFFAF6;
+  --border-color: #FFEFE6;
   --heading-font: "SUSE", sans-serif;
   --body-font: "Outfit", sans-serif;
 }
@@ -1519,8 +1519,8 @@ label {
   padding: 20px;
   border-radius: 15px;
   background-color: var(--white-color);
-  -webkit-box-shadow: -3px 0px 50px 0px rgba(98, 85, 250, 0.1);
-          box-shadow: -3px 0px 50px 0px rgba(98, 85, 250, 0.1);
+  -webkit-box-shadow: -3px 0px 50px 0px rgba(255, 106, 0, 0.1);
+          box-shadow: -3px 0px 50px 0px rgba(255, 106, 0, 0.1);
 }
 .edufit-image-box.style-one .edufit-img.image_two img {
   width: 100%;
@@ -1772,15 +1772,15 @@ label {
   background-color: var(--white-color);
   padding: 20px;
   border-radius: 15px;
-  -webkit-box-shadow: -3px 0px 50px 0px rgba(98, 85, 250, 0.1);
-          box-shadow: -3px 0px 50px 0px rgba(98, 85, 250, 0.1);
+  -webkit-box-shadow: -3px 0px 50px 0px rgba(255, 106, 0, 0.1);
+          box-shadow: -3px 0px 50px 0px rgba(255, 106, 0, 0.1);
   min-width: 260px;
 }
 .ef-iconic-box.style-one .icon {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  background-color: rgba(98, 85, 250, 0.1);
+  background-color: rgba(255, 106, 0, 0.1);
   font-size: 30px;
   width: 60px;
   height: 60px;
@@ -1815,7 +1815,7 @@ label {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  background-color: rgba(98, 85, 250, 0.1);
+  background-color: rgba(255, 106, 0, 0.1);
   font-size: 30px;
   width: 60px;
   height: 60px;
@@ -1889,7 +1889,7 @@ label {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgba(98, 85, 250, 0.1);
+  background-color: rgba(255, 106, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2098,7 +2098,7 @@ label {
   font-size: 16px;
 }
 .ef-category-item.style-one.bg_one {
-  background-color: #EEEDFF;
+  background-color: #FFEFE0;
 }
 .ef-category-item.style-one.bg_one .icon {
   color: var(--primary-color);
@@ -2113,7 +2113,7 @@ label {
   background-color: #FFF2EE;
 }
 .ef-category-item.style-one.bg_three .icon {
-  color: #AD86F3;
+  color: #FFA400;
 }
 .ef-category-item.style-one.bg_four {
   background-color: #EAFAFF;
@@ -2215,7 +2215,7 @@ label {
 }
 .ef-course-grid-item.style-one .course-info .course-categories-wrap .categories-button a {
   padding: 8px 13px;
-  background-color: rgba(98, 85, 250, 0.1);
+  background-color: rgba(255, 106, 0, 0.1);
   color: var(--primary-color);
   line-height: 19px;
 }
@@ -2390,7 +2390,7 @@ label {
   padding: 7px 15px;
   border-radius: 30px;
   line-height: 21px;
-  background-color: rgba(98, 85, 250, 0.1);
+  background-color: rgba(255, 106, 0, 0.1);
   color: var(--primary-color);
 }
 .ef-course-grid-item.style-three .course-info .course-categories-wrap .course-rating {
@@ -2534,7 +2534,7 @@ label {
   padding: 7px 15px;
   border-radius: 30px;
   line-height: 21px;
-  background-color: rgba(98, 85, 250, 0.1);
+  background-color: rgba(255, 106, 0, 0.1);
   color: var(--primary-color);
 }
 .ef-course-list-item.style-one .course-info .course-categories-wrap .course-rating {
@@ -3330,7 +3330,7 @@ label {
   border-radius: 20px;
   font-size: 14px;
   line-height: 11px;
-  background: rgba(98, 85, 250, 0.1);
+  background: rgba(255, 106, 0, 0.1);
   color: var(--primary-color);
 }
 .ef-blog-grid-item.style-one .post-content .post-meta span i {

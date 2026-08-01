@@ -112,8 +112,8 @@ Version: 1.0
 }
 .hero-wrapper .hero-image-box .image_one img {
   border-radius: 15px;
-  -webkit-box-shadow: -3px 0px 50px 0px rgba(98, 85, 250, 0.1);
-          box-shadow: -3px 0px 50px 0px rgba(98, 85, 250, 0.1);
+  -webkit-box-shadow: -3px 0px 50px 0px rgba(255, 106, 0, 0.1);
+          box-shadow: -3px 0px 50px 0px rgba(255, 106, 0, 0.1);
 }
 .hero-wrapper .hero-image-box .ef-iconic-box {
   position: absolute;
