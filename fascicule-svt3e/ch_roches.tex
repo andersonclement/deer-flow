@@ -1,1 +1,323 @@
 \chapter{Les roches : formation et cycle des roches}
+
+\noindent\textit{Granite, calcaire, marbre : les roches qui nous entourent ne se
+ressemblent pas, car elles ne se sont pas formées de la même façon. Ce chapitre présente
+les trois grandes familles de roches et le cycle qui les relie entre elles, sur des
+temps géologiques très longs.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Les roches magmatiques}
+
+\begin{definition}[Roches magmatiques]
+Une \textbf{roche magmatique} (ou éruptive) se forme par \textbf{refroidissement et
+solidification du magma}. On en distingue deux types selon la vitesse de
+refroidissement.
+\end{definition}
+
+\begin{propriete}[Plutonique ou volcanique]
+Une roche \textbf{plutonique} se forme par refroidissement \textbf{lent}, en profondeur :
+les cristaux ont le temps de bien se former et sont \textbf{visibles à l'œil nu} (exemple :
+le granite). Une roche \textbf{volcanique} se forme par refroidissement \textbf{rapide},
+en surface (lave) : les cristaux sont \textbf{petits ou absents} (exemple : le basalte).
+\end{propriete}
+
+\section{Les roches sédimentaires}
+
+\begin{definition}[Roches sédimentaires]
+Une \textbf{roche sédimentaire} se forme par \textbf{accumulation}, puis
+\textbf{compaction et cimentation} de sédiments (débris de roches érodées, ou restes
+d'organismes), en \textbf{couches successives} appelées \textbf{strates}. Exemples : le
+calcaire, le grès, l'argile.
+\end{definition}
+
+\begin{propriete}[Altération et érosion]
+L'\textbf{altération} est la fragmentation progressive des roches en surface, sous l'effet
+de l'eau, du vent, ou des variations de température. L'\textbf{érosion} transporte
+ensuite ces fragments, qui se déposent en couches : c'est la \textbf{sédimentation}.
+\end{propriete}
+
+\section{Les roches métamorphiques}
+
+\begin{definition}[Roches métamorphiques]
+Une \textbf{roche métamorphique} se forme par \textbf{transformation} d'une roche
+préexistante, sous l'effet d'une forte \textbf{pression} et/ou d'une forte
+\textbf{température}, \textbf{sans fusion complète}. Exemples : le \textbf{gneiss}
+(à partir de granite), le \textbf{marbre} (à partir de calcaire), le schiste.
+\end{definition}
+
+\begin{illus}
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Famille} & \textbf{Formation} & \textbf{Exemple} \\
+\midrule
+Magmatique plutonique & refroidissement lent, profondeur & granite \\
+Magmatique volcanique & refroidissement rapide, surface & basalte \\
+Sédimentaire & accumulation, compaction & calcaire \\
+Métamorphique & pression / température & marbre \\
+\bottomrule
+\end{tabular}
+\end{center}
+\fig{Figure — Les trois familles de roches, leur mode de formation, et un exemple.}
+\end{illus}
+
+\section{Le cycle des roches}
+
+\begin{propriete}[Un cycle sans fin]
+Sur des temps géologiques très longs, les trois familles de roches se transforment les
+unes dans les autres, formant un \textbf{cycle} : les roches de surface s'altèrent en
+sédiments, qui forment des roches sédimentaires ; enfouies profondément, celles-ci
+subissent pression et température et deviennent des roches métamorphiques ; si elles
+fondent complètement, elles forment un magma, qui en refroidissant redonne des roches
+magmatiques.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\node[font=\small,align=center] (M) at (0,2.6) {\textbf{Roches}\\\textbf{magmatiques}};
+\node[font=\small,align=center] (S) at (-3.2,-1.3) {\textbf{Roches}\\\textbf{sédimentaires}};
+\node[font=\small,align=center] (Met) at (3.2,-1.3) {\textbf{Roches}\\\textbf{métamorphiques}};
+\draw[->,onbo,line width=1.1pt] (M) to[bend left=15] (S);
+\node[font=\scriptsize,onbo] at (-2.1,1.2) {altération, érosion};
+\draw[->,onbgreen,line width=1.1pt] (S) to[bend left=15] (Met);
+\node[font=\scriptsize,onbgreen] at (0,-2.3) {pression, température};
+\draw[->,onbo2,line width=1.1pt] (Met) to[bend left=15] (M);
+\node[font=\scriptsize,onbo2] at (2.1,1.2) {fusion, refroidissement};
+\end{tikzpicture}
+\fig{Figure — Le cycle des roches : les trois familles se transforment les unes dans les autres.}
+\end{illus}
+
+\begin{exemple}
+Un granite, altéré en surface, produit des sédiments qui, compactés, forment une roche
+sédimentaire. Enfouie et soumise à une forte pression, celle-ci peut devenir une roche
+métamorphique. Si elle fond entièrement, elle redonne un magma, à l'origine de nouvelles
+roches magmatiques.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Roches magmatiques.} Refroidissement du magma ; plutonique (lent, profondeur,
+cristaux visibles) ou volcanique (rapide, surface, petits cristaux).\\[4pt]
+\textbf{Roches sédimentaires.} Accumulation, compaction, cimentation de sédiments en
+strates.\\[4pt]
+\textbf{Roches métamorphiques.} Transformation sous pression/température, sans fusion
+complète.\\[4pt]
+\textbf{Cycle des roches.} Altération/érosion $\to$ sédimentaire $\to$
+pression/température $\to$ métamorphique $\to$ fusion $\to$ magmatique $\to$ \dots\\[4pt]
+\textbf{Piège fréquent.} Une roche métamorphique ne fond \textbf{pas} : c'est la
+transformation \textbf{sans fusion complète} qui la caractérise ; en cas de fusion
+complète, on obtient un magma, pas une roche métamorphique.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Identifier une famille de roche à partir de sa formation}
+Repérer l'origine : magma refroidi (magmatique), sédiments accumulés (sédimentaire),
+transformation sous pression/température (métamorphique).
+\begin{exemple}
+Une roche formée par accumulation de coquillages est une roche sédimentaire.
+\end{exemple}
+
+\methode{Distinguer roche plutonique et roche volcanique}
+Observer la taille des cristaux : gros cristaux visibles (refroidissement lent,
+plutonique) ; petits cristaux ou absence de cristaux (refroidissement rapide,
+volcanique).
+\begin{exemple}
+Le granite (cristaux visibles) est plutonique ; le basalte (cristaux invisibles) est
+volcanique.
+\end{exemple}
+
+\methode{Suivre une roche dans le cycle des roches}
+Identifier l'étape (altération, sédimentation, enfouissement, fusion, refroidissement) et
+la famille de roche qui en résulte.
+\begin{exemple}
+Un calcaire enfoui et soumis à une forte pression peut se transformer en marbre (roche
+métamorphique).
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Roches magmatiques}
+\exo{}\diff{1} Comment se forme une roche magmatique ?
+
+\exo{}\diff{2} Quelle est la différence entre une roche plutonique et une roche
+volcanique ?
+
+\exo{}\diff{1} Le granite est-il une roche plutonique ou volcanique ?
+
+\rubrique{Roches sédimentaires}
+\exo{}\diff{2} Comment se forme une roche sédimentaire ?
+
+\exo{}\diff{2} Quelle est la différence entre altération et érosion ?
+
+\rubrique{Roches métamorphiques}
+\exo{}\diff{1} Comment se forme une roche métamorphique ?
+
+\exo{}\diff{2} À partir de quelle roche se forme le marbre ?
+
+\rubrique{Cycle des roches}
+\exo{}\diff{2} Citer, dans l'ordre, les transformations qui font passer d'une roche
+magmatique à une roche sédimentaire.
+
+\exo{}\diff{2} Que devient une roche métamorphique si elle fond entièrement ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Roches magmatiques}
+\exo{}\diff{3} Pourquoi les cristaux d'une roche plutonique sont-ils plus gros que ceux
+d'une roche volcanique ?
+
+\rubrique{Roches sédimentaires}
+\exo{}\diff{3} Pourquoi les roches sédimentaires se présentent-elles souvent en couches
+(strates) bien visibles ?
+
+\exo{}\diff{2} Citer deux agents responsables de l'altération des roches en surface.
+
+\rubrique{Roches métamorphiques}
+\exo{}\diff{3} Pourquoi dit-on qu'une roche métamorphique se forme « sans fusion
+complète » ? Que se passerait-il si la fusion était complète ?
+
+\rubrique{Cycle des roches}
+\exo{}\diff{3} Expliquer, en une phrase, pourquoi le cycle des roches n'a pas de point
+de départ ni de fin.
+
+\exo{}\diff{2} Un calcaire (roche sédimentaire) est enfoui profondément et soumis à une
+forte pression. Que peut-il devenir ?
+
+\exo{}\diff{3} Un granite en surface s'altère lentement. Décrire les étapes qui peuvent
+le mener à devenir, des millions d'années plus tard, une roche sédimentaire.
+
+\exo{}\diff{2} Pourquoi le cycle des roches se déroule-t-il sur des temps géologiques
+très longs plutôt que sur quelques années ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Les trois familles de roches]
+\begin{enumerate}[label=\arabic*)]
+\item Cite les trois grandes familles de roches.
+\item Comment se forme une roche magmatique plutonique ? Donne un exemple.
+\item Comment se forme une roche sédimentaire ? Donne un exemple.
+\item Comment se forme une roche métamorphique ? Donne un exemple.
+\end{enumerate}
+
+\sujetbac[Altération et sédimentation]
+\begin{enumerate}[label=\arabic*)]
+\item Qu'est-ce que l'altération d'une roche ?
+\item Qu'est-ce que l'érosion ?
+\item Comment les sédiments se transforment-ils en roche sédimentaire ?
+\item Cite deux agents responsables de l'altération des roches.
+\end{enumerate}
+
+\sujetbac[Le cycle des roches]
+\begin{enumerate}[label=\arabic*)]
+\item Décris, dans l'ordre, les transformations qui relient les trois familles de
+roches dans le cycle des roches.
+\item Que devient une roche sédimentaire soumise à une forte pression et température en
+profondeur ?
+\item Que devient une roche métamorphique si elle fond entièrement ?
+\item Pourquoi peut-on dire que ce cycle est sans fin ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Par refroidissement et solidification du magma.
+
+\corrige{de l'exercice 2}
+La roche plutonique se forme par refroidissement lent en profondeur (gros cristaux) ; la
+roche volcanique se forme par refroidissement rapide en surface (petits cristaux).
+
+\corrige{de l'exercice 3}
+Plutonique.
+
+\corrige{de l'exercice 4}
+Par accumulation, compaction et cimentation de sédiments.
+
+\corrige{de l'exercice 5}
+L'altération fragmente la roche sur place ; l'érosion transporte ensuite les fragments.
+
+\corrige{de l'exercice 6}
+Par transformation d'une roche préexistante sous pression et/ou température, sans fusion
+complète.
+
+\corrige{de l'exercice 7}
+Le calcaire.
+
+\corrige{de l'exercice 8}
+Altération, érosion, puis sédimentation (accumulation et compaction des sédiments).
+
+\corrige{de l'exercice 9}
+Elle forme un magma, à l'origine de nouvelles roches magmatiques.
+
+\corrige{de l'exercice 10}
+Car le refroidissement lent en profondeur laisse le temps aux cristaux de bien se
+former ; le refroidissement rapide en surface ne le permet pas.
+
+\corrige{de l'exercice 11}
+Car les sédiments se déposent progressivement, couche après couche, au fil du temps.
+
+\corrige{de l'exercice 12}
+Par exemple : l'eau et le vent (ou les variations de température).
+
+\corrige{de l'exercice 13}
+Car la roche est transformée par la pression et la température sans passer par l'état
+liquide ; si la fusion était complète, on obtiendrait un magma, pas une roche
+métamorphique.
+
+\corrige{de l'exercice 14}
+Car chaque famille de roche peut se transformer en une autre : le cycle se poursuit
+indéfiniment, sans étape initiale ni finale privilégiée.
+
+\corrige{de l'exercice 15}
+Une roche métamorphique (par exemple du marbre).
+
+\corrige{de l'exercice 16}
+Le granite s'altère en sédiments (érosion), qui s'accumulent et se compactent pour
+former une roche sédimentaire.
+
+\corrige{de l'exercice 17}
+Car les processus impliqués (altération, enfouissement, pression, fusion) sont
+extrêmement lents à l'échelle humaine, nécessitant des millions d'années.
+
+\corrige{du sujet 1}
+1) Magmatique, sédimentaire, métamorphique.\\
+2) Par refroidissement lent du magma en profondeur ; exemple : le granite.\\
+3) Par accumulation, compaction et cimentation de sédiments ; exemple : le calcaire.\\
+4) Par transformation d'une roche sous pression et/ou température, sans fusion complète ;
+exemple : le marbre.
+
+\corrige{du sujet 2}
+1) La fragmentation progressive d'une roche en surface, sous l'effet de l'eau, du vent
+ou des variations de température.\\
+2) Le transport des fragments issus de l'altération.\\
+3) Ils s'accumulent en couches puis sont compactés et cimentés.\\
+4) Par exemple : l'eau et le vent.
+
+\corrige{du sujet 3}
+1) Altération/érosion (magmatique $\to$ sédiments) $\to$ sédimentation (sédiments $\to$
+sédimentaire) $\to$ pression/température (sédimentaire $\to$ métamorphique) $\to$ fusion
+(métamorphique $\to$ magma) $\to$ refroidissement (magma $\to$ magmatique).\\
+2) Une roche métamorphique.\\
+3) Elle forme un magma, à l'origine de nouvelles roches magmatiques.\\
+4) Car chaque famille de roche peut se transformer en une autre, sans étape de départ
+ni d'arrivée définitive.
+
+\end{multicols}
+\exercicesBanner
