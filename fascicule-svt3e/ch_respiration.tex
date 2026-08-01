@@ -1,1 +1,333 @@
 \chapter{La respiration et les échanges gazeux}
+
+\noindent\textit{Respirer, c'est faire entrer de l'air riche en dioxygène jusque dans nos
+poumons, et rejeter de l'air chargé en dioxyde de carbone. Ce chapitre étudie l'appareil
+respiratoire, les mouvements qui l'animent, et les échanges gazeux qui s'y déroulent.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{L'appareil respiratoire}
+
+\begin{definition}[Trajet de l'air]
+L'air inspiré traverse successivement : \textbf{nez ou bouche} $\to$ \textbf{pharynx}
+$\to$ \textbf{larynx} $\to$ \textbf{trachée} $\to$ \textbf{bronches} $\to$
+\textbf{bronchioles} $\to$ \textbf{alvéoles pulmonaires}, situées au bout des
+bronchioles, à l'intérieur des \textbf{poumons}.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.8]
+\filldraw[onbo!20,draw=onbo,line width=1.1pt] (0,0) rectangle (3.2,0.9);
+\node[font=\small] at (1.6,0.45) {nez / bouche};
+\draw[->,onbmuted,line width=1.1pt] (3.2,0.45) -- (4.6,0.45);
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.1pt] (4.6,0) rectangle (6.8,0.9);
+\node[font=\small] at (5.7,0.45) {trachée};
+\draw[->,onbmuted,line width=1.1pt] (6.8,0.45) -- (8.2,0.45);
+\filldraw[onbo2!20,draw=onbo2,line width=1.1pt] (8.2,0) rectangle (10.6,0.9);
+\node[font=\small] at (9.4,0.45) {bronches};
+\draw[->,onbmuted,line width=1.1pt] (10.6,0.45) -- (12,0.45);
+\filldraw[onbink!15,draw=onbink,line width=1.1pt] (12,0) rectangle (16.7,0.9);
+\node[font=\small] at (14.35,0.45) {alvéoles pulmonaires};
+\end{tikzpicture}
+\fig{Figure — Trajet de l'air : du nez aux alvéoles pulmonaires, lieu des échanges gazeux.}
+\end{illus}
+
+\section{Les mouvements respiratoires}
+
+\begin{propriete}[Inspiration et expiration]
+Lors de l'\textbf{inspiration}, le diaphragme et les muscles intercostaux se
+\textbf{contractent} : le volume de la cage thoracique \textbf{augmente}, ce qui fait
+entrer l'air dans les poumons. Lors de l'\textbf{expiration}, ces muscles se
+\textbf{relâchent} : le volume thoracique \textbf{diminue}, ce qui chasse l'air hors des
+poumons.
+\end{propriete}
+
+\begin{definition}[Fréquence respiratoire]
+La \textbf{fréquence respiratoire} $f$ est le nombre de mouvements respiratoires par
+minute (mvt/min) :
+\[
+f=\frac Nt,
+\]
+avec $N$ le nombre de mouvements comptés pendant une durée $t$ (en min).
+\end{definition}
+
+\begin{exemple}
+Une personne effectue $N=18$ mouvements respiratoires en $t=1$ min : $f=18$ mvt/min.
+\end{exemple}
+
+\begin{remarque}
+La fréquence respiratoire \textbf{augmente} pendant un effort physique : les muscles ont
+alors besoin de davantage de dioxygène, et produisent davantage de dioxyde de carbone à
+évacuer.
+\end{remarque}
+
+\section{Les échanges gazeux alvéolaires}
+
+\begin{propriete}[Au niveau des alvéoles]
+Chaque alvéole pulmonaire est entourée de nombreux \textbf{capillaires sanguins}. À
+travers leur paroi très fine, le sang \textbf{capte le dioxygène} ($\mathrm{O_2}$) de
+l'air alvéolaire et lui \textbf{cède le dioxyde de carbone} ($\mathrm{CO_2}$) qu'il
+transportait. C'est un échange dans les \textbf{deux sens}, appelé \textbf{hématose}.
+\end{propriete}
+
+\begin{propriete}[Composition comparée de l'air]
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Air inspiré} & \textbf{Air expiré} \\
+\midrule
+Dioxygène $\mathrm{O_2}$ & $\approx21\,\%$ & $\approx16\,\%$ \\
+Dioxyde de carbone $\mathrm{CO_2}$ & $\approx0{,}04\,\%$ & $\approx4\,\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+L'air expiré est donc \textbf{appauvri en dioxygène} et \textbf{enrichi en dioxyde de
+carbone} par rapport à l'air inspiré : la preuve que des échanges gazeux ont bien eu lieu
+dans les poumons.
+\end{propriete}
+
+\section{Le débit ventilatoire}
+
+\begin{propriete}[Débit ventilatoire]
+Le \textbf{volume courant} $V_c$ est le volume d'air échangé à chaque mouvement
+respiratoire (environ $0{,}5$ L au repos). Le \textbf{débit ventilatoire} $D$, volume
+d'air total inspiré (ou expiré) par minute, vaut :
+\[
+D=V_c\times f.
+\]
+\end{propriete}
+
+\begin{exemple}
+Au repos, $V_c=0{,}5$ L et $f=16$ mvt/min : $D=0{,}5\times16=8$ L/min.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Trajet de l'air.} Nez/bouche $\to$ pharynx $\to$ larynx $\to$ trachée $\to$
+bronches $\to$ bronchioles $\to$ alvéoles.\\[4pt]
+\textbf{Inspiration.} Muscles contractés, volume thoracique augmente. \textbf{Expiration.}
+Muscles relâchés, volume diminue.\\[4pt]
+\textbf{Fréquence respiratoire.} $f=\dfrac Nt$ (mvt/min).\\[4pt]
+\textbf{Hématose.} Aux alvéoles : le sang capte $\mathrm{O_2}$ et cède $\mathrm{CO_2}$.\\[4pt]
+\textbf{Débit ventilatoire.} $D=V_c\times f$.\\[4pt]
+\textbf{Piège fréquent.} L'air expiré contient encore du dioxygène ($\approx16\,\%$) : il
+n'est pas totalement épuisé, ce qui permet d'ailleurs le bouche-à-bouche.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Retracer le trajet de l'air dans l'appareil respiratoire}
+Suivre l'ordre : nez/bouche, pharynx, larynx, trachée, bronches, bronchioles, alvéoles.
+\begin{exemple}
+L'air ne passe jamais directement du nez aux alvéoles sans traverser la trachée.
+\end{exemple}
+
+\methode{Calculer une fréquence respiratoire}
+Appliquer $f=\dfrac Nt$, avec $t$ en minutes.
+\begin{exemple}
+$N=30$ mouvements en $t=1$ min : $f=30$ mvt/min.
+\end{exemple}
+
+\methode{Interpréter une comparaison air inspiré / air expiré}
+Comparer les pourcentages de $\mathrm{O_2}$ et $\mathrm{CO_2}$ : une baisse de
+$\mathrm{O_2}$ et une hausse de $\mathrm{CO_2}$ prouvent un échange gazeux dans les
+poumons.
+\begin{exemple}
+Un air expiré à $16\,\%$ de $\mathrm{O_2}$ (contre $21\,\%$ inspiré) confirme une
+consommation de dioxygène par l'organisme.
+\end{exemple}
+
+\methode{Calculer un débit ventilatoire}
+Appliquer $D=V_c\times f$.
+\begin{exemple}
+$V_c=0{,}4$ L, $f=20$ mvt/min : $D=0{,}4\times20=8$ L/min.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Appareil respiratoire}
+\exo{}\diff{1} Citer, dans l'ordre, les organes traversés par l'air entre le nez et les
+alvéoles.
+
+\exo{}\diff{2} Où se déroulent les échanges gazeux ?
+
+\rubrique{Mouvements respiratoires}
+\exo{}\diff{2} Que se passe-t-il au niveau des muscles lors de l'inspiration ?
+
+\exo{}\diff{2} Que se passe-t-il au niveau du volume thoracique lors de l'expiration ?
+
+\exo{}\diff{2} Une personne effectue $20$ mouvements respiratoires en $1$ min. Calculer
+sa fréquence respiratoire.
+
+\exo{}\diff{2} Une personne effectue $9$ mouvements en $0{,}5$ min. Calculer sa fréquence
+respiratoire.
+
+\rubrique{Échanges gazeux}
+\exo{}\diff{2} Que capte le sang au niveau des alvéoles ? Que cède-t-il ?
+
+\exo{}\diff{2} L'air inspiré contient environ $21\,\%$ de dioxygène ; l'air expiré en
+contient environ $16\,\%$. Que peut-on en conclure ?
+
+\exo{}\diff{1} Comment appelle-t-on l'échange gazeux qui a lieu au niveau des poumons ?
+
+\rubrique{Débit ventilatoire}
+\exo{}\diff{2} Calculer le débit ventilatoire pour $V_c=0{,}5$ L et $f=16$ mvt/min.
+
+\exo{}\diff{2} Calculer le débit ventilatoire pour $V_c=0{,}6$ L et $f=15$ mvt/min.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Appareil respiratoire}
+\exo{}\diff{2} Pourquoi les alvéoles pulmonaires sont-elles très nombreuses et entourées
+de nombreux capillaires ?
+
+\exo{}\diff{3} Expliquer pourquoi une bronchite (inflammation des bronches) peut gêner la
+respiration.
+
+\rubrique{Mouvements respiratoires}
+\exo{}\diff{3} Pourquoi la fréquence respiratoire augmente-t-elle pendant un effort
+physique ?
+
+\exo{}\diff{2} Une personne effectue $45$ mouvements en $3$ min. Calculer sa fréquence
+respiratoire.
+
+\exo{}\diff{3} Une personne au repos a une fréquence de $14$ mvt/min. Après un effort,
+elle atteint $28$ mvt/min. Comparer les deux valeurs et proposer une explication.
+
+\rubrique{Échanges gazeux}
+\exo{}\diff{3} Pourquoi l'air expiré contient-il encore environ $16\,\%$ de dioxygène,
+alors que l'organisme en consomme continuellement ?
+
+\exo{}\diff{2} Pourquoi le taux de $\mathrm{CO_2}$ est-il plus élevé dans l'air expiré
+que dans l'air inspiré ?
+
+\exo{}\diff{3} Expliquer, à l'aide de la notion d'hématose, pourquoi un poisson hors de
+l'eau ne peut pas respirer normalement (en une phrase, sans entrer dans le détail des
+branchies).
+
+\rubrique{Débit ventilatoire}
+\exo{}\diff{2} Calculer le débit ventilatoire pour $V_c=0{,}5$ L et $f=25$ mvt/min.
+
+\exo{}\diff{3} Un sportif a un débit ventilatoire $D=12$ L/min avec $V_c=0{,}6$ L.
+Calculer sa fréquence respiratoire $f$.
+
+\exo{}\diff{3} Expliquer pourquoi le débit ventilatoire augmente pendant un effort
+physique, en citant les deux grandeurs qui peuvent varier.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Trajet de l'air et échanges gazeux]
+\begin{enumerate}[label=\arabic*)]
+\item Cite, dans l'ordre, les organes traversés par l'air entre le nez et les alvéoles.
+\item Où se déroulent les échanges gazeux respiratoires ?
+\item Le tableau ci-dessous donne la composition de l'air inspiré et de l'air expiré.
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+& Air inspiré & Air expiré \\
+\midrule
+$\mathrm{O_2}$ & $21\,\%$ & $16\,\%$ \\
+$\mathrm{CO_2}$ & $0{,}04\,\%$ & $4\,\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Que peut-on en conclure sur les échanges gazeux dans les poumons ?
+\item Comment appelle-t-on cet échange gazeux ?
+\end{enumerate}
+
+\sujetbac[Fréquence et débit ventilatoire]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la relation permettant de calculer la fréquence respiratoire $f$.
+\item Un élève compte $16$ mouvements respiratoires en $1$ min au repos. Calcule sa
+fréquence respiratoire.
+\item Après une course, il compte $32$ mouvements en $1$ min. Calcule la nouvelle
+fréquence, et compare-la à celle du repos.
+\item Sachant que son volume courant est $V_c=0{,}5$ L, calcule son débit ventilatoire
+au repos puis après l'effort.
+\end{enumerate}
+
+\sujetbac[Mouvements respiratoires]
+\begin{enumerate}[label=\arabic*)]
+\item Que se passe-t-il au niveau du diaphragme et des muscles intercostaux lors de
+l'inspiration ?
+\item Quelle conséquence cela a-t-il sur le volume de la cage thoracique ?
+\item Décris ce qui se passe lors de l'expiration.
+\item Pourquoi la respiration s'accélère-t-elle pendant un effort physique ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Nez/bouche, pharynx, larynx, trachée, bronches, bronchioles, alvéoles.
+
+\corrige{de l'exercice 2}
+Au niveau des alvéoles pulmonaires.
+
+\corrige{de l'exercice 3}
+Ils se contractent.
+
+\corrige{de l'exercice 4}
+Il diminue.
+
+\corrige{de l'exercice 5}
+$f=\dfrac{20}1=20$ mvt/min.
+
+\corrige{de l'exercice 6}
+$f=\dfrac9{0{,}5}=18$ mvt/min.
+
+\corrige{de l'exercice 7}
+Il capte le dioxygène et cède le dioxyde de carbone.
+
+\corrige{de l'exercice 8}
+L'organisme consomme du dioxygène : une partie de l'$\mathrm{O_2}$ inspiré est captée par
+le sang au niveau des poumons.
+
+\corrige{de l'exercice 9}
+L'hématose.
+
+\corrige{de l'exercice 10}
+$D=0{,}5\times16=8$ L/min.
+
+\corrige{de l'exercice 11}
+$D=0{,}6\times15=9$ L/min.
+
+\corrige{du sujet 1}
+1) Nez/bouche, pharynx, larynx, trachée, bronches, bronchioles, alvéoles.\\
+2) Au niveau des alvéoles pulmonaires.\\
+3) Le sang a capté du dioxygène (baisse de $21\,\%$ à $16\,\%$) et a cédé du dioxyde de
+carbone (hausse de $0{,}04\,\%$ à $4\,\%$).\\
+4) L'hématose.
+
+\corrige{du sujet 2}
+1) $f=\dfrac Nt$.\\
+2) $f=\dfrac{16}1=16$ mvt/min.\\
+3) $f=\dfrac{32}1=32$ mvt/min ; elle a doublé par rapport au repos.\\
+4) Au repos : $D=0{,}5\times16=8$ L/min. Après l'effort : $D=0{,}5\times32=16$ L/min.
+
+\corrige{du sujet 3}
+1) Ils se contractent.\\
+2) Le volume de la cage thoracique augmente, ce qui fait entrer l'air.\\
+3) Les muscles se relâchent, le volume thoracique diminue, l'air est chassé hors des
+poumons.\\
+4) Car les muscles en activité ont besoin de davantage de dioxygène et produisent
+davantage de dioxyde de carbone à évacuer.
+
+\end{multicols}
+\exercicesBanner
