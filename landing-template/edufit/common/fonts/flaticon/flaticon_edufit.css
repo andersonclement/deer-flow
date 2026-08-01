@@ -1,0 +1,227 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_edufit";
+    src: url("flaticon_edufit.woff2") format("woff2"),
+url("flaticon_edufit.woff") format("woff"),
+url("flaticon_edufit.eot") format("embedded-opentype"),
+url("flaticon_edufit.ttf") format("truetype"),
+url("flaticon_edufit.svg") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_edufit !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-pin-map:before {
+    content: "\f101";
+}
+.flaticon-email:before {
+    content: "\f102";
+}
+.flaticon-mortarboard:before {
+    content: "\f103";
+}
+.flaticon-mortarboard-1:before {
+    content: "\f104";
+}
+.flaticon-reading-book:before {
+    content: "\f105";
+}
+.flaticon-star:before {
+    content: "\f106";
+}
+.flaticon-search:before {
+    content: "\f107";
+}
+.flaticon-play:before {
+    content: "\f108";
+}
+.flaticon-virtual-event:before {
+    content: "\f109";
+}
+.flaticon-learning-support:before {
+    content: "\f10a";
+}
+.flaticon-group:before {
+    content: "\f10b";
+}
+.flaticon-writing:before {
+    content: "\f10c";
+}
+.flaticon-star-1:before {
+    content: "\f10d";
+}
+.flaticon-megaphone:before {
+    content: "\f10e";
+}
+.flaticon-learning:before {
+    content: "\f10f";
+}
+.flaticon-computer:before {
+    content: "\f110";
+}
+.flaticon-coding:before {
+    content: "\f111";
+}
+.flaticon-results:before {
+    content: "\f112";
+}
+.flaticon-worker:before {
+    content: "\f113";
+}
+.flaticon-technical-support:before {
+    content: "\f114";
+}
+.flaticon-idea:before {
+    content: "\f115";
+}
+.flaticon-calendar:before {
+    content: "\f116";
+}
+.flaticon-clock:before {
+    content: "\f117";
+}
+.flaticon-rating:before {
+    content: "\f118";
+}
+.flaticon-quotation:before {
+    content: "\f119";
+}
+.flaticon-protection:before {
+    content: "\f11a";
+}
+.flaticon-books-stack-of-three:before {
+    content: "\f11b";
+}
+.flaticon-pencil:before {
+    content: "\f11c";
+}
+.flaticon-box:before {
+    content: "\f11d";
+}
+.flaticon-protractor-icon:before {
+    content: "\f11e";
+}
+.flaticon-scale:before {
+    content: "\f11f";
+}
+.flaticon-plus:before {
+    content: "\f120";
+}
+.flaticon-translate:before {
+    content: "\f121";
+}
+.flaticon-terminal:before {
+    content: "\f122";
+}
+.flaticon-cms:before {
+    content: "\f123";
+}
+.flaticon-avatar:before {
+    content: "\f124";
+}
+.flaticon-group-1:before {
+    content: "\f125";
+}
+.flaticon-bubble-chat:before {
+    content: "\f126";
+}
+.flaticon-writing-1:before {
+    content: "\f127";
+}
+.flaticon-notebook:before {
+    content: "\f128";
+}
+.flaticon-close:before {
+    content: "\f129";
+}
+.flaticon-check:before {
+    content: "\f12a";
+}
+.flaticon-phone-call:before {
+    content: "\f12b";
+}
+.flaticon-expertise:before {
+    content: "\f12c";
+}
+.flaticon-share:before {
+    content: "\f12d";
+}
+.flaticon-medal:before {
+    content: "\f12e";
+}
+.flaticon-trophy:before {
+    content: "\f12f";
+}
+.flaticon-freelance-work:before {
+    content: "\f130";
+}
+.flaticon-exam:before {
+    content: "\f131";
+}
+.flaticon-mortarboard-2:before {
+    content: "\f132";
+}
+.flaticon-bookmark:before {
+    content: "\f133";
+}
+.flaticon-list:before {
+    content: "\f134";
+}
+.flaticon-menu:before {
+    content: "\f135";
+}
+.flaticon-check-1:before {
+    content: "\f136";
+}
+.flaticon-check-2:before {
+    content: "\f137";
+}
+.flaticon-inverted-commas:before {
+    content: "\f138";
+}
+.flaticon-like:before {
+    content: "\f139";
+}
+.flaticon-shopping-cart:before {
+    content: "\f13a";
+}
+.flaticon-check-3:before {
+    content: "\f13b";
+}
+.flaticon-hide:before {
+    content: "\f13c";
+}
+.flaticon-facebook:before {
+    content: "\f13d";
+}
+.flaticon-monitor:before {
+    content: "\f13e";
+}
+.flaticon-order:before {
+    content: "\f13f";
+}
+.flaticon-online-learning:before {
+    content: "\f140";
+}
+.flaticon-digital-certificate:before {
+    content: "\f141";
+}
+
