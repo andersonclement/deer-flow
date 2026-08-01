@@ -1,1 +1,469 @@
 \chapter{Équations et inéquations du premier degré}
+
+\noindent\textit{Résoudre une équation, c'est trouver la (ou les) valeur(s) de l'inconnue qui
+rendent une égalité vraie. Une inéquation, elle, décrit un \textbf{ensemble} de valeurs
+vérifiant une inégalité. Ces deux outils permettent de traduire et résoudre de nombreux
+problèmes concrets — c'est là que le calcul littéral du chapitre précédent devient vraiment
+utile.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Résoudre une équation du premier degré}
+
+\begin{definition}[Équation, solution]
+Une \textbf{équation} d'inconnue $x$ est une égalité contenant $x$. \textbf{Résoudre}
+l'équation, c'est trouver toutes les valeurs de $x$ (les \textbf{solutions}) qui rendent
+cette égalité vraie.
+\end{definition}
+
+\begin{propriete}[Règles de résolution]
+On ne change pas les solutions d'une équation en :
+\begin{itemize}
+\item ajoutant (ou soustrayant) le \textbf{même nombre} aux deux membres ;
+\item multipliant (ou divisant) les deux membres par un \textbf{même nombre non nul}.
+\end{itemize}
+Pour résoudre $ax+b=cx+d$, on regroupe les termes en $x$ d'un côté, les nombres de l'autre.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[onbo,line width=2pt] (0,1.5) -- (5,1.5);
+\draw[fill=onbline,draw=onbline] (2.3,0) -- (2.7,0) -- (2.5,1.5) -- cycle;
+\draw[onbmuted,line width=1pt] (0.5,1.5) -- (0.5,0.6);
+\draw[onbmuted,line width=1pt] (4.5,1.5) -- (4.5,0.6);
+\draw[fill=onbsoft,draw=onbo,line width=0.8pt] (-0.2,0.2) rectangle (1.2,0.6);
+\draw[fill=onbsoft,draw=onbo,line width=0.8pt] (3.8,0.2) rectangle (5.2,0.6);
+\node at (0.5,0.4) {\small $x+3$};
+\node at (4.5,0.4) {\small $7$};
+\end{tikzpicture}
+\fig{Figure — Une équation est comme une balance en équilibre : on peut faire la même
+opération des deux côtés sans rompre l'égalité.}
+\end{illus}
+
+\begin{exemple}
+Résoudre $3x+5=2x+12$ : on soustrait $2x$ des deux côtés, $x+5=12$ ; on soustrait $5$,
+$x=7$. La solution est $7$.
+\end{exemple}
+
+\begin{remarque}
+Avant de résoudre, il faut souvent \textbf{développer} les parenthèses (chapitre précédent) :
+$4(x-2)=3x+1 \iff 4x-8=3x+1 \iff x=9$.
+\end{remarque}
+
+\section{Équation produit nul}
+
+\begin{propriete}[Produit nul]
+Un produit de facteurs est nul \textbf{si et seulement si} l'un au moins de ses facteurs est
+nul :
+\[
+A\times B=0 \iff A=0 \ \text{ou}\ B=0.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=3pt,minimum width=2.6cm,minimum height=0.7cm] (p) {$A\times B=0$};
+\node[draw=onbblue,fill=white,rounded corners=3pt,minimum width=2cm,minimum height=0.7cm,below=12mm of p,xshift=-2.3cm] (b2) {$A=0$};
+\node[draw=onbgreen,fill=white,rounded corners=3pt,minimum width=2cm,minimum height=0.7cm,below=12mm of p,xshift=2.3cm] (b1) {$B=0$};
+\draw[->,onbmuted,line width=1pt] (p) -- (b2);
+\draw[->,onbmuted,line width=1pt] (p) -- (b1);
+\node[below=1mm of p] {\tiny ou};
+\end{tikzpicture}
+\fig{Figure — Une équation produit nul se sépare en deux équations simples, reliées par
+« ou ».}
+\end{illus}
+
+\begin{exemple}
+$(x-3)(x+5)=0 \iff x-3=0\ \text{ou}\ x+5=0 \iff x=3\ \text{ou}\ x=-5$. L'équation a deux
+solutions : $3$ et $-5$.
+\end{exemple}
+
+\begin{remarque}
+Une équation produit nul suppose que l'expression est déjà (ou peut être) \textbf{factorisée}.
+Si elle ne l'est pas, on factorise d'abord (chapitre précédent).
+\end{remarque}
+
+\section{Inéquations du premier degré}
+
+\begin{propriete}[Règles de résolution d'une inéquation]
+On ne change pas le sens d'une inégalité en ajoutant/soustrayant un même nombre, ni en
+multipliant/divisant par un nombre \textbf{positif}. En revanche, multiplier ou diviser par
+un nombre \textbf{négatif} \textbf{inverse le sens} de l'inégalité.
+\end{propriete}
+
+\begin{exemple}
+$3x+1>7 \iff 3x>6 \iff x>2$ (on divise par $3>0$, le sens ne change pas). \quad
+$-2x+5<1 \iff -2x<-4 \iff x>2$ (on divise par $-2<0$, le sens \textbf{change}).
+\end{exemple}
+
+\begin{illus}
+\begin{tikzpicture}[>=Stealth]
+\draw[onbline,line width=1pt] (-1,0) -- (6,0);
+\foreach \x in {-1,...,6} \draw[onbmuted] (\x,0.06) -- (\x,-0.06);
+\node[below] at (2,-0.15) {\small $2$};
+\draw[onbo,line width=2pt,->] (2,0) -- (6,0);
+\draw[onbo,fill=white,line width=1.2pt] (2,0) circle (2.5pt);
+\node[above,onbo] at (2,0.25) {\small $x>2$};
+\end{tikzpicture}
+\fig{Figure — Représentation de la solution $x>2$ sur une droite graduée : le rond ouvert en
+$2$ signifie que $2$ n'est \textbf{pas} solution.}
+\end{illus}
+
+\begin{remarque}
+Si l'inégalité est large ($\ge$ ou $\le$), on utilise un rond \textbf{plein} sur la droite
+graduée : le nombre lui-même fait partie de la solution.
+\end{remarque}
+
+\section{Mettre un problème en équation ou en inéquation}
+
+\begin{propriete}[Méthode]
+Choisir une inconnue $x$ (en précisant ce qu'elle représente), traduire chaque phrase de
+l'énoncé par une expression ou une (in)égalité, résoudre, puis \textbf{revenir au contexte}
+pour formuler la réponse (avec l'unité, et en vérifiant que la solution a un sens concret).
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}
+\draw[fill=onbsoft,draw=onbo,line width=0.9pt] (0,1) rectangle (4.2,1.7);
+\draw[fill=onbo2,draw=onbo,line width=0.9pt] (4.2,1) rectangle (8.4,1.7);
+\draw[fill=onbline,draw=onbo,line width=0.9pt] (8.4,1) rectangle (9.45,1.7);
+\node at (2.1,1.35) {\small $x$};
+\node at (6.3,1.35) {\small $x$};
+\node at (8.925,1.35) {\tiny $3$};
+\node[left] at (-0.15,1.35) {\small $2x+3$};
+\draw[fill=onbsoft,draw=onbgreen,line width=0.9pt] (0,0) rectangle (4.2,0.7);
+\draw[fill=onbgreen!25,draw=onbgreen,line width=0.9pt] (4.2,0) rectangle (9.45,0.7);
+\node at (2.1,0.35) {\small $x$};
+\node at (6.825,0.35) {\small $15$};
+\node[left] at (-0.15,0.35) {\small $x+15$};
+\end{tikzpicture}
+\fig{Figure — Modéliser $2x+3=x+15$ par deux bandes de même longueur totale aide à
+visualiser pourquoi $x=12$.}
+\end{illus}
+
+\begin{exemple}
+Un nombre augmenté de $7$ donne le triple de ce nombre diminué de $3$ : $x+7=3x-3$, d'où
+$10=2x$, soit $x=5$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Équation $ax+b=cx+d$.} Regrouper les $x$ d'un côté, les nombres de l'autre ;
+développer d'abord si besoin.\\[4pt]
+\textbf{Produit nul.} $A\times B=0\iff A=0$ ou $B=0$ (factoriser si nécessaire avant).\\[4pt]
+\textbf{Inéquation.} Mêmes règles qu'une équation, \textbf{sauf} : multiplier/diviser par un
+nombre \textbf{négatif} inverse le sens de l'inégalité.\\[4pt]
+\textbf{Droite graduée.} Rond \textbf{ouvert} pour $<,>$ (le nombre exclu) ; rond
+\textbf{plein} pour $\le,\ge$ (le nombre inclus).\\[4pt]
+\textbf{Mise en équation.} Choisir $x$, traduire l'énoncé, résoudre, puis conclure dans le
+contexte (unité, vraisemblance de la réponse).\\[4pt]
+\textbf{Piège fréquent.} Oublier d'inverser le sens d'une inéquation en divisant par un
+nombre négatif ; oublier une des deux solutions d'une équation produit nul.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Résoudre une équation $ax+b=cx+d$}
+Regrouper les termes en $x$ d'un côté et les nombres de l'autre, puis diviser par le
+coefficient de $x$.
+\begin{exemple}
+$5x-7=2x+8 \iff 3x=15 \iff x=5$.
+\end{exemple}
+
+\methode{Résoudre une équation avec parenthèses}
+Développer d'abord chaque membre, réduire, puis résoudre comme une équation classique.
+\begin{exemple}
+$2(x+3)-5=x+4 \iff 2x+1=x+4 \iff x=3$.
+\end{exemple}
+
+\methode{Résoudre une équation produit nul}
+Vérifier que l'expression est factorisée (sinon, la factoriser), puis annuler chaque facteur
+séparément.
+\begin{exemple}
+$(2x-1)(x+4)=0 \iff x=\dfrac12\ \text{ou}\ x=-4$.
+\end{exemple}
+
+\methode{Factoriser puis résoudre une équation produit nul}
+Si l'équation n'est pas déjà sous forme de produit, la factoriser (facteur commun ou identité
+remarquable) avant d'appliquer la règle du produit nul.
+\begin{exemple}
+$(x+2)^{2}-(x+2)(3x-1)=0$ : facteur commun $(x+2)$, donne
+$(x+2)\big[(x+2)-(3x-1)\big]=(x+2)(3-2x)=0$, donc $x=-2$ ou $x=\dfrac32$.
+\end{exemple}
+
+\methode{Résoudre une inéquation}
+Isoler $x$ comme pour une équation, en pensant à inverser le sens si l'on divise/multiplie
+par un nombre négatif.
+\begin{exemple}
+$4-3x\ge-2 \iff -3x\ge-6 \iff x\le2$ (division par $-3<0$ : le sens change).
+\end{exemple}
+
+\methode{Représenter une inéquation sur une droite graduée}
+Placer le nombre trouvé, choisir un rond ouvert ou plein selon l'inégalité, puis tracer une
+flèche dans la bonne direction.
+\begin{exemple}
+$x\le2$ : rond \textbf{plein} en $2$, flèche vers la gauche (les nombres plus petits que
+$2$).
+\end{exemple}
+
+\methode{Mettre un problème en équation ou en inéquation}
+Choisir clairement l'inconnue, traduire chaque phrase, résoudre, puis répondre dans le
+contexte du problème.
+\begin{exemple}
+Un rectangle a une longueur supérieure de $5$ cm à sa largeur $x$ ; son périmètre est $54$
+cm : $2\big[x+(x+5)\big]=54 \iff 4x+10=54 \iff x=11$. Largeur $11$ cm, longueur $16$ cm.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Résoudre une équation du premier degré}
+\exo{}\diff{1} Résoudre $3x+5=2x+12$.
+
+\exo{}\diff{1} Résoudre $5x-7=2x+8$.
+
+\exo{}\diff{2} Résoudre $4(x-2)=3x+1$.
+
+\exo{}\diff{2} Résoudre $2(x+3)-5=x+4$.
+
+\rubrique{Équation produit nul}
+\exo{}\diff{1} Résoudre $(x-3)(x+5)=0$.
+
+\exo{}\diff{2} Résoudre $(2x-1)(x+4)=0$.
+
+\exo{}\diff{3} Factoriser puis résoudre $(x+2)^{2}-(x+2)(3x-1)=0$.
+
+\exo{}\diff{2} Résoudre $(3x+6)(x-1)=0$.
+
+\rubrique{Inéquations du premier degré}
+\exo{}\diff{1} Résoudre $3x+1>7$.
+
+\exo{}\diff{2} Résoudre $-2x+5<1$.
+
+\exo{}\diff{2} Résoudre $4-3x\ge-2$.
+
+\exo{}\diff{2} Résoudre $2(x-1)\le3x+4$.
+
+\rubrique{Mettre un problème en équation}
+\exo{}\diff{2} Un nombre augmenté de $7$ donne le triple de ce nombre diminué de $3$.
+Trouver ce nombre.
+
+\exo{}\diff{2} Un rectangle a une longueur supérieure de $5$ cm à sa largeur. Son périmètre
+mesure $54$ cm. Calculer ses dimensions.
+
+\exo{}\diff{2} Un client dispose de $6\,300$ FCFA pour acheter des tickets à $500$ FCFA
+l'unité, en gardant au moins $300$ FCFA. Quel est le nombre maximal de tickets qu'il peut
+acheter ?
+
+\exo{}\diff{2} Dans une boutique de Yaoundé, un cahier coûte $250$ FCFA. Un client a
+$3\,000$ FCFA et souhaite garder au moins $500$ FCFA. Quel est le nombre maximal de cahiers
+qu'il peut acheter ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Résoudre une équation}
+\exo{}\diff{1} Résoudre $6x-4=2x+8$.
+
+\exo{}\diff{1} Résoudre $5-x=2x-4$.
+
+\exo{}\diff{2} Résoudre $3(x+1)=2(x+4)$.
+
+\exo{}\diff{2} Résoudre $4x-3=7x+9$.
+
+\exo{}\diff{2} Résoudre $2x+9=-x$.
+
+\rubrique{Équation produit nul}
+\exo{}\diff{1} Résoudre $(x-6)(x+2)=0$.
+
+\exo{}\diff{2} Résoudre $(3x+1)(x-5)=0$.
+
+\exo{}\diff{3} Factoriser puis résoudre $(x-1)(x+1)-(x-1)(2x+3)=0$.
+
+\exo{}\diff{2} Résoudre $(2x-3)(x+7)=0$.
+
+\exo{}\diff{2} Résoudre $(4x+8)(x-1)=0$.
+
+\rubrique{Inéquations}
+\exo{}\diff{2} Résoudre $2x-5>3$.
+
+\exo{}\diff{2} Résoudre $-3x+2\le8$.
+
+\exo{}\diff{2} Résoudre $5-2x>1$.
+
+\exo{}\diff{2} Résoudre $3(x-2)\ge x+4$.
+
+\exo{}\diff{2} Résoudre $4x+1<2x-5$.
+
+\rubrique{Problèmes menant à une équation}
+\exo{}\diff{2} Un club sportif facture une adhésion de $5\,000$ FCFA plus $1\,500$ FCFA par
+mois. Un membre a payé $14\,000$ FCFA au total. Combien de mois a-t-il été membre ?
+
+\exo{}\diff{2} La somme de trois nombres entiers consécutifs est $96$. Trouver ces nombres.
+
+\exo{}\diff{2} Un sac de riz coûte $600$ FCFA le kilogramme, plus des frais de livraison
+fixes de $500$ FCFA. Le montant total payé est $6\,500$ FCFA. Quelle masse de riz (en kg) a
+été achetée ?
+
+\exo{}\diff{2} Une agence loue une voiture $5\,000$ FCFA par jour, plus un forfait fixe de
+$20\,000$ FCFA. Un client dispose d'un budget maximal de $65\,000$ FCFA. Quel est le nombre
+maximal de jours de location ?
+
+\rubrique{Problèmes menant à une inéquation}
+\exo{}\diff{2} Un taxi facture une prise en charge de $300$ FCFA plus $150$ FCFA par
+kilomètre. Un client dispose d'au plus $3\,000$ FCFA. Quelle est la distance maximale (en
+km entiers) qu'il peut parcourir ?
+
+\exo{}\diff{2} Pour réussir un examen, il faut une moyenne d'au moins $10$ sur trois notes :
+$8$, $11$ et $x$. Quelle est la valeur minimale que doit avoir $x$ ?
+
+\exo{}\diff{2} Un vendeur de bananes à Kribi, ayant $5\,000$ FCFA de frais fixes, vend
+chaque régime $750$ FCFA. Il veut gagner au moins $25\,000$ FCFA de bénéfice. Quel est le
+nombre minimal de régimes à vendre ?
+
+\exo{}\diff{3} La température d'une pièce climatisée, initialement à $30\,^{\circ}\text{C}$,
+baisse de $1{,}5\,^{\circ}\text{C}$ par minute. Au bout de combien de minutes au minimum la
+température devient-elle inférieure ou égale à $24\,^{\circ}\text{C}$ ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[équation, produit nul, inéquation et problème d'âges]
+\begin{enumerate}[label=\arabic*)]
+\item Résoudre l'équation $4x-9=2x+7$.
+\item Résoudre l'équation produit nul $(x+3)(2x-5)=0$.
+\item Résoudre l'inéquation $5-3x<11$.
+\item Aujourd'hui, l'âge d'un père est le triple de celui de son fils. Dans $12$ ans, il ne
+sera plus que le double de celui de son fils.
+\begin{enumerate}[label=\alph*)]
+\item En notant $x$ l'âge actuel du fils, exprimer l'âge actuel du père en fonction de $x$.
+\item Mettre le problème en équation et la résoudre.
+\item Donner l'âge actuel de chacun, et vérifier la condition dans $12$ ans.
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[équation, produit nul et budget]
+\begin{enumerate}[label=\arabic*)]
+\item Résoudre l'équation $7x+2=3x-14$.
+\item Résoudre l'équation produit nul $(5x+10)(x-6)=0$.
+\item Résoudre l'inéquation $-4x+3\ge-9$.
+\item Un client dispose de $8\,000$ FCFA pour acheter des stylos à $350$ FCFA l'unité,
+sachant qu'il doit garder au moins $1\,200$ FCFA pour son transport.
+\begin{enumerate}[label=\alph*)]
+\item En notant $n$ le nombre de stylos achetés, écrire l'inéquation traduisant la
+situation.
+\item Résoudre cette inéquation.
+\item En déduire le nombre maximal de stylos que peut acheter le client (justifier que $n$
+est un nombre entier).
+\end{enumerate}
+\end{enumerate}
+
+\sujetbac[équation, produit nul et rectangle]
+\begin{enumerate}[label=\arabic*)]
+\item Résoudre l'équation $3(2x-1)=5x+4$.
+\item Factoriser puis résoudre l'équation $(x-4)^{2}-(x-4)(2x+9)=0$.
+\item Résoudre l'inéquation $2x-7\le4x+3$.
+\item Un rectangle a pour longueur le double de sa largeur diminué de $3$ cm. Son périmètre
+mesure $78$ cm.
+\begin{enumerate}[label=\alph*)]
+\item En notant $l$ la largeur, exprimer la longueur en fonction de $l$.
+\item Mettre le problème en équation et la résoudre.
+\item Donner les dimensions du rectangle.
+\end{enumerate}
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$3x+5=2x+12\iff x=7$.
+
+\corrige{de l'exercice 2}
+$5x-7=2x+8\iff3x=15\iff x=5$.
+
+\corrige{de l'exercice 3}
+$4(x-2)=3x+1\iff4x-8=3x+1\iff x=9$.
+
+\corrige{de l'exercice 4}
+$2(x+3)-5=x+4\iff2x+1=x+4\iff x=3$.
+
+\corrige{de l'exercice 5}
+$(x-3)(x+5)=0\iff x=3\ \text{ou}\ x=-5$.
+
+\corrige{de l'exercice 6}
+$(2x-1)(x+4)=0\iff x=\dfrac12\ \text{ou}\ x=-4$.
+
+\corrige{de l'exercice 7}
+$(x+2)^{2}-(x+2)(3x-1)=(x+2)\big[(x+2)-(3x-1)\big]=(x+2)(3-2x)$. Donc $x=-2$ ou
+$x=\dfrac32$.
+
+\corrige{de l'exercice 8}
+$(3x+6)(x-1)=0\iff x=-2\ \text{ou}\ x=1$.
+
+\corrige{de l'exercice 9}
+$3x+1>7\iff3x>6\iff x>2$.
+
+\corrige{de l'exercice 10}
+$-2x+5<1\iff-2x<-4\iff x>2$ (division par $-2$, le sens change).
+
+\corrige{de l'exercice 11}
+$4-3x\ge-2\iff-3x\ge-6\iff x\le2$ (division par $-3$, le sens change).
+
+\corrige{de l'exercice 12}
+$2(x-1)\le3x+4\iff2x-2\le3x+4\iff-6\le x$, soit $x\ge-6$.
+
+\corrige{de l'exercice 13}
+$x+7=3x-3\iff10=2x\iff x=5$. Le nombre est $5$.
+
+\corrige{de l'exercice 14}
+En notant $x$ la largeur : $2\big[x+(x+5)\big]=54\iff4x+10=54\iff x=11$. Largeur $11$ cm,
+longueur $16$ cm.
+
+\corrige{de l'exercice 15}
+Somme disponible pour les tickets : $6\,300-300=6\,000$ FCFA. Nombre de tickets $n$ vérifie
+$500n\le6\,000$, soit $n\le12$. Il peut acheter au maximum $12$ tickets.
+
+\corrige{de l'exercice 16}
+Somme disponible : $3\,000-500=2\,500$ FCFA. $250n\le2\,500\iff n\le10$. Il peut acheter au
+maximum $10$ cahiers.
+
+\corrige{du sujet 1}
+1) $4x-9=2x+7\iff2x=16\iff x=8$.\\
+2) $(x+3)(2x-5)=0\iff x=-3\ \text{ou}\ x=\dfrac52$.\\
+3) $5-3x<11\iff-3x<6\iff x>-2$.\\
+4a) Père : $3x$.\\
+4b) $3x+12=2(x+12)\iff3x+12=2x+24\iff x=12$.\\
+4c) Fils : $12$ ans, père : $36$ ans. Dans $12$ ans : fils $24$ ans, père $48$ ans, et
+$48=2\times24$ : la condition est bien vérifiée.
+
+\corrige{du sujet 2}
+1) $7x+2=3x-14\iff4x=-16\iff x=-4$.\\
+2) $(5x+10)(x-6)=0\iff x=-2\ \text{ou}\ x=6$.\\
+3) $-4x+3\ge-9\iff-4x\ge-12\iff x\le3$.\\
+4a) $350n\le8\,000-1\,200$, soit $350n\le6\,800$.\\
+4b) $n\le\dfrac{6\,800}{350}\approx19{,}43$.\\
+4c) Comme $n$ est un entier, le client peut acheter au maximum $19$ stylos.
+
+\corrige{du sujet 3}
+1) $3(2x-1)=5x+4\iff6x-3=5x+4\iff x=7$.\\
+2) $(x-4)^{2}-(x-4)(2x+9)=(x-4)\big[(x-4)-(2x+9)\big]=(x-4)(-x-13)=-(x-4)(x+13)$. Donc
+$x=4$ ou $x=-13$.\\
+3) $2x-7\le4x+3\iff-10\le2x\iff x\ge-5$.\\
+4a) Longueur $=2l-3$.\\
+4b) $2\big[l+(2l-3)\big]=78\iff2(3l-3)=78\iff3l-3=39\iff l=14$.\\
+4c) Largeur $14$ cm, longueur $2\times14-3=25$ cm (périmètre : $2\times(14+25)=78$ cm,
+cohérent).
+
+\end{multicols}
+\exercicesBanner
