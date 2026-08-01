@@ -1,1 +1,290 @@
 \chapter{Moteurs à combustion interne et moteurs électriques}
+
+\noindent\textit{Voitures, motos, groupes électrogènes : de nombreux véhicules et
+machines sont entraînés par un moteur. Ce chapitre compare deux grandes familles de
+moteurs — le moteur à combustion interne et le moteur électrique — leur fonctionnement,
+leur rendement et leur impact environnemental.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Le moteur à combustion interne}
+
+\begin{definition}[Moteur à combustion interne]
+Un \textbf{moteur à combustion interne} transforme l'\textbf{énergie chimique} d'un
+carburant (essence, gasoil) en \textbf{énergie mécanique}, en brûlant ce carburant à
+l'intérieur même du moteur, dans des cylindres où coulissent des pistons.
+\end{definition}
+
+\begin{propriete}[Le cycle à quatre temps]
+Le fonctionnement d'un moteur à quatre temps se répète selon quatre phases :
+\begin{enumerate}
+\item \textbf{Admission} : le piston descend, aspirant le mélange air-carburant dans le
+cylindre.
+\item \textbf{Compression} : le piston remonte et comprime fortement ce mélange.
+\item \textbf{Explosion (détente)} : le mélange s'enflamme et brûle, les gaz produits se
+dilatent et repoussent le piston vers le bas — c'est le seul \textbf{temps moteur}, qui
+fournit l'énergie.
+\item \textbf{Échappement} : le piston remonte et évacue les gaz brûlés du cylindre.
+\end{enumerate}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.7]
+\foreach \i/\lbl/\pistony in {0/Admission/1.6, 1/Compression/0.8, 2/Explosion/1.6, 3/Échappement/0.8} {
+  \begin{scope}[shift={(\i*2.6,0)}]
+  \draw[onbline,line width=1.2pt] (0,0) rectangle (1.6,3);
+  \draw[onbo,line width=1.5pt,fill=onbsoft] (0.1,\pistony) rectangle (1.5,\pistony+0.6);
+  \node[below] at (0.8,-0.3) {\small \lbl};
+  \end{scope}
+}
+\end{tikzpicture}
+\fig{Figure — Les quatre temps du cycle moteur : admission, compression, explosion, échappement.}
+\end{illus}
+
+\begin{propriete}[Moteur essence et moteur diesel]
+Dans un \textbf{moteur essence}, le mélange est enflammé par une \textbf{bougie}
+(allumage commandé). Dans un \textbf{moteur diesel}, il n'y a pas de bougie : la
+compression est si forte que le carburant s'enflamme \textbf{spontanément} au contact de
+l'air chaud comprimé (auto-inflammation).
+\end{propriete}
+
+\section{Le moteur électrique}
+
+\begin{definition}[Moteur électrique]
+Un \textbf{moteur électrique} transforme l'\textbf{énergie électrique} en
+\textbf{énergie mécanique} : un courant électrique traversant une bobine placée dans un
+champ magnétique subit une force qui met l'arbre du moteur en rotation. C'est le
+phénomène \textbf{inverse} de celui utilisé par l'alternateur.
+\end{definition}
+
+\begin{remarque}
+Un moteur électrique ne comporte aucune combustion, aucun échappement, et fonctionne
+silencieusement, avec très peu de pièces en mouvement.
+\end{remarque}
+
+\section{Rendement et comparaison}
+
+\begin{definition}[Rendement d'un moteur]
+Le \textbf{rendement} $\eta$ d'un moteur compare l'énergie mécanique utile produite à
+l'énergie totale fournie :
+\[
+\eta=\frac{E_{\text{utile}}}{E_{\text{fournie}}}\times100.
+\]
+\end{definition}
+
+\begin{exemple}
+Un moteur à combustion reçoit $E_{\text{fournie}}=100$ kJ de carburant et fournit
+$E_{\text{utile}}=30$ kJ d'énergie mécanique : $\eta=\dfrac{30}{100}\times100=30\,\%$
+(le reste est perdu, surtout sous forme de chaleur).
+\end{exemple}
+
+\begin{propriete}[Comparaison des deux familles de moteurs]
+Le moteur à combustion interne a un \textbf{rendement modeste} (souvent $25$ à
+$35\,\%$) : une grande partie de l'énergie du carburant est perdue en chaleur. Le moteur
+électrique a un \textbf{rendement élevé} (souvent $85$ à $95\,\%$). En contrepartie, le
+moteur à combustion émet directement des gaz polluants ($\mathrm{CO_2}$, oxydes d'azote),
+tandis que la pollution d'un moteur électrique dépend de la façon dont l'électricité
+utilisée a été produite.
+\end{propriete}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Moteur à combustion interne.} Énergie chimique $\to$ énergie mécanique ; cycle à
+$4$ temps : admission, compression, explosion (temps moteur), échappement.\\[4pt]
+\textbf{Essence / diesel.} Essence : allumage par bougie. Diesel : auto-inflammation par
+forte compression, sans bougie.\\[4pt]
+\textbf{Moteur électrique.} Énergie électrique $\to$ énergie mécanique, sans combustion ;
+principe inverse de l'alternateur.\\[4pt]
+\textbf{Rendement.} $\eta=\dfrac{E_{\text{utile}}}{E_{\text{fournie}}}\times100$ ;
+combustion $\approx25$-$35\,\%$, électrique $\approx85$-$95\,\%$.\\[4pt]
+\textbf{Piège fréquent.} Un moteur électrique n'émet pas de gaz polluant directement,
+mais l'électricité qu'il consomme peut elle-même provenir d'une source polluante.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Ordonner les quatre temps du cycle moteur}
+Se rappeler l'ordre : admission $\to$ compression $\to$ explosion (temps moteur) $\to$
+échappement.
+\begin{exemple}
+Le seul temps qui fournit de l'énergie au moteur est l'explosion (détente).
+\end{exemple}
+
+\methode{Distinguer moteur essence et moteur diesel}
+Chercher la présence d'une bougie d'allumage : oui $\to$ essence ; non (auto-inflammation
+par compression) $\to$ diesel.
+\begin{exemple}
+Un moteur sans bougie, à très fort taux de compression, est un moteur diesel.
+\end{exemple}
+
+\methode{Calculer un rendement}
+Appliquer $\eta=\dfrac{E_{\text{utile}}}{E_{\text{fournie}}}\times100$.
+\begin{exemple}
+$E_{\text{utile}}=85$ kJ, $E_{\text{fournie}}=100$ kJ : $\eta=85\,\%$.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Moteur à combustion}
+\exo{}\diff{1} Quelle forme d'énergie un moteur à combustion interne transforme-t-il en
+énergie mécanique ?
+
+\exo{}\diff{2} Citer, dans l'ordre, les quatre temps du cycle moteur.
+
+\exo{}\diff{2} Quel est le seul temps du cycle qui fournit de l'énergie au moteur ?
+
+\exo{}\diff{2} Quelle est la différence entre un moteur essence et un moteur diesel ?
+
+\rubrique{Moteur électrique}
+\exo{}\diff{1} Quelle forme d'énergie un moteur électrique transforme-t-il en énergie
+mécanique ?
+
+\exo{}\diff{2} En quoi le fonctionnement du moteur électrique est-il l'inverse de celui
+de l'alternateur ?
+
+\rubrique{Rendement et comparaison}
+\exo{}\diff{2} Un moteur reçoit $E_{\text{fournie}}=100$ kJ et fournit
+$E_{\text{utile}}=25$ kJ. Calculer son rendement.
+
+\exo{}\diff{2} Un moteur électrique reçoit $E_{\text{fournie}}=80$ kJ et fournit
+$E_{\text{utile}}=68$ kJ. Calculer son rendement.
+
+\exo{}\diff{3} Pourquoi le rendement d'un moteur à combustion est-il généralement plus
+faible que celui d'un moteur électrique ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Moteur à combustion}
+\exo{}\diff{2} Que se passe-t-il pendant le temps « compression » ?
+
+\exo{}\diff{2} Que se passe-t-il pendant le temps « échappement » ?
+
+\exo{}\diff{3} Pourquoi le moteur diesel n'a-t-il pas besoin de bougie d'allumage ?
+
+\rubrique{Moteur électrique}
+\exo{}\diff{2} Citer un avantage du moteur électrique par rapport au moteur à
+combustion interne (hors rendement).
+
+\exo{}\diff{3} Pourquoi dit-on que la pollution d'un véhicule électrique dépend de la
+source de production de l'électricité ?
+
+\rubrique{Rendement et comparaison}
+\exo{}\diff{2} Un moteur reçoit $E_{\text{fournie}}=200$ kJ et a un rendement
+$\eta=30\,\%$. Calculer l'énergie mécanique utile fournie.
+
+\exo{}\diff{3} Un moteur électrique a un rendement de $90\,\%$ pour une énergie fournie
+de $50$ kJ. Calculer l'énergie perdue.
+
+\exo{}\diff{3} Un moteur à combustion a un rendement de $28\,\%$. Sur $100$ kJ de
+carburant consommé, quelle quantité d'énergie est perdue (essentiellement en chaleur) ?
+
+\exo{}\diff{3} Expliquer pourquoi améliorer le rendement d'un moteur permet de réduire sa
+consommation de carburant pour un même travail fourni.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Le cycle à quatre temps]
+\begin{enumerate}[label=\arabic*)]
+\item Cite, dans l'ordre, les quatre temps du cycle d'un moteur à combustion interne.
+\item Lequel de ces quatre temps fournit de l'énergie mécanique au moteur ?
+\item Quelle est la différence entre l'allumage dans un moteur essence et dans un moteur
+diesel ?
+\item Quelle forme d'énergie est transformée en énergie mécanique dans ce type de
+moteur ?
+\end{enumerate}
+
+\sujetbac[Rendement comparé]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la formule du rendement d'un moteur.
+\item Un moteur à combustion reçoit $100$ kJ de carburant et fournit $30$ kJ d'énergie
+mécanique utile. Calcule son rendement.
+\item Un moteur électrique reçoit la même énergie ($100$ kJ) et a un rendement de
+$90\,\%$. Calcule l'énergie mécanique utile qu'il fournit.
+\item Lequel des deux moteurs perd le plus d'énergie ? Sous quelle forme est-elle
+principalement perdue ?
+\end{enumerate}
+
+\sujetbac[Moteur électrique et environnement]
+\begin{enumerate}[label=\arabic*)]
+\item Quelle transformation d'énergie réalise un moteur électrique ?
+\item Cite un avantage environnemental direct du moteur électrique par rapport au
+moteur à combustion.
+\item Pourquoi ne peut-on pas affirmer qu'un véhicule électrique est totalement « non
+polluant » ?
+\item Quel lien peut-on faire avec le chapitre sur la production de l'énergie
+électrique ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+L'énergie chimique (du carburant).
+
+\corrige{de l'exercice 2}
+Admission, compression, explosion (détente), échappement.
+
+\corrige{de l'exercice 3}
+L'explosion (détente).
+
+\corrige{de l'exercice 4}
+Le moteur essence utilise une bougie pour enflammer le mélange ; le moteur diesel
+l'enflamme spontanément par forte compression, sans bougie.
+
+\corrige{de l'exercice 5}
+L'énergie électrique.
+
+\corrige{de l'exercice 6}
+L'alternateur transforme un mouvement mécanique en électricité ; le moteur électrique
+transforme l'électricité en mouvement mécanique : ce sont deux transformations inverses.
+
+\corrige{de l'exercice 7}
+$\eta=\dfrac{25}{100}\times100=25\,\%$.
+
+\corrige{de l'exercice 8}
+$\eta=\dfrac{68}{80}\times100=85\,\%$.
+
+\corrige{de l'exercice 9}
+Car une grande partie de l'énergie du carburant est perdue sous forme de chaleur
+(échauffement du moteur, gaz d'échappement), alors que le moteur électrique convertit
+directement l'essentiel de l'énergie électrique en mouvement.
+
+\corrige{du sujet 1}
+1) Admission, compression, explosion, échappement.\\
+2) L'explosion (détente).\\
+3) Essence : allumage par bougie. Diesel : auto-inflammation par forte compression, sans
+bougie.\\
+4) L'énergie chimique du carburant.
+
+\corrige{du sujet 2}
+1) $\eta=\dfrac{E_{\text{utile}}}{E_{\text{fournie}}}\times100$.\\
+2) $\eta=\dfrac{30}{100}\times100=30\,\%$.\\
+3) $E_{\text{utile}}=100\times\dfrac{90}{100}=90$ kJ.\\
+4) Le moteur à combustion, qui perd $70$ kJ contre $10$ kJ pour le moteur électrique ;
+l'énergie perdue l'est essentiellement sous forme de chaleur.
+
+\corrige{du sujet 3}
+1) L'énergie électrique en énergie mécanique.\\
+2) Il n'émet pas directement de gaz polluants (pas de combustion).\\
+3) Car l'électricité qu'il consomme peut elle-même être produite par une centrale
+polluante (thermique, par exemple).\\
+4) La pollution totale dépend de la manière dont l'électricité a été produite
+(alternateur entraîné par une centrale thermique, hydraulique, solaire...), comme vu au
+chapitre sur la production de l'énergie électrique.
+
+\end{multicols}
+\exercicesBanner
