@@ -325,3 +325,10 @@ Version: 1.0
   color: #9aa0a6;
   font-size: 26px;
 }
+
+/* Offset anchored sections so the sticky header doesn't cover their titles */
+#pourquoi-onbuch,
+#fiches,
+#temoignages {
+  scroll-margin-top: 110px;
+}
