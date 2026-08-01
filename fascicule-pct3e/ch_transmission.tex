@@ -1,1 +1,298 @@
 \chapter{Transmission du mouvement de rotation}
+
+\noindent\textit{Vélo, machine à laver, perceuse : de nombreux systèmes techniques
+transmettent un mouvement de rotation d'un arbre à un autre, souvent en modifiant sa
+vitesse. Ce chapitre présente les principaux systèmes de transmission et leur rapport de
+transmission.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Les systèmes de transmission}
+
+\begin{definition}[Roue menante, roue menée]
+Dans un système de transmission, la \textbf{roue menante} (ou pignon menant) reçoit le
+mouvement d'un moteur ; la \textbf{roue menée} reçoit ce mouvement par l'intermédiaire du
+système de transmission.
+\end{definition}
+
+\begin{propriete}[Trois systèmes principaux]
+\begin{itemize}
+\item \textbf{Engrenage} : deux roues dentées en contact direct. Les sens de rotation des
+deux roues sont \textbf{opposés}.
+\item \textbf{Poulies-courroie} : deux poulies reliées par une courroie. Les sens de
+rotation sont \textbf{identiques} ; un léger glissement de la courroie est possible.
+\item \textbf{Chaîne-pignon} (ex. : vélo) : deux pignons dentés reliés par une chaîne. Les
+sens de rotation sont \textbf{identiques}, sans glissement.
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.8]
+\filldraw[onbo!20,draw=onbo,line width=1.2pt] (0,3) circle(0.7);
+\filldraw[onbgreen!20,draw=onbgreen,line width=1.2pt] (2.2,3) circle(1.1);
+\draw[->,onbo,line width=1pt] (0.5,3.6) arc(60:300:0.6);
+\draw[->,onbgreen,line width=1pt] (1.5,2.6) arc(240:-20:0.9);
+\node[below] at (0,2.1) {\small engrenage (sens opposés)};
+\filldraw[white,draw=onbo,line width=1.2pt] (5,3.4) circle(0.6);
+\filldraw[white,draw=onbgreen,line width=1.2pt] (7,2.8) circle(1);
+\draw[onbmuted,line width=1.5pt] (5,4) -- (7,3.8);
+\draw[onbmuted,line width=1.5pt] (5,2.8) -- (7,1.8);
+\draw[->,onbo,line width=1pt] (5.5,3.9) arc(50:290:0.55);
+\draw[->,onbgreen,line width=1pt] (7.5,3.3) arc(50:290:0.95);
+\node[below] at (6,1.5) {\small poulies-courroie (sens identiques)};
+\end{tikzpicture}
+\fig{Figure — Engrenage (sens opposés) et poulies-courroie (sens identiques).}
+\end{illus}
+
+\section{Le rapport de transmission}
+
+\begin{propriete}[Engrenage : vitesses et nombres de dents]
+Pour un engrenage, le produit de la vitesse de rotation par le nombre de dents est le
+même pour les deux roues :
+\[
+N_1\times Z_1=N_2\times Z_2 \qquad\text{soit}\qquad N_2=N_1\times\frac{Z_1}{Z_2},
+\]
+où $N_1$, $N_2$ sont les vitesses de rotation (en tr/min) et $Z_1$, $Z_2$ les nombres de
+dents des roues menante et menée.
+\end{propriete}
+
+\begin{exemple}
+Une roue menante tourne à $N_1=1\,000$ tr/min avec $Z_1=20$ dents ; la roue menée a
+$Z_2=40$ dents : $N_2=1\,000\times\dfrac{20}{40}=500$ tr/min.
+\end{exemple}
+
+\begin{propriete}[Poulies-courroie : vitesses et diamètres]
+Pour un système poulies-courroie (sans glissement), le produit de la vitesse de rotation
+par le diamètre est le même pour les deux poulies :
+\[
+N_1\times D_1=N_2\times D_2 \qquad\text{soit}\qquad N_2=N_1\times\frac{D_1}{D_2}.
+\]
+\end{propriete}
+
+\begin{exemple}
+Une poulie menante de diamètre $D_1=50$ mm tourne à $N_1=1\,000$ tr/min ; la poulie
+menée a $D_2=100$ mm : $N_2=1\,000\times\dfrac{50}{100}=500$ tr/min.
+\end{exemple}
+
+\begin{definition}[Rapport de transmission]
+Le \textbf{rapport de transmission} $r$ vaut $r=\dfrac{N_2}{N_1}=\dfrac{Z_1}{Z_2}$ (ou
+$\dfrac{D_1}{D_2}$). Si $r<1$, le système est \textbf{réducteur de vitesse} (la roue
+menée tourne moins vite, mais avec plus de force) ; si $r>1$, il est
+\textbf{multiplicateur de vitesse}.
+\end{definition}
+
+\begin{exemple}
+Une roue menante de $Z_1=30$ dents entraîne une roue menée de $Z_2=20$ dents :
+$r=\dfrac{30}{20}=1{,}5>1$ : le système est multiplicateur de vitesse.
+\end{exemple}
+
+\begin{remarque}
+Un réducteur de vitesse (grande roue menée) permet d'obtenir un couple plus important :
+c'est pourquoi les treuils, monte-charges et perceuses utilisent souvent des trains
+d'engrenages réducteurs.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Engrenage.} Contact direct, sens \textbf{opposés}, $N_1Z_1=N_2Z_2$.\\[4pt]
+\textbf{Poulies-courroie.} Sens \textbf{identiques}, glissement possible,
+$N_1D_1=N_2D_2$.\\[4pt]
+\textbf{Chaîne-pignon.} Sens identiques, sans glissement (comme l'engrenage pour les
+vitesses, avec $N_1Z_1=N_2Z_2$).\\[4pt]
+\textbf{Rapport de transmission.} $r=\dfrac{N_2}{N_1}$ : $r<1$ réducteur, $r>1$
+multiplicateur.\\[4pt]
+\textbf{Piège fréquent.} Dans un engrenage, la roue avec \textbf{le plus de dents} tourne
+\textbf{le moins vite}.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer la vitesse de sortie d'un engrenage}
+Appliquer $N_2=N_1\times\dfrac{Z_1}{Z_2}$.
+\begin{exemple}
+$N_1=1\,500$ tr/min, $Z_1=15$, $Z_2=45$ : $N_2=1\,500\times\dfrac{15}{45}=500$ tr/min.
+\end{exemple}
+
+\methode{Calculer la vitesse de sortie d'un système poulies-courroie}
+Appliquer $N_2=N_1\times\dfrac{D_1}{D_2}$.
+\begin{exemple}
+$N_1=1\,200$ tr/min, $D_1=80$ mm, $D_2=40$ mm : $N_2=1\,200\times\dfrac{80}{40}=2\,400$
+tr/min.
+\end{exemple}
+
+\methode{Déterminer si un système est réducteur ou multiplicateur}
+Calculer $r=\dfrac{Z_1}{Z_2}$ (ou $\dfrac{D_1}{D_2}$) : $r<1$ réducteur, $r>1$
+multiplicateur.
+\begin{exemple}
+$Z_1=10$, $Z_2=50$ : $r=\dfrac{10}{50}=0{,}2<1$ : système réducteur.
+\end{exemple}
+
+\methode{Reconnaître le sens de rotation d'un système}
+Engrenage : sens opposés. Poulies-courroie et chaîne-pignon : sens identiques.
+\begin{exemple}
+Sur un vélo, le pédalier et la roue arrière (reliés par une chaîne) tournent dans le même
+sens.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Systèmes de transmission}
+\exo{}\diff{1} Citer trois systèmes de transmission du mouvement de rotation.
+
+\exo{}\diff{2} Dans un engrenage, quel est le sens de rotation de la roue menée par
+rapport à la roue menante ?
+
+\exo{}\diff{2} Dans un système poulies-courroie, quel est le sens de rotation de la
+poulie menée ?
+
+\exo{}\diff{2} Quel système, parmi la courroie et la chaîne, ne présente aucun
+glissement ?
+
+\rubrique{Engrenages}
+\exo{}\diff{2} $N_1=1\,000$ tr/min, $Z_1=20$, $Z_2=40$. Calculer $N_2$.
+
+\exo{}\diff{2} $N_1=3\,000$ tr/min, $Z_1=10$, $Z_2=50$. Calculer $N_2$.
+
+\exo{}\diff{2} $N_1=600$ tr/min, $Z_1=30$, $Z_2=20$. Calculer $N_2$. Le système est-il
+réducteur ou multiplicateur ?
+
+\rubrique{Poulies-courroie}
+\exo{}\diff{2} $N_1=1\,000$ tr/min, $D_1=50$ mm, $D_2=100$ mm. Calculer $N_2$.
+
+\exo{}\diff{2} $N_1=2\,000$ tr/min, $D_1=30$ mm, $D_2=60$ mm. Calculer $N_2$.
+
+\exo{}\diff{3} Un système poulies-courroie a $D_1=40$ mm et $D_2=80$ mm. Calculer le
+rapport de transmission $r$. Est-il réducteur ou multiplicateur ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Systèmes de transmission}
+\exo{}\diff{2} Pourquoi une courroie peut-elle glisser alors qu'une chaîne ne glisse
+pas ?
+
+\exo{}\diff{3} Citer un exemple d'utilisation d'un engrenage dans la vie courante.
+
+\rubrique{Engrenages}
+\exo{}\diff{2} $N_1=1\,500$ tr/min, $Z_1=15$, $Z_2=45$. Calculer $N_2$.
+
+\exo{}\diff{3} Une roue menante de $Z_1=25$ dents tourne à $N_1=800$ tr/min. La roue
+menée tourne à $N_2=400$ tr/min. Calculer $Z_2$.
+
+\exo{}\diff{3} Un engrenage réducteur a un rapport $r=0{,}25$. Si $Z_1=15$, calculer
+$Z_2$.
+
+\exo{}\diff{2} Une roue de $Z_1=12$ dents entraîne une roue de $Z_2=36$ dents. Calculer
+le rapport de transmission $r$.
+
+\rubrique{Poulies-courroie}
+\exo{}\diff{2} $N_1=1\,200$ tr/min, $D_1=80$ mm, $D_2=40$ mm. Calculer $N_2$.
+
+\exo{}\diff{3} Une poulie menante de $D_1=60$ mm tourne à $N_1=900$ tr/min. La poulie
+menée tourne à $N_2=300$ tr/min. Calculer $D_2$.
+
+\exo{}\diff{3} Un moteur tourne à $N_1=3\,000$ tr/min. On veut obtenir $N_2=1\,000$
+tr/min en sortie avec une poulie menante $D_1=40$ mm. Calculer $D_2$.
+
+\exo{}\diff{3} Comparer, pour une même paire de diamètres $D_1=D_2=50$ mm, la vitesse de
+sortie à la vitesse d'entrée. Que peut-on en conclure ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Engrenage réducteur]
+\begin{enumerate}[label=\arabic*)]
+\item Donne la relation entre $N_1$, $Z_1$, $N_2$ et $Z_2$ pour un engrenage.
+\item Une roue menante de $Z_1=20$ dents tourne à $N_1=1\,000$ tr/min ; la roue menée a
+$Z_2=40$ dents. Calcule $N_2$.
+\item Ce système est-il réducteur ou multiplicateur de vitesse ? Justifie.
+\item Quel est l'intérêt d'un système réducteur de vitesse dans une machine ?
+\end{enumerate}
+
+\sujetbac[Transmission par courroie]
+\begin{enumerate}[label=\arabic*)]
+\item Quels sont les sens de rotation des deux poulies d'un système poulies-courroie ?
+\item Une poulie menante $D_1=50$ mm tourne à $N_1=1\,000$ tr/min ; la poulie menée a
+$D_2=100$ mm. Calcule $N_2$.
+\item Calcule le rapport de transmission $r$ de ce système.
+\item Pourquoi une courroie peut-elle occasionnellement glisser sur une poulie ?
+\end{enumerate}
+
+\sujetbac[Comparer deux systèmes]
+\begin{enumerate}[label=\arabic*)]
+\item Cite un avantage de la chaîne-pignon par rapport à la courroie.
+\item Un vélo a un pignon avant de $Z_1=40$ dents et un pignon arrière de $Z_2=16$
+dents. Calcule le rapport de transmission $r$.
+\item Ce système est-il réducteur ou multiplicateur de vitesse ?
+\item Pourquoi ce choix est-il adapté à un vélo (vitesse de la roue par rapport au
+pédalage) ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+L'engrenage, le système poulies-courroie et le système chaîne-pignon.
+
+\corrige{de l'exercice 2}
+Opposé (sens inversé).
+
+\corrige{de l'exercice 3}
+Identique à celui de la poulie menante.
+
+\corrige{de l'exercice 4}
+La chaîne (denture engrenant sans glissement).
+
+\corrige{de l'exercice 5}
+$N_2=1\,000\times\dfrac{20}{40}=500$ tr/min.
+
+\corrige{de l'exercice 6}
+$N_2=3\,000\times\dfrac{10}{50}=600$ tr/min.
+
+\corrige{de l'exercice 7}
+$N_2=600\times\dfrac{30}{20}=900$ tr/min. $r=1{,}5>1$ : système multiplicateur.
+
+\corrige{de l'exercice 8}
+$N_2=1\,000\times\dfrac{50}{100}=500$ tr/min.
+
+\corrige{de l'exercice 9}
+$N_2=2\,000\times\dfrac{30}{60}=1\,000$ tr/min.
+
+\corrige{de l'exercice 10}
+$r=\dfrac{40}{80}=0{,}5<1$ : système réducteur.
+
+\corrige{du sujet 1}
+1) $N_1\times Z_1=N_2\times Z_2$.\\
+2) $N_2=1\,000\times\dfrac{20}{40}=500$ tr/min.\\
+3) Réducteur, car $N_2<N_1$ (ou $r=Z_1/Z_2=0{,}5<1$).\\
+4) Il permet de diminuer la vitesse tout en augmentant le couple (la force) transmis,
+utile pour déplacer des charges importantes.
+
+\corrige{du sujet 2}
+1) Le même sens.\\
+2) $N_2=1\,000\times\dfrac{50}{100}=500$ tr/min.\\
+3) $r=\dfrac{500}{1\,000}=0{,}5$.\\
+4) Car la courroie n'est pas rigidement fixée aux poulies : un effort trop important ou
+une tension insuffisante peut la faire patiner.
+
+\corrige{du sujet 3}
+1) Elle ne glisse pas, contrairement à la courroie (transmission plus fiable).\\
+2) $r=\dfrac{40}{16}=2{,}5$.\\
+3) Multiplicateur, car $r>1$.\\
+4) Cela permet à la roue de tourner plus vite que le pédalier, donc au vélo d'avancer
+plus vite pour un même effort de pédalage.
+
+\end{multicols}
+\exercicesBanner
