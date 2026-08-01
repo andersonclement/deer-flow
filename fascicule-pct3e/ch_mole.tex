@@ -1,1 +1,424 @@
 \chapter{La mole et quantité de matière}
+
+\noindent\textit{Un atome est bien trop petit pour être compté un par un ! Les chimistes
+utilisent donc un « paquet » d'atomes ou de molécules, la \textbf{mole}, pour manipuler
+des quantités de matière à l'échelle du laboratoire.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{La mole, unité de quantité de matière}
+
+\begin{definition}[Mole]
+La \textbf{mole} (symbole $\mathrm{mol}$) est l'unité de \textbf{quantité de matière},
+notée $n$. Une mole d'entités (atomes, molécules ou ions) contient toujours le même
+\textbf{nombre} d'entités, quelle que soit la nature de ces entités.
+\end{definition}
+
+\begin{propriete}[Analogie]
+De la même façon qu'\textbf{une douzaine} désigne toujours $12$ objets (œufs, oranges...),
+\textbf{une mole} désigne toujours le même très grand nombre d'entités.
+\end{propriete}
+
+\begin{exemple}
+Une mole d'atomes de carbone et une mole de molécules d'eau contiennent, chacune, le même
+nombre d'entités — seule la nature de l'entité change.
+\end{exemple}
+
+\section{La constante d'Avogadro}
+
+\begin{definition}[Constante d'Avogadro]
+Le nombre d'entités contenues dans une mole est appelé \textbf{constante d'Avogadro},
+notée $N_A$ :
+\[
+N_A\approx6{,}02\times10^{23}\ \text{mol}^{-1}.
+\]
+\end{definition}
+
+\begin{propriete}[Relation entre nombre d'entités et quantité de matière]
+Pour une quantité de matière $n$ (en mol), le nombre d'entités correspondant $N$ est :
+\[
+N=n\times N_A.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbo,line width=1.3pt,rounded corners=6pt,fill=onbsoft] (0,0) rectangle (4.4,2.3);
+\foreach \x/\y in {0.4/1.9,0.9/1.6,1.4/2.0,1.9/1.5,2.4/1.9,2.9/1.6,3.4/2.0,3.9/1.5,
+0.6/1.1,1.2/0.8,1.8/1.1,2.4/0.7,3.0/1.0,3.6/0.7,4.0/1.1,
+0.3/0.4,1.0/0.3,1.7/0.5,2.3/0.2,3.0/0.4,3.6/0.3,4.1/0.5}
+  \filldraw[onbo] (\x,\y) circle(0.065);
+\node[below] at (2.2,-0.35) {\small $1$ mole $=N_A\approx6{,}02\times10^{23}$ entités};
+\end{tikzpicture}
+\fig{Figure — Une mole, quelle que soit l'entité comptée, contient toujours $N_A$
+entités.}
+\end{illus}
+
+\begin{exemple}
+$2$ mol de molécules d'eau contiennent $N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$
+molécules d'eau.
+\end{exemple}
+
+\section{Masse molaire}
+
+\begin{definition}[Masse molaire]
+La \textbf{masse molaire atomique} d'un élément est la masse d'une mole d'atomes de cet
+élément, exprimée en $\mathrm{g/mol}$. La \textbf{masse molaire moléculaire} $M$ d'une
+molécule est la somme des masses molaires atomiques de tous les atomes qui la composent.
+\end{definition}
+
+\begin{center}
+\small
+\begin{tabular}{llcll}
+\toprule
+Atome & $M$ (g/mol) & \quad & Atome & $M$ (g/mol) \\
+\midrule
+$\mathrm{H}$ & $1$ & & $\mathrm{Na}$ & $23$ \\
+$\mathrm{C}$ & $12$ & & $\mathrm{Mg}$ & $24$ \\
+$\mathrm{N}$ & $14$ & & $\mathrm{S}$ & $32$ \\
+$\mathrm{O}$ & $16$ & & $\mathrm{Cl}$ & $35{,}5$ \\
+$\mathrm{Al}$ & $27$ & & $\mathrm{Ca}$ & $40$ \\
+$\mathrm{Fe}$ & $56$ & & $\mathrm{Cu}$ & $64$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85,every node/.style={font=\small}]
+\node[draw=onbblue,fill=onbblue!10,rounded corners=3pt,minimum width=1.7cm,minimum height=0.85cm] (h1) at (0,0) {$\mathrm{H}:1$};
+\node[draw=onbblue,fill=onbblue!10,rounded corners=3pt,minimum width=1.7cm,minimum height=0.85cm] (h2) at (2.0,0) {$\mathrm{H}:1$};
+\node[draw=onbo,fill=onbo!10,rounded corners=3pt,minimum width=1.7cm,minimum height=0.85cm] (o) at (4.0,0) {$\mathrm{O}:16$};
+\node[draw=onbgreen,fill=onbgreen!10,rounded corners=4pt,minimum width=3.4cm,minimum height=0.9cm] (tot) at (2.0,-1.7) {$M(\mathrm{H_2O})=18$ g/mol};
+\draw[->,onbmuted,line width=0.9pt] (h1)--(tot);
+\draw[->,onbmuted,line width=0.9pt] (h2)--(tot);
+\draw[->,onbmuted,line width=0.9pt] (o)--(tot);
+\end{tikzpicture}
+\fig{Figure — Masse molaire de l'eau : $M(\mathrm{H_2O})=2\times1+16=18$ g/mol.}
+\end{illus}
+
+\begin{exemple}
+Masse molaire du dioxyde de carbone $\mathrm{CO_2}$ : $M=12+2\times16=12+32=44$ g/mol.
+\end{exemple}
+
+\section{Relation entre masse et quantité de matière}
+
+\begin{propriete}[Formule fondamentale]
+Pour une masse $m$ (en g), une masse molaire $M$ (en g/mol) et une quantité de matière $n$
+(en mol) :
+\[
+n=\frac mM \qquad\text{soit aussi}\qquad m=n\times M.
+\]
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[node distance=2.6cm,every node/.style={font=\small}]
+\node[draw=onbo,fill=onbsoft,rounded corners=4pt,minimum width=2cm,minimum height=0.9cm] (m) {$m$ (g)};
+\node[draw=onbo,fill=onbsoft,rounded corners=4pt,minimum width=2cm,minimum height=0.9cm,right=2.6cm of m] (n) {$n$ (mol)};
+\node[draw=onbo,fill=onbsoft,rounded corners=4pt,minimum width=2.4cm,minimum height=0.9cm,right=2.6cm of n] (N) {$N$ (entités)};
+\draw[->,onbmuted,line width=1pt] ($(m.north)+(0.2,0)$) to[bend left=25] node[above]{$\div M$} ($(n.north)+(-0.2,0)$);
+\draw[->,onbmuted,line width=1pt] ($(n.south)+(-0.2,0)$) to[bend left=25] node[below]{$\times M$} ($(m.south)+(0.2,0)$);
+\draw[->,onbmuted,line width=1pt] ($(n.north)+(0.2,0)$) to[bend left=25] node[above]{$\times N_A$} ($(N.north)+(-0.2,0)$);
+\draw[->,onbmuted,line width=1pt] ($(N.south)+(-0.2,0)$) to[bend left=25] node[below]{$\div N_A$} ($(n.south)+(0.2,0)$);
+\end{tikzpicture}
+\fig{Figure — Passer de la masse $m$ à la quantité de matière $n$, puis au nombre
+d'entités $N$.}
+\end{illus}
+
+\begin{exemple}
+Quelle quantité de matière correspond à $36$ g d'eau ($M=18$ g/mol) ?
+\[
+n=\frac{m}{M}=\frac{36}{18}=2\ \text{mol}.
+\]
+\end{exemple}
+
+\begin{remarque}
+Ne jamais confondre $m$ (masse, en grammes) et $n$ (quantité de matière, en moles) : ce
+sont deux grandeurs différentes, reliées par la masse molaire $M$.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Mole.} Unité de quantité de matière $n$ ; une mole contient toujours $N_A$
+entités.\\[4pt]
+\textbf{Constante d'Avogadro.} $N_A\approx6{,}02\times10^{23}\ \text{mol}^{-1}$ ;
+$N=n\times N_A$.\\[4pt]
+\textbf{Masse molaire.} $M$ (g/mol) d'une molécule $=$ somme des masses molaires
+atomiques de ses atomes.\\[4pt]
+\textbf{Relation fondamentale.} $n=\dfrac mM$ (et $m=n\times M$), avec $m$ en g, $M$ en
+g/mol, $n$ en mol.\\[4pt]
+\textbf{Piège fréquent.} $M$ dépend de la molécule (formule brute) et se calcule par une
+somme ; $n$ dépend de la masse $m$ dont on dispose et se calcule par une division.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Calculer une masse molaire moléculaire}
+Décomposer la formule brute en atomes, multiplier chaque masse molaire atomique par son
+indice, puis additionner tous les résultats.
+\begin{exemple}
+$M(\mathrm{NaCl})=M(\mathrm{Na})+M(\mathrm{Cl})=23+35{,}5=58{,}5$ g/mol.
+\end{exemple}
+
+\methode{Calculer une quantité de matière à partir d'une masse}
+Calculer d'abord la masse molaire $M$, puis appliquer $n=\dfrac mM$.
+\begin{exemple}
+$m=88$ g de $\mathrm{CO_2}$ ($M=44$ g/mol) : $n=\dfrac{88}{44}=2$ mol.
+\end{exemple}
+
+\methode{Calculer une masse à partir d'une quantité de matière}
+Calculer la masse molaire $M$, puis appliquer $m=n\times M$.
+\begin{exemple}
+$n=3$ mol de $\mathrm{NaCl}$ ($M=58{,}5$ g/mol) : $m=3\times58{,}5=175{,}5$ g.
+\end{exemple}
+
+\methode{Calculer un nombre d'entités à partir d'une quantité de matière}
+Appliquer $N=n\times N_A$, avec $N_A\approx6{,}02\times10^{23}\ \text{mol}^{-1}$.
+\begin{exemple}
+$n=0{,}5$ mol de molécules : $N=0{,}5\times6{,}02\times10^{23}=3{,}01\times10^{23}$
+molécules.
+\end{exemple}
+
+\methode{Calculer une quantité de matière à partir d'un nombre d'entités}
+Appliquer $n=\dfrac{N}{N_A}$.
+\begin{exemple}
+$N=1{,}204\times10^{24}$ molécules : $n=\dfrac{1{,}204\times10^{24}}{6{,}02\times10^{23}}=2$
+mol.
+\end{exemple}
+
+\methode{Résoudre un problème concret combinant masse, quantité de matière et nombre
+d'entités}
+Identifier ce qui est donné (masse, quantité de matière ou nombre d'entités) et ce qui est
+demandé, puis enchaîner les relations $n=\dfrac mM$ et $N=n\times N_A$ dans le bon ordre.
+\begin{exemple}
+$m=9$ g d'eau ($M=18$ g/mol) : $n=\dfrac9{18}=0{,}5$ mol, puis
+$N=0{,}5\times6{,}02\times10^{23}=3{,}01\times10^{23}$ molécules.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Masses molaires}
+\exo{}\diff{1} Calculer la masse molaire du dihydrogène $\mathrm{H_2}$.
+
+\exo{}\diff{1} Calculer la masse molaire du méthane $\mathrm{CH_4}$.
+
+\exo{}\diff{2} Calculer la masse molaire du glucose $\mathrm{C_6H_{12}O_6}$.
+
+\exo{}\diff{2} Calculer la masse molaire de l'acide chlorhydrique $\mathrm{HCl}$.
+
+\rubrique{Calculer une quantité de matière}
+\exo{}\diff{1} Calculer la quantité de matière correspondant à $32$ g de dioxygène
+$\mathrm{O_2}$ ($M=32$ g/mol).
+
+\exo{}\diff{2} Calculer la quantité de matière correspondant à $117$ g de chlorure de
+sodium $\mathrm{NaCl}$ ($M=58{,}5$ g/mol).
+
+\exo{}\diff{2} Calculer la quantité de matière correspondant à $50$ g de carbonate de
+calcium $\mathrm{CaCO_3}$ ($M=100$ g/mol).
+
+\exo{}\diff{2} Calculer la masse de $0{,}5$ mol de méthane $\mathrm{CH_4}$ ($M=16$
+g/mol).
+
+\rubrique{Nombre d'entités}
+\exo{}\diff{1} Combien de molécules contient $1$ mol d'eau ?
+
+\exo{}\diff{2} Combien de molécules contiennent $2$ mol de dioxyde de carbone ?
+
+\exo{}\diff{2} Combien d'atomes contiennent $0{,}5$ mol d'atomes de fer ?
+
+\exo{}\diff{3} Un échantillon contient $3{,}01\times10^{23}$ molécules d'eau. Calculer la
+quantité de matière correspondante.
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un flacon contient $36$ g d'eau. Calculer la quantité de matière, puis le
+nombre de molécules d'eau qu'il contient.
+
+\exo{}\diff{2} On dispose de $9$ g d'eau. Calculer la quantité de matière, puis le nombre
+de molécules correspondant.
+
+\exo{}\diff{3} On dissout $8$ g de méthane $\mathrm{CH_4}$ ($M=16$ g/mol) dans un
+récipient. Calculer la quantité de matière, puis le nombre de molécules de méthane
+présentes.
+
+\exo{}\diff{3} Un laboratoire dispose de $360$ g de glucose $\mathrm{C_6H_{12}O_6}$
+($M=180$ g/mol). Calculer la quantité de matière, puis le nombre de molécules
+correspondant.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Masses molaires}
+\exo{}\diff{1} Calculer la masse molaire du diazote $\mathrm{N_2}$.
+
+\exo{}\diff{2} Calculer la masse molaire de l'ammoniac $\mathrm{NH_3}$.
+
+\exo{}\diff{2} Calculer la masse molaire de l'oxyde de zinc $\mathrm{ZnO}$ ($M(\mathrm{Zn})=65$
+g/mol).
+
+\exo{}\diff{2} Calculer la masse molaire de l'oxyde d'aluminium $\mathrm{Al_2O_3}$.
+
+\exo{}\diff{3} Calculer la masse molaire du sulfate de cuivre $\mathrm{CuSO_4}$.
+
+\rubrique{Calculer une quantité de matière}
+\exo{}\diff{2} Calculer la quantité de matière correspondant à $47$ g d'oxyde de
+potassium $\mathrm{K_2O}$ ($M=94$ g/mol).
+
+\exo{}\diff{2} Calculer la quantité de matière correspondant à $22$ g de propane
+$\mathrm{C_3H_8}$ ($M=44$ g/mol).
+
+\exo{}\diff{2} Calculer la quantité de matière correspondant à $14$ g d'éthylène
+$\mathrm{C_2H_4}$ ($M=28$ g/mol).
+
+\exo{}\diff{2} Calculer la masse de $1$ mol d'oxyde d'aluminium $\mathrm{Al_2O_3}$
+($M=102$ g/mol).
+
+\exo{}\diff{3} Calculer la masse de $3$ mol d'oxyde de zinc $\mathrm{ZnO}$ ($M=81$
+g/mol).
+
+\rubrique{Nombre d'entités}
+\exo{}\diff{1} Combien d'atomes contient $1$ mol d'atomes de carbone ?
+
+\exo{}\diff{2} Combien de molécules contiennent $0{,}1$ mol de dihydrogène ?
+
+\exo{}\diff{2} Un échantillon contient $6{,}02\times10^{22}$ atomes de fer. Calculer la
+quantité de matière correspondante.
+
+\exo{}\diff{3} Un échantillon contient $1{,}204\times10^{24}$ molécules de dioxyde de
+carbone. Calculer la quantité de matière correspondante.
+
+\exo{}\diff{2} Combien de molécules contiennent $0{,}5$ mol de méthane ?
+
+\rubrique{Problèmes concrets}
+\exo{}\diff{2} Un comprimé contient $102$ g d'oxyde d'aluminium $\mathrm{Al_2O_3}$
+($M=102$ g/mol). Calculer la quantité de matière correspondante.
+
+\exo{}\diff{2} On dispose de $80$ g de sulfate de cuivre $\mathrm{CuSO_4}$ ($M=160$
+g/mol). Calculer la quantité de matière, puis le nombre de molécules.
+
+\exo{}\diff{3} On dispose de $22$ g de propane $\mathrm{C_3H_8}$ ($M=44$ g/mol). Calculer
+la quantité de matière, puis le nombre de molécules.
+
+\exo{}\diff{3} Un flacon contient $0{,}5$ mol de chlorure de calcium $\mathrm{CaCl_2}$
+($M=111$ g/mol). Calculer la masse contenue dans le flacon.
+
+\exo{}\diff{3} Un récipient contient $14$ g d'éthylène $\mathrm{C_2H_4}$ ($M=28$
+g/mol). Calculer la quantité de matière, puis le nombre de molécules d'éthylène.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Masse molaire et quantité de matière]
+\begin{enumerate}[label=\arabic*)]
+\item Définis : mole ; constante d'Avogadro.
+\item Calcule la masse molaire de l'ammoniac $\mathrm{NH_3}$.
+\item On dispose de $34$ g d'ammoniac ($M=17$ g/mol). Calcule la quantité de matière
+correspondante.
+\item Calcule le nombre de molécules d'ammoniac contenues dans cet échantillon.
+\end{enumerate}
+
+\sujetbac[De la masse au nombre de molécules]
+\begin{enumerate}[label=\arabic*)]
+\item Écris la relation entre la masse $m$, la masse molaire $M$ et la quantité de matière
+$n$.
+\item Calcule la masse molaire du glucose $\mathrm{C_6H_{12}O_6}$.
+\item On dispose de $360$ g de glucose. Calcule la quantité de matière correspondante.
+\item Calcule le nombre de molécules de glucose contenues dans cet échantillon.
+\end{enumerate}
+
+\sujetbac[Problème concret : le sel de cuisine]
+\begin{enumerate}[label=\arabic*)]
+\item Calcule la masse molaire du chlorure de sodium $\mathrm{NaCl}$ (le sel de cuisine).
+\item Un sachet contient $117$ g de sel. Calcule la quantité de matière correspondante.
+\item Calcule le nombre d'entités (ions $\mathrm{Na^+}$ et $\mathrm{Cl^-}$ associés)
+contenues dans ce sachet, sachant qu'on compte $1$ « entité $\mathrm{NaCl}$ » par unité
+formulaire.
+\item Quelle masse de sel faudrait-il pour obtenir $3$ mol de $\mathrm{NaCl}$ ?
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+$M(\mathrm{H_2})=2\times1=2$ g/mol.
+
+\corrige{de l'exercice 2}
+$M(\mathrm{CH_4})=12+4\times1=16$ g/mol.
+
+\corrige{de l'exercice 3}
+$M(\mathrm{C_6H_{12}O_6})=6\times12+12\times1+6\times16=72+12+96=180$ g/mol.
+
+\corrige{de l'exercice 4}
+$M(\mathrm{HCl})=1+35{,}5=36{,}5$ g/mol.
+
+\corrige{de l'exercice 5}
+$n=\dfrac{32}{32}=1$ mol.
+
+\corrige{de l'exercice 6}
+$n=\dfrac{117}{58{,}5}=2$ mol.
+
+\corrige{de l'exercice 7}
+$n=\dfrac{50}{100}=0{,}5$ mol.
+
+\corrige{de l'exercice 8}
+$m=0{,}5\times16=8$ g.
+
+\corrige{de l'exercice 9}
+$N=1\times6{,}02\times10^{23}=6{,}02\times10^{23}$ molécules.
+
+\corrige{de l'exercice 10}
+$N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$ molécules.
+
+\corrige{de l'exercice 11}
+$N=0{,}5\times6{,}02\times10^{23}=3{,}01\times10^{23}$ atomes.
+
+\corrige{de l'exercice 12}
+$n=\dfrac{3{,}01\times10^{23}}{6{,}02\times10^{23}}=0{,}5$ mol.
+
+\corrige{de l'exercice 13}
+$n=\dfrac{36}{18}=2$ mol ; $N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$ molécules.
+
+\corrige{de l'exercice 14}
+$n=\dfrac9{18}=0{,}5$ mol ; $N=0{,}5\times6{,}02\times10^{23}=3{,}01\times10^{23}$
+molécules.
+
+\corrige{de l'exercice 15}
+$n=\dfrac8{16}=0{,}5$ mol ; $N=0{,}5\times6{,}02\times10^{23}=3{,}01\times10^{23}$
+molécules.
+
+\corrige{de l'exercice 16}
+$n=\dfrac{360}{180}=2$ mol ; $N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$
+molécules.
+
+\corrige{du sujet 1}
+1) La mole est l'unité de quantité de matière ; la constante d'Avogadro
+$N_A\approx6{,}02\times10^{23}\text{ mol}^{-1}$ est le nombre d'entités contenues dans une
+mole.\\
+2) $M(\mathrm{NH_3})=14+3\times1=17$ g/mol.\\
+3) $n=\dfrac{34}{17}=2$ mol.\\
+4) $N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$ molécules.
+
+\corrige{du sujet 2}
+1) $n=\dfrac mM$ (et $m=n\times M$).\\
+2) $M(\mathrm{C_6H_{12}O_6})=180$ g/mol.\\
+3) $n=\dfrac{360}{180}=2$ mol.\\
+4) $N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$ molécules.
+
+\corrige{du sujet 3}
+1) $M(\mathrm{NaCl})=23+35{,}5=58{,}5$ g/mol.\\
+2) $n=\dfrac{117}{58{,}5}=2$ mol.\\
+3) $N=2\times6{,}02\times10^{23}=1{,}204\times10^{24}$ entités.\\
+4) $m=3\times58{,}5=175{,}5$ g.
+
+\end{multicols}
+\exercicesBanner
