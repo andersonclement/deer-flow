@@ -1,1 +1,298 @@
 \chapter{La transmission de l'information génétique}
+
+\noindent\textit{L'information génétique portée par les chromosomes doit être transmise
+fidèlement à chaque nouvelle cellule du corps (grâce à la mitose), mais aussi, de
+génération en génération, des parents à leurs enfants (grâce à la fécondation). Ces
+deux mécanismes expliquent à la fois notre croissance et la diversité qui existe entre
+frères et sœurs.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{La mitose : une division cellulaire conforme}
+
+\begin{definition}[Mitose]
+La \textbf{mitose} est le mode de division d'une cellule qui produit \textbf{deux
+cellules filles génétiquement identiques} entre elles et identiques à la cellule mère.
+Elle permet la croissance de l'organisme et le renouvellement des tissus (peau, sang,
+muqueuses\dots).
+\end{definition}
+
+\begin{propriete}[Déroulement]
+Avant la division, chaque chromosome se duplique en deux chromatides identiques (voir
+chapitre 2). Au moment de la mitose, les deux chromatides de chaque chromosome se
+séparent et migrent chacune vers l'une des deux cellules filles. Chaque cellule fille
+reçoit ainsi \textbf{46 chromosomes}, un jeu complet identique à celui de la cellule
+mère.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.2pt] (0,0) circle (0.9);
+\node[font=\small] at (0,0) {46};
+\node[below,font=\scriptsize] at (0,-1.15) {cellule mère};
+\draw[->,onbmuted,line width=1pt] (1.1,0) -- (2.5,0.9);
+\draw[->,onbmuted,line width=1pt] (1.1,0) -- (2.5,-0.9);
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.2pt] (3.4,0.9) circle (0.7);
+\node[font=\small] at (3.4,0.9) {46};
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.2pt] (3.4,-0.9) circle (0.7);
+\node[font=\small] at (3.4,-0.9) {46};
+\node[below,font=\scriptsize,align=center] at (3.4,-1.75) {deux cellules filles\\identiques};
+\end{tikzpicture}
+\fig{Figure — La mitose : une cellule mère (46 chromosomes) donne deux cellules
+filles identiques.}
+\end{illus}
+
+\begin{exemple}
+La cicatrisation d'une plaie de la peau repose sur de nombreuses mitoses des cellules
+situées au bord de la plaie, qui reconstituent le tissu endommagé.
+\end{exemple}
+
+\section{Le cancer, un dérèglement de la division cellulaire}
+
+\begin{definition}[Cancer]
+Un \textbf{cancer} résulte d'un \textbf{dérèglement du contrôle des divisions
+cellulaires} : une cellule anormale se multiplie par mitoses de façon
+\textbf{anarchique et incontrôlée}, formant une masse de cellules appelée
+\textbf{tumeur}, qui peut envahir les tissus voisins.
+\end{definition}
+
+\begin{propriete}[Facteurs de risque]
+Certains facteurs augmentent le risque de dérèglement des divisions cellulaires : le
+tabac, l'exposition excessive au soleil sans protection, certaines infections
+chroniques, l'alcool, ou une exposition à des substances toxiques.
+\end{propriete}
+
+\begin{remarque}
+Un dépistage précoce, avant que la tumeur ne se développe trop, augmente fortement les
+chances de guérison : c'est pourquoi les campagnes de sensibilisation encouragent la
+consultation médicale rapide en cas de signe anormal et durable.
+\end{remarque}
+
+\section{La fécondation et le brassage chromosomique}
+
+\begin{definition}[Gamètes]
+Les \textbf{gamètes} (spermatozoïde chez l'homme, ovule chez la femme) sont des
+cellules reproductrices particulières : elles ne contiennent que \textbf{23
+chromosomes} chacune, soit la moitié du nombre habituel.
+\end{definition}
+
+\begin{definition}[Fécondation]
+La \textbf{fécondation} est la fusion d'un spermatozoïde et d'un ovule, qui forme une
+\textbf{cellule-œuf} à \textbf{46 chromosomes} : 23 chromosomes d'origine paternelle et
+23 chromosomes d'origine maternelle. Le nombre normal de chromosomes est ainsi
+rétabli.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.2pt] (0,0.9) circle (0.6);
+\node[font=\scriptsize] at (0,0.9) {23};
+\node[below,font=\scriptsize,align=center] at (0,0.15) {spermatozoïde};
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.2pt] (0,-0.9) circle (0.6);
+\node[font=\scriptsize] at (0,-0.9) {23};
+\node[below,font=\scriptsize] at (0,-1.65) {ovule};
+\draw[->,onbmuted,line width=1pt] (0.7,0.75) -- (2,0.15);
+\draw[->,onbmuted,line width=1pt] (0.7,-0.75) -- (2,-0.15);
+\draw[onbo,fill=onbo,fill opacity=0.15,line width=1.4pt] (2.9,0) circle (0.85);
+\node[font=\small] at (2.9,0) {46};
+\node[below,font=\scriptsize] at (2.9,-1.15) {cellule-œuf};
+\end{tikzpicture}
+\fig{Figure — La fécondation : fusion du spermatozoïde et de l'ovule (23 + 23) en
+une cellule-œuf à 46 chromosomes.}
+\end{illus}
+
+\begin{propriete}[Le brassage chromosomique]
+Lors de la formation des gamètes, les 23 chromosomes que reçoit chaque gamète sont
+choisis \textbf{au hasard} parmi les 46 chromosomes de la personne. Ce
+\textbf{brassage chromosomique} fait que chaque gamète produit est génétiquement
+unique.
+\end{propriete}
+
+\begin{exemple}
+Grâce au brassage chromosomique, deux frères non jumeaux, bien qu'issus des mêmes
+parents, reçoivent des combinaisons différentes de chromosomes et ne se ressemblent
+donc jamais parfaitement (voir chapitre 1).
+\end{exemple}
+
+\begin{remarque}
+Piège fréquent : la mitose produit des cellules \textbf{identiques} (46 chromosomes
+chacune), alors que la formation des gamètes, associée au brassage chromosomique,
+produit des cellules reproductrices \textbf{différentes les unes des autres} (23
+chromosomes chacune). Ne pas confondre ces deux mécanismes.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Mitose.} Division cellulaire qui produit deux cellules filles identiques (46
+chromosomes chacune) : croissance et renouvellement des tissus.\\[4pt]
+\textbf{Cancer.} Dérèglement du contrôle des divisions cellulaires : multiplication
+anarchique de cellules formant une tumeur.\\[4pt]
+\textbf{Gamètes.} Spermatozoïde et ovule, à 23 chromosomes chacun.\\[4pt]
+\textbf{Fécondation.} Fusion des gamètes $\to$ cellule-œuf à 46 chromosomes.\\[4pt]
+\textbf{Brassage chromosomique.} Répartition aléatoire des chromosomes dans les
+gamètes $\to$ diversité génétique de la descendance.\\[4pt]
+\textbf{Piège fréquent.} La mitose donne des cellules identiques ; la formation des
+gamètes donne des cellules différentes les unes des autres.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Comparer mitose et fécondation}
+Comparer le nombre de chromosomes et le degré de ressemblance génétique des cellules
+obtenues à chaque étape.
+\begin{exemple}
+Une mitose produit deux cellules à 46 chromosomes, identiques entre elles ; la
+fécondation produit une cellule-œuf à 46 chromosomes, issue de deux gamètes différents
+à 23 chromosomes chacun.
+\end{exemple}
+
+\methode{Relier un dérèglement cellulaire au cancer}
+Repérer, dans une situation donnée, une multiplication cellulaire anormale, non
+contrôlée, pour la relier à la notion de tumeur.
+\begin{exemple}
+Une masse de cellules qui continue de grossir sans limite correspond à une tumeur,
+signe d'un dérèglement du contrôle des divisions cellulaires.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{La mitose}
+\exo{}\diff{1} Combien de cellules filles produit une mitose ?
+
+\exo{}\diff{2} Combien de chromosomes possède chaque cellule fille issue d'une
+mitose ?
+
+\rubrique{Le cancer}
+\exo{}\diff{1} Qu'est-ce qu'une tumeur ?
+
+\exo{}\diff{2} Citer deux facteurs de risque du cancer.
+
+\rubrique{Fécondation et brassage}
+\exo{}\diff{1} Combien de chromosomes contient un gamète ?
+
+\exo{}\diff{2} Comment le nombre normal de 46 chromosomes est-il rétabli après la
+fécondation ?
+
+\exo{}\diff{2} Qu'appelle-t-on brassage chromosomique ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{La mitose}
+\exo{}\diff{3} Expliquer pourquoi la mitose est indispensable à la cicatrisation d'une
+plaie.
+
+\rubrique{Le cancer}
+\exo{}\diff{3} Expliquer, à l'aide du vocabulaire du chapitre, pourquoi un cancer non
+traité peut continuer à se développer indéfiniment.
+
+\rubrique{Fécondation et brassage}
+\exo{}\diff{3} Expliquer pourquoi deux frères non jumeaux ne se ressemblent jamais
+parfaitement, alors qu'ils ont les mêmes parents.
+
+\exo{}\diff{2} Un gamète contient-il un jeu complet de chromosomes ? Justifier.
+
+\exo{}\diff{3} Comparer, en une phrase chacune, ce que produit une mitose et ce que
+produit la fécondation.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[La mitose et le cancer]
+\begin{enumerate}[label=\arabic*)]
+\item Définis la mitose.
+\item Combien de chromosomes possède chaque cellule fille obtenue ?
+\item Définis le cancer à partir du fonctionnement normal de la mitose.
+\item Cite deux facteurs de risque du cancer.
+\end{enumerate}
+
+\sujetbac[Fécondation et diversité]
+\begin{enumerate}[label=\arabic*)]
+\item Combien de chromosomes possède un spermatozoïde ? Un ovule ?
+\item Combien de chromosomes possède la cellule-œuf issue de la fécondation ?
+\item Qu'est-ce que le brassage chromosomique ?
+\item Explique en quoi le brassage chromosomique participe à la diversité entre frères
+et sœurs.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Deux cellules filles.
+
+\corrige{de l'exercice 2}
+46 chromosomes.
+
+\corrige{de l'exercice 3}
+Une masse de cellules issue d'une multiplication cellulaire anarchique et
+incontrôlée.
+
+\corrige{de l'exercice 4}
+Par exemple : le tabac et l'exposition excessive au soleil.
+
+\corrige{de l'exercice 5}
+23 chromosomes.
+
+\corrige{de l'exercice 6}
+Par la fusion des 23 chromosomes du spermatozoïde et des 23 chromosomes de l'ovule.
+
+\corrige{de l'exercice 7}
+La répartition aléatoire des chromosomes dans les gamètes lors de leur formation,
+rendant chaque gamète génétiquement unique.
+
+\corrige{de l'exercice 8}
+Parce que les cellules situées au bord de la plaie se multiplient par mitoses pour
+reconstituer le tissu détruit ; sans mitose, la plaie ne pourrait pas se refermer.
+
+\corrige{de l'exercice 9}
+Parce que le contrôle des divisions cellulaires est déréglé : les cellules anormales
+continuent de se diviser par mitoses successives sans limite, tant qu'aucun traitement
+n'interrompt ce processus.
+
+\corrige{de l'exercice 10}
+Parce que le brassage chromosomique fait que chaque gamète reçoit une combinaison
+différente de chromosomes ; deux frères non jumeaux sont donc issus de gamètes
+différents et reçoivent des combinaisons de chromosomes différentes.
+
+\corrige{de l'exercice 11}
+Non : un gamète ne contient que 23 chromosomes, soit la moitié du nombre habituel de
+46.
+
+\corrige{de l'exercice 12}
+Une mitose produit deux cellules identiques à 46 chromosomes chacune ; la fécondation
+produit une cellule-œuf unique à 46 chromosomes, issue de la fusion de deux gamètes
+différents à 23 chromosomes chacun.
+
+\corrige{du sujet 1}
+1) La mitose est une division cellulaire qui produit deux cellules filles
+génétiquement identiques.\\
+2) 46 chromosomes chacune.\\
+3) Le cancer correspond à un dérèglement du contrôle des divisions cellulaires : les
+cellules se multiplient de façon anarchique et incontrôlée, au lieu de suivre le
+déroulement normal de la mitose.\\
+4) Par exemple : le tabac et l'alcool.
+
+\corrige{du sujet 2}
+1) Un spermatozoïde possède 23 chromosomes, tout comme un ovule.\\
+2) 46 chromosomes.\\
+3) C'est la répartition aléatoire des chromosomes dans les gamètes lors de leur
+formation.\\
+4) Comme chaque gamète est génétiquement unique, chaque fécondation combine des
+chromosomes différents, ce qui explique que des frères et sœurs non jumeaux ne se
+ressemblent jamais parfaitement.
+
+\end{multicols}
+\exercicesBanner
