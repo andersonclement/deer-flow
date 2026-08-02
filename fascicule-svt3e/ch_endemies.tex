@@ -1,1 +1,293 @@
 \chapter{Le paludisme et la fièvre Ebola}
+
+\noindent\textit{Le paludisme et la fièvre Ebola sont deux maladies infectieuses graves,
+particulièrement présentes en Afrique centrale et de l'Ouest. Leurs agents responsables,
+leurs modes de transmission et leurs moyens de lutte sont très différents : les
+connaître permet de mieux s'en protéger.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Le paludisme}
+
+\begin{definition}[Paludisme]
+Le \textbf{paludisme} est une maladie causée par un parasite unicellulaire du genre
+\textbf{\textit{Plasmodium}}, transmis à l'être humain par la piqûre d'un
+\textbf{moustique} appelé \textbf{anophèle} femelle.
+\end{definition}
+
+\begin{propriete}[Le cycle de la maladie]
+En piquant une personne infectée, l'anophèle femelle absorbe le parasite avec le sang.
+En piquant ensuite une autre personne, elle lui injecte le parasite. Celui-ci se
+multiplie d'abord dans le foie, puis envahit et détruit les \textbf{globules
+rouges}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\draw[onbgreen,fill=onbgreen,fill opacity=0.12,line width=1.2pt] (0,0) circle (0.85);
+\node[font=\scriptsize,align=center] at (0,0) {moustique\\infecté};
+\draw[->,onbmuted,line width=1.1pt] (0.95,0.3) to[out=30,in=150] (2.9,0.3);
+\node[above,font=\scriptsize,onbmuted] at (1.9,0.65) {piqûre};
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.2pt] (3.8,0) circle (0.85);
+\node[font=\scriptsize,align=center] at (3.8,0) {personne\\infectée};
+\draw[->,onbmuted,line width=1.1pt] (2.9,-0.3) to[out=-150,in=-30] (0.95,-0.3);
+\node[below,font=\scriptsize,onbmuted] at (1.9,-0.65) {nouvelle piqûre};
+\end{tikzpicture}
+\fig{Figure — Cycle simplifié de transmission du paludisme entre moustique et
+personnes.}
+\end{illus}
+
+\begin{propriete}[Symptômes]
+Fièvre élevée, frissons, maux de tête, courbatures, fatigue intense. Dans les formes
+graves (souvent chez le jeune enfant ou la femme enceinte), le paludisme peut
+provoquer une \textbf{anémie} sévère, une atteinte du cerveau (paludisme cérébral),
+voire le décès en l'absence de traitement rapide.
+\end{propriete}
+
+\begin{propriete}[Moyens de lutte]
+\begin{itemize}
+\item dormir sous une \textbf{moustiquaire imprégnée} d'insecticide ;
+\item éliminer les \textbf{eaux stagnantes} autour des habitations (lieux de
+reproduction des moustiques) ;
+\item utiliser des \textbf{insecticides} et des répulsifs ;
+\item consulter rapidement en cas de fièvre pour un \textbf{diagnostic} et un
+\textbf{traitement antipaludéen} précoces.
+\end{itemize}
+\end{propriete}
+
+\begin{remarque}
+Les personnes porteuses saines de la drépanocytose (génotype AS, voir chapitre 3)
+présentent une résistance partiellement accrue au paludisme : c'est l'une des raisons
+pour lesquelles l'allèle S reste fréquent dans certaines régions où le paludisme est
+très présent.
+\end{remarque}
+
+\section{La fièvre Ebola}
+
+\begin{definition}[Fièvre Ebola]
+La \textbf{fièvre Ebola} est une maladie grave causée par un \textbf{virus},
+transmise par \textbf{contact direct} avec le sang, les sécrétions ou d'autres
+fluides corporels d'une personne (ou d'un animal) infecté. Elle ne se transmet
+\textbf{pas} par l'air.
+\end{definition}
+
+\begin{propriete}[Symptômes]
+Fièvre soudaine et intense, fatigue extrême, douleurs musculaires, maux de tête, mal
+de gorge, suivis de vomissements, de diarrhées, et, dans les formes les plus graves,
+d'\textbf{hémorragies} internes ou externes.
+\end{propriete}
+
+\begin{propriete}[Moyens de lutte]
+\begin{itemize}
+\item \textbf{isolement rapide} des personnes malades, pour éviter tout nouveau
+contact ;
+\item port d'équipements de protection individuelle (gants, masques, combinaisons)
+par le personnel soignant ;
+\item \textbf{désinfection} rigoureuse des lieux et objets contaminés ;
+\item identification et suivi des personnes ayant été en contact avec un malade ;
+\item la \textbf{vaccination}, disponible depuis quelques années, qui protège les
+personnes les plus exposées.
+\end{itemize}
+\end{propriete}
+
+\begin{remarque}
+Piège fréquent : contrairement au paludisme, la fièvre Ebola ne se transmet pas par
+un vecteur comme le moustique, mais par un \textbf{contact direct} avec les fluides
+corporels d'une personne infectée. Les gestes de lutte contre les deux maladies sont
+donc très différents.
+\end{remarque}
+
+\begin{propriete}[Comparer paludisme et fièvre Ebola]
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Paludisme} & \textbf{Fièvre Ebola} \\
+\midrule
+Agent & parasite (\textit{Plasmodium}) & virus \\
+Transmission & piqûre de moustique & contact direct (fluides) \\
+Prévention clé & moustiquaire imprégnée & isolement, protection \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{propriete}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Paludisme.} Parasite \textit{Plasmodium}, transmis par la piqûre de
+l'anophèle femelle ; détruit les globules rouges.\\[4pt]
+\textbf{Lutte contre le paludisme.} Moustiquaire imprégnée, élimination des eaux
+stagnantes, traitement précoce.\\[4pt]
+\textbf{Fièvre Ebola.} Virus transmis par contact direct avec les fluides corporels
+d'une personne infectée, non par l'air.\\[4pt]
+\textbf{Lutte contre Ebola.} Isolement des malades, protection du personnel
+soignant, désinfection, vaccination.\\[4pt]
+\textbf{Piège fréquent.} Le paludisme se transmet par un vecteur (moustique) ;
+Ebola se transmet par contact direct, pas par un vecteur ni par l'air.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Distinguer paludisme et fièvre Ebola}
+Identifier le mode de transmission (piqûre de moustique ou contact direct avec des
+fluides corporels) pour reconnaître la maladie et le geste de prévention adapté.
+\begin{exemple}
+Une fièvre apparue après plusieurs piqûres de moustique dans une zone à risque évoque
+un paludisme plutôt qu'une fièvre Ebola.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Le paludisme}
+\exo{}\diff{1} Quel est l'agent responsable du paludisme ?
+
+\exo{}\diff{1} Par quel insecte le paludisme est-il transmis ?
+
+\exo{}\diff{2} Quelles cellules sanguines sont détruites lors du paludisme ?
+
+\exo{}\diff{1} Citer un moyen de lutte contre le paludisme.
+
+\rubrique{La fièvre Ebola}
+\exo{}\diff{1} Quel type d'agent cause la fièvre Ebola ?
+
+\exo{}\diff{2} Comment se transmet la fièvre Ebola ?
+
+\exo{}\diff{1} Citer un moyen de lutte contre la fièvre Ebola.
+
+\rubrique{Comparer les deux maladies}
+\exo{}\diff{2} Quelle est la principale différence entre les modes de transmission du
+paludisme et de la fièvre Ebola ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Le paludisme}
+\exo{}\diff{3} Expliquer pourquoi éliminer les eaux stagnantes autour des habitations
+contribue à lutter contre le paludisme.
+
+\exo{}\diff{2} Pourquoi les jeunes enfants sont-ils particulièrement vulnérables au
+paludisme grave ?
+
+\exo{}\diff{3} Expliquer pourquoi les personnes porteuses saines de la drépanocytose
+(AS) sont partiellement protégées contre le paludisme.
+
+\rubrique{La fièvre Ebola}
+\exo{}\diff{3} Expliquer pourquoi l'isolement rapide des malades est une mesure
+essentielle de lutte contre la fièvre Ebola.
+
+\exo{}\diff{2} Pourquoi le personnel soignant porte-t-il des équipements de
+protection individuelle face à un patient atteint d'Ebola ?
+
+\rubrique{Comparer les deux maladies}
+\exo{}\diff{3} Un élève affirme qu'une moustiquaire protège aussi contre la fièvre
+Ebola. Corriger cette affirmation.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Le paludisme]
+\begin{enumerate}[label=\arabic*)]
+\item Quel est l'agent responsable du paludisme et comment est-il transmis ?
+\item Cite deux symptômes du paludisme.
+\item Cite deux moyens de lutte contre le paludisme.
+\item Explique pourquoi la lutte contre les eaux stagnantes limite la transmission
+du paludisme.
+\end{enumerate}
+
+\sujetbac[La fièvre Ebola]
+\begin{enumerate}[label=\arabic*)]
+\item Quel type d'agent cause la fièvre Ebola ?
+\item Comment cette maladie se transmet-elle ?
+\item Cite deux mesures de lutte contre la fièvre Ebola.
+\item Explique la différence essentielle entre la transmission du paludisme et celle
+de la fièvre Ebola.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+Un parasite unicellulaire du genre \textit{Plasmodium}.
+
+\corrige{de l'exercice 2}
+Par la piqûre d'un moustique anophèle femelle.
+
+\corrige{de l'exercice 3}
+Les globules rouges.
+
+\corrige{de l'exercice 4}
+Par exemple : dormir sous une moustiquaire imprégnée.
+
+\corrige{de l'exercice 5}
+Un virus.
+
+\corrige{de l'exercice 6}
+Par contact direct avec le sang, les sécrétions ou d'autres fluides corporels d'une
+personne infectée.
+
+\corrige{de l'exercice 7}
+Par exemple : l'isolement rapide des malades.
+
+\corrige{de l'exercice 8}
+Le paludisme se transmet par un vecteur (le moustique) ; la fièvre Ebola se transmet
+par contact direct avec les fluides corporels, sans vecteur.
+
+\corrige{de l'exercice 9}
+Car les eaux stagnantes constituent le lieu de reproduction des moustiques : les
+supprimer réduit la population de moustiques et donc le risque de piqûres
+infectantes.
+
+\corrige{de l'exercice 10}
+Car leur système immunitaire est encore immature et ils ont eu moins d'occasions de
+développer une résistance partielle au parasite, ce qui les expose davantage aux
+formes graves.
+
+\corrige{de l'exercice 11}
+Car chez les personnes AS, la présence de l'allèle S modifie légèrement les globules
+rouges, ce qui gêne le développement du parasite \textit{Plasmodium} à l'intérieur de
+ces cellules.
+
+\corrige{de l'exercice 12}
+Car cela évite tout nouveau contact entre le malade et d'autres personnes, coupant
+ainsi la chaîne de transmission du virus.
+
+\corrige{de l'exercice 13}
+Pour éviter tout contact direct avec le sang ou les fluides corporels du patient,
+seule voie de transmission du virus.
+
+\corrige{de l'exercice 14}
+C'est faux : la moustiquaire protège contre les piqûres de moustique (paludisme),
+mais la fièvre Ebola ne se transmet pas par les moustiques ; elle se transmet par
+contact direct avec des fluides corporels.
+
+\corrige{du sujet 1}
+1) Un parasite du genre \textit{Plasmodium}, transmis par la piqûre d'un moustique
+anophèle femelle.\\
+2) Par exemple : fièvre élevée et frissons.\\
+3) Par exemple : moustiquaire imprégnée et élimination des eaux stagnantes.\\
+4) Car les eaux stagnantes sont le lieu de reproduction des moustiques ; les
+supprimer réduit leur nombre et donc les piqûres infectantes.
+
+\corrige{du sujet 2}
+1) Un virus.\\
+2) Par contact direct avec le sang, les sécrétions ou d'autres fluides corporels
+d'une personne infectée.\\
+3) Par exemple : l'isolement des malades et le port d'équipements de protection par
+le personnel soignant.\\
+4) Le paludisme se transmet par un vecteur (le moustique) ; la fièvre Ebola se
+transmet par contact direct, sans vecteur ni transmission par l'air.
+
+\end{multicols}
+\exercicesBanner
