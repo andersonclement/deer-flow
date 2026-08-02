@@ -1,164 +1,168 @@
-\chapter{La reproduction chez les micro-organismes}
+\chapter{Les microorganismes de notre environnement et la contamination}
 
-\noindent\textit{Bactéries, levures, moisissures : les micro-organismes se reproduisent
-souvent de façon spectaculairement rapide. Ce chapitre étudie leur mode de reproduction
-principal, asexué, et explique pourquoi leur population peut croître de façon
-explosive.}
+\noindent\textit{Notre environnement (air, eau, sol, aliments, corps humain) abrite une
+multitude d'êtres vivants invisibles à l'œil nu : les microorganismes. La plupart sont
+inoffensifs, voire utiles, mais certains peuvent provoquer des maladies. Comprendre
+comment ils pénètrent dans l'organisme est la première étape pour s'en protéger.}
 \vspace{8pt}
 
 \connecteBanner
 
-\section{La reproduction asexuée : la scissiparité}
+\section{Les microorganismes de notre environnement}
 
-\begin{definition}[Scissiparité]
-La \textbf{scissiparité} (ou division binaire) est le mode de reproduction principal des
-\textbf{bactéries} : une bactérie grandit puis se divise en \textbf{deux cellules
-filles identiques}, génétiquement identiques à la cellule mère.
+\begin{definition}[Microorganisme]
+Un \textbf{microorganisme} (ou micro-être vivant) est un être vivant de très petite
+taille, invisible à l'œil nu, observable seulement au microscope.
 \end{definition}
 
-\begin{propriete}[Une reproduction asexuée]
-La scissiparité ne fait intervenir \textbf{qu'un seul individu} : c'est une
-\textbf{reproduction asexuée}. Les cellules filles produites sont des \textbf{clones} :
-elles possèdent exactement la même information génétique que la cellule d'origine.
+\begin{propriete}[Quatre grands groupes]
+\begin{itemize}
+\item les \textbf{bactéries} : cellules très simples, sans noyau individualisé ;
+\item les \textbf{virus} : particules encore plus petites, incapables de se
+multiplier seules (elles ont besoin d'infecter une cellule hôte) ;
+\item les \textbf{champignons microscopiques} (moisissures, levures) ;
+\item certains \textbf{unicellulaires} (organismes formés d'une seule cellule, comme
+certains parasites).
+\end{itemize}
+\end{propriete}
+
+\begin{propriete}[Omniprésents dans l'environnement]
+Les microorganismes sont présents partout : dans l'air, l'eau, le sol, les aliments, et
+à la surface comme à l'intérieur du corps humain (peau, bouche, tube digestif\dots).
+\end{propriete}
+
+\begin{remarque}
+La grande majorité des microorganismes sont \textbf{inoffensifs}, et beaucoup sont même
+\textbf{utiles} : certaines bactéries de notre tube digestif aident à la digestion,
+certaines levures servent à fabriquer le pain ou la bière. Seule une minorité de
+microorganismes, dits \textbf{pathogènes}, peut provoquer des maladies.
+\end{remarque}
+
+\begin{exemple}
+Les levures utilisées en boulangerie et certaines bactéries du yaourt sont des
+microorganismes utiles ; le bacille de la tuberculose est un exemple de bactérie
+pathogène.
+\end{exemple}
+
+\section{La contamination : comment les microorganismes pénètrent dans l'organisme}
+
+\begin{definition}[Contamination]
+La \textbf{contamination} est la pénétration d'un microorganisme pathogène dans
+l'organisme. Elle précède l'\textbf{infection}, c'est-à-dire le développement de ce
+microorganisme dans le corps et l'apparition éventuelle de symptômes.
+\end{definition}
+
+\begin{propriete}[Les principales voies de contamination]
+\begin{itemize}
+\item \textbf{voie cutanée} : par une plaie, une piqûre d'insecte, une morsure ;
+\item \textbf{voie respiratoire} : par inhalation de microorganismes présents dans
+l'air (toux, éternuement d'une personne malade) ;
+\item \textbf{voie digestive} : par ingestion d'eau ou d'aliments contaminés ;
+\item \textbf{voie sexuelle} : lors de rapports sexuels non protégés ;
+\item \textbf{voie sanguine} : par contact avec du sang contaminé (matériel médical
+non stérile, transfusion non contrôlée).
+\end{itemize}
 \end{propriete}
 
 \begin{illus}
-\begin{tikzpicture}[scale=0.85]
-\filldraw[onbo!25,draw=onbo,line width=1.2pt] (0,0) ellipse (0.7 and 0.4);
-\draw[->,onbmuted,line width=1.1pt] (1.1,0) -- (2.3,0);
-\node[above,font=\scriptsize,onbmuted] at (1.7,0.2) {division};
-\filldraw[onbgreen!25,draw=onbgreen,line width=1.1pt] (3.1,0.55) ellipse (0.55 and 0.32);
-\filldraw[onbgreen!25,draw=onbgreen,line width=1.1pt] (3.1,-0.55) ellipse (0.55 and 0.32);
+\begin{tikzpicture}[scale=0.8]
+\draw[onbo,fill=onbo,fill opacity=0.12,line width=1.3pt] (0,0) circle (1.15);
+\node[font=\small,align=center] at (0,0) {organisme};
+\foreach \ang/\lbl in {90/{voie respiratoire}, 18/{voie digestive},
+  -54/{voie sanguine}, -126/{voie sexuelle}, 162/{voie cutanée}}{
+  \draw[->,onbmuted,line width=1pt] ({1.4*cos(\ang)},{1.4*sin(\ang)}) --
+    ({1.25*cos(\ang)},{1.25*sin(\ang)});
+  \node[font=\tiny,align=center] at ({2.35*cos(\ang)},{2.35*sin(\ang)}) {\lbl};
+}
 \end{tikzpicture}
-\fig{Figure — La scissiparité : une bactérie se divise en deux cellules filles identiques.}
+\fig{Figure — Les cinq principales voies de contamination de l'organisme.}
 \end{illus}
 
-\section{Une croissance exponentielle}
-
-\begin{propriete}[Doublement de la population]
-Dans des conditions favorables (nutriments, température adaptée), \textbf{chaque}
-bactérie se divise régulièrement, doublant la population à chaque division. Après $n$
-divisions, une population initiale de $N_0$ bactéries devient :
-\[
-N=N_0\times2^{\,n}.
-\]
-\end{propriete}
-
 \begin{exemple}
-Une bactérie ($N_0=1$) subit $n=5$ divisions successives : $N=1\times2^5=32$ bactéries.
-\end{exemple}
-
-\begin{propriete}[Temps de génération]
-Le \textbf{temps de génération} est la durée nécessaire à une division. Le temps total
-pour atteindre $n$ divisions vaut : $t_{\text{total}}=n\times t_{\text{génération}}$.
-\end{propriete}
-
-\begin{exemple}
-Avec un temps de génération de $20$ min, obtenir $n=6$ divisions prend
-$t_{\text{total}}=6\times20=120$ min $=2$ h.
+Boire de l'eau non traitée dans une zone où l'assainissement est insuffisant expose à
+une contamination par voie digestive (bactéries responsables de diarrhées, par
+exemple).
 \end{exemple}
 
 \begin{remarque}
-C'est cette croissance \textbf{exponentielle} qui explique pourquoi une infection
-bactérienne peut se développer très rapidement si elle n'est pas traitée à temps, et
-pourquoi une bonne hygiène (lavage des mains, conservation des aliments au froid) limite
-efficacement la prolifération des bactéries.
+Piège fréquent : contamination et infection ne sont pas synonymes. Une personne peut
+être contaminée (le microorganisme est entré dans son corps) sans être encore malade :
+l'infection, avec ses symptômes, peut apparaître seulement après un certain temps
+(période d'incubation).
 \end{remarque}
 
-\section{La reproduction chez les levures}
+\section{Une multiplication souvent très rapide}
 
-\begin{definition}[Bourgeonnement]
-Les \textbf{levures} (comme celles utilisées en boulangerie, voir chapitre sur la
-fermentation) se reproduisent le plus souvent par \textbf{bourgeonnement} : un
-\textbf{bourgeon} apparaît à la surface de la cellule mère, grossit, puis se détache
-pour former une nouvelle cellule.
-\end{definition}
-
-\begin{propriete}[Une reproduction sexuée est aussi possible]
-Dans certaines conditions (stress, manque de nutriments), certains micro-organismes
-comme les levures peuvent aussi réaliser une \textbf{reproduction sexuée}, faisant
-intervenir \textbf{deux cellules} qui fusionnent : elle génère, contrairement à la
-reproduction asexuée, de la \textbf{diversité génétique} entre les descendants.
+\begin{propriete}[Reproduction rapide des bactéries]
+De nombreuses bactéries se reproduisent par \textbf{scissiparité} : une bactérie se
+divise en deux cellules filles identiques, qui se divisent à leur tour. Dans des
+conditions favorables (chaleur, humidité, nutriments), cette multiplication peut être
+très rapide, ce qui explique la vitesse à laquelle une contamination peut évoluer en
+infection si l'organisme ne parvient pas à s'en défendre (voir chapitre suivant).
 \end{propriete}
 
-\begin{propriete}[Comparaison]
-\begin{center}
-\small
-\begin{tabular}{lcc}
-\toprule
-& \textbf{Reproduction asexuée} & \textbf{Reproduction sexuée} \\
-\midrule
-Nombre d'individus & un seul & deux \\
-Descendants & identiques (clones) & génétiquement différents \\
-Vitesse & très rapide & plus lente \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{propriete}
+\begin{remarque}
+C'est cette multiplication rapide qui justifie les gestes d'hygiène simples (lavage des
+mains, conservation des aliments au froid, cuisson suffisante) : limiter le nombre de
+microorganismes présents au départ retarde ou empêche le développement d'une
+infection.
+\end{remarque}
 
 % ═══════════════════════════════════════════════════════════════
 \section{L'essentiel à retenir}
 
 \begin{synthese}
-\textbf{Scissiparité.} Reproduction asexuée des bactéries : une cellule donne deux
-clones identiques.\\[4pt]
-\textbf{Croissance exponentielle.} $N=N_0\times2^n$, avec $n$ le nombre de
-divisions.\\[4pt]
-\textbf{Temps de génération.} $t_{\text{total}}=n\times t_{\text{génération}}$.\\[4pt]
-\textbf{Bourgeonnement.} Mode de reproduction asexuée des levures.\\[4pt]
-\textbf{Reproduction sexuée} (parfois possible chez les micro-organismes) : deux
-cellules, descendants génétiquement différents.\\[4pt]
-\textbf{Piège fréquent.} Doubler $n$ fois ne signifie pas multiplier par $2\times n$,
-mais par $2^n$ : la croissance est exponentielle, pas proportionnelle.
+\textbf{Microorganisme.} Être vivant microscopique : bactérie, virus, champignon
+microscopique, ou unicellulaire.\\[4pt]
+\textbf{Majorité inoffensive.} Beaucoup de microorganismes sont utiles ; une minorité
+seulement est pathogène.\\[4pt]
+\textbf{Contamination.} Pénétration d'un microorganisme pathogène dans
+l'organisme.\\[4pt]
+\textbf{Cinq voies.} Cutanée, respiratoire, digestive, sexuelle, sanguine.\\[4pt]
+\textbf{Infection.} Développement du microorganisme dans le corps, avec apparition
+possible de symptômes, après la contamination.\\[4pt]
+\textbf{Piège fréquent.} Contamination $\neq$ infection : on peut être contaminé sans
+présenter (encore) de symptômes.
 \end{synthese}
 
 % ═══════════════════════════════════════════════════════════════
 \section{Méthodes \& savoir-faire}
 
-\methode{Calculer une population après plusieurs divisions}
-Appliquer $N=N_0\times2^n$.
+\methode{Identifier une voie de contamination}
+Repérer, dans une situation donnée, comment le microorganisme est entré en contact
+avec l'organisme (plaie, air inhalé, aliment ingéré, rapport sexuel, sang) pour nommer
+la voie correspondante.
 \begin{exemple}
-$N_0=10$, $n=4$ : $N=10\times2^4=10\times16=160$.
+Une toux qui projette des gouttelettes contaminées correspond à une contamination par
+voie respiratoire.
 \end{exemple}
 
-\methode{Calculer un temps total de multiplication}
-Appliquer $t_{\text{total}}=n\times t_{\text{génération}}$.
+\methode{Distinguer contamination et infection}
+Vérifier si des symptômes sont déjà présents (infection) ou si seul le contact avec le
+microorganisme est mentionné (contamination).
 \begin{exemple}
-$n=4$ divisions, temps de génération $30$ min : $t_{\text{total}}=4\times30=120$ min.
-\end{exemple}
-
-\methode{Distinguer reproduction asexuée et reproduction sexuée}
-Compter le nombre d'individus impliqués : un seul $\to$ asexuée (clones) ; deux $\to$
-sexuée (diversité génétique).
-\begin{exemple}
-La scissiparité, n'impliquant qu'une seule bactérie, est une reproduction asexuée.
+Une personne qui a marché pieds nus sur une plaie ouverte est contaminée ; si la plaie
+s'infecte (rougeur, douleur, fièvre), on parle alors d'infection.
 \end{exemple}
 
 % ═══════════════════════════════════════════════════════════════
 \section{Exercices d'application}
 \begin{multicols}{2}
 
-\rubrique{Scissiparité}
-\exo{}\diff{1} Qu'est-ce que la scissiparité ?
+\rubrique{Les microorganismes}
+\exo{}\diff{1} Citer les quatre grands groupes de microorganismes.
 
-\exo{}\diff{2} Pourquoi les cellules filles issues de la scissiparité sont-elles des
-clones ?
+\exo{}\diff{2} Tous les microorganismes sont-ils dangereux ? Justifier.
 
-\rubrique{Croissance exponentielle}
-\exo{}\diff{2} Une bactérie ($N_0=1$) subit $n=4$ divisions. Calculer la population
-finale.
+\rubrique{La contamination}
+\exo{}\diff{1} Définir la contamination.
 
-\exo{}\diff{2} Une population de $N_0=10$ bactéries subit $n=3$ divisions. Calculer la
-population finale.
+\exo{}\diff{2} Citer les cinq principales voies de contamination.
 
-\exo{}\diff{2} Le temps de génération est de $20$ min. Calculer le temps nécessaire
-pour $n=3$ divisions.
+\exo{}\diff{2} Quelle est la différence entre contamination et infection ?
 
-\rubrique{Levures et reproduction sexuée}
-\exo{}\diff{1} Comment se reproduisent le plus souvent les levures ?
-
-\exo{}\diff{2} Quelle différence essentielle existe-t-il entre reproduction asexuée et
-reproduction sexuée ?
+\rubrique{Multiplication rapide}
+\exo{}\diff{2} Comment se reproduisent la plupart des bactéries ?
 
 % ═══════════════════════════════════════════════════════════════
 \end{multicols}
@@ -166,69 +170,46 @@ reproduction sexuée ?
 \section{Exercices d'entraînement}
 \begin{multicols}{2}
 
-\rubrique{Scissiparité et croissance}
-\exo{}\diff{2} Une population de $N_0=1$ bactérie subit $n=8$ divisions. Calculer la
-population finale.
+\rubrique{Les microorganismes}
+\exo{}\diff{3} Citer un exemple de microorganisme utile et un exemple de
+microorganisme pathogène.
 
-\exo{}\diff{3} Une population de bactéries passe de $N_0=1$ à $N=64$. Calculer le
-nombre de divisions $n$ subies.
+\rubrique{La contamination}
+\exo{}\diff{2} Un enfant se blesse en jouant avec un objet sale. Quelle voie de
+contamination est concernée ?
 
-\exo{}\diff{3} Le temps de génération est de $25$ min. Calculer le nombre de divisions
-possibles en $2$ h ($120$ min), puis la population atteinte à partir d'une bactérie.
+\exo{}\diff{3} Expliquer pourquoi il est possible d'être contaminé sans le savoir.
 
-\exo{}\diff{2} Pourquoi une bonne conservation des aliments au froid limite-t-elle la
-prolifération bactérienne ?
+\exo{}\diff{2} Pourquoi consommer de l'eau non traitée présente-t-il un risque de
+contamination ?
 
-\rubrique{Diversité des modes de reproduction}
-\exo{}\diff{3} Pourquoi la reproduction asexuée est-elle avantageuse pour coloniser
-rapidement un milieu favorable ?
+\rubrique{Multiplication rapide}
+\exo{}\diff{3} Expliquer en quoi la multiplication rapide des bactéries justifie les
+gestes d'hygiène quotidiens.
 
-\exo{}\diff{3} Pourquoi la reproduction sexuée, bien que plus lente, peut-elle être
-avantageuse pour une espèce face à un changement de son environnement ?
-
-\exo{}\diff{2} Le bourgeonnement des levures est-il une reproduction sexuée ou
-asexuée ? Justifier.
-
-\exo{}\diff{3} Expliquer, en une phrase, pourquoi une infection bactérienne non traitée
-peut s'aggraver très rapidement.
+\exo{}\diff{2} Pourquoi conserver les aliments au froid limite-t-il le risque
+d'infection alimentaire ?
 
 % ═══════════════════════════════════════════════════════════════
 \end{multicols}
 
 \section{Sujets type BEPC}
 
-\sujetbac[La scissiparité et la croissance bactérienne]
+\sujetbac[Les microorganismes de l'environnement]
 \begin{enumerate}[label=\arabic*)]
-\item Définis la scissiparité.
-\item Pourquoi les cellules filles obtenues sont-elles génétiquement identiques à la
-cellule mère ?
-\item Une population initiale de $N_0=1$ bactérie subit $n=6$ divisions. Calcule la
-population finale.
-\item Explique pourquoi une bonne hygiène limite le développement d'une infection
-bactérienne.
+\item Définis un microorganisme.
+\item Cite les quatre grands groupes de microorganismes.
+\item Tous les microorganismes sont-ils pathogènes ? Justifie avec un exemple.
+\item Où peut-on trouver des microorganismes dans notre environnement quotidien ?
 \end{enumerate}
 
-\sujetbac[Temps de génération et calculs]
+\sujetbac[La contamination]
 \begin{enumerate}[label=\arabic*)]
-\item Donne la formule reliant la population $N$, la population initiale $N_0$ et le
-nombre de divisions $n$.
-\item Une bactérie a un temps de génération de $30$ min. Calcule le temps nécessaire
-pour $4$ divisions.
-\item Calcule la population obtenue après ces $4$ divisions, à partir d'une seule
-bactérie.
-\item Pourquoi dit-on que cette croissance est « exponentielle » plutôt que
-« proportionnelle » ?
-\end{enumerate}
-
-\sujetbac[Modes de reproduction des micro-organismes]
-\begin{enumerate}[label=\arabic*)]
-\item Comment se reproduisent le plus souvent les levures ?
-\item Dans quelles circonstances les levures peuvent-elles avoir recours à une
-reproduction sexuée ?
-\item Complète le tableau comparatif : nombre d'individus impliqués, type de
-descendants, pour la reproduction asexuée et la reproduction sexuée.
-\item Quel est l'avantage principal de la reproduction sexuée par rapport à la
-reproduction asexuée ?
+\item Définis la contamination.
+\item Cite les cinq voies de contamination possibles.
+\item Explique la différence entre contamination et infection.
+\item Propose un geste d'hygiène adapté à chacune de deux voies de contamination de
+ton choix.
 \end{enumerate}
 
 % ═══════════════════════════════════════════════════════════════
@@ -236,81 +217,65 @@ reproduction asexuée ?
 \begin{multicols}{2}
 
 \corrige{de l'exercice 1}
-La division d'une bactérie en deux cellules filles identiques.
+Bactéries, virus, champignons microscopiques, unicellulaires.
 
 \corrige{de l'exercice 2}
-Car elles proviennent d'une seule cellule mère, sans mélange de matériel génétique avec
-un autre individu.
+Non, la majorité sont inoffensifs et certains sont même utiles (levures de
+boulangerie, par exemple) ; seule une minorité est pathogène.
 
 \corrige{de l'exercice 3}
-$N=1\times2^4=16$.
+La pénétration d'un microorganisme pathogène dans l'organisme.
 
 \corrige{de l'exercice 4}
-$N=10\times2^3=80$.
+Voie cutanée, voie respiratoire, voie digestive, voie sexuelle, voie sanguine.
 
 \corrige{de l'exercice 5}
-$t=3\times20=60$ min.
+La contamination est l'entrée du microorganisme dans le corps ; l'infection est son
+développement, avec apparition possible de symptômes.
 
 \corrige{de l'exercice 6}
-Par bourgeonnement.
+Par scissiparité (division en deux cellules filles identiques).
 
 \corrige{de l'exercice 7}
-La reproduction asexuée n'implique qu'un seul individu et produit des clones ; la
-reproduction sexuée implique deux individus et produit des descendants génétiquement
-différents.
+Utile : une levure de boulangerie. Pathogène : le bacille de la tuberculose.
 
 \corrige{de l'exercice 8}
-$N=1\times2^8=256$.
+La voie cutanée, par la plaie provoquée par l'objet sale.
 
 \corrige{de l'exercice 9}
-$64=2^n\Rightarrow n=6$ (car $2^6=64$).
+Parce que la contamination précède l'infection : le microorganisme peut être présent
+dans l'organisme pendant une période d'incubation, avant que des symptômes
+n'apparaissent.
 
 \corrige{de l'exercice 10}
-$n=120\div25=4{,}8$, soit $4$ divisions complètes possibles ; $N=1\times2^4=16$
-bactéries.
+Parce que l'eau non traitée peut contenir des microorganismes pathogènes qui pénètrent
+alors dans l'organisme par voie digestive lors de la consommation.
 
 \corrige{de l'exercice 11}
-Car le froid ralentit fortement le métabolisme et donc la division des bactéries,
-augmentant leur temps de génération.
+Parce que limiter le nombre de microorganismes présents au départ (mains propres,
+surfaces désinfectées) ralentit ou empêche leur multiplication rapide et donc le
+développement d'une infection.
 
 \corrige{de l'exercice 12}
-Car elle est très rapide et ne nécessite qu'un seul individu : une seule cellule peut
-suffire à occuper rapidement un milieu favorable.
-
-\corrige{de l'exercice 13}
-Car elle génère de la diversité génétique entre les descendants, ce qui augmente les
-chances qu'au moins certains individus soient adaptés à un environnement modifié.
-
-\corrige{de l'exercice 14}
-Une reproduction asexuée, car elle n'implique qu'un seul individu (la cellule mère).
-
-\corrige{de l'exercice 15}
-Car la population bactérienne croît de façon exponentielle : elle double à chaque
-division, ce qui produit très rapidement un grand nombre de bactéries.
+Parce que le froid ralentit fortement la multiplication des bactéries présentes dans
+l'aliment, retardant le moment où leur nombre devient suffisant pour provoquer une
+infection.
 
 \corrige{du sujet 1}
-1) La division d'une bactérie en deux cellules filles identiques.\\
-2) Car elles proviennent d'une seule cellule mère, sans apport génétique d'un autre
-individu.\\
-3) $N=1\times2^6=64$.\\
-4) Car elle réduit le nombre initial de bactéries présentes, ralentissant d'autant la
-croissance exponentielle de la population.
+1) Un être vivant microscopique, invisible à l'œil nu.\\
+2) Bactéries, virus, champignons microscopiques, unicellulaires.\\
+3) Non : par exemple, les levures de boulangerie sont utiles et inoffensives, alors
+que le bacille de la tuberculose est pathogène.\\
+4) Dans l'air, l'eau, le sol, les aliments, et sur ou dans le corps humain.
 
 \corrige{du sujet 2}
-1) $N=N_0\times2^n$.\\
-2) $t=4\times30=120$ min.\\
-3) $N=1\times2^4=16$.\\
-4) Car la population est multipliée par $2$ à chaque division (multiplication
-répétée), et non augmentée d'une quantité fixe à chaque étape (ce qui serait
-proportionnel).
-
-\corrige{du sujet 3}
-1) Par bourgeonnement.\\
-2) En cas de stress ou de manque de nutriments.\\
-3) Asexuée : un individu, descendants identiques (clones). Sexuée : deux individus,
-descendants génétiquement différents.\\
-4) Elle génère de la diversité génétique, utile pour l'adaptation de l'espèce face aux
-changements de l'environnement.
+1) La pénétration d'un microorganisme pathogène dans l'organisme.\\
+2) Voie cutanée, voie respiratoire, voie digestive, voie sexuelle, voie sanguine.\\
+3) La contamination est l'entrée du microorganisme dans le corps ; l'infection est son
+développement effectif, avec apparition possible de symptômes, après un certain
+temps.\\
+4) Par exemple : le lavage des mains pour la voie cutanée/digestive ; le port du
+préservatif pour la voie sexuelle.
 
 \end{multicols}
 \exercicesBanner
