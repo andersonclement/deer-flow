@@ -1,1 +1,288 @@
 \chapter{Les chromosomes, support de l'information génétique}
+
+\noindent\textit{Chaque cellule de notre corps contient, dans son noyau, l'ensemble de
+l'information nécessaire à notre développement. Cette information est portée par des
+structures appelées chromosomes. Leur nombre et leur organisation, observables au
+microscope, permettent de détecter certaines anomalies dès avant la naissance.}
+\vspace{8pt}
+
+\connecteBanner
+
+\section{Les chromosomes, structures du noyau cellulaire}
+
+\begin{definition}[Chromosome]
+Un \textbf{chromosome} est une structure filamenteuse, visible au microscope pendant la
+division cellulaire, présente dans le \textbf{noyau} de chaque cellule. Il est constitué
+d'\textbf{ADN} (acide désoxyribonucléique), la molécule qui porte l'information
+génétique.
+\end{definition}
+
+\begin{propriete}[Chromosome dupliqué]
+Avant une division cellulaire, chaque chromosome se duplique : il est alors formé de
+deux \textbf{chromatides} identiques, reliées en un point appelé
+\textbf{centromère}.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.9]
+\draw[onbo,line width=2.2pt,line cap=round] (0,0) -- (0,1.6);
+\draw[onbo,line width=2.2pt,line cap=round] (0.5,0) -- (0.5,1.6);
+\draw[onbmuted,line width=1pt] (-0.15,0.8) -- (0.65,0.8);
+\node[left,font=\scriptsize] at (-0.2,1.4) {chromatide 1};
+\node[right,font=\scriptsize] at (0.7,1.4) {chromatide 2};
+\node[below,font=\scriptsize] at (0.25,-0.15) {centromère};
+\draw[onbmuted,->] (0.25,-0.05) -- (0.25,0.75);
+\end{tikzpicture}
+\fig{Figure — Un chromosome dupliqué : deux chromatides identiques reliées par le
+centromère.}
+\end{illus}
+
+\section{Le caryotype humain}
+
+\begin{definition}[Caryotype]
+Le \textbf{caryotype} est la représentation ordonnée de l'ensemble des chromosomes
+d'une cellule, classés par paires de taille décroissante. Il est établi à partir d'une
+cellule en division (prélèvement sanguin ou, avant la naissance, prélèvement de
+liquide amniotique).
+\end{definition}
+
+\begin{propriete}[Caryotype humain normal]
+Une cellule humaine normale contient \textbf{46 chromosomes}, soit \textbf{23 paires} :
+\begin{itemize}
+\item \textbf{22 paires d'autosomes}, identiques chez l'homme et chez la femme ;
+\item \textbf{1 paire de chromosomes sexuels} : \textbf{XX} chez la femme, \textbf{XY}
+chez l'homme.
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.62]
+\foreach \i in {1,...,11}{
+  \pgfmathsetmacro{\x}{mod(\i-1,6)*1.4}
+  \pgfmathsetmacro{\y}{-int((\i-1)/6)*1.9}
+  \draw[onbo,line width=1.6pt] (\x,\y) -- (\x,\y+1.1);
+  \draw[onbo,line width=1.6pt] (\x+0.3,\y) -- (\x+0.3,\y+1.1);
+  \node[below,font=\tiny] at (\x+0.15,\y-0.15) {\i};
+}
+\draw[onbink,line width=1.6pt] (7.7,-1.9) -- (7.7,-0.8);
+\draw[onbink,line width=1.6pt] (8.0,-1.9) -- (8.0,-0.8);
+\node[below,font=\tiny] at (7.85,-2.05) {XX};
+\end{tikzpicture}
+\fig{Figure — Représentation simplifiée d'un caryotype (extrait) : 22 paires
+d'autosomes numérotées + 1 paire de chromosomes sexuels (ici XX).}
+\end{illus}
+
+\begin{exemple}
+Un caryotype montrant 44 autosomes + XY (soit 46 chromosomes au total) est celui d'un
+homme. Un caryotype montrant 44 autosomes + XX est celui d'une femme.
+\end{exemple}
+
+\section{Les anomalies chromosomiques}
+
+\begin{definition}[Anomalie chromosomique]
+Une \textbf{anomalie chromosomique} est une modification du nombre ou de la structure
+des chromosomes, visible sur le caryotype. Elle survient accidentellement lors de la
+formation des cellules reproductrices ou lors de la fécondation.
+\end{definition}
+
+\begin{propriete}[La trisomie 21]
+La \textbf{trisomie 21} est l'anomalie chromosomique numérique la plus fréquente : la
+paire de chromosomes n°21 est remplacée par \textbf{trois} chromosomes 21 au lieu de
+deux. Le caryotype compte alors \textbf{47 chromosomes} au lieu de 46. Elle entraîne un
+retard du développement intellectuel et des traits physiques caractéristiques.
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\foreach \i/\c in {0/onbo,0.35/onbo,0.7/onbo}{
+  \draw[\c,line width=1.6pt] (\i,0) -- (\i,1.1);
+}
+\node[below,font=\scriptsize] at (0.35,-0.15) {3 chromosomes 21};
+\draw[onbmuted,dashed] (-0.3,-0.5) -- (-0.3,1.4);
+\draw[onbmuted,dashed] (1.1,-0.5) -- (1.1,1.4);
+\end{tikzpicture}
+\fig{Figure — Trisomie 21 : trois exemplaires du chromosome 21 au lieu de deux (47
+chromosomes au total).}
+\end{illus}
+
+\begin{exemple}
+Le diagnostic prénatal (échographie, dosages sanguins, et si besoin analyse du
+caryotype à partir du liquide amniotique) permet de détecter une trisomie 21 avant la
+naissance.
+\end{exemple}
+
+\begin{remarque}
+Piège fréquent : la trisomie 21 touche une seule paire de chromosomes (le n°21) ; les
+44 autres chromosomes restent en nombre normal. Le caryotype complet compte donc 47
+chromosomes, et non 48 ou 45.
+\end{remarque}
+
+% ═══════════════════════════════════════════════════════════════
+\section{L'essentiel à retenir}
+
+\begin{synthese}
+\textbf{Chromosome.} Structure du noyau, constituée d'ADN, visible pendant la division
+cellulaire.\\[4pt]
+\textbf{Chromosome dupliqué.} Deux chromatides identiques reliées par le
+centromère.\\[4pt]
+\textbf{Caryotype.} Classement ordonné des chromosomes d'une cellule.\\[4pt]
+\textbf{Caryotype humain normal.} 46 chromosomes = 23 paires (22 paires d'autosomes +
+1 paire de chromosomes sexuels XX ou XY).\\[4pt]
+\textbf{Trisomie 21.} Anomalie chromosomique numérique : 3 chromosomes 21 au lieu de 2,
+soit 47 chromosomes au total.\\[4pt]
+\textbf{Piège fréquent.} Seule la paire concernée est en surnombre ; les autres
+chromosomes restent normaux.
+\end{synthese}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Méthodes \& savoir-faire}
+
+\methode{Lire un caryotype}
+Compter le nombre total de chromosomes, identifier les paires d'autosomes (numérotées)
+et la paire de chromosomes sexuels (XX ou XY) pour déterminer le sexe et détecter une
+éventuelle anomalie.
+\begin{exemple}
+Un caryotype avec 44 autosomes + XY compte 46 chromosomes : c'est un caryotype
+masculin normal.
+\end{exemple}
+
+\methode{Identifier une trisomie sur un caryotype}
+Chercher une paire représentée par \textbf{trois} chromosomes au lieu de deux ; le
+numéro de cette paire donne le nom de la trisomie.
+\begin{exemple}
+Trois chromosomes 21 au lieu de deux : il s'agit d'une trisomie 21, caryotype à 47
+chromosomes.
+\end{exemple}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Exercices d'application}
+\begin{multicols}{2}
+
+\rubrique{Le chromosome}
+\exo{}\diff{1} De quoi est constitué un chromosome ?
+
+\exo{}\diff{2} Qu'appelle-t-on centromère ?
+
+\rubrique{Le caryotype humain}
+\exo{}\diff{1} Combien de chromosomes possède une cellule humaine normale ?
+
+\exo{}\diff{2} Quelle paire de chromosomes détermine le sexe ?
+
+\exo{}\diff{2} Un caryotype montre 44 autosomes + XX. De quel sexe s'agit-il ?
+
+\rubrique{Anomalies chromosomiques}
+\exo{}\diff{1} Combien de chromosomes compte un caryotype trisomique 21 ?
+
+\exo{}\diff{2} Quelle paire de chromosomes est concernée par la trisomie 21 ?
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Exercices d'entraînement}
+\begin{multicols}{2}
+
+\rubrique{Le caryotype humain}
+\exo{}\diff{2} Expliquer pourquoi un caryotype est établi à partir d'une cellule en
+division et non d'une cellule au repos.
+
+\exo{}\diff{3} Un couple souhaite connaître le sexe de son futur enfant grâce à une
+analyse de caryotype. Expliquer sur quelle paire de chromosomes porte cette
+information.
+
+\rubrique{Anomalies chromosomiques}
+\exo{}\diff{3} Un caryotype présente 45 autosomes + 2 chromosomes 21 (soit 47
+chromosomes au total, un autosome supplémentaire ailleurs que la paire 21). Ce
+caryotype correspond-il à une trisomie 21 ? Justifier.
+
+\exo{}\diff{2} Pourquoi le diagnostic prénatal permet-il d'anticiper la prise en charge
+d'un enfant porteur de trisomie 21 ?
+
+\exo{}\diff{3} Un élève affirme que la trisomie 21 signifie qu'il manque un chromosome.
+Corriger cette affirmation.
+
+% ═══════════════════════════════════════════════════════════════
+\end{multicols}
+
+\section{Sujets type BEPC}
+
+\sujetbac[Le caryotype humain]
+\begin{enumerate}[label=\arabic*)]
+\item Définis le mot « caryotype ».
+\item Combien de chromosomes compte un caryotype humain normal ? Combien de paires
+cela représente-t-il ?
+\item Quelle paire de chromosomes permet de déterminer le sexe d'un individu ?
+\item Un caryotype comporte 44 autosomes + XY. De quel sexe s'agit-il ? Justifie.
+\end{enumerate}
+
+\sujetbac[La trisomie 21]
+\begin{enumerate}[label=\arabic*)]
+\item Définis une anomalie chromosomique.
+\item Décris la particularité du caryotype d'une personne porteuse de la trisomie 21.
+\item Combien de chromosomes compte ce caryotype au total ?
+\item Cite un moyen de détecter la trisomie 21 avant la naissance.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Corrigés}
+\begin{multicols}{2}
+
+\corrige{de l'exercice 1}
+D'ADN, organisé en une structure filamenteuse visible pendant la division cellulaire.
+
+\corrige{de l'exercice 2}
+Le point qui relie les deux chromatides d'un chromosome dupliqué.
+
+\corrige{de l'exercice 3}
+46 chromosomes.
+
+\corrige{de l'exercice 4}
+La paire de chromosomes sexuels (XX ou XY).
+
+\corrige{de l'exercice 5}
+C'est le caryotype d'une femme.
+
+\corrige{de l'exercice 6}
+47 chromosomes.
+
+\corrige{de l'exercice 7}
+La paire n°21.
+
+\corrige{de l'exercice 8}
+Car ce n'est que pendant la division cellulaire que les chromosomes, dupliqués et
+condensés, deviennent suffisamment visibles au microscope pour être comptés et
+classés ; au repos, l'ADN est trop diffus dans le noyau.
+
+\corrige{de l'exercice 9}
+Cette information porte sur la 23\textsuperscript{e} paire de chromosomes (les
+chromosomes sexuels) : XX pour une fille, XY pour un garçon.
+
+\corrige{de l'exercice 10}
+Non : dans une trisomie 21, c'est précisément la paire 21 qui compte trois
+exemplaires ; ici, c'est une autre paire d'autosomes qui est en surnombre, il ne s'agit
+donc pas d'une trisomie 21.
+
+\corrige{de l'exercice 11}
+Parce qu'il permet aux parents et à l'équipe médicale de se préparer et d'organiser,
+dès la naissance, un suivi médical et un accompagnement adaptés à l'enfant.
+
+\corrige{de l'exercice 12}
+C'est faux : la trisomie 21 correspond au contraire à un chromosome \textbf{en trop}
+(trois chromosomes 21 au lieu de deux), et non à un chromosome manquant.
+
+\corrige{du sujet 1}
+1) Le caryotype est la représentation ordonnée de l'ensemble des chromosomes d'une
+cellule, classés par paires.\\
+2) 46 chromosomes, soit 23 paires.\\
+3) La paire de chromosomes sexuels.\\
+4) C'est un homme : la paire sexuelle est XY.
+
+\corrige{du sujet 2}
+1) Une anomalie chromosomique est une modification du nombre ou de la structure des
+chromosomes.\\
+2) La paire de chromosomes 21 est représentée par trois chromosomes au lieu de deux.\\
+3) 47 chromosomes.\\
+4) Par exemple : une analyse du caryotype à partir d'un prélèvement de liquide
+amniotique.
+
+\end{multicols}
+\exercicesBanner
