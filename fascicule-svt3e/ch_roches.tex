@@ -1,173 +1,192 @@
-\chapter{Les roches : formation et cycle des roches}
+\chapter{Les roches sédimentaires}
 
-\noindent\textit{Granite, calcaire, marbre : les roches qui nous entourent ne se
-ressemblent pas, car elles ne se sont pas formées de la même façon. Ce chapitre présente
-les trois grandes familles de roches et le cycle qui les relie entre elles, sur des
-temps géologiques très longs.}
+\noindent\textit{Calcaire, grès, argile : les roches sédimentaires se forment à la
+surface de la Terre, par un long processus d'usure, de transport et de dépôt. Ce
+chapitre étudie leur formation, leurs différents types, et l'intérêt qu'elles
+représentent pour reconstituer l'histoire de notre planète.}
 \vspace{8pt}
 
 \connecteBanner
 
-\section{Les roches magmatiques}
+\section{La formation des roches sédimentaires}
 
-\begin{definition}[Roches magmatiques]
-Une \textbf{roche magmatique} (ou éruptive) se forme par \textbf{refroidissement et
-solidification du magma}. On en distingue deux types selon la vitesse de
-refroidissement.
+\begin{definition}[Roche sédimentaire]
+Une \textbf{roche sédimentaire} est une roche formée en surface, par
+\textbf{accumulation} de \textbf{sédiments} (débris de roches ou restes
+d'organismes), organisés en couches successives appelées \textbf{strates}.
 \end{definition}
 
-\begin{propriete}[Plutonique ou volcanique]
-Une roche \textbf{plutonique} se forme par refroidissement \textbf{lent}, en profondeur :
-les cristaux ont le temps de bien se former et sont \textbf{visibles à l'œil nu} (exemple :
-le granite). Une roche \textbf{volcanique} se forme par refroidissement \textbf{rapide},
-en surface (lave) : les cristaux sont \textbf{petits ou absents} (exemple : le basalte).
-\end{propriete}
-
-\section{Les roches sédimentaires}
-
-\begin{definition}[Roches sédimentaires]
-Une \textbf{roche sédimentaire} se forme par \textbf{accumulation}, puis
-\textbf{compaction et cimentation} de sédiments (débris de roches érodées, ou restes
-d'organismes), en \textbf{couches successives} appelées \textbf{strates}. Exemples : le
-calcaire, le grès, l'argile.
-\end{definition}
-
-\begin{propriete}[Altération et érosion]
-L'\textbf{altération} est la fragmentation progressive des roches en surface, sous l'effet
-de l'eau, du vent, ou des variations de température. L'\textbf{érosion} transporte
-ensuite ces fragments, qui se déposent en couches : c'est la \textbf{sédimentation}.
-\end{propriete}
-
-\section{Les roches métamorphiques}
-
-\begin{definition}[Roches métamorphiques]
-Une \textbf{roche métamorphique} se forme par \textbf{transformation} d'une roche
-préexistante, sous l'effet d'une forte \textbf{pression} et/ou d'une forte
-\textbf{température}, \textbf{sans fusion complète}. Exemples : le \textbf{gneiss}
-(à partir de granite), le \textbf{marbre} (à partir de calcaire), le schiste.
-\end{definition}
-
-\begin{illus}
-\begin{center}
-\small
-\begin{tabular}{lll}
-\toprule
-\textbf{Famille} & \textbf{Formation} & \textbf{Exemple} \\
-\midrule
-Magmatique plutonique & refroidissement lent, profondeur & granite \\
-Magmatique volcanique & refroidissement rapide, surface & basalte \\
-Sédimentaire & accumulation, compaction & calcaire \\
-Métamorphique & pression / température & marbre \\
-\bottomrule
-\end{tabular}
-\end{center}
-\fig{Figure — Les trois familles de roches, leur mode de formation, et un exemple.}
-\end{illus}
-
-\section{Le cycle des roches}
-
-\begin{propriete}[Un cycle sans fin]
-Sur des temps géologiques très longs, les trois familles de roches se transforment les
-unes dans les autres, formant un \textbf{cycle} : les roches de surface s'altèrent en
-sédiments, qui forment des roches sédimentaires ; enfouies profondément, celles-ci
-subissent pression et température et deviennent des roches métamorphiques ; si elles
-fondent complètement, elles forment un magma, qui en refroidissant redonne des roches
-magmatiques.
+\begin{propriete}[Quatre étapes de formation]
+\begin{itemize}
+\item \textbf{altération} : les roches en surface se fragmentent progressivement,
+sous l'effet de l'eau, du vent et des variations de température ;
+\item \textbf{transport} : les fragments obtenus (les sédiments) sont déplacés par
+l'eau, le vent ou la glace ;
+\item \textbf{sédimentation} : les sédiments se déposent, en couches successives,
+dans un bassin (mer, lac, delta\dots) ;
+\item \textbf{diagenèse} : sous le poids des couches qui s'accumulent au-dessus,
+les sédiments sont \textbf{compactés} (l'eau est expulsée) puis \textbf{cimentés}
+(des minéraux précipitent entre les grains), ce qui les transforme en roche solide.
+\end{itemize}
 \end{propriete}
 
 \begin{illus}
-\begin{tikzpicture}[scale=0.85]
-\node[font=\small,align=center] (M) at (0,2.6) {\textbf{Roches}\\\textbf{magmatiques}};
-\node[font=\small,align=center] (S) at (-3.2,-1.3) {\textbf{Roches}\\\textbf{sédimentaires}};
-\node[font=\small,align=center] (Met) at (3.2,-1.3) {\textbf{Roches}\\\textbf{métamorphiques}};
-\draw[->,onbo,line width=1.1pt] (M) to[bend left=15] (S);
-\node[font=\scriptsize,onbo] at (-2.1,1.2) {altération, érosion};
-\draw[->,onbgreen,line width=1.1pt] (S) to[bend left=15] (Met);
-\node[font=\scriptsize,onbgreen] at (0,-2.3) {pression, température};
-\draw[->,onbo2,line width=1.1pt] (Met) to[bend left=15] (M);
-\node[font=\scriptsize,onbo2] at (2.1,1.2) {fusion, refroidissement};
+\begin{tikzpicture}[scale=0.8]
+\foreach \x/\c/\lbl/\num in {0/onbo/{Altération}/1, 3.1/onbo2/{Transport}/2,
+  6.2/onbgreen/{Sédimentation}/3, 9.3/onbink/{Diagenèse}/4}{
+  \draw[\c,fill=\c,fill opacity=0.15,line width=1.2pt] (\x,0) circle (0.75);
+  \node[font=\small] at (\x,0) {\num};
+  \node[below,font=\scriptsize,align=center] at (\x,-1) {\lbl};
+}
+\draw[->,onbmuted,line width=1pt] (0.85,0) -- (2.25,0);
+\draw[->,onbmuted,line width=1pt] (3.95,0) -- (5.35,0);
+\draw[->,onbmuted,line width=1pt] (7.05,0) -- (8.45,0);
 \end{tikzpicture}
-\fig{Figure — Le cycle des roches : les trois familles se transforment les unes dans les autres.}
+\fig{Figure — Les quatre étapes de formation d'une roche sédimentaire.}
 \end{illus}
 
 \begin{exemple}
-Un granite, altéré en surface, produit des sédiments qui, compactés, forment une roche
-sédimentaire. Enfouie et soumise à une forte pression, celle-ci peut devenir une roche
-métamorphique. Si elle fond entièrement, elle redonne un magma, à l'origine de nouvelles
-roches magmatiques.
+Un grain de sable, issu de l'altération d'un granite, peut être transporté par un
+fleuve jusqu'à la mer, s'y déposer avec d'autres grains, puis, des milliers d'années
+plus tard, être compacté et cimenté en une roche : le grès.
 \end{exemple}
+
+\section{Les types de roches sédimentaires}
+
+\begin{propriete}[Deux grandes origines]
+\begin{itemize}
+\item les roches \textbf{détritiques}, formées de débris de roches préexistantes
+(exemples : le grès, l'argile) ;
+\item les roches \textbf{biogènes} (ou organiques), formées à partir de restes
+d'organismes vivants (exemples : le calcaire coquillier, la craie, le charbon).
+\end{itemize}
+\end{propriete}
+
+\begin{definition}[Principe de superposition]
+Dans une série de strates non perturbée, la couche située le plus \textbf{bas} est
+la plus \textbf{ancienne}, et la couche la plus \textbf{haute} est la plus
+\textbf{récente} : c'est le \textbf{principe de superposition}.
+\end{definition}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\foreach \y/\c/\age in {0/onbo!35/{strate la plus ancienne}, 0.7/onbo2!35/{},
+  1.4/onbgreen!35/{}, 2.1/onbink!35/{strate la plus récente}}{
+  \draw[onbline,fill=\c,line width=0.8pt] (0,\y) rectangle (5,\y+0.7);
+}
+\node[left,font=\scriptsize,align=right] at (-0.15,0.35) {ancienne};
+\node[left,font=\scriptsize,align=right] at (-0.15,2.45) {récente};
+\draw[->,onbmuted,line width=1pt] (-0.15,0) -- (-0.15,2.8);
+\end{tikzpicture}
+\fig{Figure — Principe de superposition : la strate la plus basse est la plus
+ancienne.}
+\end{illus}
+
+\begin{exemple}
+Le calcaire coquillier, formé d'une accumulation de coquilles d'organismes marins, est
+une roche sédimentaire biogène.
+\end{exemple}
+
+\section{Les intérêts des roches sédimentaires}
+
+\begin{propriete}[Reconstituer les milieux anciens]
+Les strates sédimentaires renferment souvent des \textbf{fossiles}, restes ou traces
+d'êtres vivants du passé. En étudiant les fossiles et le type de sédiment d'une
+strate, on peut reconstituer le \textbf{milieu} (marin, désertique, forestier\dots)
+et parfois le \textbf{climat} qui existaient au moment du dépôt.
+\end{propriete}
+
+\begin{exemple}
+La découverte de fossiles marins dans une strate, même loin de toute mer actuelle,
+prouve que cette région était recouverte par la mer à l'époque du dépôt de cette
+strate.
+\end{exemple}
+
+\begin{propriete}[Des usages nombreux]
+\begin{itemize}
+\item \textbf{matériaux de construction} : calcaire et grès taillés en pierres, ou
+utilisés dans le ciment ;
+\item \textbf{argile} : fabrication de briques et de poteries ;
+\item \textbf{craie} : fabrication de peintures, de dentifrice ;
+\item \textbf{charbon} : ressource énergétique, issue de la transformation
+d'anciennes forêts enfouies.
+\end{itemize}
+\end{propriete}
+
+\begin{remarque}
+Piège fréquent : toutes les roches sédimentaires ne se forment pas de la même façon
+(débris ou organismes), mais elles partagent toutes le même processus en quatre
+étapes : altération, transport, sédimentation, diagenèse.
+\end{remarque}
 
 % ═══════════════════════════════════════════════════════════════
 \section{L'essentiel à retenir}
 
 \begin{synthese}
-\textbf{Roches magmatiques.} Refroidissement du magma ; plutonique (lent, profondeur,
-cristaux visibles) ou volcanique (rapide, surface, petits cristaux).\\[4pt]
-\textbf{Roches sédimentaires.} Accumulation, compaction, cimentation de sédiments en
-strates.\\[4pt]
-\textbf{Roches métamorphiques.} Transformation sous pression/température, sans fusion
-complète.\\[4pt]
-\textbf{Cycle des roches.} Altération/érosion $\to$ sédimentaire $\to$
-pression/température $\to$ métamorphique $\to$ fusion $\to$ magmatique $\to$ \dots\\[4pt]
-\textbf{Piège fréquent.} Une roche métamorphique ne fond \textbf{pas} : c'est la
-transformation \textbf{sans fusion complète} qui la caractérise ; en cas de fusion
-complète, on obtient un magma, pas une roche métamorphique.
+\textbf{Roche sédimentaire.} Formée par accumulation de sédiments en strates.\\[4pt]
+\textbf{Quatre étapes.} Altération $\to$ transport $\to$ sédimentation $\to$
+diagenèse (compaction + cimentation).\\[4pt]
+\textbf{Deux origines.} Détritique (débris de roches) ou biogène (restes
+d'organismes).\\[4pt]
+\textbf{Principe de superposition.} La strate la plus basse est la plus
+ancienne.\\[4pt]
+\textbf{Intérêts.} Reconstitution des milieux anciens grâce aux fossiles ; usages
+variés (construction, briques, énergie\dots).\\[4pt]
+\textbf{Piège fréquent.} Ne pas confondre l'origine du sédiment (détritique ou
+biogène) avec le processus de formation, toujours en quatre étapes.
 \end{synthese}
 
 % ═══════════════════════════════════════════════════════════════
 \section{Méthodes \& savoir-faire}
 
-\methode{Identifier une famille de roche à partir de sa formation}
-Repérer l'origine : magma refroidi (magmatique), sédiments accumulés (sédimentaire),
-transformation sous pression/température (métamorphique).
+\methode{Retracer les étapes de formation d'une roche sédimentaire}
+Suivre l'ordre : altération, transport, sédimentation, diagenèse.
 \begin{exemple}
-Une roche formée par accumulation de coquillages est une roche sédimentaire.
+Un sédiment ne devient une roche solide qu'après la diagenèse (compaction et
+cimentation), pas dès son dépôt.
 \end{exemple}
 
-\methode{Distinguer roche plutonique et roche volcanique}
-Observer la taille des cristaux : gros cristaux visibles (refroidissement lent,
-plutonique) ; petits cristaux ou absence de cristaux (refroidissement rapide,
-volcanique).
+\methode{Appliquer le principe de superposition}
+Dans une série de strates non perturbée, comparer les positions : la strate la plus
+basse est la plus ancienne.
 \begin{exemple}
-Le granite (cristaux visibles) est plutonique ; le basalte (cristaux invisibles) est
-volcanique.
+Dans une falaise présentant plusieurs strates, la strate visible tout en bas s'est
+déposée en premier.
 \end{exemple}
 
-\methode{Suivre une roche dans le cycle des roches}
-Identifier l'étape (altération, sédimentation, enfouissement, fusion, refroidissement) et
-la famille de roche qui en résulte.
+\methode{Utiliser un fossile pour reconstituer un milieu ancien}
+Identifier le type d'organisme fossilisé (marin, terrestre\dots) pour en déduire le
+milieu qui existait au moment du dépôt de la strate.
 \begin{exemple}
-Un calcaire enfoui et soumis à une forte pression peut se transformer en marbre (roche
-métamorphique).
+Un fossile de coquillage marin dans une strate indique un ancien milieu marin à cet
+endroit.
 \end{exemple}
 
 % ═══════════════════════════════════════════════════════════════
 \section{Exercices d'application}
 \begin{multicols}{2}
 
-\rubrique{Roches magmatiques}
-\exo{}\diff{1} Comment se forme une roche magmatique ?
+\rubrique{Formation}
+\exo{}\diff{1} Citer, dans l'ordre, les quatre étapes de formation d'une roche
+sédimentaire.
 
-\exo{}\diff{2} Quelle est la différence entre une roche plutonique et une roche
-volcanique ?
+\exo{}\diff{2} Qu'est-ce que la diagenèse ?
 
-\exo{}\diff{1} Le granite est-il une roche plutonique ou volcanique ?
+\exo{}\diff{1} Qu'est-ce qu'un sédiment ?
 
-\rubrique{Roches sédimentaires}
-\exo{}\diff{2} Comment se forme une roche sédimentaire ?
+\rubrique{Types de roches sédimentaires}
+\exo{}\diff{2} Quelle est la différence entre une roche détritique et une roche
+biogène ?
 
-\exo{}\diff{2} Quelle est la différence entre altération et érosion ?
+\exo{}\diff{1} Le calcaire coquillier est-il détritique ou biogène ?
 
-\rubrique{Roches métamorphiques}
-\exo{}\diff{1} Comment se forme une roche métamorphique ?
+\rubrique{Superposition et fossiles}
+\exo{}\diff{1} Énoncer le principe de superposition.
 
-\exo{}\diff{2} À partir de quelle roche se forme le marbre ?
+\exo{}\diff{2} Qu'est-ce qu'un fossile ?
 
-\rubrique{Cycle des roches}
-\exo{}\diff{2} Citer, dans l'ordre, les transformations qui font passer d'une roche
-magmatique à une roche sédimentaire.
-
-\exo{}\diff{2} Que devient une roche métamorphique si elle fond entièrement ?
+\rubrique{Intérêts}
+\exo{}\diff{2} Citer un usage du calcaire.
 
 % ═══════════════════════════════════════════════════════════════
 \end{multicols}
@@ -175,62 +194,49 @@ magmatique à une roche sédimentaire.
 \section{Exercices d'entraînement}
 \begin{multicols}{2}
 
-\rubrique{Roches magmatiques}
-\exo{}\diff{3} Pourquoi les cristaux d'une roche plutonique sont-ils plus gros que ceux
-d'une roche volcanique ?
+\rubrique{Formation}
+\exo{}\diff{3} Expliquer pourquoi un sédiment fraîchement déposé n'est pas encore
+une roche.
 
-\rubrique{Roches sédimentaires}
-\exo{}\diff{3} Pourquoi les roches sédimentaires se présentent-elles souvent en couches
-(strates) bien visibles ?
+\exo{}\diff{2} Citer deux agents responsables du transport des sédiments.
 
-\exo{}\diff{2} Citer deux agents responsables de l'altération des roches en surface.
+\rubrique{Types de roches sédimentaires}
+\exo{}\diff{3} Le charbon est-il une roche détritique ou biogène ? Justifier.
 
-\rubrique{Roches métamorphiques}
-\exo{}\diff{3} Pourquoi dit-on qu'une roche métamorphique se forme « sans fusion
-complète » ? Que se passerait-il si la fusion était complète ?
+\rubrique{Superposition et fossiles}
+\exo{}\diff{3} Une falaise présente, du bas vers le haut, les strates A, B puis C.
+Classer ces strates de la plus ancienne à la plus récente.
 
-\rubrique{Cycle des roches}
-\exo{}\diff{3} Expliquer, en une phrase, pourquoi le cycle des roches n'a pas de point
-de départ ni de fin.
+\exo{}\diff{3} Expliquer comment la découverte d'un fossile marin dans une strate,
+en plein désert actuel, renseigne sur le passé de cette région.
 
-\exo{}\diff{2} Un calcaire (roche sédimentaire) est enfoui profondément et soumis à une
-forte pression. Que peut-il devenir ?
+\rubrique{Intérêts}
+\exo{}\diff{2} Pourquoi l'étude des roches sédimentaires intéresse-t-elle les
+paléontologues (spécialistes des espèces disparues) ?
 
-\exo{}\diff{3} Un granite en surface s'altère lentement. Décrire les étapes qui peuvent
-le mener à devenir, des millions d'années plus tard, une roche sédimentaire.
-
-\exo{}\diff{2} Pourquoi le cycle des roches se déroule-t-il sur des temps géologiques
-très longs plutôt que sur quelques années ?
+\exo{}\diff{3} Expliquer pourquoi le charbon, roche sédimentaire biogène, est
+considéré comme une ressource énergétique.
 
 % ═══════════════════════════════════════════════════════════════
 \end{multicols}
 
 \section{Sujets type BEPC}
 
-\sujetbac[Les trois familles de roches]
+\sujetbac[Formation des roches sédimentaires]
 \begin{enumerate}[label=\arabic*)]
-\item Cite les trois grandes familles de roches.
-\item Comment se forme une roche magmatique plutonique ? Donne un exemple.
-\item Comment se forme une roche sédimentaire ? Donne un exemple.
-\item Comment se forme une roche métamorphique ? Donne un exemple.
+\item Cite, dans l'ordre, les quatre étapes de formation d'une roche sédimentaire.
+\item Que se passe-t-il lors de la diagenèse ?
+\item Cite un exemple de roche détritique et un exemple de roche biogène.
+\item Donne un exemple concret illustrant les quatre étapes, du grain de sable à la
+roche.
 \end{enumerate}
 
-\sujetbac[Altération et sédimentation]
+\sujetbac[Strates, fossiles et usages]
 \begin{enumerate}[label=\arabic*)]
-\item Qu'est-ce que l'altération d'une roche ?
-\item Qu'est-ce que l'érosion ?
-\item Comment les sédiments se transforment-ils en roche sédimentaire ?
-\item Cite deux agents responsables de l'altération des roches.
-\end{enumerate}
-
-\sujetbac[Le cycle des roches]
-\begin{enumerate}[label=\arabic*)]
-\item Décris, dans l'ordre, les transformations qui relient les trois familles de
-roches dans le cycle des roches.
-\item Que devient une roche sédimentaire soumise à une forte pression et température en
-profondeur ?
-\item Que devient une roche métamorphique si elle fond entièrement ?
-\item Pourquoi peut-on dire que ce cycle est sans fin ?
+\item Énonce le principe de superposition.
+\item Qu'est-ce qu'un fossile ?
+\item Explique comment un fossile permet de reconstituer un milieu ancien.
+\item Cite deux usages des roches sédimentaires.
 \end{enumerate}
 
 % ═══════════════════════════════════════════════════════════════
@@ -238,86 +244,73 @@ profondeur ?
 \begin{multicols}{2}
 
 \corrige{de l'exercice 1}
-Par refroidissement et solidification du magma.
+Altération, transport, sédimentation, diagenèse.
 
 \corrige{de l'exercice 2}
-La roche plutonique se forme par refroidissement lent en profondeur (gros cristaux) ; la
-roche volcanique se forme par refroidissement rapide en surface (petits cristaux).
+La transformation des sédiments meubles en roche solide, par compaction et
+cimentation.
 
 \corrige{de l'exercice 3}
-Plutonique.
+Un débris de roche ou un reste d'organisme, issu de l'altération et du transport.
 
 \corrige{de l'exercice 4}
-Par accumulation, compaction et cimentation de sédiments.
+La roche détritique est formée de débris de roches ; la roche biogène est formée de
+restes d'organismes.
 
 \corrige{de l'exercice 5}
-L'altération fragmente la roche sur place ; l'érosion transporte ensuite les fragments.
+Biogène.
 
 \corrige{de l'exercice 6}
-Par transformation d'une roche préexistante sous pression et/ou température, sans fusion
-complète.
+Dans une série de strates non perturbée, la strate la plus basse est la plus
+ancienne.
 
 \corrige{de l'exercice 7}
-Le calcaire.
+Un reste ou une trace d'être vivant conservé dans une roche sédimentaire.
 
 \corrige{de l'exercice 8}
-Altération, érosion, puis sédimentation (accumulation et compaction des sédiments).
+Par exemple : matériau de construction (pierre de taille) ou composant du ciment.
 
 \corrige{de l'exercice 9}
-Elle forme un magma, à l'origine de nouvelles roches magmatiques.
+Car il n'a pas encore subi la diagenèse (compaction et cimentation) : il reste meuble
+et non consolidé.
 
 \corrige{de l'exercice 10}
-Car le refroidissement lent en profondeur laisse le temps aux cristaux de bien se
-former ; le refroidissement rapide en surface ne le permet pas.
+Par exemple : l'eau et le vent.
 
 \corrige{de l'exercice 11}
-Car les sédiments se déposent progressivement, couche après couche, au fil du temps.
+Biogène, car il provient de la transformation d'anciennes forêts (restes
+d'organismes végétaux).
 
 \corrige{de l'exercice 12}
-Par exemple : l'eau et le vent (ou les variations de température).
+De la plus ancienne à la plus récente : A, puis B, puis C.
 
 \corrige{de l'exercice 13}
-Car la roche est transformée par la pression et la température sans passer par l'état
-liquide ; si la fusion était complète, on obtiendrait un magma, pas une roche
-métamorphique.
+Cela prouve que cette région, aujourd'hui désertique, était autrefois recouverte par
+la mer, ce qui montre que les milieux peuvent changer profondément au cours du temps.
 
 \corrige{de l'exercice 14}
-Car chaque famille de roche peut se transformer en une autre : le cycle se poursuit
-indéfiniment, sans étape initiale ni finale privilégiée.
+Car les fossiles contenus dans les roches sédimentaires constituent leur principale
+source d'information sur les espèces disparues et les milieux du passé.
 
 \corrige{de l'exercice 15}
-Une roche métamorphique (par exemple du marbre).
-
-\corrige{de l'exercice 16}
-Le granite s'altère en sédiments (érosion), qui s'accumulent et se compactent pour
-former une roche sédimentaire.
-
-\corrige{de l'exercice 17}
-Car les processus impliqués (altération, enfouissement, pression, fusion) sont
-extrêmement lents à l'échelle humaine, nécessitant des millions d'années.
+Car il est issu d'anciennes forêts enfouies et transformées, et sa combustion libère
+de l'énergie, comme celle des autres ressources fossiles.
 
 \corrige{du sujet 1}
-1) Magmatique, sédimentaire, métamorphique.\\
-2) Par refroidissement lent du magma en profondeur ; exemple : le granite.\\
-3) Par accumulation, compaction et cimentation de sédiments ; exemple : le calcaire.\\
-4) Par transformation d'une roche sous pression et/ou température, sans fusion complète ;
-exemple : le marbre.
+1) Altération, transport, sédimentation, diagenèse.\\
+2) Les sédiments sont compactés (l'eau est expulsée) puis cimentés (des minéraux
+précipitent entre les grains), formant une roche solide.\\
+3) Détritique : le grès. Biogène : le calcaire coquillier.\\
+4) Un grain de sable issu de l'altération d'un granite est transporté par un fleuve,
+se dépose en mer avec d'autres grains, puis est compacté et cimenté en grès.
 
 \corrige{du sujet 2}
-1) La fragmentation progressive d'une roche en surface, sous l'effet de l'eau, du vent
-ou des variations de température.\\
-2) Le transport des fragments issus de l'altération.\\
-3) Ils s'accumulent en couches puis sont compactés et cimentés.\\
-4) Par exemple : l'eau et le vent.
-
-\corrige{du sujet 3}
-1) Altération/érosion (magmatique $\to$ sédiments) $\to$ sédimentation (sédiments $\to$
-sédimentaire) $\to$ pression/température (sédimentaire $\to$ métamorphique) $\to$ fusion
-(métamorphique $\to$ magma) $\to$ refroidissement (magma $\to$ magmatique).\\
-2) Une roche métamorphique.\\
-3) Elle forme un magma, à l'origine de nouvelles roches magmatiques.\\
-4) Car chaque famille de roche peut se transformer en une autre, sans étape de départ
-ni d'arrivée définitive.
+1) Dans une série de strates non perturbée, la strate la plus basse est la plus
+ancienne.\\
+2) Un reste ou une trace d'être vivant conservé dans une roche sédimentaire.\\
+3) Le type d'organisme fossilisé renseigne sur le milieu (marin, terrestre\dots) qui
+existait au moment du dépôt de la strate contenant le fossile.\\
+4) Par exemple : matériau de construction et fabrication de briques.
 
 \end{multicols}
 \exercicesBanner
