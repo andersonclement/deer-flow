@@ -332,3 +332,14 @@ Version: 1.0
 #temoignages {
   scroll-margin-top: 110px;
 }
+
+/* Legal links in the footer copyright line */
+.footer-copyright .copyright-text p a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin: 0 2px;
+}
+.footer-copyright .copyright-text p a:hover {
+  color: var(--primary-color);
+}
