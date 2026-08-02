@@ -1,155 +1,186 @@
-\chapter{Biodiversité, environnement, hygiène et biotechnologie}
+\chapter{La protection des écosystèmes : étude d'une forêt}
 
-\noindent\textit{Ce dernier chapitre relie plusieurs fils du fascicule : la diversité du
-vivant qui nous entoure, les menaces qui pèsent sur elle, les bons réflexes d'hygiène de
-vie, et la manière dont l'être humain met les êtres vivants au service de ses besoins,
-grâce à la biotechnologie.}
+\noindent\textit{Une forêt n'est pas une simple collection d'arbres : c'est un
+ensemble d'êtres vivants en interaction permanente avec leur milieu. Ce dernier
+chapitre étudie, à travers l'exemple d'un écosystème forestier, la biodiversité,
+l'interdépendance entre espèces, les menaces d'origine humaine, et les moyens de
+restaurer et protéger ces milieux.}
 \vspace{8pt}
 
 \connecteBanner
 
-\section{La biodiversité}
+\section{Qu'est-ce qu'un écosystème forestier ?}
 
-\begin{definition}[Biodiversité]
-La \textbf{biodiversité} désigne la diversité du vivant, à trois niveaux : la
-\textbf{diversité des écosystèmes} (forêts, savanes, océans\dots), la \textbf{diversité
-des espèces} au sein de ces écosystèmes, et la \textbf{diversité génétique} au sein
-d'une même espèce (voir le chapitre sur l'hérédité).
+\begin{definition}[Écosystème]
+Un \textbf{écosystème} est l'ensemble formé par un \textbf{milieu} (le sol, le
+climat, l'eau disponible\dots) et tous les \textbf{êtres vivants} qui y habitent, en
+interaction les uns avec les autres et avec leur milieu.
 \end{definition}
 
-\begin{propriete}[Des menaces majoritairement humaines]
-La biodiversité est aujourd'hui menacée par plusieurs facteurs, essentiellement
-d'origine humaine : la \textbf{déforestation}, la \textbf{pollution} (eau, air, sols),
-la \textbf{surexploitation} (surpêche, braconnage), le \textbf{changement climatique}, et
-l'introduction d'\textbf{espèces invasives} qui déséquilibrent les écosystèmes locaux.
+\begin{propriete}[Une forêt, un écosystème riche]
+Une forêt rassemble une grande variété d'êtres vivants : arbres et plantes du
+sous-bois, insectes, oiseaux, mammifères, champignons, et une multitude de
+microorganismes du sol. Chacun occupe une place précise dans l'écosystème.
+\end{propriete}
+
+\section{Biodiversité et interdépendance dans la forêt}
+
+\begin{definition}[Biodiversité]
+La \textbf{biodiversité} d'un milieu est la diversité des êtres vivants qui le
+peuplent : diversité des espèces végétales, animales, fongiques et microbiennes.
+\end{definition}
+
+\begin{propriete}[Un réseau d'interdépendances]
+Les espèces d'une forêt \textbf{dépendent les unes des autres} :
+\begin{itemize}
+\item les plantes servent de nourriture aux herbivores, eux-mêmes proies de
+prédateurs (\textbf{chaîne alimentaire}) ;
+\item de nombreux insectes assurent la \textbf{pollinisation} des fleurs ;
+\item certains animaux dispersent les \textbf{graines}, participant au
+renouvellement de la forêt ;
+\item les \textbf{décomposeurs} (champignons, bactéries du sol) recyclent la matière
+organique morte (feuilles, bois, cadavres) en éléments réutilisables par les
+plantes.
+\end{itemize}
+\end{propriete}
+
+\begin{illus}
+\begin{tikzpicture}[scale=0.85]
+\foreach \x/\c/\lbl in {0/onbgreen/{Feuilles}, 3.1/onbo/{Chenille},
+  6.2/onbo2/{Oiseau}, 9.3/onbink/{Prédateur}}{
+  \draw[\c,fill=\c,fill opacity=0.15,line width=1.2pt] (\x,0) circle (0.85);
+  \node[font=\scriptsize,align=center] at (\x,0) {\lbl};
+}
+\draw[->,onbmuted,line width=1pt] (0.95,0) -- (2.25,0);
+\draw[->,onbmuted,line width=1pt] (4.05,0) -- (5.35,0);
+\draw[->,onbmuted,line width=1pt] (7.15,0) -- (8.45,0);
+\end{tikzpicture}
+\fig{Figure — Une chaîne alimentaire simple au sein d'un écosystème forestier.}
+\end{illus}
+
+\begin{exemple}
+Si les décomposeurs venaient à disparaître, la matière organique morte
+s'accumulerait sans être recyclée, privant les plantes des éléments nutritifs
+nécessaires à leur croissance.
+\end{exemple}
+
+\begin{remarque}
+Piège fréquent : la disparition d'une seule espèce peut déséquilibrer tout
+l'écosystème, car de nombreuses espèces en dépendent directement ou indirectement
+(pour se nourrir, se reproduire ou se protéger).
+\end{remarque}
+
+\section{Les activités humaines qui menacent la forêt}
+
+\begin{propriete}[Principales menaces]
+\begin{itemize}
+\item la \textbf{déforestation} : exploitation excessive du bois, défrichement pour
+l'agriculture ou l'urbanisation ;
+\item le \textbf{braconnage} et la chasse excessive de certaines espèces animales ;
+\item la \textbf{pollution} des sols et des cours d'eau ;
+\item l'introduction d'\textbf{espèces invasives}, qui concurrencent les espèces
+locales.
+\end{itemize}
+\end{propriete}
+
+\begin{propriete}[Conséquences]
+Ces activités entraînent une \textbf{perte de biodiversité}, la rupture de chaînes
+alimentaires entières, une érosion accrue des sols (les racines des arbres ne
+retiennent plus la terre), et des perturbations climatiques locales.
 \end{propriete}
 
 \begin{exemple}
-Une population animale passe de $V_i=2\,000$ individus à $V_f=500$ individus en
-quelques années. Le taux de variation est
-$t=\dfrac{V_f-V_i}{V_i}\times100=\dfrac{500-2\,000}{2\,000}\times100=-75\,\%$ : la
-population a chuté de $75\,\%$.
+La déforestation d'une zone entraîne la disparition des arbres qui servaient
+d'habitat et de nourriture à de nombreuses espèces animales, provoquant leur
+migration ou leur disparition locale.
 \end{exemple}
 
-\begin{propriete}[Protéger la biodiversité]
-Plusieurs actions permettent de limiter l'érosion de la biodiversité : la création
-d'\textbf{aires protégées} (parcs nationaux, réserves naturelles), des \textbf{lois} de
-protection des espèces menacées, le \textbf{reboisement}, la réduction de la
-\textbf{pollution}, et le développement d'une \textbf{agriculture durable}.
-\end{propriete}
+\section{Restaurer et protéger les écosystèmes forestiers}
 
-\section{L'hygiène de vie}
-
-\begin{propriete}[Des habitudes qui protègent la santé]
-Une bonne hygiène de vie s'appuie sur plusieurs piliers étudiés tout au long de ce
-fascicule : une \textbf{alimentation équilibrée}, une \textbf{activité physique}
-régulière, un \textbf{sommeil suffisant} (essentiel au système nerveux, voir chapitre 1),
-une \textbf{hygiène corporelle} adaptée, et le respect des mesures de \textbf{prévention}
-contre les infections (vaccination, dépistage, voir chapitres 7 et 9).
-\end{propriete}
-
-\begin{remarque}
-Ces habitudes agissent en synergie : un sommeil insuffisant affaiblit par exemple le
-système immunitaire, rendant l'organisme plus vulnérable aux infections.
-\end{remarque}
-
-\section{La biotechnologie}
-
-\begin{definition}[Biotechnologie]
-La \textbf{biotechnologie} regroupe l'ensemble des techniques qui utilisent des êtres
-vivants, ou des substances qu'ils produisent, pour créer des produits utiles à l'être
-humain.
-\end{definition}
-
-\begin{propriete}[Des exemples déjà rencontrés]
+\begin{propriete}[Des mesures de protection]
 \begin{itemize}
-\item La \textbf{fermentation} par les levures (fabrication du pain, du yaourt, de
-boissons fermentées — voir chapitres 4 et 11) ;
-\item La production d'\textbf{antibiotiques} (comme la pénicilline), obtenus à partir
-de certaines moisissures ;
-\item La production d'\textbf{insuline} par des bactéries génétiquement modifiées, pour
-traiter le diabète ;
-\item Le \textbf{traitement des eaux usées} par des bactéries qui dégradent les matières
-organiques polluantes.
+\item la création de \textbf{parcs nationaux} et de \textbf{réserves naturelles}, où
+l'exploitation est interdite ou strictement encadrée ;
+\item des \textbf{lois} protégeant les espèces menacées et limitant la chasse et
+l'exploitation forestière ;
+\item le \textbf{reboisement} des zones dégradées ;
+\item les \textbf{jardins botaniques et zoologiques}, qui conservent et étudient des
+espèces végétales et animales, parfois rares, et participent à la sensibilisation du
+public.
 \end{itemize}
 \end{propriete}
 
 \begin{exemple}
-Avant les biotechnologies modernes, l'insuline utilisée pour traiter le diabète était
-extraite d'organes animaux ; aujourd'hui, des bactéries modifiées la produisent en
-laboratoire, en quantité bien plus importante et à moindre coût.
+La réserve de faune du Dja, au Cameroun, est un vaste massif de forêt tropicale
+protégée, qui abrite une grande diversité d'espèces végétales et animales.
 \end{exemple}
+
+\begin{remarque}
+La protection d'un écosystème forestier ne se limite pas à interdire toute activité
+humaine : elle vise à concilier la préservation de la biodiversité avec les besoins
+des populations qui vivent de la forêt, par une gestion durable des ressources.
+\end{remarque}
 
 % ═══════════════════════════════════════════════════════════════
 \section{L'essentiel à retenir}
 
 \begin{synthese}
-\textbf{Biodiversité.} Trois niveaux : écosystèmes, espèces, diversité génétique.\\[4pt]
-\textbf{Menaces.} Déforestation, pollution, surexploitation, changement climatique,
-espèces invasives.\\[4pt]
-\textbf{Protection.} Aires protégées, lois, reboisement, réduction de la pollution,
-agriculture durable.\\[4pt]
-\textbf{Hygiène de vie.} Alimentation, activité physique, sommeil, hygiène corporelle,
-prévention.\\[4pt]
-\textbf{Biotechnologie.} Utilisation des êtres vivants pour produire des biens utiles
-(fermentation, antibiotiques, insuline, traitement des eaux).\\[4pt]
-\textbf{Piège fréquent.} La biotechnologie n'est pas seulement une technologie
-« moderne » : la fermentation, utilisée depuis des millénaires pour le pain ou le
-fromage, en est déjà une forme.
+\textbf{Écosystème.} Milieu + êtres vivants en interaction.\\[4pt]
+\textbf{Biodiversité forestière.} Diversité des espèces végétales, animales,
+fongiques et microbiennes d'une forêt.\\[4pt]
+\textbf{Interdépendance.} Chaînes alimentaires, pollinisation, dispersion des
+graines, décomposeurs recyclant la matière organique.\\[4pt]
+\textbf{Menaces humaines.} Déforestation, braconnage, pollution, espèces
+invasives.\\[4pt]
+\textbf{Protection.} Parcs nationaux, réserves naturelles, lois, reboisement,
+jardins botaniques et zoologiques.\\[4pt]
+\textbf{Piège fréquent.} La disparition d'une seule espèce peut déséquilibrer tout
+l'écosystème, du fait des nombreuses interdépendances entre espèces.
 \end{synthese}
 
 % ═══════════════════════════════════════════════════════════════
 \section{Méthodes \& savoir-faire}
 
-\methode{Calculer un taux de variation d'une population}
-Appliquer $t=\dfrac{V_f-V_i}{V_i}\times100$.
+\methode{Reconnaître une relation d'interdépendance}
+Identifier comment une espèce dépend d'une autre pour se nourrir, se reproduire ou se
+protéger.
 \begin{exemple}
-$V_i=5\,000$, $V_f=3\,000$ : $t=\dfrac{3\,000-5\,000}{5\,000}\times100=-40\,\%$.
+Un insecte pollinisateur et la plante qu'il féconde sont en relation
+d'interdépendance.
 \end{exemple}
 
-\methode{Relier une action humaine à une menace sur la biodiversité}
-Identifier le facteur en jeu : destruction d'habitat (déforestation), rejets nocifs
-(pollution), prélèvement excessif (surexploitation).
+\methode{Relier une activité humaine à une conséquence sur l'écosystème}
+Identifier le mécanisme en jeu : destruction d'habitat (déforestation), prélèvement
+excessif (braconnage), rejets nocifs (pollution).
 \begin{exemple}
-La coupe massive d'une forêt tropicale relève de la déforestation.
-\end{exemple}
-
-\methode{Reconnaître un exemple de biotechnologie}
-Vérifier qu'un être vivant (ou une substance qu'il produit) est utilisé pour fabriquer un
-produit utile à l'être humain.
-\begin{exemple}
-La fabrication du yaourt à partir de bactéries lactiques est un exemple de
-biotechnologie.
+Le défrichement d'une forêt pour l'agriculture est une cause de déforestation,
+entraînant la disparition d'habitats.
 \end{exemple}
 
 % ═══════════════════════════════════════════════════════════════
 \section{Exercices d'application}
 \begin{multicols}{2}
 
-\rubrique{Biodiversité}
-\exo{}\diff{1} Citer les trois niveaux de la biodiversité.
+\rubrique{Écosystème forestier}
+\exo{}\diff{1} Définir un écosystème.
 
-\exo{}\diff{2} Citer trois menaces qui pèsent sur la biodiversité.
+\exo{}\diff{2} Citer trois catégories d'êtres vivants présents dans une forêt.
 
-\exo{}\diff{2} Une population passe de $1\,000$ à $600$ individus. Calculer le taux de
-variation.
+\rubrique{Interdépendance}
+\exo{}\diff{2} Qu'est-ce qu'une chaîne alimentaire ?
 
-\exo{}\diff{2} Citer deux moyens de protéger la biodiversité.
+\exo{}\diff{2} Quel est le rôle des décomposeurs dans un écosystème forestier ?
 
-\rubrique{Hygiène de vie}
-\exo{}\diff{1} Citer trois piliers d'une bonne hygiène de vie.
+\rubrique{Menaces humaines}
+\exo{}\diff{1} Citer deux menaces humaines qui pèsent sur les forêts.
 
-\exo{}\diff{2} Pourquoi un sommeil insuffisant peut-il affaiblir les défenses
-immunitaires ?
+\exo{}\diff{2} Quelle conséquence la déforestation a-t-elle sur les animaux qui
+vivaient dans la forêt ?
 
-\rubrique{Biotechnologie}
-\exo{}\diff{1} Qu'est-ce que la biotechnologie ?
+\rubrique{Protection}
+\exo{}\diff{1} Citer deux moyens de protéger un écosystème forestier.
 
-\exo{}\diff{2} Citer un exemple de biotechnologie utilisé depuis très longtemps par
-l'être humain.
-
-\exo{}\diff{2} Comment produit-on aujourd'hui l'insuline utilisée pour traiter le
-diabète ?
+\exo{}\diff{2} Quel est le rôle d'un jardin botanique ou zoologique ?
 
 % ═══════════════════════════════════════════════════════════════
 \end{multicols}
@@ -157,62 +188,47 @@ diabète ?
 \section{Exercices d'entraînement}
 \begin{multicols}{2}
 
-\rubrique{Biodiversité}
-\exo{}\diff{2} Une population passe de $10\,000$ à $4\,000$ individus. Calculer le taux
-de variation.
+\rubrique{Interdépendance}
+\exo{}\diff{3} Expliquer pourquoi la disparition des insectes pollinisateurs
+menacerait de nombreuses espèces végétales.
 
-\exo{}\diff{3} Pourquoi l'introduction d'une espèce invasive peut-elle déséquilibrer un
-écosystème local ?
+\exo{}\diff{3} Expliquer ce qui se passerait dans une forêt si tous les décomposeurs
+disparaissaient.
 
-\exo{}\diff{3} Expliquer pourquoi la diversité génétique au sein d'une espèce (voir
-chapitre sur l'hérédité) fait partie intégrante de la biodiversité.
+\rubrique{Menaces humaines}
+\exo{}\diff{3} Expliquer pourquoi la déforestation favorise l'érosion des sols.
 
-\rubrique{Hygiène de vie}
-\exo{}\diff{3} Expliquer, en une phrase, pourquoi l'hygiène de vie touche à la fois le
-système nerveux, le système immunitaire et l'appareil digestif.
+\exo{}\diff{2} Pourquoi une espèce invasive peut-elle déséquilibrer un écosystème
+forestier ?
 
-\exo{}\diff{2} Proposer trois conseils d'hygiène de vie adaptés à un élève de troisième.
+\rubrique{Protection}
+\exo{}\diff{3} Expliquer pourquoi la protection d'une forêt doit aussi prendre en
+compte les besoins des populations qui en vivent.
 
-\rubrique{Biotechnologie}
-\exo{}\diff{3} Expliquer pourquoi la production d'insuline par des bactéries
-génétiquement modifiées représente un progrès par rapport à son extraction à partir
-d'organes animaux.
-
-\exo{}\diff{2} Citer un exemple de biotechnologie utilisée pour protéger
-l'environnement.
-
-\exo{}\diff{3} Expliquer, en une phrase, le lien entre la fermentation (chapitres 4 et
-11) et la biotechnologie.
+\exo{}\diff{2} En quoi une réserve naturelle diffère-t-elle d'un jardin zoologique
+dans sa façon de protéger les espèces ?
 
 % ═══════════════════════════════════════════════════════════════
 \end{multicols}
 
 \section{Sujets type BEPC}
 
-\sujetbac[Biodiversité et protection]
+\sujetbac[Biodiversité et interdépendance forestière]
 \begin{enumerate}[label=\arabic*)]
-\item Définis la biodiversité en citant ses trois niveaux.
-\item Cite trois menaces humaines qui pèsent sur la biodiversité.
-\item Une espèce voit sa population passer de $2\,000$ à $500$ individus. Calcule le
-taux de variation.
-\item Propose deux mesures pour protéger cette espèce.
+\item Définis un écosystème.
+\item Cite trois exemples d'interdépendance entre espèces dans une forêt.
+\item Explique le rôle des décomposeurs.
+\item Explique pourquoi la disparition d'une espèce peut avoir des conséquences sur
+plusieurs autres espèces.
 \end{enumerate}
 
-\sujetbac[Hygiène de vie et santé]
+\sujetbac[Menaces et protection des forêts]
 \begin{enumerate}[label=\arabic*)]
-\item Cite quatre piliers d'une bonne hygiène de vie.
-\item Explique le lien entre le sommeil et le système immunitaire.
-\item Pourquoi la vaccination fait-elle partie des bons réflexes d'hygiène de vie ?
-\item Propose un conseil d'hygiène de vie destiné à un élève de troisième.
-\end{enumerate}
-
-\sujetbac[La biotechnologie]
-\begin{enumerate}[label=\arabic*)]
-\item Définis la biotechnologie.
-\item Cite trois exemples de biotechnologie déjà rencontrés dans ce fascicule.
-\item Explique comment est produite l'insuline utilisée pour traiter le diabète.
-\item Pourquoi peut-on dire que la fermentation du pain est une forme ancienne de
-biotechnologie ?
+\item Cite trois menaces humaines qui pèsent sur les écosystèmes forestiers.
+\item Cite deux conséquences de la déforestation.
+\item Cite trois moyens de protéger ou de restaurer un écosystème forestier.
+\item Pourquoi la gestion d'une forêt protégée doit-elle concilier préservation de
+la biodiversité et besoins des populations locales ?
 \end{enumerate}
 
 % ═══════════════════════════════════════════════════════════════
@@ -220,91 +236,72 @@ biotechnologie ?
 \begin{multicols}{2}
 
 \corrige{de l'exercice 1}
-La diversité des écosystèmes, des espèces, et la diversité génétique.
+L'ensemble formé par un milieu et les êtres vivants qui y habitent, en interaction.
 
 \corrige{de l'exercice 2}
-Par exemple : déforestation, pollution, surexploitation.
+Par exemple : plantes, insectes, champignons (ou mammifères, oiseaux).
 
 \corrige{de l'exercice 3}
-$t=\dfrac{600-1\,000}{1\,000}\times100=-40\,\%$.
+Une suite d'êtres vivants où chacun se nourrit du précédent (plante $\to$ herbivore
+$\to$ prédateur).
 
 \corrige{de l'exercice 4}
-Par exemple : les aires protégées et le reboisement.
+Ils recyclent la matière organique morte en éléments réutilisables par les plantes.
 
 \corrige{de l'exercice 5}
-Par exemple : alimentation équilibrée, activité physique, sommeil suffisant.
+Par exemple : la déforestation et le braconnage.
 
 \corrige{de l'exercice 6}
-Car les centres nerveux ont besoin de sommeil pour récupérer, ce qui affecte
-indirectement le bon fonctionnement global de l'organisme, y compris les défenses
-immunitaires.
+Ils perdent leur habitat et leur source de nourriture, ce qui provoque leur migration
+ou leur disparition locale.
 
 \corrige{de l'exercice 7}
-L'ensemble des techniques qui utilisent des êtres vivants (ou leurs produits) pour
-fabriquer des produits utiles à l'être humain.
+Par exemple : la création d'une réserve naturelle et le reboisement.
 
 \corrige{de l'exercice 8}
-Par exemple : la fermentation pour fabriquer le pain ou le fromage.
+Conserver et étudier des espèces, parfois rares, et sensibiliser le public à leur
+protection.
 
 \corrige{de l'exercice 9}
-Par des bactéries génétiquement modifiées, cultivées en laboratoire.
+Car de nombreuses plantes dépendent des insectes pour être fécondées ; sans
+pollinisateurs, elles ne pourraient plus se reproduire normalement.
 
 \corrige{de l'exercice 10}
-$t=\dfrac{4\,000-10\,000}{10\,000}\times100=-60\,\%$.
+La matière organique morte (feuilles, bois, cadavres) s'accumulerait sans être
+recyclée, privant les plantes des éléments nutritifs nécessaires à leur croissance.
 
 \corrige{de l'exercice 11}
-Car elle peut concurrencer les espèces locales pour les ressources, sans prédateur
-naturel pour limiter sa prolifération.
+Car les racines des arbres, qui retiennent normalement la terre, disparaissent avec
+les arbres abattus, rendant le sol plus vulnérable au ruissellement et au vent.
 
 \corrige{de l'exercice 12}
-Car des individus génétiquement différents au sein d'une même espèce constituent une
-richesse à préserver, au même titre que la diversité des espèces ou des écosystèmes.
+Car elle concurrence les espèces locales pour les ressources (nourriture, espace),
+sans prédateur naturel pour limiter sa prolifération.
 
 \corrige{de l'exercice 13}
-Car ces trois systèmes dépendent tous d'apports (nutriments, repos) et d'habitudes
-(alimentation, sommeil) qui, mal gérés, affaiblissent le fonctionnement global de
-l'organisme.
+Car de nombreuses populations tirent leurs ressources (bois, nourriture, revenus) de
+la forêt ; une protection trop stricte, sans alternative, pourrait leur nuire.
 
 \corrige{de l'exercice 14}
-Par exemple : dormir suffisamment, avoir une alimentation équilibrée, pratiquer une
-activité physique régulière.
-
-\corrige{de l'exercice 15}
-Car elle permet une production en laboratoire, en grande quantité, sans dépendre du
-prélèvement d'organes animaux, à moindre coût et de façon plus fiable.
-
-\corrige{de l'exercice 16}
-Par exemple : le traitement des eaux usées par des bactéries.
-
-\corrige{de l'exercice 17}
-La fermentation, réalisée par des micro-organismes pour produire des aliments utiles à
-l'être humain, est elle-même un exemple de biotechnologie.
+Une réserve naturelle protège les espèces dans leur milieu naturel ; un jardin
+zoologique les conserve et les étudie en dehors de leur milieu d'origine.
 
 \corrige{du sujet 1}
-1) La biodiversité regroupe la diversité des écosystèmes, des espèces, et la diversité
-génétique au sein des espèces.\\
-2) Par exemple : déforestation, pollution, surexploitation.\\
-3) $t=\dfrac{500-2\,000}{2\,000}\times100=-75\,\%$.\\
-4) Par exemple : créer une aire protégée et légiférer contre le braconnage.
+1) L'ensemble formé par un milieu et les êtres vivants qui y habitent, en
+interaction.\\
+2) Par exemple : pollinisation, dispersion des graines, chaîne alimentaire.\\
+3) Ils recyclent la matière organique morte, la rendant à nouveau disponible pour les
+plantes.\\
+4) Car de nombreuses espèces dépendent directement ou indirectement de l'espèce
+disparue pour se nourrir, se reproduire ou se protéger.
 
 \corrige{du sujet 2}
-1) Alimentation équilibrée, activité physique, sommeil suffisant, hygiène corporelle.\\
-2) Un sommeil suffisant permet une bonne récupération de l'organisme, favorisant
-indirectement de bonnes défenses immunitaires.\\
-3) Car elle prépare le système immunitaire à réagir rapidement en cas d'infection
-réelle, réduisant le risque de maladie.\\
-4) Par exemple : limiter le temps d'écran avant le coucher pour favoriser un bon
-sommeil.
-
-\corrige{du sujet 3}
-1) L'ensemble des techniques qui utilisent des êtres vivants pour produire des biens
-utiles à l'être humain.\\
-2) Par exemple : la fermentation, la production d'antibiotiques, la production
-d'insuline.\\
-3) Elle est produite par des bactéries génétiquement modifiées cultivées en
-laboratoire.\\
-4) Car elle utilise des micro-organismes (les levures) pour transformer les aliments,
-ce qui est le principe même de la biotechnologie.
+1) Par exemple : déforestation, braconnage, pollution.\\
+2) Par exemple : perte de biodiversité et érosion des sols.\\
+3) Par exemple : réserves naturelles, lois de protection, reboisement.\\
+4) Car de nombreuses populations locales dépendent des ressources de la forêt pour
+vivre ; une gestion durable permet de préserver la forêt tout en répondant à ces
+besoins.
 
 \end{multicols}
 \exercicesBanner
