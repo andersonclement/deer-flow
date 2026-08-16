@@ -99,6 +99,53 @@ Any OpenAI-compatible endpoint works:
 Enrichment is optional and never fatal. If the key is missing or the call fails,
 the fact layer is still written and still correct.
 
+## Using it from an agent (MCP)
+
+The model is exposed to coding agents over MCP, so they query the map instead of
+rediscovering the architecture each session:
+
+| Tool | Purpose |
+|---|---|
+| `overview` | The architectural map — call it first, instead of globbing the tree |
+| `impact` | Blast radius and dependents — call it *before* editing a component |
+| `locate` | Which components and surfaces match a term, with `file:line` |
+
+Register it in `opencode.json` (or any MCP client):
+
+```json
+{
+  "mcp": {
+    "world-model": {
+      "type": "local",
+      "command": ["python3", "-m", "worldmodel.mcp", "--root", "/path/to/repo"],
+      "cwd": "/path/to/repo/tools/world-model",
+      "enabled": true
+    }
+  }
+}
+```
+
+The server only reads a model built earlier — it never scans the tree — so
+answers are instant and identical across agents.
+
+### What this changes
+
+Given a planning agent told to call `impact` before proposing a change, asking
+it to alter a config loader's signature produces:
+
+```
+⚙ world-model_overview
+⚙ world-model_locate {"query":"deerflow config load"}
+⚙ world-model_impact {"component":"backend.packages.harness.deerflow.config"}
+
+"The overview confirms backend.packages.harness.deerflow.config is the most
+ depended-upon component (blast radius 28, fan-in 22)."
+```
+
+The agent establishes the risk from the dependency graph before reading a single
+file — which is the difference between an assistant that writes code and one
+that can argue about whether the change is a good idea.
+
 ## Incremental updates
 
 Every file is content-hashed. A re-scan compares hashes and reports what
