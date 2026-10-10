@@ -308,7 +308,7 @@ class _SignupBusinessScreenState extends ConsumerState<SignupBusinessScreen> {
           controller: _name,
           textCapitalization: TextCapitalization.words,
           decoration: InputDecoration(
-            hintText: 'Alimentation Nadège',
+            hintText: s.businessNameHint,
             errorText: _error == null ? null : s.authError(_error!),
           ),
         ),

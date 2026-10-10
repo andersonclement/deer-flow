@@ -1,9 +1,10 @@
-import 'package:caisso/app.dart';
 import 'package:caisso/features/auth/application/auth_controllers.dart';
 import 'package:caisso/features/auth/data/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/test_app.dart';
 
 ProviderContainer _container() {
   final container = ProviderContainer(overrides: [
@@ -65,10 +66,7 @@ void main() {
   });
 
   testWidgets('parcours d’inscription à l’écran jusqu’à l’accueil', (tester) async {
-    await tester.pumpWidget(ProviderScope(
-      overrides: [authRepositoryProvider.overrideWithValue(FakeAuthRepository(latency: Duration.zero))],
-      child: const CaissoApp(),
-    ));
+    await tester.pumpWidget(testApp());
     await tester.pumpAndSettle();
 
     await tester.enterText(find.byKey(const Key('phone')), '677123456');
@@ -91,12 +89,12 @@ void main() {
     await tester.enterText(find.byKey(const Key('businessName')), 'Alimentation Nadège');
     await tester.tap(find.text('Commencer'));
     await tester.pumpAndSettle();
-    expect(find.text('Caisse du jour'), findsOneWidget);
+    expect(find.textContaining('Caisse du jour'), findsOneWidget);
     expect(find.text('Alimentation Nadège'), findsOneWidget);
   });
 
   testWidgets('le bouton EN traduit l’écran', (tester) async {
-    await tester.pumpWidget(const ProviderScope(child: CaissoApp()));
+    await tester.pumpWidget(testApp());
     await tester.pumpAndSettle();
     expect(find.text('Recevoir le code'), findsOneWidget);
     await tester.tap(find.text('EN'));

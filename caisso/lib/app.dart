@@ -9,6 +9,8 @@ import 'features/auth/application/auth_controllers.dart';
 import 'features/auth/presentation/login_screen.dart';
 import 'features/auth/presentation/signup_screens.dart';
 import 'features/home/home_screen.dart';
+import 'features/ledger/debts_screen.dart';
+import 'features/ledger/new_operation_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final session = ValueNotifier(ref.read(sessionProvider));
@@ -20,9 +22,10 @@ final routerProvider = Provider<GoRouter>((ref) {
     refreshListenable: session,
     redirect: (context, state) {
       final loggedIn = session.value != null;
-      final onHome = state.matchedLocation == '/home';
-      if (!loggedIn && onHome) return '/login';
-      if (loggedIn && !onHome) return '/home';
+      final location = state.matchedLocation;
+      final onAuth = location.startsWith('/signup') || location == '/login';
+      if (!loggedIn && !onAuth) return '/login';
+      if (loggedIn && onAuth) return '/home';
       return null;
     },
     routes: [
@@ -37,6 +40,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(path: '/home', builder: (_, _) => const HomeScreen()),
+      GoRoute(
+        path: '/operation/:kind',
+        builder: (_, state) => NewOperationScreen(kind: state.pathParameters['kind']!),
+      ),
+      GoRoute(path: '/debts', builder: (_, _) => const DebtsScreen()),
     ],
   );
 });

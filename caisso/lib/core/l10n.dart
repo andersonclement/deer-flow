@@ -94,7 +94,68 @@ class AppStrings {
   String get sales => _t('Ventes', 'Sales');
   String get expenses => _t('Dépenses', 'Expenses');
   String get owedToYou => _t('On vous doit', 'Owed to you');
-  String get noSalesYet => _t('Aucune vente aujourd’hui. Appuyez sur le micro pour dicter votre première vente.', 'No sales today. Tap the mic to dictate your first sale.');
+  String get noSalesYet => _t('Aucune opération aujourd’hui. Appuyez sur «\u00A0Vente\u00A0» pour enregistrer la première.', 'Nothing recorded today. Tap “Sale” to record the first one.');
+  String get mobileMoney => _t('Mobile money', 'Mobile money');
+  String get today => _t('Aujourd’hui', 'Today');
+  String debtSummary(int count, int late) => en
+      ? '$count customer${count > 1 ? 's' : ''}${late > 0 ? ' · $late overdue' : ''}'
+      : '$count client${count > 1 ? 's' : ''}${late > 0 ? ' · $late en retard' : ''}';
+  String get nothingOwed => _t('Personne ne vous doit d’argent', 'Nobody owes you money');
+
+  // Opérations
+  String get sale => _t('Vente', 'Sale');
+  String get expense => _t('Dépense', 'Expense');
+  String get debts => _t('Créances', 'Debts');
+  String get newSale => _t('Nouvelle vente', 'New sale');
+  String get newExpense => _t('Nouvelle dépense', 'New expense');
+  String get amount => _t('Montant', 'Amount');
+  String get amountRequired => _t('Indiquez un montant.', 'Enter an amount.');
+  String get whatSold => _t('Qu’avez-vous vendu ?', 'What did you sell?');
+  String get whatSoldHint => _t('Ex. : Riz 25 kg × 3', 'e.g. Rice 25 kg × 3');
+  String get whatSpent => _t('Pour quoi ?', 'What for?');
+  String get whatSpentHint => _t('Ex. : Transport marchandise', 'e.g. Goods transport');
+  String get descriptionRequired => _t('Ajoutez une courte description.', 'Add a short description.');
+  String get paidWith => _t('Payé par', 'Paid with');
+  String get customer => _t('Client', 'Customer');
+  String get customerOptional => _t('Client (optionnel)', 'Customer (optional)');
+  String get customerRequired => _t('Pour une vente à crédit, indiquez le client.', 'For a credit sale, enter the customer.');
+  String get customerHint => _t('Nom du client', 'Customer name');
+  String get businessNameHint => _t('Ex. : Alimentation Nadège', 'e.g. Nadège Grocery');
+  String get customerPhone => _t('Téléphone du client (pour les relances)', 'Customer phone (for reminders)');
+  String get dueDate => _t('Échéance', 'Due date');
+  String get save => _t('Enregistrer', 'Save');
+  String get saved => _t('Enregistré', 'Saved');
+
+  String methodLabel(String method) => switch (method) {
+        'cash' => _t('Espèces', 'Cash'),
+        'mtn' => 'MTN MoMo',
+        'orange' => 'Orange Money',
+        'wave' => 'Wave',
+        _ => _t('À crédit', 'On credit'),
+      };
+
+  // Créances
+  String get whoOwesMe => _t('Qui me doit ?', 'Who owes me?');
+  String toCollect(String amount, int count) =>
+      en ? '$amount to collect · $count customer${count > 1 ? 's' : ''}' : '$amount à encaisser · $count client${count > 1 ? 's' : ''}';
+  String get all => _t('Toutes', 'All');
+  String get late => _t('En retard', 'Overdue');
+  String daysLate(int days) => en ? 'Overdue · $days day${days > 1 ? 's' : ''}' : 'En retard · $days jour${days > 1 ? 's' : ''}';
+  String dueOn(String date) => _t('Échéance $date', 'Due $date');
+  String get noDueDate => _t('Sans échéance', 'No due date');
+  String get collect => _t('Encaisser', 'Collect');
+  String collectFrom(String name) => _t('Encaisser · $name', 'Collect · $name');
+  String remaining(String amount) => _t('Reste à payer : $amount', 'Remaining: $amount');
+  String get amountTooHigh => _t('Le montant dépasse le reste à payer.', 'Amount is more than what is owed.');
+  String get noDebts => _t('Aucune créance. Bravo !', 'No debts. Well done!');
+
+  String shortDate(DateTime d) {
+    const fr = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+    const enM = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return en ? '${enM[d.month - 1]} ${d.day}' : '${d.day} ${fr[d.month - 1]}';
+  }
+
+  String time(DateTime d) => '${d.hour.toString().padLeft(2, '0')}:${d.minute.toString().padLeft(2, '0')}';
   String get logout => _t('Se déconnecter', 'Log out');
 
   /// Traduit un code d'erreur des contrôleurs d'authentification.
